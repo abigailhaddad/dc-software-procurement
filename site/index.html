@@ -346,7 +346,7 @@ footer p{font-size:14px; color:var(--muted)}
 
 <p>The step in the middle is where the actual buying decision is made, and it is the one step the District does not publish. Everything after this point describes what can be seen around that gap.</p>
 
-<p>The blindness runs front to back. Tracing each of the 1,372 technology contracts to a posted solicitation &mdash; through the solicitation number its award document cites, or a close title match &mdash; finds one for 295, carrying 11.4% of the ceiling dollars; correcting for what the matching misses, no more than about a third of contracts and a tenth of the dollars ever pass through the portal's solicitations module. The big money arrives citing a 2007 schedule award or a GSA schedule instead. The module has its own quirk, in the family this portal keeps producing: 96% of its rows display an internal document ID where the solicitation number should be, and the portal's own archive shows postings falling from 1,351 in FY2016 to 749 in FY2025.</p>
+<p>The blindness runs front to back. Tracing each of the 1,372 technology contracts to a posted solicitation &mdash; through the solicitation number its award document cites, or a close title match &mdash; finds one for 295, carrying 11.4% of the ceiling dollars; correcting for what the matching misses, no more than about a third of contracts and a tenth of the dollars ever pass through the portal's solicitations module. The big money arrives citing a 2007 schedule award or a GSA schedule instead. The module also hides its own solicitation numbers: 96% of rows display an internal document ID where the number should be. And the portal's own archive shows postings falling from 1,351 in FY2016 to 749 in FY2025.</p>
 
 <h2>$3.1 billion authorised over five years, $527 million paid</h2>
 <p>A contract amount is an authorisation. Comparing it against payments the District actually recorded shows how far apart the two are, and how differently contract types behave.</p>
@@ -462,7 +462,7 @@ footer p{font-size:14px; color:var(--muted)}
 <span class="src">Every rate was re-found verbatim in the award text by <code>analysis/extract_rates.py</code>; drift fails <code>make verify</code>.</span>
 
 <h3>Against what the federal government pays</h3>
-<p>GSA publishes the awarded ceiling rates on its own schedules &mdash; the same fully burdened, not-to-exceed idea, often the same job titles. Matching DC's categories to exact federal titles gives 112 comparable rates, and they split into two stories. The staff augmentation card runs at half of federal: across the 44 matched rates on Computer Aid's card, the median sits 50% below the federal median, and DC's top-of-scale Master rates are frequently beneath the federal <em>entry</em> median. Everything else scatters around federal, and the consultants sit well above it &mdash; Trusted Advisory Group's program managers bill 71&ndash;89% over the federal median, LimnoTech's project managers 77&ndash;83% over.</p>
+<p>GSA publishes the awarded ceiling rates on its own schedules &mdash; the same fully burdened, not-to-exceed idea, often the same job titles. Matching DC's categories to exact federal titles gives 112 comparable rates. The staff augmentation card runs at half of federal: across the 44 matched rates on Computer Aid's card, the median sits 50% below the federal median, and DC's top-of-scale Master rates are frequently beneath the federal <em>entry</em> median. Everything else scatters around federal, and the consultants sit well above it &mdash; Trusted Advisory Group's program managers bill 71&ndash;89% over the federal median, LimnoTech's project managers 77&ndash;83% over.</p>
 
 <figure>
 <div class="scroll">
@@ -482,8 +482,6 @@ footer p{font-size:14px; color:var(--muted)}
 </div>
 </figure>
 <span class="src">Exact-title matches against GSA's CALC+ ceiling-rate data, pulled 24 August 2026. Methods, raw API responses and the full comparison are in <code>data/calc/</code>; recomputed by <code>verify_claims.py</code> &sect;"federal rate comparison". Federal medians are schedule ceilings that agencies negotiate below at order time, so the true gap is somewhat smaller than shown &mdash; and nowhere near closed.</span>
-
-<p>What kind of labor fills a seat billed at a third of the going federal rate is what the hiring side answers.</p>
 
 <h3>The hiring side of the same hour</h3>
 <p>Job ads answer what the portal cannot: what the person is offered. The staffing firms recruiting for District seats post in the contract's own vocabulary &mdash; "Journeyman", "Senior", "Master" are the CW91684 tier names &mdash; and DC postings carry pay. Three captured on 24 August 2026 line up against the card directly:</p>
@@ -582,7 +580,7 @@ footer p{font-size:14px; color:var(--muted)}
 <h2>One system from start to today: what DCAS cost</h2>
 <p>The DC Access System decides who gets Medicaid, SNAP and TANF in the District. It began as the ACA build: a 2012 solicitation, won by Infosys Public Services at $49.5 million, three planned releases, most of it paid with enhanced federal matching funds. The payments table only reaches back to FY2017, so the original build is already beyond the portal's memory.</p>
 
-<p>Release 3 &mdash; the hard part, non-MAGI Medicaid and the integrated portal &mdash; was built by KPMG under a contract titled simply "DCAS R3". The portal's surviving record of that contract is one option period at $7.3 million. The payment ledger tells the real story: $50 million paid citing the contract's number across FY2019&ndash;22, and another $60 million of KPMG payments at Health Care Finance carrying no contract number at all &mdash; and DCAS R3 is KPMG's only contract at that agency. The portal keeps only surviving option periods, so a finished contract's record shrinks while its payments remain. Accenture was separately contracted to oversee the build.</p>
+<p>Release 3 &mdash; the hard part, non-MAGI Medicaid and the integrated portal &mdash; was built by KPMG under a contract titled simply "DCAS R3". The portal's surviving record of that contract is one option period at $7.3 million. The payment ledger disagrees: $50 million paid citing the contract's number across FY2019&ndash;22, and another $60 million of KPMG payments at Health Care Finance carrying no contract number at all &mdash; and DCAS R3 is KPMG's only contract at that agency. The portal keeps only surviving option periods, so a finished contract's record shrinks while its payments remain. Accenture was separately contracted to oversee the build.</p>
 
 <p>Since 2025 the running of it is visible again: D2Sol invoices exactly $3,490,537.83 a month &mdash; $41.9 million a year &mdash; as the steady-state price before Cúram licences, the mobile app, AWS resale, printing, or call centers. Assembling every contract that can be defensibly tied to the system finds 49, with $249M in visible ceilings and $284M in attributable payments; 19 of the 49 show no payments at all, and 7 show payments above their surviving ceiling.</p>
 
@@ -617,7 +615,7 @@ footer p{font-size:14px; color:var(--muted)}
 <p>This data cannot say, in either direction. It shows what was authorised, what rates were agreed and what was paid &mdash; not what was delivered, whether it worked, or what the same work costs elsewhere. The rate card is reproduced above so the agreed prices are at least visible; judging them needs comparators this data does not contain, and nothing in it measures performance.</p>
 
 <h3>Why does it matter that contracts say agile and run waterfall?</h3>
-<p>Because the structure is what binds. A contract that fixes scope, sequences deliverables and gates payment on acceptance stays waterfall whatever method its statement of work names: changing what gets built requires a contract modification. The teams inside can hold every ceremony they like &mdash; the thing the District can change its mind about was set at award. Whether that is the right way to buy software is a policy choice this data does not make. It only shows which choice the paper actually encodes.</p>
+<p>Because the structure is what binds. A contract that fixes scope, sequences deliverables and gates payment on acceptance stays waterfall whatever method its statement of work names: changing what gets built requires a contract modification. The teams inside can hold every ceremony they like &mdash; the thing the District can change its mind about was set at award. Whether that is the right way to buy software is a policy choice this data does not make. It only shows which choice is actually written down.</p>
 
 <h3>Would another city look different?</h3>
 <p>Unknown; no comparison was attempted, and most large governments also buy technology heavily through staffing and schedule vehicles. What can be compared today is disclosure: the federal government publishes its task orders on USAspending, and the District does not publish its own.</p>
