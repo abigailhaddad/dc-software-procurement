@@ -74,6 +74,7 @@ commitments the model filed as incidental; they are corrected by hand in
 | `site/index.html` | The briefing as a single static page |
 | `analysis/rebuild_manifest.py` | Rebuild the provenance manifest from the files on disk |
 | `analysis/ocr_awards.py` | OCR scanned award documents with a vision model; results cached and classified separately |
+| `analysis/pull_h1b.py` | Pull public H-1B wage filings for the vendor set (`make h1b`); DOL's disclosure files are authoritative |
 | `analysis/extract_rates.py` | Pull hourly rate cards out of the award texts, every rate verified verbatim |
 | `data/labor_rates.csv` | The 2,146 published rates, with whether each title-to-price pairing verified |
 | `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |

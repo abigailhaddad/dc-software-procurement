@@ -454,6 +454,14 @@ def main() -> int:
               int(labels.vendor.astype(str).str.upper().str.contains(absent, na=False).sum())
               + int(payments.vendor.astype(str).str.upper().str.contains(absent, na=False).sum()), 0)
 
+    # The h1b pipeline (analysis/pull_h1b.py, make h1b) must agree with the
+    # saved evidence page the paragraph is checked against above.
+    lca = pd.read_csv(ROOT / "data" / "h1b" / "lca_filings.csv")
+    lca_curam_dc = lca[lca["query"].str.contains("curam", case=False, na=False) & (lca.dc_city == 1)]
+    check("pipeline agrees: DC-worksite Curam filings", len(lca_curam_dc), 110)
+    check("pipeline agrees: D2Sol's share",
+          int(lca_curam_dc.employer.str.upper().str.startswith("D2SOL").sum()), 89)
+
     d2sol_careers = (ROOT / "evidence" / "job_ads" / "d2sol-careers.txt").read_text(encoding="utf-8")
     check("source: D2Sol hiring junior US roles", "Junior Curam Developer" in d2sol_careers, True)
     check("source: D2Sol hiring in Bangalore", "Bangalore - India" in d2sol_careers, True)

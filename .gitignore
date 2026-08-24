@@ -5,6 +5,7 @@
 data/raw/
 data/pdftext/
 data/pdf/
+data/h1b/raw/
 
 # Python
 __pycache__/
