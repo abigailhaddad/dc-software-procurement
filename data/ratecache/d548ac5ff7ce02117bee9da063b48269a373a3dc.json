@@ -1,0 +1,62 @@
+[
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 149.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant",
+  "level": "",
+  "hourly_rate": 179.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Architect",
+  "level": "",
+  "hourly_rate": 165.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 149.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant",
+  "level": "",
+  "hourly_rate": 179.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Architect",
+  "level": "",
+  "hourly_rate": 165.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 149.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant",
+  "level": "",
+  "hourly_rate": 179.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Architect",
+  "level": "",
+  "hourly_rate": 165.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Maintenance and Support",
+  "level": "",
+  "hourly_rate": 149.5,
+  "unit": "hour"
+ }
+]

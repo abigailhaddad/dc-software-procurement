@@ -1618,11 +1618,11 @@ const DATA = {
  },
  "rates": {
   "totals": {
-   "contracts": 42,
-   "rates": 2146,
-   "verified_pairing": 1304,
+   "contracts": 51,
+   "rates": 2471,
+   "verified_pairing": 1629,
    "min": 24.01,
-   "median": 150.0,
+   "median": 144.05,
    "max": 1015.0
   },
   "contracts": [
@@ -1636,6 +1636,7 @@ const DATA = {
     "median": 114.595,
     "max": 500.32,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Administrative Assistant",
@@ -3948,7 +3949,1072 @@ const DATA = {
     "min": 54.47,
     "median": 188.99,
     "max": 870.85,
-    "pairing_ok_share": 0.06
+    "pairing_ok_share": 0.06,
+    "text_source": "native"
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "title": "CW48317 - MOBIS - ZC Solution, LLC",
+    "work_type": "cots_implementation",
+    "n": 210,
+    "min": 30.32,
+    "median": 109.965,
+    "max": 220.8,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Administrative Assistant I",
+      "level": null,
+      "hourly_rate": 30.32
+     },
+     {
+      "labor_category": "Administrative Assistant I",
+      "level": null,
+      "hourly_rate": 32.12
+     },
+     {
+      "labor_category": "Administrative Assistant I",
+      "level": null,
+      "hourly_rate": 34.75
+     },
+     {
+      "labor_category": "Administrative Assistant I",
+      "level": null,
+      "hourly_rate": 36.97
+     },
+     {
+      "labor_category": "Administrative Assistant I",
+      "level": null,
+      "hourly_rate": 38.85
+     },
+     {
+      "labor_category": "Administrative Assistant II",
+      "level": null,
+      "hourly_rate": 35.53
+     },
+     {
+      "labor_category": "Administrative Assistant II",
+      "level": null,
+      "hourly_rate": 36.87
+     },
+     {
+      "labor_category": "Administrative Assistant II",
+      "level": null,
+      "hourly_rate": 37.86
+     },
+     {
+      "labor_category": "Administrative Assistant II",
+      "level": null,
+      "hourly_rate": 40.64
+     },
+     {
+      "labor_category": "Administrative Assistant II",
+      "level": null,
+      "hourly_rate": 46.45
+     },
+     {
+      "labor_category": "Administrative Assistant III",
+      "level": null,
+      "hourly_rate": 48.66
+     },
+     {
+      "labor_category": "Administrative Assistant III",
+      "level": null,
+      "hourly_rate": 49.07
+     },
+     {
+      "labor_category": "Administrative Assistant III",
+      "level": null,
+      "hourly_rate": 49.32
+     },
+     {
+      "labor_category": "Administrative Assistant III",
+      "level": null,
+      "hourly_rate": 49.57
+     },
+     {
+      "labor_category": "Administrative Assistant III",
+      "level": null,
+      "hourly_rate": 49.99
+     },
+     {
+      "labor_category": "Administrative Assistant IV",
+      "level": null,
+      "hourly_rate": 51.43
+     },
+     {
+      "labor_category": "Administrative Assistant IV",
+      "level": null,
+      "hourly_rate": 51.88
+     },
+     {
+      "labor_category": "Administrative Assistant IV",
+      "level": null,
+      "hourly_rate": 52.15
+     },
+     {
+      "labor_category": "Administrative Assistant IV",
+      "level": null,
+      "hourly_rate": 52.38
+     },
+     {
+      "labor_category": "Administrative Assistant IV",
+      "level": null,
+      "hourly_rate": 52.87
+     },
+     {
+      "labor_category": "Business Administrator I",
+      "level": null,
+      "hourly_rate": 74.62
+     },
+     {
+      "labor_category": "Business Administrator I",
+      "level": null,
+      "hourly_rate": 75.22
+     },
+     {
+      "labor_category": "Business Administrator I",
+      "level": null,
+      "hourly_rate": 75.62
+     },
+     {
+      "labor_category": "Business Administrator I",
+      "level": null,
+      "hourly_rate": 75.98
+     },
+     {
+      "labor_category": "Business Administrator I",
+      "level": null,
+      "hourly_rate": 76.65
+     },
+     {
+      "labor_category": "Business Administrator II",
+      "level": null,
+      "hourly_rate": 72.57
+     },
+     {
+      "labor_category": "Business Administrator II",
+      "level": null,
+      "hourly_rate": 73.17
+     },
+     {
+      "labor_category": "Business Administrator II",
+      "level": null,
+      "hourly_rate": 73.55
+     },
+     {
+      "labor_category": "Business Administrator II",
+      "level": null,
+      "hourly_rate": 73.87
+     },
+     {
+      "labor_category": "Business Administrator II",
+      "level": null,
+      "hourly_rate": 74.52
+     },
+     {
+      "labor_category": "Business Administrator III",
+      "level": null,
+      "hourly_rate": 78.15
+     },
+     {
+      "labor_category": "Business Administrator III",
+      "level": null,
+      "hourly_rate": 78.81
+     },
+     {
+      "labor_category": "Business Administrator III",
+      "level": null,
+      "hourly_rate": 79.2
+     },
+     {
+      "labor_category": "Business Administrator III",
+      "level": null,
+      "hourly_rate": 79.58
+     },
+     {
+      "labor_category": "Business Administrator III",
+      "level": null,
+      "hourly_rate": 80.26
+     },
+     {
+      "labor_category": "Business Consultant I",
+      "level": null,
+      "hourly_rate": 79.97
+     },
+     {
+      "labor_category": "Business Consultant I",
+      "level": null,
+      "hourly_rate": 80.65
+     },
+     {
+      "labor_category": "Business Consultant I",
+      "level": null,
+      "hourly_rate": 81.04
+     },
+     {
+      "labor_category": "Business Consultant I",
+      "level": null,
+      "hourly_rate": 81.44
+     },
+     {
+      "labor_category": "Business Consultant I",
+      "level": null,
+      "hourly_rate": 82.16
+     },
+     {
+      "labor_category": "Business Consultant II",
+      "level": null,
+      "hourly_rate": 90.82
+     },
+     {
+      "labor_category": "Business Consultant II",
+      "level": null,
+      "hourly_rate": 95.46
+     },
+     {
+      "labor_category": "Business Consultant II",
+      "level": null,
+      "hourly_rate": 96.36
+     },
+     {
+      "labor_category": "Business Consultant II",
+      "level": null,
+      "hourly_rate": 98.32
+     },
+     {
+      "labor_category": "Business Consultant II",
+      "level": null,
+      "hourly_rate": 100.43
+     },
+     {
+      "labor_category": "Business Consultant III",
+      "level": null,
+      "hourly_rate": 98.98
+     },
+     {
+      "labor_category": "Business Consultant III",
+      "level": null,
+      "hourly_rate": 99.83
+     },
+     {
+      "labor_category": "Business Consultant III",
+      "level": null,
+      "hourly_rate": 100.33
+     },
+     {
+      "labor_category": "Business Consultant III",
+      "level": null,
+      "hourly_rate": 100.83
+     },
+     {
+      "labor_category": "Business Consultant III",
+      "level": null,
+      "hourly_rate": 101.71
+     },
+     {
+      "labor_category": "Business Consultant IV",
+      "level": null,
+      "hourly_rate": 109.7
+     },
+     {
+      "labor_category": "Business Consultant IV",
+      "level": null,
+      "hourly_rate": 110.65
+     },
+     {
+      "labor_category": "Business Consultant IV",
+      "level": null,
+      "hourly_rate": 111.2
+     },
+     {
+      "labor_category": "Business Consultant IV",
+      "level": null,
+      "hourly_rate": 111.74
+     },
+     {
+      "labor_category": "Business Consultant IV",
+      "level": null,
+      "hourly_rate": 112.71
+     },
+     {
+      "labor_category": "Business Consultant V",
+      "level": null,
+      "hourly_rate": 126.51
+     },
+     {
+      "labor_category": "Business Consultant V",
+      "level": null,
+      "hourly_rate": 127.53
+     },
+     {
+      "labor_category": "Business Consultant V",
+      "level": null,
+      "hourly_rate": 128.19
+     },
+     {
+      "labor_category": "Business Consultant V",
+      "level": null,
+      "hourly_rate": 128.8
+     },
+     {
+      "labor_category": "Business Consultant V",
+      "level": null,
+      "hourly_rate": 129.96
+     },
+     {
+      "labor_category": "Business Process Engineer I",
+      "level": null,
+      "hourly_rate": 90.4
+     },
+     {
+      "labor_category": "Business Process Engineer I",
+      "level": null,
+      "hourly_rate": 91.16
+     },
+     {
+      "labor_category": "Business Process Engineer I",
+      "level": null,
+      "hourly_rate": 91.62
+     },
+     {
+      "labor_category": "Business Process Engineer I",
+      "level": null,
+      "hourly_rate": 92.04
+     },
+     {
+      "labor_category": "Business Process Engineer I",
+      "level": null,
+      "hourly_rate": 92.85
+     },
+     {
+      "labor_category": "Business Process Engineer II",
+      "level": null,
+      "hourly_rate": 105.38
+     },
+     {
+      "labor_category": "Business Process Engineer II",
+      "level": null,
+      "hourly_rate": 106.27
+     },
+     {
+      "labor_category": "Business Process Engineer II",
+      "level": null,
+      "hourly_rate": 106.83
+     },
+     {
+      "labor_category": "Business Process Engineer II",
+      "level": null,
+      "hourly_rate": 107.34
+     },
+     {
+      "labor_category": "Business Process Engineer II",
+      "level": null,
+      "hourly_rate": 108.27
+     },
+     {
+      "labor_category": "Business Process Engineer III",
+      "level": null,
+      "hourly_rate": 115.83
+     },
+     {
+      "labor_category": "Business Process Engineer III",
+      "level": null,
+      "hourly_rate": 120.33
+     },
+     {
+      "labor_category": "Business Process Engineer III",
+      "level": null,
+      "hourly_rate": 122.49
+     },
+     {
+      "labor_category": "Business Process Engineer III",
+      "level": null,
+      "hourly_rate": 126.32
+     },
+     {
+      "labor_category": "Business Process Engineer III",
+      "level": null,
+      "hourly_rate": 129.84
+     },
+     {
+      "labor_category": "Business Process Engineer IV",
+      "level": null,
+      "hourly_rate": 129.21
+     },
+     {
+      "labor_category": "Business Process Engineer IV",
+      "level": null,
+      "hourly_rate": 130.28
+     },
+     {
+      "labor_category": "Business Process Engineer IV",
+      "level": null,
+      "hourly_rate": 130.94
+     },
+     {
+      "labor_category": "Business Process Engineer IV",
+      "level": null,
+      "hourly_rate": 131.55
+     },
+     {
+      "labor_category": "Business Process Engineer IV",
+      "level": null,
+      "hourly_rate": 132.74
+     },
+     {
+      "labor_category": "COTS Technology Consultant I",
+      "level": null,
+      "hourly_rate": 95.22
+     },
+     {
+      "labor_category": "COTS Technology Consultant I",
+      "level": null,
+      "hourly_rate": 97.6
+     },
+     {
+      "labor_category": "COTS Technology Consultant I",
+      "level": null,
+      "hourly_rate": 100.04
+     },
+     {
+      "labor_category": "COTS Technology Consultant I",
+      "level": null,
+      "hourly_rate": 102.54
+     },
+     {
+      "labor_category": "COTS Technology Consultant I",
+      "level": null,
+      "hourly_rate": 105.11
+     },
+     {
+      "labor_category": "COTS Technology Consultant II",
+      "level": null,
+      "hourly_rate": 110.23
+     },
+     {
+      "labor_category": "COTS Technology Consultant II",
+      "level": null,
+      "hourly_rate": 112.99
+     },
+     {
+      "labor_category": "COTS Technology Consultant II",
+      "level": null,
+      "hourly_rate": 115.81
+     },
+     {
+      "labor_category": "COTS Technology Consultant II",
+      "level": null,
+      "hourly_rate": 118.71
+     },
+     {
+      "labor_category": "COTS Technology Consultant II",
+      "level": null,
+      "hourly_rate": 121.67
+     },
+     {
+      "labor_category": "COTS Technology Consultant III",
+      "level": null,
+      "hourly_rate": 135.76
+     },
+     {
+      "labor_category": "COTS Technology Consultant III",
+      "level": null,
+      "hourly_rate": 139.15
+     },
+     {
+      "labor_category": "COTS Technology Consultant III",
+      "level": null,
+      "hourly_rate": 142.63
+     },
+     {
+      "labor_category": "COTS Technology Consultant III",
+      "level": null,
+      "hourly_rate": 146.2
+     },
+     {
+      "labor_category": "COTS Technology Consultant III",
+      "level": null,
+      "hourly_rate": 149.85
+     },
+     {
+      "labor_category": "COTS Technology Consultant IV",
+      "level": null,
+      "hourly_rate": 175.34
+     },
+     {
+      "labor_category": "COTS Technology Consultant IV",
+      "level": null,
+      "hourly_rate": 179.72
+     },
+     {
+      "labor_category": "COTS Technology Consultant IV",
+      "level": null,
+      "hourly_rate": 184.22
+     },
+     {
+      "labor_category": "COTS Technology Consultant IV",
+      "level": null,
+      "hourly_rate": 188.82
+     },
+     {
+      "labor_category": "COTS Technology Consultant IV",
+      "level": null,
+      "hourly_rate": 193.54
+     },
+     {
+      "labor_category": "Database Administrator I",
+      "level": null,
+      "hourly_rate": 75.68
+     },
+     {
+      "labor_category": "Database Administrator I",
+      "level": null,
+      "hourly_rate": 77.57
+     },
+     {
+      "labor_category": "Database Administrator I",
+      "level": null,
+      "hourly_rate": 79.51
+     },
+     {
+      "labor_category": "Database Administrator I",
+      "level": null,
+      "hourly_rate": 81.14
+     },
+     {
+      "labor_category": "Database Administrator I",
+      "level": null,
+      "hourly_rate": 81.86
+     },
+     {
+      "labor_category": "Database Administrator II",
+      "level": null,
+      "hourly_rate": 95.14
+     },
+     {
+      "labor_category": "Database Administrator II",
+      "level": null,
+      "hourly_rate": 97.52
+     },
+     {
+      "labor_category": "Database Administrator II",
+      "level": null,
+      "hourly_rate": 99.96
+     },
+     {
+      "labor_category": "Database Administrator II",
+      "level": null,
+      "hourly_rate": 102.46
+     },
+     {
+      "labor_category": "Database Administrator II",
+      "level": null,
+      "hourly_rate": 105.02
+     },
+     {
+      "labor_category": "Database Administrator III",
+      "level": null,
+      "hourly_rate": 112.67
+     },
+     {
+      "labor_category": "Database Administrator III",
+      "level": null,
+      "hourly_rate": 115.49
+     },
+     {
+      "labor_category": "Database Administrator III",
+      "level": null,
+      "hourly_rate": 118.37
+     },
+     {
+      "labor_category": "Database Administrator III",
+      "level": null,
+      "hourly_rate": 121.33
+     },
+     {
+      "labor_category": "Database Administrator III",
+      "level": null,
+      "hourly_rate": 124.37
+     },
+     {
+      "labor_category": "Database Administrator IV",
+      "level": null,
+      "hourly_rate": 120.11
+     },
+     {
+      "labor_category": "Database Administrator IV",
+      "level": null,
+      "hourly_rate": 123.11
+     },
+     {
+      "labor_category": "Database Administrator IV",
+      "level": null,
+      "hourly_rate": 126.19
+     },
+     {
+      "labor_category": "Database Administrator IV",
+      "level": null,
+      "hourly_rate": 129.35
+     },
+     {
+      "labor_category": "Database Administrator IV",
+      "level": null,
+      "hourly_rate": 132.58
+     },
+     {
+      "labor_category": "Database Analyst/Programmer I",
+      "level": null,
+      "hourly_rate": 73.71
+     },
+     {
+      "labor_category": "Database Analyst/Programmer I",
+      "level": null,
+      "hourly_rate": 74.34
+     },
+     {
+      "labor_category": "Database Analyst/Programmer I",
+      "level": null,
+      "hourly_rate": 74.71
+     },
+     {
+      "labor_category": "Database Analyst/Programmer I",
+      "level": null,
+      "hourly_rate": 75.07
+     },
+     {
+      "labor_category": "Database Analyst/Programmer I",
+      "level": null,
+      "hourly_rate": 75.73
+     },
+     {
+      "labor_category": "Database Analyst/Programmer II",
+      "level": null,
+      "hourly_rate": 92.87
+     },
+     {
+      "labor_category": "Database Analyst/Programmer II",
+      "level": null,
+      "hourly_rate": 95.19
+     },
+     {
+      "labor_category": "Database Analyst/Programmer II",
+      "level": null,
+      "hourly_rate": 97.57
+     },
+     {
+      "labor_category": "Database Analyst/Programmer II",
+      "level": null,
+      "hourly_rate": 100.01
+     },
+     {
+      "labor_category": "Database Analyst/Programmer II",
+      "level": null,
+      "hourly_rate": 102.51
+     },
+     {
+      "labor_category": "Database Analyst/Programmer III",
+      "level": null,
+      "hourly_rate": 95.45
+     },
+     {
+      "labor_category": "Database Analyst/Programmer III",
+      "level": null,
+      "hourly_rate": 96.25
+     },
+     {
+      "labor_category": "Database Analyst/Programmer III",
+      "level": null,
+      "hourly_rate": 97.64
+     },
+     {
+      "labor_category": "Database Analyst/Programmer III",
+      "level": null,
+      "hourly_rate": 99.35
+     },
+     {
+      "labor_category": "Database Analyst/Programmer III",
+      "level": null,
+      "hourly_rate": 102.56
+     },
+     {
+      "labor_category": "Database Analyst/Programmer IV",
+      "level": null,
+      "hourly_rate": 100.79
+     },
+     {
+      "labor_category": "Database Analyst/Programmer IV",
+      "level": null,
+      "hourly_rate": 101.63
+     },
+     {
+      "labor_category": "Database Analyst/Programmer IV",
+      "level": null,
+      "hourly_rate": 102.14
+     },
+     {
+      "labor_category": "Database Analyst/Programmer IV",
+      "level": null,
+      "hourly_rate": 102.63
+     },
+     {
+      "labor_category": "Database Analyst/Programmer IV",
+      "level": null,
+      "hourly_rate": 103.56
+     },
+     {
+      "labor_category": "Documentation Specialist",
+      "level": null,
+      "hourly_rate": 64.25
+     },
+     {
+      "labor_category": "Documentation Specialist",
+      "level": null,
+      "hourly_rate": 65.86
+     },
+     {
+      "labor_category": "Documentation Specialist",
+      "level": null,
+      "hourly_rate": 67.5
+     },
+     {
+      "labor_category": "Documentation Specialist",
+      "level": null,
+      "hourly_rate": 69.19
+     },
+     {
+      "labor_category": "Documentation Specialist",
+      "level": null,
+      "hourly_rate": 70.92
+     },
+     {
+      "labor_category": "Emerging Technology Specialist I",
+      "level": null,
+      "hourly_rate": 127.32
+     },
+     {
+      "labor_category": "Emerging Technology Specialist I",
+      "level": null,
+      "hourly_rate": 128.4
+     },
+     {
+      "labor_category": "Emerging Technology Specialist I",
+      "level": null,
+      "hourly_rate": 129.02
+     },
+     {
+      "labor_category": "Emerging Technology Specialist I",
+      "level": null,
+      "hourly_rate": 129.65
+     },
+     {
+      "labor_category": "Emerging Technology Specialist I",
+      "level": null,
+      "hourly_rate": 130.78
+     },
+     {
+      "labor_category": "Emerging Technology Specialist II",
+      "level": null,
+      "hourly_rate": 150.05
+     },
+     {
+      "labor_category": "Emerging Technology Specialist II",
+      "level": null,
+      "hourly_rate": 151.33
+     },
+     {
+      "labor_category": "Emerging Technology Specialist II",
+      "level": null,
+      "hourly_rate": 152.06
+     },
+     {
+      "labor_category": "Emerging Technology Specialist II",
+      "level": null,
+      "hourly_rate": 152.82
+     },
+     {
+      "labor_category": "Emerging Technology Specialist II",
+      "level": null,
+      "hourly_rate": 154.15
+     },
+     {
+      "labor_category": "Emerging Technology Specialist III",
+      "level": null,
+      "hourly_rate": 176.15
+     },
+     {
+      "labor_category": "Emerging Technology Specialist III",
+      "level": null,
+      "hourly_rate": 177.63
+     },
+     {
+      "labor_category": "Emerging Technology Specialist III",
+      "level": null,
+      "hourly_rate": 178.52
+     },
+     {
+      "labor_category": "Emerging Technology Specialist III",
+      "level": null,
+      "hourly_rate": 179.35
+     },
+     {
+      "labor_category": "Emerging Technology Specialist III",
+      "level": null,
+      "hourly_rate": 180.94
+     },
+     {
+      "labor_category": "Emerging Technology Specialist IV",
+      "level": null,
+      "hourly_rate": 188.21
+     },
+     {
+      "labor_category": "Emerging Technology Specialist IV",
+      "level": null,
+      "hourly_rate": 189.76
+     },
+     {
+      "labor_category": "Emerging Technology Specialist IV",
+      "level": null,
+      "hourly_rate": 190.71
+     },
+     {
+      "labor_category": "Emerging Technology Specialist IV",
+      "level": null,
+      "hourly_rate": 191.63
+     },
+     {
+      "labor_category": "Emerging Technology Specialist IV",
+      "level": null,
+      "hourly_rate": 193.34
+     },
+     {
+      "labor_category": "Engineer/Architect II",
+      "level": null,
+      "hourly_rate": 125.44
+     },
+     {
+      "labor_category": "Engineer/Architect II",
+      "level": null,
+      "hourly_rate": 126.51
+     },
+     {
+      "labor_category": "Engineer/Architect II",
+      "level": null,
+      "hourly_rate": 127.15
+     },
+     {
+      "labor_category": "Engineer/Architect II",
+      "level": null,
+      "hourly_rate": 127.76
+     },
+     {
+      "labor_category": "Engineer/Architect II",
+      "level": null,
+      "hourly_rate": 128.91
+     },
+     {
+      "labor_category": "Engineer/Architect III",
+      "level": null,
+      "hourly_rate": 125.44
+     },
+     {
+      "labor_category": "Engineer/Architect III",
+      "level": null,
+      "hourly_rate": 126.51
+     },
+     {
+      "labor_category": "Engineer/Architect III",
+      "level": null,
+      "hourly_rate": 127.15
+     },
+     {
+      "labor_category": "Engineer/Architect III",
+      "level": null,
+      "hourly_rate": 127.76
+     },
+     {
+      "labor_category": "Engineer/Architect III",
+      "level": null,
+      "hourly_rate": 128.91
+     },
+     {
+      "labor_category": "Engineer/Architect IV",
+      "level": null,
+      "hourly_rate": 138.77
+     },
+     {
+      "labor_category": "Engineer/Architect IV",
+      "level": null,
+      "hourly_rate": 139.9
+     },
+     {
+      "labor_category": "Engineer/Architect IV",
+      "level": null,
+      "hourly_rate": 140.6
+     },
+     {
+      "labor_category": "Engineer/Architect IV",
+      "level": null,
+      "hourly_rate": 141.28
+     },
+     {
+      "labor_category": "Engineer/Architect IV",
+      "level": null,
+      "hourly_rate": 142.52
+     },
+     {
+      "labor_category": "Engineer/Architect V",
+      "level": null,
+      "hourly_rate": 148.39
+     },
+     {
+      "labor_category": "Engineer/Architect V",
+      "level": null,
+      "hourly_rate": 149.62
+     },
+     {
+      "labor_category": "Engineer/Architect V",
+      "level": null,
+      "hourly_rate": 150.39
+     },
+     {
+      "labor_category": "Engineer/Architect V",
+      "level": null,
+      "hourly_rate": 151.14
+     },
+     {
+      "labor_category": "Engineer/Architect V",
+      "level": null,
+      "hourly_rate": 152.44
+     },
+     {
+      "labor_category": "Executive Program Manager",
+      "level": null,
+      "hourly_rate": 200.03
+     },
+     {
+      "labor_category": "Executive Program Manager",
+      "level": null,
+      "hourly_rate": 205.03
+     },
+     {
+      "labor_category": "Executive Program Manager",
+      "level": null,
+      "hourly_rate": 210.16
+     },
+     {
+      "labor_category": "Executive Program Manager",
+      "level": null,
+      "hourly_rate": 215.41
+     },
+     {
+      "labor_category": "Executive Program Manager",
+      "level": null,
+      "hourly_rate": 220.8
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 150.88
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 154.65
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 158.52
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 162.48
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 166.54
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 175.22
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 179.6
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 184.09
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 188.69
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 193.41
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 100.86
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 103.38
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 105.97
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 108.62
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 111.33
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 130.44
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 133.7
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 137.04
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 140.47
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 143.98
+     }
+    ]
    },
    {
     "contract_number": "CW91684",
@@ -3960,6 +5026,7 @@ const DATA = {
     "median": 69.965,
     "max": 173.71,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Applications Systems Analyst",
@@ -4872,7 +5939,8 @@ const DATA = {
     "min": 57.33,
     "median": 187.04,
     "max": 500.32,
-    "pairing_ok_share": 0.0
+    "pairing_ok_share": 0.0,
+    "text_source": "native"
    },
    {
     "contract_number": "CW117585",
@@ -4883,7 +5951,8 @@ const DATA = {
     "min": 53.36,
     "median": 119.18,
     "max": 263.12,
-    "pairing_ok_share": 0.02
+    "pairing_ok_share": 0.02,
+    "text_source": "native"
    },
    {
     "contract_number": "CW82329",
@@ -4894,7 +5963,8 @@ const DATA = {
     "min": 82.72,
     "median": 172.04500000000002,
     "max": 297.06,
-    "pairing_ok_share": 0.3
+    "pairing_ok_share": 0.3,
+    "text_source": "native"
    },
    {
     "contract_number": "CW124033",
@@ -4905,7 +5975,8 @@ const DATA = {
     "min": 102.61,
     "median": 326.825,
     "max": 741.95,
-    "pairing_ok_share": 0.1
+    "pairing_ok_share": 0.1,
+    "text_source": "native"
    },
    {
     "contract_number": "CW124619",
@@ -4916,7 +5987,8 @@ const DATA = {
     "min": 125.0,
     "median": 202.5,
     "max": 410.0,
-    "pairing_ok_share": 0.12
+    "pairing_ok_share": 0.12,
+    "text_source": "native"
    },
    {
     "contract_number": "CW114527",
@@ -4928,6 +6000,7 @@ const DATA = {
     "median": 151.53,
     "max": 392.1,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "28 Category Director",
@@ -5421,6 +6494,7 @@ const DATA = {
     "median": 120.545,
     "max": 245.82,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Executive Officer",
@@ -5895,6 +6969,370 @@ const DATA = {
     ]
    },
    {
+    "contract_number": "CW107442",
+    "vendor": "V3Gate, LLC",
+    "title": "FY23-DOES-Identification Verification Software",
+    "work_type": "cots_implementation",
+    "n": 70,
+    "min": 66.92,
+    "median": 147.42000000000002,
+    "max": 224.87,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Business Analyst",
+      "level": null,
+      "hourly_rate": 111.72
+     },
+     {
+      "labor_category": "Business Analyst",
+      "level": null,
+      "hourly_rate": 114.54
+     },
+     {
+      "labor_category": "Business Analyst",
+      "level": null,
+      "hourly_rate": 117.44
+     },
+     {
+      "labor_category": "Business Analyst",
+      "level": null,
+      "hourly_rate": 120.41
+     },
+     {
+      "labor_category": "Business Analyst",
+      "level": null,
+      "hourly_rate": 123.46
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 171.57
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 175.91
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 180.36
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 184.92
+     },
+     {
+      "labor_category": "Program Manager I",
+      "level": null,
+      "hourly_rate": 189.6
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 195.51
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 200.45
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 205.52
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 210.72
+     },
+     {
+      "labor_category": "Program Manager II",
+      "level": null,
+      "hourly_rate": 216.06
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 139.65
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 143.27
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 146.99
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 150.81
+     },
+     {
+      "labor_category": "Project Manager I",
+      "level": null,
+      "hourly_rate": 154.72
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 149.62
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 153.51
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 157.49
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 161.58
+     },
+     {
+      "labor_category": "Project Manager II",
+      "level": null,
+      "hourly_rate": 165.77
+     },
+     {
+      "labor_category": "QA Analyst",
+      "level": null,
+      "hourly_rate": 97.75
+     },
+     {
+      "labor_category": "QA Analyst",
+      "level": null,
+      "hourly_rate": 100.23
+     },
+     {
+      "labor_category": "QA Analyst",
+      "level": null,
+      "hourly_rate": 102.76
+     },
+     {
+      "labor_category": "QA Analyst",
+      "level": null,
+      "hourly_rate": 105.36
+     },
+     {
+      "labor_category": "QA Analyst",
+      "level": null,
+      "hourly_rate": 108.03
+     },
+     {
+      "labor_category": "Solution Consultant I",
+      "level": null,
+      "hourly_rate": 108.73
+     },
+     {
+      "labor_category": "Solution Consultant I",
+      "level": null,
+      "hourly_rate": 111.48
+     },
+     {
+      "labor_category": "Solution Consultant I",
+      "level": null,
+      "hourly_rate": 114.3
+     },
+     {
+      "labor_category": "Solution Consultant I",
+      "level": null,
+      "hourly_rate": 117.19
+     },
+     {
+      "labor_category": "Solution Consultant I",
+      "level": null,
+      "hourly_rate": 120.15
+     },
+     {
+      "labor_category": "Solution Consultant II",
+      "level": null,
+      "hourly_rate": 140.64
+     },
+     {
+      "labor_category": "Solution Consultant II",
+      "level": null,
+      "hourly_rate": 144.2
+     },
+     {
+      "labor_category": "Solution Consultant II",
+      "level": null,
+      "hourly_rate": 147.85
+     },
+     {
+      "labor_category": "Solution Consultant II",
+      "level": null,
+      "hourly_rate": 151.59
+     },
+     {
+      "labor_category": "Solution Consultant II",
+      "level": null,
+      "hourly_rate": 155.43
+     },
+     {
+      "labor_category": "Solution Consultant III",
+      "level": null,
+      "hourly_rate": 172.56
+     },
+     {
+      "labor_category": "Solution Consultant III",
+      "level": null,
+      "hourly_rate": 176.93
+     },
+     {
+      "labor_category": "Solution Consultant III",
+      "level": null,
+      "hourly_rate": 181.41
+     },
+     {
+      "labor_category": "Solution Consultant III",
+      "level": null,
+      "hourly_rate": 186.0
+     },
+     {
+      "labor_category": "Solution Consultant III",
+      "level": null,
+      "hourly_rate": 190.7
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect I",
+      "level": null,
+      "hourly_rate": 164.58
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect I",
+      "level": null,
+      "hourly_rate": 168.75
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect I",
+      "level": null,
+      "hourly_rate": 173.02
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect I",
+      "level": null,
+      "hourly_rate": 177.4
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect I",
+      "level": null,
+      "hourly_rate": 181.88
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect II",
+      "level": null,
+      "hourly_rate": 203.49
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect II",
+      "level": null,
+      "hourly_rate": 208.63
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect II",
+      "level": null,
+      "hourly_rate": 213.91
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect II",
+      "level": null,
+      "hourly_rate": 219.32
+     },
+     {
+      "labor_category": "Solutions (Technical) Architect II",
+      "level": null,
+      "hourly_rate": 224.87
+     },
+     {
+      "labor_category": "Technical Engineer I - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 66.92
+     },
+     {
+      "labor_category": "Technical Engineer I - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 68.61
+     },
+     {
+      "labor_category": "Technical Engineer I - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 70.35
+     },
+     {
+      "labor_category": "Technical Engineer I - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 72.13
+     },
+     {
+      "labor_category": "Technical Engineer I - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 73.95
+     },
+     {
+      "labor_category": "Technical Engineer II",
+      "level": null,
+      "hourly_rate": 87.51
+     },
+     {
+      "labor_category": "Technical Engineer II",
+      "level": null,
+      "hourly_rate": 89.72
+     },
+     {
+      "labor_category": "Technical Engineer II",
+      "level": null,
+      "hourly_rate": 91.99
+     },
+     {
+      "labor_category": "Technical Engineer II",
+      "level": null,
+      "hourly_rate": 94.32
+     },
+     {
+      "labor_category": "Technical Engineer II",
+      "level": null,
+      "hourly_rate": 96.7
+     },
+     {
+      "labor_category": "Technical Engineer III - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 94.72
+     },
+     {
+      "labor_category": "Technical Engineer III - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 97.12
+     },
+     {
+      "labor_category": "Technical Engineer III - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 99.57
+     },
+     {
+      "labor_category": "Technical Engineer III - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 102.09
+     },
+     {
+      "labor_category": "Technical Engineer III - Network & Infrastructure",
+      "level": null,
+      "hourly_rate": 104.68
+     }
+    ]
+   },
+   {
     "contract_number": "CW114593",
     "vendor": "LimnoTech",
     "title": "DOEE-TMDL Implementation Plan-FY24",
@@ -5903,7 +7341,8 @@ const DATA = {
     "min": 90.0,
     "median": 191.0,
     "max": 276.0,
-    "pairing_ok_share": 0.25
+    "pairing_ok_share": 0.25,
+    "text_source": "native"
    },
    {
     "contract_number": "CW134571",
@@ -5915,6 +7354,7 @@ const DATA = {
     "median": 140.0,
     "max": 1015.0,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Administrative",
@@ -6128,6 +7568,7 @@ const DATA = {
     "median": 339.4,
     "max": 533.27,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Analyst",
@@ -6321,6 +7762,7 @@ const DATA = {
     "median": 115.0,
     "max": 295.0,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Administrative Assistant I",
@@ -6504,6 +7946,7 @@ const DATA = {
     "median": 167.33,
     "max": 339.31,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Business Process Manager Expert",
@@ -6677,6 +8120,7 @@ const DATA = {
     "median": 167.33,
     "max": 339.31,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Business Process Manager Expert",
@@ -6850,6 +8294,7 @@ const DATA = {
     "median": 173.91,
     "max": 241.64,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Enterprise Architect (2)",
@@ -6988,6 +8433,7 @@ const DATA = {
     "median": 334.0,
     "max": 422.0,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Associate",
@@ -7106,6 +8552,7 @@ const DATA = {
     "median": 112.0,
     "max": 125.0,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Communicating Plan",
@@ -7210,6 +8657,115 @@ const DATA = {
     ]
    },
    {
+    "contract_number": "CW53341",
+    "vendor": "Incapsulate, LLC",
+    "title": "Incapsulate, LLC - DOT Customer Relationship Management System",
+    "work_type": "cots_implementation",
+    "n": 19,
+    "min": 90.0,
+    "median": 130.0,
+    "max": 150.0,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Consulting Engineer (Per Hour)",
+      "level": null,
+      "hourly_rate": 90.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- AT&T ACT Soft",
+      "level": null,
+      "hourly_rate": 150.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- AVAYA (CTI)",
+      "level": null,
+      "hourly_rate": 150.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- Blackboard Connect",
+      "level": null,
+      "hourly_rate": 110.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- Citizen facing web portal",
+      "level": null,
+      "hourly_rate": 130.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- Data Conversion/Migration for Tote and ACT",
+      "level": null,
+      "hourly_rate": 130.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- FASTER",
+      "level": null,
+      "hourly_rate": 110.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- FASTER",
+      "level": null,
+      "hourly_rate": 130.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- FASTER",
+      "level": null,
+      "hourly_rate": 150.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- NAVMAN",
+      "level": null,
+      "hourly_rate": 150.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- Project Manager",
+      "level": null,
+      "hourly_rate": 125.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- Replace ACT",
+      "level": null,
+      "hourly_rate": 130.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- Replace Tote",
+      "level": null,
+      "hourly_rate": 130.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- SEDS",
+      "level": null,
+      "hourly_rate": 110.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- SLIMS",
+      "level": null,
+      "hourly_rate": 110.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- TRAPEZE",
+      "level": null,
+      "hourly_rate": 150.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour) -- Time & Attendance (ADP)",
+      "level": null,
+      "hourly_rate": 110.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour)-- Data Mapping (8 Systems)",
+      "level": null,
+      "hourly_rate": 130.0
+     },
+     {
+      "labor_category": "Consulting Engineer (Per Hour)-- Production Bug Fix Only",
+      "level": null,
+      "hourly_rate": 90.0
+     }
+    ]
+   },
+   {
     "contract_number": "CW102023",
     "vendor": "RAZAVI APPLICATION DEVELOPERS",
     "title": "DCRA - Accela Enhancement and Support Services",
@@ -7219,6 +8775,7 @@ const DATA = {
     "median": 125.07,
     "max": 142.29,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Business Analyst 3",
@@ -7307,6 +8864,7 @@ const DATA = {
     "median": 157.5,
     "max": 189.12,
     "pairing_ok_share": 0.87,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Database Developer",
@@ -7385,6 +8943,7 @@ const DATA = {
     "median": 84.2,
     "max": 272.65,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Administrative Program Manager",
@@ -7473,6 +9032,7 @@ const DATA = {
     "median": 185.4,
     "max": 220.39,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Azure Administrator",
@@ -7556,6 +9116,7 @@ const DATA = {
     "median": 188.525,
     "max": 252.38,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Analyst I",
@@ -7629,6 +9190,7 @@ const DATA = {
     "median": 317.47,
     "max": 533.97,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Advisor",
@@ -7696,7 +9258,8 @@ const DATA = {
     "min": 200.0,
     "median": 200.0,
     "max": 250.0,
-    "pairing_ok_share": 0.67
+    "pairing_ok_share": 0.67,
+    "text_source": "native"
    },
    {
     "contract_number": "CW92465",
@@ -7708,6 +9271,7 @@ const DATA = {
     "median": 175.92,
     "max": 192.23,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Project Manager",
@@ -7757,6 +9321,60 @@ const DATA = {
     ]
    },
    {
+    "contract_number": "CW46410",
+    "vendor": "PUBLIC WORKS SOLUTIONS LLC",
+    "title": "Trakster System Support and Data Management Analysis",
+    "work_type": "it_consulting_advisory",
+    "n": 8,
+    "min": 45.0,
+    "median": 90.0,
+    "max": 140.0,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Admin Analyst",
+      "level": null,
+      "hourly_rate": 45.0
+     },
+     {
+      "labor_category": "Junior Analyst",
+      "level": null,
+      "hourly_rate": 55.0
+     },
+     {
+      "labor_category": "Junior Analyst",
+      "level": null,
+      "hourly_rate": 60.0
+     },
+     {
+      "labor_category": "Management Analyst",
+      "level": null,
+      "hourly_rate": 90.0
+     },
+     {
+      "labor_category": "Management Analyst",
+      "level": null,
+      "hourly_rate": 95.0
+     },
+     {
+      "labor_category": "Principal Management Analyst",
+      "level": null,
+      "hourly_rate": 140.0
+     },
+     {
+      "labor_category": "Programmer Analyst",
+      "level": null,
+      "hourly_rate": 90.0
+     },
+     {
+      "labor_category": "Programmer Analyst",
+      "level": null,
+      "hourly_rate": 95.0
+     }
+    ]
+   },
+   {
     "contract_number": "CW121292",
     "vendor": "LIMBIC SYSTEMS INC",
     "title": "DOB - Enhancement (System Support Services)",
@@ -7766,6 +9384,7 @@ const DATA = {
     "median": 149.44,
     "max": 155.0,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Program Manager",
@@ -7809,6 +9428,7 @@ const DATA = {
     "median": 164.92,
     "max": 210.8,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Business Analyst/Unemployment Insurance SME",
@@ -7847,6 +9467,7 @@ const DATA = {
     "median": 175.43,
     "max": 233.76,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Business Analyst and Unemployment Insurance SME",
@@ -7885,6 +9506,7 @@ const DATA = {
     "median": 194.18,
     "max": 204.01,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Developer II",
@@ -7923,6 +9545,7 @@ const DATA = {
     "median": 297.08,
     "max": 352.85,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Advisor",
@@ -7952,6 +9575,84 @@ const DATA = {
     ]
    },
    {
+    "contract_number": "CW49776",
+    "vendor": "MTW Solutions, LLC",
+    "title": "FY17_GD0_EGMS Hosting, Maintenenance, Tech Support, and Enhancements",
+    "work_type": "software_om_support",
+    "n": 5,
+    "min": 118.49,
+    "median": 124.49,
+    "max": 130.79,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 118.49
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 121.45
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 124.49
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 127.6
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 130.79
+     }
+    ]
+   },
+   {
+    "contract_number": "CW93023",
+    "vendor": "MTW Solutions, LLC",
+    "title": "GD0_EGMS_Hosting, Maintenance, Technical Assistance and Enhancements",
+    "work_type": "software_om_support",
+    "n": 5,
+    "min": 130.79,
+    "median": 134.74,
+    "max": 138.82,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 130.79
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 132.75
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 134.74
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 136.76
+     },
+     {
+      "labor_category": "Technical Support Hours",
+      "level": null,
+      "hourly_rate": 138.82
+     }
+    ]
+   },
+   {
     "contract_number": "CW101930",
     "vendor": "Diona US, Inc.",
     "title": "SME-Mastery Level Program Manager IV",
@@ -7960,7 +9661,8 @@ const DATA = {
     "min": 201.0,
     "median": 210.0,
     "max": 220.0,
-    "pairing_ok_share": 0.75
+    "pairing_ok_share": 0.75,
+    "text_source": "native"
    },
    {
     "contract_number": "CW120701",
@@ -7972,6 +9674,7 @@ const DATA = {
     "median": 437.0,
     "max": 523.0,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Hans Ipson - Partner",
@@ -7996,6 +9699,40 @@ const DATA = {
     ]
    },
    {
+    "contract_number": "CW73403",
+    "vendor": "ADVANCED NETWORK CONSULTING",
+    "title": "OCTO ITFM CAPABILITY MATURITY ASSESSMENT",
+    "work_type": "it_consulting_advisory",
+    "n": 4,
+    "min": 149.5,
+    "median": 157.465,
+    "max": 179.81,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Enterprise Architect",
+      "level": null,
+      "hourly_rate": 165.43
+     },
+     {
+      "labor_category": "Maintenance and Support",
+      "level": null,
+      "hourly_rate": 149.5
+     },
+     {
+      "labor_category": "Program Manager",
+      "level": null,
+      "hourly_rate": 149.5
+     },
+     {
+      "labor_category": "Senior Consultant",
+      "level": null,
+      "hourly_rate": 179.81
+     }
+    ]
+   },
+   {
     "contract_number": "CW98371",
     "vendor": "DataPillars Inc.",
     "title": "FY22-DBH-CSA-MicroStrategy Dashboard Design and Development Services",
@@ -8004,7 +9741,8 @@ const DATA = {
     "min": 106.37,
     "median": 106.37,
     "max": 106.37,
-    "pairing_ok_share": 0.75
+    "pairing_ok_share": 0.75,
+    "text_source": "native"
    },
    {
     "contract_number": "CW99714",
@@ -8016,6 +9754,7 @@ const DATA = {
     "median": 258.22,
     "max": 336.61,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Senior Consultant \u2013 ESM",
@@ -8040,6 +9779,35 @@ const DATA = {
     ]
    },
    {
+    "contract_number": "CW107416",
+    "vendor": "E7STRATEGIES INC",
+    "title": "SNF and HHA Payment Methodology Consultant",
+    "work_type": "it_consulting_advisory",
+    "n": 3,
+    "min": 63.9,
+    "median": 66.6,
+    "max": 69.3,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "SNF and HHA Payment Methodology Consultant",
+      "level": null,
+      "hourly_rate": 63.9
+     },
+     {
+      "labor_category": "SNF and HHA Payment Methodology Consultant",
+      "level": null,
+      "hourly_rate": 66.6
+     },
+     {
+      "labor_category": "SNF and HHA Payment Methodology Consultant",
+      "level": null,
+      "hourly_rate": 69.3
+     }
+    ]
+   },
+   {
     "contract_number": "CW91989",
     "vendor": "THE TRIAGE GROUP, LLC",
     "title": "DCSS-IT Equipment & Software- The Triage Group, LLC",
@@ -8048,7 +9816,8 @@ const DATA = {
     "min": 310.87,
     "median": 321.76,
     "max": 349.48,
-    "pairing_ok_share": 0.0
+    "pairing_ok_share": 0.0,
+    "text_source": "native"
    },
    {
     "contract_number": "CW104434",
@@ -8060,11 +9829,31 @@ const DATA = {
     "median": 157.05,
     "max": 157.05,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Data Management Consultant as described in Section C.5",
       "level": null,
       "hourly_rate": 157.05
+     }
+    ]
+   },
+   {
+    "contract_number": "CW125764",
+    "vendor": "Taoti Enterprises, Inc",
+    "title": "DC.gov Redesign",
+    "work_type": "custom_software_build",
+    "n": 1,
+    "min": 200.39,
+    "median": 200.39,
+    "max": 200.39,
+    "pairing_ok_share": 1.0,
+    "text_source": "ocr",
+    "rows": [
+     {
+      "labor_category": "Advisory Services (C.5.12) \u2013 Back End Developer",
+      "level": "Senior",
+      "hourly_rate": 200.39
      }
     ]
    },
@@ -8078,6 +9867,7 @@ const DATA = {
     "median": 122.93,
     "max": 122.93,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Amorphic Use Case MDM/Entity Resolution Implementation",
@@ -8096,6 +9886,7 @@ const DATA = {
     "median": 150.0,
     "max": 150.0,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Implementation/Technical Assistance to Proprietary Database Upgrades",
@@ -8114,6 +9905,7 @@ const DATA = {
     "median": 126.62,
     "max": 126.62,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Senior Communications Manager",
@@ -8132,6 +9924,7 @@ const DATA = {
     "median": 173.5,
     "max": 173.5,
     "pairing_ok_share": 1.0,
+    "text_source": "native",
     "rows": [
      {
       "labor_category": "Contract Specialist III",
@@ -8162,6 +9955,13 @@ const DATA = {
     "labor_category": "Developer II (Open Market)",
     "level": null,
     "hourly_rate": 204.01
+   },
+   {
+    "contract_number": "CW125764",
+    "vendor": "Taoti Enterprises, Inc",
+    "labor_category": "Advisory Services (C.5.12) \u2013 Back End Developer",
+    "level": "Senior",
+    "hourly_rate": 200.39
    },
    {
     "contract_number": "CW121655",
@@ -8304,11 +10104,102 @@ const DATA = {
     "hourly_rate": 109.51
    },
    {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer IV",
+    "level": null,
+    "hourly_rate": 103.56
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer IV",
+    "level": null,
+    "hourly_rate": 102.63
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer III",
+    "level": null,
+    "hourly_rate": 102.56
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer II",
+    "level": null,
+    "hourly_rate": 102.51
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer IV",
+    "level": null,
+    "hourly_rate": 102.14
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer IV",
+    "level": null,
+    "hourly_rate": 101.63
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer IV",
+    "level": null,
+    "hourly_rate": 100.79
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer II",
+    "level": null,
+    "hourly_rate": 100.01
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer III",
+    "level": null,
+    "hourly_rate": 99.35
+   },
+   {
     "contract_number": "CW91684",
     "vendor": "COMPUTER AID, INC.",
     "labor_category": "Applications Technical Specialist",
     "level": "Journeyman",
     "hourly_rate": 98.59
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer III",
+    "level": null,
+    "hourly_rate": 97.64
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer II",
+    "level": null,
+    "hourly_rate": 97.57
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer III",
+    "level": null,
+    "hourly_rate": 96.25
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer III",
+    "level": null,
+    "hourly_rate": 95.45
    },
    {
     "contract_number": "CW100374",
@@ -8318,11 +10209,39 @@ const DATA = {
     "hourly_rate": 95.23
    },
    {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer II",
+    "level": null,
+    "hourly_rate": 95.19
+   },
+   {
+    "contract_number": "CW46410",
+    "vendor": "PUBLIC WORKS SOLUTIONS LLC",
+    "labor_category": "Programmer Analyst",
+    "level": null,
+    "hourly_rate": 95.0
+   },
+   {
     "contract_number": "CW91684",
     "vendor": "COMPUTER AID, INC.",
     "labor_category": "Mobile App Developer",
     "level": "Master",
     "hourly_rate": 94.89
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer II",
+    "level": null,
+    "hourly_rate": 92.87
+   },
+   {
+    "contract_number": "CW46410",
+    "vendor": "PUBLIC WORKS SOLUTIONS LLC",
+    "labor_category": "Programmer Analyst",
+    "level": null,
+    "hourly_rate": 90.0
    },
    {
     "contract_number": "CW91684",
@@ -8365,6 +10284,41 @@ const DATA = {
     "labor_category": "Web Developer",
     "level": "Master",
     "hourly_rate": 77.0
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer I",
+    "level": null,
+    "hourly_rate": 75.73
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer I",
+    "level": null,
+    "hourly_rate": 75.07
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer I",
+    "level": null,
+    "hourly_rate": 74.71
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer I",
+    "level": null,
+    "hourly_rate": 74.34
+   },
+   {
+    "contract_number": "CW48317",
+    "vendor": "ZC Solutions",
+    "labor_category": "Database Analyst/Programmer I",
+    "level": null,
+    "hourly_rate": 73.71
    },
    {
     "contract_number": "CW91684",
@@ -8748,7 +10702,7 @@ const DATA = {
    ]
   },
   "sequential_gated_deliverables": {
-   "n": 94,
+   "n": 95,
    "examples": [
     {
      "contract_number": "CW102877",

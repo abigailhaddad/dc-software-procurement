@@ -31,7 +31,7 @@ augmentation and inside task orders this data cannot see. Ordering vehicles
 carry $1.8B. Half of the $579M in traceable technology payments went to ten
 vendors, and 17% to one — measured on the 44% of contracts whose payments carry
 their number, though the top vendor is corroborated separately by the
-purchase-order table. 42 award documents publish hourly rate cards — 2,146
+purchase-order table. 51 award documents publish hourly rate cards — 2,471
 not-to-exceed rates, $24.01 to $1,015 — and job ads recruiting for the same
 tier names show what the workers are offered against them.
 
@@ -134,9 +134,10 @@ links those back to their vehicle. Schedule vehicles carry the largest ceilings
 in the technology set, so the biggest single channel of technology buying cannot
 be followed. That is the largest gap.
 
-Delivery structure could be read for 362 of 476 candidate contracts: 288 with
-a native text layer, 74 scans recovered by vision-model OCR (`make ocr`). Of
-the rest, 113 have no award document attached at all.
+Delivery structure could be read for 363 of 476 candidate contracts: 288 with
+a native text layer, 75 recovered from scans and extraction failures by
+vision-model OCR (`make ocr`). The remaining 113 have no award document
+attached at all.
 
 The portal is live and counts move between pulls, so `data/raw/manifest.json`
 records the date of the snapshot every figure was computed from.

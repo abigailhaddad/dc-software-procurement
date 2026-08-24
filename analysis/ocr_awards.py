@@ -177,7 +177,18 @@ def ocr_pdf_bytes(pdf_bytes: bytes, label: str) -> str:
     with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
         targets = _pages_needing_ocr(doc)
         if not targets:
-            log.warning("  %s: no pages flagged for OCR (%d pages)", label, doc.page_count)
+            # FALLBACK PATH, no model involved: the pages carry a readable text
+            # layer that PyMuPDF can see even though the pipeline's extractors
+            # (pdftotext/pypdf) returned near-nothing -- CW93241 is the known
+            # case. Extract natively and cache it under data/pdftext_ocr/ like
+            # any OCR result; data/pdftext/ is never touched.
+            text = "\n".join(page.get_text() for page in doc)
+            if len(text.strip()) >= MIN_TEXT_CHARS and not is_gibberish(text):
+                log.info("  %s: no pages need OCR; recovered %d chars of native "
+                         "text via PyMuPDF", label, len(text))
+                return text
+            log.warning("  %s: no pages flagged for OCR and no usable native "
+                        "text either (%d pages)", label, doc.page_count)
             return ""
         if len(targets) > MAX_OCR_PAGES:
             log.info("  %s: %d scanned pages, OCRing the first %d",
@@ -276,8 +287,15 @@ def run_ocr(targets: list[dict], limit: int | None = None) -> dict[str, str]:
             doc_id = target["document_id"]
             cache = _ocr_cache_path(doc_id)
             if cache.exists():
-                results[doc_id] = gzip.decompress(cache.read_bytes()).decode("utf-8")
-                continue
+                cached_text = gzip.decompress(cache.read_bytes()).decode("utf-8")
+                # An empty cache entry is not treated as an answer (same rule as
+                # the reference implementation): fall through and retry, so an
+                # extractor improvement -- like the native-text fallback -- can
+                # reach documents that previously yielded nothing.
+                if cached_text.strip():
+                    results[doc_id] = cached_text
+                    continue
+                log.info("%s: cached OCR text is empty, retrying", target["contract_number"])
             label = f"{target['contract_number']} ({n}/{len(todo)})"
             log.info("%s: downloading", label)
             try:

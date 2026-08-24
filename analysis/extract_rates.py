@@ -61,6 +61,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from dcprocure.classify import DEFAULT_MODEL, _load_dotenv  # noqa: E402
 from dcprocure.documents import (  # noqa: E402
     MIN_TEXT_CHARS,
+    _digest,
     _text_path,
     pick_award_document,
 )
@@ -71,6 +72,34 @@ DETAILS_PATH = ROOT / "data" / "raw" / "contract_details.json"
 LABELS_PATH = ROOT / "data" / "contract_classifications.csv"
 CACHE_DIR = ROOT / "data" / "ratecache"
 OUT_PATH = ROOT / "data" / "labor_rates.csv"
+
+#: OCR fallback texts for scanned awards, same sha1-of-document-id naming as
+#: data/pdftext. Used ONLY where the native text layer is missing or unusable,
+#: never in place of a native text: the OCR text is itself the output of a
+#: recognition model, so for these documents "verbatim verification" verifies
+#: each rate against the OCR's reading of the page, not against the original
+#: pixels -- one more model layer between the published number and the CSV,
+#: recorded per row in the ``text_source`` column ("native" or "ocr").
+OCR_TEXT_DIR = ROOT / "data" / "pdftext_ocr"
+
+
+def load_award_text(document_id: str) -> tuple[str, str] | None:
+    """The best cached text for a document: (text, source) or None.
+
+    Native extraction wins whenever it is usable; the OCR fallback only fills
+    in for scanned awards with no text layer. Nothing is ever fetched.
+    """
+    native = _text_path(document_id)
+    if native.exists():
+        text = gzip.decompress(native.read_bytes()).decode("utf-8")
+        if len(text) >= MIN_TEXT_CHARS:
+            return text, "native"
+    ocr = OCR_TEXT_DIR / f"{_digest(document_id)}.txt.gz"
+    if ocr.exists():
+        text = gzip.decompress(ocr.read_bytes()).decode("utf-8")
+        if len(text) >= MIN_TEXT_CHARS:
+            return text, "ocr"
+    return None
 
 # Plausible hourly rates for a person's time. Below 15 is minimum-wage
 # territory and mostly unit prices for goods; above 500/hour nobody bills
@@ -569,7 +598,7 @@ def main(model: str = DEFAULT_MODEL) -> int:
     }
 
     # Candidate set: technology contracts whose award text is already cached.
-    scanned, candidates = 0, []
+    scanned, scanned_ocr, candidates = 0, 0, []
     no_hour_evidence: list[str] = []
     gold_candidate: dict | None = None
     for label in tech.itertuples():
@@ -577,13 +606,13 @@ def main(model: str = DEFAULT_MODEL) -> int:
         document = pick_award_document(detail) if detail else None
         if document is None:
             continue
-        cached = _text_path(document["id"])
-        if not cached.exists():
-            continue  # never fetch; this script reads only the local cache
-        text = gzip.decompress(cached.read_bytes()).decode("utf-8")
-        if len(text) < MIN_TEXT_CHARS:
-            continue  # scanned award, no text layer
+        loaded = load_award_text(document["id"])
+        if loaded is None:
+            continue  # no usable cached text, native or OCR; never fetch
+        text, text_source = loaded
         scanned += 1
+        if text_source == "ocr":
+            scanned_ocr += 1
         if not looks_like_rate_card(text):
             continue
         if not HOURLY_EVIDENCE.search(text):
@@ -596,6 +625,7 @@ def main(model: str = DEFAULT_MODEL) -> int:
             "work_type": label.work_type,
             "ceiling": label.ceiling,
             "text": text,
+            "text_source": text_source,
             "chunks": rate_chunks(text),
         }
         if label.contract_number == GOLD_CONTRACT:
@@ -656,6 +686,7 @@ def main(model: str = DEFAULT_MODEL) -> int:
                         normdocs[contract],
                         span_caches[contract],
                     ),
+                    "text_source": candidate["text_source"],
                 }
             )
     if failed:
@@ -675,13 +706,14 @@ def main(model: str = DEFAULT_MODEL) -> int:
                     "ceiling": gold_candidate["ceiling"],
                     **rate,
                     "pairing": "deterministic",
+                    "text_source": gold_candidate["text_source"],
                 }
             )
 
     frame = pd.DataFrame(
         rows,
         columns=["contract_number", "vendor", "title", "work_type", "ceiling",
-                 "labor_category", "level", "hourly_rate", "pairing"],
+                 "labor_category", "level", "hourly_rate", "pairing", "text_source"],
     ).sort_values(["contract_number", "labor_category", "level", "hourly_rate"])
 
     gold_check(frame)
@@ -692,7 +724,8 @@ def main(model: str = DEFAULT_MODEL) -> int:
 
     with_rates = frame.contract_number.nunique()
     by_pairing = frame.pairing.value_counts()
-    print(f"\ncontracts scanned:          {scanned:,}")
+    print(f"\ncontracts scanned:          {scanned:,} "
+          f"({scanned - scanned_ocr:,} native text, {scanned_ocr:,} OCR fallback)")
     print(f"sent to the LLM:            {len(candidates):,} "
           f"(+ {GOLD_CONTRACT} reconstructed deterministically)")
     print(f"with >= 1 verified rate:    {with_rates:,}")
@@ -700,6 +733,10 @@ def main(model: str = DEFAULT_MODEL) -> int:
     print("pairing:                    "
           + ", ".join(f"{s}: {by_pairing.get(s, 0):,}"
                       for s in ("deterministic", "proximate", "unverified")))
+    ocr_rows = frame[frame.text_source == "ocr"]
+    print(f"from OCR fallback text:     {len(ocr_rows):,} rates "
+          f"across {ocr_rows.contract_number.nunique()} contracts "
+          f"(verified against the OCR reading, not the original pixels)")
     if len(frame):
         print(f"hourly rate min/median/max: {frame.hourly_rate.min():.2f} / "
               f"{frame.hourly_rate.median():.2f} / {frame.hourly_rate.max():.2f}")
@@ -733,6 +770,9 @@ def main(model: str = DEFAULT_MODEL) -> int:
         with pd.option_context("display.max_rows", None, "display.width", 200,
                                "display.max_columns", None, "display.max_colwidth", 40):
             print(f"\n{per.round(2)}")
+            if len(ocr_rows):
+                print("\ncontracts read from OCR text only:")
+                print(per.loc[per.index.isin(ocr_rows.contract_number.unique())].round(2))
     return 0
 
 

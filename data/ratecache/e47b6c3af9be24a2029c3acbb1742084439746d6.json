@@ -1,0 +1,422 @@
+[
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 195.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 200.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 205.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 210.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 216.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 171.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 175.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 180.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 184.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 189.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 149.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 153.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 157.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 161.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 165.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 139.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 143.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 146.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 150.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 154.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect II",
+  "level": "",
+  "hourly_rate": 203.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect II",
+  "level": "",
+  "hourly_rate": 208.63,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect II",
+  "level": "",
+  "hourly_rate": 213.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect II",
+  "level": "",
+  "hourly_rate": 219.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect II",
+  "level": "",
+  "hourly_rate": 224.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect I",
+  "level": "",
+  "hourly_rate": 164.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect I",
+  "level": "",
+  "hourly_rate": 168.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect I",
+  "level": "",
+  "hourly_rate": 173.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect I",
+  "level": "",
+  "hourly_rate": 177.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solutions (Technical) Architect I",
+  "level": "",
+  "hourly_rate": 181.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant III",
+  "level": "",
+  "hourly_rate": 172.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant III",
+  "level": "",
+  "hourly_rate": 176.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant III",
+  "level": "",
+  "hourly_rate": 181.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant III",
+  "level": "",
+  "hourly_rate": 186.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant III",
+  "level": "",
+  "hourly_rate": 190.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant II",
+  "level": "",
+  "hourly_rate": 140.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant II",
+  "level": "",
+  "hourly_rate": 144.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant II",
+  "level": "",
+  "hourly_rate": 147.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant II",
+  "level": "",
+  "hourly_rate": 151.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant II",
+  "level": "",
+  "hourly_rate": 155.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant I",
+  "level": "",
+  "hourly_rate": 108.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant I",
+  "level": "",
+  "hourly_rate": 111.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant I",
+  "level": "",
+  "hourly_rate": 114.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant I",
+  "level": "",
+  "hourly_rate": 117.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Solution Consultant I",
+  "level": "",
+  "hourly_rate": 120.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 111.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 114.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 117.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 120.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 123.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "QA Analyst",
+  "level": "",
+  "hourly_rate": 97.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "QA Analyst",
+  "level": "",
+  "hourly_rate": 100.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "QA Analyst",
+  "level": "",
+  "hourly_rate": 102.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "QA Analyst",
+  "level": "",
+  "hourly_rate": 105.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "QA Analyst",
+  "level": "",
+  "hourly_rate": 108.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer III - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 94.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer III - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 97.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer III - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 99.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer III - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 102.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer III - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 104.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer II",
+  "level": "",
+  "hourly_rate": 87.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer II",
+  "level": "",
+  "hourly_rate": 89.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer II",
+  "level": "",
+  "hourly_rate": 91.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer II",
+  "level": "",
+  "hourly_rate": 94.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer II",
+  "level": "",
+  "hourly_rate": 96.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer I - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 66.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer I - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 68.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer I - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 70.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer I - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 72.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Engineer I - Network & Infrastructure",
+  "level": "",
+  "hourly_rate": 73.95,
+  "unit": "hour"
+ }
+]

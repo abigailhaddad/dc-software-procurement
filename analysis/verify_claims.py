@@ -304,13 +304,20 @@ def main() -> int:
     # assignment could also be verified (deterministic reconstruction for
     # CW91684, text proximity for row-oriented tables).
     lr = pd.read_csv(ROOT / "data" / "labor_rates.csv")
-    check("contracts publishing hourly rates", lr.contract_number.nunique(), 42)
-    check("published hourly rates", len(lr), 2146)
+    check("contracts publishing hourly rates", lr.contract_number.nunique(), 51)
+    check("published hourly rates", len(lr), 2471)
     check("rates with verified category pairing",
-          int(lr.pairing.isin(["deterministic", "proximate"]).sum()), 1304)
+          int(lr.pairing.isin(["deterministic", "proximate"]).sum()), 1629)
     check("lowest published rate", float(lr.hourly_rate.min()), 24.01)
     check("highest published rate", float(lr.hourly_rate.max()), 1015.0)
-    check("median published rate", float(lr.hourly_rate.median()), 150.0, 0.5)
+    check("median published rate", float(lr.hourly_rate.median()), 144.05, 0.5)
+    # 325 rates come from OCR-recovered scans; their verification is against
+    # the OCR's reading, one model layer from the pixels, and every one of
+    # them carries a proximity-verified pairing.
+    ocr_rates = lr[lr.text_source == "ocr"]
+    check("rates from OCR-recovered scans", len(ocr_rates), 325)
+    check("all OCR rates pairing-verified", bool((ocr_rates.pairing == "proximate").all()), True)
+    check("native rows unchanged", int((lr.text_source == "native").sum()), 2146)
     cai_card = lr[lr.contract_number == "CW91684"].set_index(["labor_category", "level"])
     for cat, lvl, want in [
         ("Enterprise Architect", "Entry", 75.83),
@@ -430,19 +437,19 @@ def main() -> int:
     # classified into data/delivery_structure_ocr.csv (separate file; the
     # native results are untouched). The briefing states combined figures.
     ocr = pd.read_csv(ROOT / "data" / "delivery_structure_ocr.csv")
-    check("awards recovered by OCR", len(ocr), 74)
+    check("awards recovered by OCR", len(ocr), 75)
     check("overlap with the native readable set",
           len(set(ocr.contract_number) & set(delivery.contract_number)), 0)
     combined = pd.concat([delivery, ocr], ignore_index=True)
-    check("readable awards combined", len(combined), 362)
-    check("of 476 candidates, contracts with no award document at all", 476 - 362 - 1, 113)
+    check("readable awards combined", len(combined), 363)
+    check("of 476 candidates, contracts with no award document at all", 476 - 363, 113)
     check("combined recurring operations",
           int((combined.delivery_structure == "recurring_operations").sum()), 108)
     check("combined sequential and gated",
-          int((combined.delivery_structure == "sequential_gated_deliverables").sum()), 94)
+          int((combined.delivery_structure == "sequential_gated_deliverables").sum()), 95)
     gated_combined = combined[combined.delivery_structure == "sequential_gated_deliverables"]
     check("of those, scope fixed in advance",
-          int((gated_combined.scope_fixed_in_advance == "yes").sum()), 85)
+          int((gated_combined.scope_fixed_in_advance == "yes").sum()), 86)
     combined_commits = combined[combined.agile_mention_kind == "delivery_commitment"]
     check("combined delivery commitments", len(combined_commits), 14)
     check("of those, structurally gated",

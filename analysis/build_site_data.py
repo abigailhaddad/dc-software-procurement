@@ -147,6 +147,7 @@ def main() -> int:
             "median": float(rows.hourly_rate.median()),
             "max": float(rows.hourly_rate.max()),
             "pairing_ok_share": round(float(ok_share), 2),
+            "text_source": rows.text_source.iloc[0],
         }
         # per-category rows are only shown where the category-rate pairing
         # verified; otherwise the card appears as a distribution only

@@ -35197,5 +35197,15 @@
   "deliverables_quote": "CLIN Requirement Deliverable Quantity Due Date\n0001 A.5.1 reCAPTCHA Enterprise Assessments Unlimited (500M Assessments) per month Monthly",
   "confidence": "high",
   "rationale": "The contract is for providing a software service/license (Google Enterprise ReCaptcha assessments) priced monthly with no sequential build/test or iterative delivery process described, so delivery is best characterized as goods_or_licenses."
+ },
+ "f5efc72d0280847bfedd56d1c129dd747ab00faa": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\u201cTASS Requirements Development; Initial Draft; Draft Iterations; Final Document\u201d and \u201cfixed price task order\u201d",
+  "confidence": "medium",
+  "rationale": "The price schedule lists discrete deliverable items (initial draft, draft iterations, final document) and the task order is fixed-price with acceptance-based payment language, indicating a sequential deliverables flow rather than capacity-based reprioritization."
  }
 }
