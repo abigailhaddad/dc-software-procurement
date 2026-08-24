@@ -346,7 +346,7 @@ footer p{font-size:14px; color:var(--muted)}
 
 <p>The step in the middle is where the actual buying decision is made, and it is the one step the District does not publish. Everything after this point describes what can be seen around that gap.</p>
 
-<p>The blindness runs front to back. Tracing each of the 1,372 technology contracts to a posted solicitation &mdash; through the solicitation number its award document cites, or a close title match &mdash; finds one for 295, carrying 11.4% of the ceiling dollars; correcting for what the matching misses, no more than about a third of contracts and a tenth of the dollars ever pass through the portal's solicitations module. The big money arrives citing a 2007 schedule award or a GSA schedule instead. The module also hides its own solicitation numbers: 96% of rows display an internal document ID where the number should be. And the portal's own archive shows postings falling from 1,351 in FY2016 to 749 in FY2025.</p>
+<p>The gap starts before the award, too. Tracing each of the 1,372 technology contracts to a posted solicitation &mdash; through the solicitation number its award document cites, or a close title match &mdash; finds one for 295, carrying 11.4% of the ceiling dollars; correcting for what the matching misses, no more than about a third of contracts and a tenth of the dollars ever pass through the portal's solicitations module. The big money arrives citing a 2007 schedule award or a GSA schedule instead. The module also hides its own solicitation numbers: 96% of rows display an internal document ID where the number should be. And the portal's own archive shows postings falling from 1,351 in FY2016 to 749 in FY2025.</p>
 
 <h2>$3.1 billion authorised over five years, $527 million paid</h2>
 <p>A contract amount is an authorisation. Comparing it against payments the District actually recorded shows how far apart the two are, and how differently contract types behave.</p>
@@ -373,7 +373,7 @@ footer p{font-size:14px; color:var(--muted)}
 </div>
 
 <h2>Ten vendors take half the traceable technology money</h2>
-<p>Of $579M paid against technology contracts between FY2021 and FY2025, spread across 295 vendors, half went to ten of them. One took a sixth on its own. Traceable is doing real work in that sentence: this is measured on the payments that carry a matching contract number, and the unlinked rest &mdash; including everything bought through the Supply Schedule &mdash; could be more or less concentrated. The top spot does not depend on the join, though. Purchase orders, a separate path into the data, also put Computer Aid first.</p>
+<p>Of $579M paid against technology contracts between FY2021 and FY2025, spread across 295 vendors, half went to ten of them. One took a sixth on its own. That $579M counts only the payments that carry a matching contract number, and the unlinked rest &mdash; including everything bought through the Supply Schedule &mdash; could be more or less concentrated. The top spot does not depend on the join, though. Purchase orders, a separate path into the data, also put Computer Aid first.</p>
 
 <div class="stat-row">
   <div class="stat" data-detail="top10" tabindex="0"><span class="n hot">17%</span><span class="l">To the single largest vendor</span></div>
@@ -433,10 +433,10 @@ footer p{font-size:14px; color:var(--muted)}
 <h2>What an hour of a person costs, where the District publishes it</h2>
 <p>Computer Aid's card is not the only one. 42 of the 359 technology contracts with a readable award document publish an hourly rate card &mdash; 2,146 not-to-exceed rates in all, from $24.01 for entry-level customer support to $1,015 for one vendor's IT subject matter expert. For 1,304 of those rates the match between job title and price was re-verified against the document text mechanically. The rest sit in documents whose PDF layout scrambles the columns, so their cards appear below as price ranges only, never as title-to-price pairs.</p>
 
-<p>Who publishes rates is its own finding. The staffing firms and small consultancies do. The biggest names mostly do not: the text layer of Accenture's award PDF on its DCAS oversight contract is 41 characters long, and KPMG's largest contract and Ridge IT's Zero Trust award have no award document attached at all. The vendors billing the most are the ones whose prices the portal cannot show.</p>
+<p>The staffing firms and small consultancies publish their rates. The biggest names mostly do not: the text layer of Accenture's award PDF on its DCAS oversight contract is 41 characters long, and KPMG's largest contract and Ridge IT's Zero Trust award have no award document attached at all. The vendors billing the most are the ones with no published prices.</p>
 
 <h3>Software engineers specifically</h3>
-<p>One title, a $56-to-$220 spread, and the price tracks the channel it was bought through: staff augmentation by the hour at the bottom, specialist build shops at the top.</p>
+<p>The same titles run from $56 to $220 an hour, with staff augmentation at the bottom and the specialist build shops at the top.</p>
 
 <figure>
 <div class="scroll">
@@ -481,10 +481,10 @@ footer p{font-size:14px; color:var(--muted)}
 </table>
 </div>
 </figure>
-<span class="src">Exact-title matches against GSA's CALC+ ceiling-rate data, pulled 24 August 2026. Methods, raw API responses and the full comparison are in <code>data/calc/</code>; recomputed by <code>verify_claims.py</code> &sect;"federal rate comparison". Federal medians are schedule ceilings that agencies negotiate below at order time, so the true gap is somewhat smaller than shown &mdash; and nowhere near closed.</span>
+<span class="src">Exact-title matches against GSA's CALC+ ceiling-rate data, pulled 24 August 2026. Methods, raw API responses and the full comparison are in <code>data/calc/</code>; recomputed by <code>verify_claims.py</code> &sect;"federal rate comparison". Federal medians are schedule ceilings that agencies negotiate below at order time, so the true gap is somewhat smaller than shown, but not by enough to close it.</span>
 
 <h3>The hiring side of the same hour</h3>
-<p>Job ads answer what the portal cannot: what the person is offered. The staffing firms recruiting for District seats post in the contract's own vocabulary &mdash; "Journeyman", "Senior", "Master" are the CW91684 tier names &mdash; and DC postings carry pay. Three captured on 24 August 2026 line up against the card directly:</p>
+<p>The portal shows what gets billed; job ads show what the person is offered. The staffing firms recruiting for District seats post in the contract's own vocabulary &mdash; "Journeyman", "Senior", "Master" are the CW91684 tier names &mdash; and DC postings carry pay. Three captured on 24 August 2026 line up against the card directly:</p>
 
 <figure>
 <div class="scroll">
@@ -506,7 +506,7 @@ footer p{font-size:14px; color:var(--muted)}
 <p>Around the edges, the same hunt found: Cúram staffing ads &mdash; the skill DCAS runs on &mdash; offering $80&ndash;90 an hour, and one deleted posting titled "DHCF DCAS Business Analyst" at $98&ndash;108; D2Sol, holder of the $84M DCAS operations contract, hiring junior US staff and Bangalore staff through its own site with no pay posted, while its 2025 H-1B filings put Cúram developers at $130,000&ndash;$190,000 in the DC suburbs; FAST Enterprises offering $91,000&ndash;$96,000 for the implementation consultants who run systems like MyTax DC; and Computer Aid's own careers board carrying exactly one DC posting &mdash; the $90,000&ndash;$110,000 account manager who runs the staff-augmentation program. The billed workforce is recruited under other companies' names.</p>
 
 <div class="caveat">
-<p><strong>How many people is that? The data never says.</strong> It records dollars and rates, not heads. The arithmetic: Computer Aid runs about $93M a year in purchase orders; at its card's median $69.97 an hour that is roughly 1.3 million hours, or about 640 people working full time. Count only the payments that link back to its contracts and the floor is about 140. The truth sits somewhere in that range, and nothing published narrows it further.</p>
+<p><strong>How many people is that? The data never says.</strong> It records dollars and rates, not heads. The arithmetic: Computer Aid runs about $93M a year in purchase orders; at its card's median $69.97 an hour that is roughly 1.3 million hours, or about 640 people working full time. Count only the payments that link back to its contracts and the floor is about 140. Nothing published narrows it further.</p>
 </div>
 
 <h2>Seventy-four of eighty-two build contracts fix the scope before work starts</h2>
@@ -575,12 +575,12 @@ footer p{font-size:14px; color:var(--muted)}
 </figure>
 <span class="src">Notebook &sect;"Named systems".</span>
 
-<p>DCAS is the clearest case of how the District sustains a large system: at least 28 separate contracts across the years in this data, for operations and maintenance, application development teams, licences, hosting, printing and mailing. No single contract builds it. It is kept running by a rolling series of awards, most of them for people and services rather than for software. It is worth telling in full.</p>
+<p>DCAS is the clearest case of how the District sustains a large system: at least 28 separate contracts across the years in this data, for operations and maintenance, application development teams, licences, hosting, printing and mailing. No single contract builds it. It is kept running by a rolling series of awards, most of them for people and services rather than for software.</p>
 
 <h2>One system from start to today: what DCAS cost</h2>
-<p>The DC Access System decides who gets Medicaid, SNAP and TANF in the District. It began as the ACA build: a 2012 solicitation, won by Infosys Public Services at $49.5 million, three planned releases, most of it paid with enhanced federal matching funds. The payments table only reaches back to FY2017, so the original build is already beyond the portal's memory.</p>
+<p>The DC Access System decides who gets Medicaid, SNAP and TANF in the District. It began as the ACA build: a 2012 solicitation, won by Infosys Public Services at $49.5 million, three planned releases, most of it paid with enhanced federal matching funds. The payments table only reaches back to FY2017, so the original build predates the portal's records.</p>
 
-<p>Release 3 &mdash; the hard part, non-MAGI Medicaid and the integrated portal &mdash; was built by KPMG under a contract titled simply "DCAS R3". The portal's surviving record of that contract is one option period at $7.3 million. The payment ledger disagrees: $50 million paid citing the contract's number across FY2019&ndash;22, and another $60 million of KPMG payments at Health Care Finance carrying no contract number at all &mdash; and DCAS R3 is KPMG's only contract at that agency. The portal keeps only surviving option periods, so a finished contract's record shrinks while its payments remain. Accenture was separately contracted to oversee the build.</p>
+<p>Release 3 &mdash; the hard part, non-MAGI Medicaid and the integrated portal &mdash; was built by KPMG under a contract titled simply "DCAS R3". The portal's surviving record of that contract is one option period at $7.3 million. The payments show $50 million paid citing the contract's number across FY2019&ndash;22, plus another $60 million of KPMG payments at Health Care Finance carrying no contract number at all &mdash; and DCAS R3 is KPMG's only contract at that agency. The portal keeps only surviving option periods, so a finished contract's record shrinks while its payments remain. Accenture was separately contracted to oversee the build.</p>
 
 <p>Since 2025 the running of it is visible again: D2Sol invoices exactly $3,490,537.83 a month &mdash; $41.9 million a year &mdash; as the steady-state price before Cúram licences, the mobile app, AWS resale, printing, or call centers. Assembling every contract that can be defensibly tied to the system finds 49, with $249M in visible ceilings and $284M in attributable payments; 19 of the 49 show no payments at all, and 7 show payments above their surviving ceiling.</p>
 
@@ -591,7 +591,7 @@ footer p{font-size:14px; color:var(--muted)}
   <div class="stat"><span class="n hot">&gt;$622M</span><span class="l">The Council's stated total, which no public itemisation reconciles</span></div>
 </div>
 
-<p>What the money bought is a matter of public record. Asked at FY2024 budget oversight whether DCAS was working as intended, the Deputy Mayor replied with an emphatic no &mdash; the Council's word. The District was sued in 2017 over an 86.34% SNAP timely-processing rate; by FY2022 the rate had fallen below half that, and in April 2023 the federal Food and Nutrition Service rejected the District's corrective plan as inadequate. An Inspector General audit of Medicaid eligibility is the closest thing to an accounting; no DC Auditor report on the system exists.</p>
+<p>Asked at FY2024 budget oversight whether DCAS was working as intended, the Deputy Mayor replied with an emphatic no &mdash; the Council's word. The District was sued in 2017 over an 86.34% SNAP timely-processing rate; by FY2022 the rate had fallen below half that, and in April 2023 the federal Food and Nutrition Service rejected the District's corrective plan as inadequate. An Inspector General audit of Medicaid eligibility is the closest thing to an accounting; no DC Auditor report on the system exists.</p>
 <span class="src">Roster, payments and the full narrative in <code>data/dcas/</code>; all 53 cited pages saved in <code>evidence/dcas_sources/</code>. Recomputed by <code>verify_claims.py</code> &sect;"the DCAS case study", including that the quoted claims exist verbatim in the saved sources.</span>
 
 <h2>Where the reading is incomplete</h2>
@@ -603,7 +603,7 @@ footer p{font-size:14px; color:var(--muted)}
 <p>The ones an incoming administration should ask, answered here where the data can answer them, and marked plainly where it cannot.</p>
 
 <h3>How much does the District spend on technology in a year?</h3>
-<p>Nobody can say from published data, and that is a finding rather than an evasion. Payments traceable to technology contracts run $58M in FY2021 rising to $175M in FY2025 &mdash; read those as floors, because only 44% of technology contracts have payments that link to them at all, and $17.8B of payments across every category carry no contract number. Any single annual figure would be an estimate built on the visible minority.</p>
+<p>Nobody can say from published data. Payments traceable to technology contracts run $58M in FY2021 rising to $175M in FY2025 &mdash; read those as floors, because only 44% of technology contracts have payments that link to them at all, and $17.8B of payments across every category carry no contract number. Any single annual figure would be an estimate built on the visible minority.</p>
 
 <h3>Is anything here improper?</h3>
 <p>Nothing on this page alleges misconduct, and none of it should be read that way. Ordering vehicles, staff augmentation, fixed-scope delivery and loosely applied commodity codes are the process working as designed. The findings are about what that process makes visible and what its contracts structurally commit to &mdash; not about anyone breaking rules.</p>
@@ -615,7 +615,7 @@ footer p{font-size:14px; color:var(--muted)}
 <p>This data cannot say, in either direction. It shows what was authorised, what rates were agreed and what was paid &mdash; not what was delivered, whether it worked, or what the same work costs elsewhere. The rate card is reproduced above so the agreed prices are at least visible; judging them needs comparators this data does not contain, and nothing in it measures performance.</p>
 
 <h3>Why does it matter that contracts say agile and run waterfall?</h3>
-<p>Because the structure is what binds. A contract that fixes scope, sequences deliverables and gates payment on acceptance stays waterfall whatever method its statement of work names: changing what gets built requires a contract modification. The teams inside can hold every ceremony they like &mdash; the thing the District can change its mind about was set at award. Whether that is the right way to buy software is a policy choice this data does not make. It only shows which choice is actually written down.</p>
+<p>Because the contract binds and the method language does not. A contract that fixes scope, sequences deliverables and gates payment on acceptance stays waterfall whatever method its statement of work names: changing what gets built requires a contract modification. The teams inside can hold every ceremony they like, but the thing the District can change its mind about was set at award. Whether that is the right way to buy software is a policy choice this data does not make. It only shows which choice is actually written down.</p>
 
 <h3>Would another city look different?</h3>
 <p>Unknown; no comparison was attempted, and most large governments also buy technology heavily through staffing and schedule vehicles. What can be compared today is disclosure: the federal government publishes its task orders on USAspending, and the District does not publish its own.</p>
@@ -624,7 +624,7 @@ footer p{font-size:14px; color:var(--muted)}
 <p>Each item maps to a defect documented in the repository. Publish task orders placed under schedule vehicles. Require a contract number on every payment row &mdash; 55% have none. Fix the fiscal-year filter that silently returns everything, and the payment field that repeats a check-run total on every row in the run. Standardise vendor names. Attach award documents with a text layer, since 188 of 476 could not be read. These are publishing changes to systems that already hold the records.</p>
 
 <h3>Can this be rerun after the transition?</h3>
-<p>Yes, by anyone, without asking us. <code>make pull</code> fetches a fresh snapshot, <code>make classify</code> re-sorts it, <code>make verify</code> recomputes every figure on this page and fails loudly if one no longer holds, and <code>make test</code> re-scores the classifiers against hand-read contracts. The portal is live, so the counts will have moved. The method will not.</p>
+<p>Yes &mdash; anyone can, without asking us. <code>make pull</code> fetches a fresh snapshot, <code>make classify</code> re-sorts it, <code>make verify</code> recomputes every figure on this page and fails loudly if one no longer holds, and <code>make test</code> re-scores the classifiers against hand-read contracts. The portal is live, so the counts will have moved a little, but the method holds.</p>
 
 <span class="src">Unpublished-number and per-year figures recomputed by <code>verify_claims.py</code> &sect;"payments against unpublished contract numbers" and &sect;"traceable technology payments by year".</span>
 
