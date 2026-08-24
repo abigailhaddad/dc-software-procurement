@@ -383,6 +383,48 @@ def main() -> int:
     check("solicitation rows showing internal Doc IDs %",
           round(100 * doc_ids / len(sols)), 96, 1)
 
+    print("\n-- the DCAS case study --")
+    # data/dcas/ holds the roster and attributed payments (rebuilt by
+    # analysis/build_dcas.py); evidence/dcas_sources/ holds every cited page.
+    roster = pd.read_csv(ROOT / "data" / "dcas" / "dcas_roster.csv")
+    check("DCAS roster contracts", len(roster), 49)
+    check("visible DCAS ceilings $M", round(roster.ceiling.sum() / 1e6), 249, 1)
+    check("roster contracts with zero tagged payments",
+          int((roster.payments_total.fillna(0) == 0).sum()), 19, 1)
+    check("roster contracts paid above their surviving ceiling",
+          int((roster.payments_total.fillna(0) > roster.ceiling).sum()), 7, 1)
+    dcas_pay = pd.read_csv(ROOT / "data" / "dcas" / "dcas_payments_by_year.csv")
+    check("payments tied to DCAS $M", round(dcas_pay.amount.sum() / 1e6), 284, 1)
+
+    # The two claims a hostile reader will check first, recomputed from raw:
+    kpmg_pay = payments[payments.contract_number == "CW62227"]
+    check("KPMG paid citing DCAS R3's number $M", round(kpmg_pay.amount.sum() / 1e6), 50, 1)
+    check("DCAS R3's surviving portal record: option periods",
+          int((contracts.contract_number == "CW62227").sum()), 1)
+    check("that surviving option period $M",
+          round(contracts[contracts.contract_number == "CW62227"].amount.iloc[0] / 1e6), 7, 1)
+    kpmg_null = payments[
+        payments.vendor.astype(str).str.upper().str.startswith("KPMG")
+        & payments.contract_number.isna()
+        & payments.agency.astype(str).str.contains("Health Care Finance", na=False)
+    ]
+    check("KPMG null-contract payments at Health Care Finance $M",
+          round(kpmg_null.amount.sum() / 1e6), 60, 1)
+    d2sol_exact = payments[
+        payments.vendor.astype(str).str.upper().str.contains("D2SOL", na=False)
+        & (abs(payments.amount - 3490537.83) < 0.01)
+    ]
+    check("D2Sol monthly O&M vouchers at $3,490,537.83", len(d2sol_exact) >= 17, True)
+
+    # Web-sourced figures must exist verbatim in the saved sources.
+    henderson = (ROOT / "evidence" / "dcas_sources" / "henderson_joint_roundtable_dcas.txt").read_text(encoding="utf-8")
+    check("source: Council's 'more than $622 million'", "more than $622 million" in henderson, True)
+    check("source: Deputy Mayor's 'emphatic' no", "emphatic" in henderson, True)
+    check("source: FY2022 SNAP timeliness below half the 2017 lawsuit rate",
+          "more than double the Fiscal Year 2022 rate" in henderson, True)
+    infosys = (ROOT / "evidence" / "dcas_sources" / "infosyspublicservices_2013_hbx_press_release.txt").read_text(encoding="utf-8")
+    check("source: Infosys $49.5M build award", "49.5" in infosys, True)
+
     print("\n-- purchase-order vendor figures --")
     recent = orders[orders.fiscal_year.between(2022, 2026)].copy()
     recent["vendor_key"] = recent.vendor.str.upper().str.strip()

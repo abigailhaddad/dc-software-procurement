@@ -1,0 +1,120 @@
+SOURCE URL: https://dcist.com/story/22/03/14/dhs-human-services-language-access/
+ACCESSED: 2026-08-24
+======================================================================
+
+
+    D.C.’s Second Attempt At An Online Benefits Portal Still Has Incomplete Translation Options. Fixes Promised This Spring | DCist
+
+                                    Search
+
+Mar 14, 2022
+
+D.C.’s Second Attempt At An Online Benefits Portal Still Has Incomplete Translation Options. Fixes Promised This Spring
+
+                                        Annemarie Cuccia
+
+The District Direct homepage.
+
+                                        Will Schick
+                                          /
+                                        Street Sense MEdia
+
+People who don’t speak or read English are having difficulty accessing District Direct, the D.C. government’s new benefits app and online portal, because it is not fully available in any language other than English.
+
+Without complete translation options, advocates say non-native English speakers are facing a new barrier to obtaining benefits — counter to the rationale for the new system, which was supposed to streamline access for D.C. residents in need of assistance.
+
+In hopes of getting the District to address the issue, Allison Miles-Lee, an attorney at Bread for the City, filed a language access complaint in December with the D.C. Office of Human Rights (OHR). Under D.C.’s Language Access Act of 2004, residents have the right to receive translation help for any public program or service if they speak a language used by at least 3% of the population served. According to Miles-Lee, this means the District Direct portal must be available in at least Spanish and Amharic.
+
+D.C. residents can use the portal to apply for offerings such as the Supplemental Nutrition Assistance Program (SNAP), Temporary Assistance for Needy Families (TANF), D.C. Medicaid and D.C. Healthcare Alliance coverage. The portal — which the Department of Human Services (DHS) launched last November both online and as an app available through Apple and Google — has no built-in option for translation and can’t be translated through a user’s web browser. With the app, even if a device is set to use another language, only parts of the portal are translated, and the amount and quality of translation can vary depending on the particular language.
+
+Miles-Lee said the issue should have been identified and resolved before DHS released the portal. “It’s apparent to anyone who would go on to try to check this that this is a problem,” Miles-Lee said.
+
+According to the U.S. Census Bureau, 17.2% of D.C. residents speak a language other than English at home. In 2019, one-third of D.C. residents born abroad reported limited English proficiency. Translation issues in D.C. portals are not new — neither the STAY DC nor vaccine portal was fully translated when released. At a D.C. Council performance oversight hearing on Feb. 24, multiple people called for a comprehensive language access audit of DHS to address these recurring problems.
+
+The previous benefits portal, released in 2020, also did not initially have translation options. Worried the problem would repeat itself, Miles-Lee checked the translation options when the new portal was launched in November 2021. She filed the language access complaint with OHR on Dec. 3, which prompted the agency to discuss the issue with DHS officials. While OHR confirmed that a complaint has been filed, a spokesperson was not able to comment on an ongoing investigation.
+
+DHS did not respond to questions on the complaint itself, but Kevin Valentine, director of communications, wrote in an email to Street Sense Media and The DC Line that the agency is “fast-tracking” the translation of the online portal into Spanish and Amharic. According to Valentine, the translation for the website is done and the updated version should be available sometime this spring. As for the app, DHS initially responded to the language access complaint on Dec. 29 saying that the Spanish and Amharic translations had been successfully incorporated by programmers. But in a March 8 email to Street Sense Media and The DC Line, Valentine confirmed that there was an “underlying problem” with the translation in the app that should be fixed this spring — “the fastest timeline possible.”
+
+The District Direct mobile app interface provides an incomplete translation of its tools to non-English speaking users. The "cases" tab of the District Direct app displaying a page title and action button in Spanish, while the main message and four of five menu labels are displayed in English.Screenshot / Street Sense Media
+The District Direct app displays a page title and action buttons in Spanish while the confidentiality notice a user would agree to is displayed in English.Screenshot / Street Sense Media
+The "more/más" option is the only menu button that displays in Spanish in the District Direct app. The list of options on that page is partially in Spanish and partially in English.Screenshot / Street Sense Media
+The fields and button for signing in to the District Direct app are displayed in Spanish while the warning language about personal information consent is displayed in English.Screenshot / Street Sense Media
+The translated main screen of the District Direct app lists two options in Spanish and one option described entirely in English.Screenshot / Street Sense Media
+
+“We remain committed to providing District residents with access to benefit applications and renewals in the most accessible ways possible to include language accessibility as well as utilization of technologies that streamline application processes,” Valentine wrote.
+
+While residents wait for translated versions of District Direct to become available, they have to find other ways to apply for benefits, which can delay access, advocates say.
+
+“Public benefits access is pretty crucial in a pandemic,” said Rebecca Walters of the D.C. Language Access Coalition. “We’re getting more and more reports of people feeling frustrated, wanting to file complaints with the Office of Human Rights, and overall being denied access to health insurance, and SNAP and TANF.”
+
+The portal isn’t the only source of this frustration. Unable to apply for benefits online or by phone, people are having to print out PDF applications or to apply in person, neither of which advocates say is a realistic option.
+
+“There is no other way for people to do applications other than the web portal and the app, practically speaking,” Miles-Lee said.
+
+Nina McKay is a legal assistant coordinator at Bread for the City. Since District Direct’s launch, few if any of her clients have had the portal successfully translated on their phones, so she’s helping them submit paper applications, which she then has to fax to DHS.
+
+Without outside assistance, advocates say, many of these clients would not have been able to apply for benefits at all.
+
+“There is nobody at DHS that is going to put pen to paper and help these people fill out applications,” Miles-Lee said.
+
+DHS service centers used to have employees who could walk people through filling out the paper application, which is 68 pages long. Now, she said, her clients have been told no staff is available to sit with them — and in some cases that the service center does not accept paper applications at all.
+
+The D.C. Language Access Coalition — an alliance of community-based and civil rights organizations — has also encountered this frustration, according to Walters, development officer for its fiscal sponsor and administrator, Many Languages One Voice. Applicants going to apply for benefits in-person face a two- to three-hour wait. Some people have been stood up by their D.C.-provided interpreters; some have felt forced to pay for their own interpreter or relied on a stranger at the service center, and others report that they feel looked down on because their primary language isn’t English.
+
+These aren’t just inefficiencies or inconveniences, McKay said.
+
+“For folks who are on SNAP, or other public benefits like Medicaid or TANF, those resources are super super important,” she said.
+
+While Bread for the City and other nonprofits are always willing to help people submit applications, McKay said, the lack of translation options means people trying to access benefits lose control over the process, even if their application is eventually submitted. That in itself is a problem, she explained.
+
+“We never want someone to feel like they don’t have the option of doing something themselves,” she said. “We never want someone to feel like, ‘It would feel more empowering to me’ or ‘I would prefer to just take care of this on my own, but the only reason I am looking for someone else to do it for me is because I can’t understand it.’”
+
+This story was produced by Street Sense Media and The DC Line.
+
+Filed Under:
+
+                        benefits, 
+
+                        D.C. Department of Human Services, 
+
+                        Street Sense Media Partnership, 
+
+Related Stories
+
+Aug 30, 2012
+
+Lost Without Translation: D.C. Office Launches Language Access Campaign
+
+Jul 31, 2021
+
+D.C. Is Opening Clinics To Help Tenants Apply For Rent Assistance
+
+Jul 29, 2008
+
+Fried Good Dale: A Translation Run Amok
+
+Feb 21, 2023
+
+Locals Who Don’t Speak English Need Medical Translators, But Some Say They Don’t Always Get The Service
+
+Terms of
+                                Use | WAMU Privacy Notice
+
+WAMU 88.5
+                                    |
+                                    American University
+                                        RadioMailing Address:
+                                    PO Box 98101 |
+                                    Washington, DC
+                                    20090-8101
+Station
+                                    Address: 4401 Connecticut Ave, NW |
+                                    Washington,
+                                    DC
+                                    20008 |
+                                    Combined Federal Campaign (CFC):
+                            #91855
+©
+                            2025
+                            All Rights Reserved.
+

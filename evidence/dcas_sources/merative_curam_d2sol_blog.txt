@@ -1,0 +1,754 @@
+SOURCE URL: https://www.merative.com/blog/district-of-columbia-partners-with-c%C3%BAram-and-d2sol
+ACCESSED: 2026-08-24
+======================================================================
+
+
+        The District of Columbia re-commits to Cúram as their Integrated Eligibility System in partnership with D2Sol
+
+  Skip to content
+
+            Merative Logo, a healthcare data, technology and analytics company
+
+Products
+
+Health and human services platform for modern benefits delivery
+
+                    Explore the product
+
+Medical imaging solutions to enhance workflows and optimize care
+
+                    Explore the product
+
+Evidence-based clinical decision support at the point of care
+
+                    Explore the product
+
+Healthcare data and analytics to inform business decisions
+
+                    Explore the product
+
+Cloud-based clinical data management to accelerate trial outcomes
+
+                    Explore the product
+
+Solutions
+
+Solutions areas
+
+                  Clinical decision support
+
+                  Clinical development
+
+                  Medical imaging
+
+                  Healthcare analytics
+
+                  Health and human services
+
+                  Real-world data
+
+Clinical decision support
+
+                        Explore the product
+
+What is Micromedex?
+
+Healthcare providers can equip their clinicians with current, rapid, reliable insights at the point of care with clinical decision support solutions from Micromedex.
+
+Micromedex
+
+Support patient safety and streamline your work with the award-winning drug database and resources
+
+DynaMedex
+
+Clinical decision support for the whole care team
+
+OrbitalRX with Micromedex
+
+Automate your hospital pharmacy inventory management
+
+Artificial intelligence
+
+Advancing healthcare with AI in clinical decision support
+
+Thought leadership
+
+Product support
+
+Clinical data management
+
+                        Explore the product
+
+What is Zelta?
+
+Zelta is a cloud-based unified clinical data management and acquisition platform with adaptable modules that can be tailored to meet the unique needs of your clinical trials program and accelerate outcomes.
+
+Data management
+
+Build and execute flexible, speedy clinical trials with Zelta EDC.
+
+Clinical operations
+
+Streamline clinical trials execution with RTSM, CTMS, eTMF, and more.
+
+Patient and provider engagement
+
+Connect clinical trial participants, sites and sponsors with eCOA/ePRO and eConsent.
+
+Imaging solutions
+
+                        Explore the product
+
+What is Merge?
+
+Award-winning, flexible imaging solutions that drive transformation to meet your imaging needs.
+
+Imaging Suite
+
+Enterprise imaging, advanced worklists, and workflow tools in a cloud-based suite: Merge VNA, Merge Universal Viewer, Merge Workflow Orchestrator.
+
+Radiology
+
+Modern workspaces and intuitive workflows made possible by radiology solutions like Merge PACS.
+
+Cardiology
+
+Streamline and scale clinical and data management workflows across cardiovascular service lines, with the 2025 Best in KLAS ranked Merge Cardio and Merge Hemo.
+
+Merge DICOM Toolkit
+
+DICOM Toolkit enables interoperability in medical imaging
+
+Partnerships
+
+Explore channel and co-development partnerships with Merge. Check out the DICOM toolkit for developers.
+
+Merge in the UK and Ireland
+
+Merge in Canada
+
+Case Studies
+
+Services and support
+
+Healthcare data and analytics
+
+                        Explore the product
+
+What is Truven?
+
+Truven helps you make better, faster business decisions. We arm you with gold standard health data, easy-to-use analytics, and consulting services if you need it. All backed by a deep understanding of healthcare.
+
+Health Insights
+
+Inform decision-making with the leading healthcare data analytics platform.
+
+Flexible Analytics
+
+Access time-tested analytics models on demand to predict trends, reduce costs, and improve population health.
+
+Benefits Mentor
+
+Guide employees to the best-fit health plan for their needs with claims-based decision support.
+
+MarketScan® Databases
+
+Enhance your research with precise data and insights, supporting studies across industries.
+
+Treatment Cost Calculator
+
+Support your price transparency strategy with a self-service healthcare cost comparison tool.
+
+Thought leadership
+
+Product support
+
+Health and human services
+
+                        Explore the product
+
+What is Cúram?
+
+Transform the delivery of health and human services.
+
+Child welfare
+
+Promoting well-being for children and families
+
+Citizen engagement
+
+Reimagine how clients engage with government agencies
+
+Coordinated health and social outcomes
+
+Person-centric services for improved outcomes
+
+Integrated eligibility
+
+Efficient workflows that lead to better outcomes
+
+Support portal
+
+Product documentation
+
+Education
+
+Real-world data
+
+                        Explore the product
+
+What is MarketScan?
+
+A premium portfolio of data, services, and applications designed to help you strengthen, accelerate, and simplify your real-world evidence studies.
+
+Research grade data
+
+Precise and tokenized - Unique de-identified datasets build on precision
+
+Expert research and analytics services
+
+Fast and rigorous - Research experts expediting decisive analysis.
+
+Streamlined cloud tooling
+
+Easy and scalable - Cloud-based tools and delivery simplifying deployment and collaboration
+
+Thought leadership
+
+MarketScan tools
+
+Dissertation support program
+
+Product support
+
+Who we serve
+
+Who we serve
+
+                  Employers
+
+                  Health plans
+
+                  Life sciences
+
+                  Healthcare providers
+
+                  Governments
+
+Employers
+
+Deliver personalized, data-driven benefits experiences that keep employees healthy, happy and productive. 
+
+                        Explore more
+
+Employer analytics
+
+Solutions for employers to enhance workforce health
+
+Benefits decision tool
+
+Optimize benefits decisions with personalized tool
+
+Healthcare benchmarking
+
+Healthcare analytics and benchmarking solutions
+
+Benefits advisors
+
+Boost employee benefits and strengthen employer partnerships.
+
+Health Plans
+
+Support member-centric care experiences with actionable insights and real-world data. 
+
+                        Explore more
+
+Health plan analytics
+
+Optimize care and reduce costs with advanced analytics
+
+Healthcare benchmarking
+
+Healthcare analytics and benchmarking solutions
+
+Clinical decision support
+
+Support patient safety and streamline your work with the award-winning drug database and resources
+
+Flexible analytics
+
+On-demand analytics to predict trends and reduce costs
+
+Price transparency
+
+Advance price transparency and ensure regulatory compliance
+
+Life Sciences
+
+Leverage technology and real-world data to accelerate the clinical development lifecycle.
+
+                        Explore more
+
+Clinical data management
+
+Enhancing clinical development with data-driven insights
+
+Electronic data capture
+
+Efficient electronic data capture for clinical trials
+
+eCOA/ePRO
+
+Streamlining clinical trials with eCOA/ePRO solutions
+
+RTSM
+
+Optimizing clinical trials with RTSM solutions
+
+Real-world evidence
+
+Real-world evidence solutions for informed healthcare
+
+Real-world data analytics
+
+Access secure claims data and analytics anytime, anywhere
+
+Healthcare providers
+
+Prioritize patient care with streamlined workflows and data-driven insights. 
+
+                        Explore more
+
+Drug database
+
+Enhance patient safety with award-winning drug resources
+
+Drug and disease database
+
+Clinical decision support for the whole care team
+
+Pharmacy inventory management
+
+Automate your hospital pharmacy inventory management
+
+Enterprise imaging
+
+Cloud-based imaging suite with advanced workflow tools
+
+Radiology
+
+Modern workspaces and intuitive workflows for imaging
+
+Cardiology
+
+Tools that enhance workflow efficiency in cardiology
+
+Neonatal & pediatric care
+
+Trusted guidance for treating your youngest patients
+
+IV compatibility tools
+
+For safe and efficient intravenous medication administration
+
+RED BOOK drug pricing
+
+Comprehensive drug pricing and product information
+
+Governments
+
+Improve access to health programs, benefits and social services so people can live their best lives. 
+
+                        Explore more
+
+Health and human services
+
+Transform the delivery of health and human services
+
+Child welfare
+
+Promoting well-being for children and families
+
+Citizen engagement
+
+Reimagine how clients engage with government agencies
+
+Eligibility and entitlement
+
+Efficient workflows that lead to better outcomes
+
+Coordinated health and social outcomes
+
+Person-centric services for improved outcomes
+
+Our company
+
+About us 
+
+Learn more about Merative – a technology, data and analytics partner for the health industry.
+
+Leadership 
+
+Learn about our leaders, who have decades of experience spanning the health industry.
+
+Careers 
+
+Explore career opportunities at Merative.
+
+Newsroom 
+
+Merative News
+
+Resources
+
+Blog 
+
+Read our latest findings, team updates, and perspectives on trending topics.
+
+Support 
+
+Connect with us when needed. Information you can use to obtain support for your Merative products.
+
+Thought leadership 
+
+See our latest research, success stories, and industry-specific perspectives on top-of-mind topics.
+
+  Contact us  
+
+Products
+
+Health and human services platform for modern benefits delivery 
+
+                          Explore the product 
+
+Medical imaging solutions to enhance workflows and optimize care 
+
+                          Explore the product 
+
+Evidence-based clinical decision support at the point of care 
+
+                          Explore the product 
+
+Healthcare data and analytics to inform business decisions 
+
+                          Explore the product 
+
+Cloud-based clinical data management to accelerate trial outcomes 
+
+                          Explore the product 
+
+Solutions
+
+Clinical decision support 
+
+                          Micromedex 
+
+                            Micromedex 
+
+                            DynaMedex 
+
+                            OrbitalRX with Micromedex 
+
+                          Thought leadership 
+
+                          Product support 
+
+Clinical development 
+
+                          Zelta 
+
+                            Data management 
+
+                            Clinical operations 
+
+                            Patient and provider engagement 
+
+Medical imaging 
+
+                          Merge 
+
+                            Imaging Suite 
+
+                            Radiology 
+
+                            Cardiology 
+
+                            Partnerships 
+
+                            Merge in the UK and Ireland 
+
+                            Merge in Canada 
+
+                          Case Studies 
+
+Healthcare analytics 
+
+                          Truven 
+
+                          Thought leadership 
+
+                          Product support 
+
+Health and human services 
+
+                          Cúram 
+
+                            Child welfare 
+
+                            Citizen engagement 
+
+                            Integrated eligibility 
+
+                            Coordinated health and social outcomes 
+
+                          Support portal 
+
+                          Product documentation 
+
+                          Education 
+
+Real-world data 
+
+                          MarketScan 
+
+                            Real-world data analytics 
+
+                            Benchmark data for payers 
+
+                          Treatment Pathways 
+
+                          MarketScan University 
+
+                          Dissertation support program 
+
+                          Thought leadership 
+
+                          Product support 
+
+Who we serve
+
+                      Employers
+
+                      Health plans
+
+                      Life sciences
+
+                      Healthcare providers
+
+                      Governments
+
+                      Benefits advisors
+
+Our company
+
+                      About us
+
+                      Leadership
+
+                      Careers
+
+                      Newsroom
+
+Resources
+
+                      Blog
+
+                      Support
+
+                      Thought leadership
+
+  Contact us  
+
+                  Health and human services 
+
+In this article
+
+Share via
+
+            SUBSCRIBE TO BLOG -->
+
+The District of Columbia re-commits to Cúram as their Integrated Eligibility System in partnership with D2Sol
+
+Cúram and D2Sol were selected by The District of Columbia to provide maintenance and operations support services for its integrated eligibility system, District of Columbia Access System (DCAS).  
+
+                Published January 30, 2025
+                |
+
+                  3 min read
+
+                    Government 
+
+                    Health and human services 
+
+                    Government modernization 
+
+                    Cúram 
+
+Jeff Reid
+
+Executive Vice President and General Manager, Cúram
+
+Share via
+
+In this article
+
+The Department of Health Care Finance (DHCF) is the District of Columbia’s state Medicaid agency, committed to improving health outcomes by providing residents access to comprehensive, cost-effective and quality healthcare services. The partnership with Cúram will strengthen the cross-platform suite of digital services that supports residents and caseworkers by providing a holistic service delivery model to deliver the following benefits:  
+
+Medical/health benefits:
+
+ Streamlined Medicaid
+
+ Insurance Assistance
+
+ Unassisted Qualified Health Plan
+
+ Employer Sponsored Insurance
+
+ Immigrants Children’s Program
+
+ Traditional Medicaid
+
+Human services benefits:
+
+ SNAP/Transitional SNAP
+
+ TANF/POWER
+
+ Low Income Home Energy Assistance Program
+
+ Refugee Cash Assistance
+
+ Burial Assistance
+
+ Local SNAP Supplement
+
+ Interim Disability Assistance
+
+An integrated eligibility system that supports residents and caseworkers 
+
+In order to help residents actively engage in their own health and wellbeing, while supporting caseworkers with their caseloads, DHCF launched the District of Columbia Access System (DCAS). DCAS is an Integrated Eligibility system built on the Cúram Platform which provides a Customer Portal, a Case Mangement framework and an Eligibility and Entitlement Rules Engine streamlining Medicaid, the Supplemental Nutrition Assistance Program (SNAP), Temporary Assistance to Needy Families (TANF) and other benefit programs, in one cohesive system. 
+
+For more than a decade, this system has helped residents apply for and manage their own benefits online, while helping caseworkers more seamlessly manage applications, determine eligibility and process authorizations for multiple benefits in one integrated system. 
+
+A partnership for ongoing support 
+
+In a new contract, The District of Columbia, Office of Contracting and Procurement (OCP), on behalf of the DHCF has selected the combined team of Cúram by Merative and D2Sol for the operations and maintenance support of the DCAS integrated eligibility system. 
+
+“Our goal is to make sure the system delivers an intuitive, user-friendly experience for District residents while maintaining robust support for employees, ensuring DCAS continues to enable the delivery of benefits to District of Columbia residents most in need.” said Anthony Vellucci, Managing Director, US Account Management, at Cúram. “We are proud to collaborate with D2Sol in maintaining and advancing the capabilities of DCAS, ensuring it continues to meet the needs of the community it serves." 
+
+DCAS also contains a website based on Cúram's Citizen Engagement solution, referred to as “District Direct” and a Mobile Application referred to as “District Direct Mobile” to provide multiple access points to digital services that allow beneficiaries to interact with their cash, food, and medical benefits as administered and managed in the DCAS Cúram case management system. 
+
+Comprehensive support for the entire application 
+
+The partnership with Cúram and D2Sol provides full support for the entire DCAS application, from citizen and worker portals to core functionality and backend operations. In maintaining and advancing the capabilities of DCAS, this collaboration ensures the system will continue to meet the needs of the community it serves.
+
+Past performance and experience 
+
+The depth and breadth of experience of Cúram in performing services of a similar size and scope was a key consideration in the partnership with The District of Columbia. For 25 years, Cúram has been trusted by health and human services organizations for its technology and expertise, empowering users to better focus on protecting and caring for those in their communities. Cúram brings experience developed with federal, provincial, state, and local governments to the District of Colombia, ensuring value and accountability across its integrated benefits delivery. 
+
+Learn more about Cúram.
+
+Related Articles
+
+              Government
+
+      Automation in action: Key lessons from Minnesota on auto-renewal enhancements
+
+The Medicaid unwinding initiative presented a unique challenge to HHS agencies...
+
+By Marina Pascali | 4 min. read
+
+              Government
+
+      What makes digital transformation projects in the public sector successful?
+
+Despite substantial investments and executive-level support, many digital...
+
+By Gurinder J Singh | 3 min. read
+
+              Government
+
+      Trend outlook: artificial intelligence in government agencies – why now?
+
+The growth and transformative potential of artificial intelligence is evident. As...
+
+By Marina Pascali | 5 min. read
+
+Ready for a consultation?
+
+Our team is ready to answer your questions. Let's make smarter health ecosystems, together.
+
+  Let's talk  
+
+                Solutions
+
+                      Healthcare analytics
+
+                      Clinical decision support
+
+                      Clinical development
+
+                      Health and human services
+
+                      Real-world evidence
+
+                      Medical imaging
+
+                Who we serve
+
+                      Health plans
+
+                      Life sciences
+
+                      Employers
+
+                      Healthcare providers
+
+                      Governments
+
+                Our company
+
+                      Newsroom
+
+                      About us
+
+                      Leadership
+
+                      Careers
+
+                Resources
+
+                      Blog
+
+                      Support
+
+                      Thought leadership
+
+            Contact us
+
+                Contact us
+
+          Follow us
+
+© Merative 2026
+
+Privacy policy
+
+Terms of use
+
+Code of Conduct
+
+Cookie Preferences
+
+* The Privacy notice was last updated July 2026.
+
+Privacy policy
+
+Terms of use
+
+Code of Conduct
+
+Cookie Preferences
+
+© Merative 2026
+

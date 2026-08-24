@@ -1,0 +1,749 @@
+SOURCE URL: https://cfo.dc.gov/sites/default/files/dc/sites/ocfo/publication/attachments/ht_dhcf_chapter_2026o.pdf
+ACCESSED: 2026-08-24
+======================================================================
+                                                                                                                   (HT0)
+
+Department of Health Care Finance
+www.dhcf.dc.gov
+Telephone: 202-442-5988
+
+Table HT0-1
+
+                                                                                                                   % Change
+                                                FY 2023            FY 2024       FY 2025          FY 2026              from
+Description                                      Actual             Actual      Approved         Approved           FY 2025
+OPERATING BUDGET                          $4,442,557,965 $4,401,503,659 $4,867,809,070 $5,504,769,104                      13.1
+FTEs                                               299.1          331.8          378.1          390.9                       3.4
+CAPITAL BUDGET                              $126,041,063 $147,131,622                $0             $0                     N/A
+FTEs                                                  0.0            0.0            0.0            0.0                     N/A
+
+
+
+The mission of the Department of Health Care Finance (DHCF) is to
+improve health outcomes by providing access to comprehensive,
+cost-effective, and quality health care services for residents of the
+District of Columbia.
+Summary of Services
+The Department of Health Care Finance provides health care services to low-income children, adults, the
+elderly, and persons with disabilities. More than 315,000 District of Columbia residents (approximately 45
+percent of all residents) receive health care services through DHCF’s Medicaid and Alliance programs. DHCF
+strives to provide these services in the most appropriate and cost-effective settings possible.
+
+The agency’s FY 2026 approved budget is presented in the following tables:
+
+FY 2026 Approved Gross Funds Operating Budget and FTEs, by Revenue Type
+Table HT0-2 contains the approved FY 2026 budget and approved Full-Time Equivalents by revenue type
+compared to the FY 2025 approved budget. It also provides FY 2023 and FY 2024 actual data.
+
+Table HT0-2
+(dollars in thousands)
+
+                                        Dollars in Thousands                               Full-Time Equivalents
+                                                          Change                                          Change
+                          Actual Actual ApprovedApproved    from      % Actual Actual ApprovedApproved      from     %
+Appropriated Fund        FY 2023 FY 2024 FY 2025 FY 2026 FY 2025 Change* FY 2023 FY 2024 FY 2025 FY 2026 FY 2025 Change
+GENERAL FUND
+Local Funds              949,8511,049,998 1,043,110 1,054,707   11,597    1.1   151.2   146.6    172.4   176.0       3.5    2.1
+Dedicated Taxes           96,621 114,647    240,410 285,940     45,531   18.9     5.2     7.6      7.2     6.6      -0.6   -7.7
+Table HT0-2
+(dollars in thousands)
+                                                 Dollars in Thousands                                      Full-Time Equivalents
+                                                               Change                                          Change
+                               Actual Actual ApprovedApproved    from      % Actual Actual ApprovedApproved      from     %
+Appropriated Fund             FY 2023 FY 2024 FY 2025 FY 2026 FY 2025 Change* FY 2023 FY 2024 FY 2025 FY 2026 FY 2025 Change
+Special Purpose
+Revenue Funds                     2,577      3,928    7,008    5,492    -1,516      -21.6     13.8    14.0            15.6    15.0      -0.6    -3.5
+TOTAL FOR
+GENERAL FUND                 1,049,0491,168,573 1,290,528 1,346,139     55,611        4.3    170.2   168.3           195.2   197.6       2.4    1.3
+FEDERAL
+RESOURCES
+Federal Grant Funds               4,007      2,218    5,136   10,400     5,264      102.5      0.0        0.0          5.0     8.0       3.0   60.0
+Federal Medicaid
+Payments                     3,389,5023,230,713 3,572,145 4,148,230 576,085          16.1    128.9   163.5           177.9   185.3       7.3    4.1
+TOTAL FOR
+FEDERAL
+RESOURCES                    3,393,5093,232,931 3,577,281 4,158,630 581,349          16.3    128.9   163.5           182.9   193.3      10.3    5.7
+GROSS FUNDS                  4,442,5584,401,504 4,867,809 5,504,769 636,960          13.1    299.1   331.8           378.1   390.9      12.8    3.4
+*Percent change is based on whole dollars.
+
+
+Note: If applicable, for a breakdown of each Grant (Federal and Private) and Special Purpose Revenue type, please refer to Schedule
+80 Agency Summary by Revenue Source in the FY 2026 Operating Appendices located on the Office of the Chief Financial
+Officer’s website.
+In FY 2023, the Intra-District process that required duplicated budget in the agencies providing services (seller agencies) was
+eliminated and replaced by interagency projects. For more detailed information regarding the approved funding for interagency
+projects funded within this agency, please see Appendix H, FY 2026 Interagency Budgets, in the Executive Summary, Volume 1.
+
+FY 2026 Approved Operating Budget, by Account Group
+Table HT0-3 contains the approved FY 2026 budget at the Account Group level compared to the
+FY 2025 approved budget. It also provides FY 2023 and FY 2024 actual expenditures.
+
+Table HT0-3
+(dollars in thousands)
+
+                                                                                                                              Change
+                                                                 Actual           Actual     Approved      Approved             from Percentage
+Account Group                                                   FY 2023          FY 2024      FY 2025       FY 2026          FY 2025   Change*
+701100C - Continuing Full Time                                      30,652          34,338       39,864            41,181       1,317            3.3
+701200C - Continuing Full Time - Others                              1,438           1,658        1,847             2,550         703           38.1
+701300C - Additional Gross Pay                                         324             323            0                 2           2           N/A
+701400C - Fringe Benefits - Current Personnel                        7,361           8,118        9,426            10,101         675            7.2
+701500C - Overtime Pay                                                  29             124            0                 0           0           N/A
+SUBTOTAL PERSONNEL SERVICES (PS)                                    39,804          44,560       51,137            53,834       2,697            5.3
+711100C - Supplies and Materials                                    14,286             110          176               134         -42          -23.8
+712100C - Energy, Communications and Building Rentals                2,400           2,302        2,578             2,638          60            2.3
+713100C - Other Services and Charges                                   762           3,194        4,336             4,200        -136           -3.1
+713101C - Security Services                                            104              43          123               140          17           14.3
+713200C - Contractual Services - Other                             130,364         145,909      185,005           192,083       7,077            3.8
+714100C - Government Subsidies and Grants                        4,248,607       4,195,643    4,610,810         5,238,838     628,028           13.6
+715100C - Other Expenses                                                13               0            0                 0           0           N/A
+715200C - P-Card Clearing Account Budget Tracking                        1               0            0                 0           0           N/A
+717100C - Purchases Equipment and Machinery                          6,218           9,741       13,644            12,895        -749           -5.5
+717200C - Rentals Equipment and Other                                    0               0            0                 7           7           N/A
+SUBTOTAL NONPERSONNEL SERVICES (NPS)                             4,402,754       4,356,943    4,816,672         5,450,935     634,263           13.2
+GROSS FUNDS                                                      4,442,558       4,401,504    4,867,809         5,504,769     636,960           13.1
+*Percent change is based on whole dollars.
+FY 2026 Approved Operating Budget and FTEs, by Division/Program and Activity
+Table HT0-4 contains the approved FY 2026 budget by division/program and activity compared to the
+FY 2025 approved budget. It also provides FY 2023 and FY 2024 actual data. For a more comprehensive
+explanation of divisions/programs and activities, please see the Division/Program Description section, which
+follows the table.
+
+Table HT0-4
+(dollars in thousands)
+
+                                                 Dollars in Thousands                             Full-Time Equivalents
+                                                                         Change                                            Change
+                                      Actual    Actual Approved Approved   from         Actual    Actual Approved Approved   from
+Division/Program and Activity        FY 2023   FY 2024 FY 2025 FY 2026 FY 2025         FY 2023   FY 2024 FY 2025 FY 2026 FY 2025
+(AFO000) AGENCY
+FINANCIAL OPERATIONS
+(AFO002) Agency Accounting
+Services                               3,353     3,927    7,249     6,463       -786       7.2       8.1     10.0     11.0       1.0
+(AFO003) Agency Budgeting and
+Financial Management Services            589      751      836          889      53        4.8       5.4      6.0         7.0    1.0
+(AFO005) Agency /Cluster
+Financial Executive Administration
+Services                                 326      354      369          374       5        1.6       1.8      2.0         2.0    0.0
+(AFO011) P-Card Clearing                   1        5        0            0       0        0.0       0.0      0.0         0.0    0.0
+SUBTOTAL (AFO000) AGENCY
+FINANCIAL OPERATIONS                   4,270     5,036    8,454     7,726       -727      13.6      15.3     18.0     20.0       2.0
+(AMP000) AGENCY
+MANAGEMENT PROGRAM
+(AMP003) Communications                  649      817        36          36       0        4.0       4.5      0.0         0.0    0.0
+(AMP005) Contracting and
+Procurement                            1,960     1,576    2,076     1,869       -207      12.0      11.7     14.0     14.0       0.0
+(AMP006) Customer Experience           3,144     2,846        0         0          0      20.4      20.9      0.0      0.0       0.0
+(AMP010) Grants Administration        10,824     1,692        0         0          0       2.3       3.7      0.0      0.0       0.0
+(AMP011) Human Resource
+Services                               1,044      982     1,514     1,244       -271       9.6       9.0      8.0         8.0    0.0
+(AMP012) Information Technology
+Services                               5,538     5,620   12,240   13,787       1,547       5.1       7.0     17.9     17.0      -0.9
+(AMP014) Legal Services                1,220     1,221    1,471    1,480           9       7.9       8.2      8.8      8.9       0.0
+(AMP019) Property, Asset, and
+Logistics Management                   2,751     6,083    3,978     3,793       -186       4.8      14.6      6.0         7.0    1.0
+(AMP021) Rates, Reimbursement,
+Financial Analysis                     3,407     4,225        0           0       0       12.7      16.3      0.0         0.0    0.0
+(AMP026) Training and
+Development                            1,040        0         0           0       0        0.0       0.0      0.0         0.0    0.0
+(AMP030) Executive
+Administration                         1,226      972     1,445     1,691       245        1.6       6.3      9.0     10.0       1.0
+(AMP037) Senior Deputy
+Director/Medicaid Director                 0        0     4,108   14,146      10,038       0.0       0.0     14.0     15.0       1.0
+(AMP038) Senior Deputy
+Director/Finance                           0        0     6,395     6,602        207       0.0       0.0     20.0     23.0       3.0
+(AMP039) Chief Operating Office            0        0     2,494     1,468     -1,026       0.0       0.0      8.0      7.0      -1.0
+(AMP040) Data Analytics and
+Research Administration                    0        0     2,015     2,523       509        0.0       0.0     11.0     13.0       2.0
+(AMP041) Program Integrity                 0        0     4,754     5,565       810        0.0       0.0     33.0     36.0       3.0
+(AMP042) Health Care Ombudsman             0        0     4,957     5,342       385        0.0       0.0     24.0     26.0       2.0
+SUBTOTAL (AMP000) AGENCY
+MANAGEMENT PROGRAM                    32,803    26,033   47,485   59,546      12,061      80.5     102.2    173.7    184.9      11.1
+Table HT0-4
+(dollars in thousands)
+
+                                                Dollars in Thousands                            Full-Time Equivalents
+                                                                        Change                                           Change
+                                     Actual    Actual Approved Approved   from        Actual    Actual Approved Approved   from
+Division/Program and Activity       FY 2023   FY 2024 FY 2025 FY 2026 FY 2025        FY 2023   FY 2024 FY 2025 FY 2026 FY 2025
+(AMP066) HEALTH CARE
+DELIVERY MANAGEMENT
+(AMP043) Health Care Delivery
+Management Support Services               0        0     1,443     1,509       65        0.0       0.0      9.0     10.0      1.0
+(AMP044) Managed Care
+Management                                0        0     9,585     9,425     -160        0.0       0.0      7.0         6.0   -1.0
+(AMP045) Children's Health
+Services                                  0        0     1,292     1,237      -55        0.0       0.0      4.0         4.0   0.0
+(AMP046) Health Care Quality and
+Health Outcomes                           0        0     2,948     2,635     -313        0.0       0.0      7.0         7.0   0.0
+(AMP047) Clinicians, Rx and Acute
+Care                                      0        0     9,566         0    -9,566       0.0       0.0      0.0         0.0   0.0
+SUBTOTAL (AMP066) HEALTH
+CARE DELIVERY
+MANAGEMENT                                0        0    24,835   14,806    -10,029       0.0       0.0     27.0     27.0      0.0
+(AMP067) LONG TERM CARE
+PROGRAM
+(AMP048) Long Term Care Support
+Services                                  0        0       859      809        -50       0.0       0.0      6.0      6.0       0.0
+(AMP049) Oversight                        0        0     2,100    2,271        171       0.0       0.0     17.0     17.0       0.0
+(AMP050) Operations                       0        0    12,358   18,654      6,296       0.0       0.0     16.6     16.0      -0.6
+(AMP051) Intake and Assessment            0        0     9,841    8,442     -1,399       0.0       0.0      6.4      7.0       0.6
+SUBTOTAL (AMP067) LONG
+TERM CARE PROGRAM                         0        0    25,158   30,176     5,017        0.0       0.0     46.0     46.0      0.0
+(AMP068) HEALTH CARE
+POLICY AND RESEARCH
+(AMP052) Health Care Policy               0        0     1,004     1,021       17        0.0       0.0      7.0         7.0   0.0
+(AMP053) Health Care Policy and
+Research Support Services                 0        0     1,605     1,197     -407        0.0       0.0      3.0         4.0   1.0
+(AMP054) Eligibility Policy &
+Oversight                                 0        0     3,843     4,402      559        0.0       0.0     29.0     29.0      0.0
+SUBTOTAL (AMP068) HEALTH
+CARE POLICY AND
+RESEARCH                                  0        0     6,452     6,621      169        0.0       0.0     39.0     40.0      1.0
+(AMP069) DC ACCESS SYSTEM
+(AMP055) DCAS Program
+Management                                0        0     1,807     1,828       21        0.0       0.0      4.3         4.3   0.0
+(AMP056) DCAS Project
+Management                                0        0     4,328     3,923     -405        0.0       0.0      6.9         5.2   -1.7
+(AMP057) DCAS HHS Functional              0        0       814       851       37        0.0       0.0      6.0         6.1    0.0
+(AMP058) DCAS Organizational
+Change Management                         0        0    13,203   12,422      -781        0.0       0.0      6.9         6.9   0.0
+(AMP059) DCAS Information
+Technology                                0        0    57,268   53,078     -4,190       0.0       0.0      6.9         6.9   0.0
+SUBTOTAL (AMP069) DC
+ACCESS SYSTEM                             0        0    77,420   72,102     -5,318       0.0       0.0     31.1     29.4      -1.7
+(AMP070) HEALTH CARE
+OPERATIONS
+(AMP060) Claims Management                0        0    59,722   64,208     4,486        0.0       0.0     14.0     14.0      0.0
+(AMP061) HCOA Support Services            0        0       454      483        29        0.0       0.0      3.0      3.0      0.0
+(AMP062) Public and Private
+Provider Services                         0        0     3,665     6,425    2,760        0.0       0.0      9.0         8.0   -1.0
+SUBTOTAL (AMP070) HEALTH
+CARE OPERATIONS                           0        0    63,841   71,116     7,275        0.0       0.0     26.0     25.0      -1.0
+Table HT0-4
+(dollars in thousands)
+
+                                               Dollars in Thousands                             Full-Time Equivalents
+                                                                       Change                                            Change
+                                    Actual    Actual Approved Approved   from         Actual    Actual Approved Approved   from
+Division/Program and Activity      FY 2023   FY 2024 FY 2025 FY 2026 FY 2025         FY 2023   FY 2024 FY 2025 FY 2026 FY 2025
+(AMP071) HEALTH CARE
+REFORM AND INNOVATION
+(AMP063) HC Reform and
+Innovative Support Services              0        0      454          611     157        0.0       0.0      3.0         4.0   1.0
+(AMP064) Grants Administration
+Function                                 0        0     6,252   10,208      3,956        0.0       0.0      3.0         4.0   1.0
+(AMP065) HIE: Health Information
+Exchange                                 0        0    11,321   11,221       -100        0.0       0.0      7.0         7.0   0.0
+SUBTOTAL (AMP071) HEALTH
+CARE REFORM AND
+ INNOVATION                              0        0    18,027   22,040      4,013        0.0       0.0     13.0     15.0      2.0
+(HS0023) ELIGIBILITY &
+ENROLLMENT
+(H02301) E & E Systems              40,471    46,339       99           0     -99       21.8      15.6      1.1         0.0   -1.1
+(H02302) E&E Oversight &
+Management                             787      812         0           0       0       13.6       9.0      0.0         0.0   0.0
+(H02305) E&E Support -
+PMO/SME - DCAS                      14,767    21,832        0           0       0       32.6      15.1      0.0         0.0   0.0
+SUBTOTAL (HS0023)
+ELIGIBILITY &
+ENROLLMENT                          56,025    68,983       99           0     -99       68.1      39.7      1.1         0.0   -1.1
+(HS0024) HEALTH CARE
+ANALYTICS
+(H02401) Health Care Agency
+Monitoring and Kpis                  1,200     1,594        0           0       0        7.2       8.1      0.0         0.0   0.0
+(H02402) Health Care Data
+Analytics                            1,164     1,369        0           0       0       10.4       8.1      0.0         0.0   0.0
+(H02403) Health Care Innovation      9,551     7,682        0           0       0        6.8       7.4      0.0         0.0   0.0
+SUBTOTAL (HS0024) HEALTH
+CARE ANALYTICS                      11,915    10,646        0           0       0       24.4      23.6      0.0         0.0   0.0
+(HS0025) MMIS SYSTEM AND
+INFRASTRUCTURE
+(H02501) Claims Processing &
+Quality Assurance/Control           43,855    47,021        0           0       0       13.5      15.4      0.0         0.0   0.0
+SUBTOTAL (HS0025) MMIS
+SYSTEM AND
+INFRASTRUCTURE                      43,855    47,021        0           0       0       13.5      15.4      0.0         0.0   0.0
+(HS0026) PROGRAM
+OVERSIGHT
+(H02601) Assessments and Care
+Coordination                           972     1,009        0           0        0       6.3       7.2      0.0         0.0   0.0
+(H02602) Fraud, Waste, and Abuse     3,495     4,155        0           0        0      23.0      25.3      0.0         0.0   0.0
+(H02603) Policy                      2,784     4,757        0           0        0       7.2      28.0      0.0         0.0   0.0
+(H02604) Provider Oversight         38,841    40,647    2,125           0   -2,125      51.8      56.9      0.0         0.0   0.0
+(H02605) Quality & Health
+Outcomes                             3,163     3,292     501          395    -106        9.3      11.8      3.2         3.6   0.4
+SUBTOTAL (HS0026)
+PROGRAM OVERSIGHT                   49,256    53,859    2,626         395   -2,231      97.6     129.2      3.2         3.6   0.4
+Table HT0-4
+(dollars in thousands)
+
+                                                         Dollars in Thousands                                 Full-Time Equivalents
+                                                                               Change                                                  Change
+                                          Actual      Actual Approved Approved   from               Actual    Actual Approved Approved   from
+Division/Program and Activity            FY 2023     FY 2024 FY 2025 FY 2026 FY 2025               FY 2023   FY 2024 FY 2025 FY 2026 FY 2025
+(HS0027) PROVIDER
+SERVICES
+(H02703) 1115/1915 - Medicaid             456,082     413,218     439,257      498,998    59,741       0.0       0.0      0.0         0.0    0.0
+(H02704) FFS - Childless Adults
+(Group 8)                                   8,829     9,733    49,225    69,896   20,670               0.0       0.0      0.0         0.0    0.0
+(H02705) FFS - Chip                         7,001     8,368     8,566    13,375    4,809               0.0       0.0      0.0         0.0    0.0
+(H02706) FFS - Medicaid                 1,345,709 1,449,063 1,223,326 1,433,980 210,654                1.4       1.7      0.0         0.0    0.0
+(H02707) MCO - Alliance                   111,194 147,448 132,644             0 -132,644               0.0       0.0      0.0         0.0    0.0
+(H02708) MCO - Childless Adults
+(Group 8)                                 770,922     712,779     931,882 1,129,395      197,513       0.0       0.0      0.0         0.0    0.0
+(H02709) MCO - Chip                        52,094      54,132      73,587    97,779       24,192       0.0       0.0      0.0         0.0    0.0
+(H02710) MCO - Immigrant
+Children                                   15,119    19,114    18,284         0          -18,284       0.0       0.0      0.0         0.0    0.0
+(H02711) MCO - Medicaid                 1,248,649 1,130,795 1,529,116 1,658,576          129,461       0.0       0.0      0.0         0.0    0.0
+(H02712) MCO- Waiver                      146,011 151,402 187,301 196,846                  9,546       0.0       0.0      0.0         0.0    0.0
+(H02713) HCBS ARPA Initiative              82,825    78,804       225         0             -225       0.0       4.6      0.0         0.0    0.0
+(H02714) Indigent Care                          0         0         0 121,396            121,396       0.0       0.0      0.0         0.0    0.0
+SUBTOTAL (HS0027)
+PROVIDER SERVICES                       4,244,434 4,174,857 4,593,413 5,220,241          626,829       1.4       6.3      0.0         0.0    0.0
+(PRG000) NO PROGRAM
+(PRG001) No Program                              0     15,069             0          0        0        0.0       0.0      0.0         0.0    0.0
+SUBTOTAL (PRG000) NO
+PROGRAM                                          0     15,069             0          0        0        0.0       0.0      0.0         0.0    0.0
+TOTAL APPROVED
+OPERATING BUDGET                        4,442,558 4,401,504 4,867,809 5,504,769          636,960     299.1     331.7    378.1    390.9      12.8
+(Change is calculated by whole numbers and numbers may not add up due to rounding)
+
+
+Note: For more detailed information regarding the approved funding for the activities within this agency’s programs, please
+see Schedule 30-PBB Program Summary by Activity. For detailed information on this agency’s Cost Center structure as reflected in
+the District’s Chart of Accounts, please see Schedule 30-CC FY 2026 Approved Operating Budget and FTEs, by
+Division/Office. The schedules can be found in the FY 2026 Operating Appendices located on the Office of the Chief Financial
+Officer’s website. Additional information on this agency’s interagency agreements can be found in Appendix H in the Executive
+Summary, Volume 1.
+
+Division Description
+The Department of Health Care Finance operates through the following 10 divisions:
+
+Health Care Delivery Management – ensures that quality services and practices pervade all activities that
+affect the delivery of health care to beneficiaries served by the District’s Medicaid, Children’s Health
+Insurance Program (CHIP), and Alliance programs. HCDM accomplishes this through informed benefit
+design; use of prospective, concurrent and retrospective utilization management; ongoing program evaluation;
+and the application of continuous quality measurement and improvement practices in furnishing preventive,
+acute, and chronic/long-term care services to children and adults through DHCF’s managed care contractors
+and institutional and ambulatory fee-for-service providers.
+
+This division contains the following 4 activities:
+
+•       Health Care Delivery Management Support Services – provides administrative support functions to
+        the Health Care Delivery Management division;
+•    Managed Care Management – provides oversight, evaluation, and enforcement of contracts with
+     organizations managing the care and service delivery of Medicaid and Alliance beneficiaries, along with
+     providing oversight and enrollment of eligible beneficiaries;
+•    Children's Health Services – develops, implements, and monitors policies, benefits and practices for
+     children’s health care services, including HealthCheck/EPSDT, CHIP, and the Immigrant Children’s
+     Program; and
+•    Health Care Quality and Health Outcomes – continuously improves the quality (safe, effective,
+     patient-centered, timely, efficient, and equitable services) of health care delivered by programs
+     administered by DHCF; and ensures that quality and performance improvement principles and practices
+     pervade all the components and activities that impact the delivery and outcomes of health care services
+     to patients served by the District’s Medicaid, CHIP, and Alliance programs.
+Long-Term Care Program – provides operations support, oversight and monitoring of programs targeted to
+the elderly, persons with physical disabilities, persons with intellectual and developmental disabilities and
+individuals who are dually eligible for both Medicare and Medicaid. Through program development,
+day-to-day operations, and oversight and monitoring activities, the LTCA also ensures access to needed
+cost-effective, high-quality extended and long-term care services for Medicaid beneficiaries residing in home
+and community-based or institutional settings. The office also provides contract management of various
+long-term care services and supports contracts, including the long-term care assessment contract, the contracts
+for the Dual Eligible Special Needs Plan (D-SNP) and Program for All-Inclusive Care for the Elderly (PACE)
+programs, and more.
+
+This division contains the following 4 activities:
+•    Long-Term Care Support Services – provides administrative support functions to the Long-Term Care
+     Administration;
+•    Oversight – provides quality oversight and assurance, including compliance with mandatory Centers for
+     Medicare and Medicaid Services (CMS) assurances, oversight and audits/site visits, and management of
+     corrective action plans;
+•    Operations – provides day-to-day operations support for LTC partners, providers and beneficiaries to
+     ensure service delivery; training and technical assistance to providers; provider readiness; and grievance
+     and appeals triage and resolution; and
+•    Intake and Assessment – clinical operations unit responsible for assessment and intake processes,
+     coordination with the DC Department on Aging and Community Living (DACL), and other clinical
+     processes within LTCA’s purview.
+Health Care Policy and Research – maintains the Medicaid and CHIP state plans that govern eligibility,
+scope of benefits, and reimbursement policies for the District's Medicaid and CHIP programs; develops policy
+for the Health Care Alliance program and other publicly funded health care programs that are administered or
+monitored by DHCF based on sound analysis of local and national health care and reimbursement policies
+and strategies; and ensures coordination and consistency among health care and reimbursement policies
+developed by the various divisions within DHCF.
+
+This division contains the following 3 activities:
+•    Health Care Policy – maintains the Medicaid State Plan, which governs the eligibility, scope of
+     benefits, and reimbursement policies of the Medicaid and CHIP programs;
+•    Health Care Policy and Research Support Services – provides administrative support to functions to
+     the Health Care Policy and Planning Administration; and
+•    Eligibility Policy and Oversight – serves as liaison to District and federal agencies regarding
+     eligibility-related matters; ensures collaboration and coordination between the agencies and facilitates
+     compliance by the Department of Human Services’ Economic Security Administration with DHCF
+     eligibility policy; interprets federal and state eligibility rules and regulation; establishes eligibility
+     policies and criteria for the Medicaid and CHIP programs, as well as the Health Care Alliance and the
+     Immigrant Children’s Program and determines eligibility for long term care services and supports and
+     special eligibility programs; interprets and helps draft legislative changes, rules and regulations for the
+     District regarding eligibility requirements; and manages the Optional State Supplement Payment
+     Program for eligible District of Columbia residents residing in an adult foster care home.
+DC Access System (DCAS) – has responsibility to design, develop, implement, and manage the DC Access
+System (DCAS), which is an integrated eligibility system for all health and human services for the District. In
+addition, this administration is responsible for supporting the functionality and funding for all components of
+DCAS and their seamless interface with the Health Benefits Exchange and Department of Human Services
+program components.
+
+This division contains the following 5 activities:
+•    DCAS Program Management – manages all operational and functional activities related to the DCAS
+     project;
+•    DCAS Project Management – manages all project management and functional activities related to the
+     DCAS project;
+•    DCAS HHS Functional – joint oversight development execution of the DC access systems;
+•    DCAS Organizational Change Management – manages all historical, current, and forecasted project
+     initiatives associated with Organization Change Management; and
+•    DCAS Information Technology – manages the operational tasks and maintenance for the DCAS
+     project.
+Health Care Operations – ensures the division of programs that pertain to the payment of claims and
+manages the fiscal agent contract, the administrative contracts, systems, and provider enrollment and
+requirements. The office provides contract management of the Pharmacy Benefits Manager, the Quality
+Improvement Organization contract, and the Medicaid Management Information System (MMIS) Fiscal
+Intermediary contract as well as additional administrative contracts.
+
+This division contains the following 3 activities:
+•    Claims Management – oversees MMIS operations; systems requests; member services;
+•    HCOA Support Services – provides administrative support functions to the Health Care Operations
+     divisions; and
+•    Public and Private Provider Services – manages the Administrative Services Organization contract,
+     provider enrollment and recruitment, and internal and external provider services and inquiries. The
+     office also maintains positive ongoing coordination and continuity with all public provider agencies of
+     the District of Columbia government to enhance each agency’s understanding of Medicaid
+     reimbursement policies; is the accountable office within DHCF for implementation of policy that
+     directly impacts other District agencies that serve as Medicaid providers; identifies opportunities to
+     improve the reimbursement procedures of each agency; and works closely with these agencies to review
+     federal policy to ensure that federal reimbursement is being maximized and compliance assured through
+     claims processing and through program development.
+Health Care Reform and Innovation – identifies, validates, and disseminates information about new health
+care models and payment approaches serving Medicaid beneficiaries with the goal of enhancing health care
+quality, improving care and outcomes, promoting health equity, and enhancing the value and efficiency of
+DHCF programs. The division creates and tests new delivery system and payment models among providers in
+the District and builds collaborative learning networks to facilitate innovation, implement effective practices,
+and facilitate technology improvements to support delivery system re-design and improvement.
+
+This division contains the following 3 activities:
+•    Health Care Reform and Innovative Support Services – is responsible for advancing the use of
+     information technology among health care providers in the District. These activities include HCRIA’s
+     responsibility to design, develop, implement, and sustain Health Information Exchange (HIE) activities.
+     HIE’s infrastructure provides the technology, processes, and operations needed to facilitate exchange of
+     health information between health stakeholders. HCRIA’s Health Information Technology (HIT)
+     program offers incentives, outreach, and technical assistance to drive the adoption and use of Certified
+     Electronic Health Records Technology by District health care providers. The program aligns with CMS’s
+     Meaningful Use framework;
+•    Grant Administration Function – develops and executes strategies for payment and delivery system
+     reform in the District, including developing, implementing, and monitoring practice transformation
+     activities as well as developing demonstration projects and grants to support various value–based
+     purchasing and practice transformation strategies; and
+•    Health Information Exchange – responsible for advancing the use of digital health among health care
+     providers in the District. This Division serves as the state health IT coordinator and regulates health
+     information exchange (HIE). It is also responsible for the design, development, implementation, and
+     sustainability of DC HIE connectivity and infrastructure, which enables operations needed to facilitate
+     exchange of health information across the District’s health system. Lastly, this Division offers
+     incentives, outreach and technical assistance to drive adoption and meaningful use of digital health tools
+     by District health care providers.
+
+
+Program Oversight – to provide a reasonable and consistent oversight of the Medicaid program.
+
+This division contains the following activity:
+
+•    Quality and Health Outcomes – ensures continuous improvements to the quality and performance
+     principles and practices of the health care programs administered by DHCF.
+
+Provider Services – provides payment to providers in the following: the Medicaid program, the Children's
+Health Insurance Program (CHIP) and the Alliance program.
+
+This division contains the following 9 activities:
+
+•    1115/1915 - Medicaid – waiver programs offered through 1915 and 1115 authority providing care for
+     home and community based services (1915) or demonstration programs(1115) to expand care beyond
+     the traditional Medicaid program;
+•    Fee for Services (FFS) - Childless Adults (Group 8) – fee for Service provider payments for adults
+     between the ages of 21 and 64 who do not have dependents;
+•    FFS - Chip – for Service provider payments for the Children's Health Insurance Program. This
+     population is broken out due to a more favorable federal match percentage;
+•    FFS Medicaid – fee for services provider payments for the general Medicaid population;
+•    MCO Childless Adults (Group 8) – MCO payments for adults between the ages of 21 and 64 who do
+     not have dependents;
+•    MCO Chip – MCO payments for the Children's Health Insurance Program. Provides coverage for
+     children who are in families with income too high to qualify for Medicaid, but are too low to afford
+     private coverage;
+•
+     MCO Medicaid – MCO payments for the general Medicaid population;
+•    MCO Waiver – dual Eligible Special Needs Program (DSNP), Medicare Advantage; and
+•    Indigent Care - program serving those uninsured and otherwise not eligible for Medicaid.
+
+Agency Financial Operations – provides comprehensive and efficient financial management services to, and
+on behalf of, District agencies so that he financial integrity of the District of Columbia is maintained This
+division is standard for all agencies using performance/based budgeting.
+Agency Management – provides for administrative support and the required tools to achieve operational and
+programmatic results. This division is standard for all agencies using performance-based budgeting.
+
+The DHCF Agency Management structure also includes:
+
+•      Office of the Senior Deputy Director/Medicaid Director (Office of the State Medicaid Director -
+       OSMD) – Responsible for overseeing the DC Medicaid Program, ensuring its affordability to the
+       District of Columbia residents, including the office of the Chief Medical Officer;
+•      Health Care Ombudsman’s Office – Responsible for assisting people in understanding their health
+       care coverage and providing guidance, advocating, and assisting in the appeals process;
+•      Office of the Senior Deputy Director, Finance (Office of Rates, Reimbursement and Financial
+       Analysis - ORRFA) – responsible for provider rate setting and reimbursement, program financial
+       analysis of spending trends and utilization and actuarial oversight of the Managed Care Organizations;
+•      Data Analytics and Research (DARA) – Transforms data into meaningful information to support
+       decision-making, effectiveness, and transparency in the District's Medicaid and locally funded health
+       coverage programs; and
+•      Program Integrity (PI) – provide a reasonable and consistent system of oversight of the Medicaid
+       program; reduce and eliminate fraud, waste, and abuse in the Medicaid Program.
+
+
+Division Structure Change
+The Department of Health Care Finance has no division structure changes in the FY 2026
+approved budget.
+
+FY 2025 Approved Budget to FY 2026 Approved Budget, by Revenue Type
+Table HT0-5 itemizes the changes by revenue type between the FY 2025 approved budget and the
+FY 2026 approved budget. For a more comprehensive explanation of changes, please see the
+FY 2026 Approved Budget Changes section, which follows the table.
+Table HT0-5
+(dollars in thousands)
+
+DESCRIPTION                                                                              DIVISION/PROGRAM    BUDGET      FTE
+
+LOCAL FUNDS: FY 2025 Approved Budget and FTE                                                                 1,043,110   172.4
+   Removal of One-Time Funding                                                           Multiple Programs        -100     0.0
+LOCAL FUNDS: FY 2026 Recurring Budget                                                                        1,043,010   172.4
+   Increase: To support medical care costs                                               Provider Services       7,552     0.0
+   Increase: To adjust the Contractual Services budget                                   Multiple Programs       1,996     0.0
+   Increase: To align personnel services and Fringe Benefits with projected costs        Multiple Programs         843     2.4
+   Decrease: To realize savings in nonpersonnel services                                 Multiple Programs        -362     0.0
+   Decrease: Equipment cost savings                                                      DC Access System       -6,223     0.0
+   Enhance: To support DCAS ($5.7m), equipment upgrades ($510k), MOU to support          Multiple Programs       6,531     0.0
+   IVF treatment ($175k), and contractual services ($168k) (one-time)
+   Enhance: To support DSP wage enhancement (one-time)                                   Provider Services      6,510      0.0
+   Enhance: To support the net impact of lower Dedicated Tax revenue and Graduate        Provider Services      3,374      0.0
+   Medical Education savings
+   Reduce: To reflect the proposed one-time reduction of step increases and associated   Multiple Programs       -138      0.0
+   fringe benefit costs
+   Reduce: To support provider rate reductions and limited enrollment for people not     Provider Services     -11,363     0.0
+   otherwise eligible for Medicaid
+Table HT0-5
+(dollars in thousands)
+
+DESCRIPTION                                                                               DIVISION/PROGRAM               BUDGET      FTE
+LOCAL FUNDS: FY 2026 Mayor’s Proposed Budget                                                                             1,051,730   174.9
+   Enhance: To support the impact of lower inpatient revenue from revised ACR             Provider Services                  2,297     0.0
+   projections
+   Enhance: To support coverage extension for individuals in the Alliance program aged    Provider Services                 1,801      0.0
+   21 to 25 (one-time)
+   Enhance: To provide durable medical equipment for adults                              Provider Services                  1,379      0.0
+   Enhance: To support extension period for new Alliance enrollees (one-time)            Provider Services                    475      0.0
+   Enhance: To provide durable medical equipment for youth under 26 years old            Provider Services                    345      0.0
+   Enhance: To support the Home Visiting/Nurse Family Partnership program                Health Care Reform and               300      0.0
+                                                                                         Innovation
+   Enhance: To support the continued use of all current enrollment certification methods Provider Services                    198      0.0
+   for the Alliance program
+   Enhance: To support additional FTE(s)                                                 Agency Management Program              95     1.1
+   Reduce: To realize programmatic cost savings in nonpersonnel services                 Multiple Programs                     -62     0.0
+   Reduce: To realize savings in contractual services                                    Multiple Programs                    -522     0.0
+   Reduce: To align the budget with enrollment projections for the Alliance program      Provider Services                  -3,329     0.0
+LOCAL FUNDS: FY 2026 District’s Approved Budget                                                                          1,054,707   176.0
+
+
+DEDICATED TAXES: FY 2025 Approved Budget and FTE                                                                          240,410      7.2
+    Increase: To align the budget with projected revenues                                  Provider Services               62,023      0.0
+    Decrease: To align personnel services and Fringe Benefits with projected costs         Multiple Programs                  -10     -0.6
+    Decrease: To align the Contractual Services budget with projected costs                Agency Financial Operations       -442      0.0
+    Reduce: To reflect the proposed one-time reduction of step increases and associated    Multiple Programs                   -7      0.0
+    fringe benefit costs
+    Reduce: To align the budget with projected revenue due to fewer beneficiaries enrolled Provider Services               -34,260     0.0
+    in managed care services
+DEDICATED TAXES: FY 2026 Mayor’s Proposed Budget                                                                          267,714      6.6
+    Enhance: To align budget with Outpatient Hospital Directed Payments Provider Fee Provider Services                     38,337      0.0
+    revenue projection
+    Reduce: To align budget with Inpatient Hospital Directed Payments Provider Fee         Provider Services               -20,111     0.0
+    revenue projection
+DEDICATED TAXES: FY 2026 District’s Approved Budget                                                                       285,940      6.6
+
+
+SPECIAL PURPOSE REVENUE FUNDS: FY 2025 Approved Budget and FTE                                                               7,008    15.6
+    Increase: To align personnel services and Fringe Benefits with projected costs        Multiple Programs                    109    -0.6
+    Decrease: To align the budget with projected revenues                                 Multiple Programs                 -1,625     0.0
+    Enhance: To support nonpersonnel services costs                                       Multiple Programs                     15     0.0
+    Reduce: To reflect the proposed one-time reduction of step increases and associated   Multiple Programs                    -15     0.0
+    fringe benefit costs
+SPECIAL PURPOSE REVENUE FUNDS: FY 2026 Mayor’s Proposed Budget                                                              5,492     15.0
+    No Change                                                                                                                   0      0.0
+SPECIAL PURPOSE REVENUE FUNDS: FY 2026 District’s Approved Budget                                                           5,492     15.0
+
+
+FEDERAL GRANT FUNDS: FY 2025 Approved Budget and FTE                                                                        5,136      5.0
+    Increase: To align the budget with projected grant awards                             Multiple Programs                 4,805      0.0
+    Increase: To align personnel services and Fringe Benefits with projected costs        Multiple Programs                   469      3.0
+    Reduce: To reflect the proposed one-time reduction of step increases and associated   Long Term Care Program              -10      0.0
+    fringe benefit costs
+FEDERAL GRANT FUNDS: FY 2026 Mayor’s Proposed Budget                                                                       10,400      8.0
+    No Change                                                                                                                   0      0.0
+FEDERAL GRANT FUNDS: FY 2026 District’s Approved Budget                                                                    10,400      8.0
+Table HT0-5
+(dollars in thousands)
+
+DESCRIPTION                                                                                    DIVISION/PROGRAM            BUDGET      FTE
+
+FEDERAL MEDICAID PAYMENTS: FY 2025 Approved Budget and FTE                                                                 3,572,145   177.9
+    Increase: To adjust Federal match to align with Local budget                               Multiple Programs             492,331     0.0
+    Increase: To adjust Federal match to align with Local personnel services budget            Multiple Programs               1,424     6.4
+    Enhance: To adjust for Medicaid reimbursements                                             Provider Services              14,901     0.0
+    Reduce: To reflect the proposed one-time reduction of step increases and associated        Multiple Programs                -141     0.0
+    fringe benefit costs
+FEDERAL MEDICAID PAYMENTS: FY 2026 Mayor’s Proposed Budget                                                                 4,080,660   184.4
+    Enhance: To adjust for Medicaid reimbursements                                             Provider Services              67,493     0.0
+    Enhance: To support a partial FTE                                                          Agency Management Program          78     0.9
+FEDERAL MEDICAID PAYMENTS: FY 2026 District’s Approved Budget                                                              4,148,230   185.2
+
+
+
+GROSS FOR HT0 - DEPARTMENT OF HEALTH CARE FINANCE                                                                          5,504,769   390.9
+(Change is calculated by whole numbers and numbers may not add up due to rounding)
+
+
+Note: For more detailed information regarding the approved funding for interagency projects funded within this agency, please
+see Appendix H, FY 2026 Interagency Budgets, of the Executive Summary, Volume 1 located on the OCFO’s website.
+
+
+FY 2026 Approved Operating Budget Changes
+Table HT0-6 contains the approved FY 2026 budget by fund compared to the FY 2025 approved budget.
+
+Table HT0-6
+                                                                                                                                 % Change
+                                                                                    FY 2025                   FY 2026                from
+Appropriated Fund                                                                 Approved                  Approved              FY 2025
+Local Funds                                                                  $1,043,110,088)           $1,054,706,805)                   1.1
+Dedicated Taxes                                                                $240,409,641)             $285,940,321)                  18.9
+Special Purpose
+Revenue Funds                                                                    $7,008,261)               $5,491,817)                 -21.6
+Federal Grant Funds                                                              $5,136,131)              $10,399,776)                 102.5
+Federal Medicaid Payments                                                    $3,572,144,949)           $4,148,230,385)                  16.1
+GROSS FUNDS                                                                  $4,867,809,070)           $5,504,769,104)                  13.1
+
+
+Mayor’s Proposed Budget
+Increase: The Department of Health Care Finance’s (DHCF) proposed Local funds budget submission
+includes a net increase of $7,552,401 in the Provider Services division. This adjustment is comprised of an
+increase of $43,797,527 to support the increasing cost of medical care for the most vulnerable beneficiaries,
+including a rate increase for dental services to ensure access and the implementation of CMS required
+coverage for youth; and is offset by savings of $36,245,126 to reflect reduced eligibility for participants with
+income levels above 138.0 percent of the federal poverty level; shifting their care to the Health Benefits
+Exchange by providing insurance through one of two benefits programs; adjusting programs serving those
+otherwise not eligible for Medicaid; and adjusting the impacts of provider rates by adjusting/delaying
+rebasing and/or eliminating inflation.
+    A proposed Local funds increase of $1,995,700 in nonpersonnel services across multiple divisions will
+support various program initiatives, primarily in contractual services costs. Additionally, DHCF proposes a
+Local funds increase of $842,937 and 2.4 Full-Time Equivalents (FTEs) across multiple divisions that will
+align the personnel services budget with projected salary and Fringe Benefit costs.
+   In Dedicated Tax funds, a proposed increase of $62,023,014 in subsidies to the Provider Services division
+is comprised of projected revenue increases of $25,089,799 in the Inpatient Directed Payments Fund,
+$16,890,941 in the Outpatient Directed Payments Fund, $15,761,554 in the Healthy DC Fund, and a net
+increase of $4,280,720 in DHCF’s other four Dedicated Tax funds.
+   A proposed increase of $108,798 in Special Purpose Revenue (SPR) funds will align the personnel services
+budget across multiple divisions. This adjustment services includes a reduction of 0.6 FTE.
+    The Federal Grant funds proposed budget submission includes increases of $4,804,644 to align with
+projected grant awards across nonpersonnel services; and $468,804 and 3.0 FTEs to support salary and Fringe
+Benefit costs across multiple divisions.
+   The proposed budget submission also includes increases to Federal Medicaid Payments in the amount of
+$492,330,920 to account for the federal match for qualified services; and $1,424,204 and 6.4 FTEs in
+personnel service adjustments across multiple divisions.
+
+Decrease: DHCF proposed Local funds also saved $361,882 in nonpersonnel services across multiple
+divisions, and a decrease of $6,222,832 in the DC Access System division. These savings result from ceasing
+to use recurring funds to support the costs related to equipment purchases.
+    In Dedicated Tax funds, DHCF proposed a decrease of $9,513 and 0.6 FTEs to align salaries and Fringe
+Benefit costs, and a decrease of $441,583 in the contractual services across multiple divisions to align with
+projected revenue.
+   The proposed budget submission for SPR funds includes a $1,625,242 decrease across multiple divisions
+will align the budget with projected revenues.
+
+Enhance: DCHF's Local budget proposal will include a one-time increase of $6,531,248 across multiple
+divisions. This adjustment is comprised of $5,677,711 for software and equipment maintenance costs in the
+DCAS System division; $510,114 to support the upgrade and replacement of outdated computer equipment;
+$175,000 for a Memorandum of Understanding (MOU) with the Health Benefit Exchange Authority that
+supports In Vitro Fertilization treatment (IVF); and $168,423 in contractual services for professional
+development and administrative support. The Local funds budget proposal also includes a one-time increase
+of $6,509,686 in the Provider Services division to support the wage enhancement of Direct Support
+Professionals (DSP). The proposed Local funds budget also includes a net increase of $3,374,210 in subsidies
+in the Provider Services division to support the impacts of fewer beneficiaries enrolled in managed care. This
+adjustment is comprised of an increase $4,274,211 in Local spending to compensate for a loss in Dedicated
+Tax revenue, and is offset by a reduction of $900,001 to reflect savings in graduate medical education costs.
+     The proposed SPR budget includes an increase of $14,764 in nonpersonnel services across multiple
+divisions, which is comprised of $11,126 to the Agency Management division for contractual services; and
+$3,638 to the Provider Services division for subsidies.
+   The Federal Medicaid Payments funds proposed budget reflects an increase of $14,901,348 in subsidies to
+support match requirements for Local funded budget adjustments in the Provider Services division.
+
+Reduce: The budget submission reflects a proposed one-time reduction of $137,717 in Local funds to step
+increases and associated fringe benefit costs across multiple divisions. The Local budget proposal also
+includes a net decrease of $11,363,413 in the Provider Services division to support provider rate reductions
+and limited enrollment for uninsured people otherwise not eligible for Medicaid.
+   The budget submission for Dedicated Taxes funds reflects a proposed one-time reduction of $7,385 to step
+increases and associated fringe benefit costs across multiple divisions. The Dedicated Taxes funds also
+includes a decrease of $34,260,077 in subsidies in the Provider Services division to align spending with lower
+projected revenue resulting, in part, from fewer beneficiaries enrolled in managed care services.
+     Lastly, the budget submission reflects proposed one-time reductions of $14,764 in Special Purpose
+Revenue funds; $9,803 in Federal Grant funds; and $141,499 in Federal Medicaid Payments to step increases
+and associated fringe benefit costs across multiple divisions.
+District's Approved Budget
+Enhance: DHCF’s approved Local funds budget includes several increases in the Provider Services division.
+These adjustments include an increase of $2,297,155 that will be used to supplement lost inpatient revenue
+from updated Average Commercial Rate (ACR) projections. Additionally, a one-time Local fund increase of
+$1,801,051 is included to keep Alliance program enrollment open for those aged 21 to 25. An increase of
+$1,379,202 will be used to provide durable medical equipment for adults in the Alliance program; an increase
+of $475,000 in one-time funding reflects the additional cost of starting the Alliance enrollment closure for
+adults 26 and older two months later than originally planned and allowing those who enroll in FY 2026 and
+turn 26 in FY 2026 to remain enrolled in the Alliance program until September 30, 2026; and an increase of
+$345,287 is to support durable medical equipment coverage for youth under 26 years of age in the Alliance
+program.
+    Additionally in Local funds, an increase of $300,000 in the Health Care Reform and Innovation division is
+to support the Home Visiting/Nurse Family Partnership program; an increase of $197,678 in the
+Provider Services division is to support the continuation of all current methods of enrollment
+certification for the Alliance program; and lastly, an increase of $95,002 and 1.1 FTEs in the Agency
+Management division is to support the Health Care and Public Benefits Ombudsman program.
+
+Reduce: In Local funds, DHCF’s approved budget includes a reduction of $62,393 across multiple divisions
+resulting from cost savings for Information Technology (IT) hardware maintenance, training, membership
+dues, conference fees, travel and supplies. Also in Local funds, a reduction of $522,500 across multiple
+divisions is to reflect savings from the Realignment, Data Programming and Coding Support, and Behavioral
+Health Stakeholders Engagement contracts. Lastly, a reduction of $3,329,102 in the Provider Services
+division is to reflect the enrollment reforecast for the Alliance program.
+
+FY 2026 Approved Full-Time Equivalents (FTEs)
+Table HT0-7 contains the summary of FY 2026 Approved Budgeted Full-Time Equivalents (FTEs).
+
+Table HT0-7
+Total FY 2026 Approved Budgeted FTEs                                                                                     390.9)
+Less: Interagency FTEs budgeted in this agency but employed by other agencies:
+BY0-Department of Aging and Community Living                                                                              (5.0)
+CB0-Office of the Attorney General for the District of Columbia                                                           (0.9)
+HC0-Department of Health                                                                                                  (3.6)
+HG0-Office of the Deputy Mayor for Health and Human Services                                                              (1.0)
+PO0-Office of Contracting and Procurement                                                                                (13.0)
+TO0-Office of the Chief Technology Officer                                                                                (1.0)
+Total Interagency FTEs budgeted in this agency, employed by other agencies                                               (24.5)
+Add: Interagency FTEs budgeted in other agencies but employed by this agency:
+JA0-Department of Human Services                                                                                           4.6)
+Total Interagency FTEs budgeted in other agencies, employed by this agency                                                 4.6)
+Total FTEs employed by this agency                                                                                       371.0)
+
+Note: Table HT0-7 displays the impact of the buyer agencies budgets funding the seller agencies FTEs in the FY 2026 budget,
+compared to how FTEs were budgeted in FY 2025.
+
+     -It starts with the FY 2026 budgeted FTE figure, 390.9 FTEs.
+     -It subtracts 24.5 FTEs budgeted in HT0 in FY 2026 who are employed by another agency.
+     -It adds 4.6 FTEs budgeted in other agencies in FY 2026 who are employed by HT0.
+     -It ends with 371.0 FTEs, the number of FTEs employed by HT0, which is the FTE figure comparable to the FY 2025 budget.
+

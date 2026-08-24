@@ -1,0 +1,1903 @@
+SOURCE URL: https://oig.hhs.gov/oas/reports/region3/31403301.pdf
+ACCESSED: 2026-08-24
+======================================================================
+  Department of Health and Human Services
+                     OFFICE OF
+                INSPECTOR GENERAL
+
+
+    NOT ALL OF THE DISTRICT OF
+COLUMBIA MARKETPLACE’S INTERNAL
+   CONTROLS WERE EFFECTIVE IN
+ ENSURING THAT INDIVIDUALS WERE
+  ENROLLED IN QUALIFIED HEALTH
+   PLANS ACCORDING TO FEDERAL
+          REQUIREMENTS
+
+    Inquiries about this report may be addressed to the Office of Public Affairs at
+                             Public.Affairs@oig.hhs.gov.
+
+
+
+
+                                                    Daniel R. Levinson
+                                                     Inspector General
+
+                                                       February 2016
+                                                       A-03-14-03301
+                        Office of Inspector General
+                                          http://oig.hhs.gov
+
+
+
+The mission of the Office of Inspector General (OIG), as mandated by Public Law 95-452, as amended, is
+to protect the integrity of the Department of Health and Human Services (HHS) programs, as well as the
+health and welfare of beneficiaries served by those programs. This statutory mission is carried out
+through a nationwide network of audits, investigations, and inspections conducted by the following
+operating components:
+
+Office of Audit Services
+
+The Office of Audit Services (OAS) provides auditing services for HHS, either by conducting audits with
+its own audit resources or by overseeing audit work done by others. Audits examine the performance of
+HHS programs and/or its grantees and contractors in carrying out their respective responsibilities and are
+intended to provide independent assessments of HHS programs and operations. These assessments help
+reduce waste, abuse, and mismanagement and promote economy and efficiency throughout HHS.
+
+Office of Evaluation and Inspections
+The Office of Evaluation and Inspections (OEI) conducts national evaluations to provide HHS, Congress,
+and the public with timely, useful, and reliable information on significant issues. These evaluations focus
+on preventing fraud, waste, or abuse and promoting economy, efficiency, and effectiveness of
+departmental programs. To promote impact, OEI reports also present practical recommendations for
+improving program operations.
+
+Office of Investigations
+The Office of Investigations (OI) conducts criminal, civil, and administrative investigations of fraud and
+misconduct related to HHS programs, operations, and beneficiaries. With investigators working in all 50
+States and the District of Columbia, OI utilizes its resources by actively coordinating with the Department
+of Justice and other Federal, State, and local law enforcement authorities. The investigative efforts of OI
+often lead to criminal convictions, administrative sanctions, and/or civil monetary penalties.
+
+Office of Counsel to the Inspector General
+The Office of Counsel to the Inspector General (OCIG) provides general legal services to OIG, rendering
+advice and opinions on HHS programs and operations and providing all legal support for OIG’s internal
+operations. OCIG represents OIG in all civil and administrative fraud and abuse cases involving HHS
+programs, including False Claims Act, program exclusion, and civil monetary penalty cases. In
+connection with these cases, OCIG also negotiates and monitors corporate integrity agreements. OCIG
+renders advisory opinions, issues compliance program guidance, publishes fraud alerts, and provides
+other guidance to the health care industry concerning the anti-kickback statute and other OIG enforcement
+authorities.
+                         Notices
+
+
+    THIS REPORT IS AVAILABLE TO THE PUBLIC
+              at http://oig.hhs.gov
+
+ Section 8M of the Inspector General Act, 5 U.S.C. App., requires
+ that OIG post its publicly available reports on the OIG Web site.
+
+OFFICE OF AUDIT SERVICES FINDINGS AND OPINIONS
+
+ The designation of financial or management practices as
+ questionable, a recommendation for the disallowance of costs
+ incurred or claimed, and any other conclusions and
+ recommendations in this report represent the findings and
+ opinions of OAS. Authorized officials of the HHS operating
+ divisions will make final determination on these matters.
+                                      EXECUTIVE SUMMARY
+
+ Not all of the District of Columbia marketplace’s internal controls were effective in
+ ensuring that individuals were enrolled in qualified health plans according to Federal
+ requirements.
+WHY WE DID THIS REVIEW
+
+The Patient Protection and Affordable Care Act (ACA) requires the establishment of a health
+insurance exchange (marketplace) in each State and the District of Columbia (the District). A
+marketplace is designed to serve as a “one-stop shop” at which individuals get information about
+their health insurance options; are evaluated for eligibility for a qualified health plan (QHP) and,
+when applicable, eligibility for insurance affordability programs; and enroll in the QHP of their
+choice. As of October 1, 2013, the District and 14 States had established State-based
+marketplaces (State marketplaces).
+
+A previous Office of Inspector General review found that not all internal controls implemented
+by the federally facilitated marketplace (Federal marketplace) and the State marketplaces in
+California and Connecticut were effective in ensuring that individuals were enrolled in QHPs
+according to Federal requirements. This review of the District’s Health Benefit Exchange (the
+District marketplace) is part of an ongoing series of reviews of seven State marketplaces across
+the Nation. We selected the individual State marketplaces to cover States in different parts of the
+country. Our nationwide audit of State marketplace eligibility determinations is part of a larger
+body of ACA work, which also includes audits of how costs incurred to create State
+marketplaces were allocated to establishment grants.
+
+Our objective was to determine whether the District marketplace’s internal controls were
+effective in ensuring that individuals were enrolled in QHPs according to Federal requirements.
+
+BACKGROUND
+
+Qualified Health Plans and Insurance Affordability Programs
+
+QHPs are private health insurance plans that each marketplace recognizes and certifies as
+meeting certain participation standards and covering a core set of benefits. To lower individuals’
+insurance premiums or out-of-pocket costs for QHPs, the ACA provides for two types of
+insurance affordability programs: the premium tax credit and cost-sharing reductions. The
+premium tax credit reduces the cost of a plan’s premium and is available at tax filing time or in
+advance. When paid in advance, the credit is referred to as the “advance premium tax credit”
+(APTC). Cost-sharing reductions help individuals with out-of-pocket costs, such as deductibles,
+coinsurance, and copayments. Depending on an individual’s income, he or she may be eligible
+for either or both types of insurance affordability programs.
+
+To be eligible to enroll in a QHP, an individual must be a U.S. citizen, a U.S. national, or
+lawfully present in the United States; not be incarcerated; and meet applicable residency
+standards. To be eligible for insurance affordability programs, the individual must meet
+additional requirements for annual household income. An individual is not eligible for these
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)     i
+programs if he or she is eligible for minimum essential coverage that is not offered through a
+marketplace. Minimum essential coverage consists of employer-sponsored insurance (ESI) and
+non-employer-sponsored insurance (non-ESI). The latter includes Government programs (such
+as Medicare and Medicaid), grandfathered plans, and other plans.
+
+Application and Enrollment Process for Qualified Health Plans and
+Insurance Affordability Programs for All Marketplaces
+
+An applicant may submit an application to enroll in a QHP during an open enrollment period.
+An applicant may also enroll in a QHP during a special enrollment period outside of the open
+enrollment period if the applicant experiences certain life changes, such as marriage or the birth
+of a child.
+
+To enroll in a QHP, an applicant must complete an application and meet eligibility requirements
+defined by the ACA. An applicant can enroll in a QHP through the Federal or a State
+marketplace, depending on the applicant’s State of residence. Applicants can enroll through a
+Web site, by phone, by mail, in person, or directly with a broker or an agent of a health insurance
+company. For online and phone applications, the marketplace verifies the applicant’s identity
+through an identity-proofing process. For paper applications, the marketplace requires the
+applicant’s signature before the marketplace processes the application. When completing any
+type of application, the applicant attests that answers to all questions are true and that the
+applicant is subject to the penalty of perjury.
+
+After reviewing the applicant’s information, the marketplace determines whether the applicant is
+eligible for a QHP and, when applicable, eligible for insurance affordability programs. To verify
+the information submitted by the applicant, the marketplace uses multiple electronic data
+sources, including those available through the Federal Data Services Hub (Data Hub). Data
+sources available through the Data Hub are the U.S. Department of Health and Human Services,
+Social Security Administration (SSA), U.S. Department of Homeland Security, and Internal
+Revenue Service, among others. The marketplace can verify an applicant’s eligibility for ESI
+through Federal employment by obtaining information from the U.S. Office of Personnel
+Management through the Data Hub.
+
+Generally, when a marketplace cannot verify information that the applicant submitted or the
+information is inconsistent with information available through the Data Hub or other sources, the
+marketplace must attempt to resolve the inconsistency. If the marketplace is unable to resolve an
+inconsistency through reasonable efforts, it must generally give the applicant 90 days to submit
+satisfactory documentation or otherwise resolve the inconsistency. (This 90-day period is
+referred to as “the inconsistency period.”) The marketplace may extend the inconsistency period
+if the applicant demonstrates that a good-faith effort has been made to obtain required
+documentation. During the inconsistency period, the applicant may still enroll in a QHP and,
+when applicable, may choose to receive the APTC and cost-sharing reductions. After the
+inconsistency period, if the marketplace is unable to resolve the inconsistency, it determines the
+applicant’s eligibility on the basis of available data sources and, in certain circumstances, the
+applicant’s attestation.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   ii
+HOW WE CONDUCTED THIS REVIEW
+
+We reviewed the internal controls that were in place at the District marketplace during the open
+enrollment period for insurance coverage effective in calendar year (CY) 2014 (October 1, 2013,
+through March 31, 2014). We performed an internal control review because it enabled us to
+evaluate the effectiveness and efficiency of the District marketplace’s operations and compliance
+with applicable Federal requirements.
+
+We limited our review to those internal controls related to (1) verifying applicants’ identities,
+(2) determining applicants’ eligibility for enrollment in QHPs and eligibility for insurance
+affordability programs, and (3) maintaining and updating eligibility and enrollment data. To
+determine the effectiveness of the internal controls, we (1) reviewed a sample of 45 applicants
+randomly selected from applicants who were determined eligible for QHPs during the open
+enrollment period (9,735 applicants), which included the review of supporting documentation to
+evaluate whether the marketplace determined the applicants’ eligibility in accordance with
+Federal requirements, and (2) performed other audit procedures, which included interviews with
+marketplace management, staff, and contractors and reviews of supporting documentation and
+enrollment records.
+
+Because our review was designed to provide only reasonable assurance that the internal controls
+we reviewed were effective, it would not necessarily have detected all internal control
+deficiencies.
+
+WHAT WE FOUND
+
+Not all of the District of Columbia marketplace’s internal controls were effective in ensuring that
+individuals were enrolled in qualified health plans according to Federal requirements.
+
+On the basis of our review of 45 sample applicants from the enrollment period for insurance
+coverage effective in CY 2014, we determined that certain internal controls were effective, such
+as the controls for verifying applicants’ citizenship status. However, the controls were not
+effective for:
+
+       maintaining identity-proofing documentation,
+
+       verifying annual household income,
+
+       verifying an applicant’s eligibility for minimum essential coverage (both ESI and non-
+        ESI), and
+
+       maintaining application and eligibility verification data.
+
+The presence of an internal control deficiency does not necessarily mean that the District
+marketplace improperly enrolled an applicant in a QHP or improperly determined eligibility for
+insurance affordability programs. Other mechanisms exist that may remedy the internal control
+deficiency, such as the resolution process during the inconsistency period. For example, if a
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   iii
+marketplace did not have a control in place to verify an applicant’s citizenship through SSA, as
+required, the marketplace may still have been able to verify citizenship with satisfactory
+documentation provided by the applicant during the inconsistency period.
+
+The deficiencies that we identified occurred because the District marketplace did not properly
+oversee the identity-proofing process and did not ensure that its eligibility system was always
+fully functional.
+
+WHAT WE RECOMMEND
+
+We recommend that the District marketplace:
+
+       maintain identity-proofing documentation for all applicants who apply for QHPs;
+
+       verify annual household income in accordance with Federal requirements;
+
+       maintain documentation demonstrating that it verified whether an applicant was eligible
+        for minimum essential coverage; and
+
+       ensure that its enrollment system maintains application, eligibility, and verification
+        documentation, including all electronic eligibility verifications, from the Data Hub.
+
+DISTRICT MARKETPLACE COMMENTS
+
+The District marketplace concurred with our findings. District marketplace officials did not
+specifically address our recommendations but detailed the steps they had taken, both before the
+start of our audit and as a result of our audit, to ensure that applicants were properly enrolled and
+that their enrollment would be properly documented.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   iv
+                                                     TABLE OF CONTENTS
+
+INTRODUCTION ...........................................................................................................................1
+
+           Why We Did This Review ...................................................................................................1
+
+           Objective ..............................................................................................................................1
+
+           Background ..........................................................................................................................2
+                 Patient Protection and Affordable Care Act ............................................................2
+                 Health Insurance Marketplaces ................................................................................2
+                 Qualified Health Plans and Insurance Affordability Programs ...............................3
+                 Application and Enrollment Process for Qualified Health Plans and
+                   Insurance Affordability Programs for All Marketplaces .....................................5
+                 CMS’s Oversight of Marketplaces.........................................................................10
+                 The District Marketplace .......................................................................................10
+
+           How We Conducted This Review......................................................................................10
+
+FINDINGS .....................................................................................................................................11
+
+           The District Marketplace Did Not Always Maintain Identity-Proofing Documentation ..12
+
+           The District Marketplace Did Not Always Verify Annual Household Income
+            According to Federal Requirements ...............................................................................13
+
+           The District Marketplace Did Not Maintain Documentation That It Verified Applicants’
+            Eligibility for Minimum Essential Coverage According to Federal Requirements ……14
+
+           The District Marketplace Did Not Always Maintain Application and Eligibility
+            Verification Data .............................................................................................................15
+                  The District Marketplace Did Not Maintain Applicants’
+                     Eligibility Verification Data ..............................................................................16
+                  The District Marketplace Did Not Always Maintain Eligibility Verification
+                     Data Regarding Applicants’ Incarceration Status ..............................................16
+
+RECOMMENDATIONS ...............................................................................................................17
+
+DISTRICT MARKETPLACE COMMENTS AND
+ OFFICE OF INSPECTOR GENERAL RESPONSE .................................................................17
+
+           District Marketplace Comments ........................................................................................17
+
+           Office of Inspector General Response ...............................................................................17
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                                                v
+APPENDIXES
+
+        A: The District of Columbia Marketplace’s Process for Verifying
+           Annual Household Income ..........................................................................................19
+
+        B: Steps and Outcomes for Resolving Inconsistencies .....................................................21
+
+        C: The District of Columbia Marketplace’s Inconsistency Resolution Process ...............22
+
+        D: Overview of Internal Controls .....................................................................................23
+
+        E: Audit Scope and Methodology .....................................................................................24
+
+        F: District Marketplace Comments ...................................................................................27
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                            vi
+                                                 INTRODUCTION
+
+WHY WE DID THIS REVIEW
+
+The Patient Protection and Affordable Care Act (ACA)1 requires the establishment of a health
+insurance exchange (marketplace) in each State and the District of Columbia (the District). A
+marketplace is designed to serve as a “one-stop shop” at which individuals get information about
+their health insurance options; are evaluated for eligibility for a qualified health plan (QHP) and,
+when applicable, eligibility for insurance affordability programs; and enroll in the QHP of their
+choice.2 As of October 1, 2013, the District and 14 States had established State-based
+marketplaces (State marketplaces).
+
+A previous Office of Inspector General (OIG) review found that not all internal controls
+implemented by the federally facilitated marketplace (Federal marketplace) and the State
+marketplaces in California and Connecticut were effective in ensuring that individuals were
+enrolled in QHPs according to Federal requirements (A-09-14-01000, issued June 30, 2014).3
+This review of the District’s Health Benefit Exchange (the District marketplace) is part of an
+ongoing series of reviews of seven State marketplaces across the Nation.4 We selected the
+individual State marketplaces to cover States in different parts of the country.
+
+This report, in part, responds to a congressional request for information on how State
+marketplaces use the Internal Revenue Service’s (IRS) household income data and self-reported,
+third-party, and other income data in eligibility determinations.
+
+Our nationwide audit of State marketplace eligibility determinations is part of a larger body of
+ACA work, which also includes audits of how costs incurred to create State marketplaces were
+allocated to establishment grants. See “Affordable Care Act Reviews” on the OIG Web site for a
+list of related OIG reports on marketplace operations.5
+
+OBJECTIVE
+
+Our objective was to determine whether the District marketplace’s internal controls were
+effective in ensuring that individuals were enrolled in QHPs according to Federal requirements.
+
+1
+ P.L. No. 111-148 (Mar. 23, 2010), as amended by the Health Care and Education Reconciliation Act of 2010,
+P.L. No. 111-152 (Mar. 30, 2010).
+2
+  An individual is considered to be enrolled in a QHP when he or she has been determined eligible and has paid the
+first monthly insurance premium. An individual may also obtain information from a marketplace about Medicaid
+and the Children’s Health Insurance Program (CHIP) (ACA § 1413 and 45 CFR § 155.405).
+3
+  Our previous review covered the internal controls in place during the first 3 months of the open enrollment period
+for applicants enrolling in QHPs (October to December 2013).
+4
+ The other six State marketplaces we reviewed were Colorado, Kentucky, Minnesota, New York, Vermont, and
+Washington.
+5
+    http://oig.hhs.gov/reports-and-publications/aca/.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                     1
+BACKGROUND
+
+Patient Protection and Affordable Care Act
+
+The ACA established marketplaces to allow individuals and small businesses to shop for health
+insurance in all 50 States and the District. Each State can have an individual marketplace and a
+Small Business Health Options Program (SHOP) marketplace, which enables small businesses to
+access health coverage for their employees.6 A goal of the ACA is to provide more Americans
+with access to affordable health care by, for example, providing financial assistance through
+insurance affordability programs for people who cannot afford insurance without it.
+
+Health Insurance Marketplaces
+
+The three types of marketplaces in operation as of October 1, 2013, were the Federal, State, and
+State-partnership marketplaces:
+
+          Federal marketplace: The Department of Health and Human Services (HHS) operates
+           the Federal marketplace in States that did not establish their own marketplaces.
+           Individuals in these States enroll in QHPs through the Federal marketplace.
+
+          State marketplace: A State may establish and operate its own marketplace. A State
+           marketplace may use Federal services (e.g., the system that provides Federal data) to
+           assist with certain functions, such as eligibility determinations for insurance affordability
+           programs.
+
+          State-partnership marketplace: A State may establish a State-partnership marketplace,
+           in which HHS and a State share responsibilities for core functions. For example, HHS
+           may perform certain functions, such as eligibility determinations, and the State may
+           perform other functions, such as insurance plan management and consumer outreach. A
+           key distinction between a State-partnership and State marketplace is that the former uses
+           the Federal marketplace Web site (HealthCare.gov) to enroll individuals in QHPs, and the
+           latter uses its own Web site for that purpose.
+
+As of October 1, 2013, 36 States, including 7 State-partnership marketplaces, used the Federal
+marketplace, and 15 States, including the District, had established State marketplaces. During
+our audit period, these were the types of marketplaces approved by the Centers for Medicare
+& Medicaid Services (CMS).
+
+
+
+
+6
+    This report does not cover applicants who enrolled in QHPs through the District’s SHOP marketplace.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)        2
+Qualified Health Plans and Insurance Affordability Programs
+
+Qualified Health Plans
+
+QHPs are private health insurance plans that each marketplace recognizes and certifies as
+meeting certain participation standards. QHPs are required to cover a core set of benefits
+(known as essential health benefits). QHPs are classified into “metal” levels: bronze, silver,
+gold, and platinum.7 These levels are determined by the percentage that each QHP expects to
+pay, on average, for the total allowable costs of providing essential health benefits.
+
+Insurance Affordability Programs: Premium Tax Credit and Cost-Sharing Reductions
+
+The ACA provides for two types of insurance affordability programs to lower individuals’
+insurance premiums or out-of-pocket costs for QHPs: the premium tax credit and cost-sharing
+reductions.8
+
+         Premium tax credit: The premium tax credit reduces the cost of a QHP’s premium and
+          is available at tax filing time or in advance. Generally, the premium tax credit is
+          available on a sliding scale to an individual or a family with annual household income
+          from 100 percent through 400 percent of the Federal poverty level. When paid in
+          advance, the credit is referred to as the “advance premium tax credit” (APTC).9 The
+          Federal Government pays the APTC amount monthly to the QHP issuer on behalf of the
+          taxpayer to offset a portion of the cost of the premium of any metal-level plan. For
+          example, if an individual who selects a QHP with a $500 monthly insurance premium
+          qualifies for a $400 monthly APTC (and chooses to use it all), the individual pays only
+          $100 to the QHP issuer. The Federal Government pays the remaining $400 to the QHP
+          issuer. Starting in January 2015, taxpayers were required to include on their calendar
+          year (CY) 2014 tax returns (and subsequent years’ tax returns) the amount of any APTC
+          made on their behalf. The IRS reconciles the APTC payments with the maximum
+          allowable amount of the credit.
+
+         Cost-sharing reductions: Cost-sharing reductions (CSR) help qualifying individuals
+          with out-of-pocket costs, such as deductibles, coinsurance, and copayments.10 For
+          example, an individual who visits a physician may be responsible for a $30 copayment.
+          If the individual qualifies for a cost-sharing reduction of $20 for the copayment, the
+
+7
+ An individual who is under 30 years old or qualifies for a hardship exemption may also choose a catastrophic plan,
+which requires the individual to pay all of his or her medical expenses until the deductible amount is met (ACA
+§ 1302(e) and 45 CFR §§ 156.155 and 156.440).
+8
+  We did not review other types of insurance affordability programs, such as Medicaid and CHIP. An individual or
+a family with income below 100 percent of the Federal poverty level may be eligible for Medicaid under the State’s
+Medicaid rules but would not qualify for the premium tax credit or cost-sharing reductions.
+9
+    ACA § 1401 and 45 CFR § 155.20.
+10
+     ACA § 1402 and 45 CFR § 155.20.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                3
+           individual pays only $10. In most cases, an individual must select a silver-level QHP to
+           qualify for cost-sharing reductions. Generally, cost-sharing reductions are available to an
+           individual or a family with annual household income from 100 percent through 250
+           percent of the Federal poverty level. The Federal Government makes monthly payments
+           to QHP issuers to cover estimated costs of cost-sharing reductions provided to
+           individuals. At the end of each year, HHS plans to reconcile the total amount of
+           estimated payments of cost-sharing reductions made to QHP issuers with the actual costs
+           of cost-sharing reductions incurred.11
+
+An individual may be eligible for either or both types of insurance affordability programs if he or
+she meets specified Federal requirements.
+
+Federal Eligibility Requirements for Qualified Health Plans and
+Insurance Affordability Programs
+
+To be eligible to enroll in a QHP, an individual must be a U.S. citizen, a U.S. national, or
+lawfully present in the United States;12 not be incarcerated; 13 and meet applicable residency
+standards.14
+
+To be eligible for insurance affordability programs, an individual must meet additional
+requirements for annual household income.15 An individual is not eligible for these programs if
+he or she is eligible for minimum essential coverage that is not offered through a marketplace.16
+
+To determine an individual’s eligibility for enrollment in a QHP and for insurance affordability
+programs, the marketplaces verify the information submitted by the applicant using available
+electronic data sources. Through this verification process, the marketplaces can determine
+whether that applicant’s information matches the information from available electronic data
+sources in accordance with certain Federal requirements.
+
+Marketplaces must verify the following, as appropriate, when determining eligibility for QHPs
+and insurance affordability programs:
+
+11
+  CMS issued guidance to delay reconciliation of cost-sharing reductions provided in CY 2014 and will reconcile
+2014 cost-sharing reductions for all issuers beginning in April 2016 (Timing of Reconciliation of Cost-Sharing
+Reductions for the 2014 Benefit Year (Feb. 13, 2015)).
+12
+  An individual may be considered “lawfully present” if his or her immigration status meets any of the categories
+defined in 45 CFR § 152.2.
+13
+  An individual must not be incarcerated, other than incarceration pending the disposition of charges (45 CFR
+§ 155.305(a)(2)).
+14
+     ACA §§ 1312(f) and 1411(b) and 45 CFR § 155.305(a)(3).
+15
+     ACA §§ 1401 and 1402 and 45 CFR §§ 155.305(f) and (g).
+16
+  45 CFR § 155.20 and 26 U.S.C. § 5000A(f). Minimum essential coverage consists of employer-sponsored
+insurance (ESI) and non-employer-sponsored insurance (non-ESI).
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                  4
+        Social Security number,
+
+        citizenship,
+
+        status as a national,17
+
+        lawful presence,
+
+        incarceration status (e.g., whether an individual is serving a term in prison or jail),
+
+        residency,
+
+        whether an individual is an Indian,18
+
+        family size,
+
+        annual household income,
+
+        eligibility for minimum essential coverage through ESI, and
+
+        eligibility for minimum essential coverage through non-ESI.19
+
+Application and Enrollment Process for Qualified Health Plans and
+Insurance Affordability Programs for All Marketplaces
+
+An applicant20 may submit an application to enroll in a QHP during an open enrollment period.
+An applicant may also enroll in a QHP during a special enrollment period outside of the open
+
+17
+   The term “national” may refer to a person who, though not a citizen of the United States, owes permanent
+allegiance to the United States. All U.S. citizens are U.S. nationals, but only a relatively small number of people
+acquire U.S. nationality without becoming U.S. citizens (8 U.S.C. § 1101(a)).
+18
+  “Indian” is defined as an individual who meets the definition in section 4(d) of the Indian Self-Determination and
+Education Assistance Act (ISDEAA), P.L. No. 93-638. Under section 4(d), an “Indian” is a person who is a
+member of an Indian tribe. The ISDEAA defines “Indian tribes” as “any Indian tribe, Band, nation, or other
+organized group or community, including any Alaska Native village or regional or village corporation as defined in
+or established pursuant to the Alaska Native Claims Settlement Act, which is recognized as eligible for the special
+programs and services provided by the United States to Indians because of their status as Indians” (25 U.S.C. §
+450b(e)).
+19
+  45 CFR §§ 155.315 and 155.320. For the purpose of this report, we use the term “non-ESI” to include
+Government-sponsored programs (e.g., Medicare, Medicaid, TRICARE, and Peace Corps), grandfathered plans, and
+other plans.
+20
+  For the purpose of this report, the term “applicant” refers to both the person who completes the application
+(application filer) and the person who seeks coverage in a QHP. The application filer may or may not be an
+applicant seeking coverage in a QHP (45 CFR § 155.20). For example, an application filer may be a parent seeking
+coverage for a child, who is the applicant.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                     5
+enrollment period if the applicant experiences certain life changes, such as marriage or the birth
+of a child.21 For insurance coverage effective in CY 2014, the District marketplace open
+enrollment period was October 1, 2013, through March 31, 2014.22
+
+To enroll in a QHP, an applicant must complete an application and meet eligibility requirements
+defined by the ACA. An applicant can enroll in a QHP through the Federal or a State
+marketplace, depending on the applicant’s State of residence. Applicants can enroll through a
+Web site, by phone, by mail, in person, or directly with a QHP issuer’s broker or agent.
+The figure on the following page summarizes the steps in the application and enrollment process,
+and the sections that follow describe the key steps in more detail.
+
+
+
+
+21
+     ACA § 1311(c)(6)(C) and 45 CFR § 155.420.
+22
+  The District marketplace created a special enrollment period to allow an applicant to finish the application and
+enrollment process by April 30, 2014. The special enrollment period was open to applicants who started their
+applications by March 31, 2014, and could not complete them because of high consumer traffic on the marketplace’s
+Web site. These applicants had to enroll in a QHP by May 30, 2014.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)               6
+                Figure: Seven Steps in the Application and Enrollment Process
+                                 for a Qualified Health Plan
+
+
+                          Step 1: Applicant Provides Basic Personal Information
+
+
+
+                            Step 2: Marketplace Verifies Identity of Applicant
+
+
+
+                               Step 3: Applicant Completes the Application
+
+
+
+               Step 4: Marketplace Determines Eligibility of the Applicant for a QHP and,
+                   When Applicable, Eligibility forCha
+                                                    Insurance Affordability Programs
+
+
+
+                 Step 5: If the Applicant Is Eligible and Selects a QHP, the Marketplace
+                          Transmits Enrollment Information to the QHP Issuer
+
+
+
+                          Step 6: Applicant Submits Payment of QHP Premium
+
+
+
+                       Step 7: Changes in Enrollment Are Reconciled Between the
+                                     Marketplace and QHP Issuer
+
+
+Verification of Applicant’s Identity (Figure: Steps 1 Through 3)
+
+An applicant begins the enrollment process in a QHP by providing basic personal information,
+such as name, birth date, and Social Security number. Before an applicant can submit an online
+or phone application, the marketplace must verify the applicant’s identity through identity
+proofing. The purpose of identity proofing is to (1) prevent an unauthorized individual from
+creating a marketplace account for another individual and applying for health coverage without
+the individual’s knowledge and (2) safeguard personally identifiable information created,
+collected, and used by the marketplace. For paper applications, the marketplace requires the
+applicant’s signature before the marketplace processes the application.23
+
+
+
+23
+  CMS’s Guidance Regarding Identity Proofing for the Marketplace, Medicaid, and CHIP, and the Disclosure of
+Certain Data Obtained through the Data Services Hub (Identity-Proofing Guidance), June 11, 2013.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)            7
+When completing any type of application, the applicant attests that answers to all questions are
+true and that the applicant is subject to the penalty of perjury.24
+
+Verification of Applicant’s Eligibility (Figure: Step 4)
+
+After reviewing the applicant’s information, the marketplace determines whether the applicant is
+eligible for a QHP and, when applicable, eligible for insurance affordability programs.25 To
+verify the information submitted by the applicant, the marketplace uses multiple electronic data
+sources, including sources available through the Federal Data Services Hub (Data Hub).26 The
+Data Hub is a single conduit for marketplaces to send electronic data to and receive electronic
+data from multiple Federal agencies; it does not store data. Federal agencies connected to the
+Data Hub are HHS, the Social Security Administration (SSA), the U.S. Department of Homeland
+Security, and the IRS, among others (ACA § 1411(c)).27 Additionally, the marketplace can
+verify an applicant’s eligibility for ESI through Federal employment by obtaining information
+from the U.S. Office of Personnel Management through the Data Hub.
+
+Resolution of Inconsistencies in Applicant Information (Figure: Step 4)
+
+Generally, when a marketplace cannot verify information that the applicant submitted or the
+information is inconsistent with information available through the Data Hub or other sources, the
+marketplace must attempt to resolve the inconsistencies. For these purposes, applicant
+information is considered to be consistent with information from other sources if the information
+is reasonably compatible.28 Information is considered reasonably compatible if any difference
+between the applicant information and that from other sources does not affect the eligibility of
+the applicant. Inconsistencies do not necessarily indicate that an applicant provided inaccurate
+information or is enrolled in a QHP or receiving financial assistance through insurance
+affordability programs inappropriately.
+
+A marketplace must make a reasonable effort to identify and address the causes of an
+inconsistency by contacting the applicant to confirm the accuracy of the information on the
+application. If the marketplace is unable to resolve the inconsistency through reasonable efforts,
+it must generally give the applicant 90 days to submit satisfactory documentation or otherwise
+
+
+24
+     Any person who fails to provide correct information may be subject to a civil monetary penalty (ACA § 1411(h)).
+25
+     An applicant can apply for enrollment in a QHP without applying for insurance affordability programs.
+26
+ State marketplaces can access additional sources of data to verify applicant information. For example, the District
+marketplace uses the District’s Department of Motor Vehicles to verify residency.
+27
+   See Appendix A for information on the District marketplace process for verifying annual household income and
+eligibility for minimum essential coverage through ESI and non-ESI.
+28
+  45 CFR § 155.300(d). For purposes of determining reasonable compatibility, “other sources” include information
+obtained through electronic data sources, other information provided by the applicant, or other information in the
+records of the marketplace.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                 8
+resolve the inconsistency. (This 90-day period is referred to as “the inconsistency period.”)29
+The marketplace may extend the inconsistency period if the applicant demonstrates that a good-
+faith effort has been made to obtain required documentation.30
+
+During the inconsistency period, the applicant may still enroll in a QHP and, when applicable,
+may choose to receive the APTC and cost-sharing reductions.31 An applicant may choose to
+enroll during the period only if the applicant is otherwise eligible to enroll in a QHP and may
+receive the APTC and cost-sharing reductions if (1) the applicant meets other eligibility
+requirements and (2) the tax filer32 attests that he or she understands that the APTC is subject to
+reconciliation.33 After the inconsistency period, if the marketplace is unable to resolve the
+inconsistency, it determines the applicant’s eligibility on the basis of available data sources and,
+in certain circumstances, the applicant’s attestation.34 For example, if the marketplace is unable
+to resolve an inconsistency related to citizenship, it should determine the applicant ineligible for
+a QHP and terminate the applicant’s enrollment from the QHP if the applicant is already
+enrolled.
+
+For more information on how marketplaces may resolve inconsistencies, see Appendix B. For
+specific information on the District marketplace’s inconsistency resolution process, see
+Appendix C.
+
+Transmission of Applicant’s Enrollment Information to the Qualified Health Plan Issuer
+(Figure: Steps 5 Through 7)
+
+If an applicant is determined to be eligible and selects a QHP, a marketplace transmits enrollment
+information to the QHP issuer (45 CFR § 155.400). Generally, an applicant must pay the first
+month’s QHP premium for the insurance coverage to be effective. If a change to the enrollee’s35
+coverage occurs after the coverage becomes effective, the marketplace and the QHP issuer must
+reconcile the revised enrollment records (45 CFR § 155.400).
+
+
+
+
+29
+     45 CFR § 155.315(f).
+30
+     45 CFR § 155.315(f)(3).
+31
+     45 CFR § 155.315(f)(4).
+32
+  Generally, a “tax filer” is an individual or a married couple who indicate that they are filing an income tax return
+for the benefit year (45 CFR § 155.300(a)).
+33
+     45 CFR § 155.315(f)(4).
+
+34
+     45 CFR §§ 155.315(f)(5), (f)(6), and (g).
+35
+  For the purpose of this report, the term “enrollee” refers to an applicant who completed an application, was
+determined eligible, and selected a QHP and whose enrollment information was sent to a QHP issuer.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                       9
+CMS’s Oversight of Marketplaces
+
+CMS oversees implementation of certain ACA provisions related to the marketplaces.36 CMS
+also works with States to establish State and State-partnership marketplaces, including oversight
+functions such as performing onsite reviews of system functionality for eligibility
+determinations, enrollment of applicants, and consumer assistance.37
+
+The District Marketplace
+
+The District established the District marketplace on December 20, 2011.38 The District’s Health
+Benefit Exchange Authority is responsible for operating the District marketplace.39 For
+insurance coverage effective in CY 2014, the District marketplace had contracts with three
+insurance companies to offer QHPs to individuals.
+
+The District marketplace uses a Web site (dchealthlink.com) to determine applicants’ eligibility
+for enrollment in QHPs and, when applicable, eligibility for insurance affordability programs.
+The system also assesses eligibility for Medicaid and CHIP.
+
+HOW WE CONDUCTED THIS REVIEW
+
+We reviewed the internal controls that were in place at the District marketplace during the open
+enrollment period for insurance coverage effective in CY 2014 (October 1, 2013, through
+March 31, 2014). We performed an internal control review because it enabled us to evaluate the
+effectiveness and efficiency of District marketplace operations and compliance with applicable
+Federal requirements. Appendix D provides general information on internal controls.
+
+We limited our review to those internal controls related to (1) verifying applicants’ identities,
+(2) determining applicants’ eligibility for enrollment in QHPs and eligibility for insurance
+affordability programs, and (3) maintaining and updating eligibility and enrollment data. To
+determine the effectiveness of the internal controls, we:
+
+          reviewed a sample of 45 applicants randomly selected from applicants who were
+           determined eligible for QHPs during the open enrollment period (9,735 applicants),
+           which included the review of supporting documentation to evaluate whether the
+           marketplace determined the applicants’ eligibility in accordance with Federal
+           requirements, and
+
+
+36
+ The Center for Consumer Information and Insurance Oversight, within CMS, oversees implementation of the
+ACA with respect to marketplaces.
+37
+     ACA § 1313 and 45 CFR §§ 155.110 and 155.1200.
+38
+  The District’s Health Benefit Exchange Authority Establishment Act of 2011, DC Law 19-0094 (effective Mar. 3,
+2012).
+39
+     The District’s marketplace is commonly known as DC Health Link.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)           10
+       performed other audit procedures, which included interviews with marketplace
+        management, staff, and contractors; observation of staff performing tasks related to
+        eligibility determinations; and reviews of supporting documentation and enrollment
+        records.
+
+Because our review was designed to provide only reasonable assurance that the internal controls
+we reviewed were effective, it would not necessarily have detected all internal control
+deficiencies.
+
+Our attribute sampling approach is commonly used to test the effectiveness of internal controls
+for compliance with laws, regulations, and policies. According to the Government
+Accountability Office and the President’s Council on Integrity and Efficiency’s Financial Audit
+Manual (July 2008), section 450, auditors may use a randomly selected sample of 45 items when
+testing internal controls. If all sample items are determined to be in compliance with
+requirements, a conclusion that the controls are effective can be made. If one or more sample
+items are determined not to be in compliance with requirements, a conclusion that the controls
+are ineffective can be made. Because our objective was limited to forming an opinion about
+whether District marketplace internal controls were effective, our sampling methodology was not
+designed to estimate the percentage of applicants for whom the marketplace did not perform the
+required eligibility verifications.
+
+Although the first open enrollment period for applicants to enroll in QHPs ended on
+March 31, 2014, an applicant could also have enrolled in a QHP during a special enrollment
+period if the applicant experienced certain life changes, such as marriage or the birth of a child.
+We did not review the District marketplace’s determinations of applicants’ eligibility that
+resulted from changes in applicant information reported by applicants after March 31, 2014.
+
+We performed fieldwork from July to December 2014 at the District marketplace’s office in the
+District of Columbia.
+
+We conducted this performance audit in accordance with generally accepted government
+auditing standards. Those standards require that we plan and perform the audit to obtain
+sufficient, appropriate evidence to provide a reasonable basis for our findings and conclusions
+based on our audit objectives. We believe that the evidence obtained provides a reasonable basis
+for our findings and conclusions based on our audit objectives.
+
+Appendix E contains the details of our audit scope and methodology.
+
+                                                FINDINGS
+
+Not all of the District of Columbia marketplace’s internal controls were effective in ensuring that
+individuals were enrolled in qualified health plans according to Federal requirements.
+
+On the basis of our review of 45 sample applicants from the enrollment period for insurance
+coverage effective in CY 2014, we determined that certain internal controls were effective, such
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)    11
+as the controls for verifying applicants’ citizenship status. However, the controls were not
+effective for:
+
+        maintaining identity-proofing documentation,
+
+        verifying annual household income,
+
+        verifying an applicant’s eligibility for minimum essential coverage (both ESI and non-
+         ESI), and
+
+        maintaining application and eligibility verification data.
+
+The presence of an internal control deficiency does not necessarily mean that the District
+marketplace improperly enrolled an applicant in a QHP or improperly determined eligibility for
+insurance affordability programs. Other mechanisms exist that may remedy the internal control
+deficiency, such as the resolution process during the inconsistency period. For example, if a
+marketplace did not have a control in place to verify an applicant’s citizenship through SSA, as
+required, the marketplace may still have been able to verify citizenship with satisfactory
+documentation provided by the applicant during the inconsistency period.
+
+The deficiencies that we identified occurred because the marketplace did not properly oversee
+the identity-proofing process and did not ensure that its eligibility system was always fully
+functional.
+
+THE DISTRICT MARKETPLACE DID NOT ALWAYS MAINTAIN
+IDENTITY-PROOFING DOCUMENTATION
+
+Marketplaces must maintain and ensure that their contractors, subcontractors, and agents
+maintain for 10 years documents and records that are sufficient to enable HHS or its designees to
+evaluate the marketplaces’ compliance with Federal requirements (45 CFR § 155.1210). The
+records must include data and records related to the marketplaces’ eligibility verifications and
+determinations and enrollment transactions (45 CFR § 155.1210(b)(4)).
+
+Marketplaces must establish and implement operational, technical, administrative, and physical
+safeguards to ensure the confidentiality, integrity, and availability of personally identifiable
+information that they create, collect, use, or disclose and to ensure that personally identifiable
+information is used by or disclosed to only those authorized to receive or view it (45 CFR
+§ 155.260(a)(4)).
+
+According to CMS’s Identity-Proofing Guidance for State marketplaces, before a marketplace
+accepts an online or telephone application for enrollment in a QHP, it must conduct identity
+proofing40 sufficient to provide assurance that only the appropriate individual has access to
+
+40
+  Identity proofing helps to ensure the privacy of personal information and to prevent an unauthorized individual
+from submitting an online or phone application.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                  12
+restricted data. The guidance explains that identity proofing involves the (1) collection of core
+attributes, including the applicant’s name, birth date, Social Security number (optional), address,
+phone number, and email address; (2) validation of core attributes with a trusted data source; and
+(3) for some applicants, collection and validation of responses to questions about the applicant’s
+personal history, e.g., the names of current and past employers. CMS allows States to use
+Federal identity-proofing services.
+
+The District marketplace did not maintain documentation demonstrating that it performed
+identity proofing for a number of applicants. Specifically, for 19 of 45 applicants in our sample,
+the marketplace did not maintain documentation demonstrating that it had performed identity
+proofing in accordance with CMS Identity-Proofing Guidance.41 Lack of documentation does
+not necessarily indicate that identity proofing was not completed. According to marketplace
+officials, an applicant could not complete an online application unless he or she passed the
+identity-proofing process.42
+
+This deficiency occurred because the District marketplace did not properly oversee the identity-
+proofing process. Marketplace officials said they did not know the marketplace contractor had
+turned off the system function that allowed maintenance of the identity-proofing documentation
+and other verification documentation sent to and received from the Data Hub.43 Without
+maintaining identity-proofing documentation, the marketplace could not demonstrate that it
+performed identity proofing in compliance with Federal requirements.
+
+THE DISTRICT MARKETPLACE DID NOT ALWAYS VERIFY ANNUAL
+HOUSEHOLD INCOME ACCORDING TO FEDERAL REQUIREMENTS
+
+If an applicant requests an eligibility determination for insurance affordability programs, the
+marketplace must generally verify annual household income, or modified adjusted gross income
+(MAGI), and the size of the household (45 CFR § 155.320). Marketplaces use data from the IRS
+to verify annual household income information provided on an application. If electronic data
+sources are unavailable or an applicant’s attestation of projected annual household income is
+more than 10 percent below the annual household income as computed using electronic data
+sources, the marketplace must follow the inconsistency resolution process (45 CFR
+§ 155.320(c)(3)).
+
+As part of the verification process, the marketplace must compute annual household income
+based on tax return data regarding MAGI and family size from the IRS and data regarding Social
+Security benefits described in 26 CFR § 1.36B-1(e)(2)(iii) from SSA (45 CFR
+§ 155.320(c)(3)(ii)). The marketplace computes a tax filer’s household income as it is defined in
+
+41
+  The District marketplace performed identify proofing of application filers. If a sample applicant was not the
+application filer, we reviewed supporting documentation for identity proofing of the application filer.
+42
+  We observed that the system was designed to prevent an applicant who did not successfully pass the identity-
+proofing process from completing a marketplace application online.
+43
+  District officials stated that the marketplace maintained identity-proofing documentation for the other 26
+applicants as part of its quality-testing procedures.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                13
+26 CFR § 1.36B-1(e). For Medicaid eligibility, it computes an applicant’s household income in
+accordance with 42 CFR § 435.603(d).
+
+A marketplace must require the applicant to attest regarding a tax filer’s projected annual
+household income (45 CFR § 155.320(c)(3)(ii)(B)).
+
+The District marketplace did not always verify annual household income according to Federal
+requirements. Specifically, for two of the six applicants who were determined eligible for an
+APTC, the marketplace did not demonstrate that it had verified annual household income or did
+not appropriately verify annual household income.
+
+        For one applicant, the marketplace did not maintain complete eligibility verification data.
+         As a result, we could not determine whether the marketplace verified this applicant’s
+         income. The applicant completed an application but did not enroll. At a later time, this
+         applicant completed a second application and did enroll. However, the marketplace had
+         no record of the second application. 44 The marketplace’s officials stated that this was a
+         result of a system error that prevented the eligibility system from maintaining all
+         applications submitted by an applicant.
+
+        For a second applicant, the marketplace did not appropriately verify annual household
+         income, which resulted in a miscalculation of the APTC. The applicant’s application
+         reported a biweekly income of $2,560 from January through April 2014 and no additional
+         income for the remainder of the CY. The marketplace calculated the applicant’s annual
+         household income as $15,360. Marketplace officials stated that the marketplace should
+         have determined the annual household income to be $22,187.45 They could not explain
+         why the marketplace did not appropriately verify the annual household income or why
+         the income amount was miscalculated.
+
+Without verifying an applicant’s annual household income properly, the marketplace cannot
+ensure that the applicant meets eligibility requirements for insurance affordability programs and
+that the amounts of the APTC and cost-sharing reductions are determined correctly.
+
+THE DISTRICT MARKETPLACE DID NOT MAINTAIN DOCUMENTATION THAT
+IT VERIFIED APPLICANTS’ ELIGIBILITY FOR MINIMUM ESSENTIAL
+COVERAGE ACCORDING TO FEDERAL REQUIREMENTS
+
+To be eligible for insurance affordability programs, an applicant must not be eligible for
+minimum essential coverage, with the exception of coverage in the individual market (45 CFR
+§§ 155.305(f)(1)(ii)(B) and (g)(1)(i)(B))). Federal regulations define “minimum essential
+44
+   As a result of this missing application, the District marketplace could not show that it had verified other eligibility
+standards, including incarceration status, residency, family size, and minimum essential coverage.
+45
+  Using its own formula, the District marketplace determined that the biweekly amount of $2,560 should have been
+multiplied by 26 periods in a year ($66,560), then the total multiplied by 1/3, the period worked ($66,560 x .3333 =
+$22,187).
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                      14
+coverage” as having the meaning given in 26 U.S.C. § 5000A(f) (45 CFR § 155.20). As
+described in 26 U.S.C. § 5000A(f), specified Government-sponsored programs, eligible
+employer-sponsored plans, grandfathered health plans, and certain other health benefits coverage
+are minimum essential coverage (26 CFR § 1.36B-2(c)). Marketplaces must verify whether an
+applicant is eligible for minimum essential coverage other than through an employer-sponsored
+plan, Medicaid, or CHIP using information obtained by transmitting through the Data Hub
+identifying information specified for verification purposes (45 CFR § 155.320(b)(1)). The
+marketplace must also verify whether an applicant has already been determined eligible for
+coverage through Medicaid or CHIP in the State in which the exchange operates, using
+information obtained from the agencies administering such programs (45 CFR
+155.320(b)(1)(ii)). In addition, the marketplace must verify whether an applicant reasonably
+expects to be enrolled in or is eligible for minimum essential coverage in an eligible employer-
+sponsored plan for the benefit year for which coverage is requested (45 CFR § 155.320(d)(1)).
+This includes verifying whether the applicant has coverage through Federal employment by
+transmitting identifying information through the Data Hub (45 CFR § 155.320(d)(2)(ii)).
+
+The marketplace did not maintain documentation that it had verified minimum essential coverage
+through ESI or non-ESI through the Data Hub. Six of the forty-five applicants were determined
+eligible for insurance affordability programs with no evidence that the District marketplace
+verified minimum essential coverage through the Data Hub.46
+
+This deficiency occurred because the marketplace did not ensure that its eligibility system was
+fully functional to maintain documentation for verifying applicants’ eligibility for minimum
+essential coverage. According to marketplace officials, the marketplace checked electronic
+sources through the Data Hub and was able to conclude that no other insurance coverage was
+available to the applicants. However, the officials did not have documentation that the
+verification procedures had been performed because a contractor turned off the system function
+that would allow maintaining the data sent to and received from the Data Hub. The officials said
+that they have been turning the system function back on in phases.47
+
+THE DISTRICT MARKETPLACE DID NOT ALWAYS MAINTAIN APPLICATION
+AND ELIGIBILITY VERIFICATION DATA
+
+Marketplaces must maintain and ensure that their contractors, subcontractors, and agents
+maintain for 10 years documents and records that are sufficient to enable HHS or its designees to
+evaluate the marketplace’s compliance with Federal requirements (45 CFR § 155.1210). The
+records must include data and records related to the marketplace’s eligibility verifications and
+determinations and enrollment transactions (45 CFR § 155.1210(b)(4)).
+
+
+
+46
+  Five of the six applicants attested that they did not have minimum essential coverage available to them through a
+source other than the marketplace. The other applicant’s application was missing.
+47
+  As of May 2015, we verified that this system function was reactivated and showed responses from the Data Hub
+verifying the beneficiary’s ESI and non-ESI status.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                15
+The District marketplace did not maintain application and eligibility verification data for 29
+applicants.48 Because the marketplace did not maintain the data, we could not determine whether
+the marketplace performed certain eligibility verifications in accordance with Federal
+requirements.
+
+The District Marketplace Did Not Maintain Applicants’ Eligibility Verification Data
+
+For 19 of the 45 sample applicants, the District marketplace did not maintain applicants’
+eligibility verification data sent to and received from the Data Hub and other electronic
+sources.49 As a result, we could not determine whether the marketplace performed the required
+verification in accordance with Federal requirements.
+
+          For 7 of the 19 applicants, the marketplace did not maintain the documentation because it
+           did not ensure that its eligibility system was always fully functional to maintain
+           documentation for verifying applicants’ eligibility data. According to marketplace
+           officials, from October 12 through December 22, 2013, and without the marketplace’s
+           knowledge or consent, the contractor responsible for administration of the operations of
+           the marketplace’s eligibility system turned off the system function that allowed
+           maintenance of the data sent to and received from Data Hub and other electronic sources.
+           The District marketplace did not have controls in place to show that parts of the system
+           were not functioning.
+
+          For the remaining 12 applicants, marketplace officials indicated the eligibility
+           verification data was incomplete or unreadable copies of the data were stored during the
+           archiving process because of system errors.
+
+The District Marketplace Did Not Always Maintain Eligibility Verification Data Regarding
+Applicants’ Incarceration Status
+
+A marketplace must verify an applicant’s attestation of incarceration status by relying on
+approved electronic data sources. If the data sources are unavailable, the marketplace can accept
+the applicant’s attestation (45 C.F.R. § 155.315(e)).
+
+For 13 of 45 sample applicants, the District marketplace did not maintain documentation of the
+applicant’s attestation of incarceration status. Marketplace officials explained that all 45
+applicants in our sample attested that they were not incarcerated.50 Further, the officials stated
+that (1) the enrollment system’s eligibility software program did not always properly transcribe
+the applicants’ attestations at the time of the application and (2) the reliability and accuracy of
+
+48
+     Some applications lacked documentation in more than one area.
+49
+  Eligibility verification data was maintained for the remaining 26 sample applicants for testing purposes on a local
+server.
+50
+   We determined that the 45 sample applicants did not appear in the District’s Department of Corrections’
+incarceration registry. This registry provides proof that the 45 sample beneficiaries were not incarcerated and thus
+eligible for coverage.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)                     16
+SSA’s Prisoner Update Processing System (PUPS) data was evaluated and determined to be
+unreliable when determining an applicant’s incarceration status. Therefore, although the SSA’s
+PUPS data was an approved electronic data source, State marketplace officials decided to use the
+applicants’ attestations that they were not incarcerated even if the attestation and PUPS
+information did not agree. Because the marketplace did not maintain documentation of the
+applicants’ attestations, it could not demonstrate that it complied with Federal requirements for
+verifying applicants’ incarceration status.
+
+                                        RECOMMENDATIONS
+
+We recommend that the District marketplace:
+
+       maintain identity-proofing documentation for all applicants who apply for QHPs;
+
+       verify annual household income in accordance with Federal requirements;
+
+       maintain documentation demonstrating that it verified whether an applicant was eligible
+        for minimum essential coverage; and
+
+       ensure that its enrollment system maintains application, eligibility, and verification
+        documentation, including all electronic eligibility verifications from the Data Hub.
+
+                          DISTRICT MARKETPLACE COMMENTS AND
+                          OFFICE OF INSPECTOR GENERAL RESPONSE
+
+DISTRICT MARKETPLACE COMMENTS
+
+The District marketplace concurred with our findings. District marketplace officials did not
+specifically address our recommendations but detailed the steps they had taken, both before the
+start of our audit and as a result of our audit, to ensure that applicants were properly enrolled and
+that their enrollment would be properly documented.
+
+District marketplace officials also asked that we make two changes to the report. The officials
+stated that our report “inaccurately asserts that HBX [the DC Health Benefits Exchange] initiated
+corrective actions only after the audit began.” The District marketplace asked “that the draft
+report be corrected to reflect that HBX oversight of its marketplace resulted in quickly
+identifying the problem and quickly initiating corrective action in 2013.” In addition, the District
+marketplace believed that footnote number 42 on page 13 contradicted our statement that the
+District marketplace “did not properly oversee the identity-proofing process.”
+
+The District marketplace’s comments are included in their entirety as Appendix F.
+
+OFFICE OF INSPECTOR GENERAL RESPONSE
+
+In our opinion, it is not necessary to make changes requested by the District marketplace. Our
+report did not contain the assertion that the District marketplace initiated corrective actions only
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   17
+after the audit began. In addition, the footnote in question does not contradict our statement that
+the District marketplace “did not properly oversee the identity-proofing process.” The footnote
+reinforces the statement in the report that an applicant could not complete an online application
+unless the applicant passed the identity proofing. Although we were able to observe the controls
+in the District marketplace’s eligibility software application that would prevent applicants from
+continuing with the application process if they did not successfully complete identify proofing,
+the District was unable to provide evidence that identify proofing was performed for 19 of 45
+applicants in our sample. Thus, our statement that the District marketplace did not properly
+oversee the identity-proofing process is accurate.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   18
+  APPENDIX A: THE DISTRICT OF COLUMBIA MARKETPLACE’S PROCESS FOR
+                VERIFYING ANNUAL HOUSEHOLD INCOME
+
+The following describes how the District marketplace uses data on annual household income to
+determine eligibility for insurance affordability programs (advance premium tax credit and cost-
+sharing reductions).
+
+    1. An applicant applies for the APTC and cost-sharing reductions.
+
+    2. To verify annual household income, the District marketplace compares the applicant’s
+       information to the IRS’s data to determine whether the applicant is above the applicable
+       Medicaid income threshold for that individual.
+
+    3. If the IRS data indicates that the applicant is above the Medicaid threshold, the applicant
+       is asked to attest to (self-report) their current income. If the applicant attests to an amount
+       greater than the IRS data, or if the amount is less than the IRS data by no more than
+       10 percent, they are considered “reasonably compatible,” and the attestation is accepted
+       and used to determine eligibility. If the IRS data indicates that the applicant is at or
+       below the Medicaid threshold, or if no IRS data are available, the District marketplace
+       contacts other Federal and local data sources including:
+
+           the Social Security Administration,
+
+           the Work Number (Equifax Workforce Solutions’ verification system),
+
+           the State Wage Information Collection Agency,
+
+           the District’s Department of Employment Services Unemployment Compensation
+            Program,
+
+           the State Administration Supplementary Payment Program,
+
+           the Temporary Assistance for Needy Families program,
+
+           the Supplemental Nutrition Assistance Program, and
+
+           the State General Assistance Program.
+
+    4. After all other data sources are accessed, these sources are compared to the applicant’s
+       self-reported income. If the sum of the data accessed is greater than the self-reported
+       income by no more than 10 percent, they are considered “reasonably compatible,” and
+       the self-reported amount is taken as the applicant’s income and used to determine
+       eligibility for Medicaid or insurance affordability programs through the District
+       marketplace.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   19
+    5. If the applicant’s self-reported income is not accepted because it is not reasonably
+       compatible or income sources do not exist, the applicant is required to provide paper
+       documentation to confirm the attestation. Accepted paper documentation sources
+       include:
+
+           a pay stub from a current job showing current income,
+
+           a statement of income completed and signed by a current employer,
+
+           register of business activity (for self-employed individuals), and
+
+           other official documentation that indicates the name and present income of the
+            applicant.
+
+    6. If electronic data sources are not available because of scheduled system maintenance or
+       for other reasons, paper documentation is used to substantiate the applicant’s self-
+       reported/attested income.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   20
+   APPENDIX B: STEPS AND OUTCOMES FOR RESOLVING INCONSISTENCIES
+
+                                          Applicant submits information
+
+
+
+
+       Applicant information                   Marketplace verifies                 Applicant information
+     matches data sources, no              information against Federal              does not match data
+     inconsistency is created,              data sources though Data                  sources and an
+     and application proceeds               Hub or other data sources             inconsistency is created
+
+
+                   After the marketplace makes a reasonable effort to address the causes of
+                       the inconsistency, it requests additional information from applicant.
+                      Applicant is enrolled in QHP and insurance affordability programs, if
+                                  applicable, for a 90-day inconsistency period
+
+
+
+    Marketplace receives satisfactory                                      Marketplace does not receive
+     documentation from applicant                                         satisfactory documentation from
+    during the 90-day inconsistency                                         applicant during the 90-day
+                 period                                                         inconsistency period
+
+
+
+
+       Outcome #1                   Outcome #2                 Outcome #3                  Outcome #4
+        Marketplace                 Marketplace                 Marketplace                 Marketplace
+      determines that             determines that          determines applicant       determines applicant
+     applicant is eligible       applicant is eligible         is not eligible        is eligible using self-
+      using applicant-           using data sources            because data           attested information
+    submitted information                                    sources indicate           on a case-by-case
+                                                              applicant is not           basis (except for
+                                                              eligible or data            citizenship and
+                                                                sources are            immigration status)
+                                                                unavailable
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)              21
+           APPENDIX C: THE DISTRICT OF COLUMBIA MARKETPLACE’S
+                    INCONSISTENCY RESOLUTION PROCESS
+
+Inconsistencies are generated when an applicant’s attested information cannot be verified
+through electronic data sources. The marketplace accepts an applicant’s attestation without
+further verification for information related to incarceration status, residency for individuals under
+age 19, family size, and applicants who claim homeless status.
+
+For information that must be verified, the District marketplace allows 95 days for resolution: a
+90-day inconsistency period and a 5-day allowance for processing, when the letter is sent to the
+applicant after eligibility is determined. If information is not received within the 95-day
+window, reminders are sent to the applicants in intervals of 10, 25, 50, and 65 days.
+Additionally, an applicant who demonstrates a “good faith effort” may be granted an additional
+30 days to resolve the conflict. The District marketplace defines a “good faith effort” as the
+applicant requesting additional time online, through the call center, in person at a service center,
+or by mail. All correspondence for inconsistency reminders and “good faith effort” requests will
+be added to the District marketplace’s application account.
+
+To resolve the inconsistency, an applicant can mail the requested supporting documentation,
+deliver the documentation in person at a service center to be scanned into the system, or upload
+the documents to his or her personal District marketplace application account. Documents
+submitted online are linked to the applicant’s account. The contractor scans and uploads to the
+Document Image Management System documentation that the applicant submits on paper. The
+documentation verification process is as follows:
+
+       the service center system creates a work task,
+
+       District marketplace management reviews the work task and assigns a social service
+        representative to the task,
+
+       the social service representative verifies and processes the submitted documents,
+
+       the social service representative contacts the applicant for additional information if the
+        submitted documentation does not meet clearance requirements,
+
+       the enrollment system clears the documents and determines eligibility, and
+
+       District marketplace management monitors completion of the task.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   22
+                   APPENDIX D: OVERVIEW OF INTERNAL CONTROLS
+
+INTERNAL CONTROLS IN THE GOVERNMENT51
+
+Internal controls are an integral component of an organization’s management providing
+reasonable, not absolute, assurance that the following objectives of an agency are being
+achieved: (1) effectiveness and efficiency of operations, (2) reliability of financial reporting, and
+(3) compliance with applicable laws and regulations.
+
+Internal controls are the plans, policies, methods, and procedures used to meet the organization’s
+mission, goals, and objectives. They include the processes and procedures for planning,
+organizing, directing, and controlling program operations and management’s systems for
+measuring, reporting, and monitoring program performance.
+
+A deficiency in an internal control exists when the design, implementation, or operation of a
+control does not allow management or personnel, in the normal course of performing their
+assigned functions, to achieve control objectives and address related risks.
+
+FIVE COMPONENTS OF INTERNAL CONTROL52
+
+Internal control consists of five interrelated components:
+
+        Control Environment: The standards and processes that provide the foundation for
+         carrying out internal control across the organization. The control environment includes
+         factors such as the organizational structure, assignment of authority and responsibilities,
+         and ethical values.
+
+        Risk Assessment: The process for identifying and evaluating risks to achieve objectives.
+
+        Control Activities: The actions established through policies and procedures that help
+         ensure that management’s directives to reduce risks are carried out. These activities
+         include authorizations and approvals, verifications, and reconciliations.
+
+        Information and Communication: Use of relevant and quality information to support
+         the functioning of other internal control components. Through communication,
+         management, conveys, shares, and obtains necessary information.
+
+        Monitoring: Ongoing or separate evaluations or both to ascertain whether the
+         components are present and functioning.
+
+
+51
+  Government Accountability Office’s Standards for Internal Control in the Federal Government: 1999 (known as
+the Green Book) and Government Auditing Standards: 2011 Revision. The Green Book was revised in September
+2014, which was after our audit period.
+52
+  Committee of Sponsoring Organizations of the Treadway Commission: Internal Control – Integrated
+Framework, Executive Summary (May 2013).
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)         23
+                     APPENDIX E: AUDIT SCOPE AND METHODOLOGY
+
+SCOPE
+
+We reviewed the internal controls that were in place at the District marketplace during the open
+enrollment period for insurance coverage effective in CY 2014 (October 1, 2013, through
+March 31, 2014). Internal controls are intended to provide reasonable assurance that an
+organization’s objectives are being achieved, including effectiveness and efficiency of operations
+and compliance with applicable laws and regulations. We performed an internal control review
+because it enabled us to evaluate the effectiveness and efficiency of District marketplace
+operations and compliance with applicable Federal requirements.
+
+We limited our review to those internal controls related to (1) verifying applicants’ identities,
+(2) determining applicants’ eligibility for enrollment in QHPs and eligibility for insurance
+affordability programs, and (3) maintaining and updating eligibility and enrollment data. In our
+review, we focused on control activities, which is one of the five components of internal controls
+as described in Appendix D.
+
+To determine the effectiveness of the internal controls, we:
+
+        reviewed a sample of 45 applicants randomly selected from applicants who were
+         determined eligible for QHPs during the open enrollment period (9,735 applicants),
+         which included the review of supporting documentation to evaluate whether the
+         marketplace determined the applicants’ eligibility in accordance with Federal
+         requirements and
+
+        performed other audit procedures, which included interviews with marketplace
+         management, staff, and contractors; observation of staff performing tasks related to
+         eligibility determinations; and reviews of supporting documentation and enrollment
+         records.
+
+Because our review was designed to provide only reasonable assurance that the internal controls
+we reviewed were effective, it would not necessarily have detected all internal control
+deficiencies.
+
+Our attribute sampling approach is commonly used to test the effectiveness of internal controls
+for compliance with laws, regulations, and policies. According to the Government
+Accountability Office and the President’s Council on Integrity and Efficiency’s53 Financial
+Audit Manual (July 2008), section 450, auditors may use a randomly selected sample of 45 items
+when testing internal controls. If all sample items are determined to be in compliance with
+requirements, a conclusion that the controls are effective can be made. If one or more sample
+items are determined not to be in compliance with requirements, a conclusion that the controls
+are ineffective can be made. Because our objective was limited to forming an opinion about
+
+53
+  The President’s Council on Integrity and Efficiency is now called the Council of the Inspectors General on
+Integrity and Efficiency (Inspector General Act § 11).
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)             24
+whether District marketplace internal controls were effective, our sampling methodology was not
+designed to estimate the percentage of applicants for whom the marketplace did not perform the
+required eligibility verifications.
+
+Although the first open enrollment period for applicants to enroll in QHPs ended on March 31,
+2014, an applicant could also have enrolled in a QHP during a special enrollment period if the
+applicant experienced certain life changes, such as marriage or the birth of a child. We did not
+review District marketplace determinations of applicants’ eligibility that resulted from changes
+in applicant information reported by applicants after March 31, 2014.
+
+We performed fieldwork from July to December 2014 at the District marketplace’s office in the
+District of Columbia.
+
+METHODOLOGY
+
+To accomplish our objective, we:
+
+       reviewed applicable Federal and State laws, regulations, and guidance;
+
+       reviewed the Secretary of HHS’s report on the eligibility verifications for the APTC and
+        cost-sharing reductions (submitted to Congress on December 31, 2013);
+
+       assessed internal controls by:
+
+            o interviewing officials from the District marketplace and their contractors
+              and reviewing documentation provided by them to understand how the
+              marketplace (1) verifies applicants’ identities, (2) verifies information
+              submitted on enrollment applications and makes eligibility determinations,
+              and (3) maintains and updates eligibility and enrollment data;
+
+            o observing marketplace staff performing tasks related to eligibility determinations;
+              and
+
+            o reviewing documents and records related to the marketplace’s eligibility
+              determinations, such as eligibility verification data;
+
+       obtained enrollment records from the District marketplace for 9,735 applicants who were
+        determined eligible for QHPs during the open enrollment period (October 1, 2013
+        through March 31, 2014);
+
+       analyzed the enrollment records to obtain an understanding of information that was sent
+        to QHP issuers;
+
+       performed tests, such as matching records to the marketplace’s enrollment system, to
+        determine whether the enrollment data were reliable;
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   25
+       performed testing of District marketplace internal controls for eligibility determinations
+        by:
+
+            o using the OIG, Office of Audit Services, statistical software to randomly select
+              45 applicants who were determined eligible to enroll in QHPs during the open
+              enrollment period (October 1, 2013, through March 31, 2014) and
+
+            o obtaining and reviewing eligibility data for each sample applicant to determine
+              whether the marketplace performed the required eligibility verification and
+              determination according to Federal requirements; and
+
+            o reviewed the District marketplace’s methodology for calculating the APTC for
+              sample applicants who were eligible for insurance affordability programs; and
+
+       discussed the results of our review with District marketplace officials.
+
+We conducted this performance audit in accordance with generally accepted government
+auditing standards. Those standards require that we plan and perform the audit to obtain
+sufficient, appropriate evidence to provide a reasonable basis for our findings and conclusions
+based on our audit objectives. We believe that the evidence obtained provides a reasonable basis
+for our findings and conclusions based on our audit objectives.
+
+
+
+
+District of Columbia Marketplace’s Internal Controls Under the Affordable Care Act (A-03-14-03301)   26
+                   APPENDIX F: DISTRICT MARKETPLACE COMMENTS
+
+
+
+
+                                                     HBX
+                                                    DC Health Benefit
+                                                    Exchange Authority
+
+         November 6, 2015
+
+         Stephen Virbitsky
+         Regional Inspector General for Audit Servic es
+         Office of Audit Services, Region III
+         150 S. Independence Mall West, Suite 316
+         Philadelphia, PA 19106
+
+         RE: Audit Report A-03-14-03301
+
+         Dear Mr. Virbitsky:
+
+         Thank you for the opportunity to provide you with feedback. The Department of Health and
+         Human Services Office of Inspector General (HHS-OIG) focused on the first open enrollment
+         period: October 1, 2013 to March 31 , 2014. The audit included no findings in the following
+         areas:
+
+             •   Establishing standard operating procedures (SOPs) and processes for making accurate eligibility
+                 determinations in compliance with Federal regulations (including r esolution of inconsistencies).
+             •   Establishing management review/internal controls associated with the prevention of improper
+                 eligibility determinations.
+             •   Establishing management review/internal controls associated with the identification of incorrect
+                 eligibility determinations.
+             •   Establishing management review/internal controls associated with compliance with the
+                 requirements regarding confidentiality, disclosure, maintenance, and use of infonnation.
+             •   Maintaining current and fully executed agreements with other entities specifying their respective
+                 responsibilities in connection with eligibility determinations, including (if appropriate) thos e
+                 related to exemptions.
+
+         In its audit, the HHS-OIG made four findings. HBX concurs with the four findings and provides
+         the following observations for your consideration. Three of the four findings were based on one
+         problem- source data from federal or local data calls were not maintained properly. Importantly,
+         however, in all audited cases , the applicants we re in fact eligible for the benefits. With respect to
+         the root problem, the HHS-OIG report inaccurately asserts that HBX initiated corrective actions
+         only after the audit began. In fact, HBX's aggressive oversight of its marketplace resulted in
+         timely identification ofthe cause shortly after opening for business in 2013, long before the HHS­
+         OIG audit began. By July 2014, when the audit commenced, HBX had either corrected most
+         issues or was in the process. We ask that the draft report b e corrected to reflect that HBX
+         oversight of its marketplace resulted in quickly identifying the problem and quickly initiating
+         corrective action in 2013.
+
+
+
+
+          * *
+          ~   *          1225 Eye Street NW, 4th Floor , Washington, DC 20005
+
+          EX:
+District ofColumbia Marketplace's Internal Controls Under the Affordable Care Act (A-03-14-03301)                    27
+          In addition, we request that the report more accurately p01tray t he District's efforts around identity
+          proofin g. The report states "the District marketplace did not properly oversee the identity
+          proofing process." This is contradi ct ed b y a footnote in the report and fact that "the syst em was
+          designed to prevent an applicant who did not successfully pass the identity-proofing process from
+          completing a marketplace application online." The on-line marketplace was in fact designed to
+          prevent completion of an application if a person could not pass the initial screening for identity
+          proofing. The assertion ofnot properly overseeing the identity proofin g process is not suppott ed as
+          an applicant is blocked and is not allowed to complete an application without proper identity
+          proofin g. Therefore, we request that the statement that the District did not properly oversee the
+          identity proofing process be correct ed.
+
+          HBX appreciates the professionalism and thoroughness with which your staff conducted this audit.
+
+          S incerely,
+
+          /Mila Kofman, J.D./
+          Executive Director
+          Health Benefit Exchange Authority
+
+
+
+
+District ofColumbia Marketplace 's I nternal Controls Under the Affordable Care Act (.4 -03-14-03301)               28
+                                                                                            DCHBX Responses To
+                                                                                 Draft Audit Report A-03-14-03301
+                                                                                                       Page 1 of 5
+
+
+                             D.C. Health Benefit Exchange Authority Responses to
+                                      Draft Audit Report A-03-14-03301
+
+
+             Comments Regarding Data Retention
+
+            Three of the HHS-OIG' s four findings relate to source data from federal or local data calls
+            not being maintained in accordance with federal law. HBX concurs with these findings
+            and offers the following comments.
+
+             Maintenance of Source Data by Infosys Public Systems (IPS)
+
+            IPS was the integration vendor contracted by the District of Columbia to build and initially
+            manage system operations ofthe eligibility system. This contract was awarded by the
+            District of Columbia's Office of Contracting and Procurement on behalf ofthe Department
+            of Human Services. The Request for Proposal and review process occurred prior to HBX
+            having any staff.
+
+            Without HBX authorization or knowledge, on October 12, 2013, IPS turned offXML
+            logging ofthe source data- the request and responses from the federal data services hub.
+            Due to timely and effective oversight of IPS by HBX, this issue was identified quickly, and
+            action was taken to address it. Due to HBX's efforts, the logging of the source data was
+            turned back on quickly on December 22, 2013. The assertion that HBX failed to properly
+            oversee the vendor is not correct. The following is a detailed summary of HBX actions:
+
+            Prior to launch ofthe eligibility system, testing indicated XML data was being stored
+            properly. The expectation of HBX going into launch on October 1, 2013 was that IPS staff
+            would cooperate with HBX in the operations, maintenance, and internal control for the DC
+            Health Link system. This expectation was not met, and subsequent to launch on October 1,
+            2013 , IPS would not permit HBX access into the internal operations or coding
+            environments sufficient to monitor performance. Whil e IPS continued to engage with
+            HBX business managers on policy, individuals working on DC Health Link were locked
+            out of the security environment and unable to make technical changes to DC Health Link.
+
+            Recognizing that IPS was preventing HBX from performing appropriate oversight of the
+            contract, in October 2013 HBX b egan hiring a replacement team to replace the operational
+            roles being performed by IPS. One HBX IT consultant shifted from a coordination role
+            with IPS to being the lead of the Operations and Maintenance team. A n ew IT consultant
+            was hired to start on October 27, 2013 with the specific skill set necessary to assess
+            whether IPS was performing necessary functions and with the capability to perform the
+            functions directly ifiPS was not performing the required functions.
+
+             On December 5, 2013 , HBX had a ready team and removed IPS from operational control
+             ofthe technical environment of DC Health Link. IPS staff was retained, in a separate
+             office, to complete system documentation. After gaining access to the technical
+
+
+
+
+District ofColumbia Marketplace's Internal Controls Under the Affordable Care Act (A-03-14-03301)                    29
+                                                                                             DCHBX Responses To
+                                                                                  Draft Audit Report A-03-14-03301
+                                                                                                        Page 2 of 5
+
+
+            environment, HBX assessed the environment and instituted a technical change
+            management process.
+
+             The assessment completed in mid-December revealed that IPS had turned offXML
+             logging on October 12, 2013, without approval from HBX. The necessary corrections,
+             including reinstating logging, were processed through an Enterprise Change Request
+             (ECR) ordered on December 19, 2013. The system refresh necessary to implement the
+             ECR took until December 22, 2013 to complete .
+
+             Nine ofthe 45 cases OIG requested fell within the timeframe between October 12 and
+             December 22, 2013, when logging was not fully functional and are therefore
+             unrecoverable.
+
+            HBX identified the problem well in advance ofthe OIG audit and took action. This issue
+            did not affect the integrity of the eligibility decisions. The XML files are one record of the
+            information received from verification sources. However, this information is also stored in
+            the DC Health Link eligibility system contemporaneously with receipt and used to make
+            eligibility decisions. This secondary storage ofthis information in the eligibility system
+            shows that DC Health Link received information from the data services hub and
+            appropriately applied it. Additionally, for those individuals where the electronic
+            verification sources did not confirm the eligibility factor, paper documentation was
+            required and used. The XML record is not the source and basis for eligibility.
+
+             False Positives in Archiving with D.C. Office of Chief Technology Officer
+
+            Across the District of Columbia, the DC Office of Chief Technology Officer (OCTO)
+            provides enterprise backup se1vices to District agencies. Thousands of files are backed up
+            at the District enterprise level daily by OCTO. HBX has an agreement with OCTO to
+            backup DC Health Link data. Due to the size ofthe XML files, the data is held locally on
+            HBX servers for 30 days, and then sent to archive enterprise servers maintained by OCTO.
+
+            Quality control includes the check for a satisfactory outcome for local agency tapes
+            moving to enterprise backup storage. This is an indication that both the jobs creating the
+            local tapes and the jobs creating the enterprise tapes completed their file transfer runs
+            nom1ally without any error. HBX applied the same historical protocol in establishing its
+            archiving procedures with OCTO.
+
+            As a result of this HHS-OIG audit, an issue with the archiving procedure was discovered.
+            Although HBX was sending complete files for archiving, incomplete and unreadable
+            copies of those files were being stored on the OCTO servers as back-ups. The corruption in
+            the process was not visible. In fact, both at the HBX and OCTO ends, the outcomes
+            message was "successful" backup and error free. As a result ofthis problem, HBX was
+            unable to produce readable XML files for 12 of the cases requested.
+
+             Corrective Action Plan
+
+
+
+
+District ofColumbia Marketplace's Internal Controls Under the Affordable Care Act (A-03-14-03301)                     30
+                                                                                            DCHBX Responses To
+                                                                                 Draft Audit Report A-03-14-03301
+                                                                                                       Page 3 of 5
+
+
+            IPS - In addition to removing their staff from direct control of the eligibility and
+            enrollment system, HBX no longer uses IPS. In areas not overlapping with Medicaid
+            determinations, HBX is no longer using "certified off-the-shelf'' (COTS) products, which
+            have expensive licensing and maintenance fees. Instead, HBX developed its own
+            application using open source code. This allows complete and direct control over upgrades
+            and maintenance. In the area overlapping with Medicaid detetminations - APTC
+            determinations - HBX works with and relies on the Department of Health Care Finance
+            and the Department of Human Services.
+
+            OCTO- Upon discovery of the corruption in the established process, HBX working with
+            the IT team immediately formulated a remediation plan, which consists of the following:
+
+                •   HBX and OCTO will communicate timeframes and schedules for executing local
+                    eligibility system and data transaction backups and for executing OCTO enterprise
+                    backups so that these services never overlap, minimizing the opportunity for errors.
+
+                •   Every local eligibility system backup and its partner OCTO enterprise backup will
+                    be subject to file size and checksum comparisons between the two backups.
+
+                •   Prior to purging the previous month's local DC Health Link backup tapes, a restore
+                    will be done of that month's partner OCTO enterprise backup tapes. This will also
+                    be done to the eligibility system's Oracle database server.
+
+                •    Periodically, HBX will select a random set of Enterprise Service Bus (ESB)
+                    transactions from the ESB activity logs , and analyze them to make sure they've
+                    been successfully extracted.
+
+                •   The successful ESB log ell.iract results will be stored on the configuration
+                    management tracker so that the tracker's database can be queried at will to provide
+                    documentary proof that ESB transactions have been accurately stored on OCTO's
+                    enterprise database.
+
+                •   Only once a positive back-up verification procedure has been completed will the
+                    previous month's local ESB files then be purged.
+
+             This corrective action plan was formulated in February 2015, after identification of issues
+             by the OIG. Implementation ofthe plan began immediately. As of August 20, 2015, HBX
+             and OCTO restarted the enterprise backup process after complete and successful testing by
+             OCTO, in coordination with HBX IT staff.
+
+
+
+
+             Finding #1: The District Marketplace Did Not Always Maintain IdentifY-Proofing
+             Documentation - CONCUR
+
+
+
+
+District ofColumbia Marketplace's Internal Controls Under the Affordable Care Act (A-03-14-03301)                    31
+                                                                                             DCHBX Responses To
+                                                                                  Draft Audit Report A-03-14-03301
+                                                                                                        Page 4 of 5
+
+
+             The HBX agrees that, despite repeated recovery efforts, XML records for 19 out ofthe 45
+             cases sampled by HHS-OIG could not recovered from archived data storage. The reasons
+             and corrective action plans are stated above in the Data Retention explanation.
+
+            However, HBX strongly rejects HHS-OIG's statement that the "District marketplace did
+            not properly oversee the identity proofing process" or that the "marketplace could not
+            demonstrate that it performed identity proofing." To the contrary, HHS-OIG itself states in
+            footnote 42 that ''the system was designed to prevent an applicant who did not successfully
+            pass the identity-proofing process from completing a marketplace application online. "
+
+            All of these individuals applied online and therefore, the mere fact that they successfully
+            enrolled is evidence that they passed identify proofing. Therefore, the failure h ere is not a
+            failure to conduct the verification, but a problem with retaining the documentation of such
+            verification as required.
+
+            Finding #2: The District Marketplace Did Not Always VerifY Annual Household Income
+            According to Federal Requirements- CONCUR
+
+             The HBX agrees that for 2 of the 45 cases reviewed by HHS-OIG, HBX staff were unable
+             substantiate verification of income.
+
+            As to the first application, the HBX concurs that there was an error in 2013 that discarded
+            subsequent applications in cases of multiple applications, along with associated data, even
+            though customers were permitted to enroll. This defect was identified in 2013, well before
+            HHS-OIG began their audit, and remedied March 4, 2014. Customers can no longer
+            submit more than one application of the same type unless they contact DC Health Link
+            Customer Service, which will administratively close the prior application. This
+            administrative step ensures that all associated data for the applications will be retained and
+            viewable in the eligibility system.
+
+            As to the second referenced application, it is notable that the applicant was eligible for the
+            full amount of APTC the applicant received based on the paystubs submitted by the
+            customer and retained by HBX. The applicant would have received an additional $3 /month
+            through the reconciliation at the time of tax filing had his income remained the same.
+            However, the display of the income in the customer's on-line eligibility file was incorrect.
+            The error leading to this incorrect display could not be duplicated in a manner sufficient to
+            explain it because the application was from March 2014 and there had been multiple
+            upgrades to the IT eligibility system between the time of application and the time the
+            auditors reviewed in early 20 15.
+
+
+            Finding #3: The District Marketplace Did Not Maintain Documentation that it Verified
+            Applicants' Eligibility for Minimum Essential Coverage According to Federal
+            Requirements- CONCUR
+
+
+
+
+District ofColumbia Marketplace's Internal Controls Under the Affordable Care Act (A-03-14-03301)                     32
+                                                                                           DCHBX Responses To
+                                                                                Draft Audit Report A-03-14-03301
+                                                                                                      Page 5 of 5
+
+
+             The HBX agrees that, despite repeated recovery efforts, the source data!XML records for 6
+             out of the 45 cases sampled by HHS-OIG could not recovered from our archived data
+             storage. The reasons and corrective action plans are stated above in the Data Retention
+             Comments.
+
+             Finding #4: The District Marketplace Did Not Always Maintain Application and
+             Eligibility Verification Data- CONCUR
+
+            The HBX agrees that, despite repeated recovery efforts, HBX could not recover the source
+            data, the XML records from our archived data storage for some audited samples. The
+            reasons and corrective action plans are stated above in the Data Retention Comments.
+
+            HBX strongly rejects HHS-OIG's statement that the "District marketplace did not have
+            controls in place to identify that parts of the system were not functioning" when discussing
+            IPS turning offthe logging ofthe source data/XMLs. Exactly to the contrary, due to
+            timely and effective oversight ofthe IPS by HBX, this issue was identified quickly, and
+            action was taken to address it. Taking immediate action after HBX was locked out on
+            October 1, 2013 from oversight, HBX built a team of experts to replace IPS functions.
+            HBX turned on logging ofthe source data December 23, 2013.
+
+            As to incarceration data specifically, HBX concurs with the finding that the eligibility record­
+            keeping system used by the District, which is a certified off-the-shelf (COTS) product developed
+            by IBM/ Curam, did not store a record when a customer attested to not being
+            incarcerated. However, the converse was stored. The COTS product properly stored an
+            eligibility record when a customer attested to being incarcerated and the rules engine
+            appropriately distinguished between customers that were incarcerated pending disposition of
+            criminal charges versus customers who were incarcerated post-conviction, the former being
+            eligible for exchange enrollment and the later not.
+
+            This design did not have an impact on eligibility outcomes , because customers who self-attested
+            that they were incarcerated post-conviction were properly prohibited from enrollment.
+
+             HBX now uses open source code applications and no longer uses CURAM for full pay
+             applicants. In areas overlapping with Medicaid determinations, DCHBX works with the
+             Department of Health Care Finance and the Department of Human Services.
+
+            Recognizing the recording issue with these attestations, HBX took corrective action. HBX
+            records this information in the open source code it developed for full pay applications (not
+            APTC or Medicaid applications). Additionally, HBX plans to engage with IBM/Curam
+            system developers to ensure a record of customer responses to the question of "Are you
+            incarcerated?" is retained, even when the answer is "No" in applications that are also
+            Medicaid applications.
+
+
+
+
+District ofColumbia Marketplace's Internal Controls Under the Affordable Care Act (A-03-14-03301)                   33
+

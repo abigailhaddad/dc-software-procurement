@@ -1,0 +1,98 @@
+SOURCE URL: https://www.enlightened.com/casestudies/it-services-for-the-dc-access-system/
+ACCESSED: 2026-08-24
+======================================================================
+
+
+	IT Services for the DC Access System - Enlightened
+
+	Skip to content
+
+Beyond Expectation | Washington, D.C.
+
+Knowledge & Insights
+
+News
+
+Community
+
+Contact
+
+What We Do
+
+Results
+
+About Enlightened
+
+Careers
+
+IT Services for the DC Access System
+
+CLIENT NAME
+
+District of Columbia (DC) Health Benefit Exchange (HBX)
+
+SERVICE
+
+Software Development & Integration
+
+CLIENT TYPE
+
+Civilian
+
+Enlightened developed a system that that allowed individuals and small businesses to review, browse, register, and purchase affordable health care.
+
+Challenge
+
+Enlightened was tasked by the DC Health Benefit Exchange to develop a system that allows individuals and small businesses to review, browse, register, and purchase affordable health care in accordance with the Affordable Care Act (ACA) requirements.
+
+Approach
+
+To accomplish the project task, Enlightened monitored and coordinated multiple concurrent work streams related to system development, contractual oversight, and compliance. Adherence to CMMI Level 2 processes facilitated ongoing superior customer experience through proven efficiencies and effectiveness. For example, the IT security approach encompassed a variety of disciplines within the CMMI framework that are focused around the CIA triad of Confidentiality, Integrity, and Availability. To achieve this triad of goals, Enlightened placed controls within the IT infrastructure to mitigate and ensure the CIA is maintained.
+
+Results
+
+Ultimately, Enlightened provided qualified personnel to meet the mission objectives of the DC HBX. Additionally, Enlightened provided a DCAS Compliance Team that adhered to the NIST Security Authorization Process and successfully met customer requirements as well as the terms and conditions of the contract.
+
+Services Provided
+Reviewed various tickets for password resets
+Scheduled security awareness training and security incident response inquiries
+Captured and retained signed Non-Disclosure Agreements (NDAs)
+Safeguarded program data from cyber threats
+Tracked vendor and contractor staffing levels
+On-boarded new hires
+Delivered security and privacy Federal Tax Information (FTI) awareness training
+Performed continuous monitoring duties
+Designed, implemented, and followed lists of policies, procedures, and standards for disciplines including networking, hardware, software, auditing, and compliance
+
+Post navigation
+
+Modernized Integrated Tax System (MITS)
+JUSTIS Technical Support Services
+
+Let Enlightened help your organization solve problems and achieve its objectives.
+		Get Started
+
+202.728.7190
+
+1205 Marion Barry Ave SE 
+
+Suite 300
+
+Washington, DC 20020
+
+Login:
+
+ Intranet
+
+Home
+						Contact
+							Privacy
+
+                    			© 2026. 
+
+				            	All rights reserved.                      
+
+NMLS Number: 2687567
+
+NMLS Consumer Access
+

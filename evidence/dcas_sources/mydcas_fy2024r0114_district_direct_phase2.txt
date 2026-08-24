@@ -1,0 +1,142 @@
+SOURCE URL: https://my.dcas.dc.gov/sites/default/files/files/fy2024r0114-district_direct_phase_2.pdf
+ACCESSED: 2026-08-24
+======================================================================
+DC Access System
+District of Columbia Government
+
+
+
+
+                                  FY2024R0114
+                                  District Direct Improvements P2
+
+                                  END USER DOCUMENTATION – January 14, 2024
+Release Overview
+RELEASE NAME      FY2024R0114 – District Direct Improvements P2
+RELEASE DATE      January 14, 2024
+
+INITIATIVE        Usability
+
+OVERVIEW          Improvements are made to the District Direct Resident Portal and Mobile App to support the online and mobile app before the application
+                  harmonization project goes live. These improvements can include accessibility language, integration with the caseworker portal, and other
+                  enhancements.
+
+BENEFITS          Users will see the following:
+                  •   Release will include new requirements for Resident Portal and Mobile App
+                  •   Release will include repairs to all stuck threads and error notifications
+
+WHO’S IMPACTED?   •   Internal Stakeholders
+                  •   Caseworkers​ and Beneficiaries
+
+HOW ARE USERS     Caseworkers and other users will enjoy smoother DD resident and Mobile app processing and eligibility determination.
+IMPACTED?
+
+
+
+
+                                                                                                     DC GOVERNMENT | CONFIDENTIAL – FOR INTERNAL USE ONLY     |2
+          District Direct Improvements Phase 2
+          KEY BUSINESS ISSUE: DD IMPROVEMENTS
+
+
+Jira Ticket      Issue                                                                            Fix
+DSMRA-1458       DCAS needs to support the new requirement to introduce My Profile                An Improvement was made to update the User Profile functionality in District
+                 Functionality to District Direct (Resident Portal and Mobile App).               Direct (Resident Portal and Mobile App).
+
+DSMRA-1460       DCAS needs to support the new requirement to allow the beneficiary to            An Improvement was made to the Resident Portal to launch the new IEG which
+                 terminate Medical coverage online via the Resident Portal.                       will allow Medical termination.
+
+DSMRA-1455       DCAS needs to support the new requirement to allow the beneficiary to            An Improvement was made to the Mobile App to launch the new IEG which will
+                 terminate Medical coverage online via Mobile App.                                allow Medical termination.
+
+DSMRA-1463       In DCAS, the District Direct Application Intake Summary page is missing Breast   An Improvement was made to add the Breast and Cervical Cancer Information
+                 and Cervical Cancer Information.                                                 section in the summary page.
+
+DSMRA-1462       In DCAS there needs to be Medical Coverage Termination Report for clients        An Improvement was made to provide a Medical Coverage Termination Report
+                 requesting to discontinue Medical or Medicaid benefit.                           for clients requesting to discontinue Medical or Medicaid benefit.
+
+DSMRA-1456       DCAS must address a new requirement by updating the Medical Application          An Improvement was made to meet the new requirement by making changes to
+                 (MAGI) flow to ask every household member whether they are requesting            the IEG Script in the MAGI Medical Application to allow every household
+                 assistance in the Resident Portal.                                               member, whether they are requesting assistance in the Resident Portal. Also,
+                                                                                                  changes were made in the Non-MAGI pre-population class to update the
+                                                                                                  primary participant details.
+
+DSMRA-1642       DCAS must address a new requirement by updating the Medical Application          An Improvement was made to meet the new requirement by making changes to
+                 (MAGI) Flow to ask every Household member whether they are requesting            the IEG Script in the MAGI Medical Application to allow every household
+                 assistance in the Mobile App.                                                    member, whether they are requesting assistance in the Mobile App. Also,
+                                                                                                  changes were made in the Non-MAGI pre-population class to update the
+                                                                                                  primary participant details.
+
+
+                                                                                                                DC GOVERNMENT | CONFIDENTIAL – FOR INTERNAL USE ONLY             |3
+          District Direct Improvements Phase 2
+          KEY BUSINESS ISSUE: DD IMPROVEMENTS
+
+
+Jira Ticket      Issue                                                                                Fix
+DSMRA-1261       In DCAS, users cannot proceed after the general information screen during non-       An Improvement was made to add conditions to the checkbox questions so the
+                 MAGI renewals because program conditions on the checkbox questions are               user can proceed after the general information screen.
+                 missing.
+
+DSMRA-1459       In DCAS, there is a new requirement to add the SNAP Replacement Allotment            An Improvement was made to implement this requirement of adding the SNAP
+                 Request form to District Direct.                                                     Replacement Allotment Request form to District Direct.
+
+DSMRA-1644       In DCAS, mailing address details are not displayed in the PDF due to a code          A Code update was made to ensure the mailing address is displayed in the PDF.
+                 issue.
+
+DSMRA-1645       In DCAS, users cannot proceed when changing from homeless to non-homeless            An Improvement was made to change the validation condition in the apt/suite
+                 in MAGI CoC/Renewals due to validation errors in the apt/suite field not             field to allow special characters when changing from homeless to non-homeless
+                 allowing for special characters.                                                     in MAGI CoC/Renewals.
+
+DSMRA-1646       In DCAS, users were incorrectly able to add income for the removed household         An Improvement was made to resolve the issue in IEG script and prevent users
+                 members due to an issue in the Intelligent Evidence Gathering (IEG) script.          from adding income to members removed from the household.
+
+DSMRA-1647       In DCAS for SNAP/Cash Initial Application PDF, the Residential address is missing    An Improvement was made ensure the residential address is present for the
+                 for the Household after performing an edit from Final Summary Screen in the          household after performing edit from the Final Summary screen in the Income
+                 Income Support Application.                                                          Support Application.
+
+DSMRA-2109       Per policy, DCAS needs to create French and Simplified Chinese versions of the       An Improvement was made to add French and Simplified Chinese versions of the
+                 SNAP Replacement Allotment Request Form.                                             SNAP Replacement Allotment Form.
+
+DSMRA-2691       In DCAS, when a PDC case closure process is initiated from District Direct, Notice   An Improvement was made as a new requirement to trigger Notice #358
+                 #358 Terminate Medical Coverage should be triggered for the user.                    Terminate Medical Coverage when the PDC case closure process is initiated.
+
+
+                                                                                                                    DC GOVERNMENT | CONFIDENTIAL – FOR INTERNAL USE ONLY           |4
+          District Direct Improvements Phase 2
+          KEY BUSINESS ISSUE: DD IMPROVEMENTS
+
+
+Jira Ticket      Issue                                                                               Fix
+DSMRA-2705       In DCAS, there was an error code when submitting Supplemental Form 20.              An Improvement was made to ensure there will be no error code when
+                                                                                                     submitting Supplemental Form 20.
+
+DSMRA-2177       DCAS must incorporate the Voter Registration link into District Direct Resident     An Improvement was made to add the Voter Registration link to the District
+                 Portal as part of a new requirement.                                                Direct Resident portal as part of a new requirement.
+
+DSMRA-2736       DCAS must incorporate the Voter Registration Link into the District Direct Mobile   An Improvement was made to add the Voter Registration link to the District
+                 Appl as part of a new requirement.                                                  Direct Mobile App as part of a new requirement.
+
+DSMRA-2853       In District Direct, during the withdrawal process, DCAS needs to change the task    An Improvement was made in the withdrawal process to change the task type
+                 type from “Application” to “Change.”                                                from “Application” to “Change”.
+
+DSMRA-2915       In District Direct Resident Portal during a MAGI renewal, an incorrect validation   An Improvement was made to correct the issue and allow the user to proceed to
+                 message is displayed, and user was unable to proceed after navigating to the        the next screen.
+                 pregnancy details screen.
+
+DSMRA-3523       In DCAS, customers who want to voluntarily end their Medical/Medicaid               An Improvement was made to allow customers to voluntarily end their
+                 Benefits and wave Adverse Action should also have the same case end date in         Medical/Medicaid Benefits and wave Adverse Action to have the same case end
+                 MMIS.                                                                               date in MMIS.
+
+DSMRA-2177       To comply with the policy, the Resident Portal and Mobile App must incorporate      An Improvement was made to add the Voter Registration information link to the
+                 a link to access voter registration information.                                    Resident Portal and Mobile App.
+
+DSMRA-1194       In DCAS, the ability to decline the Medicaid coverage option was not visible        An Improvement was added to allow the option to decline Medicaid coverage
+                 on IEG for potential DCA/ICP eligible clients in the Mobile App.                    on the IEG script for potential DCA/ICP eligible clients in the Mobile App.
+
+DSMRA-2891       DCAS needs to translate text into Spanish, Amharic, French, and Simplified          An improvement was made to translate text into Spanish, Amharic, French, and
+DSMRA-3674       Chinese.                                                                            Simplified Chinese.
+                                                                                                                   DC GOVERNMENT | CONFIDENTIAL – FOR INTERNAL USE ONLY            |5
+End of
+Document
+

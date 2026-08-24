@@ -1,0 +1,1380 @@
+SOURCE URL: https://www.oig.dc.gov/sites/default/files/Reports/DCOIG_Report_24-1-04JA_0.pdf
+ACCESSED: 2026-08-24
+======================================================================
+                                           OFFICE OF THE
+                                  INSPECTOR GENERAL
+                               DISTRICT OF COLUMBIA GOVERNMENT
+
+
+
+
+AUDIT REPORT
+Medicaid Eligibility Determinations Audit
+The District Completed Required Medicaid Eligibility Renewals During the Unwinding
+Period But Could Improve Internal Controls
+
+OIG No. 24-1-04JA
+
+
+July 28, 2025
+
+
+
+
+                                  DANIEL W. LUCAS
+                   100 M STREET SE SUITE 1000 | WASHINGTON DC 20003 | (202) 727-2540
+                                     INSPECTOR GENERAL
+                                           OUR MISSION
+We independently audit, inspect, and investigate matters pertaining to the District
+of Columbia government in order to:
+
+    •   prevent and detect corruption, mismanagement, waste, fraud, and abuse;
+
+    •   promote economy, efficiency, effectiveness, and accountability;
+
+    •   inform stakeholders about issues relating to District programs and operations;
+        and
+
+    •   recommend and track the implementation of corrective actions.
+
+
+
+                                             OUR VISION
+We strive to be a world-class Office of the Inspector General that is customer focused
+and sets the standard for oversight excellence!
+
+
+
+                                            OUR VALUES
+Accountability: We recognize that our duty            Integrity: Our integrity is non-negotiable. We
+extends beyond oversight; it encompasses              act with honesty, transparency, and unwavering
+responsibility. By holding ourselves                  ethics. Upholding the public's trust demands
+accountable, we ensure that every action we           nothing less.
+take contributes to the greater good of the
+District.                                             Professionalism: As stewards of oversight, we
+                                                      maintain the utmost professionalism. Our
+Continuous Improvement: We view challenges            interactions, decisions, and conduct exemplify
+not as obstacles, but as opportunities for            the dignity of our role.
+growth. Our commitment to continuous
+improvement drives us to evolve, adapt, and           Transparency: Sunlight is our ally. Transparency
+enhance our practices.                                illuminates our processes, decisions, and
+                                                      outcomes. By sharing information openly, we
+Excellence: Mediocrity has no place in our            empower stakeholders, promote
+lexicon. We strive for excellence in every facet of   understanding, and reinforce our commitment
+our work.                                             to accountability.
+                    DISTRICT OF COLUMBIA | OFFICE OF THE INSPECTOR GENERAL
+
+
+
+
+                                     MEMORANDUM
+
+
+
+ To:         Wayne Turnage, M.P.A.
+             Deputy Mayor for Health and Human Services and
+             Director, Department of Health Care Finance
+             441 4th Street NW, Suite 900 South
+             Washington, DC 20001
+
+             A D Rachel Pierre
+             Interim Director, Department of Human Services
+             64 New York Avenue NE, 6th Floor
+             Washington, DC 20002
+
+ From:       Daniel W. Lucas
+             Inspector General
+
+ Date:       July 28, 2025
+
+ Subject:    Medicaid Eligibility Determinations Audit | OIG No. 24-1-04JA
+
+
+
+This memorandum transmits our audit report on the District’s Medicaid Eligibility
+Determinations. We conducted this audit in accordance with generally accepted
+government auditing standards (GAGAS). Our audit objectives were to: (1) review
+internal controls over Medicaid eligibility; and (2) evaluate compliance with federal
+program requirements. The audit was included in our Fiscal Year 2024 Audit and
+Inspection Plan.
+
+Both agencies provided written responses to our recommendations. DHS committed
+to implementing corrective actions for all six recommendations directed to them,
+including establishing procedures for termination notices, enhancing supervisory
+review processes, and updating record retention policies. DHCF committed to
+implementing corrective actions through their Commanding Case Closure Initiative,
+including refresher training and enhanced supervisory review processes. All eight
+recommendations are considered open and resolved, pending verification of
+implementation.
+
+
+
+
+                 100 M STREET SE SUITE 1000 | WASHINGTON DC 20003 | (202) 727-2540
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+We appreciate the cooperation and courtesy extended to our staff during this audit.
+If you have any questions about this report, please contact me or Dr. Slemo Warigon,
+Assistant Inspector General for Audits, at slemo.warigon@dc.gov.
+                       EXECUTIVE SUMMARY
+
+                        Medicaid Eligibility Determinations Audit
+
+
+
+
+Summary                                               2.   DHCF submitted baseline and twelve
+In March 2020, Congress enacted the Families               monthly reports to CMS timely, as
+First Coronavirus Response Act in response to              required.
+the COVID-19 public health emergency, which
+required states to ensure most individuals were       3.   DHS did not always send termination
+continuously enrolled for Medicaid. During the             notices to Medicaid beneficiaries.
+COVID-19 public health emergency, continuous
+Medicaid coverage led to a 20 percent                 4.   DHS did not always maintain required
+enrollment increase, with the Department of                supporting documentation.
+Health Care Finance (DHCF) reporting more than
+300,000 individuals enrolled in the District's        5.   DHS did not always provide denial notices
+Medicaid Program.                                          to ineligible applicants.
+
+
+The Consolidated Appropriations Act of 2023           6.   The District’s eligibility system of record
+ended the continuous enrollment of Medicaid                did not consistently reflect correct or
+coverage. As a result, and through guidance                accurate eligibility status.
+from the Centers for Medicare and Medicaid
+Services (CMS), the Department of Human             Recommendations
+Services (DHS) had to resume recertification        We made six recommendations to DHS and two
+procedures and conduct eligibility renewals for     recommendations to DHCF. We recommend
+all individuals enrolled in Medicaid.               establishing clear internal control procedures
+                                                    and quality assurance measures to ensure
+The Office of the Inspector General (OIG)           termination notices are consistently generated
+identified this audit engagement due to its         and aligned with federal regulations. We
+vulnerability to corruption, fraud, waste, abuse,   recommend developing a procedure to ensure
+and mismanagement, hence its inclusion on the       adequate supervisory review and accurate
+OIG High Risk List.                                 documentation of eligibility decisions in the
+                                                    District of Columbia Access System. Additionally,
+Objectives                                          we recommend updating policies and
+For this engagement, our objectives were to:        procedures to enhance monitoring,
+                                                    documentation, and error mitigation for manual
+(1) review internal controls over Medicaid
+                                                    processes.
+eligibility; and (2) evaluate compliance with
+federal program requirements.
+                                                    Management Response
+                                                    DHS committed to implementing corrective
+Findings
+                                                    actions for six recommendations, and DHCF
+Through this audit, we made the following
+                                                    committed to implementing corrective
+findings:
+                                                    measures for two recommendations. All eight
+                                                    recommendations are considered open and
+  1.   DHCF successfully met CMS'
+                                                    resolved, pending verification of implementation.
+       requirements for developing an
+       unwinding operational plan.
+                                            DISTRICT OF COLUMBIA | OFFICE OF THE INSPECTOR GENERAL
+
+
+
+
+   Medicaid Eligibility
+   Determinations Audit
+CONTENTS
+   INTRODUCTION ................................................................................................................................................................ 1
+
+       Objectives ..................................................................................................................................................... 1
+
+       Background ................................................................................................................................................ 1
+
+           Medicaid Program Overview ....................................................................................................... 1
+
+           Continuous Coverage Requirements .................................................................................... 2
+
+           Unwinding Process Requirements ......................................................................................... 3
+
+           District Of Columbia's Medicaid Unwinding Efforts .................................................... 3
+
+   AUDIT RESULTS ............................................................................................................................................................... 4
+
+       Finding 1: DHCF Successfully Met CMS' Requirements for Developing an
+       Unwinding Operational Plan.......................................................................................................... 4
+
+       Finding 2: DHCF Timely Submitted Required Baseline and Monthly Reports
+       to CMS............................................................................................................................................................ 5
+
+       Finding 3: DHS Did Not Always Send Medicaid Beneficiaries Termination
+       Notices........................................................................................................................................................... 6
+
+       Finding 4: DHS Did Not Always Maintain Required Supporting
+       Documentation .......................................................................................................................................8
+
+       Finding 5: DHS Did Not Always Provide Denial Notices to Ineligible
+       Applicants ................................................................................................................................................... 9
+
+       Finding 6: DCAS Did Not Consistently Reflect Correct or Accurate Eligibility
+       Status ........................................................................................................................................................... 12
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+CONCLUSION .................................................................................................................................................................. 14
+
+APPENDIX 1. FINDINGS ..............................................................................................................................................15
+
+APPENDIX 2. RECOMMENDATIONS ................................................................................................................ 17
+
+APPENDIX 3. SCOPE & METHODOLOGY ....................................................................................................... 19
+
+    Scope ........................................................................................................................................................... 20
+
+    Methodology .......................................................................................................................................... 20
+
+    Sample Testing and Analysis ........................................................................................................ 20
+
+    Sampling Design and Selection .................................................................................................. 21
+
+APPENDIX 4. DHS MANAGEMENT RESPONSE ........................................................................................ 23
+
+APPENDIX 5. DHCF MANAGEMENT RESPONSE .....................................................................................25
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+INTRODUCTION
+
+Objectives
+The objectives of this audit were to: (1) review internal controls over Medicaid
+eligibility; and (2) evaluate compliance with federal program requirements.
+
+See Appendix 3 for our audit scope and methodology.
+
+Background
+
+Medicaid Program Overview
+Medicaid is a joint federal-state program that finances healthcare coverage for low-
+income and medically disadvantaged populations, including individuals with
+disabilities. It encompasses a range of services such as medical consultations,
+hospital care, prescription medications, mental health support, transportation, and
+various other healthcare provisions.
+
+Medicaid operates through state Medicaid agencies, with states paying providers of
+medical services directly or through the use of managed care plans.1 For Medicaid
+purposes, the District of Columbia is treated as a state and has the same
+responsibilities and requirements.2 As such, the District operates its own Medicaid
+program, receives federal matching funds, and is subject to the same federal
+requirements and oversight as any state.
+
+The Department of Health Care Finance (DHCF) is the District's State Medicaid
+agency. DHCF administers the Medicaid program and is responsible for determining
+the types and extent of services that beneficiaries may receive. DHCF delegates its
+responsibility for making Medicaid eligibility determinations to the Economic
+Security Administration (ESA), a division of the DC Department of Human Services
+(DHS).
+
+Medicaid eligibility in the District is determined based on specific information,
+including income, household size, age, disability status, and other factors. Applicants
+must be US citizens or qualified immigrants and are typically required to provide
+
+
+
+
+1
+  OFF. OF MGMT. & BUDGET, EXEC. OFF. OF THE PRESIDENT, COMPLIANCE SUPPLEMENT, 2 C.F.R. PART 200, APP XI, 4-
+93.778-1 (May 2024), https://www.fac.gov/assets/compliance/2024-Compliance-Supplement.pdf.
+2
+  Per Social Security Act § 1902(e)(53)(F)(v)(I), “The term ‘State’ means 1 of the 50 States or the District of
+Columbia.”
+
+
+
+
+                                                      –1–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+documentation of income, residency, and other personal details to determine
+eligibility.
+
+The DC Access System (DCAS) is the integrated system used to determine eligibility
+for various health and human services for the District. DCAS integrates with federal
+and local databases, such as the Federal Data Services Hub, to verify applicant
+information, including income, citizenship, and Social Security data. Eligibility
+determinations are conducted in alignment with federal and District regulations,
+along with agency policies and procedures. The system also facilitates annual
+renewals and helps case workers in documenting eligibility decisions.
+
+Continuous Coverage Requirements
+On January 31, 2020, the Health and Human Services Secretary declared that a public
+health emergency (PHE) existed due to the spread of the coronavirus disease 2019
+(COVID-19). As a result, Congress enacted the Families First Coronavirus Response
+Act (FFCRA), which authorized an approximately 6.2 percent increase in federal
+funding for Medicaid programs as long as states continuously maintained
+participants’ Medicaid eligibility throughout the PHE.3
+
+This continuous coverage provision prohibited states from terminating Medicaid
+benefits for most enrollees during the PHE, even when changes in circumstances
+would normally make them ineligible. The provision was designed to ensure that
+vulnerable populations maintained access to healthcare services during the
+pandemic without the risk of losing coverage due to administrative hurdles or
+economic disruptions. However, these temporary policies paused regular eligibility
+reviews, causing a backlog of eligibility determinations that needed to be addressed
+once the continuous coverage requirement ended.
+
+The Consolidated Appropriations Act of 2023 (CAA) set March 31, 2023, as the
+definitive end date for the continuous coverage of Medicaid requirement of the
+FFCRA.4 The CAA created a two-phased approach for states to return to normal
+Medicaid eligibility operations. This process of transitioning back to regular Medicaid
+eligibility determination procedures after the continuous coverage period is referred
+to as “unwinding.” The unwinding process required states to systematically work
+through the backlog while ensuring eligible individuals maintained their healthcare
+coverage.
+
+
+
+
+3
+    Families First Coronavirus Response Act, Pub. L. No. 116-127, 134 Stat. 178 (2020).
+4
+    Consolidated Appropriations Act, 2023, Pub. L. No. 117-328, 136 Stat. 4459 (2022).
+
+
+                                                  –2–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+Unwinding Process Requirements
+In March 2022, the Centers for Medicare and Medicaid Services (CMS) issued State
+Health Official Letter No. 22-001, announcing that states must initiate eligibility
+renewals for all individuals enrolled in Medicaid within 12 months of the start of the
+state's unwinding period.5 Furthermore, states were required to complete these
+renewals within 14 months of the unwinding period's commencement.
+
+CMS guidance established key requirements for states during the unwinding
+process, including:
+
+    •   development of an Unwinding Operational Plan outlining the state's approach
+        to resuming normal eligibility operations;
+
+    •   implementation of strategies to minimize inappropriate coverage loss,
+        including updated contact information processes;
+
+    •   establishment of prioritization frameworks for processing renewals; and
+
+    •   submission of monthly data reports on renewal progress and outcomes.
+
+Additionally, the CAA required states to report their progress on eligibility and
+enrollment actions such as reviews, redeterminations, and disenrollments and
+mandated that CMS make this information publicly available.6 These measures were
+aimed at ensuring a smooth transition and preventing unnecessary loss of health
+coverage.
+
+District Of Columbia's Medicaid Unwinding Efforts
+During the PHE, the District of Columbia experienced a significant increase in
+Medicaid enrollment, growing by 20 percent to over 300,000 enrollees.7 This surge
+was due to the continuous coverage provisions that suspended annual eligibility
+redeterminations to ensure uninterrupted access to healthcare. At the end of the
+PHE, the District resumed Medicaid renewals on April 1, 2023, and resumed annual
+eligibility redetermination.
+
+
+
+
+5
+  Letter from Daniel Tsai, Acting Deputy Administrator and Director, Department of Health &
+Human Services, Centers for Medicare & Medicaid Services to State Health Official, Executive
+Summary (SHO# 22-001) (Mar. 3, 2022) (on file with the OIG).
+6
+  Consolidated Appropriations Act, 2023, Pub. L. No. 117-328, 136 Stat. 4459 (2022).
+7
+  Department of Health Care Finance, "Restarting Medicaid Renewals: The End of the
+Continuous Enrollment Requirement Bi-weekly Meeting #28 Medicaid Renewal Community
+Meeting" (PowerPoint presentation, Washington, DC, May 22, 2024),
+https://dhcf.dc.gov/sites/default/files/dc/sites/dhcf/page_content/attachments/Medicaid%20Re
+newal%20Community%20Meeting%20052224.pdf.
+
+
+                                                 –3–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+By March 2024, the District started all Medicaid renewals and reached an 80 percent
+renewal rate.8 The District’s 80 percent renewal rate demonstrated significant
+progress in returning to normal eligibility operations while ensuring eligible
+individuals maintained coverage.
+
+AUDIT RESULTS
+Our audit of Medicaid eligibility determinations, including the unwinding of
+continuous Medicaid coverage, revealed areas of strength and areas for
+improvement. We found that DHCF and DHS showed notable strengths in planning
+and reporting during the unwinding process, successfully meeting CMS
+requirements for operational planning and timely submission of monthly progress
+reports. These accomplishments reflect the agencies’ commitment to compliance,
+transparency, and accountability during a complex transition period.
+
+Despite these successes, we found instances of internal control deficiencies that
+require attention. Our audit found inconsistent issuance of termination and denial
+notices to beneficiaries, inadequate documentation retention practices, and
+inaccuracies in DCAS. These weaknesses may negatively affect beneficiaries' access
+to healthcare coverage and their awareness of appeal rights.
+
+Addressing these issues could significantly enhance the integrity, transparency, and
+compliance of Medicaid program administration in the District of Columbia.
+Ensuring accurate eligibility determinations and proper notification processes will
+help build public trust, reduce the risk of legal challenges, and improve access to
+healthcare for eligible residents. Furthermore, resolving systemic internal control
+deficiencies could prevent future errors, improve operational efficiency, and better
+align the program with federal standards. The following findings provide detailed
+information on both the strengths we observed and the areas requiring
+improvement.
+
+Finding 1: DHCF Successfully Met CMS' Requirements for Developing an
+Unwinding Operational Plan
+On December 22, 2020, the Centers for Medicare and Medicaid Services (CMS) issued
+State Health Official Letter #20-004, which directed states to develop and document
+a comprehensive plan to restore routine operations in their Medicaid programs
+following the suspension of certain processes during the COVID-19 PHE.9
+
+
+
+
+8
+ Department of Health Care Finance, "Restarting Medicaid Renewals," slide 4.
+9
+ Letter from Ann Marie Costello, Acting Deputy Administrator and Director, Department of
+Health & Human Services, Centers for Medicare & Medicaid Services to State Health Official,
+Section VI (SHO# 20-004) (Dec. 22, 2020) (on file with the OIG).
+
+
+                                                –4–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+In response, DHCF released its Operational Plan for Unwinding Continuous
+Coverage and the COVID-19 Public Health Emergency (Unwinding Plan) in March
+2023.10 The Unwinding Plan established clear objectives and internal control activities
+to align with federal requirements to mitigate risks associated with the return to
+routine operations.
+
+Key strengths of the DHCF's Unwinding Plan include:
+
+     •   Eligibility Operations Under the Continuous Cover Requirement: DHCF
+         created strategies to prevent unnecessary coverage loss for Medicaid
+         beneficiaries during the transition period, focusing on seamless continuity of
+         care.
+
+     •   Federal Eligibility-Related Flexibilities During Renewals: DHCF introduced
+         measures to expedite eligibility determinations and renewals, ensuring
+         prompt and accurate processing of cases.
+
+     •   Outreach Campaign: DHCF implemented robust outreach initiatives to
+         inform Medicaid beneficiaries, healthcare providers, and community
+         organizations about changes to policies and processes during the unwinding
+         period.
+
+     •   Risk Mitigation and Compliance Monitoring: DHCF designed comprehensive
+         internal control activities to address potential risks, such as coverage gaps or
+         compliance lapses, ensuring adherence to CMS guidelines.
+
+By proactively addressing federal requirements and emphasizing planning,
+communication, and operational efficiency, DHCF demonstrated its commitment to
+protecting Medicaid beneficiaries and supporting program integrity during the
+unwinding period.
+
+Finding 2: DHCF Timely Submitted Required Baseline and Monthly Reports to
+CMS
+The CAA, along with State Health Official Letters No. 20-004 (December 22, 2020)11
+and No. 22-001 (March 2022),12 outlines specific reporting requirements for states
+during the unwinding period following the COVID-19 PHE. States were mandated to
+submit monthly reports to CMS on eligibility redeterminations, application
+processing times, and disposition of Medicaid renewals. These reports were required
+
+
+
+10
+   Operational Plan for Unwinding Continuous Coverage and the COVID-19 Public Health
+Emergency.
+11
+   Supra note 6.
+12
+   Supra note 3.
+
+
+                                                 –5–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+to show compliance with federal timelines, ensure transparency, and provide CMS
+with data to monitor state performance.
+
+DHCF consistently met the requirement for timely monthly reporting throughout
+the 14-month unwinding period. DHCF established effective processes and
+procedures to ensure the collection, validation, and submission of the required data
+to CMS. These measures were critical in maintaining compliance with federal
+regulations and demonstrated DHCF's commitment to transparency and
+accountability during this transition.
+
+As a result, DHCF ensured that beneficiaries received proper benefits while
+mitigating risks of erroneous disenrollments. Additionally, DHCF's effective reporting
+processes facilitated continued transparency and strengthened the integrity of the
+Medicaid unwinding process.
+
+Finding 3: DHS Did Not Always Send Medicaid Beneficiaries Termination
+Notices
+Title 29 DCMR § 9501.31 requires DHCF to provide written notice of Medicaid
+enrollment termination at least 15 calendar days prior to termination.13 Additionally,
+the DCMR mandates eligibility determinations for other Insurance Affordability
+Programs (IAPs) for applicants or beneficiaries found ineligible for Medicaid.14
+Furthermore, 29 DCMR § 9508 outlines beneficiaries' rights to notice and a fair
+hearing.
+
+We found that DHS did not issue termination notices to three out of five (60 percent)
+of the Medicaid beneficiaries in our sample, violating the requirement to notify
+individuals at least fifteen days before termination.15 This occurred because DHS lacks
+a formal procedure to ensure termination notices are generated and sent to
+beneficiaries when cases are closed manually. The DCAS system automatically
+generates termination notices during regular case closures, but this automation is
+bypassed during manual closures. Without a standardized procedure to address this
+system limitation, there is no consistent mechanism to ensure beneficiaries receive
+required notifications when their cases are manually closed.
+
+As a result, beneficiaries may be unaware of their Medicaid coverage loss, their right
+to appeal, or their eligibility for alternative programs. This can lead to gaps in health
+coverage, delayed medical care, and unmet health needs. Additionally, these
+notification failures risk undermining public trust in the Medicaid program,
+
+
+
+
+13
+   29 DCMR § 9501.31.
+14
+   29 DCMR § 9501.32.
+15
+   To understand our sampling methodology, please refer to Appendix 3.
+
+
+                                                –6–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+increasing appeals and disputes, and imposing unnecessary administrative costs on
+taxpayers.
+
+         Recommendation 1 (DHS)
+         We recommend that the DHS Director:
+
+         Establish and implement clear procedures to generate and issue
+         termination notices to beneficiaries when Medicaid cases are closed
+         manually.
+
+         Management Feedback:
+         DHS agrees with this finding and acknowledges the need to reinforce
+         manual case closure procedures to ensure timely and accurate notification
+         is provided to beneficiaries. DHS will work with DHCF to implement a
+         Commanding Case Closure Initiative that will include reinforcing
+         procedures and training (both in person and on demand) for manual case
+         closures. This initiative is expected to be completed by the end of FY26 and
+         will provide case workers with mandatory and on demand refresher training
+         and job aids covering manual case closure reasons. Additionally, DHS will
+         leverage the Medical Coverage Termination report from MicroStrategy to
+         track the timeliness and accuracy of the manual closures processes.
+
+         Our Notes:
+         We consider this recommendation open and resolved, pending verification.
+
+
+
+
+                                                 –7–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+         Recommendation 2 (DHS)
+         We recommend that the DHS Director:
+
+         Establish a formal process to detect and track manual closures of
+         terminated cases.
+
+         Management Feedback:
+         DHS agrees with this finding and acknowledges the need to reinforce
+         internal controls to monitor the timeliness and accuracy of these case
+         closure procedures by leveraging the existing monthly Medical Coverage
+         Termination report. Supervisors will review these reports on a monthly basis
+         to identify any incomplete or invalid closures and will make corrections and
+         provide additional training to staff as needed.
+
+         Our Notes:
+         We consider this recommendation open and resolved, pending verification.
+
+
+Finding 4: DHS Did Not Always Maintain Required Supporting Documentation
+Title 42 CFR § 431.17, requires Medicaid agencies to maintain individual records for
+each applicant and beneficiary that include all information provided in the initial
+application.16 These records must be kept for the duration of the applicant's or
+beneficiary's active case and for a minimum of three years thereafter.17 Additionally,
+ESA Policy mandates that all case documents needed to determine eligibility must
+be kept for as long as the case remains open.18
+
+Our testing procedures revealed documentation retention deficiencies at DHS. We
+found that for the newly eligible beneficiaries we examined, DHS did not keep the
+required supporting documentation in two out of six cases (33 percent). For renewal-
+eligible beneficiaries, DHS did not keep required supporting documentation in 12 out
+of 43 cases (28 percent). In all of these instances, the documentation should have
+been kept either because the cases remained active or fell within the three-year
+retention period required by federal regulations. This pattern of missing
+documentation shows that the DHS’ current record retention practices do not align
+with ESA’s program policy manual and federal regulations.
+
+
+
+
+16
+   42 CFR § 431.17(b)(1)(i).
+17
+   42 CFR § 431.17(c)(1).
+18
+   GOV’T OF THE DISTRICT OF COLUMBIA, DEP’T OF HUMAN SERVICES, ESA POLICY MANUAL, PART 8,
+CHAPTER 1 (undated).
+
+
+                                                –8–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+The failure to keep proper documentation undermines confidence in DHS' ability to
+ensure accurate eligibility determinations and program integrity. Moreover,
+inadequate documentation retention can hinder oversight, audits, and corrective
+actions needed to address potential compliance issues.
+
+         Recommendation 3 (DHS)
+         We recommend that the DHS Director:
+
+         Review its record retention policies and procedures to ensure alignment
+         with ESA’s program policy manual and applicable federal requirements (42
+         CFR § 431.17).
+
+         Management Feedback:
+         DHS disagrees with this finding. The cited federal requirements (42 CFR §
+         431.17) were revised in 2023 to require states to maintain eligibility records
+         for the period that the beneficiary's case is active plus three years and the
+         deadline for compliance is in 2026. The previous rule deferred to states to
+         set their own record retention schedule, and in 2019, DHS adopted a record
+         retention schedule of three years. DHS adhered to the prior record retention
+         requirements and those requirements did not mandate retention of records
+         prior to 2016. While DHS does not agree with this finding, DHS will be
+         revising its record retention policy to be compliant with the new federal
+         regulations prior to the compliance deadline in 2026.
+
+         Our Notes:
+         DHS disagrees with our finding, arguing that the updated federal regulation
+         does not apply retroactively and that they complied with the previous
+         requirements. However, we maintain that the cases we examined should
+         have been retained under the existing three-year retention requirement, as
+         our audit covered FY 2024, which falls within the minimum retention period
+         required by federal regulation. While we disagree with DHS's interpretation
+         of the requirements, we acknowledge that DHS has committed to updating
+         their record retention policy to comply with current federal regulations prior
+         to the 2026 deadline. We consider this recommendation open and resolved,
+         pending verification.
+
+
+Finding 5: DHS Did Not Always Provide Denial Notices to Ineligible Applicants
+To ensure transparency, accountability, and fairness, federal and District regulations
+require notifying applicants when Medicaid applications are denied. Title 29 DCMR §
+9508.1 mandates that individuals applying for Medicaid through DHS be informed of
+
+
+
+
+                                                –9–
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+their right to a fair hearing when their Medicaid application is denied.19 Additionally,
+29 DCMR § 9501.32 requires DHS to promptly provide ineligible Medicaid applicants
+with information about potential eligibility for other IAPs, along with details about
+their right to appeal the determination.20
+
+Our testing revealed that DHS did not consistently follow these notification
+requirements. In three of the 17 cases (18 percent) where applicants were denied
+Medicaid eligibility, DHS did not provide the required denial notices. These notices
+should have included information about eligibility for other programs and the
+applicant’s right to appeal. Further, we found that one applicant should have been
+approved for Medicaid but was denied eligibility in error.
+
+We found that these notification deficiencies occurred due to procedural gaps in
+DHS' processes for generating and sending denial notices, combined with
+insufficient management oversight of the denial notification process. Current
+procedures do not ensure that when caseworkers determine an applicant is
+ineligible for Medicaid, the required denial notices are consistently created and sent.
+Management oversight mechanisms, such as supervisory reviews or quality checks,
+did not effectively identify or address these missing notifications. Additionally,
+documentation in the DCAS system was inconsistent, with case narratives often
+lacking sufficient detail to explain ineligibility determinations. This deficiency
+prevents applicants from receiving denial notices with adequate explanations of why
+they were found ineligible, making it difficult for them to understand the basis for
+the decision and determine whether to exercise their appeal rights. Without effective
+supervisory internal controls to verify that required notices are sent with proper
+explanations, applicants may be unable to mount effective appeals of potentially
+erroneous decisions.
+
+When denial notices are not issued, applicants lose the ability to contest potentially
+erroneous decisions. The lack of notification to applicants could result in eligible
+individuals being wrongfully excluded from vital healthcare coverage. Further, the
+agency’s failure to issue these notices undermines public confidence in the fairness
+and transparency of the Medicaid program.
+
+
+
+
+19
+     29 DCMR § 9508.
+20
+     29 DCMR § 9501.32.
+
+
+                                                – 10 –
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+         Recommendation 4 (DHS)
+         We recommend that the DHS Director:
+
+         Develop and implement a procedure to ensure adequate supervisory review
+         of Medicaid applications when Medicaid applicants are determined
+         ineligible.
+
+         Management Feedback:
+         DHS agrees with this finding and has identified an alternative solution that
+         will address this finding. DHS acknowledges that there is a need to reinstate
+         supervisory review of ineligible Medicaid applications, which had been
+         paused during the COVID-19 Public Health Emergency. As part of the
+         Commanding Case Closure Initiative, DHS and DHCF will reinforce
+         procedures and trainings for documenting eligibility determination
+         decisions on the case record, including case narratives. DHS will also
+         reinstate the supervisory review of ineligible Medicaid applications to ensure
+         that the case record has an appropriate explanation for the determination
+         of ineligibility. These efforts will be completed by the end of FY26.
+
+         Our Notes:
+         We consider this recommendation open and resolved, pending verification.
+
+
+
+         Recommendation 5 (DHS)
+         We recommend that the DHS Director:
+
+         Establish a formal mechanism to ensure the DCAS timely and accurately
+         reflects eligibility determinations when Medicaid applicants are determined
+         ineligible.
+
+         Management Feedback:
+         DHS agrees with this finding and will work with DHCF to automate the
+         creation and mailing of Medicaid denial notices for all situations (instead of
+         a subset of situations as designed). This enhancement will be prioritized on
+         the development roadmap once a solution is designed.
+
+         Our Notes:
+         We consider this recommendation open and resolved, pending verification.
+
+
+
+
+                                                – 11 –
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+            Recommendation 6 (DHS)
+            We recommend that the DHS Director:
+
+            Develop and implement procedures to ensure case workers add case
+            narratives in DCAS to accurately explain why Medicaid applicants are
+            determined ineligible.
+
+            Management Feedback:
+            DHS agrees with this finding and recognizes the need to develop case
+            narrative standards when beneficiaries are determined to be ineligible or
+            when processing an administrative action to correct eligibility with no
+            intention to deny or terminate the beneficiary. Concurrently, DHS will work
+            with DHCF to automate the creation and mailing of Medicaid denial notices.
+            This enhancement will be prioritized on the development roadmap once a
+            solution is designed.
+
+            Our Notes:
+            We consider this recommendation open and resolved, pending verification.
+
+
+Finding 6: DCAS Did Not Consistently Reflect Correct or Accurate Eligibility
+Status
+Federal standards require information systems to keep accurate and reliable data.
+According to GAO’s Standards for Internal Control in the Federal Government (GAO
+Green Book), management must design information systems and internal controls
+that ensure data completeness, accuracy, and validity. These standards help
+agencies achieve operational effectiveness, carry out objectives, and respond to
+risks.21
+
+Our testing revealed that DHS staff did not consistently maintain accurate eligibility
+status information in DCAS. Our review of 47 active cases found seven beneficiaries
+(15 percent) were incorrectly listed as active in DCAS despite having been
+determined to be ineligible for Medicaid benefits. This discrepancy occurred because
+caseworkers did not properly update DCAS after determining ineligibility. The
+manual update process lacked sufficient internal control and verification steps,
+creating a disconnect between actual eligibility determinations and information
+recorded in the system.
+
+The underlying causes of these deficiencies include:
+
+
+
+
+21
+     GAO Green Book §§ 11.01, 11.03, and 11.09.
+
+
+                                                  – 12 –
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+   •   DHS did not have clear procedures or effective oversight to ensure timely and
+       accurate updates to DCAS, including missing automated checks to spot
+       inconsistencies, inefficient workflows for processing updates, and limited
+       system tools to flag issues, leading to delays and errors.
+
+   •   DHS policies and procedures lack effective internal controls to detect errors in
+       manual updates within the eligibility system, including inadequate
+       monitoring processes to identify and address mistakes promptly.
+
+These conditions expose the District to significant risks, including potential improper
+payments, inaccurate reporting, and regulatory noncompliance. Such risks
+undermine the integrity of the Medicaid program and could result in financial losses,
+sanctions, or fines for the District government. Furthermore, they jeopardize the
+effectiveness and fairness of the Medicaid program by not ensuring eligibility
+determinations are processed accurately and efficiently.
+
+         Recommendation 7 (DHCF)
+         We recommend that the DHCF Director:
+
+         Develop and implement effective internal control procedures for systematic
+         monitoring of manual updates in DCAS.
+
+         Management Feedback:
+         DHCF disagrees with this recommendation. DCAS system categorization of
+         "Active" simply indicates that a public assistance application has been
+         initiated. Notwithstanding, as part of the Commanding Case Closure
+         Initiative, DHCF will provide refresher training to staff on the appropriate
+         procedures for proper case closure and will incorporate a check for cases
+         with an active status but no eligibility in the supervisory review process.
+         Estimated Completion Date: End of Fiscal Year 2026.
+
+         Our Notes:
+         While DHCF disagrees with the recommendation, they have committed to
+         implementing corrective actions that address the intent of our
+         recommendation. However, we maintain that an "Active" status in DCAS
+         should accurately reflect actual eligibility determinations, as inaccurate
+         system data can lead to improper payments and compliance issues. We
+         consider this recommendation open and resolved, pending verification.
+
+
+
+
+                                                – 13 –
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+         Recommendation 8 (DHCF)
+         We recommend that the DHCF Director:
+
+         Update policies and procedures to define specific internal controls for
+         prompt detection and remediation of errors in manual processes.
+
+         Management Feedback:
+         DHCF disagrees with this finding but will implement the same corrective
+         actions described in Recommendation 7, including refresher training on
+         proper case closure procedures and incorporating checks for cases with
+         active status but no eligibility in the supervisory review process. Estimated
+         Completion Date: End of Fiscal Year 2026.
+
+         Our Notes:
+         While DHCF disagrees with the finding, they have committed to
+         implementing corrective actions that address the intent of our
+         recommendation. We consider this recommendation open and resolved,
+         pending verification.
+
+
+CONCLUSION
+DHCF successfully met federal requirements for unwinding continuous Medicaid
+coverage after the Covid-19 Public Health Emergency. DHCF developed a
+comprehensive Unwinding Operational Plan and submitted all required baseline
+and monthly reports to CMS on time. These accomplishments show the agency's
+commitment to transparency, accountability, and adherence to federal guidelines
+during this complex transition affecting over 300,000 Medicaid beneficiaries.
+
+While DHCF effectively managed the planning and reporting aspects of the
+unwinding process, we found several internal control weaknesses that require
+attention. Specifically, DHS did not consistently provide the required termination and
+denial notices to beneficiaries and did not maintain complete documentation.
+Additionally, DHCF needs to strengthen its internal controls over the accuracy of data
+in DCAS. These deficiencies could potentially impact beneficiaries’ access to
+healthcare, their awareness of appeal rights, and the overall integrity of the District’s
+Medicaid program.
+
+Our eight recommendations focus on strengthening procedural controls, improving
+documentation practices, enhancing system accuracy, and implementing effective
+quality assurance mechanisms. Implementing these recommendations will not only
+improve operational efficiency and regulatory compliance but will also better serve
+District residents by ensuring eligible individuals retain access to vital healthcare
+services while managing program resources.
+
+
+                                                – 14 –
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+          APPENDIX 1. FINDINGS
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+Table of Findings
+
+
+ No.                                           Finding
+
+       DHCF Successfully Met CMS' Requirements for Developing an Unwinding
+ 1
+       Operational Plan
+
+       DHCF Timely Submitted Required Baseline and Monthly Reports to CMS
+ 2
+
+
+       DHS Did Not Always Send Medicaid Beneficiaries Termination Notices
+ 3
+
+
+ 4     DHS Did Not Always Maintain Required Supporting Documentation
+
+ 5     DHS Did Not Always Provide Denial Notices to Ineligible Applicants
+
+ 6     DCAS Did Not Consistently Reflect Correct or Accurate Eligibility Status
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+          APPENDIX 2. RECOMMENDATIONS
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+Table of Recommendations
+
+ Agency   No.                     Recommendation                            Status   Action Required   Finding
+                Establish and implement clear procedures to generate
+                and issue termination notices to beneficiaries when                  Tracking
+ DHS       1    Medicaid cases are closed manually.                         Open     implementation         3
+                Establish a formal process to detect and track manual                Tracking
+ DHS       2    closures of terminated cases.                               Open     implementation         3
+
+                Review its record retention policies and procedures to
+                ensure alignment with ESA’s program policy manual                    Tracking
+ DHS       3    and applicable federal requirements (42 CFR § 431.17).      Open     implementation         4
+
+                Develop and implement a procedure to ensure
+                adequate supervisory review of Medicaid applications                 Tracking
+ DHS       4    when Medicaid applicants are determined ineligible.         Open     implementation         5
+
+                Establish a formal mechanism to ensure the DCAS
+                timely and accurately reflects eligibility determinations            Tracking
+ DHS       5    when Medicaid applicants are determined ineligible.         Open     implementation         5
+                Develop and implement procedures to ensure case
+                workers add case narratives in DCAS to accurately
+                explain why Medicaid applicants are determined                       Tracking
+ DHS       6    ineligible.                                                 Open     implementation         5
+                Develop and implement effective internal control
+                procedures for systematic monitoring of manual                       Tracking
+ DHCF      7    updates in DCAS.                                            Open     implementation         6
+                Update policies and procedures to define specific
+                internal controls for prompt detection and remediation               Tracking
+ DHCF      8    of errors in manual processes.                              Open     implementation         6
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+          APPENDIX 3. SCOPE & METHODOLOGY
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+Scope
+The scope of this audit was DHCF's and DHS' internal controls over Medicaid
+eligibility determinations during the Public Health Emergency and the unwinding of
+continuous Medicaid coverage from April 1, 2023, to June 30, 2024.
+
+Methodology
+We conducted this performance audit in accordance with generally accepted
+government auditing standards. Those standards require that we plan and perform
+the audit to obtain sufficient, appropriate evidence to provide a reasonable basis for
+our findings and conclusions based on our audit objectives. We believe that the
+evidence obtained provides a reasonable basis for our findings and conclusions
+based on our audit objectives.
+
+Document Review
+We obtained, reviewed, and analyzed relevant laws, rules, regulations, policies, and
+procedures related to Medicaid eligibility and the unwinding of continuous Medicaid
+coverage. This included federal guidance from CMS, District regulations, and agency-
+specific operational documents.
+
+Interviews and Site Visits
+We interviewed DHCF and DHS officials to gain an understanding of the Medicaid
+renewal process after the end of the Public Health Emergency. Additionally, we
+conducted site visits at DHS service centers, where we interviewed and conducted
+walkthroughs with Social Service Representatives to gain an understanding of
+Medicaid applications and renewals processing.
+
+System Access and Data Reliability Assessment
+We met with DHCF officials to understand DCAS and Document Imaging
+Management System and received training to access and use these systems. We
+conducted data reliability testing and walkthroughs to ensure the validity and
+integrity of the data used for our analysis. We worked with OIG data scientists to
+analyze DHCF and DHS data sets identifying more than 300,000 beneficiaries whose
+Medicaid eligibility had to be redetermined.
+
+Sample Testing and Analysis
+We selected 30 samples during the survey phase to assess Medicaid eligibility
+determinations, identifying instances where proof of Medicaid eligibility or
+continued Medicaid eligibility was not clearly documented or where supporting
+evidence for determinations was unavailable.
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+We selected 45 additional samples during the verification phase. We tested initial
+Medicaid eligibility, proper Medicaid denial determinations, and proper Medicaid
+terminations. We reviewed eligibility documentation associated with all samples.
+
+We developed findings and recommendations based on available evidence,
+continuing to follow up and assess documentation received from DHCF and DHS to
+reach our conclusions and recommendations.
+
+Sampling Design and Selection
+
+Sampling Frame
+The sampling frame for this audit consists of all Medicaid beneficiaries across five
+strata. The strata are:
+
+     •   Eligible Stratum: individuals determined eligible for Medicaid (10,150);
+
+     •   Terminated Stratum: individuals whose Medicaid coverage was terminated
+         (9,184);
+
+     •   Denials Stratum: individuals denied Medicaid coverage (1,449);
+
+     •   Renewal Stratum: individuals undergoing Medicaid renewal (304,742); and
+
+     •   Overlapping Stratum: individuals appearing in multiple strata (451).
+
+Table 1. Breakdown of Sample Strata
+
+ No.            Population description          Distinct Medicaid ID Count       Count without
+                                                                                    Overlap
+ 1       Eligible Stratum                                            10,601                10,150
+ 2       Terminated Stratum                                           9,635                 9,184
+ 3       Denials Stratum                                              1,449                 1,449
+ 4       Renewal Stratum                                            305,193               304,742
+ 5       Overlapping Stratum                                                 -                   451
+
+ Total                                                             326,878                325,976
+
+
+Sample Unit
+The sample unit in this audit was an individual Medicaid beneficiary.
+
+Sample Design
+We employed a stratified sampling approach, dividing the Medicaid beneficiary
+population into five distinct strata based on the applicants’ statuses. Given the
+population’s characteristics where the eligibility requirements vary across different
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+programs, a non-generalizable probability approach was employed, meaning the
+results may not be projected to the entire population.
+
+Sample Size
+The total sample size was determined using an attribute sample size calculator with
+the following parameters:
+
+     •   Precision rate: 15 percent
+
+     •   Error rate: 50 percent
+
+     •   Confidence level: 98 percent
+
+Based on these parameters, the initial sample size was calculated to be 60
+beneficiaries. The team allocated 60 samples across the five strata based on the
+stratum's characteristics and size. To ensure a more robust assessment of denials, we
+selected an additional 15 samples from the Denials stratum, bringing the total
+number of denials tested to 17 and the overall sample size to 75.
+
+The allocation of samples was as follows:
+
+ No.           Stratum          Count by Strata   Total Samples (Survey + Verification)
+
+
+ 1       Renewal Stratum               304,742                     43
+ 2       Eligible Stratum                10,150                    6
+ 3       Terminations Stratum             9,184                    5
+ 4       Overlapping Stratum                451                    4
+ 5       Denials stratum                  1,449                    17
+
+ Total                                 325,976                     75
+
+
+Method for Selecting Samples:
+We used systematic sampling implemented through an Automated Sampling tool.
+The tool selected samples based on sample intervals determined by dividing the
+population by the required number of samples. This approach maintained
+randomness and avoided bias in the sample selection process.
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+          APPENDIX 4. DHS MANAGEMENT
+          RESPONSE
+                                  01 PA 1nM I.NT of
+                     DC         I HVMA� SI RVICl:S
+
+
+
+
+             July 16, 2025
+
+             Daniel W. Lucas, Inspector General
+             Office of the Inspector General
+             100 M Street SE, Suite 1000
+             Washington, DC 20003
+
+             Dear Inspector General Lucas,
+
+             By this letter, I am providing written responses from the Department of Human Services (OHS)
+             to the findings addressed to OHS in the Draft OIG Report: Medicaid Eligibility Determinations
+             Audit (010 No. 24-l-04JA). The Department of Health Care Finance (DHCF) will be providing
+             written responses to the DHCF findings under separate cover.
+
+             Finding 3: DHS Did Not Always Send Medicaid Beneficiaries Termination Notices
+
+             Recommendation 1 (DHS): We recommend that the OHS Director establish and implement
+             clear procedures to generate and issue termination notices to beneficiaries when Medicaid cases
+             are closed manually.
+
+             Recommendation 2 (DHS): We recommend that the OHS Director establish a formal process to
+             detect and track manual closures of terminated cases.
+
+             Response: OHS agrees with this finding and acknowledges the need to reinforce manual case
+             closure procedures to ensure timely and accurate notification is provided to beneficiaries. OHS
+             also acknowledges the need to reinforce internal controls to monitor the timeliness and accuracy
+             of these case closure procedures by leveraging the existing monthly Medical Coverage
+             Termination report.
+
+             Action Plan: OHS will work with DHCF to implement a Commanding Case Closure Initiative
+             that will include reinforcing procedures and trainings (both in person and on demand) for manual
+             case closures. This initiative is expected to be completed by the end of FY26 and it will provide
+             caseworkers with mandatory and on demand refresher trainings and job aids covering the
+             following manual case closure reasons:
+
+                        o    Voluntary withdrawal requests
+                        o    No longer part of the household
+                        o    Out of state notification/attestation with no forwarding address
+                        o    Administrative actions taken to correct eligibility with no intent to deny or
+                             terminate coverage
+
+             Additionally, OHS will leverage the Medical Coverage Termination report from MicroStrategy
+             to track the timeliness and accuracy of the manual closures processes. Supervisors will review
+
+P.O. Box 91920, 64 New York Avenue, NE• Washington DC 20002
+P 202.671.4200 F 202.671.4326                                                                   www.DHS.DC.GOV
+        these reports on a monthly basis to identify any incomplete or invalid closures and will make
+        corrections and provide additional training to staff as needed.
+
+        Finding 4: OHS Did Not Always Maintain Required Supporting Documentation
+
+        Recommendation 3 (OHS): We recommend that the OHS Director review its record retention
+        policies and procedures to ensure alignment with ESA's program policy manual and applicable
+        federal requirements (42 CFR § 431.17).
+
+        Response: OHS disagrees with this finding. The cited federal requirements (42 CFR § 431.17)
+        were revised in 2023 to require states to maintain eligibility records for the period that the
+        beneficiary's case is active plus three years and the deadline for compliance is in 2026. The
+        previous rule deferred to states to set their own record retention schedule, and in 2019, OHS
+        adopted a record retention schedule of three years. OHS adhered to the prior record retention
+        requirements and those requirements did not mandate retention of records prior to 2016.
+
+        Action Plan: While OHS does not agree with this finding, OHS will be revising its record
+        retention policy to be compliant with the new federal regulations prior to the compliance
+        deadline in 2026.
+
+        Finding 5: DHS Did Not Always Provide Denial Notices to Ineligible Applicants
+
+        Recommendation 4 (OHS): We recommend that the OHS Director develop and implement a
+        procedure to ensure adequate supervisory review of Medicaid applications when Medicaid
+        applicants are determined ineligible.
+
+        Recommendation 5 (OHS): We recommend that the OHS Director establish a formal
+        mechanism to ensure DCAS timely and accurately reflects eligibility determinations when
+        Medicaid applicants are determined ineligible.
+
+        Recommendation 6 (DHS): We recommend that the OHS Director develop and implement
+        procedures to ensure case workers add case narratives in DCAS to accurately explain why
+        Medicaid applicants are determined ineligible.
+
+        Response: OHS agrees with this finding and has identified an alternative solution that will
+        address this finding. OHS acknowledges that there is a need to reinstate supervisory review of
+        ineligible Medicaid applications, which had been paused during the COVID-19 Public Health
+        Emergency. OHS also recognizes the need to develop case narrative standards when
+        beneficiaries are determined to be ineligible or when processing an administrative action to
+        correct eligibility with no intention to deny or terminate the beneficiary. Concurrently, OHS will
+        work with DHCF to automate the creation and mailing of Medicaid denial notices for all
+        situations (instead of a subset of situations as designed).
+
+        Action Plan: As part of the Commanding Case Closure Initiative, OHS and DHCF will reinforce
+        procedures and trainings for documenting eligibility determination decisions on the case record,
+        including case narratives. OHS will also reinstate the supervisory review of ineligible Medicaid
+
+64 New York Avenue, NE• Washington DC 20002
+P 202.671.4200                                                                                www.DHS.DC.GOV
+        applications to ensure that the case record has an appropriate explanation for the detennination of
+        ineligibility. These efforts will be completed by the end of FY26. OHS will also be working with
+        DHCF to automate the creation and mailing of Medicaid denial notices. This enhancement will
+        be prioritized on the development roadmap once a solution is designed.
+
+        We appreciate the opportunity to review and provide feedback on the draft issue brief. If you
+        have any questions about this response, please reach out to Christa Phillips, OHS Chief
+        Accountability Officer, at 202-200-7669.
+
+        Regards,
+
+
+
+
+        Interim Dire tor, D artment of Human Services
+
+
+
+
+64 New York Avenue, NE• Washington DC 20002
+P 202.671.4200                                                                                www.DHS.DC.GOV
+MEDICAID ELIGIBILITY DETERMINATIONS AUDIT | OIG NO. 24-1-04JA
+July 28, 2025
+
+
+
+
+          APPENDIX 5. DHCF MANAGEMENT
+          RESPONSE
+                     GOVERNMENT OF THE DISTRICT OF COLUMBIA
+                               Department of Health Care Finance
+
+
+
+
+To:            Daniel W. Lucas, D.C. Inspector General
+
+From:          Melisa Byrd, D.C. State Medicaid Director, Deputy Agency Director
+               D.C. Department of Health Care Finance
+
+Date:          July 16, 2025
+
+Re:            Draft OIG Report: Medicaid Eligibility Audit (OIG No. 24-1-04JA)
+
+        This memorandum responds to the DC OIG’s Draft Audit Report on the District’s
+Medicaid Eligibility Determinations. The Draft Report contains six findings, each directed at
+either the D.C. Department of Human Services (DHS), or the D.C. Department of Health Care
+Finance (DHCF). Finding 6 was addressed to DHCF, the response to which is stated below.
+
+Finding 6: DCAS Did Not Consistently Reflect Correct or Accurate Eligibility Status
+
+    In 7 out of 47 cases, the DC OIG found that the DCAS System did not consistently reflect
+accurate eligibility status. The DC OIG recommends that the DHCF Director develop and
+implement effective internal control procedures for systematic monitoring of manual updates in
+DCAS. DHCF disagrees with this finding. DCAS system categorization of “Active” simply
+indicates that a public assistance application has been initiated. Notwithstanding, as part of the
+Commanding Case Closure Initiative, DHCF will provide refresher training to staff on the
+appropriate procedures for proper case closure, and will incorporate a check for cases with an
+active status but no eligibility in the supervisory review process.
+
+Estimated Completion Date: End of Fiscal Year 2026
+REPORT WASTE, FRAUD, ABUSE, AND MISMANAGEMENT
+
+          (202) 724-TIPS (8477) and (800) 521-1639
+
+
+
+
+                     https://oig.dc.gov
+
+                        oig@dc.gov
+
+
+
+                  STAY UP TO DATE
+
+                instagram.com/OIGDC
+
+                x.com/OIGDC
+
+                facebook.com/OIGDC
+
+                Sign-up for email/text updates from
+                OIG
+

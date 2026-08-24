@@ -369,7 +369,7 @@ footer p{font-size:14px; color:var(--muted)}
 <span class="src">Option periods falling entirely inside FY2021&ndash;FY2025, against payments made in those same years. Recomputed by <code>verify_claims.py</code> &sect;"authorised against paid"; the whole-history version is Notebook &sect;"Ceilings are not spending".</span>
 
 <div class="caveat">
-<p><strong>Read those percentages as floors.</strong> Payments join to contracts by contract number, and a task order issued under an ordering vehicle is paid under the task order's own number, so it never joins back to the parent. Only 44% of technology contracts have any linked payment at all.</p>
+<p><strong>Read those percentages as floors.</strong> Payments join to contracts by contract number, and a task order issued under an ordering vehicle is paid under the task order's own number, so it never joins back to the parent. Only 44% of technology contracts have any linked payment at all. And the portal keeps only surviving option periods &mdash; a finished contract's ceiling shrinks while its payments remain, which is how one system's $110M build shows a $7.3M record below.</p>
 </div>
 
 <h2>Ten vendors take half the traceable technology money</h2>
@@ -577,7 +577,24 @@ footer p{font-size:14px; color:var(--muted)}
 </figure>
 <span class="src">Notebook &sect;"Named systems".</span>
 
-<p>DCAS is the clearest case of how the District sustains a large system: at least 28 separate contracts across the years in this data, for operations and maintenance, application development teams, licences, hosting, printing and mailing. No single contract builds it. It is kept running by a rolling series of awards, most of them for people and services rather than for software.</p>
+<p>DCAS is the clearest case of how the District sustains a large system: at least 28 separate contracts across the years in this data, for operations and maintenance, application development teams, licences, hosting, printing and mailing. No single contract builds it. It is kept running by a rolling series of awards, most of them for people and services rather than for software. It is worth telling in full.</p>
+
+<h2>One system from start to today: what DCAS cost</h2>
+<p>The DC Access System decides who gets Medicaid, SNAP and TANF in the District. It began as the ACA build: a 2012 solicitation, won by Infosys Public Services at $49.5 million, three planned releases, most of it paid with enhanced federal matching funds. The payments table only reaches back to FY2017, so the original build is already beyond the portal's memory.</p>
+
+<p>Release 3 &mdash; the hard part, non-MAGI Medicaid and the integrated portal &mdash; was built by KPMG under a contract titled simply "DCAS R3". The portal's surviving record of that contract is one option period at $7.3 million. The payment ledger tells the real story: $50 million paid citing the contract's number across FY2019&ndash;22, and another $60 million of KPMG payments at Health Care Finance carrying no contract number at all &mdash; and DCAS R3 is KPMG's only contract at that agency. The portal keeps only surviving option periods, so a finished contract's record shrinks while its payments remain. Accenture was separately contracted to oversee the build.</p>
+
+<p>Since 2025 the running of it is visible again: D2Sol invoices exactly $3,490,537.83 a month &mdash; $41.9 million a year &mdash; as the steady-state price before Cúram licences, the mobile app, AWS resale, printing, or call centers. Assembling every contract that can be defensibly tied to the system finds 49, with $249M in visible ceilings and $284M in attributable payments; 19 of the 49 show no payments at all, and 7 show payments above their surviving ceiling.</p>
+
+<div class="stat-row">
+  <div class="stat"><span class="n">$49.5M</span><span class="l">The 2013 build award (Infosys)</span></div>
+  <div class="stat"><span class="n">$110M</span><span class="l">Paid to KPMG for Release 3, against a $7.3M surviving record</span></div>
+  <div class="stat"><span class="n">$41.9M/yr</span><span class="l">The current price of keeping it running (D2Sol)</span></div>
+  <div class="stat"><span class="n hot">&gt;$622M</span><span class="l">The Council's stated total, which no public itemisation reconciles</span></div>
+</div>
+
+<p>What the money bought is a matter of public record. Asked at FY2024 budget oversight whether DCAS was working as intended, the Deputy Mayor replied with an emphatic no &mdash; the Council's word. The District was sued in 2017 over an 86.34% SNAP timely-processing rate; by FY2022 the rate had fallen below half that, and in April 2023 the federal Food and Nutrition Service rejected the District's corrective plan as inadequate. An Inspector General audit of Medicaid eligibility is the closest thing to an accounting; no DC Auditor report on the system exists.</p>
+<span class="src">Roster, payments and the full narrative in <code>data/dcas/</code>; all 53 cited pages saved in <code>evidence/dcas_sources/</code>. Recomputed by <code>verify_claims.py</code> &sect;"the DCAS case study", including that the quoted claims exist verbatim in the saved sources.</span>
 
 <h2>Where the reading is incomplete</h2>
 <p>Delivery structure could be read for 288 of 476 candidate contracts. The rest had no award document attached, or a scanned one with no text layer, which would need optical character recognition.</p>
