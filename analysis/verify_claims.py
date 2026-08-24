@@ -142,6 +142,26 @@ def main() -> int:
         print(f"         unrecorded: {missing[:5]}  stale: {stale[:5]}")
         print("         run: uv run python analysis/refresh_vendor_aliases.py")
 
+    print("\n-- the DC Supply Schedule --")
+    dcss = tech[tech.title.str.contains("DCSS", case=False, na=False)]
+    check("technology contracts naming DCSS", len(dcss), 397, 3)
+    check("their ceilings $M", round(dcss.ceiling.sum() / 1e6), 2410, 5)
+    check("share of technology ceilings %",
+          round(100 * dcss.ceiling.sum() / tech.ceiling.sum()), 52, 1)
+    vehicles = tech[tech.work_type == "ordering_vehicle"]
+    check("ordering vehicles that are DCSS",
+          int(vehicles.title.str.contains("DCSS", case=False, na=False).sum()), 305, 3)
+
+    print("\n-- named systems --")
+    named = tech[tech.system_name.notna() & (tech.system_name.astype(str).str.strip() != "")]
+    named = named[named.system_name.astype(str).str.lower() != "nan"]
+    by_system = named.groupby(named.system_name.astype(str).str.upper().str.strip()).agg(
+        contracts=("contract_number", "size"), ceiling=("ceiling", "sum")
+    ).sort_values("ceiling", ascending=False)
+    check("largest named system is DCAS", by_system.index[0], "DCAS")
+    check("DCAS contracts", int(by_system.iloc[0].contracts), 28, 1)
+    check("DCAS ceilings $M", round(by_system.iloc[0].ceiling / 1e6, 1), 198.3, 1.0)
+
     print("\n-- delivery structure --")
     check("sequential and gated contracts", int((delivery.delivery_structure == "sequential_gated_deliverables").sum()), 82)
     waterfall = delivery[delivery.delivery_structure == "sequential_gated_deliverables"]
