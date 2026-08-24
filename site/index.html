@@ -936,8 +936,8 @@ function detailHtml(id) {
 
       <h3>What the checks prove</h3>
       <p><code>analysis/verify_claims.py</code> recomputes every published number from the raw
-      snapshot &mdash; 97 checks, from the headline categories down to the rate card inside one
-      award PDF &mdash; and fails loudly on drift. <code>data/raw/manifest.json</code> records what
+      snapshot &mdash; check by check, from the headline categories down to the rate card inside
+      one award PDF and the job-ad receipts &mdash; and fails loudly on drift. <code>data/raw/manifest.json</code> records what
       was pulled and when, and the suite checks that it still describes the files on disk. The
       portal is live, so a fresh pull moves counts slightly; the manifest is what ties these
       figures to this snapshot.</p>`;

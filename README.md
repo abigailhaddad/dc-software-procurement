@@ -31,7 +31,9 @@ augmentation and inside task orders this data cannot see. Ordering vehicles
 carry $1.8B. Half of the $579M in traceable technology payments went to ten
 vendors, and 17% to one — measured on the 44% of contracts whose payments carry
 their number, though the top vendor is corroborated separately by the
-purchase-order table.
+purchase-order table. 42 award documents publish hourly rate cards — 2,146
+not-to-exceed rates, $24.01 to $1,015 — and job ads recruiting for the same
+tier names show what the workers are offered against them.
 
 Among contracts that build or run something, the largest group fixes its scope
 before work starts: 74 of 82 sequential, gated contracts cannot change what is
@@ -71,6 +73,10 @@ commitments the model filed as incidental; they are corrected by hand in
 | `delivery_overrides.yaml` | Hand-read corrections applied on top of the delivery classifier, with reasons |
 | `site/index.html` | The briefing as a single static page |
 | `analysis/rebuild_manifest.py` | Rebuild the provenance manifest from the files on disk |
+| `analysis/extract_rates.py` | Pull hourly rate cards out of the award texts, every rate verified verbatim |
+| `data/labor_rates.csv` | The 2,146 published rates, with whether each title-to-price pairing verified |
+| `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |
+| `evidence/job_ads/` | Job postings quoted in the briefing: screenshots, raw pages, archive links |
 | `analysis/verify_claims.py` | Recomputes every published figure; fails loudly on drift |
 | `tests/` | Hand-read labels and the scripts that score against them |
 

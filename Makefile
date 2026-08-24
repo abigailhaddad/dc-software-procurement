@@ -2,7 +2,7 @@
 # what is already on disk, and classification is cached by content, so a repeat
 # run costs nothing.
 
-.PHONY: help install pull classify verify test report notebook site all
+.PHONY: help install pull classify verify test report notebook site rates all
 
 help:
 	@echo "make install    install dependencies"
@@ -13,6 +13,7 @@ help:
 	@echo "make report     print the headline figures"
 	@echo "make notebook   execute the briefing notebook end to end"
 	@echo "make site       rebuild the drill-down data behind site/index.html"
+	@echo "make rates      re-extract hourly rate cards from the cached award texts"
 	@echo "make all        pull, classify, verify, test"
 
 install:
@@ -41,5 +42,8 @@ notebook:
 
 site:
 	uv run python analysis/build_site_data.py
+
+rates:
+	uv run python analysis/extract_rates.py
 
 all: pull classify verify test
