@@ -70,11 +70,11 @@ DC title -> federal CALC+ title:
               Customer Support -> Customer Support Specialist (n=5, flagged)
 DC categories in the target families that were NOT matched (numbered/suffixed
 variants, e.g. "Project Manager III", "Sr. Technical Writer"):
-see dc_categories_not_matched.txt (40 titles; their rows are excluded).
+see dc_categories_not_matched.txt (42 titles; their rows are excluded).
 
 ## Files
-- pull_calc.py            — pull script
+- pull_calc.py            — pull script (in analysis/)
 - raw/                    — raw API responses (every federal number's source)
-- build_comparison.py     — stats + CSV builder
-- dc_vs_calc_comparison.csv — one row per DC rate (112 rows)
+- build_calc_comparison.py — stats + CSV builder (in analysis/)
+- dc_vs_calc_comparison.csv — one row per DC rate (119 rows)
 - dc_categories_not_matched.txt

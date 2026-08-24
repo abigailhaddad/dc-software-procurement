@@ -1,8 +1,19 @@
-import json, csv
+"""Compare the District's published rates against federal awarded ceilings.
+
+    uv run python analysis/build_calc_comparison.py
+
+Runs after pull_calc.py. Writes data/calc/dc_vs_calc_comparison.csv, which
+verify_claims.py checks, plus the list of DC categories deliberately left
+unmatched. data/calc/METHODS.md records why each pairing was accepted.
+"""
+import json
+from pathlib import Path
+
 import pandas as pd
 import numpy as np
 
-CALC_DIR = "raw"
+ROOT = Path(__file__).resolve().parents[1]
+CALC_DIR = ROOT / "data" / "calc"
 BASE = "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:"
 
 # DC exact title -> (federal category title, raw file slug, match quality)
@@ -41,7 +52,7 @@ def stats(prices):
 
 fed = {}
 for dc_title,(fcat, slug, quality) in MATCHES.items():
-    rows = json.load(open(f"{CALC_DIR}/{slug}_all.json"))
+    rows = json.load(open(CALC_DIR / "raw" / f"{slug}_all.json"))
     prices_all = [r["current_price"] for r in rows if r.get("current_price")]
     fed[fcat] = {"all": stats(prices_all), "bands": {}, "rows": rows}
     for band,(lo,hi) in BANDS.items():
@@ -51,7 +62,7 @@ for dc_title,(fcat, slug, quality) in MATCHES.items():
         fed[fcat]["bands"][band] = stats(p)
 
 # DC side
-df = pd.read_csv("/Users/abigailhaddad/Documents/repos/dcbudget/data/labor_rates.csv")
+df = pd.read_csv(ROOT / "data" / "labor_rates.csv")
 df = df[df.pairing.isin(["deterministic","proximate"])]
 dc = df[df.labor_category.isin(MATCHES.keys())].copy()
 
@@ -83,7 +94,7 @@ for _, r in dc.iterrows():
     ))
 
 outdf = pd.DataFrame(out).sort_values(["dc_category","dc_level","dc_contract"])
-outdf.to_csv("dc_vs_calc_comparison.csv", index=False)
+outdf.to_csv(CALC_DIR / "dc_vs_calc_comparison.csv", index=False)
 print("rows:", len(outdf))
 
 # federal stats summary table
@@ -93,9 +104,26 @@ for dc_title,(fcat, slug, q) in MATCHES.items():
     bands_str = " | ".join(f"{b}: med {v['median']} (n={v['n']})" if v else f"{b}: -" for b,v in fed[fcat]["bands"].items())
     print(f"  {fcat}: n={a['n']} p25={a['p25']} med={a['median']} p75={a['p75']}   [{bands_str}]")
 
-# DC unmatched categories (variants I did not conservatively match)
-matched_lower = set(MATCHES.keys())
-unmatched = sorted(set(df.labor_category.unique()) - matched_lower)
-with open("dc_categories_not_matched.txt","w") as fh:
-    fh.write("\n".join(str(u) for u in unmatched))
-print("\nDC categories NOT matched (conservative policy):", len(unmatched), "written to dc_categories_not_matched.txt")
+# DC categories in the same families that were left unmatched: numbered and
+# suffixed variants ("Project Manager III", "Sr. Technical Writer") whose level
+# cannot be read off the title. Anything outside the fourteen families is not a
+# near-miss and is not listed. NEAR_MISSES catches variants that name their
+# family; HAND_ADDED holds the two that are family variants without saying so.
+HAND_ADDED = {
+    "Geographic Information System (GIS) Analyst/Programmer",
+    "System Architect (Software/Data/Database) I",
+}
+HEADER = """DC labor categories in the target families that were NOT matched to a federal CALC+ category
+(conservative policy: only exact or near-exact plain-title matches were used).
+Rates for these rows are excluded from the comparison CSV.
+"""
+
+unmatched = set(df.labor_category.dropna().unique()) - set(MATCHES)
+near = sorted(
+    t for t in unmatched
+    if t in HAND_ADDED or any(k.lower() in str(t).lower() for k in MATCHES)
+)
+with open(CALC_DIR / "dc_categories_not_matched.txt","w") as fh:
+    fh.write(HEADER + "\n" + "\n".join(near) + "\n")
+print(f"\nDC categories NOT matched (conservative policy): {len(near)} family variants "
+      f"of {len(unmatched)} unmatched titles, written to dc_categories_not_matched.txt")
