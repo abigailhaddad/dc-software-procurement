@@ -343,6 +343,26 @@ def main() -> int:
                            ("Technical Writer", "Journeyman", 57.35)]:
         check(f"CW91684 {cat} ({lvl}) vs posting", float(cai_card.loc[(cat, lvl)].hourly_rate), want)
 
+    print("\n-- federal rate comparison (CALC+) --")
+    # DC rates matched by exact title against GSA's published awarded ceiling
+    # rates (data/calc/, with methods and raw API responses). The comparison
+    # file is rebuilt by analysis/build_calc_comparison.py.
+    calc = pd.read_csv(ROOT / "data" / "calc" / "dc_vs_calc_comparison.csv")
+    check("matched DC rate rows", len(calc), 112)
+    cai_rows = calc[calc.dc_contract == "CW91684"]
+    check("of them, on the CW91684 card", len(cai_rows), 44)
+    check("CW91684 median gap vs federal median %",
+          round(cai_rows.dc_vs_fed_median_pct.median()), -50, 1)
+    check("DC rows below the federal median",
+          int((calc.dc_vs_fed_median_pct < 0).sum()), 70)
+    check("median gap excluding CW91684 %",
+          round(calc[calc.dc_contract != "CW91684"].dc_vs_fed_median_pct.median()), 2, 1)
+    ne = calc[(calc.dc_category == "Network Engineer/Specialist") & (calc.dc_level == "Entry")]
+    check("Network Engineer entry: DC rate", float(ne.dc_rate.iloc[0]), 40.64)
+    check("Network Engineer entry: federal median", float(ne.federal_median.iloc[0]), 108.97)
+    cs = calc[(calc.dc_category == "Computer Scientist") & (calc.dc_level == "Entry")]
+    check("Computer Scientist entry: federal median", float(cs.federal_median.iloc[0]), 146.08)
+
     print("\n-- purchase-order vendor figures --")
     recent = orders[orders.fiscal_year.between(2022, 2026)].copy()
     recent["vendor_key"] = recent.vendor.str.upper().str.strip()

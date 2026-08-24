@@ -458,6 +458,30 @@ footer p{font-size:14px; color:var(--muted)}
 </figure>
 <span class="src">Every rate was re-found verbatim in the award text by <code>analysis/extract_rates.py</code>; drift fails <code>make verify</code>.</span>
 
+<h3>Against what the federal government pays</h3>
+<p>GSA publishes the awarded ceiling rates on its own schedules &mdash; the same fully burdened, not-to-exceed idea, often the same job titles. Matching DC's categories to exact federal titles gives 112 comparable rates, and they split into two stories. The staff augmentation card runs at half of federal: across the 44 matched rates on Computer Aid's card, the median sits 50% below the federal median, and DC's top-of-scale Master rates are frequently beneath the federal <em>entry</em> median. Everything else scatters around federal, and the consultants sit well above it &mdash; Trusted Advisory Group's program managers bill 71&ndash;89% over the federal median, LimnoTech's project managers 77&ndash;83% over.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>CW91684 against federal awarded ceiling medians &middot; exact-title matches</caption>
+<thead><tr><th>Category and level</th><th class="num">DC billed</th><th class="num">Federal median</th><th class="num">Gap</th></tr></thead>
+<tbody>
+<tr><td>Network Engineer, Entry</td><td class="num">$40.64</td><td class="num">$108.97</td><td class="num">&minus;63%</td></tr>
+<tr><td>Computer Scientist, Entry</td><td class="num">$55.15</td><td class="num">$146.08</td><td class="num">&minus;62%</td></tr>
+<tr><td>Enterprise Architect, Entry</td><td class="num">$75.83</td><td class="num">$178.66</td><td class="num">&minus;58%</td></tr>
+<tr><td>Project Manager, Master</td><td class="num">$73.19</td><td class="num">$165.44</td><td class="num">&minus;56%</td></tr>
+<tr><td>Help Desk Specialist, Entry</td><td class="num">$30.42</td><td class="num">$68.83</td><td class="num">&minus;56%</td></tr>
+<tr><td>Web Developer, Entry</td><td class="num">$55.98</td><td class="num">$116.84</td><td class="num">&minus;52%</td></tr>
+<tr><td>Technical Writer, Entry</td><td class="num">$48.64</td><td class="num">$85.78</td><td class="num">&minus;43%</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">Exact-title matches against GSA's CALC+ ceiling-rate data, pulled 24 August 2026. Methods, raw API responses and the full comparison are in <code>data/calc/</code>; recomputed by <code>verify_claims.py</code> &sect;"federal rate comparison". Federal medians are schedule ceilings that agencies negotiate below at order time, so the true gap is somewhat smaller than shown &mdash; and nowhere near closed.</span>
+
+<p>What kind of labor fills a seat billed at a third of the going federal rate is what the hiring side answers.</p>
+
 <h3>The hiring side of the same hour</h3>
 <p>Job ads answer what the portal cannot: what the person is offered. The staffing firms recruiting for District seats post in the contract's own vocabulary &mdash; "Journeyman", "Senior", "Master" are the CW91684 tier names &mdash; and DC postings carry pay. Three captured on 24 August 2026 line up against the card directly:</p>
 

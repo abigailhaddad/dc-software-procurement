@@ -1,0 +1,86 @@
+{
+  "Computer Scientist": {
+    "total": 43,
+    "fetched": 43,
+    "pages": 1,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Computer%20Scientist&page=1&page_size=200"
+  },
+  "Web Developer": {
+    "total": 191,
+    "fetched": 191,
+    "pages": 1,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Web%20Developer&page=1&page_size=200"
+  },
+  "Software Engineer": {
+    "total": 312,
+    "fetched": 312,
+    "pages": 2,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Software%20Engineer&page=1&page_size=200"
+  },
+  "Systems Engineer": {
+    "total": 459,
+    "fetched": 459,
+    "pages": 3,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Systems%20Engineer&page=1&page_size=200"
+  },
+  "Network Engineer": {
+    "total": 361,
+    "fetched": 361,
+    "pages": 2,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Network%20Engineer&page=1&page_size=200"
+  },
+  "Cyber Security Engineer": {
+    "total": 37,
+    "fetched": 37,
+    "pages": 1,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Cyber%20Security%20Engineer&page=1&page_size=200"
+  },
+  "Cyber Security Specialist": {
+    "total": 30,
+    "fetched": 30,
+    "pages": 1,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Cyber%20Security%20Specialist&page=1&page_size=200"
+  },
+  "Enterprise Architect": {
+    "total": 163,
+    "fetched": 163,
+    "pages": 1,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Enterprise%20Architect&page=1&page_size=200"
+  },
+  "Help Desk Specialist": {
+    "total": 181,
+    "fetched": 181,
+    "pages": 1,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Help%20Desk%20Specialist&page=1&page_size=200"
+  },
+  "Customer Support": {
+    "total": 0,
+    "fetched": 0,
+    "pages": 1,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Customer%20Support&page=1&page_size=200"
+  },
+  "Technical Writer": {
+    "total": 704,
+    "fetched": 704,
+    "pages": 4,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Technical%20Writer&page=1&page_size=200"
+  },
+  "Project Manager": {
+    "total": 2656,
+    "fetched": 2656,
+    "pages": 14,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Project%20Manager&page=1&page_size=200"
+  },
+  "Program Manager": {
+    "total": 2105,
+    "fetched": 2105,
+    "pages": 11,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Program%20Manager&page=1&page_size=200"
+  },
+  "Business Analyst": {
+    "total": 447,
+    "fetched": 447,
+    "pages": 3,
+    "first_query_url": "https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?search=labor_category:Business%20Analyst&page=1&page_size=200"
+  }
+}

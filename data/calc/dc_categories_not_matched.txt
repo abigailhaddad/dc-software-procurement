@@ -1,0 +1,44 @@
+DC labor categories in the target families that were NOT matched to a federal CALC+ category
+(conservative policy: only exact or near-exact plain-title matches were used).
+Rates for these rows are excluded from the comparison CSV.
+
+Administrative Program Manager
+Business Analyst 3
+Business Analyst 4
+Business Analyst I
+Business Analyst II
+Business Analyst and Unemployment Insurance SME
+Business Analyst, Level 3
+Business Analyst/Unemployment Insurance SME
+Deputy Program Manager
+Enterprise Architect (2)
+Geographic Information System (GIS) Analyst/Programmer
+Journeyman Technical Writer
+Jr. Technical Writer
+Mastery Subject Matter Expert Program Manager IV
+Product Project Manager
+Program Manager I
+Program Manager II
+Program Manager – Junior
+Program Manager – Mid
+Program Manager – Principal
+Program Manager – Senior
+Project Manager (1)
+Project Manager 3
+Project Manager I
+Project Manager II
+Project Manager III
+Project Manager – Junior
+Project Manager – Mid
+Project Manager – Principal
+Project Manager – SME
+Project Manager – Senior
+Project Manager, Level 2
+Senior Business Analyst (2)
+Senior Program Manager
+Senior Project Manager I
+Senior Project Manager II
+Software Engineer (subcontractor)
+Sr. Technical Writer
+System Architect (Software/Data/Database) I
+Technical Writer/Editor II
