@@ -33,7 +33,13 @@ def main() -> int:
     contracts = parse.load_contracts()
     payments = parse.load_payments()
     labels = pd.read_csv(ROOT / "data" / "contract_classifications.csv")
-    delivery = pd.read_csv(ROOT / "data" / "delivery_structure.csv")
+    delivery_native = pd.read_csv(ROOT / "data" / "delivery_structure.csv")
+    delivery_ocr = pd.read_csv(ROOT / "data" / "delivery_structure_ocr.csv")
+    # the OCR'd awards join the readable set; provenance stays in two files
+    delivery = pd.concat(
+        [delivery_native.assign(source="native_text"), delivery_ocr.assign(source="ocr")],
+        ignore_index=True,
+    )
     manifest = json.load(open(ROOT / "data" / "raw" / "manifest.json"))
 
     tech = labels[labels.is_technology == True].copy()  # noqa: E712

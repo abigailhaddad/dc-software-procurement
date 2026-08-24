@@ -425,6 +425,31 @@ def main() -> int:
     infosys = (ROOT / "evidence" / "dcas_sources" / "infosyspublicservices_2013_hbx_press_release.txt").read_text(encoding="utf-8")
     check("source: Infosys $49.5M build award", "49.5" in infosys, True)
 
+    print("\n-- the OCR-recovered awards --")
+    # 74 scanned award documents were recovered by analysis/ocr_awards.py and
+    # classified into data/delivery_structure_ocr.csv (separate file; the
+    # native results are untouched). The briefing states combined figures.
+    ocr = pd.read_csv(ROOT / "data" / "delivery_structure_ocr.csv")
+    check("awards recovered by OCR", len(ocr), 74)
+    check("overlap with the native readable set",
+          len(set(ocr.contract_number) & set(delivery.contract_number)), 0)
+    combined = pd.concat([delivery, ocr], ignore_index=True)
+    check("readable awards combined", len(combined), 362)
+    check("of 476 candidates, contracts with no award document at all", 476 - 362 - 1, 113)
+    check("combined recurring operations",
+          int((combined.delivery_structure == "recurring_operations").sum()), 108)
+    check("combined sequential and gated",
+          int((combined.delivery_structure == "sequential_gated_deliverables").sum()), 94)
+    gated_combined = combined[combined.delivery_structure == "sequential_gated_deliverables"]
+    check("of those, scope fixed in advance",
+          int((gated_combined.scope_fixed_in_advance == "yes").sum()), 85)
+    combined_commits = combined[combined.agile_mention_kind == "delivery_commitment"]
+    check("combined delivery commitments", len(combined_commits), 14)
+    check("of those, structurally gated",
+          int((combined_commits.delivery_structure == "sequential_gated_deliverables").sum()), 11)
+    check("combined agile-as-hiring-requirement",
+          int((combined.agile_mention_kind == "personnel_qualification").sum()), 15)
+
     print("\n-- purchase-order vendor figures --")
     recent = orders[orders.fiscal_year.between(2022, 2026)].copy()
     recent["vendor_key"] = recent.vendor.str.upper().str.strip()

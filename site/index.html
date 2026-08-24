@@ -509,31 +509,31 @@ footer p{font-size:14px; color:var(--muted)}
 <p><strong>How many people is that? The data never says.</strong> It records dollars and rates, not heads. The arithmetic: Computer Aid runs about $93M a year in purchase orders; at its card's median $69.97 an hour that is roughly 1.3 million hours, or about 640 people working full time. Count only the payments that link back to its contracts and the floor is about 140. Nothing published narrows it further.</p>
 </div>
 
-<h2>Seventy-four of eighty-two build contracts fix the scope before work starts</h2>
-<p>Award documents were read for how delivery is organised: what the price schedule commits to and what the deliverables schedule requires. This was possible for 288 contracts, the ones whose award document carries a readable text layer.</p>
+<h2>Eighty-five of ninety-four build contracts fix the scope before work starts</h2>
+<p>Award documents were read for how delivery is organised: what the price schedule commits to and what the deliverables schedule requires. 288 award documents carry a readable text layer; another 74 were scans, recovered by running the pages through a vision model, which brings the readable set to 362 of 476.</p>
 
 <figure>
 <div class="scroll">
 <table>
-<caption>Delivery structure &middot; 288 readable award documents &middot; select a row to read the contract language in it</caption>
+<caption>Delivery structure &middot; 362 readable award documents, 74 of them recovered by OCR &middot; select a row to read the contract language in it</caption>
 <thead><tr><th>Structure</th><th class="num">Contracts</th><th class="num">Share</th><th>What the contract commits to</th></tr></thead>
 <tbody>
-<tr class="mark" data-detail="ds:sequential_gated_deliverables" tabindex="0"><td>Sequential and gated</td><td class="num">82</td><td class="num">28%<span class="cellbar" style="width:100%"></span></td><td class="note">Scope fixed in advance, deliverables accepted in order, payment following acceptance</td></tr>
-<tr data-detail="ds:recurring_operations" tabindex="0"><td>Recurring operations</td><td class="num">76</td><td class="num">26%<span class="cellbar" style="width:93%"></span></td><td class="note">Ongoing support at a recurring price; nothing is being built</td></tr>
-<tr data-detail="ds:goods_or_licenses" tabindex="0"><td>Goods or licences</td><td class="num">51</td><td class="num">18%<span class="cellbar" style="width:62%"></span></td><td class="note">No delivery method applies</td></tr>
-<tr data-detail="ds:incremental_capacity" tabindex="0"><td>Incremental capacity</td><td class="num">38</td><td class="num">13%<span class="cellbar" style="width:46%"></span></td><td class="note">A team or block of capacity, redirected as priorities change</td></tr>
-<tr data-detail="ds:structure_not_stated" tabindex="0"><td>Not stated</td><td class="num">37</td><td class="num">13%<span class="cellbar" style="width:45%"></span></td><td class="note">The document does not say</td></tr>
-<tr data-detail="ds:milestone_payments_only" tabindex="0"><td>Milestone payments only</td><td class="num">4</td><td class="num">1%<span class="cellbar" style="width:5%"></span></td><td class="note">Dated milestones without a described sequence</td></tr>
+<tr data-detail="ds:recurring_operations" tabindex="0"><td>Recurring operations</td><td class="num">108</td><td class="num">30%<span class="cellbar" style="width:100%"></span></td><td class="note">Ongoing support at a recurring price; nothing is being built</td></tr>
+<tr class="mark" data-detail="ds:sequential_gated_deliverables" tabindex="0"><td>Sequential and gated</td><td class="num">94</td><td class="num">26%<span class="cellbar" style="width:87%"></span></td><td class="note">Scope fixed in advance, deliverables accepted in order, payment following acceptance</td></tr>
+<tr data-detail="ds:goods_or_licenses" tabindex="0"><td>Goods or licences</td><td class="num">69</td><td class="num">19%<span class="cellbar" style="width:64%"></span></td><td class="note">No delivery method applies</td></tr>
+<tr data-detail="ds:incremental_capacity" tabindex="0"><td>Incremental capacity</td><td class="num">43</td><td class="num">12%<span class="cellbar" style="width:40%"></span></td><td class="note">A team or block of capacity, redirected as priorities change</td></tr>
+<tr data-detail="ds:structure_not_stated" tabindex="0"><td>Not stated</td><td class="num">43</td><td class="num">12%<span class="cellbar" style="width:40%"></span></td><td class="note">The document does not say</td></tr>
+<tr data-detail="ds:milestone_payments_only" tabindex="0"><td>Milestone payments only</td><td class="num">5</td><td class="num">1%<span class="cellbar" style="width:5%"></span></td><td class="note">Dated milestones without a described sequence</td></tr>
 </tbody>
 </table>
 </div>
 </figure>
 <span class="src">Read from award documents by the pass in <code>delivery_config.yaml</code>; counts recomputed by <code>verify_claims.py</code> &sect;"delivery structure". Notebook &sect;"Agile language".</span>
 
-<p>Waterfall is the largest category among contracts that build or run something, and it is waterfall in the strict sense: 74 of the 82 fix their scope in advance, so changing what gets built requires modifying the contract. Incremental arrangements, where a team can be pointed at something different next month without a modification, account for 38.</p>
+<p>Waterfall is the largest structure among contracts where a delivery method applies at all, and it is waterfall in the strict sense: 85 of the 94 fix their scope in advance, so changing what gets built requires modifying the contract. Incremental arrangements, where a team can be pointed at something different next month without a modification, account for 43.</p>
 
-<h3>Nine of the 82 also promise to work in sprints</h3>
-<p>Eleven contracts in the readable set commit to agile delivery at all &mdash; and nine of them are structurally sequential and gated, saying so in the same document that fixes the scope and sets the acceptance gates. About a quarter of everything else is gated. Two of the eleven are hand-read corrections of classifier misses, recorded with reasons in <code>delivery_overrides.yaml</code>. Three are worth reading directly; <button class="linklike" data-detail="commit">here are all eleven, with what they promise</button>.</p>
+<h3>Eleven of the 94 also promise to work in sprints</h3>
+<p>Fourteen contracts in the readable set commit to agile delivery at all &mdash; and eleven of them are structurally sequential and gated, saying so in the same document that fixes the scope and sets the acceptance gates. About a quarter of everything else is gated. Two of the fourteen are hand-read corrections of classifier misses, recorded with reasons in <code>delivery_overrides.yaml</code>; three more surfaced in the OCR-recovered scans, including the DC.gov redesign, which commits to Scrum by name. Three are worth reading directly; <button class="linklike" data-detail="commit">here are all fourteen, with what they promise</button>.</p>
 
 <blockquote>
 <p>"using a hybrid waterfall and Agile methodology"</p>
@@ -552,7 +552,7 @@ footer p{font-size:14px; color:var(--muted)}
 
 <p>The last one sets the contents and the deadline of every sprint before any work starts.</p>
 
-<p>Counted separately, and excluded from the eleven above, are 14 contracts where agile appears only as a hiring requirement: "Experience in Agile methodology such as Scrum, Kanban, or Scaled Agile Framework" sitting in a labor category description. That is a specification for the people being bought, and says nothing about how the work will run.</p>
+<p>Counted separately, and excluded from the fourteen above, are 15 contracts where agile appears only as a hiring requirement: "Experience in Agile methodology such as Scrum, Kanban, or Scaled Agile Framework" sitting in a labor category description. That is a specification for the people being bought, and says nothing about how the work will run.</p>
 
 <h2>The District names a system in one contract out of five</h2>
 <p>273 of 1,372 technology contracts name a specific system in the title, so every count here is a floor. The names give the clearest picture of what the money maintains, and the pattern is that a handful of large systems absorb repeated contracts over years.</p>
@@ -595,7 +595,7 @@ footer p{font-size:14px; color:var(--muted)}
 <span class="src">Roster, payments and the full narrative in <code>data/dcas/</code>; all 53 cited pages saved in <code>evidence/dcas_sources/</code>. Recomputed by <code>verify_claims.py</code> &sect;"the DCAS case study", including that the quoted claims exist verbatim in the saved sources.</span>
 
 <h2>Where the reading is incomplete</h2>
-<p>Delivery structure could be read for 288 of 476 candidate contracts. The rest had no award document attached, or a scanned one with no text layer, which would need optical character recognition.</p>
+<p>Delivery structure could be read for 362 of 476 candidate contracts: 288 with a native text layer, 74 scans recovered by OCR. Of the rest, 113 have no award document attached at all, and one PDF defeated both text extraction and OCR.</p>
 <p>Payments join to a contract for 44% of technology contracts. Of 866,823 payment rows, 478,716 carry no contract number at all, covering $17.8B of real spending that cannot be attributed to any contract.</p>
 <p>Contracts were sorted by a language model reading titles, vendors and agencies, not contract text. Scored against 20 hand-read cases picked to be hard: 20 of 20 on what is bought, 20 of 20 on delivery structure, 18 of 20 on what agile language is doing &mdash; the two misses are genuine commitments it filed as incidental, corrected by hand as described above. Twenty cases bound the error loosely. Treat category totals as approximate; the ordering between categories is what survives.</p>
 
@@ -621,7 +621,7 @@ footer p{font-size:14px; color:var(--muted)}
 <p>Unknown; no comparison was attempted, and most large governments also buy technology heavily through staffing and schedule vehicles. What can be compared today is disclosure: the federal government publishes its task orders on USAspending, and the District does not publish its own.</p>
 
 <h3>What would close the gaps?</h3>
-<p>Each item maps to a defect documented in the repository. Publish task orders placed under schedule vehicles. Require a contract number on every payment row &mdash; 55% have none. Fix the fiscal-year filter that silently returns everything, and the payment field that repeats a check-run total on every row in the run. Standardise vendor names. Attach award documents with a text layer, since 188 of 476 could not be read. These are publishing changes to systems that already hold the records.</p>
+<p>Each item maps to a defect documented in the repository. Publish task orders placed under schedule vehicles. Require a contract number on every payment row &mdash; 55% have none. Fix the fiscal-year filter that silently returns everything, and the payment field that repeats a check-run total on every row in the run. Standardise vendor names. Attach award documents at all &mdash; 113 of 476 technology build contracts have none. These are publishing changes to systems that already hold the records.</p>
 
 <h3>Can this be rerun after the transition?</h3>
 <p>Yes &mdash; anyone can, without asking us. <code>make pull</code> fetches a fresh snapshot, <code>make classify</code> re-sorts it, <code>make verify</code> recomputes every figure on this page and fails loudly if one no longer holds, and <code>make test</code> re-scores the classifiers against hand-read contracts. The portal is live, so the counts will have moved a little, but the method holds.</p>
@@ -810,7 +810,7 @@ function detailHtml(id) {
     </blockquote>`).join('');
     return `
       <div class="dialog-head"><div>
-        <p class="eyebrow">${st.n} of 288 readable awards</p>
+        <p class="eyebrow">${st.n} of 362 readable awards</p>
         <h3 id="dialog-title">${esc(DS[key][0])}</h3>
       </div><button class="close" data-close>esc</button></div>
       <p>${esc(DS[key][1])}</p>
@@ -895,15 +895,16 @@ function detailHtml(id) {
     </blockquote>`).join('');
     return `
       <div class="dialog-head"><div>
-        <p class="eyebrow">11 delivery commitments &middot; 9 structurally gated</p>
+        <p class="eyebrow">${DATA.commitments.length} delivery commitments &middot; ${DATA.commitments.filter(c => c.delivery_structure === 'sequential_gated_deliverables').length} structurally gated</p>
         <h3 id="dialog-title">Every contract that commits to agile delivery</h3>
       </div><button class="close" data-close>esc</button></div>
       <p>What each award document actually promises, next to how it structures the work.</p>
       ${quotes}
       <div class="how">
-        <p>Two of the eleven are commitments the classifier filed as incidental language; they were
-        caught by hand-reading, and the corrections live in <code>delivery_overrides.yaml</code> with
-        the reasons. The counts are recomputed by <code>make verify</code> under "agile language".</p>
+        <p>Two are commitments the classifier filed as incidental language, caught by hand-reading
+        and corrected in <code>delivery_overrides.yaml</code> with the reasons; three come from
+        award scans recovered by OCR. The counts are recomputed by <code>make verify</code> under
+        "agile language" and "the OCR-recovered awards".</p>
       </div>`;
   }
 

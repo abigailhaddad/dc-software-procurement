@@ -8496,8 +8496,16 @@ const DATA = {
  },
  "structures": {
   "goods_or_licenses": {
-   "n": 51,
+   "n": 69,
    "examples": [
+    {
+     "contract_number": "CW99488",
+     "title": "SAP Cloud Configuration Services",
+     "vendor": "Carahsoft Technology Corporation",
+     "ceiling": 13000000.0,
+     "deliverables_quote": "The District will make payments to the Contractor, upon the submission of proper invoices, at the prices stipulated in this contract, for supplies delivered and accepted or services performed and accepted",
+     "scope_fixed_in_advance": "not_stated"
+    },
     {
      "contract_number": "CW85955",
      "title": "DCAS IBM Curam Software and Support",
@@ -8523,11 +8531,27 @@ const DATA = {
      "scope_fixed_in_advance": "not_stated"
     },
     {
+     "contract_number": "CW80333",
+     "title": "Splunk Dashboard",
+     "vendor": "Blackwood Associates",
+     "ceiling": 2031598.38,
+     "deliverables_quote": "F.3.1 The Contractor shall submit to the District, as a deliverable, the report described in section H.5.5 ... If the Contractor does not submit the report as part of the deliverables, the District shall not make final payment to the Contractor pursuant to section G.3.2.",
+     "scope_fixed_in_advance": "not_stated"
+    },
+    {
      "contract_number": "CW109524",
      "title": "FY23-DMV-BIS Digital Court Recorder System",
      "vendor": "SUPRETECH, INC.",
      "ceiling": 1650000.0,
      "deliverables_quote": "\u201cBIS Digital Court Recorder System (Price Schedule, Attachment B) \u2026 Quantity 1 \u2026 Unit each \u2026 $550,000.00\u201d and \u201cThe District will make payments \u2026 for supplies delivered and accepted or services performed and accepted\u201d",
+     "scope_fixed_in_advance": "not_stated"
+    },
+    {
+     "contract_number": "CW107442",
+     "title": "FY23-DOES-Identification Verification Software",
+     "vendor": "V3Gate, LLC",
+     "ceiling": 1581167.32,
+     "deliverables_quote": "The District will be charged for all licenses and products consumed at the unit prices listed in GSA CONTRACT Attachment A & CONTRACTOR\u2019S PRICE QUOTE Attachment B.",
      "scope_fixed_in_advance": "not_stated"
     },
     {
@@ -8537,35 +8561,11 @@ const DATA = {
      "ceiling": 1391847.98,
      "deliverables_quote": "\u201cCLIN Deliverable Format/Method of Due Date\u2026 0001-0036 License and Keys File based delivery electronically Within One (1) week of date of Award to the CA\u201d",
      "scope_fixed_in_advance": "not_stated"
-    },
-    {
-     "contract_number": "CW87801",
-     "title": "DCHR E-Learning System",
-     "vendor": "SKILLSOFT CORPORATION",
-     "ceiling": 1112599.6,
-     "deliverables_quote": "This is an Indefinite Delivery \u2013 Indefinite Quantity contract for the supplies or services specified... The Contractor shall furnish to the District, when and if ordered, the supplies or services specified in the Schedule up to and including the maximum quantity of $250,000.00 per year.",
-     "scope_fixed_in_advance": "not_stated"
-    },
-    {
-     "contract_number": "CW110223",
-     "title": "Electronic Grants Management System",
-     "vendor": "REI Systems",
-     "ceiling": 1073244.0,
-     "deliverables_quote": "\"The District contemplates the award of a single Firm Fixed Price contract.\"",
-     "scope_fixed_in_advance": "not_stated"
-    },
-    {
-     "contract_number": "CW89681",
-     "title": "Enterprise Secure Edge Services Gateways",
-     "vendor": "Carahsoft Technology Corporation",
-     "ceiling": 991207.89,
-     "deliverables_quote": "Zscaler Subscription Services (See Attachment B)",
-     "scope_fixed_in_advance": "not_stated"
     }
    ]
   },
   "incremental_capacity": {
-   "n": 38,
+   "n": 43,
    "examples": [
     {
      "contract_number": "CW128516",
@@ -8573,14 +8573,6 @@ const DATA = {
      "vendor": "Capitol Underground Partners",
      "ceiling": 11352171.6,
      "deliverables_quote": "\u201cThis is an indefinite-delivery, indefinite-quantity, CONTRACT pursuant to 27 DCMR \u00a7 2416.\u201d / \u201cDelivery or performance shall be made only as authorized by orders issued in accordance with the Ordering Clause at Section B.3 Ordering, below.\u201d",
-     "scope_fixed_in_advance": "no"
-    },
-    {
-     "contract_number": "CW128755",
-     "title": "Contract Workspace (Procurement)-PROFESSIONAL MANAGEMENT CONSULTING SERVICES LLC",
-     "vendor": "Professional Management Consultant Services LLC",
-     "ceiling": 10000000.0,
-     "deliverables_quote": "The contract will constitute a District of Columbia Supply Schedule (DCSS). This contract will allow District agencies to use this vehicle to acquire a wide variety of services or supplies. The work shall be accomplished in the manner and within the scope and time specified in an individual task Order (TO) for services or Delivery Order (DO) for supplies or equipment.",
      "scope_fixed_in_advance": "no"
     },
     {
@@ -8600,11 +8592,19 @@ const DATA = {
      "scope_fixed_in_advance": "not_stated"
     },
     {
-     "contract_number": "CW114876",
-     "title": "FY22 AE Schedule Award Stantec Consulting Services Inc",
-     "vendor": "STANTEC CONSULTING SVCS INC.",
-     "ceiling": 5000000.0,
-     "deliverables_quote": "This is a multiple award indefinite-delivery, indefinite-quantity, contract pursuant to 27 DCMR \u00a7 2416.",
+     "contract_number": "CW114627",
+     "title": "FY2022 AE Schedule Award Sheladia Associates Inc",
+     "vendor": "SHELADIA ASSOCIATES INC",
+     "ceiling": 10000000.0,
+     "deliverables_quote": "B.3.1 This is a multiple award indefinite-delivery, indefinite-quantity, contract pursuant to 27 DCMR \u00a7 2416.",
+     "scope_fixed_in_advance": "no"
+    },
+    {
+     "contract_number": "CW128755",
+     "title": "Contract Workspace (Procurement)-PROFESSIONAL MANAGEMENT CONSULTING SERVICES LLC",
+     "vendor": "Professional Management Consultant Services LLC",
+     "ceiling": 10000000.0,
+     "deliverables_quote": "The contract will constitute a District of Columbia Supply Schedule (DCSS). This contract will allow District agencies to use this vehicle to acquire a wide variety of services or supplies. The work shall be accomplished in the manner and within the scope and time specified in an individual task Order (TO) for services or Delivery Order (DO) for supplies or equipment.",
      "scope_fixed_in_advance": "no"
     },
     {
@@ -8616,25 +8616,25 @@ const DATA = {
      "scope_fixed_in_advance": "no"
     },
     {
+     "contract_number": "CW114876",
+     "title": "FY22 AE Schedule Award Stantec Consulting Services Inc",
+     "vendor": "STANTEC CONSULTING SVCS INC.",
+     "ceiling": 5000000.0,
+     "deliverables_quote": "This is a multiple award indefinite-delivery, indefinite-quantity, contract pursuant to 27 DCMR \u00a7 2416.",
+     "scope_fixed_in_advance": "no"
+    },
+    {
      "contract_number": "CW114404",
      "title": "Project Oversight and Permit Submittal Review for DCCR and Mega Projects",
      "vendor": "KCI ASSOCIATES OF DC",
      "ceiling": 4875000.0,
      "deliverables_quote": "B.4.2 The Contractor agrees to perform up to the point at which the total amount payable by the District does not exceed the total amount currently obligated to the contract... The Contractor is not authorized to continue work beyond that point.",
      "scope_fixed_in_advance": "not_stated"
-    },
-    {
-     "contract_number": "CW118030",
-     "title": "Intelligent Transportation System Maintenance",
-     "vendor": "M C DEAN INC",
-     "ceiling": 3824769.25,
-     "deliverables_quote": "This is an indefinite-delivery-indefinite-quantity (\"IDIQ\") contract with fixed unit pricing in accordance with 27 DCMR \u00a7 2416.",
-     "scope_fixed_in_advance": "no"
     }
    ]
   },
   "milestone_payments_only": {
-   "n": 4,
+   "n": 5,
    "examples": [
     {
      "contract_number": "CW122015",
@@ -8650,6 +8650,14 @@ const DATA = {
      "vendor": "NJ3Q Technology",
      "ceiling": 353274.5,
      "deliverables_quote": "\u201cSpecial Trial Project - From the date of award through December 31, 2024\u201d / \u201cPayment will be made on completion and acceptance of each item for which the price is stated in the Pricing Schedule (Section B)\u201d",
+     "scope_fixed_in_advance": "not_stated"
+    },
+    {
+     "contract_number": "CW103206",
+     "title": "FY23-FA0-Strategy Implementation Support",
+     "vendor": "The Clearing, Inc",
+     "ceiling": 167518.0,
+     "deliverables_quote": "F.3.1 The Contractor shall perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable... CLIN Deliverable Format/Method of Delivery Due Date... Pre-conference Discussion... 24 hours after PO has been issued",
      "scope_fixed_in_advance": "not_stated"
     },
     {
@@ -8671,7 +8679,7 @@ const DATA = {
    ]
   },
   "recurring_operations": {
-   "n": 76,
+   "n": 108,
    "examples": [
     {
      "contract_number": "CW121488",
@@ -8714,6 +8722,14 @@ const DATA = {
      "scope_fixed_in_advance": "no"
     },
     {
+     "contract_number": "CW92444",
+     "title": "Special Education System (SaaS)",
+     "vendor": "PowerSchool Group LLc",
+     "ceiling": 3921120.0,
+     "deliverables_quote": "The term of the contract shall be from the Date of Award of the Letter Contract to one year thereafter with 4 one-year options.",
+     "scope_fixed_in_advance": "not_stated"
+    },
+    {
      "contract_number": "CW114812",
      "title": "FY24 - DLCP - Accela Support",
      "vendor": "Carahsoft Technology Corporation",
@@ -8728,19 +8744,11 @@ const DATA = {
      "ceiling": 2668920.0,
      "deliverables_quote": "\"The Contractor shall submit to the District, as a deliverable, the report described in section H.5.5\"",
      "scope_fixed_in_advance": "not_stated"
-    },
-    {
-     "contract_number": "CW120781",
-     "title": "Independent Verification and Validation for the Medicaid Management Information System",
-     "vendor": "Public Consulting Group, Inc.",
-     "ceiling": 2400000.0,
-     "deliverables_quote": "PRICE SCHEDULE \u2013 FIRM FIXED PRICE ... BASE YEAR ... Consulting Firm providing full-time on-site IV&V services ...; OPTION YEAR ONE ... providing full-time on-site ongoing support ...; OPTION YEAR TWO ... providing full-time on-site ongoing support ...",
-     "scope_fixed_in_advance": "not_stated"
     }
    ]
   },
   "sequential_gated_deliverables": {
-   "n": 82,
+   "n": 94,
    "examples": [
     {
      "contract_number": "CW102877",
@@ -8749,6 +8757,14 @@ const DATA = {
      "ceiling": 171898464.0,
      "deliverables_quote": "\"The Contractor shall perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable to the Contract Administrator (CA) ...\" and \"Deliverable No. ... Project Management Plan ... Due Date ... Draft/Final\"",
      "scope_fixed_in_advance": "not_stated"
+    },
+    {
+     "contract_number": "CW67170",
+     "title": "DCAS R3 IV&V",
+     "vendor": "Accenture, LLP",
+     "ceiling": 23271000.0,
+     "deliverables_quote": "\u201cThe Offeror shall provide the following deliverables during the base period of performance.\u201d and \u201cMonthly IV&V Services\u2026 Each month, the Offeror will submit the results of a detailed evaluation and assessment of DCAS project activities\u2026\u201d",
+     "scope_fixed_in_advance": "yes"
     },
     {
      "contract_number": "CW90729",
@@ -8797,19 +8813,11 @@ const DATA = {
      "ceiling": 2864531.9,
      "deliverables_quote": "\"The following table provides the format, due dates, and to whom the deliverables specified in F.3, above are to be delivered...\" and \"Unit test approval is required prior to system integration testing and overall system acceptance.\"",
      "scope_fixed_in_advance": "yes"
-    },
-    {
-     "contract_number": "CW102147",
-     "title": "Cellebrite Pathfinder Investigation Solution",
-     "vendor": "Cellebrite USA, Corp.",
-     "ceiling": 2775000.0,
-     "deliverables_quote": "The Contractor shall perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable... in accordance with the following... Implementation Acceptance report... Upon completion of Implementation and training",
-     "scope_fixed_in_advance": "not_stated"
     }
    ]
   },
   "structure_not_stated": {
-   "n": 37,
+   "n": 43,
    "examples": [
     {
      "contract_number": "CW123638",
@@ -8836,6 +8844,14 @@ const DATA = {
      "scope_fixed_in_advance": "not_stated"
     },
     {
+     "contract_number": "CW64950",
+     "title": "MMPI201841-Marketing, Media and Public Information-Solution Focus, LLC.",
+     "vendor": "Solution Focus",
+     "ceiling": 2700000.0,
+     "deliverables_quote": "The work shall be accomplished in the manner and within the scope and time specified in an individual task Order (TO) for services or Delivery Order (DO) for supplies or equipment.",
+     "scope_fixed_in_advance": "no"
+    },
+    {
      "contract_number": "CW125066",
      "title": "FY25_GD0_CIO_Student GPS Tracking and Transportation Management System",
      "vendor": "Tyler Technologies, Inc.",
@@ -8844,35 +8860,27 @@ const DATA = {
      "scope_fixed_in_advance": "not_stated"
     },
     {
+     "contract_number": "CW120603",
+     "title": "AWS Cloud based services",
+     "vendor": "Carahsoft Technology Corporation",
+     "ceiling": 1900000.0,
+     "deliverables_quote": "Any order placed by a Participating Entity or Purchasing Entity for a product and/or service available from this Master Agreement shall be deemed to be a sale under (and governed by the prices and other terms and conditions) of the Master Agreement...",
+     "scope_fixed_in_advance": "not_stated"
+    },
+    {
+     "contract_number": "CW107416",
+     "title": "SNF and HHA Payment Methodology Consultant",
+     "vendor": "E7STRATEGIES INC",
+     "ceiling": 1317707.7000000002,
+     "deliverables_quote": "SNF and HHA Payment Methodology Consultant",
+     "scope_fixed_in_advance": "not_stated"
+    },
+    {
      "contract_number": "CW83457",
      "title": "AUDIT202042-Anglin Consulting Group, Inc",
      "vendor": "Anglin Consulting Group",
      "ceiling": 1000000.0,
      "deliverables_quote": "\u201cAs set forth within individual Task or Delivery Orders.\u201d / \u201cTerm: 365 days from the date of award.\u201d",
-     "scope_fixed_in_advance": "not_stated"
-    },
-    {
-     "contract_number": "CW121861",
-     "title": "Market Me Consulting - DCSS Training Servies",
-     "vendor": "Market Me Consulting",
-     "ceiling": 1000000.0,
-     "deliverables_quote": "The work shall be accomplished in the manner and within the scope and time specified in an individual task Order (TO) for services or Delivery Order (DO) for supplies or equipment.",
-     "scope_fixed_in_advance": "no"
-    },
-    {
-     "contract_number": "CW97773",
-     "title": "FY-OBPM Federal Fund Support",
-     "vendor": "McKinsey & Company, Inc. Washington D.C.",
-     "ceiling": 999600.0,
-     "deliverables_quote": "Support OBPM with managing Federal Funding Sources and preparing for the BIL Funding (See Attachment B: Price Schedule).",
-     "scope_fixed_in_advance": "not_stated"
-    },
-    {
-     "contract_number": "CW97116",
-     "title": "DBH - Integrated Technology  Engine Project",
-     "vendor": "IdeaCrew, Inc.",
-     "ceiling": 988045.84,
-     "deliverables_quote": "The District ... is seeking a Contractor to provide Integrated Information Technology (IT) and Management Consulting Services, positioning the agency ... by conducting a DBH operations and data assessment, integration planning and journaling database (journaling file system) proof-of-concept culminating in production deployment.",
      "scope_fixed_in_advance": "not_stated"
     }
    ]
@@ -8912,6 +8920,22 @@ const DATA = {
    "agile_quote": "\"The Contractor shall follow an agile and phased roll out approach with a minimum of 3 phases of execution which are determined during the project initiation phase.\""
   },
   {
+   "contract_number": "CW116910",
+   "title": "Corporate Registry System",
+   "vendor": "WSD Digital, LLC",
+   "ceiling": 1534389.76,
+   "delivery_structure": "sequential_gated_deliverables",
+   "agile_quote": "\"use a multi-phased iterative approach\""
+  },
+  {
+   "contract_number": "CW125764",
+   "title": "DC.gov Redesign",
+   "vendor": "Taoti Enterprises, Inc",
+   "ceiling": 1400000.0,
+   "delivery_structure": "incremental_capacity",
+   "agile_quote": "The Contractor shall use the Agile Software Development methodology, specifically SCRUM, and the associated industry-leading practices and automated tools to keep historic records of all Sprint-related activities."
+  },
+  {
    "contract_number": "CW96958",
    "title": "IT Service Management (ITSM) and Strategic Program Governance Services",
    "vendor": "Proven Optics LLC",
@@ -8926,6 +8950,14 @@ const DATA = {
    "ceiling": 994550.0,
    "delivery_structure": "incremental_capacity",
    "agile_quote": "Plan and deliver ITE functionality incrementally through sprints that are time-boxed and work through the product backlog."
+  },
+  {
+   "contract_number": "CW73403",
+   "title": "OCTO ITFM CAPABILITY MATURITY ASSESSMENT",
+   "vendor": "ADVANCED NETWORK CONSULTING",
+   "ceiling": 857899.0,
+   "delivery_structure": "sequential_gated_deliverables",
+   "agile_quote": "\u201cThe Contractor shall provide a detailed outline of a series of sprints and project plan in order to deliver a comprehensive assessment for Phase I \u2026\u201d"
   },
   {
    "contract_number": "CW127884",

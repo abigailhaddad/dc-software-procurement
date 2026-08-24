@@ -73,6 +73,7 @@ commitments the model filed as incidental; they are corrected by hand in
 | `delivery_overrides.yaml` | Hand-read corrections applied on top of the delivery classifier, with reasons |
 | `site/index.html` | The briefing as a single static page |
 | `analysis/rebuild_manifest.py` | Rebuild the provenance manifest from the files on disk |
+| `analysis/ocr_awards.py` | OCR scanned award documents with a vision model; results cached and classified separately |
 | `analysis/extract_rates.py` | Pull hourly rate cards out of the award texts, every rate verified verbatim |
 | `data/labor_rates.csv` | The 2,146 published rates, with whether each title-to-price pairing verified |
 | `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |
@@ -133,8 +134,9 @@ links those back to their vehicle. Schedule vehicles carry the largest ceilings
 in the technology set, so the biggest single channel of technology buying cannot
 be followed. That is the largest gap.
 
-Delivery structure could be read for 288 of 476 candidate contracts. The rest
-had no award document attached or a scanned one with no text layer.
+Delivery structure could be read for 362 of 476 candidate contracts: 288 with
+a native text layer, 74 scans recovered by vision-model OCR (`make ocr`). Of
+the rest, 113 have no award document attached at all.
 
 The portal is live and counts move between pulls, so `data/raw/manifest.json`
 records the date of the snapshot every figure was computed from.
