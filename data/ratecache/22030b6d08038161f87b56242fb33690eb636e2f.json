@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "AWS Landing Zone Setup",
+  "level": "",
+  "hourly_rate": 25028.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "AWS Security and Compliance Monitoring Setup",
+  "level": "",
+  "hourly_rate": 25028.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Amorphic Platform & Governance Setup",
+  "level": "",
+  "hourly_rate": 15017.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Amorphic Connector Setup",
+  "level": "",
+  "hourly_rate": 7508.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Amorphic Use Case MDM/Entity Resolution Implementation",
+  "level": "",
+  "hourly_rate": 122.93,
+  "unit": "hour"
+ }
+]

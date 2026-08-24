@@ -1,0 +1,1082 @@
+[
+ {
+  "labor_category": "Management Analyst - Senior",
+  "level": "",
+  "hourly_rate": 107.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Senior",
+  "level": "",
+  "hourly_rate": 111.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Senior",
+  "level": "",
+  "hourly_rate": 115.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Senior",
+  "level": "",
+  "hourly_rate": 119.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Senior",
+  "level": "",
+  "hourly_rate": 123.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Junior",
+  "level": "",
+  "hourly_rate": 54.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Junior",
+  "level": "",
+  "hourly_rate": 56.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Junior",
+  "level": "",
+  "hourly_rate": 58.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Junior",
+  "level": "",
+  "hourly_rate": 60.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Junior",
+  "level": "",
+  "hourly_rate": 62.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 55.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 57.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 59.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 61.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 64.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Technician",
+  "level": "",
+  "hourly_rate": 52.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Technician",
+  "level": "",
+  "hourly_rate": 54.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Technician",
+  "level": "",
+  "hourly_rate": 56.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Technician",
+  "level": "",
+  "hourly_rate": 58.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Medical Records Technician",
+  "level": "",
+  "hourly_rate": 60.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operational Planner",
+  "level": "",
+  "hourly_rate": 130.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operational Planner",
+  "level": "",
+  "hourly_rate": 134.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operational Planner",
+  "level": "",
+  "hourly_rate": 139.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operational Planner",
+  "level": "",
+  "hourly_rate": 144.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operational Planner",
+  "level": "",
+  "hourly_rate": 149.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Manager",
+  "level": "",
+  "hourly_rate": 130.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Manager",
+  "level": "",
+  "hourly_rate": 135.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Manager",
+  "level": "",
+  "hourly_rate": 139.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Manager",
+  "level": "",
+  "hourly_rate": 144.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Manager",
+  "level": "",
+  "hourly_rate": 149.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst I",
+  "level": "",
+  "hourly_rate": 84.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst I",
+  "level": "",
+  "hourly_rate": 87.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst I",
+  "level": "",
+  "hourly_rate": 90.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst I",
+  "level": "",
+  "hourly_rate": 93.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst I",
+  "level": "",
+  "hourly_rate": 96.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst II",
+  "level": "",
+  "hourly_rate": 92.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst II",
+  "level": "",
+  "hourly_rate": 95.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst II",
+  "level": "",
+  "hourly_rate": 98.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst II",
+  "level": "",
+  "hourly_rate": 102.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst II",
+  "level": "",
+  "hourly_rate": 105.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst III",
+  "level": "",
+  "hourly_rate": 104.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst III",
+  "level": "",
+  "hourly_rate": 107.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst III",
+  "level": "",
+  "hourly_rate": 111.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst III",
+  "level": "",
+  "hourly_rate": 115.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst III",
+  "level": "",
+  "hourly_rate": 119.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst IV",
+  "level": "",
+  "hourly_rate": 111.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst IV",
+  "level": "",
+  "hourly_rate": 115.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst IV",
+  "level": "",
+  "hourly_rate": 119.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst IV",
+  "level": "",
+  "hourly_rate": 123.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research Analyst IV",
+  "level": "",
+  "hourly_rate": 127.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Senior Manager",
+  "level": "",
+  "hourly_rate": 141.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Senior Manager",
+  "level": "",
+  "hourly_rate": 145.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Senior Manager",
+  "level": "",
+  "hourly_rate": 150.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Senior Manager",
+  "level": "",
+  "hourly_rate": 156.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Senior Manager",
+  "level": "",
+  "hourly_rate": 161.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 64.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 66.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 69.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 71.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 74.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 83.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 86.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 89.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 92.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 95.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 175.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 181.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 187.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 193.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 200.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 151.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 156.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 162.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 167.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 173.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Personnel Security Specialist",
+  "level": "",
+  "hourly_rate": 64.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Personnel Security Specialist",
+  "level": "",
+  "hourly_rate": 66.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Personnel Security Specialist",
+  "level": "",
+  "hourly_rate": 69.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Personnel Security Specialist",
+  "level": "",
+  "hourly_rate": 71.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Personnel Security Specialist",
+  "level": "",
+  "hourly_rate": 74.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Mid",
+  "level": "",
+  "hourly_rate": 83.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Mid",
+  "level": "",
+  "hourly_rate": 86.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Mid",
+  "level": "",
+  "hourly_rate": 89.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Mid",
+  "level": "",
+  "hourly_rate": 92.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Mid",
+  "level": "",
+  "hourly_rate": 95.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Senior",
+  "level": "",
+  "hourly_rate": 175.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Senior",
+  "level": "",
+  "hourly_rate": 181.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Senior",
+  "level": "",
+  "hourly_rate": 187.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Senior",
+  "level": "",
+  "hourly_rate": 193.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Senior",
+  "level": "",
+  "hourly_rate": 200.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 151.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 157.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 163.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 170.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 177.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 174.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 181.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 188.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 196.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 204.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 205.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 212.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 219.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 226.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 234.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 241.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 250.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 258.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 267.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 276.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 181.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 187.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 193.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 200.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 207.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator \u2013 Junior",
+  "level": "",
+  "hourly_rate": 64.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator \u2013 Junior",
+  "level": "",
+  "hourly_rate": 67.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator \u2013 Junior",
+  "level": "",
+  "hourly_rate": 69.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator \u2013 Junior",
+  "level": "",
+  "hourly_rate": 71.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator \u2013 Junior",
+  "level": "",
+  "hourly_rate": 74.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Manager",
+  "level": "",
+  "hourly_rate": 130.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Manager",
+  "level": "",
+  "hourly_rate": 135.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Manager",
+  "level": "",
+  "hourly_rate": 140.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Manager",
+  "level": "",
+  "hourly_rate": 144.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Manager",
+  "level": "",
+  "hourly_rate": 149.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 70.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 73.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 75.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 78.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Mid",
+  "level": "",
+  "hourly_rate": 81.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Senior",
+  "level": "",
+  "hourly_rate": 93.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Senior",
+  "level": "",
+  "hourly_rate": 96.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Senior",
+  "level": "",
+  "hourly_rate": 99.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Senior",
+  "level": "",
+  "hourly_rate": 103.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator - Senior",
+  "level": "",
+  "hourly_rate": 106.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 93.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 96.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 100.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 103.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Junior",
+  "level": "",
+  "hourly_rate": 107.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 124.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 128.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 133.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 138.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Mid",
+  "level": "",
+  "hourly_rate": 142.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 131.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 136.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 140.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 145.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Senior",
+  "level": "",
+  "hourly_rate": 150.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 175.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 181.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 187.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 193.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 200.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 205.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 212.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 219.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 227.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 Principal",
+  "level": "",
+  "hourly_rate": 235.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 SME",
+  "level": "",
+  "hourly_rate": 161.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 SME",
+  "level": "",
+  "hourly_rate": 166.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 SME",
+  "level": "",
+  "hourly_rate": 172.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 SME",
+  "level": "",
+  "hourly_rate": 178.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager \u2013 SME",
+  "level": "",
+  "hourly_rate": 184.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 147.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 152.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 157.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 163.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 168.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Manager",
+  "level": "",
+  "hourly_rate": 115.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Manager",
+  "level": "",
+  "hourly_rate": 119.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Manager",
+  "level": "",
+  "hourly_rate": 123.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Manager",
+  "level": "",
+  "hourly_rate": 127.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Manager",
+  "level": "",
+  "hourly_rate": 132.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Lead",
+  "level": "",
+  "hourly_rate": 76.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Lead",
+  "level": "",
+  "hourly_rate": 78.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Lead",
+  "level": "",
+  "hourly_rate": 81.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Lead",
+  "level": "",
+  "hourly_rate": 84.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Lead",
+  "level": "",
+  "hourly_rate": 87.44,
+  "unit": "hour"
+ }
+]

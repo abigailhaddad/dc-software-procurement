@@ -1,0 +1,662 @@
+[
+ {
+  "labor_category": "Quality Assurance Specialist - Mid",
+  "level": "",
+  "hourly_rate": 68.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Mid",
+  "level": "",
+  "hourly_rate": 70.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Mid",
+  "level": "",
+  "hourly_rate": 73.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Mid",
+  "level": "",
+  "hourly_rate": 75.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist - Mid",
+  "level": "",
+  "hourly_rate": 78.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Records Management Specialist",
+  "level": "",
+  "hourly_rate": 64.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Records Management Specialist",
+  "level": "",
+  "hourly_rate": 67.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Records Management Specialist",
+  "level": "",
+  "hourly_rate": 69.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Records Management Specialist",
+  "level": "",
+  "hourly_rate": 71.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Records Management Specialist",
+  "level": "",
+  "hourly_rate": 74.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Reporting Analyst",
+  "level": "",
+  "hourly_rate": 82.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Reporting Analyst",
+  "level": "",
+  "hourly_rate": 84.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Reporting Analyst",
+  "level": "",
+  "hourly_rate": 87.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Reporting Analyst",
+  "level": "",
+  "hourly_rate": 90.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Reporting Analyst",
+  "level": "",
+  "hourly_rate": 94.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst - Mid",
+  "level": "",
+  "hourly_rate": 100.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst - Mid",
+  "level": "",
+  "hourly_rate": 103.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst - Mid",
+  "level": "",
+  "hourly_rate": 107.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst - Mid",
+  "level": "",
+  "hourly_rate": 110.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst - Mid",
+  "level": "",
+  "hourly_rate": 114.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Mid",
+  "level": "",
+  "hourly_rate": 67.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Mid",
+  "level": "",
+  "hourly_rate": 69.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Mid",
+  "level": "",
+  "hourly_rate": 71.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Mid",
+  "level": "",
+  "hourly_rate": 74.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Mid",
+  "level": "",
+  "hourly_rate": 76.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Senior",
+  "level": "",
+  "hourly_rate": 89.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Senior",
+  "level": "",
+  "hourly_rate": 92.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Senior",
+  "level": "",
+  "hourly_rate": 95.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Senior",
+  "level": "",
+  "hourly_rate": 99.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Security Operations Specialist - Senior",
+  "level": "",
+  "hourly_rate": 102.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 223.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 231.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 239.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 247.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 255.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 271.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 280.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 289.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 299.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 309.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 293.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 303.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 313.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 324.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 335.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 437.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 452.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 467.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 483.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 500.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 116.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 120.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 124.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 128.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 133.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level I",
+  "level": "",
+  "hourly_rate": 145.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level I",
+  "level": "",
+  "hourly_rate": 150.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level I",
+  "level": "",
+  "hourly_rate": 156.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level I",
+  "level": "",
+  "hourly_rate": 161.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level I",
+  "level": "",
+  "hourly_rate": 167.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level II",
+  "level": "",
+  "hourly_rate": 161.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level II",
+  "level": "",
+  "hourly_rate": 166.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level II",
+  "level": "",
+  "hourly_rate": 172.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level II",
+  "level": "",
+  "hourly_rate": 178.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level II",
+  "level": "",
+  "hourly_rate": 184.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level III",
+  "level": "",
+  "hourly_rate": 219.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level III",
+  "level": "",
+  "hourly_rate": 227.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level III",
+  "level": "",
+  "hourly_rate": 235.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level III",
+  "level": "",
+  "hourly_rate": 243.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert \u2013 Level III",
+  "level": "",
+  "hourly_rate": 251.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 67.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 69.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 72.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 74.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 77.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Manager",
+  "level": "",
+  "hourly_rate": 112.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Manager",
+  "level": "",
+  "hourly_rate": 116.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Manager",
+  "level": "",
+  "hourly_rate": 120.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Manager",
+  "level": "",
+  "hourly_rate": 124.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Manager",
+  "level": "",
+  "hourly_rate": 129.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Senior Manager",
+  "level": "",
+  "hourly_rate": 131.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Senior Manager",
+  "level": "",
+  "hourly_rate": 135.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Senior Manager",
+  "level": "",
+  "hourly_rate": 140.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Senior Manager",
+  "level": "",
+  "hourly_rate": 145.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Senior Manager",
+  "level": "",
+  "hourly_rate": 150.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Junior",
+  "level": "",
+  "hourly_rate": 63.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Junior",
+  "level": "",
+  "hourly_rate": 66.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Junior",
+  "level": "",
+  "hourly_rate": 68.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Junior",
+  "level": "",
+  "hourly_rate": 70.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Junior",
+  "level": "",
+  "hourly_rate": 73.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Mid",
+  "level": "",
+  "hourly_rate": 71.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Mid",
+  "level": "",
+  "hourly_rate": 73.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Mid",
+  "level": "",
+  "hourly_rate": 76.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Mid",
+  "level": "",
+  "hourly_rate": 78.63,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Mid",
+  "level": "",
+  "hourly_rate": 81.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Senior",
+  "level": "",
+  "hourly_rate": 91.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Senior",
+  "level": "",
+  "hourly_rate": 95.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Senior",
+  "level": "",
+  "hourly_rate": 98.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Senior",
+  "level": "",
+  "hourly_rate": 101.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist - Senior",
+  "level": "",
+  "hourly_rate": 105.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Lead",
+  "level": "",
+  "hourly_rate": 77.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Lead",
+  "level": "",
+  "hourly_rate": 80.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Lead",
+  "level": "",
+  "hourly_rate": 83.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Lead",
+  "level": "",
+  "hourly_rate": 86.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Lead",
+  "level": "",
+  "hourly_rate": 89.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Manager",
+  "level": "",
+  "hourly_rate": 98.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Manager",
+  "level": "",
+  "hourly_rate": 101.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Manager",
+  "level": "",
+  "hourly_rate": 104.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Manager",
+  "level": "",
+  "hourly_rate": 108.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Workforce Management - Manager",
+  "level": "",
+  "hourly_rate": 112.29,
+  "unit": "hour"
+ }
+]

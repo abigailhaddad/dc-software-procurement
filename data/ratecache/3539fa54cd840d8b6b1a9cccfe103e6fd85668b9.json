@@ -1,0 +1,68 @@
+[
+ {
+  "labor_category": "Manager",
+  "level": "",
+  "hourly_rate": 412.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Advisor",
+  "level": "",
+  "hourly_rate": 317.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Advisor",
+  "level": "",
+  "hourly_rate": 233.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Executive Dir",
+  "level": "",
+  "hourly_rate": 161.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager",
+  "level": "",
+  "hourly_rate": 533.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager",
+  "level": "",
+  "hourly_rate": 118.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Manager",
+  "level": "",
+  "hourly_rate": 412.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Advisor",
+  "level": "",
+  "hourly_rate": 317.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Advisor",
+  "level": "",
+  "hourly_rate": 233.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Executive Director",
+  "level": "",
+  "hourly_rate": 161.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager",
+  "level": "",
+  "hourly_rate": 533.97,
+  "unit": "hour"
+ }
+]

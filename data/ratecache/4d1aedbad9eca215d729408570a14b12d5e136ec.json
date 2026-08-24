@@ -1,0 +1,194 @@
+[
+ {
+  "labor_category": "Financial Analyst",
+  "level": "Journeyman",
+  "hourly_rate": 88.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst",
+  "level": "Senior",
+  "hourly_rate": 98.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst",
+  "level": "Master",
+  "hourly_rate": 106.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst",
+  "level": "Entry",
+  "hourly_rate": 51.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Geographic Information System (GIS) Analyst/Programmer",
+  "level": "Journeyman",
+  "hourly_rate": 57.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Geographic Information System (GIS) Analyst/Programmer",
+  "level": "Senior",
+  "hourly_rate": 62.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Geographic Information System (GIS) Analyst/Programmer",
+  "level": "Master",
+  "hourly_rate": 67.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Geographic Information System (GIS) Analyst/Programmer",
+  "level": "Entry",
+  "hourly_rate": 33.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Groupware Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 51.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Groupware Specialist",
+  "level": "Senior",
+  "hourly_rate": 58.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Groupware Specialist",
+  "level": "Master",
+  "hourly_rate": 87.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Groupware Specialist",
+  "level": "Entry",
+  "hourly_rate": 75.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Hardware Engineer",
+  "level": "Journeyman",
+  "hourly_rate": 88.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Hardware Engineer",
+  "level": "Senior",
+  "hourly_rate": 98.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Hardware Engineer",
+  "level": "Master",
+  "hourly_rate": 106.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Hardware Engineer",
+  "level": "Entry",
+  "hourly_rate": 55.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Help Desk Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 64.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Help Desk Specialist",
+  "level": "Senior",
+  "hourly_rate": 71.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Help Desk Specialist",
+  "level": "Master",
+  "hourly_rate": 76.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Help Desk Specialist",
+  "level": "Entry",
+  "hourly_rate": 30.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Assurance/Security Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 35.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Assurance/Security Specialist",
+  "level": "Senior",
+  "hourly_rate": 37.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Assurance/Security Specialist",
+  "level": "Master",
+  "hourly_rate": 39.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Assurance/Security Specialist",
+  "level": "Entry",
+  "hourly_rate": 67.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Specialist/Knowledge Engineer",
+  "level": "Journeyman",
+  "hourly_rate": 87.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Specialist/Knowledge Engineer",
+  "level": "Senior",
+  "hourly_rate": 109.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Specialist/Knowledge Engineer",
+  "level": "Master",
+  "hourly_rate": 127.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Information Specialist/Knowledge Engineer",
+  "level": "Entry",
+  "hourly_rate": 56.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Infrastructure/Network Architect",
+  "level": "Journeyman",
+  "hourly_rate": 67.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Infrastructure/Network Architect",
+  "level": "Senior",
+  "hourly_rate": 75.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Infrastructure/Network Architect",
+  "level": "Master",
+  "hourly_rate": 81.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Infrastructure/Network Architect",
+  "level": "Entry",
+  "hourly_rate": 72.23,
+  "unit": "hour"
+ }
+]

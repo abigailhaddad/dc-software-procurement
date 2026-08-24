@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Transparity TMS Annual Maintenance Support",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "On-Call Support",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Next Generation Configuration Package Utility",
+  "level": "",
+  "hourly_rate": 250.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Transparity TMS Annual Maintenance Support",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "On-Call Support",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ }
+]

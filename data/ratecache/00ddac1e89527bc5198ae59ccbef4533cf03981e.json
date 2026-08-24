@@ -1,0 +1,62 @@
+[
+ {
+  "labor_category": "Project Manager 3",
+  "level": "3",
+  "hourly_rate": 142.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant 3",
+  "level": "3",
+  "hourly_rate": 125.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant 4",
+  "level": "4",
+  "hourly_rate": 135.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst 3",
+  "level": "3",
+  "hourly_rate": 108.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst 4",
+  "level": "4",
+  "hourly_rate": 113.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager 3",
+  "level": "3",
+  "hourly_rate": 142.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant 3",
+  "level": "3",
+  "hourly_rate": 125.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant 4",
+  "level": "4",
+  "hourly_rate": 135.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst 3",
+  "level": "3",
+  "hourly_rate": 108.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst 4",
+  "level": "4",
+  "hourly_rate": 113.31,
+  "unit": "hour"
+ }
+]

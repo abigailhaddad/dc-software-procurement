@@ -1,0 +1,206 @@
+[
+ {
+  "labor_category": "Infrastructure Technical Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 84.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Infrastructure Technical Specialist",
+  "level": "Senior",
+  "hourly_rate": 93.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Infrastructure Technical Specialist",
+  "level": "Master",
+  "hourly_rate": 100.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Infrastructure Technical Specialist",
+  "level": "Entry",
+  "hourly_rate": 80.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant",
+  "level": "Journeyman",
+  "hourly_rate": 93.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant",
+  "level": "Senior",
+  "hourly_rate": 123.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant",
+  "level": "Master",
+  "hourly_rate": 143.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Consultant",
+  "level": "Entry",
+  "hourly_rate": 63.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mobile App Developer",
+  "level": "Journeyman",
+  "hourly_rate": 75.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mobile App Developer",
+  "level": "Senior",
+  "hourly_rate": 84.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mobile App Developer",
+  "level": "Master",
+  "hourly_rate": 138.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mobile App Developer",
+  "level": "Entry",
+  "hourly_rate": 70.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Modeling and Simulation Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 81.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Modeling and Simulation Specialist",
+  "level": "Senior",
+  "hourly_rate": 88.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Modeling and Simulation Specialist",
+  "level": "Master",
+  "hourly_rate": 94.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Modeling and Simulation Specialist",
+  "level": "Entry",
+  "hourly_rate": 62.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Network Engineer/Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 72.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Network Engineer/Specialist",
+  "level": "Senior",
+  "hourly_rate": 80.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Network Engineer/Specialist",
+  "level": "Master",
+  "hourly_rate": 86.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Network Engineer/Specialist",
+  "level": "Entry",
+  "hourly_rate": 40.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "Journeyman",
+  "hourly_rate": 47.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "Senior",
+  "hourly_rate": 56.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "Master",
+  "hourly_rate": 75.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "Entry",
+  "hourly_rate": 67.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "Journeyman",
+  "hourly_rate": 78.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "Senior",
+  "hourly_rate": 87.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "Master",
+  "hourly_rate": 143.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "Entry",
+  "hourly_rate": 52.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 60.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "Senior",
+  "hourly_rate": 68.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "Master",
+  "hourly_rate": 73.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "Entry",
+  "hourly_rate": 39.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 46.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "Senior",
+  "hourly_rate": 51.27,
+  "unit": "hour"
+ }
+]

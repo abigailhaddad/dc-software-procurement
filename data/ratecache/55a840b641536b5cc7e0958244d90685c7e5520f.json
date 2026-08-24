@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 164.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst/Unemployment Insurance SME",
+  "level": "",
+  "hourly_rate": 141.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Software Engineer (subcontractor)",
+  "level": "",
+  "hourly_rate": 95.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "UI Implementation SME (subcontractor)",
+  "level": "",
+  "hourly_rate": 175.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Systems Technical Advisor",
+  "level": "",
+  "hourly_rate": 210.8,
+  "unit": "hour"
+ }
+]

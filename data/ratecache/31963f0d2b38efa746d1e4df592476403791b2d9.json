@@ -1,0 +1,842 @@
+[
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 57.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 76.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 168.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 186.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 203.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 225.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 241.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 251.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 103.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 84.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 59.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 79.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 174.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 192.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 210.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 232.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 250.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 260.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 107.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 87.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 61.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 81.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 180.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 199.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 217.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 240.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 258.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 269.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 110.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 90.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 63.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 84.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 186.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 206.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 224.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 248.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 267.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 278.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 114.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 93.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 65.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 87.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 192.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 213.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 232.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 257.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 276.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 287.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 118.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 96.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst II",
+  "hourly_rate": 92.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst III",
+  "hourly_rate": 95.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst IV",
+  "hourly_rate": 98.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 102.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 105.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 104.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 107.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 111.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator",
+  "level": "",
+  "hourly_rate": 115.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 119.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 111.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "",
+  "hourly_rate": 115.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 119.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 123.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 127.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 173.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 193.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 215.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 227.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 205.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 76.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 175.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 147.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 82.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 223.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 271.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 293.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 437.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst II",
+  "hourly_rate": 147.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst III",
+  "hourly_rate": 67.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst IV",
+  "hourly_rate": 179.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 200.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 223.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 235.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 212.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 79.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator",
+  "level": "",
+  "hourly_rate": 181.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 152.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 85.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "",
+  "hourly_rate": 231.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 280.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 303.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 452.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 152.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 69.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 185.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 207.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 230.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 243.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 219.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 82.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 187.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 157.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 88.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 239.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 289.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst II",
+  "hourly_rate": 313.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst III",
+  "hourly_rate": 467.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst IV",
+  "hourly_rate": 157.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 72.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 191.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 214.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst IV",
+  "level": "",
+  "hourly_rate": 238.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 251.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Coordinator",
+  "level": "",
+  "hourly_rate": 226.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 85.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Task Order Lead",
+  "level": "",
+  "hourly_rate": 193.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Quality Assurance Specialist",
+  "level": "",
+  "hourly_rate": 163.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 91.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 247.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 299.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 324.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task Manager",
+  "level": "",
+  "hourly_rate": 483.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 162.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 74.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 198.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 221.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 246.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 259.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "",
+  "hourly_rate": 234.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "",
+  "hourly_rate": 88.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "",
+  "hourly_rate": 200.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 168.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst I",
+  "hourly_rate": 94.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst II",
+  "hourly_rate": 255.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst III",
+  "hourly_rate": 309.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Operations Research",
+  "level": "Analyst IV",
+  "hourly_rate": 335.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst I",
+  "level": "",
+  "hourly_rate": 500.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst II",
+  "level": "",
+  "hourly_rate": 168.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Organization Analyst III",
+  "level": "",
+  "hourly_rate": 77.22,
+  "unit": "hour"
+ }
+]

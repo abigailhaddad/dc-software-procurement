@@ -1,0 +1,104 @@
+[
+ {
+  "labor_category": "Voice/Data Communications Engineer",
+  "level": "Master",
+  "hourly_rate": 53.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Voice/Data Communications Engineer",
+  "level": "Entry",
+  "hourly_rate": 52.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Voice/Data Communications Engineer",
+  "level": "Journeyman",
+  "hourly_rate": 61.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Voice/Data Communications Engineer",
+  "level": "Senior",
+  "hourly_rate": 87.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Content Analyst",
+  "level": "Master",
+  "hourly_rate": 101.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Content Analyst",
+  "level": "Entry",
+  "hourly_rate": 30.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Content Analyst",
+  "level": "Journeyman",
+  "hourly_rate": 36.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Content Analyst",
+  "level": "Senior",
+  "hourly_rate": 40.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Designer",
+  "level": "Master",
+  "hourly_rate": 58.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Designer",
+  "level": "Entry",
+  "hourly_rate": 40.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Designer",
+  "level": "Journeyman",
+  "hourly_rate": 47.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Designer",
+  "level": "Senior",
+  "hourly_rate": 53.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Developer",
+  "level": "Master",
+  "hourly_rate": 57.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Developer",
+  "level": "Entry",
+  "hourly_rate": 55.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Developer",
+  "level": "Journeyman",
+  "hourly_rate": 63.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Developer",
+  "level": "Senior",
+  "hourly_rate": 70.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Web Developer",
+  "level": "Master",
+  "hourly_rate": 77.0,
+  "unit": "hour"
+ }
+]

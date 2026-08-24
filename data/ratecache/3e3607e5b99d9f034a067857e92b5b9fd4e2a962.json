@@ -1,0 +1,842 @@
+[
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 281.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 172.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 190.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager III",
+  "level": "",
+  "hourly_rate": 243.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst I",
+  "level": "",
+  "hourly_rate": 112.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst II",
+  "level": "",
+  "hourly_rate": 117.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst III",
+  "level": "",
+  "hourly_rate": 135.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst IV",
+  "level": "",
+  "hourly_rate": 149.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant I",
+  "level": "",
+  "hourly_rate": 112.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant II",
+  "level": "",
+  "hourly_rate": 142.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant III",
+  "level": "",
+  "hourly_rate": 178.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Associate / Technician II",
+  "level": "",
+  "hourly_rate": 116.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant - Executive Strategy",
+  "level": "",
+  "hourly_rate": 586.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant I",
+  "level": "",
+  "hourly_rate": 178.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant II",
+  "level": "",
+  "hourly_rate": 199.63,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant III",
+  "level": "",
+  "hourly_rate": 206.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager I",
+  "level": "",
+  "hourly_rate": 200.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager II",
+  "level": "",
+  "hourly_rate": 273.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Principal",
+  "level": "",
+  "hourly_rate": 323.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 272.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 337.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 447.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Expert",
+  "level": "",
+  "hourly_rate": 730.26,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Management Analyst III",
+  "level": "",
+  "hourly_rate": 102.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Program Manager I",
+  "level": "",
+  "hourly_rate": 283.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Research Analyst I",
+  "level": "",
+  "hourly_rate": 102.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 277.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 343.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 293.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 179.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 198.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager III",
+  "level": "",
+  "hourly_rate": 254.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst I",
+  "level": "",
+  "hourly_rate": 117.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst II",
+  "level": "",
+  "hourly_rate": 122.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst III",
+  "level": "",
+  "hourly_rate": 141.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst IV",
+  "level": "",
+  "hourly_rate": 156.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant I",
+  "level": "",
+  "hourly_rate": 117.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant II",
+  "level": "",
+  "hourly_rate": 149.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant III",
+  "level": "",
+  "hourly_rate": 186.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Associate / Technician II",
+  "level": "",
+  "hourly_rate": 121.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant - Executive Strategy",
+  "level": "",
+  "hourly_rate": 612.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant I",
+  "level": "",
+  "hourly_rate": 186.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant II",
+  "level": "",
+  "hourly_rate": 208.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant III",
+  "level": "",
+  "hourly_rate": 215.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager I",
+  "level": "",
+  "hourly_rate": 209.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager II",
+  "level": "",
+  "hourly_rate": 285.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Principal",
+  "level": "",
+  "hourly_rate": 337.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 284.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 353.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 467.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Expert",
+  "level": "",
+  "hourly_rate": 763.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Management Analyst III",
+  "level": "",
+  "hourly_rate": 107.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Program Manager I",
+  "level": "",
+  "hourly_rate": 296.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Research Analyst I",
+  "level": "",
+  "hourly_rate": 107.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 289.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 359.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 306.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 187.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 207.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager III",
+  "level": "",
+  "hourly_rate": 265.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst I",
+  "level": "",
+  "hourly_rate": 122.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst II",
+  "level": "",
+  "hourly_rate": 128.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst III",
+  "level": "",
+  "hourly_rate": 147.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst IV",
+  "level": "",
+  "hourly_rate": 163.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant I",
+  "level": "",
+  "hourly_rate": 122.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant II",
+  "level": "",
+  "hourly_rate": 156.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant III",
+  "level": "",
+  "hourly_rate": 195.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Associate / Technician II",
+  "level": "",
+  "hourly_rate": 127.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant - Executive Strategy",
+  "level": "",
+  "hourly_rate": 640.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant I",
+  "level": "",
+  "hourly_rate": 195.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant II",
+  "level": "",
+  "hourly_rate": 218.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant III",
+  "level": "",
+  "hourly_rate": 225.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager I",
+  "level": "",
+  "hourly_rate": 218.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager II",
+  "level": "",
+  "hourly_rate": 298.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Principal",
+  "level": "",
+  "hourly_rate": 352.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 297.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 368.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 488.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Expert",
+  "level": "",
+  "hourly_rate": 797.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Management Analyst III",
+  "level": "",
+  "hourly_rate": 111.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Program Manager I",
+  "level": "",
+  "hourly_rate": 309.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Research Analyst I",
+  "level": "",
+  "hourly_rate": 111.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 302.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 375.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 320.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 196.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 216.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager III",
+  "level": "",
+  "hourly_rate": 277.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst I",
+  "level": "",
+  "hourly_rate": 128.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst II",
+  "level": "",
+  "hourly_rate": 134.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst III",
+  "level": "",
+  "hourly_rate": 154.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst IV",
+  "level": "",
+  "hourly_rate": 171.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant I",
+  "level": "",
+  "hourly_rate": 128.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant II",
+  "level": "",
+  "hourly_rate": 163.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant III",
+  "level": "",
+  "hourly_rate": 203.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Associate / Technician II",
+  "level": "",
+  "hourly_rate": 133.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant - Executive Strategy",
+  "level": "",
+  "hourly_rate": 669.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant I",
+  "level": "",
+  "hourly_rate": 203.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant II",
+  "level": "",
+  "hourly_rate": 227.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant III",
+  "level": "",
+  "hourly_rate": 235.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager I",
+  "level": "",
+  "hourly_rate": 228.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager II",
+  "level": "",
+  "hourly_rate": 311.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Principal",
+  "level": "",
+  "hourly_rate": 368.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 310.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 385.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 510.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Expert",
+  "level": "",
+  "hourly_rate": 833.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Management Analyst III",
+  "level": "",
+  "hourly_rate": 116.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Program Manager I",
+  "level": "",
+  "hourly_rate": 323.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Research Analyst I",
+  "level": "",
+  "hourly_rate": 116.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 316.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 392.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 335.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 205.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 226.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager III",
+  "level": "",
+  "hourly_rate": 290.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst I",
+  "level": "",
+  "hourly_rate": 134.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst II",
+  "level": "",
+  "hourly_rate": 140.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst III",
+  "level": "",
+  "hourly_rate": 161.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst IV",
+  "level": "",
+  "hourly_rate": 178.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant I",
+  "level": "",
+  "hourly_rate": 134.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant II",
+  "level": "",
+  "hourly_rate": 170.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Consultant III",
+  "level": "",
+  "hourly_rate": 213.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Associate / Technician II",
+  "level": "",
+  "hourly_rate": 139.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant - Executive Strategy",
+  "level": "",
+  "hourly_rate": 699.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant I",
+  "level": "",
+  "hourly_rate": 213.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant II",
+  "level": "",
+  "hourly_rate": 238.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Consultant III",
+  "level": "",
+  "hourly_rate": 245.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager I",
+  "level": "",
+  "hourly_rate": 238.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Manager II",
+  "level": "",
+  "hourly_rate": 325.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Principal",
+  "level": "",
+  "hourly_rate": 385.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 324.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 402.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 533.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Expert",
+  "level": "",
+  "hourly_rate": 870.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Management Analyst III",
+  "level": "",
+  "hourly_rate": 122.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Program Manager I",
+  "level": "",
+  "hourly_rate": 338.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Research Analyst I",
+  "level": "",
+  "hourly_rate": 122.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 330.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 409.95,
+  "unit": "hour"
+ }
+]

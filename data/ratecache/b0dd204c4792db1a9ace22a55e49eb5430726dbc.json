@@ -1,0 +1,56 @@
+[
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 128.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer",
+  "level": "Level II",
+  "hourly_rate": 163.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer",
+  "level": "Level I",
+  "hourly_rate": 157.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 134.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer",
+  "level": "Level II",
+  "hourly_rate": 171.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer",
+  "level": "Level I",
+  "hourly_rate": 165.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 141.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer",
+  "level": "Level II",
+  "hourly_rate": 180.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer",
+  "level": "Level I",
+  "hourly_rate": 173.65,
+  "unit": "hour"
+ }
+]

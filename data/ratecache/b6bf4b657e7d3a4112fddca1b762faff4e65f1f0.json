@@ -1,0 +1,122 @@
+[
+ {
+  "labor_category": "Senior Environmental Engineer",
+  "level": "",
+  "hourly_rate": 207.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Environmental Engineer",
+  "level": "",
+  "hourly_rate": 170.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Environmental Engineer",
+  "level": "",
+  "hourly_rate": 159.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Biologist",
+  "level": "",
+  "hourly_rate": 154.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Biologist",
+  "level": "",
+  "hourly_rate": 133.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "GIS Analyst",
+  "level": "",
+  "hourly_rate": 186.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Staff Assistant",
+  "level": "",
+  "hourly_rate": 95.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 268.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Water Quality Modeler",
+  "level": "",
+  "hourly_rate": 251.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Water Quality Modeler",
+  "level": "",
+  "hourly_rate": 213.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Environmental Scientist",
+  "level": "",
+  "hourly_rate": 235.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Environmental Scientist",
+  "level": "",
+  "hourly_rate": 213.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Environmental Scientist",
+  "level": "",
+  "hourly_rate": 191.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Environmental Engineer",
+  "level": "",
+  "hourly_rate": 213.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Environmental Engineer",
+  "level": "",
+  "hourly_rate": 175.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Environmental Engineer",
+  "level": "",
+  "hourly_rate": 164.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Biologist",
+  "level": "",
+  "hourly_rate": 158.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Biologist",
+  "level": "",
+  "hourly_rate": 137.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "GIS Analyst",
+  "level": "",
+  "hourly_rate": 191.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Staff Assistant",
+  "level": "",
+  "hourly_rate": 98.0,
+  "unit": "hour"
+ }
+]

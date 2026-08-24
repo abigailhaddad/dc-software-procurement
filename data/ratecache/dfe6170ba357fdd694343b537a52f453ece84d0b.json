@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Executive",
+  "level": "",
+  "hourly_rate": 320.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director of Labor",
+  "level": "",
+  "hourly_rate": 333.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Client 12 Category Services",
+  "level": "",
+  "hourly_rate": 339.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Client 12 Category Services",
+  "level": "",
+  "hourly_rate": 339.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Client 12 Category Services",
+  "level": "",
+  "hourly_rate": 339.83,
+  "unit": "hour"
+ }
+]

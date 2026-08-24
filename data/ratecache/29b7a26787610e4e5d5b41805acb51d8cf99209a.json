@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Partner/Managing Director",
+  "level": "",
+  "hourly_rate": 540.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director",
+  "level": "",
+  "hourly_rate": 475.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Manager",
+  "level": "",
+  "hourly_rate": 410.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Associate",
+  "level": "",
+  "hourly_rate": 325.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Associate",
+  "level": "",
+  "hourly_rate": 235.0,
+  "unit": "hour"
+ }
+]

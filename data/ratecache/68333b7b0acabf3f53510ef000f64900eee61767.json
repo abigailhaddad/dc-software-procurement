@@ -1,0 +1,50 @@
+[
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 150.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "System Architect (Software/Data/Database) I",
+  "level": "I",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cloud Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 150.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "IT Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 1015.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technology Consultant I",
+  "level": "I",
+  "hourly_rate": 110.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technology Consultant II",
+  "level": "II",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cyber Security Specialist",
+  "level": "",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative",
+  "level": "",
+  "hourly_rate": 60.0,
+  "unit": "hour"
+ }
+]

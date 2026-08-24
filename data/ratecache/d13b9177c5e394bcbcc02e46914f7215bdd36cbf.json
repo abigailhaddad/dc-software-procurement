@@ -1,0 +1,56 @@
+[
+ {
+  "labor_category": "Program Manager",
+  "level": "Senior",
+  "hourly_rate": 149.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Software Engineer",
+  "level": "Senior",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert",
+  "level": "Senior",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "Senior",
+  "hourly_rate": 149.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Software Engineer",
+  "level": "Senior",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert",
+  "level": "Senior",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "Senior",
+  "hourly_rate": 149.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Software Engineer",
+  "level": "Senior",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert",
+  "level": "Senior",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ }
+]

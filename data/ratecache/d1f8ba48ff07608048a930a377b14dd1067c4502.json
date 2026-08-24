@@ -1,0 +1,74 @@
+[
+ {
+  "labor_category": "Analyst I",
+  "level": "",
+  "hourly_rate": 136.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst II",
+  "level": "",
+  "hourly_rate": 150.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst I",
+  "level": "",
+  "hourly_rate": 163.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst II",
+  "level": "",
+  "hourly_rate": 180.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant",
+  "level": "",
+  "hourly_rate": 208.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert Consultant III",
+  "level": "",
+  "hourly_rate": 218.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert Consultant IV",
+  "level": "",
+  "hourly_rate": 222.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert Consultant VI",
+  "level": "",
+  "hourly_rate": 252.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Consultant",
+  "level": "",
+  "hourly_rate": 208.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 196.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 157.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 165.6,
+  "unit": "hour"
+ }
+]

@@ -1,0 +1,218 @@
+[
+ {
+  "labor_category": "Partner",
+  "level": "",
+  "hourly_rate": 460.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Partner",
+  "level": "",
+  "hourly_rate": 473.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Partner",
+  "level": "",
+  "hourly_rate": 488.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Partner",
+  "level": "",
+  "hourly_rate": 502.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Partner",
+  "level": "",
+  "hourly_rate": 517.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Partner",
+  "level": "",
+  "hourly_rate": 533.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 410.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 422.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 434.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 448.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 461.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 475.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director",
+  "level": "",
+  "hourly_rate": 360.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director",
+  "level": "",
+  "hourly_rate": 370.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director",
+  "level": "",
+  "hourly_rate": 381.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director",
+  "level": "",
+  "hourly_rate": 393.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director",
+  "level": "",
+  "hourly_rate": 405.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director",
+  "level": "",
+  "hourly_rate": 417.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Analyst",
+  "level": "",
+  "hourly_rate": 275.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Analyst",
+  "level": "",
+  "hourly_rate": 283.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Analyst",
+  "level": "",
+  "hourly_rate": 291.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Analyst",
+  "level": "",
+  "hourly_rate": 300.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Analyst",
+  "level": "",
+  "hourly_rate": 309.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Analyst",
+  "level": "",
+  "hourly_rate": 318.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst",
+  "level": "",
+  "hourly_rate": 220.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst",
+  "level": "",
+  "hourly_rate": 226.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst",
+  "level": "",
+  "hourly_rate": 233.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst",
+  "level": "",
+  "hourly_rate": 240.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst",
+  "level": "",
+  "hourly_rate": 247.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst",
+  "level": "",
+  "hourly_rate": 255.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "",
+  "hourly_rate": 175.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "",
+  "hourly_rate": 180.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "",
+  "hourly_rate": 185.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "",
+  "hourly_rate": 191.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "",
+  "hourly_rate": 196.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "",
+  "hourly_rate": 202.87,
+  "unit": "hour"
+ }
+]

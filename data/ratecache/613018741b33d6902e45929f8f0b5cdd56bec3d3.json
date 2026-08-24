@@ -1,0 +1,20 @@
+[
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 122.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer Level II",
+  "level": "Level II",
+  "hourly_rate": 155.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer Level I",
+  "level": "Level I",
+  "hourly_rate": 150.0,
+  "unit": "hour"
+ }
+]

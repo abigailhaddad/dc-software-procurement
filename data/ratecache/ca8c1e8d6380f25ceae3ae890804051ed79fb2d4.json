@@ -1,0 +1,662 @@
+[
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 142.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 171.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "C-level Consultant / Coach",
+  "level": "",
+  "hourly_rate": 554.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 134.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 155.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Jr.",
+  "level": "",
+  "hourly_rate": 135.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Sr.",
+  "level": "",
+  "hourly_rate": 164.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Processor",
+  "level": "",
+  "hourly_rate": 54.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Manager - Executive",
+  "level": "",
+  "hourly_rate": 662.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy",
+  "level": "",
+  "hourly_rate": 149.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert",
+  "level": "",
+  "hourly_rate": 179.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Functional Expert and Researcher",
+  "level": "",
+  "hourly_rate": 579.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Associate / Technician I",
+  "level": "",
+  "hourly_rate": 140.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Lead Program Analyst",
+  "level": "",
+  "hourly_rate": 163.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst I",
+  "level": "",
+  "hourly_rate": 141.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst II",
+  "level": "",
+  "hourly_rate": 171.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst III",
+  "level": "",
+  "hourly_rate": 56.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst IV",
+  "level": "",
+  "hourly_rate": 692.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst V",
+  "level": "",
+  "hourly_rate": 156.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 187.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Jr",
+  "level": "",
+  "hourly_rate": 605.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Sr",
+  "level": "",
+  "hourly_rate": 146.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 170.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 147.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 179.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "C-level Consultant / Coach",
+  "level": "",
+  "hourly_rate": 59.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 723.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 163.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Jr.",
+  "level": "",
+  "hourly_rate": 195.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Sr.",
+  "level": "",
+  "hourly_rate": 632.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Processor",
+  "level": "",
+  "hourly_rate": 153.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Manager - Executive",
+  "level": "",
+  "hourly_rate": 178.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy",
+  "level": "",
+  "hourly_rate": 154.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert",
+  "level": "",
+  "hourly_rate": 187.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Functional Expert and Researcher",
+  "level": "",
+  "hourly_rate": 62.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Associate / Technician I",
+  "level": "",
+  "hourly_rate": 756.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Lead Program Analyst",
+  "level": "",
+  "hourly_rate": 170.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst I",
+  "level": "",
+  "hourly_rate": 204.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst II",
+  "level": "",
+  "hourly_rate": 661.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst III",
+  "level": "",
+  "hourly_rate": 160.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst IV",
+  "level": "",
+  "hourly_rate": 186.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst V",
+  "level": "",
+  "hourly_rate": 161.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 195.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Jr",
+  "level": "",
+  "hourly_rate": 64.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Sr",
+  "level": "",
+  "hourly_rate": 790.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 490.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 125.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 107.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "C-level Consultant / Coach",
+  "level": "",
+  "hourly_rate": 299.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 79.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 89.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Jr.",
+  "level": "",
+  "hourly_rate": 100.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Sr.",
+  "level": "",
+  "hourly_rate": 117.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Processor",
+  "level": "",
+  "hourly_rate": 121.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Manager - Executive",
+  "level": "",
+  "hourly_rate": 273.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy",
+  "level": "",
+  "hourly_rate": 106.26,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert",
+  "level": "",
+  "hourly_rate": 182.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Functional Expert and Researcher",
+  "level": "",
+  "hourly_rate": 278.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Associate / Technician I",
+  "level": "",
+  "hourly_rate": 512.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Lead Program Analyst",
+  "level": "",
+  "hourly_rate": 130.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst I",
+  "level": "",
+  "hourly_rate": 112.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst II",
+  "level": "",
+  "hourly_rate": 313.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst III",
+  "level": "",
+  "hourly_rate": 83.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst IV",
+  "level": "",
+  "hourly_rate": 93.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst V",
+  "level": "",
+  "hourly_rate": 105.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 123.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Jr",
+  "level": "",
+  "hourly_rate": 127.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Sr",
+  "level": "",
+  "hourly_rate": 285.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 111.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 190.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 291.26,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "C-level Consultant / Coach",
+  "level": "",
+  "hourly_rate": 535.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 136.63,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 117.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Jr.",
+  "level": "",
+  "hourly_rate": 327.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Sr.",
+  "level": "",
+  "hourly_rate": 87.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Processor",
+  "level": "",
+  "hourly_rate": 98.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Manager - Executive",
+  "level": "",
+  "hourly_rate": 110.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy",
+  "level": "",
+  "hourly_rate": 128.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert",
+  "level": "",
+  "hourly_rate": 133.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Functional Expert and Researcher",
+  "level": "",
+  "hourly_rate": 298.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Associate / Technician I",
+  "level": "",
+  "hourly_rate": 116.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Lead Program Analyst",
+  "level": "",
+  "hourly_rate": 198.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst I",
+  "level": "",
+  "hourly_rate": 304.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst II",
+  "level": "",
+  "hourly_rate": 559.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst III",
+  "level": "",
+  "hourly_rate": 142.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst IV",
+  "level": "",
+  "hourly_rate": 122.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst V",
+  "level": "",
+  "hourly_rate": 341.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 91.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Jr",
+  "level": "",
+  "hourly_rate": 102.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Analyst - Sr",
+  "level": "",
+  "hourly_rate": 114.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 134.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 139.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 312.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "C-level Consultant / Coach",
+  "level": "",
+  "hourly_rate": 121.26,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "",
+  "hourly_rate": 207.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 318.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Jr.",
+  "level": "",
+  "hourly_rate": 584.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst Sr.",
+  "level": "",
+  "hourly_rate": 149.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Processor",
+  "level": "",
+  "hourly_rate": 127.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Manager - Executive",
+  "level": "",
+  "hourly_rate": 357.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy",
+  "level": "",
+  "hourly_rate": 95.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Expert",
+  "level": "",
+  "hourly_rate": 107.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Functional Expert and Researcher",
+  "level": "",
+  "hourly_rate": 120.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Associate / Technician I",
+  "level": "",
+  "hourly_rate": 140.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Lead Program Analyst",
+  "level": "",
+  "hourly_rate": 145.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst I",
+  "level": "",
+  "hourly_rate": 326.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst II",
+  "level": "",
+  "hourly_rate": 126.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst III",
+  "level": "",
+  "hourly_rate": 217.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst IV",
+  "level": "",
+  "hourly_rate": 332.38,
+  "unit": "hour"
+ }
+]

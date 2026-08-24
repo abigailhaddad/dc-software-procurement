@@ -1,0 +1,38 @@
+[
+ {
+  "labor_category": "Comprehensive Communicating Plan",
+  "level": "",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Strategy",
+  "level": "",
+  "hourly_rate": 95.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Standard Communication Tools",
+  "level": "",
+  "hourly_rate": 99.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Implementation",
+  "level": "",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Evaluation Tools",
+  "level": "",
+  "hourly_rate": 89.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training and Coaching",
+  "level": "",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ }
+]

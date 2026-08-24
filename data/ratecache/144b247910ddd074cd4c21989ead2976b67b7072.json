@@ -1,0 +1,902 @@
+[
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 281.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 245.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 206.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 198.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 156.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 134.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 121.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 108.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 98.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 281.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 243.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 211.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 184.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 119.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 94.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 284.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 248.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 208.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 200.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 158.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 135.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 123.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 110.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 99.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 284.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 245.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 213.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 186.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 120.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 95.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 288.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 251.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 211.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 203.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 160.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 137.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 124.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 111.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 100.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 287.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 248.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 216.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 188.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 122.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 97.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 297.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 258.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 217.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 209.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 165.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 141.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 128.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 114.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 103.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 296.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 256.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 222.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 194.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 126.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 100.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 297.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 258.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 217.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 209.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 165.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 141.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 128.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 114.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 103.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 296.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 256.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 222.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 194.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 126.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 100.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 245.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 214.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 179.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 173.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 136.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 117.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 106.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 94.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 85.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 245.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 211.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 184.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 160.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 104.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 82.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 249.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 217.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 182.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 175.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 138.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 119.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 107.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 96.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 87.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 249.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 215.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 187.19,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 163.26,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 105.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 84.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 253.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 221.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 185.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 178.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 141.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 121.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 109.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 98.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 88.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 253.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 218.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 190.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 166.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 107.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 85.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 261.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 227.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 191.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 184.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 145.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 124.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 112.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 100.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 91.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 261.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 225.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 196.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 171.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 110.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 88.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager II",
+  "level": "",
+  "hourly_rate": 261.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager I",
+  "level": "",
+  "hourly_rate": 227.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager II",
+  "level": "",
+  "hourly_rate": 191.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager I",
+  "level": "",
+  "hourly_rate": 184.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant V",
+  "level": "",
+  "hourly_rate": 145.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant IV",
+  "level": "",
+  "hourly_rate": 124.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant III",
+  "level": "",
+  "hourly_rate": 112.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant II",
+  "level": "",
+  "hourly_rate": 100.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Consultant I",
+  "level": "",
+  "hourly_rate": 91.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert IV",
+  "level": "",
+  "hourly_rate": 261.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 225.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 196.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 171.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer II",
+  "level": "",
+  "hourly_rate": 110.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Trainer I",
+  "level": "",
+  "hourly_rate": 88.04,
+  "unit": "hour"
+ }
+]

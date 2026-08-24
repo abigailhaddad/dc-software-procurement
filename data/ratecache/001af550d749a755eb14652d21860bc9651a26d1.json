@@ -1,0 +1,26 @@
+[
+ {
+  "labor_category": "Seth Kirshenberg - Senior Partner-DC",
+  "level": "Senior Partner-DC",
+  "hourly_rate": 523.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Hans Ipson - Partner",
+  "level": "Partner",
+  "hourly_rate": 509.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Miroslava Sharpe, Associate",
+  "level": "Associate",
+  "hourly_rate": 365.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Lauren Irish, Associate",
+  "level": "Associate",
+  "hourly_rate": 365.0,
+  "unit": "hour"
+ }
+]

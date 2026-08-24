@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Developer II",
+  "level": "",
+  "hourly_rate": 184.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Developer II",
+  "level": "",
+  "hourly_rate": 189.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Developer II",
+  "level": "",
+  "hourly_rate": 194.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Developer II (Open Market)",
+  "level": "",
+  "hourly_rate": 199.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Developer II (Open Market)",
+  "level": "",
+  "hourly_rate": 204.01,
+  "unit": "hour"
+ }
+]

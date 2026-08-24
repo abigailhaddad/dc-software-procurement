@@ -1,0 +1,1022 @@
+[
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 57.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 59.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 61.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 63.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant",
+  "level": "",
+  "hourly_rate": 65.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Budget Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 141.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Budget Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 146.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Budget Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 151.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Budget Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 156.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Budget Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 161.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 76.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 79.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 81.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 84.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst",
+  "level": "",
+  "hourly_rate": 87.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Coding Analyst",
+  "level": "",
+  "hourly_rate": 71.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Coding Analyst",
+  "level": "",
+  "hourly_rate": 73.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Coding Analyst",
+  "level": "",
+  "hourly_rate": 76.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Coding Analyst",
+  "level": "",
+  "hourly_rate": 79.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Coding Analyst",
+  "level": "",
+  "hourly_rate": 81.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Communications Specialist",
+  "level": "",
+  "hourly_rate": 66.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Communications Specialist",
+  "level": "",
+  "hourly_rate": 68.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Communications Specialist",
+  "level": "",
+  "hourly_rate": 70.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Communications Specialist",
+  "level": "",
+  "hourly_rate": 73.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Communications Specialist",
+  "level": "",
+  "hourly_rate": 75.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "I",
+  "hourly_rate": 168.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "I",
+  "hourly_rate": 174.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "I",
+  "hourly_rate": 180.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "I",
+  "hourly_rate": 186.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant I",
+  "level": "I",
+  "hourly_rate": 192.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "II",
+  "hourly_rate": 186.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "II",
+  "hourly_rate": 192.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "II",
+  "hourly_rate": 199.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "II",
+  "hourly_rate": 206.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "II",
+  "hourly_rate": 213.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "III",
+  "hourly_rate": 203.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "III",
+  "hourly_rate": 210.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "III",
+  "hourly_rate": 217.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "III",
+  "hourly_rate": 224.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "III",
+  "hourly_rate": 232.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "IV",
+  "hourly_rate": 225.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "IV",
+  "hourly_rate": 232.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "IV",
+  "hourly_rate": 240.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "IV",
+  "hourly_rate": 248.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant IV",
+  "level": "IV",
+  "hourly_rate": 257.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "V",
+  "hourly_rate": 241.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "V",
+  "hourly_rate": 250.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "V",
+  "hourly_rate": 258.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "V",
+  "hourly_rate": 267.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant V",
+  "level": "V",
+  "hourly_rate": 276.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "VI",
+  "hourly_rate": 251.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "VI",
+  "hourly_rate": 260.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "VI",
+  "hourly_rate": 269.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "VI",
+  "hourly_rate": 278.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant VI",
+  "level": "VI",
+  "hourly_rate": 287.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Compliance Manager",
+  "level": "",
+  "hourly_rate": 107.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Compliance Manager",
+  "level": "",
+  "hourly_rate": 110.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Compliance Manager",
+  "level": "",
+  "hourly_rate": 114.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Compliance Manager",
+  "level": "",
+  "hourly_rate": 118.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Compliance Manager",
+  "level": "",
+  "hourly_rate": 122.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Manager",
+  "level": "",
+  "hourly_rate": 106.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Manager",
+  "level": "",
+  "hourly_rate": 109.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Manager",
+  "level": "",
+  "hourly_rate": 113.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Manager",
+  "level": "",
+  "hourly_rate": 117.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Contract Manager",
+  "level": "",
+  "hourly_rate": 121.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Junior",
+  "level": "Junior",
+  "hourly_rate": 50.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Junior",
+  "level": "Junior",
+  "hourly_rate": 51.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Junior",
+  "level": "Junior",
+  "hourly_rate": 53.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Junior",
+  "level": "Junior",
+  "hourly_rate": 55.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Junior",
+  "level": "Junior",
+  "hourly_rate": 57.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Lead",
+  "level": "Lead",
+  "hourly_rate": 69.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Lead",
+  "level": "Lead",
+  "hourly_rate": 71.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Lead",
+  "level": "Lead",
+  "hourly_rate": 73.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Lead",
+  "level": "Lead",
+  "hourly_rate": 76.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Lead",
+  "level": "Lead",
+  "hourly_rate": 79.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Mid",
+  "level": "Mid",
+  "hourly_rate": 58.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Mid",
+  "level": "Mid",
+  "hourly_rate": 61.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Mid",
+  "level": "Mid",
+  "hourly_rate": 63.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Mid",
+  "level": "Mid",
+  "hourly_rate": 65.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Service Representative - Mid",
+  "level": "Mid",
+  "hourly_rate": 67.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analysis Manager",
+  "level": "",
+  "hourly_rate": 141.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analysis Manager",
+  "level": "",
+  "hourly_rate": 146.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analysis Manager",
+  "level": "",
+  "hourly_rate": 151.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analysis Manager",
+  "level": "",
+  "hourly_rate": 156.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analysis Manager",
+  "level": "",
+  "hourly_rate": 162.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 68.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 70.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 72.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 75.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 78.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 92.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 96.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 99.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 102.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 106.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 103.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 107.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 110.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 114.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 118.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Principal",
+  "level": "Principal",
+  "hourly_rate": 190.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Principal",
+  "level": "Principal",
+  "hourly_rate": 197.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Principal",
+  "level": "Principal",
+  "hourly_rate": 204.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Principal",
+  "level": "Principal",
+  "hourly_rate": 211.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Principal",
+  "level": "Principal",
+  "hourly_rate": 218.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 109.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 113.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 117.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 121.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 125.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Entry Specialist",
+  "level": "",
+  "hourly_rate": 34.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Entry Specialist",
+  "level": "",
+  "hourly_rate": 35.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Entry Specialist",
+  "level": "",
+  "hourly_rate": 37.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Entry Specialist",
+  "level": "",
+  "hourly_rate": 38.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Entry Specialist",
+  "level": "",
+  "hourly_rate": 39.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Deputy Program Manager",
+  "level": "",
+  "hourly_rate": 139.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Deputy Program Manager",
+  "level": "",
+  "hourly_rate": 144.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Deputy Program Manager",
+  "level": "",
+  "hourly_rate": 149.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Deputy Program Manager",
+  "level": "",
+  "hourly_rate": 154.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Deputy Program Manager",
+  "level": "",
+  "hourly_rate": 160.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Manager",
+  "level": "",
+  "hourly_rate": 83.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Manager",
+  "level": "",
+  "hourly_rate": 86.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Manager",
+  "level": "",
+  "hourly_rate": 89.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Manager",
+  "level": "",
+  "hourly_rate": 92.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Manager",
+  "level": "",
+  "hourly_rate": 95.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Specialist",
+  "level": "",
+  "hourly_rate": 60.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Specialist",
+  "level": "",
+  "hourly_rate": 62.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Specialist",
+  "level": "",
+  "hourly_rate": 64.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Specialist",
+  "level": "",
+  "hourly_rate": 67.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Document Control Specialist",
+  "level": "",
+  "hourly_rate": 69.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Junior",
+  "level": "Junior",
+  "hourly_rate": 53.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Junior",
+  "level": "Junior",
+  "hourly_rate": 55.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Junior",
+  "level": "Junior",
+  "hourly_rate": 57.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Junior",
+  "level": "Junior",
+  "hourly_rate": 59.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Junior",
+  "level": "Junior",
+  "hourly_rate": 61.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Mid",
+  "level": "Mid",
+  "hourly_rate": 59.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Mid",
+  "level": "Mid",
+  "hourly_rate": 61.72,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Mid",
+  "level": "Mid",
+  "hourly_rate": 63.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Mid",
+  "level": "Mid",
+  "hourly_rate": 66.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Equipment Specialist - Mid",
+  "level": "Mid",
+  "hourly_rate": 68.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 103.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 107.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 110.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 114.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 118.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 158.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 164.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 170.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 175.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial Analyst - Senior",
+  "level": "Senior",
+  "hourly_rate": 182.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Fraud Prevention Manager",
+  "level": "",
+  "hourly_rate": 122.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Fraud Prevention Manager",
+  "level": "",
+  "hourly_rate": 126.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Fraud Prevention Manager",
+  "level": "",
+  "hourly_rate": 131.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Fraud Prevention Manager",
+  "level": "",
+  "hourly_rate": 135.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Fraud Prevention Manager",
+  "level": "",
+  "hourly_rate": 140.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Governance Manager",
+  "level": "",
+  "hourly_rate": 194.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Governance Manager",
+  "level": "",
+  "hourly_rate": 200.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Governance Manager",
+  "level": "",
+  "hourly_rate": 207.63,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Governance Manager",
+  "level": "",
+  "hourly_rate": 214.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Governance Manager",
+  "level": "",
+  "hourly_rate": 222.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 78.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 81.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 84.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 87.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Junior",
+  "level": "Junior",
+  "hourly_rate": 90.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 97.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 101.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 104.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 108.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst - Mid",
+  "level": "Mid",
+  "hourly_rate": 112.23,
+  "unit": "hour"
+ }
+]

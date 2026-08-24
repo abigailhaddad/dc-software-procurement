@@ -1,0 +1,1562 @@
+[
+ {
+  "labor_category": "Strategy Executive II",
+  "level": "",
+  "hourly_rate": 607.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive I",
+  "level": "",
+  "hourly_rate": 577.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Management Lead I",
+  "level": "",
+  "hourly_rate": 552.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader II",
+  "level": "",
+  "hourly_rate": 472.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader I",
+  "level": "",
+  "hourly_rate": 449.03,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Solution Architect",
+  "level": "",
+  "hourly_rate": 720.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader II",
+  "level": "",
+  "hourly_rate": 434.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader I",
+  "level": "",
+  "hourly_rate": 413.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner II",
+  "level": "",
+  "hourly_rate": 371.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner I",
+  "level": "",
+  "hourly_rate": 353.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner II",
+  "level": "",
+  "hourly_rate": 286.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner I",
+  "level": "",
+  "hourly_rate": 271.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst II",
+  "level": "",
+  "hourly_rate": 202.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst I",
+  "level": "",
+  "hourly_rate": 192.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive III",
+  "level": "",
+  "hourly_rate": 452.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive II",
+  "level": "",
+  "hourly_rate": 429.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead II",
+  "level": "",
+  "hourly_rate": 452.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead I",
+  "level": "",
+  "hourly_rate": 429.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader III",
+  "level": "",
+  "hourly_rate": 374.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader II",
+  "level": "",
+  "hourly_rate": 355.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader I",
+  "level": "",
+  "hourly_rate": 337.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect II",
+  "level": "",
+  "hourly_rate": 422.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect I",
+  "level": "",
+  "hourly_rate": 401.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead III",
+  "level": "",
+  "hourly_rate": 347.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead II",
+  "level": "",
+  "hourly_rate": 329.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead I",
+  "level": "",
+  "hourly_rate": 312.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional III",
+  "level": "",
+  "hourly_rate": 299.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional II",
+  "level": "",
+  "hourly_rate": 284.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional I",
+  "level": "",
+  "hourly_rate": 269.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect II",
+  "level": "",
+  "hourly_rate": 330.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect I",
+  "level": "",
+  "hourly_rate": 314.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional III",
+  "level": "",
+  "hourly_rate": 254.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional II",
+  "level": "",
+  "hourly_rate": 241.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional I",
+  "level": "",
+  "hourly_rate": 229.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional III",
+  "level": "",
+  "hourly_rate": 183.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional II",
+  "level": "",
+  "hourly_rate": 174.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional I",
+  "level": "",
+  "hourly_rate": 165.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive II",
+  "level": "",
+  "hourly_rate": 452.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive I",
+  "level": "",
+  "hourly_rate": 429.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor II",
+  "level": "",
+  "hourly_rate": 452.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor I",
+  "level": "",
+  "hourly_rate": 406.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead IV",
+  "level": "",
+  "hourly_rate": 374.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead III",
+  "level": "",
+  "hourly_rate": 355.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead II",
+  "level": "",
+  "hourly_rate": 337.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist IV",
+  "level": "",
+  "hourly_rate": 254.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist III",
+  "level": "",
+  "hourly_rate": 241.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist II",
+  "level": "",
+  "hourly_rate": 229.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist I",
+  "level": "",
+  "hourly_rate": 216.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support IV",
+  "level": "",
+  "hourly_rate": 183.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support III",
+  "level": "",
+  "hourly_rate": 174.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support II",
+  "level": "",
+  "hourly_rate": 165.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support I",
+  "level": "",
+  "hourly_rate": 156.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive II",
+  "level": "",
+  "hourly_rate": 625.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive I",
+  "level": "",
+  "hourly_rate": 594.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Management Lead I",
+  "level": "",
+  "hourly_rate": 569.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader II",
+  "level": "",
+  "hourly_rate": 486.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader I",
+  "level": "",
+  "hourly_rate": 462.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Solution Architect",
+  "level": "",
+  "hourly_rate": 741.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader II",
+  "level": "",
+  "hourly_rate": 447.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader I",
+  "level": "",
+  "hourly_rate": 425.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner II",
+  "level": "",
+  "hourly_rate": 382.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner I",
+  "level": "",
+  "hourly_rate": 363.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner II",
+  "level": "",
+  "hourly_rate": 294.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner I",
+  "level": "",
+  "hourly_rate": 279.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst II",
+  "level": "",
+  "hourly_rate": 208.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst I",
+  "level": "",
+  "hourly_rate": 198.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive III",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive II",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader III",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader II",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader I",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect II",
+  "level": "",
+  "hourly_rate": 434.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect I",
+  "level": "",
+  "hourly_rate": 413.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead III",
+  "level": "",
+  "hourly_rate": 357.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead II",
+  "level": "",
+  "hourly_rate": 339.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead I",
+  "level": "",
+  "hourly_rate": 321.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional III",
+  "level": "",
+  "hourly_rate": 308.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional II",
+  "level": "",
+  "hourly_rate": 293.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional I",
+  "level": "",
+  "hourly_rate": 277.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect II",
+  "level": "",
+  "hourly_rate": 340.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect I",
+  "level": "",
+  "hourly_rate": 323.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional III",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional II",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional I",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional III",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional II",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional I",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor I",
+  "level": "",
+  "hourly_rate": 419.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead IV",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead III",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead II",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist IV",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist III",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist II",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist I",
+  "level": "",
+  "hourly_rate": 222.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support IV",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support III",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support II",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support I",
+  "level": "",
+  "hourly_rate": 160.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive II",
+  "level": "",
+  "hourly_rate": 625.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive I",
+  "level": "",
+  "hourly_rate": 594.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Management Lead I",
+  "level": "",
+  "hourly_rate": 569.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader II",
+  "level": "",
+  "hourly_rate": 486.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader I",
+  "level": "",
+  "hourly_rate": 462.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Solution Architect",
+  "level": "",
+  "hourly_rate": 741.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader II",
+  "level": "",
+  "hourly_rate": 447.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader I",
+  "level": "",
+  "hourly_rate": 425.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner II",
+  "level": "",
+  "hourly_rate": 382.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner I",
+  "level": "",
+  "hourly_rate": 363.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner II",
+  "level": "",
+  "hourly_rate": 294.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner I",
+  "level": "",
+  "hourly_rate": 279.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst II",
+  "level": "",
+  "hourly_rate": 208.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst I",
+  "level": "",
+  "hourly_rate": 198.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive III",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive II",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader III",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader II",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader I",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect II",
+  "level": "",
+  "hourly_rate": 434.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect I",
+  "level": "",
+  "hourly_rate": 413.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead III",
+  "level": "",
+  "hourly_rate": 357.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead II",
+  "level": "",
+  "hourly_rate": 339.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead I",
+  "level": "",
+  "hourly_rate": 321.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional III",
+  "level": "",
+  "hourly_rate": 308.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional II",
+  "level": "",
+  "hourly_rate": 293.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional I",
+  "level": "",
+  "hourly_rate": 277.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect II",
+  "level": "",
+  "hourly_rate": 340.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect I",
+  "level": "",
+  "hourly_rate": 323.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional III",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional II",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional I",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional III",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional II",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional I",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor I",
+  "level": "",
+  "hourly_rate": 419.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead IV",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead III",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead II",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist IV",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist III",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist II",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist I",
+  "level": "",
+  "hourly_rate": 222.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support IV",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support III",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support II",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support I",
+  "level": "",
+  "hourly_rate": 160.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive II",
+  "level": "",
+  "hourly_rate": 625.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive I",
+  "level": "",
+  "hourly_rate": 594.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Management Lead I",
+  "level": "",
+  "hourly_rate": 569.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader II",
+  "level": "",
+  "hourly_rate": 486.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader I",
+  "level": "",
+  "hourly_rate": 462.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Solution Architect",
+  "level": "",
+  "hourly_rate": 741.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader II",
+  "level": "",
+  "hourly_rate": 447.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader I",
+  "level": "",
+  "hourly_rate": 425.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner II",
+  "level": "",
+  "hourly_rate": 382.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner I",
+  "level": "",
+  "hourly_rate": 363.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner II",
+  "level": "",
+  "hourly_rate": 294.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner I",
+  "level": "",
+  "hourly_rate": 279.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst II",
+  "level": "",
+  "hourly_rate": 208.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst I",
+  "level": "",
+  "hourly_rate": 198.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive III",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive II",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader III",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader II",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader I",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect II",
+  "level": "",
+  "hourly_rate": 434.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect I",
+  "level": "",
+  "hourly_rate": 413.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead III",
+  "level": "",
+  "hourly_rate": 357.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead II",
+  "level": "",
+  "hourly_rate": 339.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead I",
+  "level": "",
+  "hourly_rate": 321.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional III",
+  "level": "",
+  "hourly_rate": 308.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional II",
+  "level": "",
+  "hourly_rate": 293.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional I",
+  "level": "",
+  "hourly_rate": 277.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect II",
+  "level": "",
+  "hourly_rate": 340.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect I",
+  "level": "",
+  "hourly_rate": 323.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional III",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional II",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional I",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional III",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional II",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional I",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor I",
+  "level": "",
+  "hourly_rate": 419.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead IV",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead III",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead II",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist IV",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist III",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist II",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist I",
+  "level": "",
+  "hourly_rate": 222.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support IV",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support III",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support II",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support I",
+  "level": "",
+  "hourly_rate": 160.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive II",
+  "level": "",
+  "hourly_rate": 625.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Executive I",
+  "level": "",
+  "hourly_rate": 594.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Management Lead I",
+  "level": "",
+  "hourly_rate": 569.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader II",
+  "level": "",
+  "hourly_rate": 486.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Engagement Leader I",
+  "level": "",
+  "hourly_rate": 462.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Solution Architect",
+  "level": "",
+  "hourly_rate": 741.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader II",
+  "level": "",
+  "hourly_rate": 447.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Project Leader I",
+  "level": "",
+  "hourly_rate": 425.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner II",
+  "level": "",
+  "hourly_rate": 382.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Senior Practitioner I",
+  "level": "",
+  "hourly_rate": 363.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner II",
+  "level": "",
+  "hourly_rate": 294.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Practitioner I",
+  "level": "",
+  "hourly_rate": 279.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst II",
+  "level": "",
+  "hourly_rate": 208.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Analyst I",
+  "level": "",
+  "hourly_rate": 198.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive III",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Executive II",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Lead I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader III",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader II",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Engagement Leader I",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect II",
+  "level": "",
+  "hourly_rate": 434.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Solution Architect I",
+  "level": "",
+  "hourly_rate": 413.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead III",
+  "level": "",
+  "hourly_rate": 357.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead II",
+  "level": "",
+  "hourly_rate": 339.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Project Lead I",
+  "level": "",
+  "hourly_rate": 321.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional III",
+  "level": "",
+  "hourly_rate": 308.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional II",
+  "level": "",
+  "hourly_rate": 293.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Sr. Professional I",
+  "level": "",
+  "hourly_rate": 277.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect II",
+  "level": "",
+  "hourly_rate": 340.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Architect I",
+  "level": "",
+  "hourly_rate": 323.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional III",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional II",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Mid Professional I",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional III",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional II",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Advisory Jr. Professional I",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Executive I",
+  "level": "",
+  "hourly_rate": 442.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor II",
+  "level": "",
+  "hourly_rate": 465.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Advisor I",
+  "level": "",
+  "hourly_rate": 419.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead IV",
+  "level": "",
+  "hourly_rate": 385.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead III",
+  "level": "",
+  "hourly_rate": 366.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Engagement Execution Lead II",
+  "level": "",
+  "hourly_rate": 347.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist IV",
+  "level": "",
+  "hourly_rate": 262.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist III",
+  "level": "",
+  "hourly_rate": 249.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist II",
+  "level": "",
+  "hourly_rate": 236.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Specialist I",
+  "level": "",
+  "hourly_rate": 222.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support IV",
+  "level": "",
+  "hourly_rate": 189.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support III",
+  "level": "",
+  "hourly_rate": 179.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support II",
+  "level": "",
+  "hourly_rate": 170.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Execution Support I",
+  "level": "",
+  "hourly_rate": 160.94,
+  "unit": "hour"
+ }
+]

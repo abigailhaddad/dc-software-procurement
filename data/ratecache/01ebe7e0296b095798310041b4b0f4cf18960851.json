@@ -1,0 +1,194 @@
+[
+ {
+  "labor_category": "Applications Systems Analyst",
+  "level": "Entry",
+  "hourly_rate": 50.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Applications Systems Analyst",
+  "level": "Journeyman",
+  "hourly_rate": 55.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Applications Systems Analyst",
+  "level": "Senior",
+  "hourly_rate": 61.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Applications Systems Analyst",
+  "level": "Master",
+  "hourly_rate": 66.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Applications Technical Specialist",
+  "level": "Entry",
+  "hourly_rate": 79.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Applications Technical Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 98.59,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Applications Technical Specialist",
+  "level": "Senior",
+  "hourly_rate": 117.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Applications Technical Specialist",
+  "level": "Master",
+  "hourly_rate": 126.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Process Consultant",
+  "level": "Entry",
+  "hourly_rate": 63.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Process Consultant",
+  "level": "Journeyman",
+  "hourly_rate": 75.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Process Consultant",
+  "level": "Senior",
+  "hourly_rate": 84.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Process Consultant",
+  "level": "Master",
+  "hourly_rate": 114.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Systems Analyst",
+  "level": "Entry",
+  "hourly_rate": 53.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Systems Analyst",
+  "level": "Journeyman",
+  "hourly_rate": 63.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Systems Analyst",
+  "level": "Senior",
+  "hourly_rate": 114.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Systems Analyst",
+  "level": "Master",
+  "hourly_rate": 173.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Scientist",
+  "level": "Entry",
+  "hourly_rate": 55.15,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Scientist",
+  "level": "Journeyman",
+  "hourly_rate": 64.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Scientist",
+  "level": "Senior",
+  "hourly_rate": 71.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Scientist",
+  "level": "Master",
+  "hourly_rate": 77.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Forensic & Intrusion Analyst",
+  "level": "Entry",
+  "hourly_rate": 61.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Forensic & Intrusion Analyst",
+  "level": "Journeyman",
+  "hourly_rate": 71.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Forensic & Intrusion Analyst",
+  "level": "Senior",
+  "hourly_rate": 79.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Computer Forensic & Intrusion Analyst",
+  "level": "Master",
+  "hourly_rate": 84.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Configuration Management Specialist",
+  "level": "Entry",
+  "hourly_rate": 52.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Configuration Management Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 62.06,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Configuration Management Specialist",
+  "level": "Senior",
+  "hourly_rate": 68.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Configuration Management Specialist",
+  "level": "Master",
+  "hourly_rate": 73.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Support",
+  "level": "Entry",
+  "hourly_rate": 24.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Support",
+  "level": "Journeyman",
+  "hourly_rate": 26.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Support",
+  "level": "Senior",
+  "hourly_rate": 29.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Customer Support",
+  "level": "Master",
+  "hourly_rate": 45.49,
+  "unit": "hour"
+ }
+]

@@ -1,0 +1,200 @@
+[
+ {
+  "labor_category": "Cyber Security Engineer",
+  "level": "Entry",
+  "hourly_rate": 80.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cyber Security Engineer",
+  "level": "Journeyman",
+  "hourly_rate": 93.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cyber Security Engineer",
+  "level": "Senior",
+  "hourly_rate": 123.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cyber Security Engineer",
+  "level": "Master",
+  "hourly_rate": 143.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cyber Security Engineer",
+  "level": "Entry",
+  "hourly_rate": 57.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Administrator",
+  "level": "Journeyman",
+  "hourly_rate": 66.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Administrator",
+  "level": "Senior",
+  "hourly_rate": 74.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Administrator",
+  "level": "Master",
+  "hourly_rate": 105.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Administrator",
+  "level": "Entry",
+  "hourly_rate": 60.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Architect",
+  "level": "Journeyman",
+  "hourly_rate": 70.63,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Architect",
+  "level": "Senior",
+  "hourly_rate": 78.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Architect",
+  "level": "Master",
+  "hourly_rate": 109.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Architect",
+  "level": "Entry",
+  "hourly_rate": 60.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Warehousing Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 69.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Warehousing Specialist",
+  "level": "Senior",
+  "hourly_rate": 77.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Warehousing Specialist",
+  "level": "Master",
+  "hourly_rate": 109.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Warehousing Specialist",
+  "level": "Entry",
+  "hourly_rate": 53.91,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 63.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Specialist",
+  "level": "Senior",
+  "hourly_rate": 69.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Specialist",
+  "level": "Master",
+  "hourly_rate": 75.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Specialist",
+  "level": "Entry",
+  "hourly_rate": 61.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Disaster Recovery Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 71.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Disaster Recovery Specialist",
+  "level": "Senior",
+  "hourly_rate": 79.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Disaster Recovery Specialist",
+  "level": "Master",
+  "hourly_rate": 84.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Disaster Recovery Specialist",
+  "level": "Entry",
+  "hourly_rate": 75.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Architect",
+  "level": "Journeyman",
+  "hourly_rate": 88.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Architect",
+  "level": "Senior",
+  "hourly_rate": 98.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Architect",
+  "level": "Master",
+  "hourly_rate": 138.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Architect",
+  "level": "Entry",
+  "hourly_rate": 54.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Resource Planning (ERP) Analyst",
+  "level": "Journeyman",
+  "hourly_rate": 61.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Resource Planning (ERP) Analyst",
+  "level": "Senior",
+  "hourly_rate": 67.44,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Resource Planning (ERP) Analyst",
+  "level": "Master",
+  "hourly_rate": 72.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Enterprise Resource Planning (ERP) Analyst",
+  "level": "Entry",
+  "hourly_rate": 75.83,
+  "unit": "hour"
+ }
+]

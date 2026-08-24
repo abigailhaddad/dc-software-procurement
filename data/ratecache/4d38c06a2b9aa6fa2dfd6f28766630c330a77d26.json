@@ -1,0 +1,194 @@
+[
+ {
+  "labor_category": "Research Analyst",
+  "level": "Master",
+  "hourly_rate": 71.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "Entry",
+  "hourly_rate": 58.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Research Analyst",
+  "level": "Journeyman",
+  "hourly_rate": 67.63,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert - Technology Specific",
+  "level": "Master",
+  "hourly_rate": 75.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert - Technology Specific",
+  "level": "Entry",
+  "hourly_rate": 80.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert - Technology Specific",
+  "level": "Journeyman",
+  "hourly_rate": 88.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert - Technology Specific",
+  "level": "Senior",
+  "hourly_rate": 75.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "System Administrator",
+  "level": "Master",
+  "hourly_rate": 98.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "System Administrator",
+  "level": "Entry",
+  "hourly_rate": 114.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "System Administrator",
+  "level": "Journeyman",
+  "hourly_rate": 57.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "System Administrator",
+  "level": "Senior",
+  "hourly_rate": 49.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Systems Engineer",
+  "level": "Master",
+  "hourly_rate": 64.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Systems Engineer",
+  "level": "Entry",
+  "hourly_rate": 70.37,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Systems Engineer",
+  "level": "Journeyman",
+  "hourly_rate": 63.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Systems Engineer",
+  "level": "Senior",
+  "hourly_rate": 54.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Editor",
+  "level": "Master",
+  "hourly_rate": 70.53,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Editor",
+  "level": "Entry",
+  "hourly_rate": 75.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Editor",
+  "level": "Journeyman",
+  "hourly_rate": 50.68,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Editor",
+  "level": "Senior",
+  "hourly_rate": 43.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "Master",
+  "hourly_rate": 56.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "Entry",
+  "hourly_rate": 61.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "Journeyman",
+  "hourly_rate": 57.35,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "Senior",
+  "hourly_rate": 48.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Test Engineer",
+  "level": "Master",
+  "hourly_rate": 63.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Test Engineer",
+  "level": "Entry",
+  "hourly_rate": 68.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Test Engineer",
+  "level": "Journeyman",
+  "hourly_rate": 60.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Test Engineer",
+  "level": "Senior",
+  "hourly_rate": 52.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist",
+  "level": "Master",
+  "hourly_rate": 67.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist",
+  "level": "Entry",
+  "hourly_rate": 72.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist",
+  "level": "Journeyman",
+  "hourly_rate": 44.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist",
+  "level": "Senior",
+  "hourly_rate": 38.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training Specialist",
+  "level": "Senior",
+  "hourly_rate": 49.82,
+  "unit": "hour"
+ }
+]

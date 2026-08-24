@@ -1,0 +1,104 @@
+[
+ {
+  "labor_category": "Administrative Assistant I",
+  "level": "",
+  "hourly_rate": 55.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative Assistant II",
+  "level": "",
+  "hourly_rate": 70.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technician I",
+  "level": "",
+  "hourly_rate": 65.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technician II",
+  "level": "",
+  "hourly_rate": 85.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technician III",
+  "level": "",
+  "hourly_rate": 115.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Scientist/Engineer I",
+  "level": "",
+  "hourly_rate": 78.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Scientist/Engineer II",
+  "level": "",
+  "hourly_rate": 90.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Scientist/Engineer III",
+  "level": "",
+  "hourly_rate": 100.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Scientist/Engineer IV",
+  "level": "",
+  "hourly_rate": 115.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 130.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Project Manager I",
+  "level": "",
+  "hourly_rate": 145.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Project Manager II",
+  "level": "",
+  "hourly_rate": 160.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal I",
+  "level": "",
+  "hourly_rate": 180.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal II",
+  "level": "",
+  "hourly_rate": 210.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert I",
+  "level": "",
+  "hourly_rate": 240.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert II",
+  "level": "",
+  "hourly_rate": 270.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert III",
+  "level": "",
+  "hourly_rate": 295.0,
+  "unit": "hour"
+ }
+]

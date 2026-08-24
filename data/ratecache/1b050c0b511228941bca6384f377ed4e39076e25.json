@@ -1,0 +1,770 @@
+[
+ {
+  "labor_category": "Executive Officer",
+  "level": "",
+  "hourly_rate": 207.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 166.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 160.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task/Team Manager",
+  "level": "",
+  "hourly_rate": 115.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Executive Officer",
+  "level": "",
+  "hourly_rate": 211.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 169.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 163.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task/Team Manager",
+  "level": "",
+  "hourly_rate": 117.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Executive Officer",
+  "level": "",
+  "hourly_rate": 216.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 172.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 166.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task/Team Manager",
+  "level": "",
+  "hourly_rate": 120.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Executive Officer",
+  "level": "",
+  "hourly_rate": 216.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "",
+  "hourly_rate": 172.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 166.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Task/Team Manager",
+  "level": "",
+  "hourly_rate": 120.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Control Specialist",
+  "level": "",
+  "hourly_rate": 93.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Control Specialist",
+  "level": "",
+  "hourly_rate": 95.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Control Specialist",
+  "level": "",
+  "hourly_rate": 97.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Control Specialist",
+  "level": "",
+  "hourly_rate": 97.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Control Specialist",
+  "level": "",
+  "hourly_rate": 97.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Technical Writer",
+  "level": "",
+  "hourly_rate": 99.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Technical Writer",
+  "level": "",
+  "hourly_rate": 101.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Technical Writer",
+  "level": "",
+  "hourly_rate": 103.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Technical Writer",
+  "level": "",
+  "hourly_rate": 103.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Technical Writer",
+  "level": "",
+  "hourly_rate": 103.67,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Technical Writer",
+  "level": "",
+  "hourly_rate": 74.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Technical Writer",
+  "level": "",
+  "hourly_rate": 76.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Technical Writer",
+  "level": "",
+  "hourly_rate": 77.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Technical Writer",
+  "level": "",
+  "hourly_rate": 77.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Technical Writer",
+  "level": "",
+  "hourly_rate": 56.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal BPR Specialist",
+  "level": "",
+  "hourly_rate": 207.62,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 161.24,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Technical Writer",
+  "level": "",
+  "hourly_rate": 58.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal BPR Specialist",
+  "level": "",
+  "hourly_rate": 211.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 164.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Technical Writer",
+  "level": "",
+  "hourly_rate": 59.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal BPR Specialist",
+  "level": "",
+  "hourly_rate": 216.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 167.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Technical Writer",
+  "level": "",
+  "hourly_rate": 59.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Technical Writer",
+  "level": "",
+  "hourly_rate": 59.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal BPR Specialist",
+  "level": "",
+  "hourly_rate": 216.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal BPR Specialist",
+  "level": "",
+  "hourly_rate": 216.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 167.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 167.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman BPR Specialist",
+  "level": "",
+  "hourly_rate": 149.48,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman BPR Specialist",
+  "level": "",
+  "hourly_rate": 152.47,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman BPR Specialist",
+  "level": "",
+  "hourly_rate": 155.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman BPR Specialist",
+  "level": "",
+  "hourly_rate": 155.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman BPR Specialist",
+  "level": "",
+  "hourly_rate": 155.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 107.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 110.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 112.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 112.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. BPR Specialist",
+  "level": "",
+  "hourly_rate": 112.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 236.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 241.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 245.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 245.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 245.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 182.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 186.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 190.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 190.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 190.07,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Business Process Analyst",
+  "level": "",
+  "hourly_rate": 132.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Business Process Analyst",
+  "level": "",
+  "hourly_rate": 135.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Business Process Analyst",
+  "level": "",
+  "hourly_rate": 138.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Business Process Analyst",
+  "level": "",
+  "hourly_rate": 138.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Business Process Analyst",
+  "level": "",
+  "hourly_rate": 138.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 107.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 110.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 112.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 112.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 112.31,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 74.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 76.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 77.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Business Process Analyst",
+  "level": "",
+  "hourly_rate": 77.75,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Consultant",
+  "level": "",
+  "hourly_rate": 177.34,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Consultant",
+  "level": "",
+  "hourly_rate": 180.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Consultant",
+  "level": "",
+  "hourly_rate": 184.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Consultant",
+  "level": "",
+  "hourly_rate": 184.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Consultant",
+  "level": "",
+  "hourly_rate": 184.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Consultant",
+  "level": "",
+  "hourly_rate": 154.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Consultant",
+  "level": "",
+  "hourly_rate": 157.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Consultant",
+  "level": "",
+  "hourly_rate": 160.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Consultant",
+  "level": "",
+  "hourly_rate": 160.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Consultant",
+  "level": "",
+  "hourly_rate": 160.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Consultant",
+  "level": "",
+  "hourly_rate": 133.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Consultant",
+  "level": "",
+  "hourly_rate": 135.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Consultant",
+  "level": "",
+  "hourly_rate": 138.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Consultant",
+  "level": "",
+  "hourly_rate": 138.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Consultant",
+  "level": "",
+  "hourly_rate": 138.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Consultant",
+  "level": "",
+  "hourly_rate": 117.82,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Consultant",
+  "level": "",
+  "hourly_rate": 120.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Consultant",
+  "level": "",
+  "hourly_rate": 122.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Consultant",
+  "level": "",
+  "hourly_rate": 122.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Consultant",
+  "level": "",
+  "hourly_rate": 122.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Training Specialist",
+  "level": "",
+  "hourly_rate": 134.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Training Specialist",
+  "level": "",
+  "hourly_rate": 137.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Training Specialist",
+  "level": "",
+  "hourly_rate": 139.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Training Specialist",
+  "level": "",
+  "hourly_rate": 139.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Training Specialist",
+  "level": "",
+  "hourly_rate": 139.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Training Specialist",
+  "level": "",
+  "hourly_rate": 99.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Training Specialist",
+  "level": "",
+  "hourly_rate": 101.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Training Specialist",
+  "level": "",
+  "hourly_rate": 104.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Training Specialist",
+  "level": "",
+  "hourly_rate": 104.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Training Specialist",
+  "level": "",
+  "hourly_rate": 104.01,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Training Specialist",
+  "level": "",
+  "hourly_rate": 82.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Training Specialist",
+  "level": "",
+  "hourly_rate": 83.78,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Training Specialist",
+  "level": "",
+  "hourly_rate": 85.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Training Specialist",
+  "level": "",
+  "hourly_rate": 85.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Training Specialist",
+  "level": "",
+  "hourly_rate": 85.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Training Specialist",
+  "level": "",
+  "hourly_rate": 61.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Training Specialist",
+  "level": "",
+  "hourly_rate": 62.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Training Specialist",
+  "level": "",
+  "hourly_rate": 63.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Training Specialist",
+  "level": "",
+  "hourly_rate": 63.77,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Facilitator",
+  "level": "",
+  "hourly_rate": 190.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Facilitator",
+  "level": "",
+  "hourly_rate": 194.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Facilitator",
+  "level": "",
+  "hourly_rate": 198.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Facilitator",
+  "level": "",
+  "hourly_rate": 198.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Facilitator",
+  "level": "",
+  "hourly_rate": 198.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Facilitator Bachelors",
+  "level": "",
+  "hourly_rate": 132.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Facilitator Bachelors",
+  "level": "",
+  "hourly_rate": 135.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Facilitator Bachelors",
+  "level": "",
+  "hourly_rate": 138.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Facilitator Bachelors",
+  "level": "",
+  "hourly_rate": 138.21,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Journeyman Facilitator Bachelors",
+  "level": "",
+  "hourly_rate": 138.21,
+  "unit": "hour"
+ }
+]

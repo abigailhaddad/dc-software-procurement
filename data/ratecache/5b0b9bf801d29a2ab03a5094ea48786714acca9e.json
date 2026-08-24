@@ -1,0 +1,38 @@
+[
+ {
+  "labor_category": "Transparity TMS Annual Maintenance Support 2001 Labor- Includes 6 support sessions per year (4 hours per session)",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Transparity TMS Annual Maintenance Support 3001 Labor- Includes 6 support sessions per year (4 hours per session)",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Transparity TMS Annual Maintenance Support 4001 Labor- Includes 6 support sessions per year (4 hours per session)",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "On-Call Support 2002 On-Call Support",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "On-Call Support 3002 On-Call Support",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "On-Call Support 4002 On-Call Support",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ }
+]

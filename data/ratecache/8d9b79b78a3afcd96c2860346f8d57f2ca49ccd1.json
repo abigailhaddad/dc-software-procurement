@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Senior manager",
+  "level": "",
+  "hourly_rate": 324.97,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Manager",
+  "level": "",
+  "hourly_rate": 297.08,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Advisor",
+  "level": "",
+  "hourly_rate": 225.33,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Advisor",
+  "level": "",
+  "hourly_rate": 155.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Executive Director",
+  "level": "",
+  "hourly_rate": 352.85,
+  "unit": "hour"
+ }
+]

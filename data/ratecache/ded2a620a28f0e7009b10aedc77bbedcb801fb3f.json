@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Systems Engineer",
+  "level": "",
+  "hourly_rate": 175.92,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Lead",
+  "level": "",
+  "hourly_rate": 138.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 180.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Systems Engineer",
+  "level": "",
+  "hourly_rate": 181.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Lead",
+  "level": "",
+  "hourly_rate": 142.73,
+  "unit": "hour"
+ }
+]

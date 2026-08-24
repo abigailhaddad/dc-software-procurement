@@ -1,0 +1,662 @@
+[
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 350.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 295.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 245.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 320.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 275.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Director / Sr. Technical Architect",
+  "level": "",
+  "hourly_rate": 290.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr Architect/Planner",
+  "level": "",
+  "hourly_rate": 250.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Architect/Planner",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Architect/Planner",
+  "level": "",
+  "hourly_rate": 150.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Interior Designer",
+  "level": "",
+  "hourly_rate": 180.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Interior Designer",
+  "level": "",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Interior Designer",
+  "level": "",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Director, Community Outreach",
+  "level": "",
+  "hourly_rate": 275.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Strategist",
+  "level": "",
+  "hourly_rate": 225.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategist",
+  "level": "",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Leader",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Support",
+  "level": "",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 175.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 225.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative",
+  "level": "",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 365.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 305.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 252.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 330.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 285.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Director / Sr. Technical Architect",
+  "level": "",
+  "hourly_rate": 300.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr Architect/Planner",
+  "level": "",
+  "hourly_rate": 257.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Architect/Planner",
+  "level": "",
+  "hourly_rate": 205.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Architect/Planner",
+  "level": "",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Interior Designer",
+  "level": "",
+  "hourly_rate": 185.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Interior Designer",
+  "level": "",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Interior Designer",
+  "level": "",
+  "hourly_rate": 130.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Director, Community Outreach",
+  "level": "",
+  "hourly_rate": 285.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Strategist",
+  "level": "",
+  "hourly_rate": 232.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategist",
+  "level": "",
+  "hourly_rate": 160.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Leader",
+  "level": "",
+  "hourly_rate": 205.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Support",
+  "level": "",
+  "hourly_rate": 160.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 180.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 130.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 232.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative",
+  "level": "",
+  "hourly_rate": 130.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 380.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 315.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 160.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 340.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 295.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Director / Sr. Technical Architect",
+  "level": "",
+  "hourly_rate": 310.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr Architect/Planner",
+  "level": "",
+  "hourly_rate": 265.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Architect/Planner",
+  "level": "",
+  "hourly_rate": 212.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Architect/Planner",
+  "level": "",
+  "hourly_rate": 160.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Interior Designer",
+  "level": "",
+  "hourly_rate": 190.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Interior Designer",
+  "level": "",
+  "hourly_rate": 145.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Interior Designer",
+  "level": "",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Director, Community Outreach",
+  "level": "",
+  "hourly_rate": 295.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Strategist",
+  "level": "",
+  "hourly_rate": 240.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategist",
+  "level": "",
+  "hourly_rate": 165.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Leader",
+  "level": "",
+  "hourly_rate": 212.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Support",
+  "level": "",
+  "hourly_rate": 165.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 185.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 240.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 145.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative",
+  "level": "",
+  "hourly_rate": 135.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 395.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 325.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 165.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 350.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 305.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Director / Sr. Technical Architect",
+  "level": "",
+  "hourly_rate": 320.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr Architect/Planner",
+  "level": "",
+  "hourly_rate": 275.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Architect/Planner",
+  "level": "",
+  "hourly_rate": 220.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Architect/Planner",
+  "level": "",
+  "hourly_rate": 165.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Interior Designer",
+  "level": "",
+  "hourly_rate": 195.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Interior Designer",
+  "level": "",
+  "hourly_rate": 150.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Interior Designer",
+  "level": "",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Director, Community Outreach",
+  "level": "",
+  "hourly_rate": 305.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Strategist",
+  "level": "",
+  "hourly_rate": 247.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategist",
+  "level": "",
+  "hourly_rate": 170.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Leader",
+  "level": "",
+  "hourly_rate": 220.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Support",
+  "level": "",
+  "hourly_rate": 170.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 190.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 250.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 150.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative",
+  "level": "",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 410.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 335.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager / Design Manager",
+  "level": "",
+  "hourly_rate": 170.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 360.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Design Director, Architecture/Planning",
+  "level": "",
+  "hourly_rate": 315.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Director / Sr. Technical Architect",
+  "level": "",
+  "hourly_rate": 330.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr Architect/Planner",
+  "level": "",
+  "hourly_rate": 285.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Architect/Planner",
+  "level": "",
+  "hourly_rate": 225.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Architect/Planner",
+  "level": "",
+  "hourly_rate": 170.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Interior Designer",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Interior Designer",
+  "level": "",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. Interior Designer",
+  "level": "",
+  "hourly_rate": 145.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategy Director, Community Outreach",
+  "level": "",
+  "hourly_rate": 315.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Strategist",
+  "level": "",
+  "hourly_rate": 255.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Strategist",
+  "level": "",
+  "hourly_rate": 175.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Leader",
+  "level": "",
+  "hourly_rate": 225.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "FF&E Support",
+  "level": "",
+  "hourly_rate": 175.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 195.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Jr. LEED/Sustainability Coordinator",
+  "level": "",
+  "hourly_rate": 145.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 260.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Environmental Graphics/Brand Strategist",
+  "level": "",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Administrative",
+  "level": "",
+  "hourly_rate": 145.0,
+  "unit": "hour"
+ }
+]

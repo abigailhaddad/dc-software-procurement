@@ -1,0 +1,44 @@
+[
+ {
+  "labor_category": "Project Manager, Level 2",
+  "level": "Level 2",
+  "hourly_rate": 185.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Architect, Level 3",
+  "level": "Level 3",
+  "hourly_rate": 220.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business Analyst, Level 3",
+  "level": "Level 3",
+  "hourly_rate": 220.39,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Developer",
+  "level": "Level 2",
+  "hourly_rate": 180.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Database Administrator",
+  "level": "",
+  "hourly_rate": 185.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Azure Administrator",
+  "level": "",
+  "hourly_rate": 185.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Azure DevOps",
+  "level": "",
+  "hourly_rate": 185.4,
+  "unit": "hour"
+ }
+]

@@ -1,0 +1,752 @@
+[
+ {
+  "labor_category": "Business/Investment Analyst - 1",
+  "level": "",
+  "hourly_rate": 70.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 2",
+  "level": "",
+  "hourly_rate": 78.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 3",
+  "level": "",
+  "hourly_rate": 105.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 4",
+  "level": "",
+  "hourly_rate": 134.61,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 5",
+  "level": "",
+  "hourly_rate": 141.4,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 1",
+  "level": "",
+  "hourly_rate": 53.36,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 2",
+  "level": "",
+  "hourly_rate": 63.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 3",
+  "level": "",
+  "hourly_rate": 76.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 4",
+  "level": "",
+  "hourly_rate": 90.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 5",
+  "level": "",
+  "hourly_rate": 114.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 1",
+  "level": "",
+  "hourly_rate": 66.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 2",
+  "level": "",
+  "hourly_rate": 73.56,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 3",
+  "level": "",
+  "hourly_rate": 99.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 4",
+  "level": "",
+  "hourly_rate": 114.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 5",
+  "level": "",
+  "hourly_rate": 138.45,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 1",
+  "level": "",
+  "hourly_rate": 114.42,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 2",
+  "level": "",
+  "hourly_rate": 71.46,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 3",
+  "level": "",
+  "hourly_rate": 80.41,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 4",
+  "level": "",
+  "hourly_rate": 107.98,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 5",
+  "level": "",
+  "hourly_rate": 137.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 1",
+  "level": "",
+  "hourly_rate": 144.23,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 2",
+  "level": "",
+  "hourly_rate": 54.43,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 3",
+  "level": "",
+  "hourly_rate": 64.87,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 4",
+  "level": "",
+  "hourly_rate": 78.27,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 5",
+  "level": "",
+  "hourly_rate": 91.89,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 1",
+  "level": "",
+  "hourly_rate": 116.84,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 2",
+  "level": "",
+  "hourly_rate": 68.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 3",
+  "level": "",
+  "hourly_rate": 75.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 4",
+  "level": "",
+  "hourly_rate": 101.86,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 5",
+  "level": "",
+  "hourly_rate": 116.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 1",
+  "level": "",
+  "hourly_rate": 141.22,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 2",
+  "level": "",
+  "hourly_rate": 116.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 3",
+  "level": "",
+  "hourly_rate": 72.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 4",
+  "level": "",
+  "hourly_rate": 82.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 5",
+  "level": "",
+  "hourly_rate": 110.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 1",
+  "level": "",
+  "hourly_rate": 140.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 2",
+  "level": "",
+  "hourly_rate": 147.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 3",
+  "level": "",
+  "hourly_rate": 55.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 4",
+  "level": "",
+  "hourly_rate": 66.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 5",
+  "level": "",
+  "hourly_rate": 79.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 1",
+  "level": "",
+  "hourly_rate": 93.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 2",
+  "level": "",
+  "hourly_rate": 119.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 3",
+  "level": "",
+  "hourly_rate": 69.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 4",
+  "level": "",
+  "hourly_rate": 76.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 5",
+  "level": "",
+  "hourly_rate": 103.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 1",
+  "level": "",
+  "hourly_rate": 118.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 2",
+  "level": "",
+  "hourly_rate": 144.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 3",
+  "level": "",
+  "hourly_rate": 119.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 4",
+  "level": "",
+  "hourly_rate": 72.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 5",
+  "level": "",
+  "hourly_rate": 82.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 1",
+  "level": "",
+  "hourly_rate": 110.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 2",
+  "level": "",
+  "hourly_rate": 140.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 3",
+  "level": "",
+  "hourly_rate": 147.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 4",
+  "level": "",
+  "hourly_rate": 55.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 5",
+  "level": "",
+  "hourly_rate": 66.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 1",
+  "level": "",
+  "hourly_rate": 79.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 2",
+  "level": "",
+  "hourly_rate": 93.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 3",
+  "level": "",
+  "hourly_rate": 119.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 4",
+  "level": "",
+  "hourly_rate": 69.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 5",
+  "level": "",
+  "hourly_rate": 76.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 1",
+  "level": "",
+  "hourly_rate": 103.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 2",
+  "level": "",
+  "hourly_rate": 118.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 3",
+  "level": "",
+  "hourly_rate": 144.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 4",
+  "level": "",
+  "hourly_rate": 119.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 5",
+  "level": "",
+  "hourly_rate": 72.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 1",
+  "level": "",
+  "hourly_rate": 82.02,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 2",
+  "level": "",
+  "hourly_rate": 110.14,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 3",
+  "level": "",
+  "hourly_rate": 140.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 4",
+  "level": "",
+  "hourly_rate": 147.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 5",
+  "level": "",
+  "hourly_rate": 55.52,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 1",
+  "level": "",
+  "hourly_rate": 66.16,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 2",
+  "level": "",
+  "hourly_rate": 79.83,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 3",
+  "level": "",
+  "hourly_rate": 93.73,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 4",
+  "level": "",
+  "hourly_rate": 119.18,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 5",
+  "level": "",
+  "hourly_rate": 69.51,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 1",
+  "level": "",
+  "hourly_rate": 76.54,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 2",
+  "level": "",
+  "hourly_rate": 103.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 3",
+  "level": "",
+  "hourly_rate": 118.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 4",
+  "level": "",
+  "hourly_rate": 144.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 5",
+  "level": "",
+  "hourly_rate": 119.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 1",
+  "level": "",
+  "hourly_rate": 130.88,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 2",
+  "level": "",
+  "hourly_rate": 133.5,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 3",
+  "level": "",
+  "hourly_rate": 136.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 4",
+  "level": "",
+  "hourly_rate": 136.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 5",
+  "level": "",
+  "hourly_rate": 136.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 1",
+  "level": "",
+  "hourly_rate": 160.6,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 2",
+  "level": "",
+  "hourly_rate": 163.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 3",
+  "level": "",
+  "hourly_rate": 167.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 4",
+  "level": "",
+  "hourly_rate": 167.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 5",
+  "level": "",
+  "hourly_rate": 167.09,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 1",
+  "level": "",
+  "hourly_rate": 200.29,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 2",
+  "level": "",
+  "hourly_rate": 204.3,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 3",
+  "level": "",
+  "hourly_rate": 208.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 4",
+  "level": "",
+  "hourly_rate": 208.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 5",
+  "level": "",
+  "hourly_rate": 208.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 1",
+  "level": "",
+  "hourly_rate": 252.9,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 2",
+  "level": "",
+  "hourly_rate": 257.96,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 3",
+  "level": "",
+  "hourly_rate": 263.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 4",
+  "level": "",
+  "hourly_rate": 263.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 5",
+  "level": "",
+  "hourly_rate": 263.12,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 1",
+  "level": "",
+  "hourly_rate": 119.85,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 2",
+  "level": "",
+  "hourly_rate": 127.04,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 3",
+  "level": "",
+  "hourly_rate": 135.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 4",
+  "level": "",
+  "hourly_rate": 144.1,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Business/Investment Analyst - 5",
+  "level": "",
+  "hourly_rate": 152.64,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 1",
+  "level": "",
+  "hourly_rate": 122.25,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 2",
+  "level": "",
+  "hourly_rate": 129.58,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 3",
+  "level": "",
+  "hourly_rate": 138.28,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 4",
+  "level": "",
+  "hourly_rate": 146.99,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Cost Analyst/Cost Estimator - 5",
+  "level": "",
+  "hourly_rate": 155.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 1",
+  "level": "",
+  "hourly_rate": 124.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 2",
+  "level": "",
+  "hourly_rate": 132.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 3",
+  "level": "",
+  "hourly_rate": 141.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 4",
+  "level": "",
+  "hourly_rate": 149.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Financial/Budget Analyst - 5",
+  "level": "",
+  "hourly_rate": 158.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 1",
+  "level": "",
+  "hourly_rate": 124.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 2",
+  "level": "",
+  "hourly_rate": 132.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 3",
+  "level": "",
+  "hourly_rate": 141.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 4",
+  "level": "",
+  "hourly_rate": 149.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert/Consultant 5",
+  "level": "",
+  "hourly_rate": 158.81,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 1",
+  "level": "",
+  "hourly_rate": 124.69,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 2",
+  "level": "",
+  "hourly_rate": 132.17,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 3",
+  "level": "",
+  "hourly_rate": 141.05,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 4",
+  "level": "",
+  "hourly_rate": 149.93,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Task Lead - 5",
+  "level": "",
+  "hourly_rate": 158.81,
+  "unit": "hour"
+ }
+]

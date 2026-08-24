@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Associate",
+  "level": "",
+  "hourly_rate": 177.76,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Creative",
+  "level": "",
+  "hourly_rate": 184.95,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Labor",
+  "level": "",
+  "hourly_rate": 188.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Director, Art",
+  "level": "",
+  "hourly_rate": 188.65,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "30 Category Director",
+  "level": "",
+  "hourly_rate": 188.65,
+  "unit": "hour"
+ }
+]

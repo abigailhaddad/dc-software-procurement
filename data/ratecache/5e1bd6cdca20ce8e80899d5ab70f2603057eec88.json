@@ -1,0 +1,116 @@
+[
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 252.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Water Quality Modeler",
+  "level": "",
+  "hourly_rate": 237.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Water Quality Modeler",
+  "level": "",
+  "hourly_rate": 201.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Environmental Scientist",
+  "level": "",
+  "hourly_rate": 221.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Environmental Scientist",
+  "level": "",
+  "hourly_rate": 201.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Environmental Scientist",
+  "level": "",
+  "hourly_rate": 180.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Environmental Engineer",
+  "level": "",
+  "hourly_rate": 201.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Environmental Engineer",
+  "level": "",
+  "hourly_rate": 165.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Environmental Engineer",
+  "level": "",
+  "hourly_rate": 155.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Biologist",
+  "level": "",
+  "hourly_rate": 149.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Biologist",
+  "level": "",
+  "hourly_rate": 129.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "GIS Analyst",
+  "level": "",
+  "hourly_rate": 180.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Staff Assistant",
+  "level": "",
+  "hourly_rate": 93.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 260.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Water Quality Modeler",
+  "level": "",
+  "hourly_rate": 244.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Water Quality Modeler",
+  "level": "",
+  "hourly_rate": 207.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Environmental Scientist",
+  "level": "",
+  "hourly_rate": 228.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-level Environmental Scientist",
+  "level": "",
+  "hourly_rate": 207.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Environmental Scientist",
+  "level": "",
+  "hourly_rate": 185.0,
+  "unit": "hour"
+ }
+]

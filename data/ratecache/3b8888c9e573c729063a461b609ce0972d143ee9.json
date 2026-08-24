@@ -1,0 +1,86 @@
+[
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 410.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Vice Principal",
+  "level": "",
+  "hourly_rate": 381.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Vice President",
+  "level": "",
+  "hourly_rate": 355.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Associate",
+  "level": "",
+  "hourly_rate": 334.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Associate",
+  "level": "",
+  "hourly_rate": 284.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Associate",
+  "level": "",
+  "hourly_rate": 258.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Construction Exec. / Sr. Project Mgr.",
+  "level": "",
+  "hourly_rate": 232.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal",
+  "level": "",
+  "hourly_rate": 422.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Vice Principal",
+  "level": "",
+  "hourly_rate": 392.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Vice President",
+  "level": "",
+  "hourly_rate": 366.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Associate",
+  "level": "",
+  "hourly_rate": 344.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Associate",
+  "level": "",
+  "hourly_rate": 292.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Associate",
+  "level": "",
+  "hourly_rate": 266.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Construction Exec. / Sr. Project Mgr.",
+  "level": "",
+  "hourly_rate": 239.0,
+  "unit": "hour"
+ }
+]
