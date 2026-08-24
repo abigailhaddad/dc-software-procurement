@@ -13,3 +13,4 @@ __pycache__/
 .venv/
 .ipynb_checkpoints/
 data/h1b/dol/raw/
+.playwright-mcp/
