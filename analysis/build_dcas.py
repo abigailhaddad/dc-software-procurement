@@ -1,11 +1,23 @@
-"""Final DCAS roster + payments build. Run from repo root: uv run python <file>."""
-import sys
-sys.path.insert(0, 'src')
-import pandas as pd
-from dcprocure import parse
+"""Build the DCAS roster and its payments-by-year table into data/dcas/.
 
-OUT = '/private/tmp/claude-501/-Users-abigailhaddad-Documents-repos-dcbudget/4b8cf7a9-c252-4a5c-bae3-b111db8bea9c/scratchpad/dcas/'
-cls = pd.read_csv('data/contract_classifications.csv')
+    uv run python analysis/build_dcas.py
+
+Which contracts count as DCAS is a judgement, so every row carries the rule that
+put it there in `inclusion_rule`. verify_claims.py checks the totals this writes.
+"""
+import sys
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from dcprocure import parse  # noqa: E402
+
+OUT = ROOT / "data" / "dcas"
+OUT.mkdir(parents=True, exist_ok=True)
+cls = pd.read_csv(ROOT / "data" / "contract_classifications.csv")
 con = parse.load_contracts()
 pay = parse.load_payments()
 
@@ -72,7 +84,7 @@ cols = ['contract_number','vendor','title','agency','work_type','contract_type',
         'payments_total','n_payments','start_date','end_date','award_date','n_option_periods',
         'system_name','inclusion_rule','first_payment','last_payment']
 roster = roster[cols].sort_values(['ceiling'], ascending=False)
-roster.to_csv(OUT+'dcas_roster.csv', index=False)
+roster.to_csv(OUT / 'dcas_roster.csv', index=False)
 
 # ---------- payments by year ----------
 p2 = p.copy()
@@ -101,7 +113,7 @@ p_all = p_all.sort_values('payment_date').drop_duplicates('payment_id', keep='fi
 p_all['vendor_norm'] = p_all.vendor.map(parse.normalize_vendor)
 byfy = (p_all.groupby(['fiscal_year','vendor_norm', p_all.contract_number.fillna('(none on voucher)'), 'attribution'])['amount']
         .sum().reset_index().rename(columns={'level_2':'contract_number'}).sort_values(['fiscal_year','amount'], ascending=[True,False]))
-byfy.to_csv(OUT+'dcas_payments_by_year.csv', index=False)
+byfy.to_csv(OUT / 'dcas_payments_by_year.csv', index=False)
 
 pd.set_option('display.width',300); pd.set_option('display.max_colwidth',60)
 print('=== HEADLINES ===')

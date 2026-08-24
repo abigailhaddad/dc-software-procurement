@@ -3,12 +3,13 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
-REPO = Path('/Users/abigailhaddad/Documents/repos/dcbudget')
-OUT = Path('/private/tmp/claude-501/-Users-abigailhaddad-Documents-repos-dcbudget/4b8cf7a9-c252-4a5c-bae3-b111db8bea9c/scratchpad/solicitations')
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'data' / 'solicitations'
+OUT.mkdir(parents=True, exist_ok=True)
 
-sols = json.load(open(REPO/'data/raw/solicitations.json'))
-det = json.load(open(REPO/'data/raw/contract_details.json'))
-cls = list(csv.DictReader(open(REPO/'data/contract_classifications.csv')))
+sols = json.load(open(ROOT/'data/raw/solicitations.json'))
+det = json.load(open(ROOT/'data/raw/contract_details.json'))
+cls = list(csv.DictReader(open(ROOT/'data/contract_classifications.csv')))
 
 # ---------- normalization ----------
 def norm_market(m):
@@ -65,7 +66,9 @@ for r in sols:
         ag[a][0]+=1; ag[a][1]+=r['_tech']; ag[a][2]+=r['_dcss']
 with open(OUT/'solicitations_by_agency.csv','w',newline='') as f:
     w=csv.writer(f); w.writerow(['agency','solicitations','tech_flagged','dcss_flagged'])
-    for a,(n,t,d) in sorted(ag.items(), key=lambda x:-x[1][0]):
+    # agency name breaks ties: `ag` is keyed off a set, whose order varies
+    # per process, so count alone leaves the row order nondeterministic.
+    for a,(n,t,d) in sorted(ag.items(), key=lambda x:(-x[1][0], x[0])):
         w.writerow([a,n,t,d])
 print("agencies:", len(ag), "; rows with a null agency entry:", sum(1 for r in sols if any(x is None for x in r['agencyNames'])))
 

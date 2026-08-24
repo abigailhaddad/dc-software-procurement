@@ -34,8 +34,8 @@ Health Benefit Exchange Authority (DCHBX),86,30,8
 "Cable Television, Film, Music and Entertainment (OFTE)",85,16,21
 Administrative Hearings (OAH),81,14,14
 Office on Aging (OA),77,11,18
-Planning (OP),75,19,12
 Commission on Arts and Humanities (CAH),75,7,27
+Planning (OP),75,19,12
 Alcohol Beverage Regulation Administration (ABRA),70,18,14
 Mayor (EOM),66,22,22
 Neighborhood Safety and Engagement (ONSE),65,9,5
@@ -49,8 +49,8 @@ Zoning (OZ),40,6,7
 Small and Local Business Development (DSLBD),30,7,11
 State Board of Education (DSBEE),27,2,5
 District of Columbia State Athletics Commission (DCSAA),26,1,7
-Tenant Advocate (OTA),22,7,9
 City Administrator (OCA),22,2,5
+Tenant Advocate (OTA),22,7,9
 SB0,21,3,0
 Attorney General (OAG),20,0,4
 Disability Rights (ODR),20,1,5
@@ -62,81 +62,81 @@ District of Columbia Public Charter School Board (DPCSB),17,4,0
 Employee Appeals (OEA),16,4,3
 Secretary (EOM-OS),14,1,6
 Public Employee Relations Board (PERB),12,0,2
-Retirement Board (DCRB),11,2,2
 Deputy Mayor for Public Safety and Justice (DMPSJ),11,2,2
+Retirement Board (DCRB),11,2,2
 Human Rights (OHR),10,0,4
-General Services (DGS),9,0,0
 BI0,9,0,0
+General Services (DGS),9,0,0
 Deputy Mayor for Health and Human Services (DMHHS),8,2,3
 District of Columbia Public Schools (DCPS),8,2,3
 Contract Appeals Board (CAB),6,0,1
-Mayor's Office on Latino Affairs (MOLA),6,2,1
 DOT,6,0,0
-Victim Services and Justice Grants (OVSJG),5,2,2
+Mayor's Office on Latino Affairs (MOLA),6,2,1
 RC0,5,1,1
-Chief Financial Officer (OCFO),4,0,0
-Advisory Neighborhood Commissions (OANC),4,2,0
-Housing Production Trust Fund (HPT Fund),4,0,0
-DCPSB,4,0,0
+Victim Services and Justice Grants (OVSJG),5,2,2
 AK0,4,2,0
+Advisory Neighborhood Commissions (OANC),4,2,0
+Chief Financial Officer (OCFO),4,0,0
+DCPSB,4,0,0
 District Department of Tr,4,0,0
+Housing Production Trust Fund (HPT Fund),4,0,0
 CT0,3,1,0
-Real Property Assessments and Appeals Commission (BRPAA),3,0,2
-FE0,3,2,1
-Public Library (DCPL),3,1,0
-Senior Advisor (OSA),3,1,0
-Police Complaints (OPC),3,1,0
 District of Columbia Sentencing Commission (DCSCCRC),3,0,1
-Lottery and Charitable Games (DLCB),3,0,0
+FE0,3,2,1
 JS0,3,0,0
-Finance and Resource Management (OFRM),2,0,0
+Lottery and Charitable Games (DLCB),3,0,0
+Police Complaints (OPC),3,1,0
+Public Library (DCPL),3,1,0
+Real Property Assessments and Appeals Commission (BRPAA),3,0,2
+Senior Advisor (OSA),3,1,0
 CC0,2,0,0
-Veterans' Affairs (OVA),2,0,1
-People's Counsel (OPC),2,0,0
-DRES,2,0,0
 Criminal Code Reform Commission (CCRC),2,1,0
 DC Public Charter School,2,1,0
-Employee's Compensation Fund (DCF),1,0,0
-Uniform Law Commission (ULC),1,0,0
-PJ0,1,0,0
-Non-Public Tuition (NPT),1,0,0
-PE0,1,0,0
-University of the District of Columbia (UDC),1,0,0
-Homeland Security Grants (HSG),1,0,0
-ZX0,1,0,0
-Public Service Commission (PSC),1,0,0
-UV0,1,0,0
-PW0,1,0,0
-Commission on Judicial Disabilities & Tenure (CJDT),1,0,0
-RP0,1,0,0
+DRES,2,0,0
+Finance and Resource Management (OFRM),2,0,0
+People's Counsel (OPC),2,0,0
+Veterans' Affairs (OVA),2,0,1
 BQ0,1,0,0
-GS0,1,0,0
-Council of the District of Columbia (Council),1,0,0
-Unemployment Insurance Trust Fund (UITF),1,0,0
-TK0,1,0,0
-UW0,1,0,0
-DC Auditor (ODCA),1,0,0
-Statehood Initiatives (SIA),1,0,0
-Ballpark Revenue Fund (BRF),1,0,0
-Unemployment Compensation Fund (UCF),1,0,0
-DK0,1,0,0
-GM0,1,0,0
-HS0,1,0,0
-EPC,1,0,0
-Washington Metro Area Transit Authority (WMATA),1,0,0
 BR0,1,0,0
-EF0,1,0,0
-FV0,1,0,0
 BU0,1,0,0
+Ballpark Revenue Fund (BRF),1,0,0
+CW0,1,0,0
+Captive Insurance Agency (ORM-INS Agency),1,0,0
+Commission on Judicial Disabilities & Tenure (CJDT),1,0,0
 Corrections Information Council (CIC),1,0,0
+Council of the District of Columbia (Council),1,0,0
+DC Auditor (ODCA),1,0,0
+DK0,1,0,0
+Department of Employment,1,0,0
+EC0,1,0,0
+EF0,1,0,0
+ELC,1,0,0
+EPC,1,0,0
+Employee's Compensation Fund (DCF),1,0,0
+FV0,1,0,0
+GM0,1,0,0
+GS0,1,0,0
 HD0,1,0,0
+HS0,1,0,0
+Homeland Security Grants (HSG),1,0,0
 JF0,1,0,0
 Judicial Nomination Commission (JNC),1,0,0
-CW0,1,0,0
-ELC,1,0,0
-Public Charter Schools (DPCS),1,0,0
 National Guard (DCNG),1,0,0
+Non-Public Tuition (NPT),1,0,0
+PE0,1,0,0
+PJ0,1,0,0
+PW0,1,0,0
+Public Charter Schools (DPCS),1,0,0
+Public Service Commission (PSC),1,0,0
+RP0,1,0,0
 Settlements and Judgments (SJ),1,0,0
-EC0,1,0,0
-Captive Insurance Agency (ORM-INS Agency),1,0,0
-Department of Employment,1,0,0
+Statehood Initiatives (SIA),1,0,0
+TK0,1,0,0
+UV0,1,0,0
+UW0,1,0,0
+Unemployment Compensation Fund (UCF),1,0,0
+Unemployment Insurance Trust Fund (UITF),1,0,0
+Uniform Law Commission (ULC),1,0,0
+University of the District of Columbia (UDC),1,0,0
+Washington Metro Area Transit Authority (WMATA),1,0,0
+ZX0,1,0,0

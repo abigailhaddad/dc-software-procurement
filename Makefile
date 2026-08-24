@@ -2,7 +2,8 @@
 # what is already on disk, and classification is cached by content, so a repeat
 # run costs nothing.
 
-.PHONY: help install pull classify verify test report notebook site rates ocr h1b all
+.PHONY: help install pull classify verify test report notebook site rates ocr h1b \
+        h1b-dol calc solicitations dcas all
 
 help:
 	@echo "make install    install dependencies"
@@ -16,6 +17,10 @@ help:
 	@echo "make rates      re-extract hourly rate cards from the cached award texts"
 	@echo "make ocr        OCR scanned award documents and classify them separately"
 	@echo "make h1b        pull H-1B LCA filings for DC tech vendors, flag DC worksites"
+	@echo "make h1b-dol    filter DOL's own LCA disclosure files to the vendor set"
+	@echo "make calc       pull GSA CALC rates and rebuild the federal comparison"
+	@echo "make solicitations  trace technology contracts back to posted solicitations"
+	@echo "make dcas       rebuild the DCAS roster and its attributed payments"
 	@echo "make all        pull, classify, verify, test"
 
 install:
@@ -53,5 +58,25 @@ ocr:
 
 h1b:
 	uv run python analysis/pull_h1b.py
+
+h1b-dol:
+	uv run python analysis/pull_h1b_dol.py
+
+# pull_calc hits the live GSA API; the raw responses under data/calc/raw are
+# the provenance record, so re-pulling replaces the snapshot every federal
+# figure was computed from.
+calc:
+	uv run python analysis/pull_calc.py
+	uv run python analysis/build_calc_comparison.py
+
+# visibility merges the two traces, so it runs last.
+solicitations:
+	uv run python analysis/solicitations_profile.py
+	uv run python analysis/solicitations_pdfscan.py
+	uv run python analysis/solicitations_join.py
+	uv run python analysis/solicitations_visibility.py
+
+dcas:
+	uv run python analysis/build_dcas.py
 
 all: pull classify verify test

@@ -4,12 +4,13 @@ from datetime import datetime, timedelta
 from difflib import SequenceMatcher
 from pathlib import Path
 
-REPO = Path('/Users/abigailhaddad/Documents/repos/dcbudget')
-OUT = Path('/private/tmp/claude-501/-Users-abigailhaddad-Documents-repos-dcbudget/4b8cf7a9-c252-4a5c-bae3-b111db8bea9c/scratchpad/solicitations')
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'data' / 'solicitations'
+OUT.mkdir(parents=True, exist_ok=True)
 
-sols = json.load(open(REPO/'data/raw/solicitations.json'))
-det = json.load(open(REPO/'data/raw/contract_details.json'))
-cls = list(csv.DictReader(open(REPO/'data/contract_classifications.csv')))
+sols = json.load(open(ROOT/'data/raw/solicitations.json'))
+det = json.load(open(ROOT/'data/raw/contract_details.json'))
+cls = list(csv.DictReader(open(ROOT/'data/contract_classifications.csv')))
 det_by_num = {c['contractNumber']: c for c in det}
 tech = [r for r in cls if r['is_technology']=='True']
 
