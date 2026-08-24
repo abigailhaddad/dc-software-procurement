@@ -454,6 +454,43 @@ def main() -> int:
               int(labels.vendor.astype(str).str.upper().str.contains(absent, na=False).sum())
               + int(payments.vendor.astype(str).str.upper().str.contains(absent, na=False).sum()), 0)
 
+    # DOL's own disclosure files (analysis/pull_h1b_dol.py) carry the client
+    # agency in SECONDARY_ENTITY_BUSINESS_NAME; the briefing quotes them.
+    dol = pd.read_csv(ROOT / "data" / "h1b" / "dol" / "lca_dol_filtered.csv")
+    check("DOL-filtered LCA rows", len(dol), 1725)
+    sec = dol[dol.SECONDARY_ENTITY_BUSINESS_NAME.notna()]
+    esys_dcas = sec[
+        sec.EMPLOYER_NAME.str.contains("ESYSTEMS", case=False, na=False)
+        & sec.SECONDARY_ENTITY_BUSINESS_NAME.str.contains("DC ACCESS", case=False, na=False)
+        & (sec.CASE_STATUS == "Certified")
+    ]
+    check("eSystems certified filings naming DCAS", len(esys_dcas), 7)
+    leads = esys_dcas[esys_dcas.JOB_TITLE.str.contains("TEAM LEAD", case=False)]
+    check("of them, senior Curam developer team leads", len(leads), 5)
+    check("team-lead wage floor", float(leads.WAGE_RATE_OF_PAY_FROM.min()), 170000.0)
+    check("team-lead wage top", float(leads.WAGE_RATE_OF_PAY_FROM.max()), 203000.0)
+    d2_dhcf = sec[
+        sec.EMPLOYER_NAME.str.contains("D2SOL", case=False, na=False)
+        & sec.SECONDARY_ENTITY_BUSINESS_NAME.str.contains("Health Care Finance", case=False, na=False)
+    ]
+    check("D2Sol filings naming DHCF", len(d2_dhcf), 33)
+    check("Avid filings naming OCTO",
+          int(sec[sec.EMPLOYER_NAME.str.contains("AVID", case=False, na=False)]
+              .SECONDARY_ENTITY_BUSINESS_NAME.str.contains("CHIEF TECHNOLOGY", case=False).sum()) >= 1, True)
+    ct55 = dol[
+        dol.EMPLOYER_NAME.str.contains("CHANGING", case=False, na=False)
+        & (dol.WAGE_RATE_OF_PAY_FROM == 55.0) & (dol.WAGE_UNIT_OF_PAY == "Hour")
+        & (dol.CASE_STATUS == "Certified")
+        & dol.SECONDARY_ENTITY_BUSINESS_NAME.str.contains("DC Health", na=False)
+    ]
+    check("Changing Technologies $55/hour at DC Health, certified", len(ct55), 1)
+    sriven = dol[
+        dol.EMPLOYER_NAME.str.contains("SRIVEN", case=False, na=False)
+        & (dol.WAGE_RATE_OF_PAY_FROM == 129999.0)
+        & dol.SECONDARY_ENTITY_BUSINESS_NAME.str.contains("Health Care Finance", case=False, na=False)
+    ]
+    check("remote Curam developer for DHCF, certified", len(sriven), 1)
+
     # The h1b pipeline (analysis/pull_h1b.py, make h1b) must agree with the
     # saved evidence page the paragraph is checked against above.
     lca = pd.read_csv(ROOT / "data" / "h1b" / "lca_filings.csv")

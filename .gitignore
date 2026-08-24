@@ -12,3 +12,4 @@ __pycache__/
 *.pyc
 .venv/
 .ipynb_checkpoints/
+data/h1b/dol/raw/

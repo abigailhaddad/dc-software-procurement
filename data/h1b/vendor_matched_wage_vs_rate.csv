@@ -1,0 +1,13 @@
+vendor,lca_job_title,lca_annual_wage,lca_hourly_2080,lca_worksite,lca_submit_date,card_contract,card_labor_category,card_rate_low,card_rate_high,card_to_wage_ratio_low,pairing_quality
+"AVID SYSTEMS, LLC",IT PROJECT MANAGER,150000,72.12,"WOODBRIDGE, VA",06/18/2020,CW134571,Project Manager,150.00,150.00,2.08,same-title
+"AVID SYSTEMS, LLC",INFORMATION SECURITY ANALYST,137800,66.25,"WASHINGTON, DC",11/19/2025,CW134571,Cyber Security Specialist,140.00,140.00,2.11,near-title
+"AVID SYSTEMS, LLC",INFORMATION SECURITY ANALYST,96000,46.15,"WASHINGTON, DC",10/29/2019,CW134571,Cyber Security Specialist,140.00,140.00,3.03,near-title
+"AVID SYSTEMS, LLC",SR. SYSTEMS ENGINEER,160000,76.92,"WASHINGTON, DC",11/12/2025,CW134571,System Architect (Software/Data/Database) I,140.00,140.00,1.82,loose
+"AVID SYSTEMS, LLC",JR. DEVELOPER,78354,37.67,"WASHINGTON, DC",03/14/2024,CW134571,Technology Consultant I (lowest technical tier on card),110.00,110.00,2.92,loose
+"AVID SYSTEMS, LLC",JR. BUSINESS SYSTEMS ANALYST,78374,37.68,"WASHINGTON, DC",03/14/2024,CW134571,Technology Consultant I (lowest technical tier on card),110.00,110.00,2.92,loose
+"COMPUTER AID, INC.",SR. BUSINESS ANALYST,103000,49.52,"WASHINGTON, DC",12/24/2019,CW91684,Business Systems Analyst / Senior,114.66,114.66,2.32,near-title
+ADVANCED NETWORK CONSULTING,SENIOR SOFTWARE ENGINEER,164971,79.31,"WASHINGTON, DC",04/07/2022,CW73403,Technical Subject Matter Expert - Level I,145.88,167.09,1.84,loose
+"DIONA US, INC.",PRINCIPAL TECHNICAL CONSULTANT,135000,64.9,"WASHINGTON, DC",11/01/2022,CW101930,Mastery Subject Matter Expert Program Manager IV,201.00,220.00,3.1,loose
+"DIONA US, INC.",PRINCIPAL TECHNICAL CONSULTANT,120000,57.69,"WASHINGTON, DC",07/09/2020,CW101930,Mastery Subject Matter Expert Program Manager IV,201.00,220.00,3.48,loose
+"Changing Technologies, Inc.","DATA SURVEILLANCE PROJECT MANAGER II (client: DC Health, per DOL SECONDARY_ENTITY)",hourly,55.00,"WASHINGTON, DC (2201 Shannon Place SE)",decided 02/06/2026,CW101915,Project Manager,160.08,166.54,2.91,near-title
+"Changing Technologies, Inc.","SYSTEM ANALYST (client: DC Health Benefit Exchange Authority, per DOL)",hourly,43.52,"WASHINGTON, DC (1225 I Street NW)",decided 03/10/2026,CW101915,Business Process Analyst (Jr/Journeyman/Sr tiers),74.73,138.21,1.72,loose
