@@ -1,0 +1,21 @@
+URL: https://d2sol.com/careers/
+Fetched: 2026-08-24 (WebFetch; full-page screenshot d2sol-careers.png captured same day; Wayback snapshot requested same day, HTTP 302 accepted)
+Context: D2Sol Inc. holds CW121488 "FY25 - DCAS - Operations Maintenance Services" ($84M) and invoices $3,490,537.83/month for DCAS O&M.
+
+Header: "D2Sol Inc. is an equal opportunity employer seeking experienced self-motivated individuals"
+
+Current Openings (all four; none lists pay):
+
+1. Junior Curam Developer
+   Date: 07/13/2026 | Category: Curam, Developer | Location: Any US Location, Morrisville-NC
+
+2. Junior Oracle Database Administrator
+   Date: 28/01/2026 | Category: Oracle DBA, Database Administrator | Location: Morrisville NC USA
+
+3. Curam Quality Analyst (2.5+ Years)
+   Date: 29/09/2025 | Category: Curam, Quality Assurance, Testing | Location: Bangalore - India
+
+4. Curam Developer (2+ years of experience)
+   Date: 27/09/2025 | Category: Curam, Developer, Software Engineer | Location: Bangalore - India
+
+Benefits listed: competitive salary, company-sponsored medical, dental, vision, 401k.

@@ -431,6 +431,9 @@ def main() -> int:
           "more than double the Fiscal Year 2022 rate" in henderson, True)
     infosys = (ROOT / "evidence" / "dcas_sources" / "infosyspublicservices_2013_hbx_press_release.txt").read_text(encoding="utf-8")
     check("source: Infosys $49.5M build award", "49.5" in infosys, True)
+    d2sol_careers = (ROOT / "evidence" / "job_ads" / "d2sol-careers.txt").read_text(encoding="utf-8")
+    check("source: D2Sol hiring junior US roles", "Junior Curam Developer" in d2sol_careers, True)
+    check("source: D2Sol hiring in Bangalore", "Bangalore - India" in d2sol_careers, True)
 
     print("\n-- the OCR-recovered awards --")
     # 74 scanned award documents were recovered by analysis/ocr_awards.py and
