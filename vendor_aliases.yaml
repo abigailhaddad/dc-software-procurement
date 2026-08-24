@@ -1,0 +1,185 @@
+# Vendor identity decisions.
+#
+# The District does not normalise vendor names. "CDW Government" is recorded
+# under three spellings in the technology payments alone, and left unmerged its
+# spending splits three ways and vendor concentration comes out too low.
+#
+# Two kinds of thing live here. `strip_suffixes` and `strip_punctuation` are
+# mechanical rules. `merged_by_rule` is the record of what those rules actually
+# combine in the published figures, written down so the identity claims can be
+# checked by a person rather than trusted because a regex produced them. Any
+# entry there that looks wrong should move into `keep_separate`.
+#
+# Regenerate the record with: uv run python analysis/refresh_vendor_aliases.py
+
+strip_suffixes:
+  - INC
+  - INCORPORATED
+  - LLC
+  - LLP
+  - LP
+  - CORP
+  - CORPORATION
+  - COMPANY
+  - CO
+  - PC
+  - PLLC
+  - LTD
+  - LIMITED
+  - GROUP
+  - THE
+  - DBA
+
+# Everything that is not a letter, digit or space is replaced with a space
+# before suffixes are stripped, so "ANNIE'S HARDWARE" and "ANNIE S HARDWARE"
+# land on the same key, as do "DIGI DOCS INC/DOCUMENT MGERS" and its
+# space-separated twin.
+strip_punctuation: true
+
+# Names the rules do NOT merge, and the reason. These are decisions, not
+# oversights: change one and the concentration figures change with it.
+keep_separate:
+  - names: [CDW GOVERNMENT, CDW]
+    reason: >
+      CDW Government LLC is the public-sector arm and CDW LLC is the parent.
+      They are billed separately and are left separate here. Merging them would
+      move CDW from $55.1M to $58.4M in FY2021-2025 technology payments.
+  - names: [GCS, GCS SIGAL]
+    reason: >
+      GCS, Inc. and GCS-Sigal, LLC are different entities; the joint venture is
+      not the same company as the firm that formed it.
+  - names: [SODEXOMAGIC, SODEXHOMAGIC]
+    reason: >
+      Two spellings appear across the payments table. They are almost certainly
+      the same company, but neither appears in the technology set, so the
+      question is left open rather than guessed at.
+
+# What the rules above merge in the FY2021-2025 technology payment set.
+# Generated, and committed so the merges are reviewable. Dollar figures are the
+# combined total for the group.
+merged_by_rule:
+  'CDW GOVERNMENT':   # $55.1M
+    - 'CDW GOVERNMENT INC'
+    - 'CDW GOVERNMENT LLC'
+    - 'CDW GOVERNMENT, INC.'
+  'KPMG':   # $37.1M
+    - 'KPMG LLP'
+    - 'KPMG, LLP'
+  'AVID SYSTEMS':   # $10.2M
+    - 'AVID SYSTEMS  LLC'
+    - 'AVID SYSTEMS, LLC'
+  'DLT SOLUTIONS':   # $7.8M
+    - 'DLT SOLUTIONS  LLC'
+    - 'DLT SOLUTIONS INC'
+  'SAGITEC SOLUTIONS':   # $6.1M
+    - 'SAGITEC SOLUTIONS  LLC'
+    - 'SAGITEC SOLUTIONS, LLC'
+  'DELOITTE CONSULTING':   # $4.3M
+    - 'DELOITTE CONSULTING  LLP'
+    - 'DELOITTE CONSULTING LLP'
+    - 'DELOITTE CONSULTING, LLP'
+  'DIONA US':   # $4.2M
+    - 'DIONA US  INC.'
+    - 'DIONA US INC.'
+    - 'DIONA US, INC.'
+  'MARK43':   # $4.0M
+    - 'MARK43 INC'
+    - 'MARK43, INC'
+  'POWERSCHOOL':   # $3.6M
+    - 'POWERSCHOOL GROUP  LLC'
+    - 'PowerSchool Group LLC'
+  'CDW':   # $3.3M
+    - 'CDW LLC'
+    - 'CDW LLC.'
+  'MINDCUBED':   # $1.9M
+    - 'MINDCUBED  LLC'
+    - 'MINDCUBED, LLC'
+  'VERITAS CONSULTING':   # $1.7M
+    - 'VERITAS CONSULTING GROUP'
+    - 'VERITAS CONSULTING GROUP LLC'
+  'INNOVATION HORIZONS':   # $1.5M
+    - 'INNOVATION HORIZONS INC.'
+    - 'INNOVATION HORIZONS LLC'
+    - 'INNOVATION HORIZONS, LLC'
+  'SHOTSPOTTER':   # $1.5M
+    - 'SHOTSPOTTER INC.'
+    - 'SHOTSPOTTER, INC.'
+  'INFOMC':   # $1.4M
+    - 'INFOMC, INC'
+    - 'INFOMC, INC.'
+    - 'INFOMC,INC.'
+  'PITTMAN VANTIX':   # $1.1M
+    - 'THE PITTMAN GROUP INC /VANTIX'
+    - 'The Pittman Group, Inc. dba Vantix'
+  'SUN MANAGEMENT':   # $1.1M
+    - 'SUN MANAGEMENT INC.'
+    - 'SUN MANAGEMENT, INC.'
+  'DIGI DOCS DOCUMENT MGERS':   # $1.1M
+    - 'DIGI DOCS INC DOCUMENT MGERS'
+    - 'DIGI DOCS INC/DOCUMENT MGERS'
+  'SIVIC SOLUTIONS':   # $1.0M
+    - 'SIVIC SOLUTIONS GROUP LLC'
+    - 'SIVIC SOLUTIONS GROUP, LLC'
+  'ICI SYSTEMS':   # $0.9M
+    - 'ICI SYSTEMS  INC'
+    - 'ICI SYSTEMS INC'
+  'CAREER TEAM':   # $0.9M
+    - 'CAREER TEAM LLC'
+    - 'Career Team LLC'
+  'TRIAGE':   # $0.7M
+    - 'THE TRIAGE GROUP  LLC'
+    - 'THE TRIAGE GROUP, LLC'
+  'DATAMINR':   # $0.6M
+    - 'DATAMINR  INC.'
+    - 'DATAMINR INC.'
+  'INSIGHT PUBLIC SECTOR':   # $0.6M
+    - 'INSIGHT PUBLIC SECTOR INC'
+    - 'INSIGHT PUBLIC SECTOR, INC'
+  'ANNIE S HARDWARE':   # $0.6M
+    - 'ANNIE S HARDWARE  LLC'
+    - 'ANNIE''S HARDWARE  LLC'
+  'VTECH SOLUTION':   # $0.5M
+    - 'VTECH SOLUTION  INC.'
+    - 'VTECH SOLUTION INC.'
+  'ANLAR':   # $0.4M
+    - 'ANLAR  LLC'
+    - 'ANLAR, LLC'
+  'DANTECH':   # $0.4M
+    - 'DANTECH CORPORATION  INC'
+    - 'DANTECH CORPORATION INC'
+  'LEIDOS DIGITAL SOLUTIONS':   # $0.3M
+    - 'LEIDOS DIGITAL SOLUTIONS'
+    - 'LEIDOS DIGITAL SOLUTIONS INC'
+  'SUPRETECH':   # $0.3M
+    - 'SUPRETECH  INC.'
+    - 'SUPRETECH, INC.'
+  'LEXISNEXIS VITALCHEK NETWORK':   # $0.3M
+    - 'LEXISNEXIS VITALCHEK NETWORK'
+    - 'LexisNexis VitalChek Network Inc.'
+  'RADGOV':   # $0.3M
+    - 'RADGOV  INC.'
+    - 'RADGOV, INC.'
+  'IDEMIA IDENTITY AND SECURITY':   # $0.3M
+    - 'IDEMIA IDENTITY AND SECURITY'
+    - 'IDEMIA IDENTITY AND SECURITY LLC'
+  'RIZEUP TECHNOLOGY TRAINING':   # $0.2M
+    - 'RIZEUP TECHNOLOGY TRAINING'
+    - 'RizeUp Technology Training, LLC'
+  'POLKA DOT SKY PUBLISHING':   # $0.2M
+    - 'POLKA DOT SKY PUBLISHING'
+    - 'POLKA DOT SKY PUBLISHING, LLC'
+  'COLLABORATIVE COMMUNICATIONS':   # $0.2M
+    - 'COLLABORATIVE COMMUNICATIONS'
+    - 'Collaborative Communications Group, Inc.'
+  'WEST PUBLISHING':   # $0.2M
+    - 'WEST PUBLISHING CORP'
+    - 'WEST PUBLISHING CORPORATION'
+  'NJ3Q TECHNOLOGY':   # $0.1M
+    - 'NJ3Q TECHNOLOGY LLC'
+    - 'NJ3Q TECHNOLOGY, LLC'
+  'GRANICUS':   # $0.1M
+    - 'GRANICUS LLC'
+    - 'GRANICUS, INC.'
+  'EASTBANC TECHNOLOGIES':   # $0.0M
+    - 'EASTBANC TECHNOLOGIES'
+    - 'EASTBANC TECHNOLOGIES LLC'

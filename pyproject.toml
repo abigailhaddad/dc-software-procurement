@@ -1,0 +1,26 @@
+[project]
+name = "dcprocure"
+version = "0.1.0"
+description = "Pull and analyze DC government contracting data, with a focus on IT and custom software procurement."
+requires-python = ">=3.11"
+dependencies = [
+    "jupyter>=1.0",
+    "nbconvert>=7.0",
+    "scipy>=1.11",
+    "httpx>=0.27",
+    "pandas>=2.2",
+    "pypdf>=4.2",
+    "litellm>=1.50",
+    "pydantic>=2.7",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+dcprocure = "dcprocure.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dcprocure"]

@@ -1,0 +1,21 @@
+contract_number,delivery_structure,agile_mention_kind,notes
+CW90729,sequential_gated_deliverables|structure_not_stated,personnel_qualification,"UIBS. Agile appears only as 'Experience in Agile methodology such as Scrum, Kanban' under Position Qualifications. Hiring criteria, not a delivery commitment. Regex called this agile; it is not."
+CW104985,sequential_gated_deliverables|structure_not_stated,personnel_qualification,OWC case management. Same qualifications boilerplate as CW90729.
+CW87658,sequential_gated_deliverables|structure_not_stated,personnel_qualification,UITS IV&V. 'Experience in working with Agile sprints and releases' in staff quals.
+CW99768,sequential_gated_deliverables|structure_not_stated,unrelated_usage|no_agile_language,Code Enforcement Advisor. Sole hit is 'backlog of cases pending adjudication' at OAH. Either label is fine: both mean there is no agile signal here.
+CW114695,goods_or_licenses,pricing_unit,"DHCF GRC. SaaS licence buy; 'Support One Sprint' and '2-week sprint' are priced line items, not practice."
+CW130494,sequential_gated_deliverables,delivery_commitment,"Offender Management System. Genuine water-scrum-fall: vendor commits to 'operate within ViaPath's existing Scrum Agile framework, using two-week sprints' while payment gates on Final UAT sign-off and Go-Live."
+CW96958,sequential_gated_deliverables,delivery_commitment,ITSM. Cleanest artifact: 'create user stories ... prior to creation of the design document and the product backlog'. Agile inputs feeding a waterfall document chain.
+CW90928,sequential_gated_deliverables,delivery_commitment,UI Claimant Portal. 'Act as the product owner for the development team'; defects 'placed in the backlog'; deliverables are a Project Charter and PM Plan chain.
+CW122785,sequential_gated_deliverables,delivery_commitment,"Clinical Case Management. 'leverage user stories, and product backlogs, and manage release sprints' against numbered deliverables C.5.1.1-C.5.1.10."
+CW118423,sequential_gated_deliverables|milestone_payments_only,delivery_commitment,OIG case management. 'Configuration sprints then proceed' inside a phased implementation plan.
+CW127884,sequential_gated_deliverables,delivery_commitment,"Program Integrity Data Analytics. 'release planning and sprint planning'; scope is Design, Develop, Implement."
+CW100800,incremental_capacity,no_agile_language,"DCSS task order. 'furnish ... when and if ordered ... up to and including the maximum' is capacity, not a fixed scope."
+CW101069,incremental_capacity,no_agile_language,Multiple-award ID/IQ establishing a District-wide vehicle. Ordering capacity.
+CW100042,recurring_operations|milestone_payments_only,no_agile_language,DBH Avatar EHR. Ongoing support reported monthly; whether monthly reporting reads as milestones is a genuine judgment call.
+CW100542,recurring_operations,no_agile_language,cGov registry. 'Provide maintenance and support services' over a period of performance.
+CW100807,recurring_operations,no_agile_language,"DCAS Mobile App Support. O&M staffing and reporting, nothing built."
+CW102179,goods_or_licenses,no_agile_language,"Dragon Anywhere SaaS, 800 licences. No work described."
+CW103894,goods_or_licenses|recurring_operations,no_agile_language,"Intranet Quorum. 'New license/support activation within five days from award' - a licence buy bundled with support, so either label is defensible."
+CW101861,structure_not_stated,no_agile_language,"DCRA IT Needs Assessment. Price schedule is in an unattached exhibit, so structure genuinely is not stated."
+CW102586,structure_not_stated,no_agile_language,BPR Assessment Services. Same: refers out to Attachment B.

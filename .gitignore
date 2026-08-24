@@ -1,0 +1,13 @@
+# Secrets
+.env
+
+# Pulled data and caches. Regenerate with: make pull
+data/raw/
+data/pdftext/
+data/pdf/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/

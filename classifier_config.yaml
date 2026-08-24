@@ -1,0 +1,116 @@
+# Single source of truth for the contract classification schema and prompt.
+# Mirrors the analyzer_config.yaml pattern from the generic-comment-analyzer:
+# `fields:` drives both the Pydantic schema sent to the LLM and the prompt text.
+#
+# This config is the TITLE-level pass: it runs on every contract using only
+# title, vendor, agency, value and NIGP classes. How the work is delivered
+# (waterfall versus incremental) cannot be read from a title and lives in
+# delivery_config.yaml, which runs against the award PDFs instead.
+#
+# Why this exists: NIGP commodity codes cannot identify DC technology spending.
+# They are self-assigned, inconsistent between a contract and the purchase
+# orders against it, and the District's largest IT staff-augmentation vehicles
+# are filed under "miscellaneous services, not otherwise classified". Class 918
+# mixes IT consulting with Medicaid managed care; class 920 contains a plumbing
+# contractor.
+
+task_name: DC government contract classification
+task_description: >
+  Classify what the District of Columbia is actually buying under a contract,
+  using the contract title, vendor and awarding agency. The goal is to separate
+  technology work from everything else, and within technology to separate paying
+  for a deliverable from paying for people's time.
+
+work_types:
+- name: custom_software_build
+  indicator: Building new software or a new system to the District's specification
+- name: cots_implementation
+  indicator: Configuring, deploying or integrating a purchased or vendor-owned product
+- name: software_om_support
+  indicator: Operating, maintaining or supporting software that already exists
+- name: staff_augmentation
+  indicator: Supplying people by the hour or by the person; temporary resources; a named team
+- name: it_consulting_advisory
+  indicator: Advice, assessment, strategy or planning about technology
+- name: hardware_or_license_resale
+  indicator: Selling hardware, devices, or software licences including enterprise agreements
+- name: telecom_or_network
+  indicator: Telecommunications, cabling, radio, or network infrastructure
+- name: ordering_vehicle
+  indicator: A schedule or IDIQ contract that authorizes future task orders and buys nothing itself
+- name: not_technology
+  indicator: Not a technology good or service at all
+
+confidence_levels:
+- high
+- medium
+- low
+
+# Domain rules the model gets wrong without being told. Each line here was added
+# in response to an actual failure in tests/gold_labels.csv.
+classification_rules: >
+  "DCSS" is the DC Supply Schedule, a pre-qualified vendor pool. A contract
+  titled essentially "DCSS - Information Technology Equipment and Software" is
+  an ordering_vehicle: it authorizes future task orders and buys nothing itself.
+
+  "Temporary Support Services", "Temporary Resources", "Staff Augmentation" and
+  named teams such as "Application Development Team" all mean the District is
+  buying labor rather than a deliverable.
+
+  "Operations and Maintenance" or "O&M" of a named system means running software
+  that already exists, not building it.
+
+  Reselling licences or an enterprise agreement (Microsoft, Oracle, Adobe)
+  through a reseller such as CDW or Carahsoft is hardware_or_license_resale even
+  when the title says "Services". Reserve cots_implementation for configuring
+  and deploying a purchased product.
+
+  A vendor selling its own named product to run a government function such as
+  unemployment benefits, tax or permitting is cots_implementation, or
+  software_om_support where the title says maintenance or support. A terse title
+  does not make it staff augmentation.
+
+  Delivering a health, insurance or social benefit is not technology, however
+  much software the vendor runs internally. Managed care organizations, health
+  plans, employee insurance carriers and benefit programs are not_technology
+  even when coded to a consulting class and even when awarded by a health
+  agency. Judge the service being bought, not the vendor's industry.
+
+  The awarding agency is weak evidence. A health agency buys software and a
+  technology agency buys furniture.
+
+  Do not assume the NIGP commodity class is correct. It is frequently wrong.
+  The title is the better evidence.
+
+fields:
+- name: work_type
+  type: single_enum
+  options_from: work_types
+  label: Work type
+  prompt: >
+    What is the District actually buying? Choose exactly one.
+- name: buys_people_not_deliverables
+  type: single_enum
+  options: ["yes", "no"]
+  label: Buys people rather than deliverables
+  prompt: >
+    Answer "yes" only where the District is paying for labor by the hour or by
+    the person. Operations and maintenance of a system at a fixed price is a
+    deliverable, not people. Answer "no" whenever work_type is not_technology.
+- name: system_name
+  type: short_text
+  label: System name
+  prompt: >
+    Name or acronym of the specific system being built or maintained, for
+    example DCAS or UIBS. Leave empty if the title names no specific system.
+- name: confidence
+  type: single_enum
+  options_from: confidence_levels
+  label: Confidence
+  prompt: >
+    How confident are you, given that only a short title is available?
+- name: rationale
+  type: text
+  label: Rationale
+  prompt: >
+    One sentence justifying the classification.

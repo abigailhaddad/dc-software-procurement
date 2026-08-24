@@ -1,0 +1,21 @@
+id,title,vendor,agency,amount,classes,work_type,buys_people,notes
+1,DCSS - Information Technology Equipment and Software,Cradle Systems,Chief Technology Officer (OCTO),"$40,000,000",920,ordering_vehicle,no,DC Supply Schedule vehicle authorizes future task orders and buys nothing itself
+2,FY25 - DCAS - Operations Maintenance Services,D2Sol Inc,Health Care Finance (DHCF),"$41,886,454",920,software_om_support,no,"Firm-fixed-price O&M of an existing named system is a deliverable, not hourly labor"
+3,INFORMATION TECHNOLOGY STAFF AUGMENTATION SERVICES,"COMPUTER AID, INC.",Chief Technology Officer (OCTO),"$65,000,000",962,staff_augmentation,yes,"Names itself staff augmentation, yet is coded 962 miscellaneous so commodity codes cannot find it"
+4,Microsoft Enterprise Agreement Product and Services,CDW GOVERNMENT LLC,Chief Technology Officer (OCTO),"$90,000,000",920,hardware_or_license_resale,no,"Enterprise licence resale through a reseller, despite the word Services"
+5,Managed Care Organization - MedStar,MedStar Family Choice,Health Care Finance (DHCF),"$8,830,400,000",918,not_technology,no,Medicaid health insurance; the largest false positive in class 918
+6,Fry Plumbing and Heating,FRY PLUMBING AND HEATING,General Services (DGS),"$14,200,000",920,not_technology,no,"Miscoded into the software-services class, so the title is the only reliable signal"
+7,DCAS Application Development Team,Codice LLC,Human Services (DHS),"$10,000,000",961,staff_augmentation,yes,"Buying a named team is buying people, not a deliverable"
+8,UIBS DOES,GEOGRAPHIC SOLUTIONS INC,Employment Services (DOES),"$13,600,000",920,cots_implementation|software_om_support,no,Vendor's own unemployment product; build versus maintain is not stated in the title
+9,Emergency Contract - Managed Care Organization (CareFirst),Trusted Health Plan,Health Care Finance (DHCF),"$431,500,000",918,not_technology,no,Second Medicaid form; the agency name must not imply health IT
+10,Aetna - Healthcare Insurance Benefits for District of Columbia Government Employees,AETNA LIFE INSURANCE COMPANY,Human Resources (DCHR),"$261,300,000",918,not_technology,no,"Employee health insurance, also coded 918"
+11,DCSS - Temporary Support Services - Health IT 2 Business Solutions,Codice LLC,Chief Technology Officer (OCTO),"$10,000,000",961,staff_augmentation,yes,Temporary Support Services is DC's phrase for hourly labor
+12,FY24 - OCTO - Zero Trust,"Ridge IT Cyber, LLC",Chief Technology Officer (OCTO),"$20,000,000",920,cots_implementation|it_consulting_advisory,no,Security deployment; consulting versus implementation is a genuine judgment call
+13,Child and Adolescent Supplemental Security Income Program (CASSIP),Health Services for Children with Special Needs,Health Care Finance (DHCF),"$236,430,018",948,not_technology,no,"A health benefits program, not a system"
+14,Intelligent Transportation System Maintenance,M C DEAN INC,Transportation (DDOT),"$3,800,000",920,telecom_or_network|software_om_support,no,"Field traffic hardware with a software layer, so either label is defensible"
+15,REFURBISHMENT AND MODERNIZATION OF THE HVAC SYSTEM,Southern Maryland Mechanical,Behavioral Health (DBH),"$2,400,000",910,not_technology,no,The words system and modernization do not make it software
+16,DCAS IT Staff Augmentation 2.0,Not stated,Human Services (DHS),"$5,000,000",961,staff_augmentation,yes,Explicit staff augmentation under the DCAS program
+17,OCTO STaR II,"COMPUTER AID, INC.",Chief Technology Officer (OCTO),"$120,000,000",962,staff_augmentation|it_consulting_advisory|ordering_vehicle,no,"KNOWN LIMIT: DC's largest IT labour vehicle, but the title is a bare acronym. Calling it staffing needs outside knowledge not present in the input, so ordering_vehicle is accepted. Acronym-only titles are a real blind spot."
+18,Sodexo Food Services for District Facilities,SODEXOMAGIC LLC,General Services (DGS),"$150,100,000",918,not_technology,no,Food service in the consulting class
+19,FY23 - ABCA - ABCA System modernization,Not stated,Alcohol Beverage Regulation (ABRA),"$1,500,000",920,custom_software_build|cots_implementation,no,A genuine system modernization procurement
+20,Avaya Software Maintenance,"Avaya, Inc.",Chief Technology Officer (OCTO),"$700,000",920,software_om_support|hardware_or_license_resale,no,Vendor maintaining its own telephony software

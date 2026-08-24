@@ -1,0 +1,161 @@
+# Schema and prompt for the DOCUMENT-level pass: how a contract structures the
+# delivery of work. Runs against the text of award PDFs, not contract titles.
+#
+# The point of this pass is to keep two things apart that are usually conflated:
+#
+#   structure  -- what the price schedule and deliverables schedule actually
+#                 commit the parties to
+#   vocabulary -- the words the document uses
+#
+# A contract can say "sprint", "scrum" and "product owner" throughout while
+# freezing scope up front, pricing it as a single sum, and paying against a
+# sequential chain of document deliverables accepted at gates. That is a
+# waterfall contract wearing agile clothes. It is only visible when the two axes
+# are assessed independently, which is why they are separate fields here and why
+# the structure prompt explicitly says to ignore the vocabulary.
+
+task_name: DC contract delivery structure analysis
+task_description: >
+  Read an excerpt from a District of Columbia contract, covering the contract
+  type, price schedule and deliverables schedule, and determine how the work is
+  structured for delivery and what vocabulary the document uses. Judge structure
+  from what the parties are committed to, not from the words chosen.
+
+delivery_structures:
+- name: sequential_gated_deliverables
+  indicator: >
+    Scope fixed in advance and deliverables run in sequence, typically
+    requirements then design then build then test, each accepted at a gate with
+    payment following acceptance. This is waterfall whatever words are used.
+- name: incremental_capacity
+  indicator: >
+    Buys a team, a number of sprints, or a block of capacity to be directed as
+    priorities change. Scope is not fully specified in advance and work can be
+    reprioritized without modifying the contract.
+- name: milestone_payments_only
+  indicator: >
+    Payment is tied to dated milestones or periods, but the document does not
+    describe a sequential design-then-build chain. Weaker evidence than
+    sequential_gated_deliverables and should not be read as waterfall.
+- name: recurring_operations
+  indicator: >
+    Ongoing operations, maintenance or support at a recurring price. Nothing is
+    being built, so delivery methodology does not apply.
+- name: goods_or_licenses
+  indicator: Products, hardware or licences, so no delivery methodology applies.
+- name: structure_not_stated
+  indicator: >
+    The excerpt does not describe how work will be delivered. Choose this rather
+    than inferring a structure that is not written down.
+
+# Where an agile term appears matters more than whether it appears. These are
+# the contexts that produced false positives when vocabulary was counted by
+# regex, each one drawn from a contract that was checked by hand.
+agile_mention_kinds:
+- name: delivery_commitment
+  indicator: >
+    The contract commits to running the work this way: the contractor will work
+    in sprints, maintain a backlog, hold scrum ceremonies, or deliver
+    iteratively. This is the only kind that says anything about delivery.
+- name: personnel_qualification
+  indicator: >
+    Agile experience is listed as a qualification for staff or labor categories,
+    e.g. "Experience in Agile methodology such as Scrum, Kanban, or Scaled Agile
+    Framework". The District is describing who it wants hired, not how the work
+    will run.
+- name: pricing_unit
+  indicator: >
+    A sprint or similar is sold as a priced line item, e.g. "Support One Sprint"
+    or "Mid Level Engineer - 2-week sprint". It is a unit of sale.
+- name: unrelated_usage
+  indicator: >
+    The word is used in its ordinary sense with no agile meaning, e.g. a
+    "backlog of cases pending adjudication", or "safe" matched as SAFe.
+- name: aspirational_only
+  indicator: >
+    Agile is named as a general principle or preference with nothing committing
+    the parties to it.
+- name: no_agile_language
+  indicator: The text contains no agile terminology at all.
+
+confidence_levels:
+- high
+- medium
+- low
+
+analysis_rules: >
+  Judge delivery_structure from the price schedule and deliverables schedule
+  alone. Ignore the vocabulary entirely when answering it. A document that uses
+  agile terms but fixes the scope, prices it as one sum, and pays on accepted
+  document deliverables is sequential_gated_deliverables.
+
+  District contracts use a standard form whose boilerplate already contains the
+  words "milestone", "deliverable" and "acceptance". Their mere presence is not
+  evidence of a waterfall structure. What matters is whether specific,
+  sequenced, scope-defining deliverables are actually enumerated.
+
+  Answer uses_agile_vocabulary purely on the words present in the text, with no
+  regard to whether the structure matches them. Disagreement between the two
+  fields is an expected and informative outcome, not an error to be smoothed
+  over.
+
+  Where the excerpt is a licence purchase or hardware order with no described
+  work, choose goods_or_licenses.
+
+fields:
+- name: delivery_structure
+  type: single_enum
+  options_from: delivery_structures
+  label: Delivery structure
+  prompt: >
+    How is the work structured for delivery? Judge from the price schedule and
+    deliverables schedule, not from the vocabulary used. Choose
+    structure_not_stated rather than guessing.
+- name: agile_mention_kind
+  type: single_enum
+  options_from: agile_mention_kinds
+  label: How agile language is used
+  prompt: >
+    Where agile terminology appears in this text, what is it doing? Counting the
+    words is not enough: "Experience in Agile methodology such as Scrum" in a
+    staff qualification, "Support One Sprint" as a priced line item, and a
+    "backlog of cases pending adjudication" are all mentions that say nothing
+    about how the work is delivered. Choose delivery_commitment only where the
+    contract commits to working that way.
+- name: uses_agile_vocabulary
+  type: single_enum
+  options: ["yes", "no"]
+  label: Contains agile terminology at all
+  prompt: >
+    Does the text contain agile terminology anywhere, in any sense? Answer only
+    about the words present. This is deliberately broader than
+    agile_mention_kind and the two are expected to disagree.
+- name: agile_quote
+  type: quote
+  label: Agile evidence
+  prompt: >
+    A short verbatim quote showing the agile terminology in its context, so the
+    agile_mention_kind judgment can be checked. Leave empty if there is none.
+- name: scope_fixed_in_advance
+  type: single_enum
+  options: ["yes", "no", "not_stated"]
+  label: Scope fixed in advance
+  prompt: >
+    Does the contract specify the full scope of work up front, such that
+    changing it would require a contract modification?
+- name: deliverables_quote
+  type: quote
+  label: Deliverables evidence
+  prompt: >
+    A short verbatim quote from the excerpt showing the deliverables or payment
+    structure that justifies the delivery_structure choice. Leave empty if the
+    excerpt contains none.
+- name: confidence
+  type: single_enum
+  options_from: confidence_levels
+  label: Confidence
+  prompt: How confident are you, given only this excerpt?
+- name: rationale
+  type: text
+  label: Rationale
+  prompt: One sentence justifying the delivery_structure choice.
