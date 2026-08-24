@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How the District Buys Software</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23B4232E'/%3E%3Crect x='3' y='8' width='2' height='5' fill='white'/%3E%3Crect x='7' y='5' width='2' height='8' fill='white'/%3E%3Crect x='11' y='2' width='2' height='11' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#EFF2F6;
+  --ink:#14181F; --ink-soft:#3A424E; --muted:#5A6472; --rule:#DDE2E9;
+  --accent:#B4232E; --accent-soft:#F5E4E5; --barfill:#9AA6B5;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --measure:68ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#12151A; --surface:#191D24; --surface-2:#20252E;
+    --ink:#E8EBF0; --ink-soft:#C3CAD5; --muted:#9AA4B2; --rule:#2A303A;
+    --accent:#E05561; --accent-soft:#2E1D20; --barfill:#4E5866;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12151A; --surface:#191D24; --surface-2:#20252E;
+  --ink:#E8EBF0; --ink-soft:#C3CAD5; --muted:#9AA4B2; --rule:#2A303A;
+  --accent:#E05561; --accent-soft:#2E1D20; --barfill:#4E5866;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px 120px}
+.col{max-width:var(--measure)}
+
+header.masthead{
+  border-bottom:2px solid var(--ink); margin-bottom:52px; padding:56px 0 26px;
+}
+.eyebrow{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--accent); margin:0 0 18px;
+}
+h1{
+  font-family:var(--serif); font-weight:700; font-size:clamp(2.3rem,5.4vw,3.5rem);
+  line-height:1.06; letter-spacing:-.018em; margin:0 0 20px; text-wrap:balance;
+}
+.standfirst{
+  font-family:var(--serif); font-size:1.22rem; line-height:1.55;
+  color:var(--ink-soft); max-width:60ch; margin:0 0 26px;
+}
+.provenance{
+  font-family:var(--mono); font-size:12.5px; color:var(--muted);
+  display:flex; flex-wrap:wrap; gap:10px 26px;
+}
+.provenance a{color:var(--muted)}
+
+h2{
+  font-family:var(--serif); font-weight:600; font-size:1.72rem; line-height:1.2;
+  letter-spacing:-.012em; margin:60px 0 6px; text-wrap:balance;
+}
+h2:first-of-type{margin-top:0}
+h3{
+  font-family:var(--sans); font-weight:600; font-size:1.03rem;
+  margin:34px 0 8px; color:var(--ink);
+}
+p{margin:0 0 18px; max-width:var(--measure)}
+a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:2px}
+
+.lede{border-left:3px solid var(--accent); padding-left:20px; margin:0 0 34px}
+.lede p{font-size:1.08rem; color:var(--ink-soft); margin-bottom:12px}
+.lede p:last-child{margin-bottom:0}
+
+/* every figure carries where it came from */
+.src{
+  font-family:var(--mono); font-size:11px; color:var(--muted);
+  letter-spacing:.02em; display:block; margin:-8px 0 26px;
+}
+.src::before{content:"source  "; color:var(--accent); opacity:.85}
+
+figure{margin:26px 0 8px}
+.scroll{overflow-x:auto; border:1px solid var(--rule); background:var(--surface); border-radius:2px}
+@media (min-width:761px){.scroll-tips{overflow:visible}}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:520px}
+caption{
+  text-align:left; font-family:var(--mono); font-size:11.5px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--muted); padding:0 0 10px;
+}
+th,td{padding:10px 16px; text-align:left; border-bottom:1px solid var(--rule)}
+thead th{
+  font-family:var(--mono); font-weight:500; font-size:11px; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--muted); background:var(--surface-2);
+  border-bottom:1px solid var(--rule); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap}
+tr.mark td{background:var(--accent-soft)}
+tr.mark td:first-child{font-weight:600}
+td.note{color:var(--muted); font-size:13px}
+
+/* thin in-cell magnitude bars, anchored to the number they sit under */
+.cellbar{
+  display:block; height:3px; border-radius:1px; background:var(--barfill);
+  margin:5px 0 1px auto;
+}
+tr.mark .cellbar{background:var(--accent)}
+
+/* rows that open a drill-down */
+tr[data-detail]{cursor:pointer}
+tr[data-detail]:hover td{background:var(--surface-2)}
+tr.mark[data-detail]:hover td{background:var(--accent-soft)}
+tr[data-detail] td:first-child::after{
+  content:"›"; margin-left:8px; font-family:var(--mono);
+  color:var(--accent); opacity:.45;
+}
+tr[data-detail]:hover td:first-child::after,
+tr[data-detail]:focus-visible td:first-child::after{opacity:1}
+
+button.linklike{
+  background:none; border:none; padding:0; font:inherit; color:var(--accent);
+  text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:2px;
+  cursor:pointer;
+}
+.provenance button.linklike{font-family:var(--mono); font-size:12.5px}
+
+blockquote{
+  margin:24px 0; padding:18px 22px; background:var(--surface);
+  border:1px solid var(--rule); border-left:3px solid var(--accent); border-radius:2px;
+  max-width:var(--measure);
+}
+blockquote p{
+  font-family:var(--serif); font-size:1.06rem; line-height:1.5;
+  margin:0 0 8px; color:var(--ink);
+}
+blockquote cite{
+  font-family:var(--mono); font-size:11.5px; font-style:normal; color:var(--muted);
+}
+
+.scope{
+  display:grid; grid-template-columns:max-content 1fr; gap:10px 20px;
+  margin:0 0 42px; padding:20px 0 0; border-top:1px solid var(--rule);
+  max-width:var(--measure); font-size:15px;
+}
+.scope dt{
+  font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--muted); padding-top:4px; white-space:nowrap;
+}
+.scope dd{margin:0; color:var(--ink-soft)}
+.scope dd.gap{color:var(--ink)}
+.scope dd.gap strong{font-weight:600}
+@media (max-width:560px){.scope{grid-template-columns:1fr; gap:4px 0}.scope dt{padding-top:12px}}
+
+.caveat{
+  background:var(--surface-2); border:1px solid var(--rule); border-radius:2px;
+  padding:18px 22px; margin:26px 0; max-width:var(--measure);
+}
+.caveat p{margin:0; font-size:15px; color:var(--ink-soft)}
+.caveat strong{font-weight:600; color:var(--ink)}
+
+/* Hover tooltips, used for vendor spellings and term definitions. Every
+   carrier also has a title attribute, so the information survives on touch,
+   in print, and inside containers that scroll in x (which clip absolutely
+   positioned children in y — the reason tooltips are suppressed on narrow
+   screens). */
+.vendor,.term{
+  position:relative; border-bottom:1px dotted var(--muted); cursor:help;
+}
+.vendor::after,.term::after{
+  content:attr(data-tip);
+  position:absolute; left:0; top:calc(100% + 8px); z-index:20;
+  min-width:230px; max-width:330px; padding:9px 12px;
+  background:var(--ink); color:var(--ground);
+  font-family:var(--mono); font-size:11.5px; line-height:1.65; white-space:pre-line;
+  border-radius:3px; box-shadow:0 4px 14px rgb(0 0 0 / .22);
+  opacity:0; visibility:hidden; transition:opacity .12s ease;
+}
+.vendor::before,.term::before{
+  content:""; position:absolute; left:14px; top:calc(100% + 2px); z-index:21;
+  border:6px solid transparent; border-bottom-color:var(--ink);
+  opacity:0; visibility:hidden; transition:opacity .12s ease;
+}
+.vendor:hover::after,.vendor:focus::after,.term:hover::after,.term:focus::after,
+.vendor:hover::before,.vendor:focus::before,.term:hover::before,.term:focus::before{opacity:1; visibility:visible}
+@media (max-width:760px){
+  .vendor,.term{border-bottom:none; cursor:auto}
+  .vendor::after,.vendor::before,.term::after,.term::before{display:none}
+}
+tbody tr:last-child .vendor::after{top:auto; bottom:calc(100% + 8px)}
+tbody tr:last-child .vendor::before{
+  top:auto; bottom:calc(100% + 2px); border-bottom-color:transparent; border-top-color:var(--ink);
+}
+@media (prefers-reduced-motion:reduce){.vendor::after,.vendor::before,.term::after,.term::before{transition:none}}
+
+.stat-row{display:flex; flex-wrap:wrap; gap:0; margin:30px 0 8px; border-top:1px solid var(--rule)}
+.stat{flex:1 1 190px; padding:18px 22px 18px 0; border-bottom:1px solid var(--rule)}
+.stat[data-detail]{cursor:pointer}
+.stat[data-detail]:hover{background:var(--surface-2)}
+.stat .n{
+  font-family:var(--mono); font-size:1.85rem; font-weight:500; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; display:block; line-height:1.1; color:var(--ink);
+}
+.stat .n.hot{color:var(--accent)}
+.stat .l{font-size:13.5px; color:var(--muted); display:block; margin-top:6px; line-height:1.4}
+
+code{font-family:var(--mono); font-size:.88em; background:var(--surface-2); padding:1px 5px; border-radius:2px}
+
+footer{margin-top:72px; padding-top:26px; border-top:1px solid var(--rule)}
+footer p{font-size:14px; color:var(--muted)}
+
+/* drill-down dialog */
+.overlay{
+  position:fixed; inset:0; z-index:50; background:rgb(0 0 0 / .45);
+  display:none; overflow-y:auto; padding:5vh 16px;
+}
+.overlay.open{display:block}
+.dialog{
+  max-width:780px; margin:0 auto; background:var(--ground);
+  border:1px solid var(--rule); border-top:3px solid var(--accent);
+  border-radius:2px; padding:26px 30px 30px; box-shadow:0 12px 40px rgb(0 0 0 / .3);
+}
+.dialog-head{display:flex; align-items:flex-start; gap:16px; margin-bottom:6px}
+.dialog-head .eyebrow{margin:0 0 8px}
+.dialog h3{
+  font-family:var(--serif); font-weight:600; font-size:1.45rem; line-height:1.2;
+  margin:0 0 4px;
+}
+.dialog .close{
+  margin-left:auto; background:none; border:1px solid var(--rule); border-radius:2px;
+  color:var(--muted); font-family:var(--mono); font-size:13px; padding:5px 11px; cursor:pointer;
+}
+.dialog .close:hover{color:var(--ink); border-color:var(--muted)}
+.dialog p{font-size:15px; color:var(--ink-soft)}
+.dialog .scroll{margin:16px 0}
+.dialog table{min-width:0; font-size:13.5px}
+.dialog th,.dialog td{padding:8px 12px}
+.dialog blockquote{margin:16px 0; padding:14px 18px}
+.dialog blockquote p{font-size:.98rem}
+.dialog .how{
+  border-top:1px solid var(--rule); margin-top:20px; padding-top:14px;
+}
+.dialog .how p{font-size:13.5px; color:var(--muted); margin-bottom:8px}
+.dialog .how p:last-child{margin-bottom:0}
+.dialog .how::before{
+  content:"where this comes from"; display:block; font-family:var(--mono);
+  font-size:10.5px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:8px;
+}
+.wtag{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.03em;
+  background:var(--surface-2); border:1px solid var(--rule); border-radius:2px;
+  padding:1px 6px; white-space:nowrap; color:var(--ink-soft);
+}
+
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:640px){
+  body{font-size:16px} .wrap{padding:0 18px 80px} header.masthead{padding-top:36px}
+  .dialog{padding:20px 18px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Briefing &middot; District procurement data</p>
+  <h1>How the District buys software</h1>
+  <p class="standfirst">Every technology contract the Office of Contracting and Procurement currently publishes, read and sorted by what the District is actually paying for.</p>
+  <div class="provenance">
+    <span>Data pulled 23&ndash;24 August 2026</span>
+    <span>3,983 contracts &middot; 114,255 purchase orders &middot; 866,823 payments</span>
+    <span><a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a></span>
+    <button class="linklike" data-detail="method">How this was put together</button>
+  </div>
+</header>
+
+<div class="col">
+<div class="lede">
+<p>The District signs very few contracts to build software. It signs a great many to hire people and to open ordering channels, and most of the technology money moves through those.</p>
+</div>
+
+<dl class="scope">
+  <dt>Covers</dt>
+  <dd>Contracts posted by the Office of Contracting and Procurement, their purchase orders and recorded payments.</dd>
+  <dt>Excludes</dt>
+  <dd>Independent agencies, which procure separately and publish nothing here.</dd>
+  <dt>Blind spot</dt>
+  <dd class="gap"><strong>The portal has no record type for <span class="term" tabindex="0" title="Specific work ordered under an existing schedule vehicle" data-tip="A task order is specific work ordered under an existing schedule vehicle: the vehicle sets the terms and ceiling, the order does the buying.">task orders</span>.</strong> Schedule vehicles carry the largest ceilings in this data, so the biggest single channel of technology buying cannot be followed. Some of it resurfaces as purchase orders or later contracts, but nothing links those back to their vehicle.</dd>
+</dl>
+</div>
+
+<h2>$1.2 billion authorised for hiring people, $38 million for building software</h2>
+<p>Sorting contracts by what they actually buy means reading them. The District's commodity codes will not do it: they are assigned by the buyer and applied loosely, so class 918, "consulting services", holds Medicaid managed care contracts worth billions of dollars, and class 920, "data processing, computer, programming and software services", holds a plumbing contractor's $14M contract. Every contract below was sorted from its title, vendor and awarding agency instead.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>Technology contracts by what is being bought &middot; select a row for the contracts in it</caption>
+<thead><tr><th>Category</th><th class="num">Contracts</th><th class="num"><span class="term" tabindex="0" title="The most a contract authorises the District to spend under it. Not money spent." data-tip="A ceiling is the most a contract authorises the District to spend under it. It is not money spent.">Ceilings</span></th><th>What it means</th></tr></thead>
+<tbody>
+<tr data-detail="wt:ordering_vehicle" tabindex="0"><td>Ordering vehicles</td><td class="num">328</td><td class="num">$1,840M<span class="cellbar" style="width:100%"></span></td><td class="note">Schedule contracts that authorise future task orders and buy nothing themselves</td></tr>
+<tr data-detail="wt:staff_augmentation" tabindex="0"><td>Staff augmentation</td><td class="num">211</td><td class="num">$1,203M<span class="cellbar" style="width:65%"></span></td><td class="note">People supplied by the hour or the person</td></tr>
+<tr data-detail="wt:hardware_or_license_resale" tabindex="0"><td>Hardware and licences</td><td class="num">262</td><td class="num">$502M<span class="cellbar" style="width:27%"></span></td><td class="note">Resale, including enterprise agreements</td></tr>
+<tr data-detail="wt:it_consulting_advisory" tabindex="0"><td>Consulting and advisory</td><td class="num">165</td><td class="num">$332M<span class="cellbar" style="width:18%"></span></td><td class="note">Assessment, strategy, planning</td></tr>
+<tr data-detail="wt:cots_implementation" tabindex="0"><td>Product implementation</td><td class="num">125</td><td class="num">$291M<span class="cellbar" style="width:16%"></span></td><td class="note">Configuring and deploying something bought</td></tr>
+<tr data-detail="wt:software_om_support" tabindex="0"><td>Software operations</td><td class="num">126</td><td class="num">$227M<span class="cellbar" style="width:12%"></span></td><td class="note">Running and maintaining systems that exist</td></tr>
+<tr data-detail="wt:telecom_or_network" tabindex="0"><td>Telecom and network</td><td class="num">95</td><td class="num">$208M<span class="cellbar" style="width:11%"></span></td><td class="note">Cabling, radio, network infrastructure</td></tr>
+<tr class="mark" data-detail="wt:custom_software_build" tabindex="0"><td>Custom software development</td><td class="num">60</td><td class="num">$38M<span class="cellbar" style="width:2%"></span></td><td class="note">Building something new to District specification</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">1,372 contracts classified as technology, $4,641M in ceilings. Notebook &sect;"What the District is buying".</span>
+
+<p>Building software is the smallest line. Staff augmentation carries thirty times its ceilings; ordering vehicles carry nearly fifty times. And $38M is a floor in a specific sense: it counts contracts structured as building to specification. Custom work bought as hourly labor, or through task orders this data cannot see, is not in it.</p>
+
+<h2>Half the technology ceiling authority sits on one schedule nobody can see through</h2>
+<p>The largest line in that table needs explaining, because it is not a purchase at all. An ordering vehicle is a contract that authorises future orders without buying anything. The District awards one to a pool of pre-qualified vendors, and agencies then place task orders against it as needs come up.</p>
+
+<p>Almost all of them are one programme. Of 328 ordering vehicles, 305 are DC Supply Schedule contracts, awarded in near-identical form to a set of small vendors under titles like "DCSS &mdash; Information Technology Equipment and Software". Counting every technology contract that names DCSS, the programme accounts for 397 contracts and $2.4 billion, which is 52% of all technology ceilings. Those dollars are authority, not spending &mdash; a pool of near-identical ceilings that will never collectively be drawn &mdash; and they mix two things: $1.6B of vehicle ceilings, and $844M of DCSS-named awards that buy actual work, 75 of them staff augmentation.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>How money reaches a vendor</caption>
+<thead><tr><th>Step</th><th>Published?</th><th>What you can see</th></tr></thead>
+<tbody>
+<tr><td>Schedule vehicle awarded</td><td class="note">Yes</td><td class="note">A ceiling, a vendor, a broad category of goods and services</td></tr>
+<tr class="mark"><td>Agency places a task order</td><td class="note">No</td><td class="note">Nothing. Not the scope, not the amount, not the winner</td></tr>
+<tr><td>Purchase order issued</td><td class="note">Yes</td><td class="note">An amount, a vendor, a commodity code, no description</td></tr>
+<tr><td>Payment made</td><td class="note">Yes</td><td class="note">An amount and a date, tied to a contract number 44% of the time</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">Notebook &sect;"Half the technology ceiling authority sits on one schedule".</span>
+
+<p>The step in the middle is where the actual buying decision is made, and it is the one step the District does not publish. Everything after this point describes what can be seen around that gap.</p>
+
+<h2>$3.1 billion authorised over five years, $527 million paid</h2>
+<p>A contract amount is an authorisation. Comparing it against payments the District actually recorded shows how far apart the two are, and how differently contract types behave.</p>
+<p>Both columns below cover the same five fiscal years, which matters more than it sounds. The payments table reaches back to FY2017 and contract option periods run out to 2031, so a careless comparison counts payments made before a ceiling existed against authorisation nobody could have drawn yet.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>Authorised against paid, FY2021&ndash;FY2025 &middot; select a row for the contracts behind it</caption>
+<thead><tr><th>Contract type</th><th class="num">Contracts</th><th class="num">Ceilings</th><th class="num">Paid</th><th class="num">Drawn</th></tr></thead>
+<tbody>
+<tr class="mark" data-detail="win:Indefinite Delivery Indefinite Quantity" tabindex="0"><td><span class="term" tabindex="0" title="Indefinite delivery, indefinite quantity: a ceiling and terms now, actual orders later" data-tip="Indefinite delivery, indefinite quantity: the contract sets a ceiling and terms, and actual orders are placed later as needs come up.">Indefinite delivery, indefinite quantity</span></td><td class="num">359</td><td class="num">$1,995M</td><td class="num">$56M</td><td class="num">2.8%<span class="cellbar" style="width:2.8%"></span></td></tr>
+<tr data-detail="win:Firm Fixed Price" tabindex="0"><td>Firm fixed price</td><td class="num">575</td><td class="num">$668M</td><td class="num">$313M</td><td class="num">46.8%<span class="cellbar" style="width:46.8%"></span></td></tr>
+<tr data-detail="win:Labor Hour" tabindex="0"><td>Labor hour</td><td class="num">97</td><td class="num">$394M</td><td class="num">$130M</td><td class="num">33.0%<span class="cellbar" style="width:33%"></span></td></tr>
+<tr><td>All technology contracts</td><td class="num">1,070</td><td class="num">$3,094M</td><td class="num">$527M</td><td class="num">17.0%<span class="cellbar" style="width:17%"></span></td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">Option periods falling entirely inside FY2021&ndash;FY2025, against payments made in those same years. Recomputed by <code>verify_claims.py</code> &sect;"authorised against paid"; the whole-history version is Notebook &sect;"Ceilings are not spending".</span>
+
+<div class="caveat">
+<p><strong>Read those percentages as floors.</strong> Payments join to contracts by contract number, and a task order issued under an ordering vehicle is paid under the task order's own number, so it never joins back to the parent. Only 44% of technology contracts have any linked payment at all.</p>
+</div>
+
+<h2>Ten vendors take half the traceable technology money</h2>
+<p>Of $579M paid against technology contracts between FY2021 and FY2025, spread across 295 vendors, half went to ten of them. One took a sixth on its own. Traceable is doing real work in that sentence: this is measured on the payments that carry a matching contract number, and the unlinked rest &mdash; including everything bought through the Supply Schedule &mdash; could be more or less concentrated. The top spot does not depend on the join, though. Purchase orders, a separate path into the data, also put Computer Aid first.</p>
+
+<div class="stat-row">
+  <div class="stat" data-detail="top10" tabindex="0"><span class="n hot">17%</span><span class="l">To the single largest vendor</span></div>
+  <div class="stat" data-detail="top10" tabindex="0"><span class="n">42%</span><span class="l">To the top five</span></div>
+  <div class="stat" data-detail="top10" tabindex="0"><span class="n">53%</span><span class="l">To the top ten</span></div>
+  <div class="stat" data-detail="top10" tabindex="0"><span class="n">295</span><span class="l">Vendors paid in total</span></div>
+</div>
+
+<figure>
+<div class="scroll scroll-tips">
+<table>
+<caption>Largest recipients of technology payments, FY2021&ndash;FY2025 &middot; hover a name for its raw spellings, select a row for its contracts</caption>
+<thead><tr><th>Vendor</th><th class="num">Paid</th><th class="num">Share</th><th>What it sells the District</th></tr></thead>
+<tbody>
+<tr class="mark" data-detail="vendor:COMPUTER AID" tabindex="0"><td><span class="vendor" tabindex="0" title="COMPUTER AID, INC" data-tip="COMPUTER AID, INC">Computer Aid</span></td><td class="num">$100.6M</td><td class="num">17.4%<span class="cellbar" style="width:100%"></span></td><td class="note">IT staff by the hour</td></tr>
+<tr data-detail="vendor:CDW GOVERNMENT" tabindex="0"><td><span class="vendor" tabindex="0" title="CDW GOVERNMENT INC · CDW GOVERNMENT LLC · CDW GOVERNMENT, INC." data-tip="CDW GOVERNMENT INC&#10;CDW GOVERNMENT LLC&#10;CDW GOVERNMENT, INC.">CDW Government</span></td><td class="num">$55.1M</td><td class="num">9.5%<span class="cellbar" style="width:55%"></span></td><td class="note">Hardware and licence resale</td></tr>
+<tr data-detail="vendor:KPMG" tabindex="0"><td><span class="vendor" tabindex="0" title="KPMG LLP · KPMG, LLP" data-tip="KPMG LLP&#10;KPMG, LLP">KPMG</span></td><td class="num">$37.1M</td><td class="num">6.4%<span class="cellbar" style="width:37%"></span></td><td class="note">Consulting</td></tr>
+<tr data-detail="vendor:CARAHSOFT TECHNOLOGY" tabindex="0"><td><span class="vendor" tabindex="0" title="CARAHSOFT TECHNOLOGY CORP" data-tip="CARAHSOFT TECHNOLOGY CORP">Carahsoft Technology</span></td><td class="num">$33.9M</td><td class="num">5.9%<span class="cellbar" style="width:34%"></span></td><td class="note">Software licence reseller</td></tr>
+<tr data-detail="vendor:ACCENTURE" tabindex="0"><td><span class="vendor" tabindex="0" title="ACCENTURE LLP" data-tip="ACCENTURE  LLP">Accenture</span></td><td class="num">$17.8M</td><td class="num">3.1%<span class="cellbar" style="width:18%"></span></td><td class="note">Consulting and integration</td></tr>
+<tr data-detail="vendor:GEOGRAPHIC SOLUTIONS" tabindex="0"><td><span class="vendor" tabindex="0" title="GEOGRAPHIC SOLUTIONS INC" data-tip="GEOGRAPHIC SOLUTIONS INC">Geographic Solutions</span></td><td class="num">$14.8M</td><td class="num">2.6%<span class="cellbar" style="width:15%"></span></td><td class="note">Unemployment benefits system</td></tr>
+<tr data-detail="vendor:INTERNATIONAL BUSINESS MACHINE" tabindex="0"><td><span class="vendor" tabindex="0" title="INTERNATIONAL BUSINESS MACHINE" data-tip="INTERNATIONAL BUSINESS MACHINE">IBM</span></td><td class="num">$12.0M</td><td class="num">2.1%<span class="cellbar" style="width:12%"></span></td><td class="note">Mainframe and Curam software support</td></tr>
+<tr data-detail="vendor:RIDGE IT CYBER" tabindex="0"><td><span class="vendor" tabindex="0" title="Ridge IT Cyber, LLC" data-tip="Ridge IT Cyber, LLC">Ridge IT Cyber</span></td><td class="num">$11.4M</td><td class="num">2.0%<span class="cellbar" style="width:11%"></span></td><td class="note">Security consulting</td></tr>
+<tr data-detail="vendor:QUICKBASE" tabindex="0"><td><span class="vendor" tabindex="0" title="QUICKBASE INC." data-tip="QUICKBASE  INC.">Quickbase</span></td><td class="num">$10.8M</td><td class="num">1.9%<span class="cellbar" style="width:11%"></span></td><td class="note">Low-code platform</td></tr>
+<tr data-detail="vendor:D2SOL" tabindex="0"><td><span class="vendor" tabindex="0" title="D2SOL INC" data-tip="D2SOL INC">D2Sol</span></td><td class="num">$10.5M</td><td class="num">1.8%<span class="cellbar" style="width:10%"></span></td><td class="note">DCAS operations and maintenance</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">Vendor spellings are folded together by the rules in <code>vendor_aliases.yaml</code>, which also records the pairs deliberately left separate. Notebook &sect;"Ten vendors take half the traceable technology payments".</span>
+
+<p>Only one company in the top four sells the District software it wrote. Two are resellers and one is a consultancy.</p>
+
+<h3>What the largest vendor's contract actually sells</h3>
+<p>Computer Aid's contracts are coded NIGP 962, "miscellaneous services, not otherwise classified", and the purchase orders written against them are coded 918, "consulting". Neither is a technology code, so an analysis filtered to IT commodity classes misses the District's largest technology vendor completely.</p>
+
+<p>One of those contracts is titled "Information Technology Staff Augmentation Services", and its price schedule says plainly what is for sale. The $65M ceiling splits into $45M of "Labor Hour Type" and $20M of "Fixed Price Project", followed by a rate card: 45 job categories, four skill levels each, a not-to-exceed fully burdened hourly rate for every combination.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>From the price schedule of CW91684 &middot; 5 of 45 job categories</caption>
+<thead><tr><th>Job category</th><th class="num">Entry</th><th class="num">Journeyman</th><th class="num">Senior</th><th class="num">Master</th></tr></thead>
+<tbody>
+<tr><td>Customer Support</td><td class="num">$24.01</td><td class="num">$26.38</td><td class="num">$29.31</td><td class="num">$45.49</td></tr>
+<tr><td>Applications Systems Analyst</td><td class="num">$50.10</td><td class="num">$55.87</td><td class="num">$61.20</td><td class="num">$66.20</td></tr>
+<tr><td>Computer Scientist</td><td class="num">$55.15</td><td class="num">$64.32</td><td class="num">$71.53</td><td class="num">$77.05</td></tr>
+<tr><td>Enterprise Architect</td><td class="num">$75.83</td><td class="num">$88.73</td><td class="num">$98.92</td><td class="num">$138.47</td></tr>
+<tr><td>Cyber Security Engineer</td><td class="num">$80.50</td><td class="num">$93.86</td><td class="num">$123.99</td><td class="num">$143.42</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">180 rates in all, $24.01 to $173.71, median $69.97, re-read from the cached award PDF by <code>verify_claims.py</code>.</span>
+
+<p>Compare FAST Enterprises, which builds tax and benefits systems: $51M across 11 purchase orders, median $3.5M, priced against the system delivered rather than the hour.</p>
+
+<h2>What an hour of a person costs, where the District publishes it</h2>
+<p>Computer Aid's card is not the only one. 42 of the 359 technology contracts with a readable award document publish an hourly rate card &mdash; 2,146 not-to-exceed rates in all, from $24.01 for entry-level customer support to $1,015 for one vendor's IT subject matter expert. For 1,304 of those rates the match between job title and price was re-verified against the document text mechanically. The rest sit in documents whose PDF layout scrambles the columns, so their cards appear below as price ranges only, never as title-to-price pairs.</p>
+
+<p>Who publishes rates is its own finding. The staffing firms and small consultancies do. The biggest names mostly do not: the text layer of Accenture's award PDF on its DCAS oversight contract is 41 characters long, and KPMG's largest contract and Ridge IT's Zero Trust award have no award document attached at all. The vendors billing the most are the ones whose prices the portal cannot show.</p>
+
+<h3>Software engineers specifically</h3>
+<p>One title, a $56-to-$220 spread, and the price tracks the channel it was bought through: staff augmentation by the hour at the bottom, specialist build shops at the top.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>Published hourly rates for software development roles &middot; verified title-to-price pairs only</caption>
+<thead><tr><th>Vendor</th><th>Role as priced</th><th class="num">Rate range</th></tr></thead>
+<tbody id="devrates"></tbody>
+</table>
+</div>
+</figure>
+<span class="src">Rows with a rate range repeat across levels or option years. Full list: <button class="linklike" data-detail="devall">every software-development rate found</button>. Recomputed by <code>verify_claims.py</code> &sect;"published hourly rate cards".</span>
+
+<h3>Every published rate card</h3>
+<figure>
+<div class="scroll">
+<table>
+<caption>Contracts publishing hourly rates &middot; select a row for the card</caption>
+<thead><tr><th>Vendor</th><th class="num">Rates</th><th class="num">Lowest</th><th class="num">Median</th><th class="num">Highest</th></tr></thead>
+<tbody id="ratecards"></tbody>
+</table>
+</div>
+</figure>
+<span class="src">Every rate was re-found verbatim in the award text by <code>analysis/extract_rates.py</code>; drift fails <code>make verify</code>.</span>
+
+<h3>The hiring side of the same hour</h3>
+<p>Job ads answer what the portal cannot: what the person is offered. The staffing firms recruiting for District seats post in the contract's own vocabulary &mdash; "Journeyman", "Senior", "Master" are the CW91684 tier names &mdash; and DC postings carry pay. Three captured on 24 August 2026 line up against the card directly:</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>Billed to the District against offered to the worker &middot; same tier names</caption>
+<thead><tr><th>Role and tier</th><th class="num">Billed (CW91684)</th><th class="num">Offered in a posting</th><th>Who posted it</th></tr></thead>
+<tbody>
+<tr><td>Customer Support, Senior</td><td class="num">$29.31</td><td class="num">$20 &ndash; $23</td><td class="note">AHU Technologies, for a client described as DC's environment agency</td></tr>
+<tr><td>Technical Writer, Journeyman</td><td class="num">$57.35</td><td class="num">$40 &ndash; $45</td><td class="note">AHU Technologies, unnamed DC agency</td></tr>
+<tr class="mark"><td>Web Developer, Master</td><td class="num">$77.00</td><td class="num">$74 &ndash; $75</td><td class="note">s3cloudsolutions, client named as OCTO, contract terms</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">Postings captured 24 August 2026; screenshots, raw pages and archive links in <code>evidence/job_ads/</code>. A posting using the tier vocabulary is not proof it fills a seat on this contract; the OCTO one names the agency outright.</span>
+
+<p>The first two rows show the ordinary shape: the worker is offered roughly 70&ndash;78% of the billed rate, before whoever employs them takes taxes and overhead out of the rest. The third row shows the other pattern: on contract terms, at the top tier, the offer sits a dollar or two under the ceiling &mdash; the recruiting firm's cut lives somewhere other than the hourly spread.</p>
+
+<p>Around the edges, the same hunt found: Cúram staffing ads &mdash; the skill DCAS runs on &mdash; offering $80&ndash;90 an hour, and one deleted posting titled "DHCF DCAS Business Analyst" at $98&ndash;108; D2Sol, holder of the $84M DCAS operations contract, hiring junior US staff and Bangalore staff through its own site with no pay posted, while its 2025 H-1B filings put Cúram developers at $130,000&ndash;$190,000 in the DC suburbs; FAST Enterprises offering $91,000&ndash;$96,000 for the implementation consultants who run systems like MyTax DC; and Computer Aid's own careers board carrying exactly one DC posting &mdash; the $90,000&ndash;$110,000 account manager who runs the staff-augmentation program. The billed workforce is recruited under other companies' names.</p>
+
+<div class="caveat">
+<p><strong>How many people is that? The data never says.</strong> It records dollars and rates, not heads. The arithmetic: Computer Aid runs about $93M a year in purchase orders; at its card's median $69.97 an hour that is roughly 1.3 million hours, or about 640 people working full time. Count only the payments that link back to its contracts and the floor is about 140. The truth sits somewhere in that range, and nothing published narrows it further.</p>
+</div>
+
+<h2>Seventy-four of eighty-two build contracts fix the scope before work starts</h2>
+<p>Award documents were read for how delivery is organised: what the price schedule commits to and what the deliverables schedule requires. This was possible for 288 contracts, the ones whose award document carries a readable text layer.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>Delivery structure &middot; 288 readable award documents &middot; select a row to read the contract language in it</caption>
+<thead><tr><th>Structure</th><th class="num">Contracts</th><th class="num">Share</th><th>What the contract commits to</th></tr></thead>
+<tbody>
+<tr class="mark" data-detail="ds:sequential_gated_deliverables" tabindex="0"><td>Sequential and gated</td><td class="num">82</td><td class="num">28%<span class="cellbar" style="width:100%"></span></td><td class="note">Scope fixed in advance, deliverables accepted in order, payment following acceptance</td></tr>
+<tr data-detail="ds:recurring_operations" tabindex="0"><td>Recurring operations</td><td class="num">76</td><td class="num">26%<span class="cellbar" style="width:93%"></span></td><td class="note">Ongoing support at a recurring price; nothing is being built</td></tr>
+<tr data-detail="ds:goods_or_licenses" tabindex="0"><td>Goods or licences</td><td class="num">51</td><td class="num">18%<span class="cellbar" style="width:62%"></span></td><td class="note">No delivery method applies</td></tr>
+<tr data-detail="ds:incremental_capacity" tabindex="0"><td>Incremental capacity</td><td class="num">38</td><td class="num">13%<span class="cellbar" style="width:46%"></span></td><td class="note">A team or block of capacity, redirected as priorities change</td></tr>
+<tr data-detail="ds:structure_not_stated" tabindex="0"><td>Not stated</td><td class="num">37</td><td class="num">13%<span class="cellbar" style="width:45%"></span></td><td class="note">The document does not say</td></tr>
+<tr data-detail="ds:milestone_payments_only" tabindex="0"><td>Milestone payments only</td><td class="num">4</td><td class="num">1%<span class="cellbar" style="width:5%"></span></td><td class="note">Dated milestones without a described sequence</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">Read from award documents by the pass in <code>delivery_config.yaml</code>; counts recomputed by <code>verify_claims.py</code> &sect;"delivery structure". Notebook &sect;"Agile language".</span>
+
+<p>Waterfall is the largest category among contracts that build or run something, and it is waterfall in the strict sense: 74 of the 82 fix their scope in advance, so changing what gets built requires modifying the contract. Incremental arrangements, where a team can be pointed at something different next month without a modification, account for 38.</p>
+
+<h3>Nine of the 82 also promise to work in sprints</h3>
+<p>Eleven contracts in the readable set commit to agile delivery at all &mdash; and nine of them are structurally sequential and gated, saying so in the same document that fixes the scope and sets the acceptance gates. About a quarter of everything else is gated. Two of the eleven are hand-read corrections of classifier misses, recorded with reasons in <code>delivery_overrides.yaml</code>. Three are worth reading directly; <button class="linklike" data-detail="commit">here are all eleven, with what they promise</button>.</p>
+
+<blockquote>
+<p>"using a hybrid waterfall and Agile methodology"</p>
+<cite>CW122785 &middot; Clinical Case Management System &middot; $7.9M</cite>
+</blockquote>
+
+<blockquote>
+<p>"The contractor shall follow the Agile/Scrum methodology throughout the project's Systems Development Life Cycle (SDLC)"</p>
+<cite>ABCA System modernization</cite>
+</blockquote>
+
+<blockquote>
+<p>"Sprint 1: Extract Data for OTR &mdash; within 7 days from contract award &hellip; Sprint 4: Load Data &mdash; within 6 weeks of award"</p>
+<cite>DOB Vacant Buildings Enforcement</cite>
+</blockquote>
+
+<p>The last one sets the contents and the deadline of every sprint before any work starts.</p>
+
+<p>Counted separately, and excluded from the eleven above, are 14 contracts where agile appears only as a hiring requirement: "Experience in Agile methodology such as Scrum, Kanban, or Scaled Agile Framework" sitting in a labor category description. That is a specification for the people being bought, and says nothing about how the work will run.</p>
+
+<h2>The District names a system in one contract out of five</h2>
+<p>273 of 1,372 technology contracts name a specific system in the title, so every count here is a floor. The names give the clearest picture of what the money maintains, and the pattern is that a handful of large systems absorb repeated contracts over years.</p>
+
+<figure>
+<div class="scroll">
+<table>
+<caption>Named systems by total ceilings across all their contracts</caption>
+<thead><tr><th>System</th><th class="num">Contracts</th><th class="num">Ceilings</th><th>Agency and purpose</th></tr></thead>
+<tbody>
+<tr class="mark" data-detail="dcas" tabindex="0"><td>DCAS</td><td class="num">28</td><td class="num">$198.3M<span class="cellbar" style="width:100%"></span></td><td class="note">Health Care Finance &middot; benefits eligibility and enrolment</td></tr>
+<tr><td>MMIS</td><td class="num">2</td><td class="num">$174.3M<span class="cellbar" style="width:88%"></span></td><td class="note">Health Care Finance &middot; Medicaid claims and provider management</td></tr>
+<tr><td>Capital Bikeshare</td><td class="num">1</td><td class="num">$50.0M<span class="cellbar" style="width:25%"></span></td><td class="note">Transportation &middot; the bikeshare system itself</td></tr>
+<tr><td>MOBIS</td><td class="num">4</td><td class="num">$32.0M<span class="cellbar" style="width:16%"></span></td><td class="note">Contracting and Procurement &middot; management and consulting schedule</td></tr>
+<tr><td>UIBS</td><td class="num">2</td><td class="num">$14.8M<span class="cellbar" style="width:7%"></span></td><td class="note">Employment Services &middot; unemployment insurance benefits</td></tr>
+<tr><td>Offender Management System</td><td class="num">2</td><td class="num">$5.0M<span class="cellbar" style="width:3%"></span></td><td class="note">Chief Technology Officer &middot; corrections records</td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<span class="src">Notebook &sect;"Named systems".</span>
+
+<p>DCAS is the clearest case of how the District sustains a large system: at least 28 separate contracts across the years in this data, for operations and maintenance, application development teams, licences, hosting, printing and mailing. No single contract builds it. It is kept running by a rolling series of awards, most of them for people and services rather than for software.</p>
+
+<h2>Where the reading is incomplete</h2>
+<p>Delivery structure could be read for 288 of 476 candidate contracts. The rest had no award document attached, or a scanned one with no text layer, which would need optical character recognition.</p>
+<p>Payments join to a contract for 44% of technology contracts. Of 866,823 payment rows, 478,716 carry no contract number at all, covering $17.8B of real spending that cannot be attributed to any contract.</p>
+<p>Contracts were sorted by a language model reading titles, vendors and agencies, not contract text. Scored against 20 hand-read cases picked to be hard: 20 of 20 on what is bought, 20 of 20 on delivery structure, 18 of 20 on what agile language is doing &mdash; the two misses are genuine commitments it filed as incidental, corrected by hand as described above. Twenty cases bound the error loosely. Treat category totals as approximate; the ordering between categories is what survives.</p>
+
+<h2>Questions this will raise</h2>
+<p>The ones an incoming administration should ask, answered here where the data can answer them, and marked plainly where it cannot.</p>
+
+<h3>How much does the District spend on technology in a year?</h3>
+<p>Nobody can say from published data, and that is a finding rather than an evasion. Payments traceable to technology contracts run $58M in FY2021 rising to $175M in FY2025 &mdash; read those as floors, because only 44% of technology contracts have payments that link to them at all, and $17.8B of payments across every category carry no contract number. Any single annual figure would be an estimate built on the visible minority.</p>
+
+<h3>Is anything here improper?</h3>
+<p>Nothing on this page alleges misconduct, and none of it should be read that way. Ordering vehicles, staff augmentation, fixed-scope delivery and loosely applied commodity codes are the process working as designed. The findings are about what that process makes visible and what its contracts structurally commit to &mdash; not about anyone breaking rules.</p>
+
+<h3>Do the unpublished task orders actually exist, or would publishing them mean new paperwork?</h3>
+<p>They exist as numbered records; the payment ledger shows it. Payments made between FY2021 and FY2025 reference 3,079 distinct CW-numbered awards, and 1,471 of them &mdash; carrying $0.8B &mdash; appear nowhere in the portal's published contract list. Some may have been published once and removed since. Either way, money moves today under award numbers that no reader of the portal can look up, so making them visible is a disclosure decision, not a record-keeping project.</p>
+
+<h3>Is Computer Aid overpaid? Are these vendors any good?</h3>
+<p>This data cannot say, in either direction. It shows what was authorised, what rates were agreed and what was paid &mdash; not what was delivered, whether it worked, or what the same work costs elsewhere. The rate card is reproduced above so the agreed prices are at least visible; judging them needs comparators this data does not contain, and nothing in it measures performance.</p>
+
+<h3>Why does it matter that contracts say agile and run waterfall?</h3>
+<p>Because the structure is what binds. A contract that fixes scope, sequences deliverables and gates payment on acceptance stays waterfall whatever method its statement of work names: changing what gets built requires a contract modification. The teams inside can hold every ceremony they like &mdash; the thing the District can change its mind about was set at award. Whether that is the right way to buy software is a policy choice this data does not make. It only shows which choice the paper actually encodes.</p>
+
+<h3>Would another city look different?</h3>
+<p>Unknown; no comparison was attempted, and most large governments also buy technology heavily through staffing and schedule vehicles. What can be compared today is disclosure: the federal government publishes its task orders on USAspending, and the District does not publish its own.</p>
+
+<h3>What would close the gaps?</h3>
+<p>Each item maps to a defect documented in the repository. Publish task orders placed under schedule vehicles. Require a contract number on every payment row &mdash; 55% have none. Fix the fiscal-year filter that silently returns everything, and the payment field that repeats a check-run total on every row in the run. Standardise vendor names. Attach award documents with a text layer, since 188 of 476 could not be read. These are publishing changes to systems that already hold the records.</p>
+
+<h3>Can this be rerun after the transition?</h3>
+<p>Yes, by anyone, without asking us. <code>make pull</code> fetches a fresh snapshot, <code>make classify</code> re-sorts it, <code>make verify</code> recomputes every figure on this page and fails loudly if one no longer holds, and <code>make test</code> re-scores the classifiers against hand-read contracts. The portal is live, so the counts will have moved. The method will not.</p>
+
+<span class="src">Unpublished-number and per-year figures recomputed by <code>verify_claims.py</code> &sect;"payments against unpublished contract numbers" and &sect;"traceable technology payments by year".</span>
+
+<footer>
+<p>Figures regenerate from <code>analysis/how_dc_buys_software.ipynb</code>, and <code>analysis/verify_claims.py</code> recomputes every number on this page &mdash; the tables, the five-year window, the rate card &mdash; failing loudly if one has drifted. The contracts behind each figure live in <code>site/data.js</code>, rebuilt by <code>analysis/build_site_data.py</code>. Two quirks in the portal that will bite anyone reproducing this &mdash; a fiscal-year filter that silently returns everything, and a payment amount field that is really a check-run total &mdash; are covered in <button class="linklike" data-detail="method">the method notes</button>. The portal is live, so counts move slightly between pulls; this one finished on 24 August 2026.</p>
+</footer>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" id="dialog"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+'use strict';
+
+const WT_LABEL = {
+  ordering_vehicle: 'Ordering vehicles',
+  staff_augmentation: 'Staff augmentation',
+  hardware_or_license_resale: 'Hardware and licences',
+  it_consulting_advisory: 'Consulting and advisory',
+  cots_implementation: 'Product implementation',
+  software_om_support: 'Software operations',
+  telecom_or_network: 'Telecom and network',
+  custom_software_build: 'Custom software development',
+  not_technology: 'Not technology',
+};
+
+const VENDOR_LABEL = {
+  'COMPUTER AID': 'Computer Aid', 'CDW GOVERNMENT': 'CDW Government', 'KPMG': 'KPMG',
+  'CARAHSOFT TECHNOLOGY': 'Carahsoft Technology', 'ACCENTURE': 'Accenture',
+  'GEOGRAPHIC SOLUTIONS': 'Geographic Solutions', 'INTERNATIONAL BUSINESS MACHINE': 'IBM',
+  'RIDGE IT CYBER': 'Ridge IT Cyber', 'QUICKBASE': 'Quickbase', 'D2SOL': 'D2Sol',
+  'COMPUTER AID, INC.': 'Computer Aid', 'EASTBANC TECHNOLOGIES': 'EastBanc Technologies',
+  'AVID SYSTEMS, LLC': 'Avid Systems', 'LIMBIC SYSTEMS INC': 'Limbic Systems',
+};
+
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g,
+    c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function quoteText(s, cap) {
+  const t = String(s ?? '').trim().replace(/^["“”']+|["“”']+$/g, '');
+  return esc(t.slice(0, cap)) + (t.length > cap ? '&hellip;' : '');
+}
+
+function money(n) {
+  if (n >= 99.5e6) return '$' + Math.round(n / 1e6).toLocaleString() + 'M';
+  if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function contractRows(rows, extras) {
+  return rows.map(r => {
+    const tag = extras === 'worktype'
+      ? `<td><span class="wtag">${esc(WT_LABEL[r.work_type] || r.work_type)}</span></td>` : '';
+    const paid = extras === 'paid' ? `<td class="num">${money(r.paid)}</td>` : '';
+    return `<tr>
+      <td class="num">${esc(r.contract_number)}</td>
+      <td title="${esc(r.agency || '')}">${esc(r.title)}</td>
+      <td class="note">${esc(r.vendor || '')}</td>
+      ${tag}<td class="num">${money(r.ceiling)}</td>${paid}
+    </tr>`;
+  }).join('');
+}
+
+function contractTable(rows, extras) {
+  const tagHead = extras === 'worktype' ? '<th>Sorted as</th>' : '';
+  const paidHead = extras === 'paid' ? '<th class="num">Paid FY21&ndash;25</th>' : '';
+  return `<div class="scroll"><table>
+    <thead><tr><th>Contract</th><th>Title</th><th>Vendor</th>${tagHead}<th class="num">Ceiling</th>${paidHead}</tr></thead>
+    <tbody>${contractRows(rows, extras)}</tbody>
+  </table></div>`;
+}
+
+const HOW_CLASSIFIED = `<p>Contracts are sorted from title, vendor and awarding agency by the
+  model configured in <code>classifier_config.yaml</code>, scored against hand-read labels in
+  <code>tests/</code>. Category totals are recomputed from the raw snapshot by
+  <code>analysis/verify_claims.py</code>; <code>make verify</code> fails if they drift.</p>`;
+
+function detailHtml(id) {
+  if (id.startsWith('wt:')) {
+    const key = id.slice(3);
+    const wt = DATA.work_types[key];
+    const shown = Math.min(wt.contracts.length, 15);
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${wt.n} contracts &middot; ${money(wt.ceiling)} in ceilings</p>
+        <h3 id="dialog-title">${esc(WT_LABEL[key])}</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>${wt.n > shown ? `The ${shown} largest by ceiling. Hover a title for the awarding agency.`
+                        : 'Every contract in the category. Hover a title for the awarding agency.'}</p>
+      ${contractTable(wt.contracts)}
+      <div class="how">${HOW_CLASSIFIED}</div>`;
+  }
+
+  if (id.startsWith('win:')) {
+    const key = id.slice(4);
+    const w = DATA.window[key];
+    const drawn = (100 * w.paid / w.ceiling).toFixed(1);
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${w.n} contracts &middot; ${money(w.ceiling)} authorised &middot; ${money(w.paid)} paid &middot; ${drawn}% drawn</p>
+        <h3 id="dialog-title">${esc(key)}, FY2021&ndash;FY2025</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>The ten largest by ceiling, with what was actually paid against each.</p>
+      ${contractTable(w.contracts, 'paid')}
+      <div class="how">
+        <p>The window takes option periods falling entirely inside FY2021&ndash;FY2025 and payments
+        made in those same years, so authority and spending cover the same span. Payments join by
+        contract number, which only 44% of technology contracts have &mdash; a paid figure of $0 can
+        mean unspent or can mean paid under a number that never joins back. Recomputed by
+        <code>make verify</code> under "authorised against paid".</p>
+      </div>`;
+  }
+
+  if (id.startsWith('vendor:')) {
+    const key = id.slice(7);
+    const v = DATA.vendors[key];
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${money(v.paid)} paid FY2021&ndash;25 &middot; ${v.share_pct}% of traceable technology payments</p>
+        <h3 id="dialog-title">${esc(VENDOR_LABEL[key] || key)}</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>Recorded in the portal as: ${v.raw_names.map(n => `<code>${esc(n)}</code>`).join(' · ')}</p>
+      <p>Its technology contracts, largest first:</p>
+      ${contractTable(v.contracts, 'worktype')}
+      <div class="how">
+        <p>Payments are the FY2021&ndash;FY2025 window; the contract list is every contract classified
+        as technology for this vendor, whatever its dates &mdash; the two describe different slices.
+        Spellings are merged by the rules in <code>vendor_aliases.yaml</code>, and
+        <code>make verify</code> checks that the file matches what the rules actually combine.</p>
+      </div>`;
+  }
+
+  if (id === 'top10') {
+    const c = DATA.concentration;
+    const max = c.top10[0].share_pct;
+    const rows = c.top10.map(r => `<tr>
+      <td>${esc(VENDOR_LABEL[r.vendor] || r.vendor)}</td>
+      <td class="num">${money(r.paid)}</td>
+      <td class="num">${r.share_pct}%<span class="cellbar" style="width:${(100 * r.share_pct / max).toFixed(0)}%"></span></td>
+    </tr>`).join('');
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${money(c.total)} traceable &middot; ${c.n_vendors} vendors</p>
+        <h3 id="dialog-title">The ten largest recipients</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <div class="scroll"><table>
+        <thead><tr><th>Vendor</th><th class="num">Paid</th><th class="num">Share</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+      <div class="how">
+        <p>Payments FY2021&ndash;FY2025 whose contract number matches a classified technology
+        contract, with vendor spellings merged by <code>vendor_aliases.yaml</code>. Only 44% of
+        technology contracts have payments that join at all, so this measures the visible minority.
+        Shares recomputed by <code>make verify</code> under "vendor concentration".</p>
+      </div>`;
+  }
+
+  if (id.startsWith('ds:')) {
+    const key = id.slice(3);
+    const DS = {
+      sequential_gated_deliverables: ['Sequential and gated',
+        'Scope fixed in advance, deliverables accepted in order, payment following acceptance. This is waterfall whatever words the document uses.'],
+      recurring_operations: ['Recurring operations',
+        'Ongoing support at a recurring price. Nothing is being built, so delivery method does not apply.'],
+      goods_or_licenses: ['Goods or licences',
+        'Products, hardware or licences. No delivery method applies.'],
+      incremental_capacity: ['Incremental capacity',
+        'A team, a number of sprints, or a block of capacity, redirected as priorities change without modifying the contract.'],
+      structure_not_stated: ['Not stated',
+        'The award document does not describe how work will be delivered. The classifier is told to choose this rather than infer a structure that is not written down.'],
+      milestone_payments_only: ['Milestone payments only',
+        'Payment tied to dated milestones, but no described design-then-build sequence. Weaker evidence than sequential and gated, and deliberately not counted as waterfall.'],
+    };
+    const st = DATA.structures[key];
+    const cards = st.examples.map(r => `<blockquote>
+      <p>&ldquo;${quoteText(r.deliverables_quote, 300)}&rdquo;</p>
+      <cite>${esc(r.contract_number)} &middot; ${esc(r.title)} &middot; ${esc(r.vendor)} &middot; ${money(r.ceiling)}${r.scope_fixed_in_advance === 'yes' ? ' &middot; scope fixed in advance' : ''}</cite>
+    </blockquote>`).join('');
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${st.n} of 288 readable awards</p>
+        <h3 id="dialog-title">${esc(DS[key][0])}</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>${esc(DS[key][1])}</p>
+      <p>The language that put contracts here &mdash; each quote is what the classifier recorded
+      from the award's price and deliverables schedules, largest contracts first:</p>
+      ${cards}
+      <div class="how">
+        <p>Structure is judged from what the parties are committed to, never from vocabulary
+        (<code>delivery_config.yaml</code> keeps the two axes apart). Quotes come straight from the
+        award document text cached in <code>data/pdftext/</code>; counts are recomputed by
+        <code>make verify</code> under "delivery structure".</p>
+      </div>`;
+  }
+
+  if (id.startsWith('rate:')) {
+    const cn = id.slice(5);
+    const c = DATA.rates.contracts.find(r => r.contract_number === cn);
+    const head = `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${esc(cn)} &middot; ${c.n} published rates &middot; $${c.min.toFixed(2)} to $${c.max.toFixed(2)}, median $${c.median.toFixed(2)}</p>
+        <h3 id="dialog-title">${esc(c.vendor)}</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>${esc(c.title)}</p>`;
+    if (!c.rows) {
+      return head + `
+      <p>This award document's PDF layout scrambles its rate table into separate
+      column runs, so which price belongs to which job title cannot be verified
+      from the text. Every dollar figure above was still re-found verbatim in the
+      document; only the pairing is withheld.</p>
+      <div class="how"><p>Extraction and verification: <code>analysis/extract_rates.py</code>.
+      Aggregates recomputed by <code>make verify</code> under "published hourly rate cards".</p></div>`;
+    }
+    const rows = c.rows.map(r => `<tr>
+      <td>${esc(r.labor_category)}</td><td class="note">${esc(r.level || '')}</td>
+      <td class="num">$${Number(r.hourly_rate).toFixed(2)}</td>
+    </tr>`).join('');
+    return head + `
+      <div class="scroll"><table>
+        <thead><tr><th>Role as priced</th><th>Level</th><th class="num">Hourly rate</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+      <div class="how">
+        <p>Rates come from the price schedule of the award document cached in
+        <code>data/pdftext/</code>. Each was re-found verbatim in the text, and the
+        title-to-price pairing verified ${cn === 'CW91684'
+          ? 'by deterministic reconstruction of the document layout, cross-checked against hand-reading'
+          : 'by proximity in the document text'}. Duplicate prices across option years are shown once per distinct rate.</p>
+      </div>`;
+  }
+
+  if (id === 'devall') {
+    const rows = DATA.rates.software.map(r => `<tr>
+      <td class="note">${esc(VENDOR_LABEL[r.vendor] || r.vendor)}</td>
+      <td>${esc(r.labor_category)}</td><td class="note">${esc(r.level || '')}</td>
+      <td class="num">$${Number(r.hourly_rate).toFixed(2)}</td>
+      <td class="num">${esc(r.contract_number)}</td>
+    </tr>`).join('');
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${DATA.rates.software.length} verified title-to-price pairs</p>
+        <h3 id="dialog-title">Every software-development rate found</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>Roles matching development, programming, software, applications or
+      computer-scientist language, from the contracts whose pairing verified.</p>
+      <div class="scroll"><table>
+        <thead><tr><th>Vendor</th><th>Role as priced</th><th>Level</th><th class="num">Rate</th><th class="num">Contract</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+      <div class="how">
+        <p>The matching pattern is in <code>analysis/build_site_data.py</code>; the
+        underlying rates are in <code>data/labor_rates.csv</code> with their
+        verification status, recomputed by <code>make verify</code>.</p>
+      </div>`;
+  }
+
+  if (id === 'commit') {
+    const overridden = new Set(['CW96958', 'CW118423']);
+    const quotes = DATA.commitments.map(r => `<blockquote>
+      <p>&ldquo;${quoteText(r.agile_quote, 220)}&rdquo;</p>
+      <cite>${esc(r.contract_number)} &middot; ${esc(r.title)} &middot; ${esc(r.vendor)} &middot; ${money(r.ceiling)}
+      &middot; ${r.delivery_structure === 'sequential_gated_deliverables' ? 'sequential and gated' : 'incremental capacity'}${overridden.has(r.contract_number) ? ' &middot; hand-read correction' : ''}</cite>
+    </blockquote>`).join('');
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">11 delivery commitments &middot; 9 structurally gated</p>
+        <h3 id="dialog-title">Every contract that commits to agile delivery</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>What each award document actually promises, next to how it structures the work.</p>
+      ${quotes}
+      <div class="how">
+        <p>Two of the eleven are commitments the classifier filed as incidental language; they were
+        caught by hand-reading, and the corrections live in <code>delivery_overrides.yaml</code> with
+        the reasons. The counts are recomputed by <code>make verify</code> under "agile language".</p>
+      </div>`;
+  }
+
+  if (id === 'dcas') {
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">${DATA.dcas.length} contracts &middot; ${money(DATA.dcas.reduce((a, r) => a + r.ceiling, 0))} in ceilings</p>
+        <h3 id="dialog-title">Every contract naming DCAS</h3>
+      </div><button class="close" data-close>esc</button></div>
+      <p>The DC Access System: benefits eligibility and enrolment at Health Care Finance. No single
+      contract builds it; this is what keeps it running.</p>
+      ${contractTable(DATA.dcas, 'worktype')}
+      <div class="how">
+        <p>Membership is read from contract titles, so the list is a floor &mdash; work on DCAS under
+        a title that does not name it is not here. Count and total recomputed by
+        <code>make verify</code> under "named systems".</p>
+      </div>`;
+  }
+
+  if (id === 'method') {
+    const ex = DATA.option_example;
+    const t = DATA.paytrap;
+    const optRows = ex.rows.map(r => `<tr>
+      <td>${esc(r.option_period)}</td><td class="num">${money(r.amount)}</td>
+      <td class="num">${esc(String(r.start_date).slice(0, 10))}</td><td class="num">${esc(String(r.end_date).slice(0, 10))}</td>
+    </tr>`).join('');
+    return `
+      <div class="dialog-head"><div>
+        <p class="eyebrow">Method</p>
+        <h3 id="dialog-title">How this was put together</h3>
+      </div><button class="close" data-close>esc</button></div>
+
+      <p>The pipeline pulls the portal's contracts, purchase orders, payments and award PDFs into a
+      dated snapshot, then sorts every contract by reading it: one pass over titles, vendors and
+      agencies to say what is being bought, a second over the award documents to say how the work is
+      structured. Everything below runs from the repository with <code>make pull</code>,
+      <code>make classify</code>, <code>make verify</code>, <code>make test</code>.</p>
+
+      <h3>A contract row is an option period, not a contract</h3>
+      <p>The portal shows a five-year contract once per option period, each row carrying that
+      period's own amount. 7,113 rows are 3,983 contracts. The record-holder:</p>
+      <div class="scroll"><table>
+        <caption>${esc(ex.contract_number)} &middot; ${esc(ex.title)}</caption>
+        <thead><tr><th>Period</th><th class="num">Amount</th><th class="num">Start</th><th class="num">End</th></tr></thead>
+        <tbody>${optRows}</tbody>
+      </table></div>
+      <p>Summing rows gives a lifetime ceiling &mdash; not annual spending, not money that moved.</p>
+
+      <h3>Why contracts are sorted by reading them</h3>
+      <p>The portal's commodity codes are self-assigned and loose: the consulting class holds
+      Medicaid managed care, the software class holds a plumbing contract, and the biggest IT
+      staffing vehicles sit in "miscellaneous services, not otherwise classified". So a language
+      model sorts each contract instead, against a fixed schema
+      (<code>classifier_config.yaml</code>), and its accuracy is scored on 20 hand-read contracts
+      picked to be hard: 20 of 20 on what is bought, 20 of 20 on delivery structure, 18 of 20 on
+      what agile language is doing. The two misses are genuine commitments it filed as incidental;
+      they are corrected by hand in <code>delivery_overrides.yaml</code>, and the eval expects
+      exactly those two. Twenty cases bound the error loosely &mdash; treat totals as approximate
+      and trust the ordering between categories.</p>
+
+      <h3>Two defects in the portal, found by testing it against itself</h3>
+      <p>The fiscal-year filter on contract search does nothing: any year returns the whole
+      contract universe while the server reports it applied no filters. The client in
+      <code>dcprocure/client.py</code> compares the filters the server echoes against what was sent
+      and raises rather than hand back a wider slice than requested.</p>
+      <p>And <code>paymentAmount</code> is not the amount of that payment: it is the total of the
+      whole check run the voucher was paid in, repeated on every row in the run. Summed across the
+      table it gives $${t.table_wrong_B}B against $${t.table_correct_B}B of actual vouchers. On
+      CW95481, a $120M staffing vehicle with ${t.rows.toLocaleString()} payment rows, it turns
+      ${money(t.correct)} of real payments into ${money(t.wrong)}. The loader keeps the field under
+      a name that cannot be summed by accident.</p>
+
+      <h3>What the checks prove</h3>
+      <p><code>analysis/verify_claims.py</code> recomputes every published number from the raw
+      snapshot &mdash; 97 checks, from the headline categories down to the rate card inside one
+      award PDF &mdash; and fails loudly on drift. <code>data/raw/manifest.json</code> records what
+      was pulled and when, and the suite checks that it still describes the files on disk. The
+      portal is live, so a fresh pull moves counts slightly; the manifest is what ties these
+      figures to this snapshot.</p>`;
+  }
+
+  throw new Error('unknown detail: ' + id);
+}
+
+// the two rate tables render from DATA so the page cannot drift from the CSV
+function renderRateTables() {
+  const groups = new Map();
+  for (const r of DATA.rates.software) {
+    const key = (VENDOR_LABEL[r.vendor] || r.vendor) + ':::' + r.labor_category;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(Number(r.hourly_rate));
+  }
+  const devRows = [...groups.entries()].map(([key, rs]) => {
+    const [vendor, cat] = key.split(':::');
+    return {vendor, cat, lo: Math.min(...rs), hi: Math.max(...rs)};
+  }).sort((a, b) => b.hi - a.hi);
+  document.getElementById('devrates').innerHTML = devRows.map(r => `<tr>
+    <td>${esc(r.vendor)}</td><td class="note">${esc(r.cat)}</td>
+    <td class="num">${r.lo === r.hi ? '$' + r.lo.toFixed(2) : '$' + r.lo.toFixed(2) + ' &ndash; $' + r.hi.toFixed(2)}</td>
+  </tr>`).join('');
+
+  const top = DATA.rates.contracts.slice(0, 12);
+  document.getElementById('ratecards').innerHTML = top.map(c => `<tr data-detail="rate:${esc(c.contract_number)}" tabindex="0">
+    <td>${esc(c.vendor)}${c.rows ? '' : ' <span class="wtag" title="PDF layout scrambles this card; prices verified, pairings not">ranges only</span>'}</td>
+    <td class="num">${c.n}</td>
+    <td class="num">$${c.min.toFixed(2)}</td>
+    <td class="num">$${c.median.toFixed(2)}</td>
+    <td class="num">$${c.max.toFixed(2)}</td>
+  </tr>`).join('') + `<tr><td class="note" colspan="5">${DATA.rates.contracts.length - top.length} smaller cards are in the data; every one is in <code>data/labor_rates.csv</code></td></tr>`;
+}
+renderRateTables();
+
+const overlay = document.getElementById('overlay');
+const dialog = document.getElementById('dialog');
+let lastTrigger = null;
+
+function openDetail(id, trigger) {
+  dialog.innerHTML = detailHtml(id);
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  lastTrigger = trigger;
+  dialog.querySelector('.close').focus();
+}
+
+function closeDetail() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  dialog.innerHTML = '';
+  if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
+}
+
+document.addEventListener('click', e => {
+  const trigger = e.target.closest('[data-detail]');
+  if (trigger) { openDetail(trigger.dataset.detail, trigger); return; }
+  if (e.target.closest('[data-close]') || e.target === overlay) closeDetail();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && overlay.classList.contains('open')) { closeDetail(); return; }
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('tr[data-detail],div[data-detail]')) {
+    e.preventDefault();
+    openDetail(e.target.dataset.detail, e.target);
+  }
+});
+</script>
+
+</body>
+</html>

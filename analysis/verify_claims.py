@@ -52,6 +52,16 @@ def main() -> int:
     check("payments", len(payments), 866823)
     check("earliest PO fiscal year", int(orders.fiscal_year.min()), 2013)
 
+    # The manifest is the provenance record. If it stops describing the files
+    # on disk, rebuild it: uv run python analysis/rebuild_manifest.py
+    import json as _json
+
+    manifest = _json.load(open(ROOT / "data" / "raw" / "manifest.json"))
+    recorded = {s["name"]: s["rows"] for s in manifest["snapshots"]}
+    check("manifest matches contracts on disk", recorded.get("contracts_by_commodity"), len(contracts))
+    check("manifest matches purchase orders on disk", recorded.get("purchase_by_commodity"), len(orders))
+    check("manifest matches payments on disk", recorded.get("payments"), len(payments))
+
     print("\n-- what DC buys --")
     tech = labels[labels.is_technology == True]  # noqa: E712
     check("technology contracts", len(tech), 1372)
@@ -95,18 +105,38 @@ def main() -> int:
           int(payments.contract_number.isna().sum()), 478700, 200)
 
     print("\n-- agile language --")
+    build_types = {"custom_software_build", "cots_implementation",
+                   "software_om_support", "it_consulting_advisory"}
+    check("delivery-structure candidates", int(labels.work_type.isin(build_types).sum()), 476)
     check("readable award documents", len(delivery), 288)
     mentions = delivery[delivery.agile_mention_kind != "no_agile_language"]
     check("documents mentioning agile", len(mentions), 38)
     commits = delivery[delivery.agile_mention_kind == "delivery_commitment"]
-    check("genuine delivery commitments", len(commits), 9)
+    check("genuine delivery commitments", len(commits), 11)
     check("mentions that are staff qualifications",
           int((delivery.agile_mention_kind == "personnel_qualification").sum()), 14)
     gated = (commits.delivery_structure == "sequential_gated_deliverables").sum()
-    check("commitments that are structurally gated", int(gated), 7)
+    check("commitments that are structurally gated", int(gated), 9)
     other = delivery[delivery.agile_mention_kind != "delivery_commitment"]
     check("baseline gated %",
-          round(100 * (other.delivery_structure == "sequential_gated_deliverables").mean()), 27, 1)
+          round(100 * (other.delivery_structure == "sequential_gated_deliverables").mean()), 26, 1)
+
+    # Two of the eleven commitments are hand-read corrections of classifier
+    # misses. The overrides file must stay in agreement with the gold labels,
+    # and every override must actually be applied in the published data.
+    import yaml as _yaml
+
+    overrides = _yaml.safe_load((ROOT / "delivery_overrides.yaml").read_text(encoding="utf-8"))
+    corrected = overrides.get("agile_mention_kind") or {}
+    check("hand-corrected commitment rows", len(corrected), 2)
+    gold = pd.read_csv(ROOT / "tests" / "delivery_gold_labels.csv").set_index("contract_number")
+    for contract_number, spec in corrected.items():
+        check(f"override {contract_number} applied in published data",
+              delivery.set_index("contract_number").loc[contract_number, "agile_mention_kind"],
+              spec["value"])
+        check(f"override {contract_number} recorded in gold labels",
+              spec["value"] in str(gold.loc[contract_number, "agile_mention_kind"]).split("|"),
+              True)
 
     print("\n-- vendor concentration (payments to technology contracts, FY2021-2025) --")
     window = payments[
@@ -151,10 +181,51 @@ def main() -> int:
     vehicles = tech[tech.work_type == "ordering_vehicle"]
     check("ordering vehicles that are DCSS",
           int(vehicles.title.str.contains("DCSS", case=False, na=False).sum()), 305, 3)
+    # The $2.4B mixes pool-vehicle ceilings with DCSS-named awards for actual
+    # work; the briefing states the split, so it is checked here.
+    non_vehicle = dcss[dcss.work_type != "ordering_vehicle"]
+    check("DCSS-named contracts that are not vehicles", len(non_vehicle), 92, 2)
+    check("their ceilings $M", round(non_vehicle.ceiling.sum() / 1e6), 844, 5)
+    check("of them, staff augmentation",
+          int((non_vehicle.work_type == "staff_augmentation").sum()), 75, 2)
+
+    print("\n-- payments against unpublished contract numbers --")
+    # The evidence that awards exist beyond what the portal publishes: money
+    # moves under portal-style CW numbers that appear nowhere in the published
+    # contract list. Some may have been published once and later removed;
+    # either way a reader of the portal today cannot look them up.
+    recent_pay = payments[payments.fiscal_year.between(2021, 2025)]
+    cw_pay = recent_pay[recent_pay.contract_number.astype(str).str.match(r"^CW\d+$", na=False)]
+    unpublished = cw_pay[~cw_pay.contract_number.isin(set(contracts.contract_number))]
+    check("distinct CW numbers paid FY2021-25", cw_pay.contract_number.nunique(), 3079, 10)
+    check("of them, absent from the published list",
+          unpublished.contract_number.nunique(), 1471, 10)
+    check("payments against absent numbers $B",
+          round(unpublished.amount.sum() / 1e9, 1), 0.8, 0.05)
+
+    print("\n-- traceable technology payments by year --")
+    tech_pay = payments[
+        payments.contract_number.isin(set(tech.contract_number))
+        & payments.fiscal_year.between(2021, 2025)
+    ]
+    by_year = tech_pay.groupby("fiscal_year").amount.sum() / 1e6
+    check("traceable technology payments FY2021 $M", round(by_year.loc[2021]), 58, 2)
+    check("traceable technology payments FY2025 $M", round(by_year.loc[2025]), 175, 2)
+
+    print("\n-- payments outside the ceiling window --")
+    # Payments reach back to FY2017 while contract option periods start in
+    # October 2020, so a whole-history comparison counts money paid before any
+    # ceiling in this data existed.
+    check("earliest payment fiscal year", int(payments.fiscal_year.min()), 2017)
+    starts = pd.to_datetime(contracts.start_date, errors="coerce")
+    check("earliest option period start", str(starts.min().date()), "2020-10-01")
+    pre = payments[payments.fiscal_year < 2021]
+    check("payments before FY2021 $B", round(pre.amount.sum() / 1e9, 1), 11.9, 0.1)
 
     print("\n-- named systems --")
     named = tech[tech.system_name.notna() & (tech.system_name.astype(str).str.strip() != "")]
     named = named[named.system_name.astype(str).str.lower() != "nan"]
+    check("technology contracts naming a system", len(named), 273)
     by_system = named.groupby(named.system_name.astype(str).str.upper().str.strip()).agg(
         contracts=("contract_number", "size"), ceiling=("ceiling", "sum")
     ).sort_values("ceiling", ascending=False)
@@ -167,9 +238,110 @@ def main() -> int:
     waterfall = delivery[delivery.delivery_structure == "sequential_gated_deliverables"]
     check("of those, scope fixed in advance", int((waterfall.scope_fixed_in_advance == "yes").sum()), 74)
     check("of those, also commit to agile",
-          int((waterfall.agile_mention_kind == "delivery_commitment").sum()), 7)
+          int((waterfall.agile_mention_kind == "delivery_commitment").sum()), 9)
     check("agile only as a hiring requirement",
           int((delivery.agile_mention_kind == "personnel_qualification").sum()), 14)
+
+    print("\n-- authorised against paid, FY2021-FY2025 window --")
+    # The briefing compares ceilings and payments over the same five fiscal
+    # years: option periods falling entirely inside FY2021-FY2025 against
+    # payments made in those years. Without the window the comparison counts
+    # payments made before a ceiling existed against authorisation nobody
+    # could have drawn yet.
+    cwin = contracts[contracts.contract_number.isin(set(tech.contract_number))].copy()
+    cwin["start"] = pd.to_datetime(cwin.start_date, errors="coerce")
+    cwin["end"] = pd.to_datetime(cwin.end_date, errors="coerce")
+    lo, hi = pd.Timestamp("2020-10-01"), pd.Timestamp("2025-09-30")
+    inwin = cwin[(cwin.start >= lo) & (cwin.end <= hi)]
+    win_paid = payments[payments.fiscal_year.between(2021, 2025)].groupby("contract_number")["amount"].sum()
+    g = inwin.groupby("contract_number").agg(ceiling=("amount", "sum"), ctype=("contract_type", "first"))
+    g["paid"] = g.index.map(win_paid).fillna(0.0)
+    check("windowed technology contracts", len(g), 1070)
+    check("windowed ceilings $M", round(g.ceiling.sum() / 1e6), 3094, 2)
+    check("windowed paid $M", round(g.paid.sum() / 1e6), 527, 2)
+    check("windowed drawdown %", round(100 * g.paid.sum() / g.ceiling.sum(), 1), 17.0, 0.2)
+    for ctype, n, ceil_m, paid_m, pct in [
+        ("Indefinite Delivery Indefinite Quantity", 359, 1995, 56, 2.8),
+        ("Firm Fixed Price", 575, 668, 313, 46.8),
+        ("Labor Hour", 97, 394, 130, 33.0),
+    ]:
+        rows = g[g.ctype == ctype]
+        check(f"windowed {ctype}: contracts", len(rows), n)
+        check(f"windowed {ctype}: ceilings $M", round(rows.ceiling.sum() / 1e6), ceil_m, 2)
+        check(f"windowed {ctype}: paid $M", round(rows.paid.sum() / 1e6), paid_m, 2)
+        check(f"windowed {ctype}: drawdown %", round(100 * rows.paid.sum() / rows.ceiling.sum(), 1), pct, 0.2)
+
+    print("\n-- the CW91684 rate card --")
+    # The staffing-contract section quotes the price schedule of Computer Aid's
+    # CW91684. Its award PDF is cached locally, so the quoted figures can be
+    # re-read from the document text itself.
+    import gzip
+    import json as _json
+    import re
+    import statistics
+
+    from dcprocure import documents
+
+    details = _json.load(open(ROOT / "data" / "raw" / "contract_details.json"))
+    rec = next(d for d in details if d["contractNumber"] == "CW91684")
+    check("CW91684 vendor", rec["vendor"], "COMPUTER AID, INC.")
+    check("CW91684 title", rec["title"], "INFORMATION TECHNOLOGY STAFF AUGMENTATION SERVICES")
+    check("CW91684 ceiling $M", round(float(rec["contractAmount"].strip("$").replace(",", "")) / 1e6), 65)
+    doc = documents.pick_award_document(rec)
+    text = gzip.open(documents._text_path(doc["id"]), "rt").read()
+    for needle in ("45,000,000", "20,000,000", "Labor Hour", "Fixed Price Project"):
+        check(f"CW91684 award text contains '{needle}'", needle in text, True)
+    rates = [float(x) for x in re.findall(r"\b(\d{2,3}\.\d{2})\b", text)]
+    rates = [x for x in rates if 24 <= x <= 174]
+    check("CW91684 hourly rates found", len(rates), 180)
+    check("CW91684 lowest rate", min(rates), 24.01)
+    check("CW91684 highest rate", max(rates), 173.71)
+    check("CW91684 median rate", round(statistics.median(rates), 2), 69.97)
+
+    print("\n-- published hourly rate cards --")
+    # Built by analysis/extract_rates.py: every rate re-found verbatim in the
+    # award text; the pairing column records whether the category-to-rate
+    # assignment could also be verified (deterministic reconstruction for
+    # CW91684, text proximity for row-oriented tables).
+    lr = pd.read_csv(ROOT / "data" / "labor_rates.csv")
+    check("contracts publishing hourly rates", lr.contract_number.nunique(), 42)
+    check("published hourly rates", len(lr), 2146)
+    check("rates with verified category pairing",
+          int(lr.pairing.isin(["deterministic", "proximate"]).sum()), 1304)
+    check("lowest published rate", float(lr.hourly_rate.min()), 24.01)
+    check("highest published rate", float(lr.hourly_rate.max()), 1015.0)
+    check("median published rate", float(lr.hourly_rate.median()), 150.0, 0.5)
+    cai_card = lr[lr.contract_number == "CW91684"].set_index(["labor_category", "level"])
+    for cat, lvl, want in [
+        ("Enterprise Architect", "Entry", 75.83),
+        ("Web Developer", "Master", 77.00),
+        ("Mobile App Developer", "Entry", 70.76),
+        ("Cyber Security Engineer", "Master", 143.42),
+    ]:
+        check(f"CW91684 {cat} ({lvl})", float(cai_card.loc[(cat, lvl)].hourly_rate), want)
+
+    # The disclosure contrast the briefing states: the largest consultancies'
+    # rates are not published.
+    from dcprocure import documents as _docs
+    det_by_cn = {d["contractNumber"]: d for d in details}
+    check("KPMG CW62227 has no award document",
+          _docs.pick_award_document(det_by_cn["CW62227"]) is None, True)
+    check("Ridge IT CW115647 has no award document",
+          _docs.pick_award_document(det_by_cn["CW115647"]) is None, True)
+    acc_doc = _docs.pick_award_document(det_by_cn["CW67170"])
+    acc_text = gzip.open(_docs._text_path(acc_doc["id"]), "rt").read()
+    check("Accenture CW67170 award text is a stub (chars)", len(acc_text), 41)
+
+    # The billed-vs-offered comparison quotes job postings. Those pages die, so
+    # every quoted posting must be preserved in evidence/job_ads/ with its pay
+    # text recorded in the manifest exactly as the briefing states it.
+    manifest_text = (ROOT / "evidence" / "job_ads" / "manifest.csv").read_text(encoding="utf-8")
+    for needle in ("$74.00 - $75.00 per hour", "$54 - $59 per hour", "$40 - $45 per hour",
+                   "$20 - $23 per hour", "$91,000.00 - USD $96,000.00", "$80 - $90/hr"):
+        check(f"posting evidence preserved: '{needle}'", needle in manifest_text, True)
+    for cat, lvl, want in [("Customer Support", "Senior", 29.31),
+                           ("Technical Writer", "Journeyman", 57.35)]:
+        check(f"CW91684 {cat} ({lvl}) vs posting", float(cai_card.loc[(cat, lvl)].hourly_rate), want)
 
     print("\n-- purchase-order vendor figures --")
     recent = orders[orders.fiscal_year.between(2022, 2026)].copy()

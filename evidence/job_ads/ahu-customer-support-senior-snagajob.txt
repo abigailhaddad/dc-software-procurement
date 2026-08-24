@@ -1,0 +1,8 @@
+URL: https://www.snagajob.com/jobs/1279836092
+Fetched: 2026-08-24T15:02:35Z (via WebFetch; direct curl blocked by Cloudflare 403)
+Title: Customer Support Senior
+Employer: AHU Technologies Inc
+Pay as posted: "$20 - $23 per hour"
+Location: Washington, District of Columbia
+Posted: 2026-08-23
+Client line quoted by fetch: "The Client is the leading authority on energy and environmental issues affecting the District of Columbia." (i.e., DC DOEE)

@@ -1,0 +1,10 @@
+URL: https://www.ziprecruiter.com/c/Collaboredge-Inc./Job/DHCF-DCAS-Business-Analyst-Curam/-in-Washington,DC?jid=8e785b6d621a9a7b
+Fetched: 2026-08-24T15:01Z (attempted)
+STATUS: Posting removed. Direct fetch returns 404 (Playwright, ZipRecruiter title "ZipRecruiter", HTTP 404).
+WebFetch returned 403 earlier same session. No Wayback Machine snapshot exists (archive.org availability API: empty).
+EVIDENCE AVAILABLE: Search-engine index only. Two separate WebSearch results (2026-08-24) surfaced this
+posting with the title "Collaboredge DHCF DCAS - Business Analyst - Curam Job Washington" and pay
+"$98 - $108" per hour (one result phrased it "$98 - $108 per hour", the other "a salary range of
+$98 - $108 (hourly)"). Client named in title: DHCF DCAS (DC Dept. of Health Care Finance, DC Access System).
+Employer as posted: Collaboredge Inc. Location: Washington, DC.
+CAVEAT: Pay figure comes from search-index snippets of a now-dead posting, not from the posting body itself.

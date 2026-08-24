@@ -1,0 +1,8 @@
+URL: https://www.snagajob.com/jobs/1284728716
+Fetched: 2026-08-24T15:02:35Z (via WebFetch; direct curl blocked by Cloudflare 403)
+Title: Sr ServiceNow Application Developer
+Employer: AHU Technologies Inc
+Pay as posted: "$67 - $72 per hour" (verified pay provided by employer)
+Location: Washington, District of Columbia
+Posted: 2026-08-23
+Client: unnamed ("Client is looking for a Senior ServiceNow Developer...")

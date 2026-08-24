@@ -1,0 +1,8 @@
+URL: https://www.snagajob.com/jobs/1287888308
+Fetched: 2026-08-24T15:02:35Z (via WebFetch; direct curl blocked by Cloudflare 403)
+Title: Technical Writer Journeyman
+Employer: AHU Technologies Inc
+Pay as posted: "$40 - $45 per hour"
+Location: Washington, District of Columbia
+Posted: 2026-08-23
+Client: unnamed DC agency ("The Client is seeking a Technical Writer... Employment type: Contract w2/1099/C2C"). "Journeyman" is DC ITSA labor-category tier naming.

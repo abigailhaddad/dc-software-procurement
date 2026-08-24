@@ -1,0 +1,248 @@
+URL: https://careers-fastenterprises.icims.com/jobs/1707/implementation-consultant/job
+Fetched: 2026-08-24T14:59:51Z (rendered accessibility snapshot via Playwright)
+- generic [active] [ref=f58e1]:
+  - link "Skip Branding" [ref=f58e92] [cursor=pointer]:
+    - /url: https://careers-fastenterprises.icims.com/jobs/1707/implementation-consultant/job#icims_content_iframe
+  - generic [ref=f58e2]:
+    - banner [ref=f58e3]:
+      - generic [ref=f58e4]:
+        - link [ref=f58e6] [cursor=pointer]:
+          - /url: /
+          - img "Fast Enterprises" [ref=f58e7]
+        - navigation [ref=f58e9]:
+          - list [ref=f58e10]:
+            - listitem [ref=f58e11]:
+              - link "About" [ref=f58e12] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f58e13]:
+              - link "Solutions" [ref=f58e14] [cursor=pointer]:
+                - /url: /solutions
+            - listitem [ref=f58e15]:
+              - link "Careers" [ref=f58e16] [cursor=pointer]:
+                - /url: /careers
+            - listitem [ref=f58e17]:
+              - link "Community" [ref=f58e18] [cursor=pointer]:
+                - /url: /community
+            - listitem [ref=f58e19]:
+              - link "Showcase" [ref=f58e20] [cursor=pointer]:
+                - /url: /showcase
+            - listitem [ref=f58e21]:
+              - link "News" [ref=f58e22] [cursor=pointer]:
+                - /url: /news
+    - main "Career Portal" [ref=f58e24]:
+      - iframe [ref=f58e25]:
+        - generic [ref=f59e1]:
+          - link "Skip to Main Content" [ref=f59e152] [cursor=pointer]:
+            - /url: "#iCIMS_Header"
+          - text: 
+          - generic [ref=f59e2]:
+            - generic [ref=f59e6]:
+              - generic [ref=f59e7]: Returning Candidate?
+              - link "Log back in!" [ref=f59e9] [cursor=pointer]:
+                - /url: https://careers-fastenterprises.icims.com/jobs/1707/implementation-consultant/login?loginOnly=1&redirect=job&in_iframe=1&hashed=-625915755
+            - generic [ref=f59e11]:
+              - generic [ref=f59e13]:
+                - heading "Implementation Consultant" [level=1] [ref=f59e16]
+                - generic [ref=f59e17]:
+                  - generic [ref=f59e18]: Location
+                  - text: US-
+                - generic [ref=f59e19]:
+                  - generic [ref=f59e20]: ID
+                  - text: 2026-1707
+                - generic [ref=f59e22]:
+                  - generic [ref=f59e23]:
+                    - term [ref=f59e24]: Category
+                    - definition [ref=f59e25]: Information Technology
+                  - generic [ref=f59e26]:
+                    - term [ref=f59e27]: Position Type
+                    - definition [ref=f59e28]: Regular Full-Time
+                  - generic [ref=f59e29]:
+                    - term [ref=f59e30]: Remote
+                    - definition [ref=f59e31]: "No"
+                  - generic [ref=f59e32]:
+                    - term [ref=f59e33]: Min Pay Range
+                    - definition [ref=f59e34]: USD $91,000.00/Yr.
+                  - generic [ref=f59e35]:
+                    - term [ref=f59e36]: Max Pay Range
+                    - definition [ref=f59e37]: USD $96,000.00/Yr.
+              - heading "Overview" [level=2] [ref=f59e38]
+              - generic [ref=f59e41]:
+                - paragraph [ref=f59e42]: Fast Enterprises is a provider of essential software and services for citizens and government. In 1998, we changed the way government revenue agencies support their business with the introduction of GenTax®. We have expanded beyond Tax and now also perform implementations for Motor Vehicle, Driver License, Unemployment Insurance, and Child Support Engagement agencies.
+                - paragraph [ref=f59e43]
+                - paragraph [ref=f59e44]: Your FAST career has a meaningful and lasting social impact. FAST offers a collaborative in-office problem-solving environment.
+                - paragraph [ref=f59e45]
+                - paragraph [ref=f59e46]:
+                  - generic [ref=f59e47]:
+                    - text: Qualified candidates will join one of our locations and work
+                    - strong [ref=f59e48]: fully in-office
+                    - text: . All candidates should be flexible in regard to work location and comfortable working on site with clients. Applicants should be comfortable with a 2027 start date.
+              - heading "Responsibilities" [level=2] [ref=f59e49]
+              - generic [ref=f59e52]:
+                - paragraph [ref=f59e53]:
+                  - generic [ref=f59e56]:
+                    - text: As an
+                    - strong [ref=f59e57]: Implementation Consultant,
+                    - text: you will
+                    - generic [ref=f59e58]: participate in the full project lifecycle, from requirements-gathering through production support.
+                    - generic [ref=f59e59]: Much of the work at FAST happens on our client sites as part of our product implementations.
+                    - generic [ref=f59e62]: Individuals who understand the technical aspects of system implementation as well as the business needs of our clients fill these positions.
+                    - text: Candidates should have strong technical and communication skills, enabling them to interact with clients and detail system functionality.
+                - list [ref=f59e66]:
+                  - listitem [ref=f59e67]: Consult with agencies to understand their business needs and how to implement the FAST software to best serve their customers.
+                  - listitem [ref=f59e68]: Demonstrate confidence while clearly delivering information at both a high level and a technical level when applicable.
+                  - listitem [ref=f59e69]: Work with your team to problem-solve and respond quickly to changing project requirements and customer needs.
+                  - listitem [ref=f59e70]: Identify and investigate complex issues to make decisions and develop solutions.
+                  - listitem [ref=f59e71]: Configure client-specific functionality to meet each agency’s unique requirements that go beyond our out-of-the-box functionality. This configuration is performed using FAST tools within the software’s user interface, as well as either VB.Net or C#.
+                  - listitem [ref=f59e72]: Create and modify SQL queries to efficiently retrieve data from a relational database.
+                  - listitem [ref=f59e73]: Implement new features and navigate them through testing and deployment.
+                  - listitem [ref=f59e74]: Maintain confidentiality and adhere to company policies along with all relevant laws when exposed to protected client information.
+              - heading "Qualifications" [level=2] [ref=f59e75]
+              - list [ref=f59e79]:
+                - listitem [ref=f59e80]: Bachelor's degree in Computer Science, Information Systems, Mathematics, or Engineering (graduates from all areas of study with technical training or experience will be considered).
+                - listitem [ref=f59e81]: 3.0 minimum GPA.
+                - listitem [ref=f59e82]: Experience in a .NET or similar development environment.
+                - listitem [ref=f59e83]: Exposure to SQL in Microsoft SQL Server, Oracle, PostgreSQL, MySQL, or a similar database management system.
+                - listitem [ref=f59e84]: Openness to relocating every 2-3 years, on average, to different project locations (both starting and subsequent locations) throughout the US with relocation assistance.
+                - listitem [ref=f59e85]: Excellent written and verbal communication and interpersonal skills are critical—charismatic people person with the ability to talk to anyone and comfort working in an ever-changing, fast-paced environment.
+                - listitem [ref=f59e86]: Strong sense of personal ownership and pride in your work.
+                - listitem [ref=f59e87]: Ability to work independently, as well as contribute significantly in coordination with a team.
+                - listitem [ref=f59e88]: Enthusiasm to take on challenges, be curious, grow, and learn from others.
+              - heading "FAST Benefits" [level=2] [ref=f59e89]
+              - list [ref=f59e93]:
+                - listitem [ref=f59e94]: Throughout your career, you will be rewarded through our merit-based pay structure, 401(k) matching program, and performance based bonuses.
+                - listitem [ref=f59e95]: Our exceptional benefits package includes coverage for FASTies and their families. Health, dental, and vision insurance are 100% employer-paid, providing the peace of mind of top coverage without financial burden.
+                - listitem [ref=f59e96]: Sabbatical program, known as the FAST Pause. This program provides you with a month of paid leave to pursue your passions and recharge in any way you would like.
+                - listitem [ref=f59e97]: We provide paid parental leave.
+                - listitem [ref=f59e98]: We provide paid holidays, as well as vacation and sick time.
+                - listitem [ref=f59e99]: Bonus time compensation values your work and efforts.
+                - listitem [ref=f59e100]: Our gift matching program matches annual volunteer hours or monetary donations.
+                - listitem [ref=f59e101]: Team-building activities are offered throughout the year.
+                - listitem [ref=f59e102]: Work where you live; live where you work! Relocation provides the opportunity to explore new communities and cultures. You are not moving on your own—the FAST Relocation team coordinates and assists you through each stage of your move.
+                - listitem [ref=f59e103]: Make a difference by driving meaningful and positive change in government agencies.
+              - heading "Want More Information?" [level=2] [ref=f59e104]
+              - generic [ref=f59e107]:
+                - list [ref=f59e108]:
+                  - listitem [ref=f59e109]:
+                    - link "#YFAST" [ref=f59e111] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=FyXSh7CfnWM
+                  - listitem [ref=f59e112]:
+                    - link "Our Clients" [ref=f59e114] [cursor=pointer]:
+                      - /url: https://www.fastenterprises.com/about/
+                  - listitem [ref=f59e115]:
+                    - link "Our Solutions" [ref=f59e117] [cursor=pointer]:
+                      - /url: https://www.fastenterprises.com/solutions/
+                - paragraph [ref=f59e118]: FAST is an equal opportunity employer. Voluntary Self-Identification Information is requested for U.S. applicants during the application process. Salary to be determined by the education, experience, knowledge, skills, abilities, and location of the applicant.
+                - paragraph [ref=f59e119]
+                - paragraph [ref=f59e120]:
+                  - generic [ref=f59e122]:
+                    - text: Fast Enterprises is committed to the full inclusion of all qualified individuals. As part of this commitment, Fast Enterprises will ensure that persons with disabilities are provided reasonable accommodations for the hiring process. If reasonable accommodation is needed, please contact
+                    - link "recruiting@fastenterprises.com" [ref=f59e123] [cursor=pointer]:
+                      - /url: mailto:recruiting@fastenterprises.com
+                    - text: .
+                - paragraph [ref=f59e124]
+                - paragraph [ref=f59e125]:
+                  - generic [ref=f59e126]: We will accept ongoing applications for this role. Before you submit any documentation with your application, you can redact information that identifies your age, date of birth, or date of attendance at or graduation from an educational institution.
+                - paragraph [ref=f59e127]
+                - paragraph [ref=f59e128]:
+                  - emphasis [ref=f59e132]: Please note, we cannot consider candidates who will require visa sponsorship now, or in the future in the United States or Canada.
+              - heading "Pay Range" [level=2] [ref=f59e133]
+              - generic [ref=f59e134]: USD $91,000.00 - USD $96,000.00 /Yr.
+              - generic [ref=f59e137]:
+                - generic [ref=f59e138]:
+                  - link "Apply for this job online" [ref=f59e139] [cursor=pointer]:
+                    - /url: https://careers-fastenterprises.icims.com/jobs/1707/implementation-consultant/job?mode=apply&apply=yes&in_iframe=1&hashed=-1834384729
+                  - link "Submit a referral to this job" [ref=f59e141] [cursor=pointer]:
+                    - /url: https://careers-fastenterprises.icims.com/jobs/1707/implementation-consultant/referral?in_iframe=1&hashed=-625915755
+                - generic [ref=f59e153]:
+                  - text: 
+                  - heading "Share on your newsfeed" [level=2] [ref=f59e154]
+              - generic [ref=f59e143]:
+                - heading "Not sure which opening is for you?" [level=2] [ref=f59e144]
+                - paragraph [ref=f59e145]:
+                  - link "Join our Talent Community!" [ref=f59e146] [cursor=pointer]:
+                    - /url: https://careers.fastenterprises.com/talent-network/talentcommunity
+                  - text: You can submit your candidate profile to our Fast Enterprises Talent Community and be considered for current or future opportunities that may fit best.
+              - generic [ref=f59e147]:
+                - link "Application FAQs" [ref=f59e148] [cursor=pointer]:
+                  - /url: https://fastenterprises.icims.com/icims2/servlet/icims2?module=AppInert&action=download&id=87669&hashed=10443358
+                - paragraph [ref=f59e150]:
+                  - text: Software Powered by ICIMS
+                  - link "www.icims.com" [ref=f59e151] [cursor=pointer]:
+                    - /url: http://www.icims.com/platform_help?utm_source=platform&utm_medium=link&utm_content=page1&utm_campaign=platform%20help
+    - contentinfo [ref=f58e26]:
+      - generic [ref=f58e28]:
+        - link "Fast Enterprises" [ref=f58e30] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f58e33]:
+          - navigation:
+            - list:
+              - listitem [ref=f58e34]:
+                - link "Home" [ref=f58e35] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f58e36]:
+                - link "About" [ref=f58e37] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=f58e38]:
+                - link "Solutions" [ref=f58e39] [cursor=pointer]:
+                  - /url: /solutions
+              - listitem [ref=f58e40]:
+                - link "Careers" [ref=f58e41] [cursor=pointer]:
+                  - /url: /careers
+              - listitem [ref=f58e42]:
+                - link "Community" [ref=f58e43] [cursor=pointer]:
+                  - /url: /community
+              - listitem [ref=f58e44]:
+                - link "Showcase" [ref=f58e45] [cursor=pointer]:
+                  - /url: /showcase
+              - listitem [ref=f58e46]:
+                - link "News" [ref=f58e47] [cursor=pointer]:
+                  - /url: /news
+        - generic [ref=f58e49]:
+          - link "Contact" [ref=f58e51] [cursor=pointer]:
+            - /url: /contact/
+          - link "Apply Now" [ref=f58e53] [cursor=pointer]:
+            - /url: /careers/positions/
+      - generic [ref=f58e55]:
+        - generic [ref=f58e56]:
+          - list [ref=f58e57]:
+            - listitem [ref=f58e58]:
+              - link [ref=f58e59] [cursor=pointer]:
+                - /url: https://www.instagram.com/fast_enterprises/
+            - listitem [ref=f58e61]:
+              - link [ref=f58e62] [cursor=pointer]:
+                - /url: https://x.com/FastEntCareers
+            - listitem [ref=f58e65]:
+              - link [ref=f58e66] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/FastEnterprisesLLC
+            - listitem [ref=f58e68]:
+              - link [ref=f58e69] [cursor=pointer]:
+                - /url: https://www.facebook.com/fast.careers/
+            - listitem [ref=f58e71]:
+              - link [ref=f58e72] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/fast-enterprises
+            - listitem [ref=f58e74]:
+              - link [ref=f58e75] [cursor=pointer]:
+                - /url: https://www.glassdoor.com/Reviews/Fast-Enterprises-Reviews-E241404.htm
+          - generic [ref=f58e78]:
+            - textbox "Search site.." [ref=f58e79]
+            - button "" [ref=f58e80] [cursor=pointer]
+        - generic [ref=f58e83]:
+          - text: Copyright © 2026 Fast Enterprises, LLC. GenTax
+          - superscript [ref=f58e84]: ®
+          - text: ", FastCore™, FastDS-VS"
+          - superscript [ref=f58e85]: ®
+          - text: ", FastDS"
+          - superscript [ref=f58e86]: ®
+          - text: ", FastVS"
+          - superscript [ref=f58e87]: ®
+          - text: ", FastUI"
+          - superscript [ref=f58e88]: ®
+          - text: ", and FastCSE"
+          - superscript [ref=f58e89]: ®
+          - text: "are trademarks of Fast Enterprises, LLC. Other Web Policies:"
+          - link "Health Plan Transparency in Coverage Disclosure" [ref=f58e90] [cursor=pointer]:
+            - /url: /policy/
+          - text: "|"
+          - link "Privacy Policy" [ref=f58e91] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - text: .

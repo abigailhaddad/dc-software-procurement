@@ -1,0 +1,139 @@
+URL: http://www.tecknomic.com/current-postings/
+Fetched: 2026-08-24T15:01:17Z (rendered accessibility snapshot via Playwright)
+- generic [active] [ref=f60e1]:
+  - generic [ref=f60e3]:
+    - generic [ref=f60e5]:
+      - generic [ref=f60e8]:
+        - heading [level=1] [ref=f60e9]:
+          - link "tecknomic" [ref=f60e10] [cursor=pointer]:
+            - /url: http://www.tecknomic.com/
+        - generic [ref=f60e11]: Making Technology......Simple
+      - list [ref=f60e14]:
+        - listitem [ref=f60e15]:
+          - link "Home" [ref=f60e17] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f60e18]:
+          - link "About Us" [ref=f60e20] [cursor=pointer]:
+            - /url: /about-us/
+        - listitem [ref=f60e21]:
+          - link "Capabilities" [ref=f60e23] [cursor=pointer]:
+            - /url: /capabilities/
+        - listitem [ref=f60e24]:
+          - link "Careers" [ref=f60e26] [cursor=pointer]:
+            - /url: /careers/
+        - listitem [ref=f60e27]:
+          - link "Clients" [ref=f60e29] [cursor=pointer]:
+            - /url: /clients/
+        - listitem [ref=f60e30]:
+          - link "Contact" [ref=f60e32] [cursor=pointer]:
+            - /url: /contact/
+        - listitem [ref=f60e33]:
+          - link "Privacy Policy" [ref=f60e35] [cursor=pointer]:
+            - /url: /privacy-p/
+        - listitem [ref=f60e36]:
+          - link "Terms & Conditions" [ref=f60e38] [cursor=pointer]:
+            - /url: /terms-conditions/
+    - generic [ref=f60e39]:
+      - generic:
+        - generic [ref=f60e45]:
+          - list [ref=f60e55]:
+            - listitem [ref=f60e56]:
+              - generic [ref=f60e57]: Current Postings
+              - generic [ref=f60e58]: We were recently selected as provider for Baltimore County Public Schools Technology Support Staffing Services. Please go to Careers and the Current Postings Tab
+              - list
+          - generic [ref=f60e64]:
+            - generic [ref=f60e65]: Follow us
+            - list [ref=f60e69]:
+              - listitem [ref=f60e70]:
+                - link "LinkedIn" [ref=f60e71] [cursor=pointer]:
+                  - /url: http://www.linkedin.com/company/tecknomic
+              - listitem [ref=f60e72]:
+                - link "Twitter" [ref=f60e73] [cursor=pointer]:
+                  - /url: http://www.twitter.com/TecknomicLLC
+          - generic [ref=f60e79]:
+            - generic [ref=f60e80]: RSS Feed
+            - list [ref=f60e84]:
+              - listitem [ref=f60e85]:
+                - link "Current Postings RSS" [ref=f60e86] [cursor=pointer]:
+                  - /url: http://www.tecknomic.com/current-postings/rss.xml
+              - listitem [ref=f60e87]:
+                - link "News & Events RSS" [ref=f60e88] [cursor=pointer]:
+                  - /url: http://www.tecknomic.com/news-events/rss.xml
+          - generic [ref=f60e94]:
+            - generic [ref=f60e95]: Search
+            - table [ref=f60e100]:
+              - rowgroup [ref=f60e101]:
+                - row [ref=f60e102]:
+                  - cell [ref=f60e103]:
+                    - textbox [ref=f60e105]
+                  - cell [ref=f60e106]:
+                    - button "→" [ref=f60e108]
+        - generic [ref=f60e114]:
+          - heading [level=2] [ref=f60e115]:
+            - link "Current Openings" [ref=f60e116] [cursor=pointer]:
+              - /url: /current-postings/current-openings.html
+          - generic [ref=f60e117]:
+            - generic [ref=f60e118]:
+              - list [ref=f60e119]:
+                - listitem [ref=f60e120]:
+                  - heading [level=3] [ref=f60e121]:
+                    - link "Current Postings" [ref=f60e122] [cursor=pointer]:
+                      - /url: http://www.tecknomic.com/current-postings/
+                  - generic [ref=f60e123]:
+                    - generic [ref=f60e124]:
+                      - strong
+                    - strong [ref=f60e126]:
+                      - text: We were recently selected as provider for Toyota. If you are interested in being a part of our team please provide the following details to our firm at
+                      - link "staffing@tecknomic.com" [ref=f60e127] [cursor=pointer]:
+                        - /url: mailto:staffing@tecknomic.com
+                    - generic [ref=f60e128]:
+                      - strong
+                    - strong [ref=f60e130]: 1. Job title
+                    - strong [ref=f60e132]: 2. Contract end date
+                    - strong [ref=f60e134]: 3. Desired salary
+                    - strong [ref=f60e136]: 4. Current or desired leave plan.
+                    - strong [ref=f60e138]: 5. Updated resume
+                    - strong [ref=f60e140]: 6. Relevant years of experience
+                    - generic [ref=f60e141]:
+                      - generic:
+                        - strong
+                    - generic [ref=f60e142]:
+                      - generic:
+                        - strong
+              - generic [ref=f60e143]:
+                - strong [ref=f60e145]: "Current Openings:"
+                - generic [ref=f60e146]:
+                  - generic [ref=f60e147]:
+                    - text: Current Openings Updated August 19, 2026 · New roles are released weekly across our government and commercial contracts
+                    - strong [ref=f60e148]: Functional Safety Engineer
+                    - text: Liberty, NC · $68-79/hr · W-2 only TUV Rheinland FS Engineer, exida CFSE or CMSE certification required
+                    - strong [ref=f60e149]: Battery Manufacturing Engineer
+                    - text: Liberty, NC · W-2 only Battery cell and module manufacturing experience
+                    - strong [ref=f60e150]: Paint Booth Modification & Construction Engineer
+                    - text: Blue Springs, MS · W-2 only Paint systems, booth modification, construction coordination
+                    - strong [ref=f60e151]: Digital / Manufacturing Engineer
+                    - text: Georgetown, KY · W-2 only
+                  - generic [ref=f60e152]:
+                    - generic [ref=f60e153]: "All positions are W-2 employment with Tecknomic. We do not work corp-to-corp or 1099 on these contracts. Questions: hr@tecknomic.com · 202.829.2953"
+                    - strong [ref=f60e154]: Program Manager - PeopleSoft
+                    - text: Washington, DC · District government IT contract · W-2/C2C/1099
+                    - strong [ref=f60e155]: IT Customer Support Specialist
+                    - text: Washington, DC · District government IT contract · W-2/C2C/1099
+                    - strong [ref=f60e156]: Treasury Analyst
+                    - text: Washington, DC · District government contract · W-2/C2c/1099
+              - link "Job Application" [ref=f60e158] [cursor=pointer]:
+                - /url: http://www.tecknomic.com/job-application/
+              - generic [ref=f60e159]:
+                - text: "If you are not able to find any active roles you are currently interested in, please fill out this form:"
+                - link "https://docs.google.com/forms/d/e/1FAIpQLSfyKA9Jk4h5if-VyqJCaWwRNDh_4y7GHUVuZaAxgmDkLGQ7jw/viewform?usp=sf_link" [ref=f60e160] [cursor=pointer]:
+                  - /url: https://docs.google.com/forms/d/e/1FAIpQLSfyKA9Jk4h5if-VyqJCaWwRNDh_4y7GHUVuZaAxgmDkLGQ7jw/viewform?usp=sf_link
+              - list
+              - list
+            - list [ref=f60e162]:
+              - listitem [ref=f60e163]:
+                - strong
+    - generic [ref=f60e164]: © 2012 Tecknomic - All rights reserved
+  - link [ref=f60e166] [cursor=pointer]:
+    - /url: javascript:SSLightbox.scrollThumbnails(1);
+  - link [ref=f60e167] [cursor=pointer]:
+    - /url: javascript:SSLightbox.scrollThumbnails(-1);
