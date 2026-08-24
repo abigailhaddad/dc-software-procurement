@@ -431,6 +431,29 @@ def main() -> int:
           "more than double the Fiscal Year 2022 rate" in henderson, True)
     infosys = (ROOT / "evidence" / "dcas_sources" / "infosyspublicservices_2013_hbx_press_release.txt").read_text(encoding="utf-8")
     check("source: Infosys $49.5M build award", "49.5" in infosys, True)
+    # The DCAS workforce paragraph: Curam-titled H-1B wage filings at DC
+    # worksites, recomputed from the saved aggregator page in evidence/h1b/.
+    # (h1bdata.info aggregates DOL LCA disclosures; DOL is authoritative.)
+    import re as _re
+
+    curam_html = (ROOT / "evidence" / "h1b" / "job_curam_all.html").read_text(encoding="utf-8")
+    curam_rows = _re.findall(r"<tr[^>]*>\s*<td.*?</tr>", curam_html, flags=_re.S)
+    dc_rows = [r for r in curam_rows if _re.search(r"WASHINGTON,?\s*D\.?C?\b", r, _re.I)]
+    check("Curam-titled LCA filings at DC worksites", len(dc_rows), 110)
+    dc_employers = set()
+    for r in dc_rows:
+        tds = _re.findall(r"<td[^>]*>(.*?)</td>", r, flags=_re.S)
+        name = _re.sub(r"<[^>]+>", "", tds[0]).strip().upper()
+        dc_employers.add(_re.sub(r"\s+(INC|LLC)$", "", name))
+    check("distinct employers filing them", len(dc_employers), 6)
+    check("of them, D2Sol's filings",
+          sum(1 for r in dc_rows if "D2SOL" in r.upper()), 89)
+    check("eSystems' filings", sum(1 for r in dc_rows if "ESYSTEMS" in r.upper()), 15)
+    for absent in ("DENOVO", "NETLINE"):
+        check(f"{absent} absent from portal contracts and payments",
+              int(labels.vendor.astype(str).str.upper().str.contains(absent, na=False).sum())
+              + int(payments.vendor.astype(str).str.upper().str.contains(absent, na=False).sum()), 0)
+
     d2sol_careers = (ROOT / "evidence" / "job_ads" / "d2sol-careers.txt").read_text(encoding="utf-8")
     check("source: D2Sol hiring junior US roles", "Junior Curam Developer" in d2sol_careers, True)
     check("source: D2Sol hiring in Bangalore", "Bangalore - India" in d2sol_careers, True)
