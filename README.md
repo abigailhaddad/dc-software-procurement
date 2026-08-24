@@ -1,197 +1,115 @@
-# DC procurement: technology and custom software
+# How the District buys software
 
-Pulls the District of Columbia's contracting data and analyzes what DC buys when
-it buys software — who the vendors are, how much it spends, and how the work is
-billed.
+Pulls the DC Contracts and Procurement Transparency Portal, sorts every contract
+by what it actually buys, and reads how the work is structured out of the award
+PDFs.
 
-Data comes from the [Contracts and Procurement Transparency
-Portal](https://contracts.ocp.dc.gov), which publishes contracts, purchase
-orders, payments, and solicitations for DC agencies that buy through the Office
-of Contracting and Procurement. The portal's Angular front end is backed by an
-undocumented public JSON API; `dcprocure.client` wraps it.
+The briefing built from this is `analysis/how_dc_buys_software.ipynb`. Every
+figure in it comes from a cell you can rerun.
 
-## Quick start
+## Run it
 
 ```bash
-uv sync
-uv run python -c "from dcprocure.pull import pull_all; pull_all()"
+make install
+make pull        # ~10 min, writes ~320MB into data/raw
+make classify    # needs OPENAI_API_KEY in .env
+make verify      # recomputes every published figure, fails on drift
+make test        # scores the classifiers against hand-read labels
 ```
 
-That writes raw JSON plus a `manifest.json` recording the pull date into
-`data/raw/`. Analysis reads from those files, never from the network, so any
-number can be re-derived from the same snapshot.
+`make help` lists the rest. Every step is resumable: pulls skip what is already
+on disk and classification is cached by content, so rerunning costs nothing.
+
+## What it found
+
+Of 1,372 technology contracts carrying $4.6B in ceilings, custom software
+development accounts for 60 contracts and $38M. Staff augmentation accounts for
+$1.2B and ordering vehicles for $1.8B. Half of the $579M in traceable technology
+payments went to ten vendors, and 17% to one.
+
+Among contracts that build or run something, the largest group fixes its scope
+before work starts: 74 of 82 sequential, gated contracts cannot change what is
+built without a contract modification.
+
+## Why the commodity codes are not used
+
+They are assigned by the buyer and applied loosely. Class 918, "consulting
+services", holds Medicaid managed care contracts worth billions. Class 920,
+"data processing, computer, programming and software services", holds a purchase
+order to a plumbing contractor. The District's largest IT staffing vehicles —
+including one titled "Information Technology Staff Augmentation Services" —
+are filed under 961/962, "miscellaneous services, not otherwise classified",
+while the purchase orders written against them are coded 918.
+
+So contracts are sorted by reading them. `classifier_config.yaml` holds the
+schema and prompt for what a contract buys; `delivery_config.yaml` does the same
+for how the work is structured. Accuracy is scored against contracts labelled by
+hand in `tests/`: 20 of 20 on what is being bought, 20 of 20 on delivery
+structure.
 
 ## Layout
 
-| Module | What it does |
+| Path | What it does |
 | --- | --- |
-| `client.py` | The portal API, including guards against its silent-filter behavior |
-| `commodities.py` | Which NIGP commodity classes count as "technology", and why |
-| `pull.py` | Fetch raw JSON to `data/raw/` with a provenance manifest |
-| `parse.py` | Normalize money, dates, fiscal years; derive pricing model |
-| `documents.py` | Download award PDFs and read the billing terms out of them |
-| `classify.py` | LLM classification of what each contract actually buys |
-| `parse.normalize_vendor` | Vendor identity, with the rules in `vendor_aliases.yaml` |
-| `analysis.py` | Summary tables |
+| `src/dcprocure/client.py` | The portal API, with guards against its silent-filter behaviour |
+| `src/dcprocure/pull.py` | Fetch raw JSON into `data/raw/` with a provenance manifest |
+| `src/dcprocure/parse.py` | Normalise money, dates, fiscal years, vendor names |
+| `src/dcprocure/documents.py` | Fetch award PDFs, cache their text, pull out the relevant sections |
+| `src/dcprocure/classify.py` | LLM classification, driven by the YAML configs |
+| `src/dcprocure/analysis.py` | Summary tables |
+| `classifier_config.yaml` | What a contract buys: schema, prompt, domain rules |
+| `delivery_config.yaml` | How the work is structured, and what agile language is doing |
+| `vendor_aliases.yaml` | Which vendor spellings are one company, and which are deliberately not |
+| `analysis/verify_claims.py` | Recomputes every published figure; fails loudly on drift |
+| `tests/` | Hand-read labels and the scripts that score against them |
 
-Prompt and schema both live in `classifier_config.yaml`; the labelled test set
-lives in `tests/gold_labels.csv`. Vendor identity decisions live in
-`vendor_aliases.yaml` — which spellings count as one company, which pairs are
-deliberately kept apart, and a regenerated record of what the rules actually
-merge. `verify_claims.py` fails if that record drifts from what the rules do.
+## Things that will bite you
 
-## The API
+Found by testing the API against itself. Each is handled in code rather than
+left as a comment.
 
-No authentication. Base URL `https://contracts.ocp.dc.gov`.
+**The fiscal-year filter on contract search does nothing.** Send `FiscalYear`
+and the server returns the entire contract universe, identical for every year,
+while reporting `filters: []`. The same is true of `Keyword` on solicitations.
+`DCProcurementClient.search` compares the filters the server echoes against what
+was sent and raises rather than hand back a wider slice than requested.
 
-| Endpoint | Method | Notes |
-| --- | --- | --- |
-| `/api/{module}/search` | POST | `{"FilterBy": [{"name", "value"}], "OrderBy": []}` |
-| `/api/contracts/details?id=` | GET | Only source of `contractType` and attachments |
-| `/api/contracts/commodities` | GET | 266 three-digit NIGP classes |
-| `/api/contracts/agencies` | GET | Agency clusters and members |
-| `/contracts/attachments/{id}` | GET | The contract PDF. Note: no `/api` prefix |
+**`paymentAmount` is not the amount of that payment.** It is the total of the
+whole check or ACH run the voucher was paid in, repeated on every row in that
+run. Summing it gives $113.7B against $33.3B of actual vouchers, and made one
+contract with a $120M ceiling look like it had been paid $17.3B.
+`load_payments` returns `voucherAmount` as `amount` and keeps the other as
+`check_total` so it cannot be summed by accident.
 
-Modules are `contracts`, `purchase`, `payments`, `solicitations`, `forecast`.
+**A contract search row is one option period, not one contract.** 7,113 rows
+are 3,983 contracts. Summing them gives a lifetime ceiling, which is neither an
+annual figure nor money spent.
 
-### Things that will bite you
+**Ceilings and payments cover different windows.** Option periods run from
+October 2020 to 2031; payments reach back to FY2017. Comparing them without
+windowing counts $11.9B of payments made before the ceilings existed.
 
-These were all found by testing the API against itself, and each one is handled
-in code rather than left as a comment.
+**Vendor names are not standardised.** CDW Government appears three ways in the
+technology payments alone. `vendor_aliases.yaml` records the rules, what they
+merge, and the pairs left separate on purpose.
 
-**The fiscal-year filter on contract search does nothing.** Send
-`FiscalYear` and the server returns the entire 7,271-row contract universe,
-identical for every year, while reporting `filters: []`. The same is true of
-`Keyword` on solicitations. `DCProcurementClient.search` compares the filters
-the server echoes against what was sent and raises rather than hand back a
-wider slice than requested.
+**Most payments cannot be tied to a contract.** Of 866,823 rows, 478,716 carry
+no contract number, covering $17.8B. That is a ceiling on any share-of-spend
+analysis built by joining payments to contracts.
 
-**A contract search row is one option period, not one contract.** The 7,271
-rows are 4,087 contracts; a five-year contract appears up to six times, each row
-carrying that period's amount. Sum the rows and you get a lifetime ceiling, which
-is not an annual figure and not money spent.
+**NIGP coding is noisy in both directions.** Treat any single-class total as
+approximate.
 
-**`contractType` mixes pricing with vehicle type.** "Firm Fixed Price" and
-"Labor Hour" describe billing. "Indefinite Delivery Indefinite Quantity" and
-"Requirements" describe an ordering vehicle whose task-order pricing the portal
-never exposes — and they cover about 65% of software-services dollars. `parse.py`
-keeps them in a separate `set_at_task_order` bucket instead of guessing.
+## What this does not cover
 
-**NIGP classes 918 and 958 are not technology.** "Consulting services" and
-"management services" look like natural additions to an IT total. They are
-dominated by Medicaid managed care contracts — several at $8.8B — and including
-them overstates DC technology spend by roughly ten times.
+Independent agencies procure separately and do not appear in the portal.
 
-**Never sum `paymentAmount`.** It is not the amount of that payment. It is the
-total of the whole check or ACH run the voucher was paid in, repeated
-identically on every row belonging to that run. Summing it inflates totals by
-roughly 3.4x across the table ($113.7B against $33.3B of actual vouchers), and
-concentrates the error wherever a vendor is paid in large batched runs: OCTO
-STaR II, a staffing contract with a $120M ceiling, appears to have been paid
-$17.4 billion — more than the District's entire annual budget. `voucherAmount`
-is the line-level figure. `parse.load_payments` returns it as `amount` and keeps
-the other as `check_total` so it cannot be summed by accident.
+Task orders issued under ordering vehicles are not published anywhere. Schedule
+vehicles carry the largest ceilings in the technology set, so the biggest single
+channel of technology spending is invisible here. That is the largest gap.
 
-**Most payments cannot be tied to a contract at all.** Of 866,823 payment rows,
-478,668 ($17.8B) carry no contract number. That is a ceiling on any
-share-of-spend analysis built by joining payments to contracts, and it is a
-property of the data rather than something more classification can fix.
+Delivery structure could be read for 288 of 476 candidate contracts. The rest
+had no award document attached or a scanned one with no text layer.
 
-**The biggest IT services contracts are not in any IT commodity class.** DC's
-IT staff-augmentation vehicles are coded 961/962, "miscellaneous services, not
-otherwise classified" — including OCTO STaR II at a $120M ceiling and a contract
-literally titled "Information Technology Staff Augmentation Services" at $65M.
-The coding is not even self-consistent within one vendor: Computer Aid, Inc.'s
-*contracts* sit in class 962 while the *purchase orders* against them are coded
-918. An IT total built from IT commodity classes alone misses all of it, so
-`pull.py` pulls the miscellaneous classes too and `parse.py` groups them
-separately for title-level filtering.
-
-**NIGP coding is self-assigned and noisy.** Class 920, "data processing,
-computer, programming, and software services", contains purchase orders to a
-plumbing contractor. Treat any single-class total as approximate.
-
-**Other API quirks.** There is no pagination; every search returns its full
-result set, and the payments module will hand back ~867,000 rows in one
-response. Requests without a browser-like `User-Agent` get a 403.
-`CommodityCode` takes a three-digit class while result rows carry seven-digit
-codes. Solicitation `Type` is a required numeric enum (0 open, 1 archived) and
-is rejected without an accompanying `Status` or `ArchivedFiscalYear`.
-
-## What the data shows
-
-DC does comparatively little discrete custom-software procurement. Of roughly
-$955M in class-920 contract ceilings, most is not project work:
-
-* **The DC Supply Schedule (DCSS)** accounts for the largest block — a dozen-odd
-  near-identical "Information Technology Equipment and Software" IDIQ vehicles at
-  $10–40M ceilings each, held by small set-aside vendors. These are ordering
-  vehicles, not projects; the actual work only becomes visible as task orders,
-  which the portal does not publish. About 23% of technology solicitations are
-  restricted to schedule holders.
-* **License resale** is much of the rest, chiefly Microsoft Enterprise Agreements
-  bought through CDW ($90M and $31M ceilings).
-* **Genuine custom systems are few and long-lived** — DCAS (health benefits
-  eligibility, $83.7M for one O&M award), UIBS (unemployment, Geographic
-  Solutions), the FAST Enterprises tax systems. These are procured as operations
-  and maintenance of an existing system far more often than as a build.
-* **Labor is bought separately from software**, through staffing vehicles coded
-  outside IT entirely. Computer Aid, Inc. alone runs ~1,200 purchase orders a
-  year at a $56K median across eight agencies, a shape that reads as one
-  resource-period per order. Compare FAST Enterprises: eight orders, $2.8M
-  median.
-
-Only about seven of 12,273 solicitations from FY2016–FY2026 read as custom
-software builds, and most of those are false positives on the word "system"
-(HVAC, a vehicle wash). Open competition for new software is rare; competition
-mostly happens at task-order level among pre-qualified schedule holders.
-
-## Classifying the work
-
-Commodity codes cannot identify DC technology spending, so the classification is
-done on contract titles by an LLM. `classifier_config.yaml` is the single source
-of truth: its `fields:` block builds both the Pydantic schema sent to the model
-and the prompt text, following the same convention as the
-generic-comment-analyzer project. Model defaults to `gpt-5.4-nano`, overridable
-with `LLM_MODEL`.
-
-```bash
-uv run python analysis/classify_contracts.py   # labels every contract
-uv run python tests/eval_labels.py             # scores against gold labels
-```
-
-Each contract gets a `work_type` — the distinction that matters most being
-between paying for a deliverable (`custom_software_build`, `cots_implementation`,
-`software_om_support`) and paying for people (`staff_augmentation`) — plus a
-`buys_people_not_deliverables` flag and any named system. `ordering_vehicle` is
-a third thing again: a schedule contract that authorizes future orders without
-buying anything itself.
-
-`tests/gold_labels.csv` holds 20 hand-labelled contracts, chosen because they
-are the cases commodity codes get wrong in both directions: Medicaid managed
-care and food service sitting in the consulting class, a plumbing contractor in
-the software class, IT staff augmentation under miscellaneous services. Where two
-labels are genuinely defensible the gold column holds both, separated by a pipe.
-Every row carries a note saying why it is there, so a config edit that breaks one
-is readable rather than mysterious. Current accuracy is 20/20.
-
-One documented blind spot: contracts whose title is a bare acronym. "OCTO STaR
-II" is the District's largest IT labour vehicle, but nothing in the title says
-so, and calling it staffing requires outside knowledge the classifier does not
-have.
-
-Results are cached by model plus a fingerprint of the config, so editing the
-prompt invalidates stale labels instead of silently reusing them.
-
-## Measurement choices
-
-Annual spend comes from **purchase orders**, which carry a real fiscal year and
-represent money committed. Contract amounts are authorization ceilings and are
-used only for structure — vendor concentration, contract type, market type.
-
-Billing model comes from the **award PDFs**, not from `contractType`. DC
-contracts state their type in standardized language drawn from 27 DCMR Chapter
-24 ("The District contemplates award of a firm fixed price contract..."), and
-price schedules that list labor categories with hourly rates identify hours-based
-work regardless of what the vehicle is called. Some awards are scanned images
-with no text layer; those are reported as `needs_ocr` rather than assumed.
+The portal is live and counts move between pulls, so `data/raw/manifest.json`
+records the date of the snapshot every figure was computed from.
