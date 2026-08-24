@@ -363,6 +363,26 @@ def main() -> int:
     cs = calc[(calc.dc_category == "Computer Scientist") & (calc.dc_level == "Entry")]
     check("Computer Scientist entry: federal median", float(cs.federal_median.iloc[0]), 146.08)
 
+    print("\n-- solicitation visibility --")
+    # Whether each technology contract traces to any posted solicitation,
+    # via award-text citation or title match (data/solicitations/, rebuilt by
+    # the analysis/solicitations_* scripts). Matching recall is ~63%, so the
+    # briefing states these as "at most about a third of contracts, about a
+    # tenth of dollars" after correction — the raw figures are checked here.
+    vis = pd.read_csv(ROOT / "data" / "solicitations" / "tech_contract_solicitation_visibility.csv")
+    check("technology contracts assessed", len(vis), 1372)
+    visible = vis[vis.visibility.str.startswith("visible")]
+    check("trace to a posted solicitation", len(visible), 295)
+    check("their share of tech ceilings %",
+          round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.4, 0.2)
+    fy = pd.read_csv(ROOT / "data" / "solicitations" / "solicitations_by_fy.csv")
+    check("solicitations posted FY2016", int(fy[fy.fiscal_year == "FY2016"].total.iloc[0]), 1351)
+    check("solicitations posted FY2025", int(fy[fy.fiscal_year == "FY2025"].total.iloc[0]), 749)
+    sols = _json.load(open(ROOT / "data" / "raw" / "solicitations.json"))
+    doc_ids = sum(1 for s in sols if str(s.get("solicitationNumber", "")).startswith("Doc"))
+    check("solicitation rows showing internal Doc IDs %",
+          round(100 * doc_ids / len(sols)), 96, 1)
+
     print("\n-- purchase-order vendor figures --")
     recent = orders[orders.fiscal_year.between(2022, 2026)].copy()
     recent["vendor_key"] = recent.vendor.str.upper().str.strip()

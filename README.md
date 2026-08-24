@@ -117,6 +117,12 @@ analysis built by joining payments to contracts.
 **NIGP coding is noisy in both directions.** Treat any single-class total as
 approximate.
 
+**The solicitations list hides its own solicitation numbers.** 96% of rows show
+an internal `Doc######` ID where the procurement number should be. The ID turns
+out to be the join key — award documents print it in their "Solicitation
+Number" box — and some rows carry stray control characters in numbers and
+titles.
+
 ## What this does not cover
 
 Independent agencies procure separately and do not appear in the portal.
