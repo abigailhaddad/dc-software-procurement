@@ -115,6 +115,24 @@ def gather_excerpts(labels: pd.DataFrame, workers: int = 8) -> pd.DataFrame:
     )
 
 
+def apply_overrides(frame: pd.DataFrame) -> pd.DataFrame:
+    """Apply the hand-read corrections in delivery_overrides.yaml.
+
+    The classifier undercounts genuine agile commitments; the overrides file
+    records the cases where hand-reading found one it missed, with the reason.
+    Each must also appear in tests/delivery_gold_labels.csv.
+    """
+    import yaml
+
+    overrides = yaml.safe_load((ROOT / "delivery_overrides.yaml").read_text(encoding="utf-8"))
+    for contract_number, spec in (overrides.get("agile_mention_kind") or {}).items():
+        mask = frame.contract_number == contract_number
+        if mask.any():
+            frame.loc[mask, "agile_mention_kind"] = spec["value"]
+            print(f"override {contract_number}: agile_mention_kind -> {spec['value']}")
+    return frame
+
+
 def main(model: str = DEFAULT_MODEL) -> int:
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     labels = pd.read_csv(ROOT / "data" / "contract_classifications.csv")
@@ -134,6 +152,7 @@ def main(model: str = DEFAULT_MODEL) -> int:
                   "confidence"):
         frame[field] = [p.get(field) if p else None for p in predictions]
 
+    frame = apply_overrides(frame)
     frame.drop(columns=["excerpt"]).to_csv(OUT_PATH, index=False)
     print(f"wrote {OUT_PATH} ({len(frame):,} rows)")
     return 0

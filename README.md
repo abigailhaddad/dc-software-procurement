@@ -5,7 +5,9 @@ by what it actually buys, and reads how the work is structured out of the award
 PDFs.
 
 The briefing built from this is `analysis/how_dc_buys_software.ipynb`. Every
-figure in it comes from a cell you can rerun.
+figure in it comes from a cell you can rerun. `site/index.html` is the same
+briefing as one static page: open it in a browser, and the contracts behind
+each figure are a click away.
 
 ## Run it
 
@@ -23,9 +25,13 @@ on disk and classification is cached by content, so rerunning costs nothing.
 ## What it found
 
 Of 1,372 technology contracts carrying $4.6B in ceilings, custom software
-development accounts for 60 contracts and $38M. Staff augmentation accounts for
-$1.2B and ordering vehicles for $1.8B. Half of the $579M in traceable technology
-payments went to ten vendors, and 17% to one.
+development accounts for 60 contracts and $38M. That is a floor on custom
+development in contract form; building also happens inside the $1.2B of staff
+augmentation and inside task orders this data cannot see. Ordering vehicles
+carry $1.8B. Half of the $579M in traceable technology payments went to ten
+vendors, and 17% to one — measured on the 44% of contracts whose payments carry
+their number, though the top vendor is corroborated separately by the
+purchase-order table.
 
 Among contracts that build or run something, the largest group fixes its scope
 before work starts: 74 of 82 sequential, gated contracts cannot change what is
@@ -35,8 +41,8 @@ built without a contract modification.
 
 They are assigned by the buyer and applied loosely. Class 918, "consulting
 services", holds Medicaid managed care contracts worth billions. Class 920,
-"data processing, computer, programming and software services", holds a purchase
-order to a plumbing contractor. The District's largest IT staffing vehicles —
+"data processing, computer, programming and software services", holds a plumbing
+contractor's $14M contract. The District's largest IT staffing vehicles —
 including one titled "Information Technology Staff Augmentation Services" —
 are filed under 961/962, "miscellaneous services, not otherwise classified",
 while the purchase orders written against them are coded 918.
@@ -45,7 +51,9 @@ So contracts are sorted by reading them. `classifier_config.yaml` holds the
 schema and prompt for what a contract buys; `delivery_config.yaml` does the same
 for how the work is structured. Accuracy is scored against contracts labelled by
 hand in `tests/`: 20 of 20 on what is being bought, 20 of 20 on delivery
-structure.
+structure, 18 of 20 on what agile language is doing. The two misses are genuine
+commitments the model filed as incidental; they are corrected by hand in
+`delivery_overrides.yaml`, with reasons, and the eval expects exactly those two.
 
 ## Layout
 
@@ -60,6 +68,9 @@ structure.
 | `classifier_config.yaml` | What a contract buys: schema, prompt, domain rules |
 | `delivery_config.yaml` | How the work is structured, and what agile language is doing |
 | `vendor_aliases.yaml` | Which vendor spellings are one company, and which are deliberately not |
+| `delivery_overrides.yaml` | Hand-read corrections applied on top of the delivery classifier, with reasons |
+| `site/index.html` | The briefing as a single static page |
+| `analysis/rebuild_manifest.py` | Rebuild the provenance manifest from the files on disk |
 | `analysis/verify_claims.py` | Recomputes every published figure; fails loudly on drift |
 | `tests/` | Hand-read labels and the scripts that score against them |
 
@@ -104,9 +115,11 @@ approximate.
 
 Independent agencies procure separately and do not appear in the portal.
 
-Task orders issued under ordering vehicles are not published anywhere. Schedule
-vehicles carry the largest ceilings in the technology set, so the biggest single
-channel of technology spending is invisible here. That is the largest gap.
+The portal has no record type for task orders issued under ordering vehicles.
+Some schedule buying surfaces as purchase orders or later contracts, but nothing
+links those back to their vehicle. Schedule vehicles carry the largest ceilings
+in the technology set, so the biggest single channel of technology buying cannot
+be followed. That is the largest gap.
 
 Delivery structure could be read for 288 of 476 candidate contracts. The rest
 had no award document attached or a scanned one with no text layer.

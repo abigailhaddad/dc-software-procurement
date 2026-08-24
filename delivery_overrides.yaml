@@ -1,0 +1,25 @@
+# Hand-read corrections applied on top of the model's delivery classification.
+#
+# The delivery classifier undercounts genuine agile commitments: scored against
+# tests/delivery_gold_labels.csv it resolves 18 of 20 cases, and both misses are
+# real commitments it filed as unrelated_usage. These two rows are corrected to
+# what hand-reading the award text found, so the published figures match the
+# gold labels rather than silently contradicting them.
+#
+# Anything added here must also be recorded in tests/delivery_gold_labels.csv.
+# classify_delivery.py applies these after classification; eval_delivery.py
+# treats exactly these contracts as known classifier misses. verify_claims.py
+# checks that this file and the gold labels stay in agreement.
+
+agile_mention_kind:
+  CW96958:
+    value: delivery_commitment
+    reason: >
+      Hand-read: "create user stories ... prior to creation of the design
+      document and the product backlog" is a commitment to agile working
+      methods feeding a gated document chain, not an unrelated usage.
+  CW118423:
+    value: delivery_commitment
+    reason: >
+      Hand-read: "Configuration sprints then proceed" inside a phased
+      implementation plan commits the delivery itself to sprints.
