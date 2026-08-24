@@ -20,8 +20,6 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from dcprocure import parse  # noqa: E402
 
-ROOT = Path(__file__).resolve().parents[1]
-
 FAILURES: list[str] = []
 
 
@@ -355,13 +353,13 @@ def main() -> int:
     # rates (data/calc/, with methods and raw API responses). The comparison
     # file is rebuilt by analysis/build_calc_comparison.py.
     calc = pd.read_csv(ROOT / "data" / "calc" / "dc_vs_calc_comparison.csv")
-    check("matched DC rate rows", len(calc), 112)
+    check("matched DC rate rows", len(calc), 119)
     cai_rows = calc[calc.dc_contract == "CW91684"]
     check("of them, on the CW91684 card", len(cai_rows), 44)
     check("CW91684 median gap vs federal median %",
           round(cai_rows.dc_vs_fed_median_pct.median()), -50, 1)
     check("DC rows below the federal median",
-          int((calc.dc_vs_fed_median_pct < 0).sum()), 70)
+          int((calc.dc_vs_fed_median_pct < 0).sum()), 73)
     check("median gap excluding CW91684 %",
           round(calc[calc.dc_contract != "CW91684"].dc_vs_fed_median_pct.median()), 2, 1)
     ne = calc[(calc.dc_category == "Network Engineer/Specialist") & (calc.dc_level == "Entry")]
@@ -540,6 +538,39 @@ def main() -> int:
     check("FAST Enterprises $M", round(fast.amount.sum() / 1e6), 51, 2)
     check("FAST Enterprises purchase orders", len(fast), 11, 1)
     check("FAST median PO $M", round(fast.amount.median() / 1e6, 1), 3.5, 0.2)
+
+    print("\n-- the README's own figures --")
+    # The README restates published figures in prose, and nothing used to check
+    # it: it carried a stale rate count (2,146, the native-only subtotal) for
+    # long enough to ship. Each entry below writes a computed figure the way the
+    # README writes it and asserts that string is still in the file, so prose
+    # drift fails here rather than going out.
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    custom = labels[labels.work_type == "custom_software_build"]
+    vehicles = labels[labels.work_type == "ordering_vehicle"]
+    staffaug = labels[labels.work_type == "staff_augmentation"]
+    for phrase in [
+        f"Of {len(tech):,} technology contracts",
+        f"${tech.ceiling.sum() / 1e9:.1f}B in ceilings",
+        f"{len(custom)} contracts and ${round(custom.ceiling.sum() / 1e6)}M",
+        f"${staffaug.ceiling.sum() / 1e9:.1f}B of staff",
+        f"Ordering vehicles\ncarry ${vehicles.ceiling.sum() / 1e9:.1f}B",
+        f"{lr.contract_number.nunique()} award documents publish hourly rate cards",
+        f"{len(lr):,}\nnot-to-exceed rates",
+        f"${lr.hourly_rate.min():.2f} to ${round(lr.hourly_rate.max()):,}",
+        f"The {len(lr):,} published rates",
+        f"{int((waterfall.scope_fixed_in_advance == 'yes').sum())} of "
+        f"{int((delivery.delivery_structure == 'sequential_gated_deliverables').sum())} sequential",
+        f"{len(contracts):,} rows\nare {contracts.contract_number.nunique():,} contracts",
+        f"Of {len(payments):,} rows, {int(payments.contract_number.isna().sum()):,} carry",
+        f"${payments.check_total.sum() / 1e9:.1f}B against "
+        f"${payments.amount.sum() / 1e9:.1f}B of actual vouchers",
+        f"{len(combined)} of 476 candidate contracts: "
+        f"{len(delivery)} with\na native text layer, {len(ocr)} recovered",
+        f"The remaining {476 - len(combined)} have no award document",
+    ]:
+        shown = phrase.replace("\n", " ")
+        check(f"README: '{shown}'", phrase in readme, True)
 
     print(f"\n{'ALL CHECKS PASSED' if not FAILURES else f'{len(FAILURES)} FAILED: ' + '; '.join(FAILURES)}")
     return 1 if FAILURES else 0

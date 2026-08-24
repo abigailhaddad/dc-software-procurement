@@ -77,9 +77,13 @@ commitments the model filed as incidental; they are corrected by hand in
 | `analysis/pull_h1b.py` | Pull public H-1B wage filings for the vendor set (`make h1b`); DOL's disclosure files are authoritative |
 | `analysis/pull_h1b_dol.py` | Filter DOL's own LCA disclosure files to the vendor set — case status, worksite address, and the client-naming secondary-entity field |
 | `analysis/extract_rates.py` | Pull hourly rate cards out of the award texts, every rate verified verbatim |
-| `data/labor_rates.csv` | The 2,146 published rates, with whether each title-to-price pairing verified |
+| `data/labor_rates.csv` | The 2,471 published rates, with whether each title-to-price pairing verified |
 | `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |
 | `evidence/job_ads/` | Job postings quoted in the briefing: screenshots, raw pages, archive links |
+| `analysis/pull_calc.py` | Pull GSA CALC awarded ceiling rates, the federal comparison set (`make calc`) |
+| `analysis/build_calc_comparison.py` | Match DC's published rates to federal titles and compare them |
+| `analysis/solicitations_*.py` | Trace technology contracts back to posted solicitations (`make solicitations`) |
+| `analysis/build_dcas.py` | Rebuild the DCAS roster and its attributed payments (`make dcas`) |
 | `analysis/verify_claims.py` | Recomputes every published figure; fails loudly on drift |
 | `tests/` | Hand-read labels and the scripts that score against them |
 
