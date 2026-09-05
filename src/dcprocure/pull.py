@@ -187,6 +187,101 @@ def pull_solicitations(
     )
 
 
+# The payments module requires at least one filter and applies none of them.
+# FiscalYear, PaymentFiscalYear, CommodityCode, AgencyName and ContractNumber
+# were each sent on their own and each returned the identical full table, so
+# this filter is only there to satisfy the API; it narrows nothing and the
+# value does not need keeping current.
+PAYMENTS_FILTER = Filter("PaymentFiscalYear", "FY2026")
+
+# Floor for a plausible payments pull. The August 2026 snapshot held 866,823
+# rows and the table only grows, so anything near this number is the universe
+# and anything well below it is a truncated or partial response. The gap is
+# deliberately wide: this guard is not trying to detect a few thousand rows of
+# drift, it is trying to catch a response that came back short.
+PAYMENTS_MIN_ROWS = 800_000
+
+# Keys every payment row carried in the published snapshot. Values are often
+# blank -- 55% of rows have no contract number -- but the keys themselves are
+# what parse.load_payments reads, so a row missing one means the response shape
+# changed underneath us.
+PAYMENTS_REQUIRED_KEYS = frozenset(
+    {
+        "id",
+        "agencyName",
+        "contractNumber",
+        "vendorName",
+        "voucherAmount",
+        "paymentAmount",
+        "paymentDate",
+    }
+)
+
+
+def pull_payments(client: DCProcurementClient, out_dir: Path = RAW_DIR) -> Snapshot:
+    """Pull the whole payments table: every voucher line the District paid.
+
+    This is the largest input to the analysis and the basis of the vendor
+    concentration figures, and it is the one module that cannot be narrowed. The
+    payments search ignores every filter it is given -- FiscalYear,
+    PaymentFiscalYear, CommodityCode, AgencyName and ContractNumber were each
+    sent alone and each returned the same complete table -- so there is no slice
+    to ask for and no way to pull it in pieces. It comes back unpaginated in one
+    response of roughly 280 MB, near 300 MB once written out, which is why
+    :class:`DCProcurementClient` defaults to a 300-second timeout.
+
+    Because the server drops those filters silently, ``search`` is called with
+    ``require_applied=False``. That check exists to stop a query from quietly
+    covering a wider slice than requested; here the whole table *is* what we
+    want, so the exception is deliberate rather than an oversight.
+
+    Correctness therefore cannot come from the filter, and has to come from
+    inspecting what came back. Two guards do that. The row count must reach
+    :data:`PAYMENTS_MIN_ROWS`, since a truncated transfer or a server-side
+    change that returned only part of the table would land far below the ~867k
+    rows this endpoint has been returning. And every row must carry the keys in
+    :data:`PAYMENTS_REQUIRED_KEYS`, since a renamed field would otherwise parse
+    into a column of nulls. Either failure raises rather than writing the file:
+    a short pull that overwrote the snapshot would drop vendors and dollars out
+    of every concentration figure without anything downstream looking wrong.
+
+    Raises:
+        PortalError: If the response is implausibly small, or rows lack the
+            fields the analysis reads.
+    """
+    rows = client.search("payments", [PAYMENTS_FILTER], require_applied=False)
+    log.info("payments: %d rows", len(rows))
+
+    if len(rows) < PAYMENTS_MIN_ROWS:
+        raise PortalError(
+            f"payments search returned {len(rows):,} rows, below the {PAYMENTS_MIN_ROWS:,} "
+            "expected for the full table. The module has no working filters, so a short "
+            "result means a partial or truncated response, not a narrower query. "
+            "Refusing to overwrite the snapshot."
+        )
+
+    for row in rows:
+        missing = PAYMENTS_REQUIRED_KEYS - set(row)
+        if missing:
+            raise PortalError(
+                f"payment row {row.get('id', '?')} is missing {sorted(missing)}; "
+                "the response shape changed and parse.load_payments would read nulls."
+            )
+
+    _write(out_dir / "payments.json", rows)
+    return Snapshot(
+        name="payments",
+        pulled_at=_now(),
+        rows=len(rows),
+        detail={
+            "filter_sent": {PAYMENTS_FILTER.name: PAYMENTS_FILTER.value},
+            "filter_applied_server_side": False,
+            "min_expected_rows": PAYMENTS_MIN_ROWS,
+            "with_contract_number": sum(1 for r in rows if r.get("contractNumber")),
+        },
+    )
+
+
 def write_manifest(snapshots: list[Snapshot], out_dir: Path = RAW_DIR) -> None:
     """Record what was pulled, when, so an analysis can cite its snapshot."""
     _write(
@@ -197,6 +292,24 @@ def write_manifest(snapshots: list[Snapshot], out_dir: Path = RAW_DIR) -> None:
             "snapshots": [s.as_dict() for s in snapshots],
         },
     )
+
+
+def update_manifest_entry(snapshot: Snapshot, out_dir: Path = RAW_DIR) -> None:
+    """Replace one snapshot's entry in an existing manifest, leaving the rest.
+
+    Pulling a single module on its own would otherwise leave the manifest
+    describing the file that used to be on disk. The top-level ``pulled_on``
+    date is not touched, because the other files really were pulled then; each
+    entry carries its own ``pulled_at``.
+    """
+    path = out_dir / "manifest.json"
+    if not path.exists():
+        write_manifest([snapshot], out_dir)
+        return
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    entries = [e for e in manifest.get("snapshots", []) if e.get("name") != snapshot.name]
+    manifest["snapshots"] = entries + [snapshot.as_dict()]
+    _write(path, manifest)
 
 
 def all_commodity_classes(client: DCProcurementClient) -> list[str]:
@@ -240,6 +353,8 @@ def pull_all(out_dir: Path = RAW_DIR, all_classes: bool = False) -> list[Snapsho
 
         years = [f"FY{y}" for y in range(2016, 2027)]
         snapshots.append(pull_solicitations(client, years, out_dir))
+
+        snapshots.append(pull_payments(client, out_dir))
 
     write_manifest(snapshots, out_dir)
     return snapshots

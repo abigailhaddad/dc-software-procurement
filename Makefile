@@ -3,17 +3,20 @@
 # run costs nothing.
 
 .PHONY: help install pull classify verify test report notebook site rates ocr h1b \
-        h1b-dol calc solicitations dcas all
+        h1b-dol calc solicitations dcas pull-payments drift dashboard all
 
 help:
 	@echo "make install    install dependencies"
 	@echo "make pull       fetch the portal snapshot into data/raw (~10 min, ~320MB)"
+	@echo "make pull-payments  refresh only the payments table (~300MB, one request)"
 	@echo "make classify   sort contracts by what they buy, and read delivery structure"
 	@echo "make verify     recompute every published figure and fail on drift"
+	@echo "make drift      recompute every published figure and report what moved"
 	@echo "make test       score the classifiers against hand-read labels"
 	@echo "make report     print the headline figures"
 	@echo "make notebook   execute the briefing notebook end to end"
 	@echo "make site       rebuild the drill-down data behind site/index.html"
+	@echo "make dashboard  rebuild the data behind site/dashboard.html"
 	@echo "make rates      re-extract hourly rate cards from the cached award texts"
 	@echo "make ocr        OCR scanned award documents and classify them separately"
 	@echo "make h1b        pull H-1B LCA filings for DC tech vendors, flag DC worksites"
@@ -26,8 +29,15 @@ help:
 install:
 	uv sync
 
+# -v is a top-level option and argparse will not accept it after the
+# subcommand, so it goes before `pull`.
 pull:
-	uv run dcprocure pull --all-classes -v
+	uv run dcprocure -v pull --all-classes
+
+# The payments table is the one module with no working filter: it returns the
+# whole table or nothing. Refreshing it alone avoids re-pulling everything else.
+pull-payments:
+	uv run dcprocure -v pull-payments
 
 classify:
 	uv run python analysis/classify_contracts.py
@@ -36,6 +46,12 @@ classify:
 
 verify:
 	uv run python analysis/verify_claims.py
+
+# verify fails on drift, which is what you want before publishing. drift only
+# reports it, which is what a weekly run needs; it exits non-zero only when the
+# run itself breaks. Reports land in data/drift.
+drift:
+	uv run python analysis/drift_report.py
 
 test:
 	uv run python tests/eval_labels.py
@@ -49,6 +65,12 @@ notebook:
 
 site:
 	uv run python analysis/build_site_data.py
+
+# The dashboard shows the current snapshot, so it is rebuilt weekly. The
+# briefing stays on the published baseline until someone restates it, which
+# is why `site` is not in the weekly chain and this is.
+dashboard:
+	uv run python analysis/build_dashboard_data.py
 
 rates:
 	uv run python analysis/extract_rates.py

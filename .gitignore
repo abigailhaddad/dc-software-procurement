@@ -18,3 +18,14 @@ data/h1b/dol/raw/
 # CSVs beside them are the chain's actual inputs and are tracked.
 data/solicitations/_*.json
 .playwright-mcp/
+
+# Frozen snapshot the published briefing was computed from.
+data/raw_baseline_*/
+
+# Weekly drift reports (analysis/drift_report.py). Derived from the data/raw
+# snapshot, which is not tracked either, so a report cannot be reproduced from
+# this repo alone; the published figures it reports against are in
+# analysis/verify_claims.py, which is.
+data/drift/
+
+.DS_Store

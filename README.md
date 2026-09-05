@@ -1,5 +1,8 @@
 # How the District buys software
 
+> **Work in progress.** These figures are still being checked and the data
+> behind them is being rebuilt. Do not rely on them.
+
 Pulls the DC Contracts and Procurement Transparency Portal, sorts every contract
 by what it actually buys, and reads how the work is structured out of the award
 PDFs.
@@ -15,6 +18,7 @@ each figure are a click away.
 make install
 make pull        # ~10 min, writes ~320MB into data/raw
 make classify    # needs OPENAI_API_KEY in .env
+make pull-payments  # refresh just the payments table
 make verify      # recomputes every published figure, fails on drift
 make test        # scores the classifiers against hand-read labels
 ```
@@ -38,6 +42,35 @@ tier names show what the workers are offered against them.
 Among contracts that build or run something, the largest group fixes its scope
 before work starts: 74 of 82 sequential, gated contracts cannot change what is
 built without a contract modification.
+
+## Refreshing the payments table
+
+`make pull` fetches everything, including the full payments table -- about
+870,000 voucher lines in a single 300MB response. The payments module ignores
+every filter it is given, so there is no way to pull a slice of it: the pull
+instead checks that what came back is the whole table, and refuses to overwrite
+the snapshot if it is not. To refresh just payments without re-pulling contracts
+and solicitations, run `make pull-payments`.
+
+## Drift: what the weekly refresh reports
+
+`make verify` recomputes every published figure from the snapshot and fails if
+one no longer holds. The asserted figures in `analysis/verify_claims.py` are the
+published baseline -- what the briefing, the site and this README currently say
+-- and changing one is a decision made after looking at why it moved.
+
+The portal is live, so those figures drift. `make drift` runs the same checks and
+reports the movement instead of failing on it: how many claims were checked, how
+many moved, and for each one the published value, the current value and the
+change. Reports land in `data/drift/`, named for the snapshot date in
+`data/raw/manifest.json`, with `latest.txt` and `latest.json` pointing at the most
+recent run. It exits zero whether or not anything moved, and non-zero only when
+the run itself breaks.
+
+`scripts/weekly_refresh.sh` chains those together -- pull, classify, rebuild the
+derived tables, report drift -- and `scripts/install_schedule.sh` installs it as
+a weekly launchd job. Nothing in that chain rewrites the briefing: republishing
+is a human decision made after reading the drift report.
 
 ## Why the commodity codes are not used
 

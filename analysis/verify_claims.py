@@ -6,11 +6,33 @@ mismatch is visible rather than something a reader has to go hunting for. Run
 this before publishing anything.
 
     uv run python analysis/verify_claims.py
+    uv run python analysis/verify_claims.py --json out.json
+
+The asserted figures are literals on purpose: they are what the briefing, the
+site and the README currently say. They are the published baseline, and moving
+one is a decision a person makes after looking at why it moved, not something a
+script does. Fresh data will therefore make this fail, which is the point when
+publishing and unhelpful when running on a schedule -- analysis/drift_report.py
+reuses the same checks and reports movement instead of failing on it.
+
+``--json`` writes one record per check, in the order the checks run, so a report
+built from two runs is diffable. Nothing about the default run changes: same
+lines on stdout, same non-zero exit when a claim no longer holds.
+
+Around a dozen claims name one particular row -- contract CW91684's detail
+record, the FY2021 payment total, a labor category on a rate card. The portal is
+live and rows do leave it. Those lookups go through the helpers below rather
+than through .loc / .iloc / next() directly, so a row that is gone fails its own
+claim, says so in words, and does not take the rest of the run with it.
 """
 
 from __future__ import annotations
 
+import argparse
+import json
 import sys
+from collections.abc import Callable
+from dataclasses import dataclass
 from pathlib import Path
 
 import pandas as pd
@@ -20,29 +42,220 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from dcprocure import parse  # noqa: E402
 
+
+@dataclass(frozen=True)
+class Result:
+    """One check: what was published, what the data gives now, and whether they agree."""
+
+    index: int
+    section: str
+    claim: str
+    asserted: object
+    computed: object
+    tolerance: float
+    ok: bool
+
+    def as_dict(self) -> dict[str, object]:
+        return {
+            "index": self.index,
+            "section": self.section,
+            "claim": self.claim,
+            "asserted": _jsonable(self.asserted),
+            "computed": _jsonable(self.computed),
+            "tolerance": self.tolerance,
+            "ok": self.ok,
+        }
+
+
+RESULTS: list[Result] = []
 FAILURES: list[str] = []
+
+# The section headers printed as the checks run double as the grouping in the
+# JSON, so there is only one list of sections to keep current.
+_SECTION = ""
+
+# Set False by a caller that wants the results without the running commentary.
+VERBOSE = True
+
+
+def _echo(line: str) -> None:
+    if VERBOSE:
+        print(line)
+
+
+def section(name: str) -> None:
+    """Start a named group of checks, and print its header as before."""
+    global _SECTION
+    _SECTION = name
+    _echo(f"\n-- {name} --")
+
+
+def _jsonable(value: object) -> object:
+    """Coerce a figure to something json can write.
+
+    Most computed figures arrive as numpy scalars out of pandas, which json
+    refuses. Anything left over is written as its string form rather than
+    dropped, so a record is never silently empty.
+    """
+    if value is None or isinstance(value, (bool, str)):
+        return value
+    if hasattr(value, "item"):  # numpy scalar
+        return value.item()
+    if isinstance(value, (int, float)):
+        return value
+    return str(value)
+
+
+class MissingRow(LookupError):
+    """A row a published claim names is not in the data any more.
+
+    Raised only by the lookup helpers below, and only once they have tested
+    that the row really is absent. :func:`check` catches this and nothing else,
+    which is the whole point of it existing: a contract that has left the
+    portal fails its own claim, while a KeyError from a column name that never
+    existed, or a TypeError out of a broken expression, still stops the run
+    where it happened.
+    """
+
+    def __init__(self, what: str) -> None:
+        super().__init__(what)
+        self.what = what
+
+
+@dataclass(frozen=True)
+class Missing:
+    """Stands in for a figure whose row was not there to compute it from.
+
+    Deliberately neither None nor zero. Both of those read as a figure the data
+    gave, and "the contract was deleted" is a different finding from "the
+    contract was paid nothing". It compares equal to nothing, so the claim
+    fails, and it renders as its own sentence in stdout, in --json and in the
+    drift report.
+    """
+
+    what: str
+
+    def __str__(self) -> str:
+        return f"<row not found: {self.what}>"
+
+
+def nonempty(rows: object, what: str) -> object:
+    """Rows, having established that there are some.
+
+    min(), max() and median() of nothing raise, and the raise would take every
+    check after it down with it.
+    """
+    if len(rows) == 0:
+        raise MissingRow(what)
+    return rows
+
+
+def first(rows: object, what: str) -> object:
+    """The first row, or index label, of something that may have matched nothing.
+
+    Emptiness is tested rather than caught. An out-of-bounds ``.iloc[0]`` here
+    only ever means the filter matched no rows; any other IndexError is a bug
+    and should look like one.
+    """
+    rows = nonempty(rows, what)
+    return rows.iloc[0] if hasattr(rows, "iloc") else rows[0]
+
+
+def at(container: object, key: object, what: str) -> object:
+    """One row by key, from a pandas Series/DataFrame or a plain mapping.
+
+    The membership test is what keeps the failure honest: MissingRow is raised
+    only after establishing the key is absent, so a KeyError thrown for some
+    other reason is never dressed up as a vanished row.
+    """
+    pandas_like = isinstance(container, (pd.Series, pd.DataFrame))
+    index = container.index if pandas_like else container
+    if key not in index:
+        raise MissingRow(what)
+    return container.loc[key] if pandas_like else container[key]
+
+
+def present(value: object, what: str) -> object:
+    """A value the data may simply not carry, such as an award document.
+
+    documents.pick_award_document returns None for a contract record that lists
+    no award, and a None subscripted on the next line is a TypeError that says
+    nothing about which contract lost its document.
+    """
+    if value is None:
+        raise MissingRow(what)
+    return value
+
+
+def deferred(compute: Callable[[], object]) -> Callable[[], object]:
+    """Memoize a shared lookup while leaving each check its own failure.
+
+    A block like the CW91684 rate card reads one row and asks eight questions
+    of it. Doing the lookup once and re-raising the same MissingRow on every
+    call means the work happens once and all eight claims are still recorded as
+    failures when the row is gone, instead of the first one failing and the
+    other seven never running.
+    """
+    box: list[tuple[bool, object]] = []
+
+    def get() -> object:
+        if not box:
+            try:
+                box.append((True, compute()))
+            except MissingRow as exc:
+                box.append((False, exc))
+        found, value = box[0]
+        if not found:
+            raise value
+        return value
+
+    return get
 
 
 def check(claim: str, computed: object, asserted: object, tolerance: float = 0.0) -> None:
-    """Compare an asserted figure against what the data actually gives."""
+    """Compare an asserted figure against what the data actually gives.
+
+    ``computed`` may instead be a zero-argument callable, for a figure that
+    reaches into one particular row. The portal is live and rows do leave it,
+    so the lookup helpers above raise MissingRow and this is where it is
+    caught: the claim is recorded as a failure naming the row that went
+    missing, and the checks after it still run. MissingRow is the only
+    exception caught here; every computed figure in this file is a number, a
+    string or a bool, so nothing else is ever mistaken for a lookup.
+    """
+    if callable(computed):
+        try:
+            computed = computed()
+        except MissingRow as exc:
+            computed = Missing(exc.what)
     if isinstance(computed, (int, float)) and isinstance(asserted, (int, float)):
         ok = abs(float(computed) - float(asserted)) <= tolerance
     else:
         ok = computed == asserted
     mark = "ok  " if ok else "FAIL"
-    print(f"  {mark} {claim}\n         asserted={asserted}  computed={computed}")
+    _echo(f"  {mark} {claim}\n         asserted={asserted}  computed={computed}")
+    RESULTS.append(Result(len(RESULTS), _SECTION, claim, asserted, computed, tolerance, ok))
     if not ok:
         FAILURES.append(claim)
 
 
-def main() -> int:
+def run_checks() -> list[Result]:
+    """Run every check and return the results, one record per claim.
+
+    A claim about a row that has since left the data fails on its own line and
+    the run carries on; the lookup helpers above are how. Anything else raises,
+    which is what a genuine bug should do -- see drift_report.py, which is the
+    caller that has to survive that.
+    """
+    RESULTS.clear()
+    FAILURES.clear()
     contracts = parse.load_contracts()
     orders = parse.load_purchase_orders()
     payments = parse.load_payments()
     labels = pd.read_csv(ROOT / "data" / "contract_classifications.csv")
     delivery = pd.read_csv(ROOT / "data" / "delivery_structure.csv")
 
-    print("\n-- corpus --")
+    section("corpus")
     check("contract option periods", len(contracts), 7113)
     check("distinct contracts", contracts.contract_number.nunique(), 3983)
     check("contracts classified", len(labels), 3983)
@@ -60,7 +273,7 @@ def main() -> int:
     check("manifest matches purchase orders on disk", recorded.get("purchase_by_commodity"), len(orders))
     check("manifest matches payments on disk", recorded.get("payments"), len(payments))
 
-    print("\n-- what DC buys --")
+    section("what DC buys")
     tech = labels[labels.is_technology == True]  # noqa: E712
     check("technology contracts", len(tech), 1372)
     check("technology ceilings $M", round(tech.ceiling.sum() / 1e6), 4641, 1)
@@ -73,7 +286,7 @@ def main() -> int:
         check(f"{work_type} contracts", len(rows), contracts_n)
         check(f"{work_type} ceilings $M", round(rows.ceiling.sum() / 1e6), ceiling_m, 1)
 
-    print("\n-- ceilings are not spend --")
+    section("ceilings are not spend")
     # Computed over every contract classified as technology, which is a stable
     # and documented basis. An earlier version used an internal commodity
     # grouping instead and produced 23% and 95%; both were wrong.
@@ -91,7 +304,7 @@ def main() -> int:
     check("technology contracts with any linked payment %",
           round(100 * (tech.paid > 0).mean()), 44, 1)
 
-    print("\n-- the payments trap --")
+    section("the payments trap")
     check("line-level total $B", round(payments.amount.sum() / 1e9, 1), 33.3, 0.1)
     check("check-total field $B", round(payments.check_total.sum() / 1e9, 1), 113.7, 0.1)
     star = payments[payments.contract_number == "CW95481"]
@@ -102,7 +315,7 @@ def main() -> int:
     check("payments with no contract number",
           int(payments.contract_number.isna().sum()), 478700, 200)
 
-    print("\n-- agile language --")
+    section("agile language")
     build_types = {"custom_software_build", "cots_implementation",
                    "software_om_support", "it_consulting_advisory"}
     check("delivery-structure candidates", int(labels.work_type.isin(build_types).sum()), 476)
@@ -128,15 +341,20 @@ def main() -> int:
     corrected = overrides.get("agile_mention_kind") or {}
     check("hand-corrected commitment rows", len(corrected), 2)
     gold = pd.read_csv(ROOT / "tests" / "delivery_gold_labels.csv").set_index("contract_number")
+    published = delivery.set_index("contract_number")
     for contract_number, spec in corrected.items():
         check(f"override {contract_number} applied in published data",
-              delivery.set_index("contract_number").loc[contract_number, "agile_mention_kind"],
+              lambda cn=contract_number: at(
+                  published, cn, f"contract {cn} in data/delivery_structure.csv"
+              ).agile_mention_kind,
               spec["value"])
         check(f"override {contract_number} recorded in gold labels",
-              spec["value"] in str(gold.loc[contract_number, "agile_mention_kind"]).split("|"),
+              lambda cn=contract_number, want=spec["value"]: want in str(at(
+                  gold, cn, f"contract {cn} in tests/delivery_gold_labels.csv"
+              ).agile_mention_kind).split("|"),
               True)
 
-    print("\n-- vendor concentration (payments to technology contracts, FY2021-2025) --")
+    section("vendor concentration (payments to technology contracts, FY2021-2025)")
     window = payments[
         payments.fiscal_year.between(2021, 2025)
         & payments.contract_number.isin(set(tech.contract_number))
@@ -149,8 +367,11 @@ def main() -> int:
     check("top 1 vendor share %", round(100 * ranked.head(1).sum() / total, 1), 17.4, 0.4)
     check("top 5 vendor share %", round(100 * ranked.head(5).sum() / total, 1), 42.3, 0.6)
     check("top 10 vendor share %", round(100 * ranked.head(10).sum() / total, 1), 52.5, 0.6)
-    check("largest vendor is Computer Aid", ranked.index[0], "COMPUTER AID")
-    check("largest vendor paid $M", round(ranked.iloc[0] / 1e6, 1), 100.6, 0.5)
+    top_vendor = "any vendor in FY2021-25 payments to technology contracts"
+    check("largest vendor is Computer Aid",
+          lambda: first(ranked.index, top_vendor), "COMPUTER AID")
+    check("largest vendor paid $M",
+          lambda: round(first(ranked, top_vendor) / 1e6, 1), 100.6, 0.5)
 
     # The alias file is the record of which names were treated as one company.
     # If it stops matching what the rules actually merge, the published
@@ -170,7 +391,7 @@ def main() -> int:
         print(f"         unrecorded: {missing[:5]}  stale: {stale[:5]}")
         print("         run: uv run python analysis/refresh_vendor_aliases.py")
 
-    print("\n-- the DC Supply Schedule --")
+    section("the DC Supply Schedule")
     dcss = tech[tech.title.str.contains("DCSS", case=False, na=False)]
     check("technology contracts naming DCSS", len(dcss), 397, 3)
     check("their ceilings $M", round(dcss.ceiling.sum() / 1e6), 2410, 5)
@@ -187,7 +408,7 @@ def main() -> int:
     check("of them, staff augmentation",
           int((non_vehicle.work_type == "staff_augmentation").sum()), 75, 2)
 
-    print("\n-- payments against unpublished contract numbers --")
+    section("payments against unpublished contract numbers")
     # The evidence that awards exist beyond what the portal publishes: money
     # moves under portal-style CW numbers that appear nowhere in the published
     # contract list. Some may have been published once and later removed;
@@ -201,16 +422,19 @@ def main() -> int:
     check("payments against absent numbers $B",
           round(unpublished.amount.sum() / 1e9, 1), 0.8, 0.05)
 
-    print("\n-- traceable technology payments by year --")
+    section("traceable technology payments by year")
     tech_pay = payments[
         payments.contract_number.isin(set(tech.contract_number))
         & payments.fiscal_year.between(2021, 2025)
     ]
     by_year = tech_pay.groupby("fiscal_year").amount.sum() / 1e6
-    check("traceable technology payments FY2021 $M", round(by_year.loc[2021]), 58, 2)
-    check("traceable technology payments FY2025 $M", round(by_year.loc[2025]), 175, 2)
+    for year, want in [(2021, 58), (2025, 175)]:
+        check(f"traceable technology payments FY{year} $M",
+              lambda y=year: round(at(
+                  by_year, y, f"fiscal year {y} in traceable technology payments"
+              )), want, 2)
 
-    print("\n-- payments outside the ceiling window --")
+    section("payments outside the ceiling window")
     # Payments reach back to FY2017 while contract option periods start in
     # October 2020, so a whole-history comparison counts money paid before any
     # ceiling in this data existed.
@@ -220,18 +444,22 @@ def main() -> int:
     pre = payments[payments.fiscal_year < 2021]
     check("payments before FY2021 $B", round(pre.amount.sum() / 1e9, 1), 11.9, 0.1)
 
-    print("\n-- named systems --")
+    section("named systems")
     named = tech[tech.system_name.notna() & (tech.system_name.astype(str).str.strip() != "")]
     named = named[named.system_name.astype(str).str.lower() != "nan"]
     check("technology contracts naming a system", len(named), 273)
     by_system = named.groupby(named.system_name.astype(str).str.upper().str.strip()).agg(
         contracts=("contract_number", "size"), ceiling=("ceiling", "sum")
     ).sort_values("ceiling", ascending=False)
-    check("largest named system is DCAS", by_system.index[0], "DCAS")
-    check("DCAS contracts", int(by_system.iloc[0].contracts), 28, 1)
-    check("DCAS ceilings $M", round(by_system.iloc[0].ceiling / 1e6, 1), 198.3, 1.0)
+    top_system = "any named system among technology contracts"
+    check("largest named system is DCAS",
+          lambda: first(by_system.index, top_system), "DCAS")
+    check("DCAS contracts",
+          lambda: int(first(by_system, top_system).contracts), 28, 1)
+    check("DCAS ceilings $M",
+          lambda: round(first(by_system, top_system).ceiling / 1e6, 1), 198.3, 1.0)
 
-    print("\n-- delivery structure --")
+    section("delivery structure")
     check("sequential and gated contracts", int((delivery.delivery_structure == "sequential_gated_deliverables").sum()), 82)
     waterfall = delivery[delivery.delivery_structure == "sequential_gated_deliverables"]
     check("of those, scope fixed in advance", int((waterfall.scope_fixed_in_advance == "yes").sum()), 74)
@@ -240,7 +468,7 @@ def main() -> int:
     check("agile only as a hiring requirement",
           int((delivery.agile_mention_kind == "personnel_qualification").sum()), 14)
 
-    print("\n-- authorised against paid, FY2021-FY2025 window --")
+    section("authorised against paid, FY2021-FY2025 window")
     # The briefing compares ceilings and payments over the same five fiscal
     # years: option periods falling entirely inside FY2021-FY2025 against
     # payments made in those years. Without the window the comparison counts
@@ -269,7 +497,7 @@ def main() -> int:
         check(f"windowed {ctype}: paid $M", round(rows.paid.sum() / 1e6), paid_m, 2)
         check(f"windowed {ctype}: drawdown %", round(100 * rows.paid.sum() / rows.ceiling.sum(), 1), pct, 0.2)
 
-    print("\n-- the CW91684 rate card --")
+    section("the CW91684 rate card")
     # The staffing-contract section quotes the price schedule of Computer Aid's
     # CW91684. Its award PDF is cached locally, so the quoted figures can be
     # re-read from the document text itself.
@@ -281,22 +509,46 @@ def main() -> int:
     from dcprocure import documents
 
     details = _json.load(open(ROOT / "data" / "raw" / "contract_details.json"))
-    rec = next(d for d in details if d["contractNumber"] == "CW91684")
-    check("CW91684 vendor", rec["vendor"], "COMPUTER AID, INC.")
-    check("CW91684 title", rec["title"], "INFORMATION TECHNOLOGY STAFF AUGMENTATION SERVICES")
-    check("CW91684 ceiling $M", round(float(rec["contractAmount"].strip("$").replace(",", "")) / 1e6), 65)
-    doc = documents.pick_award_document(rec)
-    text = gzip.open(documents._text_path(doc["id"]), "rt").read()
-    for needle in ("45,000,000", "20,000,000", "Labor Hour", "Fixed Price Project"):
-        check(f"CW91684 award text contains '{needle}'", needle in text, True)
-    rates = [float(x) for x in re.findall(r"\b(\d{2,3}\.\d{2})\b", text)]
-    rates = [x for x in rates if 24 <= x <= 174]
-    check("CW91684 hourly rates found", len(rates), 180)
-    check("CW91684 lowest rate", min(rates), 24.01)
-    check("CW91684 highest rate", max(rates), 173.71)
-    check("CW91684 median rate", round(statistics.median(rates), 2), 69.97)
+    det_by_cn = {d["contractNumber"]: d for d in details}
 
-    print("\n-- published hourly rate cards --")
+    def detail(contract_number: str) -> object:
+        """One contract's detail record, by contract number."""
+        return at(det_by_cn, contract_number,
+                  f"contract {contract_number} in data/raw/contract_details.json")
+
+    def award_text(contract_number: str) -> str:
+        """The cached text of one contract's award document."""
+        doc = present(documents.pick_award_document(detail(contract_number)),
+                      f"an award document on contract {contract_number}")
+        return gzip.open(documents._text_path(doc["id"]), "rt").read()
+
+    rec = deferred(lambda: detail("CW91684"))
+    check("CW91684 vendor", lambda: rec()["vendor"], "COMPUTER AID, INC.")
+    check("CW91684 title", lambda: rec()["title"],
+          "INFORMATION TECHNOLOGY STAFF AUGMENTATION SERVICES")
+    check("CW91684 ceiling $M",
+          lambda: round(float(rec()["contractAmount"].strip("$").replace(",", "")) / 1e6), 65)
+    text = deferred(lambda: award_text("CW91684"))
+    for needle in ("45,000,000", "20,000,000", "Labor Hour", "Fixed Price Project"):
+        check(f"CW91684 award text contains '{needle}'", lambda n=needle: n in text(), True)
+
+    def cw91684_rates() -> list[float]:
+        """Every hourly rate in CW91684's award text, in the range the card covers."""
+        found = [float(x) for x in re.findall(r"\b(\d{2,3}\.\d{2})\b", text())]
+        return [x for x in found if 24 <= x <= 174]
+
+    # The count is reported as it stands, including zero. The three figures
+    # after it are min/max/median, which have nothing to report over no rates
+    # at all, so they say so rather than raising.
+    rates = deferred(cw91684_rates)
+    any_rate = "any hourly rate in CW91684's award text"
+    check("CW91684 hourly rates found", lambda: len(rates()), 180)
+    check("CW91684 lowest rate", lambda: min(nonempty(rates(), any_rate)), 24.01)
+    check("CW91684 highest rate", lambda: max(nonempty(rates(), any_rate)), 173.71)
+    check("CW91684 median rate",
+          lambda: round(statistics.median(nonempty(rates(), any_rate)), 2), 69.97)
+
+    section("published hourly rate cards")
     # Built by analysis/extract_rates.py: every rate re-found verbatim in the
     # award text; the pairing column records whether the category-to-rate
     # assignment could also be verified (deterministic reconstruction for
@@ -317,25 +569,29 @@ def main() -> int:
     check("all OCR rates pairing-verified", bool((ocr_rates.pairing == "proximate").all()), True)
     check("native rows unchanged", int((lr.text_source == "native").sum()), 2146)
     cai_card = lr[lr.contract_number == "CW91684"].set_index(["labor_category", "level"])
+
+    def card_rate(cat: str, lvl: str) -> float:
+        """One published rate off CW91684's card, by category and level."""
+        return float(at(cai_card, (cat, lvl),
+                        f"{cat} ({lvl}) on CW91684's rate card in "
+                        "data/labor_rates.csv").hourly_rate)
+
     for cat, lvl, want in [
         ("Enterprise Architect", "Entry", 75.83),
         ("Web Developer", "Master", 77.00),
         ("Mobile App Developer", "Entry", 70.76),
         ("Cyber Security Engineer", "Master", 143.42),
     ]:
-        check(f"CW91684 {cat} ({lvl})", float(cai_card.loc[(cat, lvl)].hourly_rate), want)
+        check(f"CW91684 {cat} ({lvl})", lambda c=cat, v=lvl: card_rate(c, v), want)
 
     # The disclosure contrast the briefing states: the largest consultancies'
     # rates are not published.
-    from dcprocure import documents as _docs
-    det_by_cn = {d["contractNumber"]: d for d in details}
     check("KPMG CW62227 has no award document",
-          _docs.pick_award_document(det_by_cn["CW62227"]) is None, True)
+          lambda: documents.pick_award_document(detail("CW62227")) is None, True)
     check("Ridge IT CW115647 has no award document",
-          _docs.pick_award_document(det_by_cn["CW115647"]) is None, True)
-    acc_doc = _docs.pick_award_document(det_by_cn["CW67170"])
-    acc_text = gzip.open(_docs._text_path(acc_doc["id"]), "rt").read()
-    check("Accenture CW67170 award text is a stub (chars)", len(acc_text), 41)
+          lambda: documents.pick_award_document(detail("CW115647")) is None, True)
+    check("Accenture CW67170 award text is a stub (chars)",
+          lambda: len(award_text("CW67170")), 41)
 
     # The billed-vs-offered comparison quotes job postings. Those pages die, so
     # every quoted posting must be preserved in evidence/job_ads/ with its pay
@@ -346,9 +602,10 @@ def main() -> int:
         check(f"posting evidence preserved: '{needle}'", needle in manifest_text, True)
     for cat, lvl, want in [("Customer Support", "Senior", 29.31),
                            ("Technical Writer", "Journeyman", 57.35)]:
-        check(f"CW91684 {cat} ({lvl}) vs posting", float(cai_card.loc[(cat, lvl)].hourly_rate), want)
+        check(f"CW91684 {cat} ({lvl}) vs posting",
+              lambda c=cat, v=lvl: card_rate(c, v), want)
 
-    print("\n-- federal rate comparison (CALC+) --")
+    section("federal rate comparison (CALC+)")
     # DC rates matched by exact title against GSA's published awarded ceiling
     # rates (data/calc/, with methods and raw API responses). The comparison
     # file is rebuilt by analysis/build_calc_comparison.py.
@@ -362,13 +619,18 @@ def main() -> int:
           int((calc.dc_vs_fed_median_pct < 0).sum()), 73)
     check("median gap excluding CW91684 %",
           round(calc[calc.dc_contract != "CW91684"].dc_vs_fed_median_pct.median()), 2, 1)
+    matched = "in data/calc/dc_vs_calc_comparison.csv"
     ne = calc[(calc.dc_category == "Network Engineer/Specialist") & (calc.dc_level == "Entry")]
-    check("Network Engineer entry: DC rate", float(ne.dc_rate.iloc[0]), 40.64)
-    check("Network Engineer entry: federal median", float(ne.federal_median.iloc[0]), 108.97)
+    ne_row = f"Network Engineer/Specialist (Entry) {matched}"
+    check("Network Engineer entry: DC rate",
+          lambda: float(first(ne.dc_rate, ne_row)), 40.64)
+    check("Network Engineer entry: federal median",
+          lambda: float(first(ne.federal_median, ne_row)), 108.97)
     cs = calc[(calc.dc_category == "Computer Scientist") & (calc.dc_level == "Entry")]
-    check("Computer Scientist entry: federal median", float(cs.federal_median.iloc[0]), 146.08)
+    check("Computer Scientist entry: federal median",
+          lambda: float(first(cs.federal_median, f"Computer Scientist (Entry) {matched}")), 146.08)
 
-    print("\n-- solicitation visibility --")
+    section("solicitation visibility")
     # Whether each technology contract traces to any posted solicitation,
     # via award-text citation or title match (data/solicitations/, rebuilt by
     # the analysis/solicitations_* scripts). Matching recall is ~63%, so the
@@ -381,14 +643,18 @@ def main() -> int:
     check("their share of tech ceilings %",
           round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.4, 0.2)
     fy = pd.read_csv(ROOT / "data" / "solicitations" / "solicitations_by_fy.csv")
-    check("solicitations posted FY2016", int(fy[fy.fiscal_year == "FY2016"].total.iloc[0]), 1351)
-    check("solicitations posted FY2025", int(fy[fy.fiscal_year == "FY2025"].total.iloc[0]), 749)
+    for year, want in [("FY2016", 1351), ("FY2025", 749)]:
+        check(f"solicitations posted {year}",
+              lambda y=year: int(first(
+                  fy[fy.fiscal_year == y].total,
+                  f"{y} in data/solicitations/solicitations_by_fy.csv"
+              )), want)
     sols = _json.load(open(ROOT / "data" / "raw" / "solicitations.json"))
     doc_ids = sum(1 for s in sols if str(s.get("solicitationNumber", "")).startswith("Doc"))
     check("solicitation rows showing internal Doc IDs %",
           round(100 * doc_ids / len(sols)), 96, 1)
 
-    print("\n-- the DCAS case study --")
+    section("the DCAS case study")
     # data/dcas/ holds the roster and attributed payments (rebuilt by
     # analysis/build_dcas.py); evidence/dcas_sources/ holds every cited page.
     roster = pd.read_csv(ROOT / "data" / "dcas" / "dcas_roster.csv")
@@ -407,7 +673,10 @@ def main() -> int:
     check("DCAS R3's surviving portal record: option periods",
           int((contracts.contract_number == "CW62227").sum()), 1)
     check("that surviving option period $M",
-          round(contracts[contracts.contract_number == "CW62227"].amount.iloc[0] / 1e6), 7, 1)
+          lambda: round(first(
+              contracts[contracts.contract_number == "CW62227"].amount,
+              "contract CW62227 in the published contract list"
+          ) / 1e6), 7, 1)
     kpmg_null = payments[
         payments.vendor.astype(str).str.upper().str.startswith("KPMG")
         & payments.contract_number.isna()
@@ -501,7 +770,7 @@ def main() -> int:
     check("source: D2Sol hiring junior US roles", "Junior Curam Developer" in d2sol_careers, True)
     check("source: D2Sol hiring in Bangalore", "Bangalore - India" in d2sol_careers, True)
 
-    print("\n-- the OCR-recovered awards --")
+    section("the OCR-recovered awards")
     # 74 scanned award documents were recovered by analysis/ocr_awards.py and
     # classified into data/delivery_structure_ocr.csv (separate file; the
     # native results are untouched). The briefing states combined figures.
@@ -526,7 +795,7 @@ def main() -> int:
     check("combined agile-as-hiring-requirement",
           int((combined.agile_mention_kind == "personnel_qualification").sum()), 15)
 
-    print("\n-- purchase-order vendor figures --")
+    section("purchase-order vendor figures")
     recent = orders[orders.fiscal_year.between(2022, 2026)].copy()
     recent["vendor_key"] = recent.vendor.str.upper().str.strip()
     cai = recent[recent.vendor_key == "COMPUTER AID  INC"]
@@ -539,7 +808,7 @@ def main() -> int:
     check("FAST Enterprises purchase orders", len(fast), 11, 1)
     check("FAST median PO $M", round(fast.amount.median() / 1e6, 1), 3.5, 0.2)
 
-    print("\n-- the README's own figures --")
+    section("the README's own figures")
     # The README restates published figures in prose, and nothing used to check
     # it: it carried a stale rate count (2,146, the native-only subtotal) for
     # long enough to ship. Each entry below writes a computed figure the way the
@@ -572,7 +841,32 @@ def main() -> int:
         shown = phrase.replace("\n", " ")
         check(f"README: '{shown}'", phrase in readme, True)
 
+    return list(RESULTS)
+
+
+def write_json(results: list[Result], path: Path) -> None:
+    """Write the results as a JSON array, in the order the checks ran."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps([r.as_dict() for r in results], indent=1) + "\n", encoding="utf-8"
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument(
+        "--json",
+        metavar="PATH",
+        type=Path,
+        help="also write one record per check to PATH, for drift reporting",
+    )
+    args = parser.parse_args(argv)
+
+    results = run_checks()
     print(f"\n{'ALL CHECKS PASSED' if not FAILURES else f'{len(FAILURES)} FAILED: ' + '; '.join(FAILURES)}")
+    if args.json:
+        write_json(results, args.json)
+        print(f"wrote {args.json}")
     return 1 if FAILURES else 0
 
 

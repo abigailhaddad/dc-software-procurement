@@ -1,4 +1,5 @@
-"""Command line entry point: ``dcprocure pull`` and ``dcprocure report``."""
+"""Command line entry point: ``dcprocure pull``, ``dcprocure pull-payments``
+and ``dcprocure report``."""
 
 from __future__ import annotations
 
@@ -9,7 +10,8 @@ import sys
 import pandas as pd
 
 from . import analysis, parse
-from .pull import DATA_DIR, pull_all
+from .client import DCProcurementClient
+from .pull import DATA_DIR, pull_all, pull_payments, update_manifest_entry
 
 
 def _configure_logging(verbose: bool) -> None:
@@ -61,6 +63,10 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="pull every NIGP class, not only the technology ones",
     )
+    sub.add_parser(
+        "pull-payments",
+        help="re-fetch only the payments table (~280 MB in one response, several minutes)",
+    )
     sub.add_parser("report", help="print headline figures from the local snapshot")
 
     args = parser.parse_args(argv)
@@ -69,6 +75,14 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "pull":
         for snapshot in pull_all(all_classes=args.all_classes):
             print(f"{snapshot.name}: {snapshot.rows:,} rows")
+    elif args.command == "pull-payments":
+        # Payments is by far the largest and slowest pull, and it is the one
+        # that changes weekly, so it is worth refreshing without re-pulling
+        # everything else.
+        with DCProcurementClient() as client:
+            snapshot = pull_payments(client)
+        update_manifest_entry(snapshot)
+        print(f"{snapshot.name}: {snapshot.rows:,} rows")
     else:
         _report()
     return 0

@@ -264,9 +264,22 @@ footer p{font-size:14px; color:var(--muted)}
   body{font-size:16px} .wrap{padding:0 18px 80px} header.masthead{padding-top:36px}
   .dialog{padding:20px 18px 24px}
 }
+
+/* Work-in-progress notice. Deliberately loud and not dismissible. */
+.wip-banner{
+  background:#B4232E; color:#fff; font-family:var(--sans);
+  font-size:15px; line-height:1.45; padding:14px 20px;
+  border-bottom:4px solid #7C161E; text-align:center;
+}
+.wip-banner strong{font-weight:600;}
 </style>
 </head>
 <body>
+<div class="wip-banner" role="alert">
+  <strong>Work in progress.</strong> These figures are still being checked and the
+  data behind them is being rebuilt. Do not rely on them.
+</div>
+
 
 <div class="wrap">
 

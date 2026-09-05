@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template. Install with scripts/install_schedule.sh, which substitutes
+     __REPO__ for the checkout path and copies this to ~/Library/LaunchAgents.
+     The installed copy is machine-specific and is not tracked in git. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.dcbudget.weekly</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__REPO__/scripts/weekly_refresh.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__REPO__</string>
+
+  <!-- Mondays at 06:00. If the machine is asleep then, launchd runs the job
+       once when it next wakes rather than skipping the week. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>6</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <!-- The pull is long and network-bound; do not let it run at load, so
+       installing the job does not immediately kick off a 300MB download. -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>__REPO__/data/drift/logs/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__REPO__/data/drift/logs/launchd.err.log</string>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+</dict>
+</plist>
