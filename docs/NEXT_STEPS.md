@@ -53,10 +53,23 @@ and build contracts whose award fixes scope average 6.5 modifications against
 4.7 for the rest, which is the opposite of what the old claim implied.
 `analysis/modifications.py` (`make modifications`) makes that reproducible.
 
-**The competition analysis exists.** `analysis/competition.py` writes
-`data/competition/`. 51 technology contracts, $45.5M, carry a D&F limiting
+**The competition finding is published.** `analysis/competition.py` writes
+`data/competition/`; the finding is in README.md and site/index.html, and
+verify_claims checks it. 51 technology contracts, $45.5M, carry a D&F limiting
 competition and 31 are labelled `Open`; six cite PPRA 2-354.13(8) vendor
-lock-in. Not yet in the briefing -- that is the next publishing decision.
+lock-in. The portal's `marketType` can say Sole Source -- 24 contracts corpus-wide
+do -- and no technology contract ever does.
+
+**The District's vocabulary is in `procurement_vocabulary.yaml`**, not compiled
+into Python: the five spellings of sole source, the D&F header phrases, the
+statute table. Parsing mechanics stayed in code. The file is deliberately
+outside the classifier cache fingerprint, so editing it cannot invalidate the
+4,013 cached labels.
+
+**Both published files' prose is checked.** verify_claims string-checks
+site/index.html as well as README.md, and the drift report groups stale
+sentences by file. Only figures written as numerals can be covered; the site
+spells out a sentence-opening number and those stay unchecked.
 
 Two numbers in an earlier draft of this file were wrong and are corrected above:
 the competition finding is 51 contracts and $45.5M read from documents, not the
@@ -65,17 +78,16 @@ filename's free text, not on a parsed modification number.
 
 ## What is worth doing next
 
-**Publish the competition finding.** `analysis/competition.py` has done the
-reading; nothing is in the briefing yet. The sharpest line is that the portal's
-`marketType` field can say Sole Source -- 21 contracts corpus-wide do -- and no
-technology contract ever does, while 51 of them carry a signed justification for
-limiting competition and 31 of those are labelled `Open`.
-
-Before publishing, decide what to do about coverage. 652 contracts were never
-sampled and 63 returned only scans, so the 51 is a floor, not a rate. And the
-unreadability is concentrated where the finding is: 56% of sole-source-named
-D&Fs have no text layer against 7% of cooperative ones. OCR would cost model
-calls per page and `analysis/ocr_awards.py` has the pattern.
+**Decide about OCR, and say the 51 is a floor until then.** 652 technology
+contracts carrying a D&F were never sampled and 63 returned only scans, so 51 is
+a floor rather than a rate. The unreadability is not randomly placed: 56% of
+sole-source-named D&Fs have no text layer against 7% of cooperative ones, which
+means the published figure understates the finding in the direction that
+flatters the portal. A trial was run to price OCR per document and measure
+whether the text comes back usable; `analysis/ocr_awards.py` holds the pattern
+(rasterise pages with ink but no text, OCR via gpt-5.4-mini, cache to
+data/pdftext_ocr). Full coverage was estimated at 2,002 more downloads of which
+roughly 450 need OCR.
 
 **Rebuild the excerpt for contracts with no lettered sections.** `delivery_excerpt`
 shows the model a median 10.4% of the award text, and for 140 of 292 contracts
@@ -87,8 +99,8 @@ recorded in `docs/CLASSIFIER_ACCURACY.md`, so read that before trying a third.
 
 **Widen the gold set before trusting any accuracy number.** The random sample is
 29 contracts and its 95% interval runs 37-73%. `tests/hand_labels_delivery.csv`
-holds 80 labels with the passage each rests on; `/tmp/label_brief.md` was the
-labelling protocol, and it is worth re-creating in the repo if this continues.
+holds 80 labels with the passage each rests on; the protocol the raters worked from is
+`docs/LABELLING_PROTOCOL.md`, so a second round is comparable with the first.
 
 **Reconsider the six delivery labels.** Two careful readers agree 83%. The
 scheme has no cell for a one-time build plus the operations of the thing built,
