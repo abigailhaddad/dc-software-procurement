@@ -199,7 +199,7 @@ def render_text(report: dict) -> str:
         )
     if stale:
         lines.append(
-            f"{len(stale)} of the {len(moved)} are sentences in README.md rather than "
+            f"{len(stale)} of the {len(moved)} are published sentences rather than "
             "figures, listed last."
         )
     lines.append("")
