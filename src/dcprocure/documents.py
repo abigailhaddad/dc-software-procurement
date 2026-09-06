@@ -11,9 +11,17 @@ standardized boilerplate drawn from 27 DCMR Chapter 24:
     B.3  PRICE SCHEDULE - FIRM FIXED PRICE
 
 This module downloads award PDFs, caches them, and pulls that language out.
-Two limits are worth stating up front, and both are reported rather than hidden:
-some awards are scanned images with no text layer (:data:`NEEDS_OCR`), and some
-are encrypted. Neither is guessed at.
+Four limits are worth stating up front, and all four are reported rather than
+hidden:
+
+* Some awards are scanned images with no text layer (:data:`NEEDS_OCR`), and
+  some are encrypted. Neither is guessed at.
+* Some have a text layer whose fonts carry no usable character map, so the
+  extraction is mojibake that is long enough to pass the length check.
+  :func:`looks_unreadable` measures that.
+* The portal sometimes files the wrong PDF against a contract -- an attachment
+  whose own pages name a different contract number. :func:`other_contracts_named`
+  measures that.
 """
 
 from __future__ import annotations
@@ -40,6 +48,10 @@ TEXT_DIR = DATA_DIR / "pdftext"
 
 # Below this many extracted characters a PDF is almost certainly a scan.
 MIN_TEXT_CHARS = 500
+
+# Below this share of printable-ASCII characters an extraction is mojibake
+# rather than text. Calibrated in :func:`looks_unreadable`.
+MIN_READABLE_SHARE = 0.85
 
 # Extraction outcomes.
 NEEDS_OCR = "needs_ocr"
@@ -73,8 +85,8 @@ def download(client: DCProcurementClient, document_id: str) -> bytes:
     """Fetch one PDF's bytes, without writing them to disk.
 
     Prefer :func:`document_text`. PDFs are only ever read for their text and
-    average around 2 MB each against roughly 20 KB of gzipped text, so the
-    corpus is cached as text: 607 contracts occupy 12 MB rather than 1.1 GB.
+    average around 2 MB each against roughly 16 KB of gzipped text, so the
+    corpus is cached as text: 812 documents occupy 13 MB rather than 1.6 GB.
     """
     path = _cache_path(document_id)
     if path.exists():  # honour a PDF cache from an older run, if one survives
@@ -140,6 +152,44 @@ def extract_text(pdf_bytes: bytes) -> str:
     return "\n".join((page.extract_text() or "") for page in reader.pages)
 
 
+def readable_share(text: str) -> float:
+    """Share of the non-whitespace characters that are printable ASCII.
+
+    Whitespace is excluded because pdftotext pads tabular layouts with runs of
+    spaces, and counting those would make a sparse form look cleaner than a
+    dense one. Returns 0.0 for text with no non-whitespace characters.
+    """
+    body = [c for c in text if not c.isspace()]
+    if not body:
+        return 0.0
+    return sum(32 <= ord(c) < 127 for c in body) / len(body)
+
+
+def looks_unreadable(text: str, threshold: float = MIN_READABLE_SHARE) -> bool:
+    """Whether an extraction is mojibake rather than text.
+
+    A PDF whose embedded fonts carry no usable character map still has a text
+    layer, and pdftotext still returns something from it: the glyph codes,
+    decoded as if they were characters. The result is thousands of characters
+    of control bytes and stray Latin-1, which passes :data:`MIN_TEXT_CHARS`
+    and reaches the classifier as garbage. CW123311's award is the example --
+    77,000 characters, none of them words.
+
+    THE TRAP: run this on the excerpt that is actually sent to the model, not
+    on the whole document. Measured over the 601 cached documents that clear
+    :data:`MIN_TEXT_CHARS`, 26 fall below this threshold document-wide, but
+    most of those are ordinary contracts whose *cover form* alone has the
+    broken font -- CW92062 scores 0.77 over the document and 0.999 over its
+    Sections B and F. Excluding them would discard readable contracts.
+
+    The threshold is calibrated on the excerpts rather than guessed. Across the
+    292 delivery excerpts the measure is bimodal with nothing in between: seven
+    score 0.47 to 0.76, the other 285 score 0.96 to 1.00. 0.85 sits in the
+    empty gap, so moving it anywhere inside that gap flags the same seven.
+    """
+    return readable_share(text) < threshold
+
+
 def pick_award_document(detail: dict[str, Any]) -> dict[str, str] | None:
     """Choose the document most likely to carry the price schedule.
 
@@ -154,6 +204,68 @@ def pick_award_document(detail: dict[str, Any]) -> dict[str, str] | None:
             # more fully than stubs.
             return max(matches, key=lambda d: len(d["name"]))
     return None
+
+
+def _number_pattern(contract_number: str) -> re.Pattern[str]:
+    """A regex for contract numbers of the same shape as this one.
+
+    Each run of digits is generalised to a run of the same length and
+    everything else is kept literal, so ``CW106343`` yields ``CW\\d{6}`` and
+    ``DCRL-2021-C-0048`` yields ``DCRL\\-\\d{4}\\-C\\-\\d{4}``. Keeping the
+    letters literal means the check only ever compares a number against others
+    from the same numbering scheme, which is the only comparison that says
+    anything.
+
+    The width is fixed rather than left open because ``CW\\d+`` matches
+    fragments and misreads: it found "CW884" inside CW88474's award and
+    "CW1007160" inside CW106343's, neither of which is a contract number.
+    Fixing the width also stops a task order being flagged for citing the
+    five-digit DCSS vehicle it was ordered against, which is routine and
+    correct.
+    """
+    parts = re.split(r"(\d+)", contract_number)
+    body = "".join(
+        r"\d{" + str(len(part)) + "}" if part.isdigit() else re.escape(part)
+        for part in parts
+    )
+    return re.compile(r"\b" + body + r"\b", re.I)
+
+
+def other_contracts_named(text: str, contract_number: str) -> list[str]:
+    """Contract numbers the text names, when none of them is its own.
+
+    A silent wrong-document read is the failure mode this exists for. The
+    portal picks which PDF is attached to which contract, and it occasionally
+    attaches the wrong one: CW106343's award document has ``DC Supply Schedule
+    Contract No: CW107160`` in its own page footer, and its extracted text is
+    byte-identical to CW107160's award. That contract was classified, and hand
+    labelled, off a different contract's document, and nothing in the data said
+    so. No award document *id* is shared between two contracts, so the picker
+    cannot detect this by looking at ids; only the text gives it away.
+
+    Returns [] when the text names its own number, and [] when it names no
+    contract number of that shape at all -- which is the common case and not a
+    defect. Measured over the 292 classified award documents: 236 name their
+    own number, 52 name none (they carry a DCKA-/DCEB- solicitation number
+    instead, and the CW number exists only in the portal), and 4 name some
+    other contract. Requiring every document to name its own number would flag
+    56 of 292, four fifths of them for a numbering convention rather than a
+    defect, which is why the check is conditional.
+
+    The four it does flag are not all the same thing, so read them rather than
+    dropping them: CW106343 is the wrong document outright; CW95665 and
+    CW120562 carry a different contract's number on the award form; CW121488
+    names CW112488, a transposition.
+    """
+    pattern = _number_pattern(contract_number)
+    found: list[str] = []
+    for match in pattern.finditer(text):
+        value = re.sub(r"\s+", "", match.group())
+        if value.upper() == contract_number.upper():
+            return []
+        if value not in found:
+            found.append(value)
+    return found
 
 
 # DC contracts follow a standard section layout (DC OCP form 201). Section B

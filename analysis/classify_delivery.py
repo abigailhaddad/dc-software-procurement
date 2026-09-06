@@ -14,6 +14,15 @@ structure and vocabulary are never allowed to imply one another.
 Agile vocabulary is detected twice over: once by regex, which is auditable and
 model-free, and once by the LLM. Disagreement between them is worth looking at.
 
+Two things can be wrong with the document before the classifier ever sees it:
+the extraction can be mojibake that is long enough to pass the length check,
+and the portal can have attached another contract's PDF. Both are checked here
+and written to the output as ``excerpt_readable_share`` and
+``names_other_contract``. Neither drops a row. Dropping would move published
+counts that analysis/verify_claims.py pins, and re-judging a published label is
+a deliberate act; the columns say which rows to exclude when someone restates
+the baseline.
+
     uv run python analysis/classify_delivery.py
 """
 
@@ -24,6 +33,7 @@ import logging
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from typing import Any
 
 import pandas as pd
 
@@ -38,7 +48,10 @@ from dcprocure.documents import (  # noqa: E402
     agile_terms_used,
     delivery_excerpt,
     document_text,
+    looks_unreadable,
+    other_contracts_named,
     pick_award_document,
+    readable_share,
 )
 
 DELIVERY_CONFIG = ROOT / "delivery_config.yaml"
@@ -78,7 +91,7 @@ def gather_excerpts(labels: pd.DataFrame, workers: int = 8) -> pd.DataFrame:
             targets.append((label.contract_number, document["id"]))
     print(f"{len(targets):,} contracts have an award document", flush=True)
 
-    def read(target: tuple[str, str]) -> dict[str, str] | None:
+    def read(target: tuple[str, str]) -> dict[str, Any] | None:
         contract_number, document_id = target
         try:
             text = document_text(client, document_id)
@@ -101,12 +114,35 @@ def gather_excerpts(labels: pd.DataFrame, workers: int = 8) -> pd.DataFrame:
             "excerpt": excerpt,
             "regex_agile_terms": ",".join(agile_terms_used(text)),
             "regex_strong_terms": ",".join(agile_terms_used(text, strong_only=True)),
+            # Two ways the document itself can be wrong, carried through to the
+            # published CSV so a reader can drop those rows. They are recorded
+            # rather than filtered here: filtering would change the published
+            # counts that analysis/verify_claims.py pins, and re-judging labels
+            # is a deliberate act, not a side effect of adding a check.
+            "excerpt_readable_share": round(readable_share(excerpt), 3),
+            "names_other_contract": ",".join(other_contracts_named(text, contract_number)),
         }
 
     with DCProcurementClient() as client:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             rows = [r for r in pool.map(read, targets) if r]
     print(f"{len(rows):,} yielded usable contract sections", flush=True)
+
+    unreadable = [r for r in rows if looks_unreadable(r["excerpt"])]
+    if unreadable:
+        print(f"{len(unreadable):,} of those are mojibake, not text -- flagged, not dropped:",
+              flush=True)
+        for row in sorted(unreadable, key=lambda r: r["excerpt_readable_share"]):
+            print(f"  {row['contract_number']}  printable share "
+                  f"{row['excerpt_readable_share']}", flush=True)
+
+    misfiled = [r for r in rows if r["names_other_contract"]]
+    if misfiled:
+        print(f"{len(misfiled):,} award documents name a contract other than their own "
+              "-- flagged, not dropped:", flush=True)
+        for row in sorted(misfiled, key=lambda r: r["contract_number"]):
+            print(f"  {row['contract_number']}  document names "
+                  f"{row['names_other_contract']}", flush=True)
 
     frame = pd.DataFrame(rows)
     return frame.merge(
@@ -151,6 +187,18 @@ def main(model: str = DEFAULT_MODEL) -> int:
                   "agile_quote", "scope_fixed_in_advance", "deliverables_quote",
                   "confidence"):
         frame[field] = [p.get(field) if p else None for p in predictions]
+
+    # How much of the vote backed each label. Below 1.0 means the model read the
+    # same excerpt two ways, so the contract is a coin flip rather than a
+    # finding, and the counts built from these columns carry model noise --
+    # roughly +/-4 at 95% on a count near 80. See dcprocure.classify.
+    for field in ("delivery_structure", "agile_mention_kind"):
+        frame[f"{field}_agreement"] = [
+            (p.get("field_agreement") or {}).get(field) if p else None
+            for p in predictions
+        ]
+    split = (frame["delivery_structure_agreement"] < 1).sum()
+    print(f"{split:,} contracts where the repeat draws disagreed on delivery_structure")
 
     frame = apply_overrides(frame)
     frame.drop(columns=["excerpt"]).to_csv(OUT_PATH, index=False)

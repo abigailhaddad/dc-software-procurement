@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """OCR the award PDFs that have no readable text layer.
 
-Delivery structure could be read for 288 of 476 candidate contracts
-(``data/delivery_structure.csv``). The rest split two ways: some candidates
+Delivery structure can be read directly for most, but not all, of the
+candidate contracts in ``data/delivery_structure.csv`` -- 292 of 480 at the
+2026-09-05 snapshot. The rest split two ways: some candidates
 have no award document on the portal at all, and some have a document whose
 extracted text is under :data:`MIN_TEXT_CHARS` -- scanned awards. This script
 handles the second group: it re-downloads each scanned PDF, rasterises the
@@ -73,7 +74,12 @@ BUILD_WORK_TYPES = {
     "it_consulting_advisory",
 }
 
-# Columns of data/delivery_structure.csv, reproduced exactly.
+# The label columns of data/delivery_structure.csv, reproduced exactly. That
+# file also carries the two document-defect columns classify_delivery.py writes
+# (excerpt_readable_share, names_other_contract); they are not reproduced here
+# because these rows come from OCR of a scan rather than from a text layer, so
+# neither measurement means the same thing. They land as blanks on the OCR rows
+# of any combined frame.
 OUT_COLUMNS = [
     "contract_number", "regex_agile_terms", "regex_strong_terms", "title",
     "vendor", "work_type", "ceiling", "delivery_structure",
@@ -219,10 +225,15 @@ def _ocr_cache_path(document_id: str) -> Path:
 
 
 def enumerate_candidates() -> tuple[pd.DataFrame, list[dict], int]:
-    """Split the 476 candidates into readable / unreadable-with-doc / no doc.
+    """Split the build/run candidates into readable / unreadable-with-doc / no doc.
 
-    Uses only the existing pdftext cache; no network. Returns (labels frame of
-    unreadable-with-doc candidates as dicts, count with no document).
+    Uses only the existing pdftext cache; no network. The candidate set is read
+    from the current classifications rather than fixed here, so it grows as the
+    portal does.
+
+    Returns (every candidate as a frame, the unreadable-but-has-a-document ones
+    as dicts, the count with no award document at all). The first is the whole
+    candidate set, not the OCR targets -- only the second is what gets sent.
     """
     labels = pd.read_csv(ROOT / "data" / "contract_classifications.csv")
     candidates = labels[labels["work_type"].isin(BUILD_WORK_TYPES)]
@@ -358,22 +369,36 @@ def spot_check(ocr_texts: dict[str, str], k: int = 5) -> None:
         print(f"\n[{_digest(doc_id)[:12]}] {text[:300]}")
 
 
-def would_be_headlines(new_frame: pd.DataFrame, readable_before: int) -> None:
-    """What the published numbers would become if the OCR results merged in."""
+def would_be_headlines(
+    new_frame: pd.DataFrame, readable_before: int, candidate_count: int
+) -> None:
+    """What the published numbers would become if the OCR results merged in.
+
+    Every "before" figure is read back out of the published table rather than
+    written down here. The counts move with each re-classification, so a
+    hardcoded baseline goes stale between runs and the arrow then compares the
+    current combined figure against a number nothing on disk still holds.
+    """
     published = pd.read_csv(PUBLISHED)
     combined = pd.concat([published, new_frame[OUT_COLUMNS]], ignore_index=True)
     combined = combined.drop_duplicates(subset="contract_number", keep="first")
 
     print("\n=== Would-be combined headline numbers (NOT integrated) ===")
-    print(f"readable: {readable_before} -> {len(combined)} of 476 candidates")
+    print(f"readable: {readable_before} -> {len(combined)} of {candidate_count} candidates")
     print("\ndelivery_structure value counts (combined):")
     for value, count in combined["delivery_structure"].value_counts().items():
         was = (published["delivery_structure"] == value).sum()
         print(f"  {value}: {was} -> {count}")
-    seq = combined[combined["delivery_structure"] == "sequential_gated_deliverables"]
+    gated = "sequential_gated_deliverables"
+    was_seq = published[published["delivery_structure"] == gated]
+    seq = combined[combined["delivery_structure"] == gated]
+    was_fixed = (was_seq["scope_fixed_in_advance"] == "yes").sum()
     seq_fixed = (seq["scope_fixed_in_advance"] == "yes").sum()
-    print(f"\nsequential, gated contracts: 82 -> {len(seq)}")
-    print(f"scope fixed in advance among them: 74 of 82 -> {seq_fixed} of {len(seq)}")
+    print(f"\nsequential, gated contracts: {len(was_seq)} -> {len(seq)}")
+    print(
+        f"scope fixed in advance among them: {was_fixed} of {len(was_seq)} "
+        f"-> {seq_fixed} of {len(seq)}"
+    )
 
 
 def apply_overrides(frame: pd.DataFrame) -> pd.DataFrame:
@@ -450,7 +475,7 @@ def main() -> int:
     print(frame["delivery_structure"].value_counts().to_string())
 
     readable_before = len(pd.read_csv(PUBLISHED))
-    would_be_headlines(frame, readable_before)
+    would_be_headlines(frame, readable_before, len(candidates))
 
     print(f"\n=== OCR spend ===")
     print(f"vision calls: {USAGE['calls']} "
