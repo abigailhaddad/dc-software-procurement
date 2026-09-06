@@ -30,15 +30,15 @@ on disk and classification is cached by content, so rerunning costs nothing.
 
 ## What it found
 
-Of 1,372 technology contracts carrying $4.6B in ceilings, custom software
-development accounts for 60 contracts and $38M. That is a floor on custom
+Of 1,383 technology contracts carrying $4.7B in ceilings, custom software
+development accounts for 62 contracts and $39M. That is a floor on custom
 development in contract form; building also happens inside the $1.2B of staff
 augmentation and inside task orders this data cannot see. Ordering vehicles
-carry $1.8B. Half of the $579M in traceable technology payments went to ten
+carry $1.9B. Half of the $579M in traceable technology payments went to ten
 vendors, and 17% to one — measured on the 44% of contracts whose payments carry
 their number, though the top vendor is corroborated separately by the
-purchase-order table. 51 award documents publish hourly rate cards — 2,471
-not-to-exceed rates, $24.01 to $1,015 — and job ads recruiting for the same
+purchase-order table. 60 award documents publish hourly rate cards — 2,581
+not-to-exceed rates, $23.68 to $1,015 — and job ads recruiting for the same
 tier names show what the workers are offered against them.
 
 How the work is organised is usually not written down. Of 80 award documents
@@ -174,7 +174,7 @@ distinguishes staffing a hospital from staffing a help desk.
 | `analysis/pull_h1b.py` | Pull public H-1B wage filings for the vendor set (`make h1b`); DOL's disclosure files are authoritative |
 | `analysis/pull_h1b_dol.py` | Filter DOL's own LCA disclosure files to the vendor set — case status, worksite address, and the client-naming secondary-entity field |
 | `analysis/extract_rates.py` | Pull hourly rate cards out of the award texts, every rate verified verbatim |
-| `data/labor_rates.csv` | The 2,471 published rates, with whether each title-to-price pairing verified |
+| `data/labor_rates.csv` | The 2,581 published rates, with whether each title-to-price pairing verified |
 | `analysis/modifications.py` | Count and read contract modifications (`make modifications`); the deduplication trap is in its docstring |
 | `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |
 | `evidence/job_ads/` | Job postings quoted in the briefing: screenshots, raw pages, archive links |
@@ -203,13 +203,13 @@ was sent and raises rather than hand back a wider slice than requested.
 
 **`paymentAmount` is not the amount of that payment.** It is the total of the
 whole check or ACH run the voucher was paid in, repeated on every row in that
-run. Summing it gives $113.7B against $33.3B of actual vouchers, and made one
-contract with a $120M ceiling look like it had been paid $17.3B.
+run. Summing it gives $114.7B against $33.5B of actual vouchers, and made one
+contract with a $120M ceiling look like it had been paid $17.4B.
 `load_payments` returns `voucherAmount` as `amount` and keeps the other as
 `check_total` so it cannot be summed by accident.
 
-**A contract search row is one option period, not one contract.** 7,113 rows
-are 3,983 contracts. Summing them gives a lifetime ceiling, which is neither an
+**A contract search row is one option period, not one contract.** 7,169 rows
+are 4,013 contracts. Summing them gives a lifetime ceiling, which is neither an
 annual figure nor money spent.
 
 **Ceilings and payments cover different windows.** Option periods run from
@@ -220,7 +220,7 @@ windowing counts $11.9B of payments made before the ceilings existed.
 technology payments alone. `vendor_aliases.yaml` records the rules, what they
 merge, and the pairs left separate on purpose.
 
-**Most payments cannot be tied to a contract.** Of 866,823 rows, 478,716 carry
+**Most payments cannot be tied to a contract.** Of 869,839 rows, 481,031 carry
 no contract number, covering $17.8B. That is a ceiling on any share-of-spend
 analysis built by joining payments to contracts.
 
@@ -243,9 +243,9 @@ links those back to their vehicle. Schedule vehicles carry the largest ceilings
 in the technology set, so the biggest single channel of technology buying cannot
 be followed. That is the largest gap.
 
-Delivery structure could be read for 363 of 476 candidate contracts: 288 with
-a native text layer, 75 recovered from scans and extraction failures by
-vision-model OCR (`make ocr`). The remaining 113 have no award document
+Delivery structure could be read for 387 of 480 candidate contracts: 313 with
+a native text layer, 74 recovered from scans and extraction failures by
+vision-model OCR (`make ocr`). The remaining 93 have no award document
 attached at all.
 
 The portal is live and counts move between pulls, so `data/raw/manifest.json`

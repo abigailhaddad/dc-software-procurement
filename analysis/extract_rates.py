@@ -64,6 +64,7 @@ from dcprocure.documents import (  # noqa: E402
     _digest,
     _text_path,
     award_document_index,
+    pick_award_document,
 )
 
 log = logging.getLogger(__name__)
@@ -100,6 +101,54 @@ def load_award_text(document_id: str) -> tuple[str, str] | None:
         if len(text) >= MIN_TEXT_CHARS:
             return text, "ocr"
     return None
+
+
+#: A document name carries the option period it is filed under, as in
+#: ``CW107442-Option 3-Contract Award-...``. Removing it leaves a name that
+#: identifies the underlying document rather than the copy.
+_PERIOD_IN_NAME = re.compile(r"-(?:Base Period|Option \d+)-")
+
+
+def award_document_copies(details: list[dict]) -> dict[str, list[dict[str, str]]]:
+    """Every filed copy of each contract's award document.
+
+    The executed award is re-filed under each option period and each copy is a
+    separate document with its own id. The text caches are keyed by that id, so
+    whether an award's text is on disk depends on which copy was read, not on
+    whether the award has ever been read. This extractor never fetches, so a
+    copy nothing has read is a copy with no text at all.
+    """
+    copies: dict[str, list[dict[str, str]]] = {}
+    for record in details:
+        number = record.get("contractNumber")
+        document = pick_award_document(record)
+        if number and document is not None:
+            copies.setdefault(number, []).append(document)
+    return copies
+
+
+def load_any_copy(document: dict[str, str],
+                  copies: list[dict[str, str]]) -> tuple[str, str] | None:
+    """Cached text for an award, falling back to other copies of it.
+
+    Only copies whose name matches once the option period is taken out of it. A
+    later period can attach a genuinely different award, and reading that one
+    instead would file another document's prices under this contract number.
+    """
+    loaded = load_award_text(document["id"])
+    if loaded is not None:
+        return loaded
+    wanted = _PERIOD_IN_NAME.sub("-", document["name"])
+    for other in copies:
+        if other["id"] == document["id"]:
+            continue
+        if _PERIOD_IN_NAME.sub("-", other["name"]) != wanted:
+            continue
+        loaded = load_award_text(other["id"])
+        if loaded is not None:
+            return loaded
+    return None
+
 
 # Plausible hourly rates for a person's time. Below 15 is minimum-wage
 # territory and mostly unit prices for goods; above 500/hour nobody bills
@@ -596,6 +645,7 @@ def main(model: str = DEFAULT_MODEL) -> int:
     details = {d["contractNumber"]: d for d in _details_raw}
     # The award may be filed under an option period the collapse above discards.
     awards = award_document_index(_details_raw)
+    copies = award_document_copies(_details_raw)
 
     # Candidate set: technology contracts whose award text is already cached.
     scanned, scanned_ocr, candidates = 0, 0, []
@@ -606,7 +656,7 @@ def main(model: str = DEFAULT_MODEL) -> int:
         document = awards.get(label.contract_number)
         if document is None:
             continue
-        loaded = load_award_text(document["id"])
+        loaded = load_any_copy(document, copies.get(label.contract_number, []))
         if loaded is None:
             continue  # no usable cached text, native or OCR; never fetch
         text, text_source = loaded

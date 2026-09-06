@@ -204,8 +204,13 @@ def award_document_index(details: list[dict[str, Any]]) -> dict[str, dict[str, s
     under an option period that the collapse throws away, 23 of them candidates
     for the delivery classifier. Scanning every record recovers them.
 
-    Records are read in file order and the first award found wins, which is the
-    base period where one is present.
+    Records are read in file order and the first award found wins. That is not
+    the base period: the portal returns a contract's option periods newest
+    first, so for a contract whose award is re-filed under every period this
+    picks the latest copy. The copies are the same document with different ids,
+    which matters wherever text is cached by document id -- see
+    ``analysis/extract_rates.py``, which never fetches and so has to look for a
+    copy that has been read.
     """
     index: dict[str, dict[str, str]] = {}
     for record in details:

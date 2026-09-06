@@ -256,11 +256,11 @@ def run_checks() -> list[Result]:
     delivery = pd.read_csv(ROOT / "data" / "delivery_structure.csv")
 
     section("corpus")
-    check("contract option periods", len(contracts), 7113)
-    check("distinct contracts", contracts.contract_number.nunique(), 3983)
-    check("contracts classified", len(labels), 3983)
-    check("purchase orders (IT classes)", len(orders), 114255)
-    check("payments", len(payments), 866823)
+    check("contract option periods", len(contracts), 7169)
+    check("distinct contracts", contracts.contract_number.nunique(), 4013)
+    check("contracts classified", len(labels), 4013)
+    check("purchase orders (IT classes)", len(orders), 114435)
+    check("payments", len(payments), 869839)
     check("earliest PO fiscal year", int(orders.fiscal_year.min()), 2013)
 
     # The manifest is the provenance record. If it stops describing the files
@@ -275,12 +275,12 @@ def run_checks() -> list[Result]:
 
     section("what DC buys")
     tech = labels[labels.is_technology == True]  # noqa: E712
-    check("technology contracts", len(tech), 1372)
-    check("technology ceilings $M", round(tech.ceiling.sum() / 1e6), 4641, 1)
+    check("technology contracts", len(tech), 1383)
+    check("technology ceilings $M", round(tech.ceiling.sum() / 1e6), 4670, 1)
     for work_type, contracts_n, ceiling_m in [
-        ("ordering_vehicle", 328, 1840),
-        ("staff_augmentation", 211, 1203),
-        ("custom_software_build", 60, 38),
+        ("ordering_vehicle", 330, 1851),
+        ("staff_augmentation", 213, 1208),
+        ("custom_software_build", 62, 39),
     ]:
         rows = labels[labels.work_type == work_type]
         check(f"{work_type} contracts", len(rows), contracts_n)
@@ -297,7 +297,7 @@ def run_checks() -> list[Result]:
     tech["contract_type"] = tech.contract_number.map(types)
     for label, ctype, pct in [
         ("IDIQ drawdown %", "Indefinite Delivery Indefinite Quantity", 4),
-        ("firm fixed price drawdown %", "Firm Fixed Price", 44),
+        ("firm fixed price drawdown %", "Firm Fixed Price", 45),
     ]:
         rows = tech[tech.contract_type == ctype]
         check(label, round(100 * rows.paid.sum() / rows.ceiling.sum()), pct, 1)
@@ -305,32 +305,34 @@ def run_checks() -> list[Result]:
           round(100 * (tech.paid > 0).mean()), 44, 1)
 
     section("the payments trap")
-    check("line-level total $B", round(payments.amount.sum() / 1e9, 1), 33.3, 0.1)
-    check("check-total field $B", round(payments.check_total.sum() / 1e9, 1), 113.7, 0.1)
+    check("line-level total $B", round(payments.amount.sum() / 1e9, 1), 33.5, 0.1)
+    check("check-total field $B", round(payments.check_total.sum() / 1e9, 1), 114.7, 0.1)
     star = payments[payments.contract_number == "CW95481"]
     check("CW95481 correct $M", round(star.amount.sum() / 1e6), 132, 1)
-    check("CW95481 if summed wrong $B", round(star.check_total.sum() / 1e9, 1), 17.3, 0.2)
+    check("CW95481 if summed wrong $B", round(star.check_total.sum() / 1e9, 1), 17.4, 0.2)
     # The portal is live: counts move a little between pulls, so these carry a
     # tolerance rather than pretending to be exact.
     #
-    # 478,716 is what the briefing, the site and the README actually say. The
-    # literal here was 478,700, and the tolerance of 200 hid the difference --
-    # so this check passed against a number nothing published. The tolerance is
-    # for portal movement, not for the baseline being approximate.
+    # 481,031 is what the briefing, the site and the README actually say. The
+    # literal here was once rounded to the nearest hundred, and the tolerance of
+    # 200 hid the difference -- so this check passed against a number nothing
+    # published. The tolerance is for portal movement, not for the baseline
+    # being approximate.
     check("payments with no contract number",
-          int(payments.contract_number.isna().sum()), 478716, 200)
+          int(payments.contract_number.isna().sum()), 481031, 200)
 
     section("agile language")
     build_types = {"custom_software_build", "cots_implementation",
                    "software_om_support", "it_consulting_advisory"}
-    check("delivery-structure candidates", int(labels.work_type.isin(build_types).sum()), 476)
-    check("readable award documents", len(delivery), 288)
+    candidates = int(labels.work_type.isin(build_types).sum())
+    check("delivery-structure candidates", candidates, 480)
+    check("readable award documents", len(delivery), 313)
     mentions = delivery[delivery.agile_mention_kind != "no_agile_language"]
-    check("documents mentioning agile", len(mentions), 38)
+    check("documents mentioning agile", len(mentions), 44)
     commits = delivery[delivery.agile_mention_kind == "delivery_commitment"]
-    check("genuine delivery commitments", len(commits), 11)
+    check("genuine delivery commitments", len(commits), 14)
     check("mentions that are staff qualifications",
-          int((delivery.agile_mention_kind == "personnel_qualification").sum()), 14)
+          int((delivery.agile_mention_kind == "personnel_qualification").sum()), 17)
     # What used to sit here -- how many of the agile commitments are also
     # structurally gated, and the gated rate among everything else -- was a
     # cross-tab on delivery_structure, and is not published any more. The field
@@ -398,20 +400,20 @@ def run_checks() -> list[Result]:
 
     section("the DC Supply Schedule")
     dcss = tech[tech.title.str.contains("DCSS", case=False, na=False)]
-    check("technology contracts naming DCSS", len(dcss), 397, 3)
-    check("their ceilings $M", round(dcss.ceiling.sum() / 1e6), 2410, 5)
+    check("technology contracts naming DCSS", len(dcss), 399, 3)
+    check("their ceilings $M", round(dcss.ceiling.sum() / 1e6), 2412, 5)
     check("share of technology ceilings %",
           round(100 * dcss.ceiling.sum() / tech.ceiling.sum()), 52, 1)
     vehicles = tech[tech.work_type == "ordering_vehicle"]
     check("ordering vehicles that are DCSS",
-          int(vehicles.title.str.contains("DCSS", case=False, na=False).sum()), 305, 3)
+          int(vehicles.title.str.contains("DCSS", case=False, na=False).sum()), 306, 3)
     # The $2.4B mixes pool-vehicle ceilings with DCSS-named awards for actual
     # work; the briefing states the split, so it is checked here.
     non_vehicle = dcss[dcss.work_type != "ordering_vehicle"]
-    check("DCSS-named contracts that are not vehicles", len(non_vehicle), 92, 2)
-    check("their ceilings $M", round(non_vehicle.ceiling.sum() / 1e6), 844, 5)
+    check("DCSS-named contracts that are not vehicles", len(non_vehicle), 93, 2)
+    check("their ceilings $M", round(non_vehicle.ceiling.sum() / 1e6), 845, 5)
     check("of them, staff augmentation",
-          int((non_vehicle.work_type == "staff_augmentation").sum()), 75, 2)
+          int((non_vehicle.work_type == "staff_augmentation").sum()), 76, 2)
 
     section("payments against unpublished contract numbers")
     # The evidence that awards exist beyond what the portal publishes: money
@@ -452,7 +454,7 @@ def run_checks() -> list[Result]:
     section("named systems")
     named = tech[tech.system_name.notna() & (tech.system_name.astype(str).str.strip() != "")]
     named = named[named.system_name.astype(str).str.lower() != "nan"]
-    check("technology contracts naming a system", len(named), 273)
+    check("technology contracts naming a system", len(named), 276)
     by_system = named.groupby(named.system_name.astype(str).str.upper().str.strip()).agg(
         contracts=("contract_number", "size"), ceiling=("ceiling", "sum")
     ).sort_values("ceiling", ascending=False)
@@ -511,7 +513,7 @@ def run_checks() -> list[Result]:
           round(100 * (scored.delivery_structure == scored.model).mean()), 57, 1)
 
     check("agile only as a hiring requirement",
-          int((delivery.agile_mention_kind == "personnel_qualification").sum()), 14)
+          int((delivery.agile_mention_kind == "personnel_qualification").sum()), 17)
 
     section("modifications")
     # analysis/modifications.py writes both of these. The counting trap is in
@@ -595,12 +597,12 @@ def run_checks() -> list[Result]:
     g = inwin.groupby("contract_number").agg(ceiling=("amount", "sum"), ctype=("contract_type", "first"))
     g["paid"] = g.index.map(win_paid).fillna(0.0)
     check("windowed technology contracts", len(g), 1070)
-    check("windowed ceilings $M", round(g.ceiling.sum() / 1e6), 3094, 2)
+    check("windowed ceilings $M", round(g.ceiling.sum() / 1e6), 3095, 2)
     check("windowed paid $M", round(g.paid.sum() / 1e6), 527, 2)
     check("windowed drawdown %", round(100 * g.paid.sum() / g.ceiling.sum(), 1), 17.0, 0.2)
     for ctype, n, ceil_m, paid_m, pct in [
         ("Indefinite Delivery Indefinite Quantity", 359, 1995, 56, 2.8),
-        ("Firm Fixed Price", 575, 668, 313, 46.8),
+        ("Firm Fixed Price", 575, 669, 313, 46.8),
         ("Labor Hour", 97, 394, 130, 33.0),
     ]:
         rows = g[g.ctype == ctype]
@@ -666,20 +668,20 @@ def run_checks() -> list[Result]:
     # assignment could also be verified (deterministic reconstruction for
     # CW91684, text proximity for row-oriented tables).
     lr = pd.read_csv(ROOT / "data" / "labor_rates.csv")
-    check("contracts publishing hourly rates", lr.contract_number.nunique(), 51)
-    check("published hourly rates", len(lr), 2471)
+    check("contracts publishing hourly rates", lr.contract_number.nunique(), 60)
+    check("published hourly rates", len(lr), 2581)
     check("rates with verified category pairing",
-          int(lr.pairing.isin(["deterministic", "proximate"]).sum()), 1629)
-    check("lowest published rate", float(lr.hourly_rate.min()), 24.01)
+          int(lr.pairing.isin(["deterministic", "proximate"]).sum()), 1737)
+    check("lowest published rate", float(lr.hourly_rate.min()), 23.68)
     check("highest published rate", float(lr.hourly_rate.max()), 1015.0)
-    check("median published rate", float(lr.hourly_rate.median()), 144.05, 0.5)
+    check("median published rate", float(lr.hourly_rate.median()), 142.78, 0.5)
     # 325 rates come from OCR-recovered scans; their verification is against
     # the OCR's reading, one model layer from the pixels, and every one of
     # them carries a proximity-verified pairing.
     ocr_rates = lr[lr.text_source == "ocr"]
     check("rates from OCR-recovered scans", len(ocr_rates), 325)
     check("all OCR rates pairing-verified", bool((ocr_rates.pairing == "proximate").all()), True)
-    check("native rows unchanged", int((lr.text_source == "native").sum()), 2146)
+    check("native rows unchanged", int((lr.text_source == "native").sum()), 2256)
     cai_card = lr[lr.contract_number == "CW91684"].set_index(["labor_category", "level"])
 
     def card_rate(cat: str, lvl: str) -> float:
@@ -749,11 +751,11 @@ def run_checks() -> list[Result]:
     # briefing states these as "at most about a third of contracts, about a
     # tenth of dollars" after correction — the raw figures are checked here.
     vis = pd.read_csv(ROOT / "data" / "solicitations" / "tech_contract_solicitation_visibility.csv")
-    check("technology contracts assessed", len(vis), 1372)
+    check("technology contracts assessed", len(vis), 1383)
     visible = vis[vis.visibility.str.startswith("visible")]
-    check("trace to a posted solicitation", len(visible), 295)
+    check("trace to a posted solicitation", len(visible), 298)
     check("their share of tech ceilings %",
-          round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.4, 0.2)
+          round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.3, 0.2)
     fy = pd.read_csv(ROOT / "data" / "solicitations" / "solicitations_by_fy.csv")
     for year, want in [("FY2016", 1351), ("FY2025", 749)]:
         check(f"solicitations posted {year}",
@@ -777,7 +779,7 @@ def run_checks() -> list[Result]:
     check("roster contracts paid above their surviving ceiling",
           int((roster.payments_total.fillna(0) > roster.ceiling).sum()), 7, 1)
     dcas_pay = pd.read_csv(ROOT / "data" / "dcas" / "dcas_payments_by_year.csv")
-    check("payments tied to DCAS $M", round(dcas_pay.amount.sum() / 1e6), 284, 1)
+    check("payments tied to DCAS $M", round(dcas_pay.amount.sum() / 1e6), 291, 1)
 
     # The two claims a hostile reader will check first, recomputed from raw:
     kpmg_pay = payments[payments.contract_number == "CW62227"]
@@ -888,26 +890,32 @@ def run_checks() -> list[Result]:
     # native results are untouched). The briefing states combined figures.
     ocr = pd.read_csv(ROOT / "data" / "delivery_structure_ocr.csv")
     check("awards recovered by OCR", len(ocr), 75)
-    check("overlap with the native readable set",
-          len(set(ocr.contract_number) & set(delivery.contract_number)), 0)
-    combined = pd.concat([delivery, ocr], ignore_index=True)
-    check("readable awards combined", len(combined), 363)
-    check("of 476 candidates, contracts with no award document at all", 476 - 363, 113)
+    # CW120603 is in both files: its award was a scan when the OCR pass ran, and
+    # the copy the pipeline now reads has a text layer. The combined figures
+    # count contracts rather than rows, so the overlap is deduplicated -- the
+    # native reading wins -- and this check is what says how big it is.
+    overlap = set(ocr.contract_number) & set(delivery.contract_number)
+    check("overlap with the native readable set", len(overlap), 1)
+    combined = pd.concat([delivery, ocr], ignore_index=True).drop_duplicates("contract_number")
+    ocr_only = len(set(ocr.contract_number) - set(delivery.contract_number))
+    check("read from OCR text alone", ocr_only, 74)
+    check("readable awards combined", len(combined), 387)
+    check("candidates with no award document at all", candidates - len(combined), 93)
     # The per-structure counts this section used to assert backed the six-way
     # table on the site, which has been removed. See the note in "delivery
     # structure" above.
     combined_commits = combined[combined.agile_mention_kind == "delivery_commitment"]
-    check("combined delivery commitments", len(combined_commits), 14)
+    check("combined delivery commitments", len(combined_commits), 17)
     check("combined agile-as-hiring-requirement",
-          int((combined.agile_mention_kind == "personnel_qualification").sum()), 15)
+          int((combined.agile_mention_kind == "personnel_qualification").sum()), 18)
 
     section("purchase-order vendor figures")
     recent = orders[orders.fiscal_year.between(2022, 2026)].copy()
     recent["vendor_key"] = recent.vendor.str.upper().str.strip()
     cai = recent[recent.vendor_key == "COMPUTER AID  INC"]
-    check("Computer Aid FY22-26 $M", round(cai.amount.sum() / 1e6), 465, 3)
-    check("Computer Aid purchase orders", len(cai), 5787, 40)
-    check("Computer Aid median PO $", round(cai.amount.median()), 59944, 200)
+    check("Computer Aid FY22-26 $M", round(cai.amount.sum() / 1e6), 466, 3)
+    check("Computer Aid purchase orders", len(cai), 5814, 40)
+    check("Computer Aid median PO $", round(cai.amount.median()), 59755, 200)
     check("Computer Aid distinct agencies", cai.agency.nunique(), 33, 1)
     fast = recent[recent.vendor_key == "FAST ENTERPRISES LLC"]
     check("FAST Enterprises $M", round(fast.amount.sum() / 1e6), 51, 2)
@@ -1005,9 +1013,9 @@ def run_checks() -> list[Result]:
         f"{len(lr):,}\nnot-to-exceed rates",
         f"${lr.hourly_rate.min():.2f} to ${round(lr.hourly_rate.max()):,}",
         f"The {len(lr):,} published rates",
-        f"{int((hand.evidence_basis == 'explicit_process').sum())} of the "
-        f"{len(hand)} describe a delivery process",
-        f"agrees with those {len(hand)} hand labels "
+        f"Of {len(hand)} award documents\nread by hand, "
+        f"{int((hand.evidence_basis == 'explicit_process').sum())} describe a delivery process",
+        f"agrees with its {len(hand)} hand labels "
         f"{round(100 * (scored.delivery_structure == scored.model).mean())}% of the time",
         f"{len({c for c, _ in mod_names}):,} contracts\ncarry {len(mod_names):,} modifications",
         f"the {len(fixed)} build contracts whose award document fixes scope in",
@@ -1019,9 +1027,9 @@ def run_checks() -> list[Result]:
         f"Of {len(payments):,} rows, {int(payments.contract_number.isna().sum()):,} carry",
         f"${payments.check_total.sum() / 1e9:.1f}B against "
         f"${payments.amount.sum() / 1e9:.1f}B of actual vouchers",
-        f"{len(combined)} of 476 candidate contracts: "
-        f"{len(delivery)} with\na native text layer, {len(ocr)} recovered",
-        f"The remaining {476 - len(combined)} have no award document",
+        f"{len(combined)} of {candidates} candidate contracts: "
+        f"{len(delivery)} with\na native text layer, {ocr_only} recovered",
+        f"The remaining {candidates - len(combined)} have no award document",
     ]:
         shown = phrase.replace("\n", " ")
         check(f"README: '{shown}'", phrase in readme, True)
