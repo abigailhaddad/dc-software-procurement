@@ -276,8 +276,10 @@ footer p{font-size:14px; color:var(--muted)}
 </head>
 <body>
 <div class="wip-banner" role="alert">
-  <strong>Work in progress.</strong> These figures are still being checked and the
-  data behind them is being rebuilt. Do not rely on them.
+  <strong>Read the caveats with the numbers.</strong> Every figure here is recomputed from the
+  published data and checked, but some rest on a model reading contract text rather than on the
+  District's own records, and those carry a measured error rate. Where a number depends on that,
+  the page says so.
 </div>
 
 
@@ -445,10 +447,10 @@ footer p{font-size:14px; color:var(--muted)}
 
 <h2>The portal has a word for sole source, and never uses it for technology</h2>
 <p>The portal records how a contract reached the market in a field called <code>marketType</code>. It can say Sole Source &mdash; 24 contracts across the whole corpus do, across five spellings of it. Not one of the 1,383 technology contracts does. For technology the field only ever says Set Aside, Open, GSA, DCSS or Agreement, so nothing in the published data marks an award as uncompeted.</p>
-<p>The justification exists anyway, as a document. A Determination and Findings is what a contracting officer signs to limit competition, exempt a purchase from it, or buy from a single available source; 21,722 of them are attached to contracts and none had been read. Of the technology contracts whose D&amp;Fs have been read, <strong>76, carrying $63.5M of ceiling, have one &mdash; and 45 of those are labelled Open</strong>.</p>
+<p>The justification exists anyway, as a document. A Determination and Findings is what a contracting officer signs to limit competition, exempt a purchase from it, or buy from a single available source; 21,722 of them are attached to contracts and none had been read. Of the technology contracts whose D&amp;Fs have been read, <strong>75, carrying $63.3M of ceiling, have one &mdash; and 44 of those are labelled Open</strong>.</p>
 <p>Nine cite the provision that covers maintenance of existing software where the vendor owns the code, and they read plainly: &ldquo;The EGMS application is built on the proprietary software created and owned by MTW Solutions, LLC; therefore, no other Contractor has access to the rights and source codes.&rdquo; &ldquo;Netsmart is the only dealer/seller of the licenses associated with the Avatar System.&rdquo; &ldquo;Sandata is the only Contractor that can provide operations and maintenance portion of the contract due to its proprietary ownership of the District&rsquo;s EVV System.&rdquo;</p>
-<p>A third of that rests on machine transcription. 1,009 technology contracts carry a D&amp;F: 294 have had one read from its own text layer, and 63 more were scans with no text at all, recovered by running OCR over them. Twenty-five of the 76 findings vanish without those transcriptions, so the rows resting on them are flagged in the published table and can be counted separately.</p>
-<p>Reading the scans mattered because they were not randomly distributed. Among documents named for sole source, 56% had no text layer, against 7% of the cooperative purchases. The unreadable documents were disproportionately the ones carrying a finding, so ignoring them understated the answer in the direction that flatters the portal. Seventy-six is still a floor: 652 of the 1,009 have not been opened at all.</p>
+<p>A third of that rests on machine transcription. 1,009 technology contracts carry a D&amp;F: 294 have had one read from its own text layer, and 63 more were scans with no text at all, recovered by running OCR over them. Twenty-five of the 75 findings vanish without those transcriptions, so the rows resting on them are flagged in the published table and can be counted separately.</p>
+<p>Reading the scans mattered because they were not randomly distributed. Among documents named for sole source, 56% had no text layer, against 7% of the cooperative purchases. The unreadable documents were disproportionately the ones carrying a finding, so ignoring them understated the answer in the direction that flatters the portal. Seventy-five is still a floor: 652 of the 1,009 have not been opened at all.</p>
 <span class="src">Read from the documents by <code>analysis/competition.py</code>, classifying each on its own header line rather than its filename; per-contract results in <code>data/competition/contract_competition.csv</code>.</span>
 
 <h2>What an hour of a person costs, where the District publishes it</h2>

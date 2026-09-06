@@ -293,6 +293,24 @@ _ONLY_SOURCE = re.compile(
     re.I,
 )
 
+#: THE TRAP: "proprietary" describes a system as often as it describes who may
+#: sell it. CW99714's D&F says "The Data Warehouse/ESB system is a proprietary
+#: system which acts as an interface between several internal/external systems"
+#: -- a description of the thing bought, in a cooperative purchase, with no
+#: claim that only one vendor could supply it. The assertions that do mean
+#: something tie the proprietary thing to a vendor: "due to its proprietary
+#: ownership of the District's EVV System", "built on the proprietary software
+#: created and owned by MTW Solutions". A copular "is a proprietary X" does not.
+#:
+#: Matched against the flagged phrase itself rather than a context window, for
+#: the same reason as the ownership guard: a document can describe a system as
+#: proprietary in one sentence and assert a single source in the next.
+_DESCRIPTIVE_PROPRIETARY = re.compile(
+    r"\b(?:is|are|was|were|remains?)\s+(?:an?\s+)?proprietary\b",
+    re.I,
+)
+
+
 #: THE TRAP: the non-use-of-DCSS form has a checkbox reading "There was only
 #: one qualified CBE to provide the service/goods", and the cooperative form
 #: reports how many certified business enterprises a commodity-code search
@@ -340,14 +358,30 @@ _BOILERPLATE_LEAD = 70
 _BOILERPLATE_TRAIL = 40
 
 
-def _is_ownership_boilerplate(text: str, match: re.Match) -> bool:
-    """Whether a flagged phrase is part of an ownership or liability clause."""
+def _overlaps(text: str, match: re.Match, pattern: re.Pattern) -> bool:
+    """Whether ``pattern`` matches across the flagged phrase itself.
+
+    Overlap rather than proximity: a document can carry an ownership clause, or
+    describe a system as proprietary, a sentence away from a genuine
+    single-source finding, and a context-window test would discard the finding
+    along with the boilerplate.
+    """
     start = max(0, match.start() - _BOILERPLATE_LEAD)
     window = text[start : match.end() + _BOILERPLATE_TRAIL]
-    for found in _OWNERSHIP_BOILERPLATE.finditer(window):
+    for found in pattern.finditer(window):
         if start + found.start() < match.end() and start + found.end() > match.start():
             return True
     return False
+
+
+def _is_ownership_boilerplate(text: str, match: re.Match) -> bool:
+    """Whether a flagged phrase is part of an ownership or liability clause."""
+    return _overlaps(text, match, _OWNERSHIP_BOILERPLATE)
+
+
+def _is_descriptive_proprietary(text: str, match: re.Match) -> bool:
+    """Whether "proprietary" here describes the system rather than the market."""
+    return _overlaps(text, match, _DESCRIPTIVE_PROPRIETARY)
 
 
 def single_source_quote(text: str, window: int = 260) -> str:
@@ -369,6 +403,8 @@ def single_source_quote(text: str, window: int = 260) -> str:
         if _NOT_ONLY_SOURCE.search(context):
             continue
         if _is_ownership_boilerplate(text, match):
+            continue
+        if _is_descriptive_proprietary(text, match):
             continue
         start = max(0, match.start() - window // 2)
         quote = re.sub(r"\s+", " ", text[start : match.end() + window]).strip()

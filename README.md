@@ -1,10 +1,10 @@
 # How the District buys software
 
-> **Work in progress.** These figures are still being checked and the data
-> behind them is being rebuilt. Do not rely on them.
->
-> What is known about which figures hold up: `docs/CLASSIFIER_ACCURACY.md`.
-> What is left to do: `docs/NEXT_STEPS.md`.
+> **Read the caveats with the numbers.** Every figure here is recomputed from the
+> published data by `analysis/verify_claims.py` and checked. Some rest on a model
+> reading contract text rather than on the District's own records, and those carry
+> a measured error rate: `docs/CLASSIFIER_ACCURACY.md` says which, and how far off
+> each is. `docs/NEXT_STEPS.md` is what remains.
 
 Pulls the DC Contracts and Procurement Transparency Portal, sorts every contract
 by what it actually buys, and reads how the work is structured out of the award
@@ -99,8 +99,8 @@ award was not competed.
 The justifications exist as documents. A Determination and Findings is what a
 contracting officer signs to limit competition, exempt a purchase from it, or
 buy from a single available source, and 21,722 of them are attached to
-contracts. Of the technology contracts whose D&Fs have been read, 76 carrying
-$63.5M of ceiling have one. Forty-five of those 76 are labelled Open.
+contracts. Of the technology contracts whose D&Fs have been read, 75 carrying
+$63.3M of ceiling have one. Forty-four of those 75 are labelled Open.
 
 Nine cite PPRA 2-354.13(8), maintenance of existing software where the vendor
 owns the code: "The EGMS application is built on the proprietary software
@@ -109,7 +109,7 @@ access to the rights and source codes."
 
 A third of that rests on machine transcription. 1,009 technology contracts carry
 a D&F; 294 have had one read from its own text layer and 63 more were scans,
-recovered by running OCR over them. 25 of the 76 findings disappear without
+recovered by running OCR over them. 25 of the 75 findings disappear without
 those transcriptions, so the rows carrying them are marked in
 `data/competition/contract_competition.csv` and can be counted separately.
 
@@ -119,7 +119,7 @@ cooperative purchases -- the unreadable ones were disproportionately the ones
 that would carry a finding, so leaving them out understated the answer in the
 direction that flatters the portal.
 
-76 is still a floor. 652 of the 1,009 have not been sampled at all.
+75 is still a floor. 652 of the 1,009 have not been sampled at all.
 
 ## Why the commodity codes are not used
 

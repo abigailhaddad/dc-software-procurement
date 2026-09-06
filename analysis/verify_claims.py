@@ -954,10 +954,10 @@ def run_checks() -> list[Result]:
 
     limiting = comp[_flag("limits_competition") | _flag("exempt_from_competition")
                     | _flag("single_source_language")]
-    check("technology contracts with competition-limiting paperwork", len(limiting), 76)
-    check("their ceilings $M", round(limiting.ceiling.sum() / 1e6, 1), 63.5, 0.5)
+    check("technology contracts with competition-limiting paperwork", len(limiting), 75)
+    check("their ceilings $M", round(limiting.ceiling.sum() / 1e6, 1), 63.3, 0.5)
     check("of those, the portal calls open",
-          int((limiting.market_type == "Open").sum()), 45)
+          int((limiting.market_type == "Open").sum()), 44)
     check("contracts citing the software lock-in provision",
           int(_flag("software_lock_in_cite").sum()), 9)
     check("D&F documents read", int((comp.coverage == "read").sum()), 294)
