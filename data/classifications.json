@@ -31342,5 +31342,464 @@
    "scope_fixed_in_advance": 1.0,
    "confidence": 1.0
   }
+ },
+ "f3b5e3325b91796989e21c87cd3057009dadd166": {
+  "delivery_structure": "incremental_capacity",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "no",
+  "deliverables_quote": "The Contractor shall furnish to the District, when and if ordered, the supplies or services specified in the Schedule up to and including the maximum quantity... There is no limit on the number of orders that may be issued.",
+  "confidence": "medium",
+  "rationale": "The contract is an IDIQ with CLINs priced per site and delivery/performance occurs only when ordered via task orders, with rolling submission of reports as completed, indicating capacity for variable quantities rather than a fixed sequential design-build delivery chain.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "291b8e7eecbe02b1da9e3f87b0ebb0044df50819": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "personnel_qualification",
+  "uses_agile_vocabulary": "yes",
+  "agile_quote": "C1.3 The Contractor shall employ an industry proven agile methodology the Contractor has used in the delivery of at least one previous CRM implementation.",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "F.3.1 BASE PERIOD - from Date of Award ... 0001 Customer Relationship Management (CRM) platform installation, configuration, Implementation ... 0003 Maintenance and Support ... 0004 Training Support ... F.3.2 OPTION YEAR ONE PERIOD ... 1004 Maintenance and Support ... Continuous ... F.3.3 OPTION YEAR TWO PERIOD ... 2001 Maintenance and Support ... Continuous",
+  "confidence": "medium",
+  "rationale": "The price schedule is fixed by CLINs for a base year and option years, and the deliverables show \u201cMaintenance and Support\u201d as \u201cContinuous\u201d across option periods, indicating ongoing operations/support rather than a sequential gated build process.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9948d9aaa9d522fba5ec31a040eeec8142111d16": {
+  "delivery_structure": "incremental_capacity",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "no",
+  "deliverables_quote": "\u201cThe District shall purchase its requirements of the article or services included in herein from the contractor.\u201d / \u201cThis request is for a minimum of four (4) Subject Matter Experts (SMEs), one (1) Project Manager (PM), and one (1) Technical Writer. These staffing requirements may change as the program serving these families evolves.\u201d",
+  "confidence": "medium",
+  "rationale": "The excerpt describes a labor-hour staffing/requirements contract with minimum staffing that may change and payments tied to services performed/accepted, indicating capacity is purchased and directed as needs evolve rather than a fixed sequential deliverables chain.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5fda1fdcdeae55b146defcb97f14b02ca2b271c5": {
+  "delivery_structure": "structure_not_stated",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "The Government ... is awarding a contractor to provide Cohesity Data Platform, Cohesity Data Protect, Cohesity Smart Files Service, and Cohesity setup and configuration services.",
+  "confidence": "low",
+  "rationale": "The excerpt lists what is being provided and general invoice/payment mechanics, but it does not include a pricing schedule or deliverables schedule that would show whether delivery is sequential, capacity-based, or milestone-gated.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "7ba0598f754e4f51d65cbed535d3ac1ce3b639ed": {
+  "delivery_structure": "goods_or_licenses",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "9.1 BASE PERIOD \u2013 ONE YEAR FROM THE DATE OF AWARD\nContract Line Item (CLIN)\n0001 TekStream AWS Professional Services\n...",
+  "confidence": "medium",
+  "rationale": "The excerpt shows a firm-fixed-price price schedule for AWS/professional services and setup items (software/cloud services) with a one-year term and an option year, but it does not describe iterative sprint-based delivery or sequential acceptance gates for work products.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "afa6d4d8a28975228c76e7635aa48c2de8eecaa5": {
+  "delivery_structure": "incremental_capacity",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "B.4.2 The Contractor agrees to perform up to the point at which the total amount payable by the District does not exceed the total amount currently obligated to the contract in section B.4.1. The Contractor is not authorized to continue work beyond that point.",
+  "confidence": "medium",
+  "rationale": "The price schedule is labor-hour with NTE ceilings and the excerpt shows incrementally funded performance limited by obligated amounts, indicating capacity is purchased up to funding rather than a sequential, gate-based deliverables chain.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "717d132d9ed517f4386bacc2a39e077b80e524b8": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "The period of performance shall be for one (1) year after date of award.",
+  "confidence": "medium",
+  "rationale": "The excerpt describes providing AWS cloud services over a one-year (extendable) period with monthly invoice submission, indicating an ongoing services/consumption delivery model rather than sequential gated deliverables.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9832197a2af1597849fdcc158e400e484bdc36e4": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "delivery_commitment",
+  "uses_agile_vocabulary": "yes",
+  "agile_quote": "\"Weekly for Eight (8) to Ten (10) Sprints\"",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "\"submit each deliverable ... in accordance with the following\" ... \"OHR CMS Staging/Test Environment ... 14 Days from Award\" ... \"Final Solution User Acceptance Test (UAT) Support ... Following Final Configuration\" ... \"OHR CMS Production Environment ... Following Final Configuration\" ... \"Ongoing CMS Production Support & Maintenance\"",
+  "confidence": "medium",
+  "rationale": "The price schedule includes one-time implementation/migration/training plus annual licensing/hosting/support, and the deliverables are sequenced with acceptance gates tied to configuration/UAT and deployment (staging \u2192 UAT \u2192 production), indicating a sequential gated delivery approach rather than capacity-based iteration.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4fcae300aec302d0a5fcd2398578b1cc3627d1a4": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\u201cThe Contractor shall perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable\u2026 in accordance with the following: BASE YEAR\u2026 Task 1: Project Management\u2026 [and] Task 2: Community Engagement\u2026 [with] Due Date\u201d",
+  "confidence": "medium",
+  "rationale": "The excerpt shows a firm-fixed-price contract with specific CLINs and a detailed deliverables table with named tasks and due dates, indicating work is delivered as predefined deliverables over time rather than as reprioritizable capacity or iterative sprints.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "397f1f6bddf6f279b64e02fa02737fc1acf9f09b": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "unrelated_usage",
+  "uses_agile_vocabulary": "yes",
+  "agile_quote": "\"...including participation in the definition of the agile approach for the application builds with the PFL contractor(s).\"",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\"The Contractor shall perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable to the Contract Administrator in accordance with the following:\"",
+  "confidence": "medium",
+  "rationale": "The price is a labor-hour task order with a defined set of named deliverables and due dates (e.g., Transformation Strategy, Transformation Management Plan, deliverable review reports, risk management assessment), indicating work is delivered through an ordered deliverables schedule with acceptance/review at specified points rather than reprioritizable capacity or purely milestone/recurring operations.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5e51e80230bc29fea54a07fe7274fae133f381c1": {
+  "delivery_structure": "incremental_capacity",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "The ceilings for specified hourly rate items are set forth in the Price Schedule (Attachment B).",
+  "confidence": "low",
+  "rationale": "The excerpt shows hourly-rate ceilings and a task order for temporary personnel over a period of performance, indicating capacity is purchased and managed within rate limits rather than a fixed sequential set of design/build/test deliverables.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d071254d47da5356c475369f41264e4b05533091": {
+  "delivery_structure": "structure_not_stated",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "The Contractor shall support implementation of \u201cLive Long DC\u201d strategic plan to reduce opioid use, misuse, related deaths, and facilitate Opioid working groups in accordance with the Statement of Work (Attachment A).",
+  "confidence": "low",
+  "rationale": "The excerpt references a Statement of Work and a separate Price Schedule/Attachment B but does not show the deliverables/payment structure needed to determine whether delivery is sequential, capacity-based, or milestone-based.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6f6d9ab3998b02a6affa811d89a77152478f33b1": {
+  "delivery_structure": "incremental_capacity",
+  "agile_mention_kind": "personnel_qualification",
+  "uses_agile_vocabulary": "yes",
+  "agile_quote": "Preferred certifications: PMP, PMP Agile and/or Certified Change Management Practitioner.",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "Data Analytics and Business Transformation Services\n0001 Lot\n$785,000.00",
+  "confidence": "low",
+  "rationale": "The excerpt shows hourly labor rates with an NTE total and an optional evaluation CLIN, indicating the District is buying contractor capacity rather than a fully sequenced, gate-by-gate set of predefined deliverables.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d1e6eef76e901e5e328ce09c1b227524a46de4c8": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "The District contemplates award of a single firm fixed price contract.",
+  "confidence": "low",
+  "rationale": "The excerpt describes a one-year firm-fixed-price contract for continued maintenance/support and software upgrades with fiscal-year billing, but it does not show a sequential design/build deliverables chain or sprint-based delivery.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "95f6212b67874cd0efe44b542de20528090eb363": {
+  "delivery_structure": "goods_or_licenses",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\u201cAnnual ESRI Enterprise License (CLIN0001)\u201d and \u201centerprise license maintenance and support \u2026 for one year.\u201d",
+  "confidence": "high",
+  "rationale": "The excerpt describes an annual enterprise software license maintenance/support service (and optional subscription) with a fixed one-year term and pricing, not a sequential or iterative delivery of work products.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6bc010f4a23998d3b3ee73e3a8d3a4241653998e": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "The District follows a specific policy for services related to software/hardware (SW/HW) maintenance/licenses and support services. These services must be provided and billed within the Districts\u2019 fiscal year (10/1 to 09/30).",
+  "confidence": "medium",
+  "rationale": "The price schedule is for annual software licenses, custom report development, training, and ongoing software maintenance/support billed by fiscal year across a base and option years, and the deliverables are recurring reports and support activities rather than a sequential design-build chain.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1e901847e0694a60a8a6ae490b3a4136b8515a75": {
+  "delivery_structure": "goods_or_licenses",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "provide supplies and services for the installation and configuration of Genetec Clearance\u2122 ... web-based software application and 12 months of maintenance and support",
+  "confidence": "medium",
+  "rationale": "The excerpt prices and schedules fixed quantities of a software/cloud storage service (60TB) across a base period and option years, with maintenance/support billed per fiscal year, and does not describe an iterative sprint-based delivery chain.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1981b9ac626482f2f675c21377d1e90b455bb478": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "\"RUBICONSmartCity, a software-as-a-service (SaaS) technology\" ... \"$448.00 per month per device\" ... \"$198.00 per month per user\" ... \"$135.00 per month per device\" ... \"Customer Implementation Services for the 65 devices $46,500.00 \u2013 one-time fee\"",
+  "confidence": "high",
+  "rationale": "The price schedule is primarily monthly per device/user for RUBICONVision and the SaaS platform across a base period and option years, indicating ongoing subscription/operations rather than sequential gated delivery of a fixed build scope.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "376402da76a5afb0655072b99c6af82fd54631d5": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "The Contractor shall perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable... expected to include the following routine reports and tasks... Frequency Daily... Monthly... System Enhancements... Upgrade system version... Implement Single Sign-on...",
+  "confidence": "medium",
+  "rationale": "The price schedule is monthly for management analysis and software maintenance/support across a one-year term with option years, and the deliverables are primarily routine recurring reports/tasks plus periodic enhancements, indicating ongoing operations rather than sequential gated delivery.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6882ae898d0e04a44761b963443c0fe5cb12521e": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "B.1 ... provide maintenance and support of the existing GPS-based Automated Vehicle Locator (AVL) System ...\n\nB.3.1 ... 6 Month ... Semi-Annual Large Account Support ... Base Package ... 1 minute timed updates ... Route Plan Monitoring ... Maintenance Module ... Premium Reporting Package ... API Services\n\nF.3 DELIVERABLES ... Electronic Monthly ... On-Site Maintenance ... Quarterly and/or TBD (as requested by OSSE-DOT)",
+  "confidence": "high",
+  "rationale": "The contract is for ongoing maintenance and support of an existing AVL system with recurring monthly/semi-annual/on-site service deliverables and a firm-fixed-price schedule, not a sequential build/test delivery chain.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d6b07d5b85ef0dd064fdb74d99219cea32bb4a9d": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "requires gtechna USA Corporation (the \u201cContractor\u201d) to provide maintenance and support, warranty, hosting, and consumables for DFHV\u2019s existing web- based ticket (e-Citation) management system",
+  "confidence": "high",
+  "rationale": "The price schedule is organized as annual CLINs for technical support, hosting, warranties, and consumables across a base period and option years, indicating ongoing recurring maintenance/support rather than sequential gated delivery of a fixed build.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "489142bdc6acd500d42ebf62b808bc03d9f0a65c": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "personnel_qualification",
+  "uses_agile_vocabulary": "yes",
+  "agile_quote": "\"Experience in working with Agile sprints and releases\"",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\"The Contractor shall perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable listed below\" ... \"Deliverable No. DEL1 ... DEL2 ... DEL3 ... DEL4 ... DEL5 ... DEL7 ... DEL8 ... DEL9 ... DEL10 ... DEL11 ... DEL12\"",
+  "confidence": "medium",
+  "rationale": "The price schedule lists fixed CLINs tied to a defined set of IV&V deliverables (DEL1\u2013DEL12) with specified due dates/periodicity, indicating a sequential deliverables-and-acceptance delivery flow rather than capacity or iterative reprioritization.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c7115d145bb1d0c93f50838538233fc8a413eb36": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\u201cThe Contractor must perform the activities required to successfully complete the District\u2019s requirements and submit each deliverable to the Contract Administrator (CA)\u2026 CLIN 001\u2026 Deliverable\u2026 Due Date\u201d",
+  "confidence": "medium",
+  "rationale": "The contract uses a fixed-price task order with a defined set of CLIN deliverables and specific due dates/quantities, and payment is tied to services performed and accepted, indicating a sequential, gate-based delivery of predetermined outputs rather than reprioritizable capacity.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ed58eaead55bc125691bb083c713bc2f0fad5b75": {
+  "delivery_structure": "structure_not_stated",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "As set forth within individual Task or Delivery Orders.",
+  "confidence": "low",
+  "rationale": "The excerpt shows a DC Supply Schedule contract with pricing/terms and that deliveries are defined within individual task/delivery orders, but it does not describe a delivery sequence, iterative capacity, or milestone/payment gating for the work itself.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "08c3fcc05151f41e0b246a25ea038e589e3ab7eb": {
+  "delivery_structure": "structure_not_stated",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "",
+  "confidence": "low",
+  "rationale": "The excerpt is largely garbled and does not clearly show a price schedule or deliverables/payment structure that would let me determine how work is delivered, nor any readable agile terminology.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "bd58f84c743fa95b4578b52754d73ab748f82ea6": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "CLIN Item Description Total Price\n0001 Hosted System Maintenance & Support $57,500\n...\nF.3 DELIVERABLES: ...\n0001 System Administration and Maintenance ... Upon Request\n0001 Network Activity Report ... Upon Request\n0001 Case Tracking System Data Report ... Ongoing ... Upon Request\n0001 End User Training ... Annually\n0001 UAT Validation & Acceptance ... Ongoing System Access Upon Request",
+  "confidence": "high",
+  "rationale": "The contract is priced as annual/option-year \u201cHosted System Maintenance & Support\u201d and the deliverables are ongoing/\u201cupon request\u201d operational activities (administration, reports, security plan, training, and UAT access), indicating recurring operations rather than sequential gated build deliverables.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c0f9c09c1780ec2e624eac2616c41cdc43db84a2": {
+  "delivery_structure": "goods_or_licenses",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "PRICE SCHEDULE \u2013 FIRM FIXED PRICE ... 001 Brandlive Platform - Annual Advanced License ... 002 Brandlive Platform - Annual Session Bundle - 500 Sessions ... F.3 DELIVERABLES ... None",
+  "confidence": "high",
+  "rationale": "The contract is a firm-fixed-price purchase of annual software licenses/session bundles (and related production services) with no sequential build/test delivery described, and the only deliverable reference is a required report for final payment.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
  }
 }

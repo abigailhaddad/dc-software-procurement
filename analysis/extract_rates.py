@@ -63,7 +63,7 @@ from dcprocure.documents import (  # noqa: E402
     MIN_TEXT_CHARS,
     _digest,
     _text_path,
-    pick_award_document,
+    award_document_index,
 )
 
 log = logging.getLogger(__name__)
@@ -592,10 +592,10 @@ def main(model: str = DEFAULT_MODEL) -> int:
 
     labels = pd.read_csv(LABELS_PATH)
     tech = labels[labels.is_technology == True]  # noqa: E712
-    details = {
-        d["contractNumber"]: d
-        for d in json.loads(DETAILS_PATH.read_text(encoding="utf-8"))
-    }
+    _details_raw = json.loads(DETAILS_PATH.read_text(encoding="utf-8"))
+    details = {d["contractNumber"]: d for d in _details_raw}
+    # The award may be filed under an option period the collapse above discards.
+    awards = award_document_index(_details_raw)
 
     # Candidate set: technology contracts whose award text is already cached.
     scanned, scanned_ocr, candidates = 0, 0, []
@@ -603,7 +603,7 @@ def main(model: str = DEFAULT_MODEL) -> int:
     gold_candidate: dict | None = None
     for label in tech.itertuples():
         detail = details.get(label.contract_number)
-        document = pick_award_document(detail) if detail else None
+        document = awards.get(label.contract_number)
         if document is None:
             continue
         loaded = load_award_text(document["id"])

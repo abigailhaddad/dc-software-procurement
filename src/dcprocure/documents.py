@@ -190,6 +190,34 @@ def looks_unreadable(text: str, threshold: float = MIN_READABLE_SHARE) -> bool:
     return readable_share(text) < threshold
 
 
+def award_document_index(details: list[dict[str, Any]]) -> dict[str, dict[str, str]]:
+    """Map each contract number to its award document, across every record.
+
+    ``contract_details.json`` holds one record per contract *option period* --
+    7,165 records for 4,011 contracts -- and the attachments listed on a record
+    are the ones filed under that option period. Collapsing the file with
+    ``{d["contractNumber"]: d for d in details}`` therefore keeps whichever
+    record happens to come last, and if that one lists only modifications and
+    D&Fs the contract looks as though it has no award document at all.
+
+    It is not a rare edge: 199 of 4,011 contracts have an executed award filed
+    under an option period that the collapse throws away, 23 of them candidates
+    for the delivery classifier. Scanning every record recovers them.
+
+    Records are read in file order and the first award found wins, which is the
+    base period where one is present.
+    """
+    index: dict[str, dict[str, str]] = {}
+    for record in details:
+        number = record.get("contractNumber")
+        if not number or number in index:
+            continue
+        document = pick_award_document(record)
+        if document is not None:
+            index[number] = document
+    return index
+
+
 def pick_award_document(detail: dict[str, Any]) -> dict[str, str] | None:
     """Choose the document most likely to carry the price schedule.
 

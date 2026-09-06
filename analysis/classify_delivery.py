@@ -50,7 +50,7 @@ from dcprocure.documents import (  # noqa: E402
     document_text,
     looks_unreadable,
     other_contracts_named,
-    pick_award_document,
+    award_document_index,
     readable_share,
 )
 
@@ -74,19 +74,15 @@ def gather_excerpts(labels: pd.DataFrame, workers: int = 8) -> pd.DataFrame:
     Text is cached gzipped by :func:`dcprocure.documents.document_text`, so this
     is cheap on a second run and the PDFs themselves are never kept.
     """
-    details = {
-        d["contractNumber"]: d
-        for d in json.loads(
-            (ROOT / "data" / "raw" / "contract_details.json").read_text(encoding="utf-8")
-        )
-    }
+    # Every record, not one per contract: the award may be filed under an
+    # option period that a {number: record} collapse would discard.
+    awards = award_document_index(
+        json.loads((ROOT / "data" / "raw" / "contract_details.json").read_text(encoding="utf-8"))
+    )
 
     targets = []
     for label in labels.itertuples():
-        detail = details.get(label.contract_number)
-        if detail is None:
-            continue
-        document = pick_award_document(detail)
+        document = awards.get(label.contract_number)
         if document is not None:
             targets.append((label.contract_number, document["id"]))
     print(f"{len(targets):,} contracts have an award document", flush=True)

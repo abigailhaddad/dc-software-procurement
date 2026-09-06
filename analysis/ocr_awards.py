@@ -52,7 +52,7 @@ from dcprocure.documents import (  # noqa: E402
     agile_context_windows,
     agile_terms_used,
     delivery_excerpt,
-    pick_award_document,
+    award_document_index,
 )
 
 log = logging.getLogger("ocr_awards")
@@ -239,12 +239,12 @@ def enumerate_candidates() -> tuple[pd.DataFrame, list[dict], int]:
     candidates = labels[labels["work_type"].isin(BUILD_WORK_TYPES)]
     print(f"{len(candidates):,} candidate contracts (build/run work types)")
 
-    details = {
-        d["contractNumber"]: d
-        for d in json.loads(
-            (ROOT / "data" / "raw" / "contract_details.json").read_text(encoding="utf-8")
-        )
-    }
+    _details_raw = json.loads(
+        (ROOT / "data" / "raw" / "contract_details.json").read_text(encoding="utf-8")
+    )
+    details = {d["contractNumber"]: d for d in _details_raw}
+    # The award may be filed under an option period the collapse above discards.
+    awards = award_document_index(_details_raw)
 
     unreadable: list[dict] = []
     no_document = 0
@@ -252,7 +252,7 @@ def enumerate_candidates() -> tuple[pd.DataFrame, list[dict], int]:
     uncached = 0
     for label in candidates.itertuples():
         detail = details.get(label.contract_number)
-        document = pick_award_document(detail) if detail is not None else None
+        document = awards.get(label.contract_number)
         if document is None:
             no_document += 1
             continue

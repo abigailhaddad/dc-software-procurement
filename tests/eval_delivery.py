@@ -32,7 +32,7 @@ from dcprocure.documents import (  # noqa: E402
     agile_context_windows,
     delivery_excerpt,
     document_text,
-    pick_award_document,
+    award_document_index,
 )
 
 GOLD = Path(__file__).with_name("delivery_gold_labels.csv")
@@ -41,16 +41,15 @@ CONFIG = ROOT / "delivery_config.yaml"
 
 def build_records(gold: pd.DataFrame) -> list[dict[str, str]]:
     """Rebuild each case's excerpt from the cached contract text."""
-    details = {
-        d["contractNumber"]: d
-        for d in json.loads(
-            (ROOT / "data" / "raw" / "contract_details.json").read_text(encoding="utf-8")
-        )
-    }
+    raw = json.loads((ROOT / "data" / "raw" / "contract_details.json").read_text(encoding="utf-8"))
+    awards = award_document_index(raw)
+    # Title and vendor come from any record for the contract; they do not vary
+    # by option period, unlike the attachment list.
+    details = {d["contractNumber"]: d for d in raw}
     records = []
     for row in gold.itertuples():
         detail = details[row.contract_number]
-        text = document_text(None, pick_award_document(detail)["id"])
+        text = document_text(None, awards[row.contract_number]["id"])
         excerpt = delivery_excerpt(text)
         context = agile_context_windows(text)
         if context:
