@@ -44,28 +44,38 @@ at all -- corpus counts, the payments arithmetic, the ceiling-versus-drawdown
 windows, the `paymentAmount` versus `voucherAmount` trap. Nothing found this
 session touches them.
 
-## What is in flight
+## What landed since
 
-Two agents were running when this was written. Check whether their work landed
-before starting either:
+**The delivery section is rewritten.** "74 of 82" is withdrawn from README and
+site/index.html, and the verify_claims literals behind it are gone. What stands
+in its place: 25 of 80 hand-read award documents describe a delivery process,
+and build contracts whose award fixes scope average 6.5 modifications against
+4.7 for the rest, which is the opposite of what the old claim implied.
+`analysis/modifications.py` (`make modifications`) makes that reproducible.
 
-1. **The delivery-section rewrite.** `analysis/modifications.py` to make the
-   modification finding reproducible, then the prose in `README.md` and
-   `site/index.html`, then the matching literals in `analysis/verify_claims.py`.
-2. **The competition analysis.** `analysis/competition.py`, classifying D&F
-   documents by their own header text rather than by filename.
+**The competition analysis exists.** `analysis/competition.py` writes
+`data/competition/`. 51 technology contracts, $45.5M, carry a D&F limiting
+competition and 31 are labelled `Open`; six cite PPRA 2-354.13(8) vendor
+lock-in. Not yet in the briefing -- that is the next publishing decision.
+
+Two numbers in an earlier draft of this file were wrong and are corrected above:
+the competition finding is 51 contracts and $45.5M read from documents, not the
+~104 and $216M a filename regex suggested, and the modification dedup is on the
+filename's free text, not on a parsed modification number.
 
 ## What is worth doing next
 
-**Publish the competition finding.** Roughly 104 technology contracts, $216M of
-ceiling, carry a signed justification for limiting or avoiding competition, and
-64 of them are labelled `Open` in the portal's own `marketType` field. The
-briefing says nothing about competition; there is no field in the dataset that
-records it. This is the same shape as the commodity-code finding the project
-already tells well, and unlike the delivery section it rests on documents that
-say what they mean. Roughly 47% of the relevant D&Fs are image-only scans,
-concentrated in the sole-source and price-reasonableness buckets, so OCR cost is
-the blocker.
+**Publish the competition finding.** `analysis/competition.py` has done the
+reading; nothing is in the briefing yet. The sharpest line is that the portal's
+`marketType` field can say Sole Source -- 21 contracts corpus-wide do -- and no
+technology contract ever does, while 51 of them carry a signed justification for
+limiting competition and 31 of those are labelled `Open`.
+
+Before publishing, decide what to do about coverage. 652 contracts were never
+sampled and 63 returned only scans, so the 51 is a floor, not a rate. And the
+unreadability is concentrated where the finding is: 56% of sole-source-named
+D&Fs have no text layer against 7% of cooperative ones. OCR would cost model
+calls per page and `analysis/ocr_awards.py` has the pattern.
 
 **Rebuild the excerpt for contracts with no lettered sections.** `delivery_excerpt`
 shows the model a median 10.4% of the award text, and for 140 of 292 contracts
