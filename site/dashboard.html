@@ -388,6 +388,71 @@ function renderDriftMissing() {
     '<code>uv run python analysis/build_dashboard_data.py</code>.</p></div>';
 }
 
+// A contract count that moved says nothing about why. New contract numbers are
+// the District buying things; a contract that comes back with a different work
+// type is this pipeline changing its mind about something it had already seen,
+// and that moves a published figure with nothing having happened at the portal.
+// The relabels go first because they are the ones a person has to look at.
+function renderCorpusChange(c) {
+  if (!c) return '';
+  let html = '<h3 class="drift-sub">New contracts against relabelled ones</h3>';
+  if (!c.available) {
+    return html + '<div class="missing"><p>The published contract labels could not be ' +
+      'read out of git (' + esc(c.unavailable_reason) + '), so new contracts and ' +
+      'relabelled ones are not told apart in this run.</p></div>';
+  }
+  html += '<p class="note">Against <code>data/contract_classifications.csv</code> at git ' +
+    esc(c.baseline_ref) + ', the labels as published: ' + num(c.baseline_rows) +
+    ' contracts then, ' + num(c.current_rows) + ' now.</p>';
+
+  if (c.relabeled.length > 0) {
+    const n = c.relabeled.length;
+    html += '<p class="note"><strong>' + num(n) + ' existing contract' +
+      (n === 1 ? '' : 's') + ' changed classification.</strong> A relabel moves a ' +
+      'published figure without anything having happened at the portal, so it is the ' +
+      'finding here to check first.</p><ul class="prose-list">';
+    for (const r of c.relabeled) {
+      const notes = [esc(r.old_work_type) + ' &rarr; ' + esc(r.new_work_type)];
+      if (r.old_is_technology !== r.new_is_technology) {
+        notes.push((r.old_is_technology ? 'technology' : 'not technology') + ' &rarr; ' +
+          (r.new_is_technology ? 'technology' : 'not technology'));
+      }
+      if (r.old_ceiling !== r.new_ceiling) {
+        notes.push('ceiling ' + esc(r.old_ceiling) + ' &rarr; ' + esc(r.new_ceiling));
+      }
+      if (r.old_option_periods !== r.new_option_periods) {
+        notes.push('option periods ' + esc(r.old_option_periods) + ' &rarr; ' +
+          esc(r.new_option_periods));
+      }
+      html += '<li><strong>' + esc(r.contract_number) + '</strong> ' + esc(r.title) +
+        '<br><span class="sect">' + notes.join(' &middot; ') + '</span></li>';
+    }
+    html += '</ul>';
+  } else {
+    html += '<p class="note">No existing contract changed classification.</p>';
+  }
+
+  html += '<p class="note">' + num(c.new_contracts) + ' contract number' +
+    (c.new_contracts === 1 ? ' is' : 's are') + ' new since the baseline, ' +
+    num(c.new_technology_contracts) + ' of them classified as technology. ';
+  if (c.disappeared_contracts.length > 0) {
+    html += num(c.disappeared_contracts.length) + ' left the portal: ' +
+      c.disappeared_contracts.map(r => esc(r.contract_number)).join(', ') + '. ';
+  } else {
+    html += 'No contract disappeared. ';
+  }
+  html += 'Technology contracts: ' + num(c.technology_baseline) + ' at the baseline, ' +
+    num(c.technology_current) + ' now (' + signed(c.technology_from_new) + ' new, ' +
+    signed(c.technology_from_relabel) + ' relabelled, ' +
+    signed(c.technology_from_dropped) + ' gone).</p>';
+  return html;
+}
+
+// The three causes are printed as a sum, so each keeps its sign even at zero.
+function signed(n) {
+  return (n >= 0 ? '+' : '') + num(n);
+}
+
 function renderDrift() {
   const d = DASH.drift;
   if (!d) { renderDriftMissing(); return; }
@@ -417,7 +482,13 @@ function renderDrift() {
       ? '<div class="hot"><b>' + num(d.stale_prose.length) +
         '</b>stale README sentences</div>'
       : '') +
+    (d.corpus_change && d.corpus_change.available && d.corpus_change.relabeled.length > 0
+      ? '<div class="hot"><b>' + num(d.corpus_change.relabeled.length) + '</b>contract' +
+        (d.corpus_change.relabeled.length === 1 ? '' : 's') + ' relabelled</div>'
+      : '') +
     '</div>';
+
+  html += renderCorpusChange(d.corpus_change);
 
   if (d.moved_figures === 0) {
     html += '<p class="note" style="margin-top:16px">' +

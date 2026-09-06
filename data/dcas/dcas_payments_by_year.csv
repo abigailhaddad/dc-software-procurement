@@ -21,7 +21,7 @@ fiscal_year,vendor_norm,contract_number,attribution,amount
 2021,GROW DESIGN AND DEVELOPMENT,CW69823,contract_number_on_voucher,197500.0
 2021,DIONA US,(none on voucher),vendor_inference: Diona null-contract at DHCF; Diona builds the DCAS/District Direct mobile app,118650.0
 2021,DIONA US,CW83476,contract_number_on_voucher,101380.0
-2022,KPMG,CW62227,contract_number_on_voucher,22717883.240000002
+2022,KPMG,CW62227,contract_number_on_voucher,22717883.24
 2022,KPMG,(none on voucher),vendor_inference: KPMG null-contract at DHCF; KPMG's only DHCF contract is CW62227 DCAS R3,12136651.0
 2022,ACCENTURE,CW67170,contract_number_on_voucher,7650700.89
 2022,INTERNATIONAL BUSINESS MACHINE,CW85955,contract_number_on_voucher,4961846.04
@@ -72,13 +72,14 @@ fiscal_year,vendor_norm,contract_number,attribution,amount
 2025,DIONA US,CW99465,contract_number_on_voucher,101380.0
 2025,CARAHSOFT TECHNOLOGY,CW114997,contract_number_on_voucher,50000.0
 2026,D2SOL,(none on voucher),vendor_inference: D2Sol null-contract at DHCF; monthly invoices match CW121488 DCAS O&M rate,26644438.77
-2026,D2SOL,CW121488,contract_number_on_voucher,8260939.53
+2026,D2SOL,CW121488,contract_number_on_voucher,11751477.36
 2026,MERATIVE US L P,CW134380,contract_number_on_voucher,4843105.28
+2026,MAXIMUS US SERVICES,CW95848,contract_number_on_voucher,2438188.35
 2026,DIONA US,(none on voucher),vendor_inference: Diona null-contract at DHCF; Diona builds the DCAS/District Direct mobile app,1846703.1
-2026,CDE SYSTEMS,(none on voucher),vendor_inference: CDE Systems null-contract at DHCF; only DHCF contract is CW87331 DCAS App Dev Team,1441286.74
+2026,CDE SYSTEMS,(none on voucher),vendor_inference: CDE Systems null-contract at DHCF; only DHCF contract is CW87331 DCAS App Dev Team,1592357.32
 2026,IMMEDIATE MAILING SERVICES,CW116019,contract_number_on_voucher,708318.61
 2026,DYNAMIC SYSTEMS,CW124831,contract_number_on_voucher,638451.48
-2026,DIONA US,CW101930,contract_number_on_voucher,303738.0
+2026,DIONA US,CW101930,contract_number_on_voucher,347190.0
 2026,CDE SYSTEMS,CW87331,contract_number_on_voucher,237410.58000000002
 2026,DIONA US,CW100807,contract_number_on_voucher,197546.98
 2026,CARAHSOFT TECHNOLOGY,CW113270,contract_number_on_voucher,123050.0
