@@ -89,6 +89,30 @@ derived tables, report drift, rebuild the dashboard -- and
 Nothing in that chain rewrites the briefing: republishing is a human decision
 made after reading the drift report. `docs/SCHEDULING.md` has the details.
 
+## The portal has a word for sole source, and never uses it for technology
+
+`marketType` can say Sole Source: 24 contracts across the corpus do, across
+five spellings of it. No technology contract ever does. Across all 1,383 the field takes only Set Aside,
+Open, GSA, DCSS and Agreement, so nothing in the published data records that an
+award was not competed.
+
+The justifications exist as documents. A Determination and Findings is what a
+contracting officer signs to limit competition, exempt a purchase from it, or
+buy from a single available source, and 21,722 of them are attached to
+contracts. Of the technology contracts whose D&Fs have been read, 51 carrying
+$45.5M of ceiling have one. Thirty-one of those 51 are labelled Open.
+
+Six cite PPRA 2-354.13(8), maintenance of existing software where the vendor
+owns the code: "The EGMS application is built on the proprietary software
+created and owned by MTW Solutions, LLC; therefore, no other Contractor has
+access to the rights and source codes."
+
+51 is a floor rather than a rate. 1,009 technology contracts carry a D&F; 294
+have had one read, 63 returned only scans, and 652 have not been sampled. The
+unreadable documents are not spread evenly: 56% of the ones named for sole
+source have no text layer, against 7% of the cooperative-purchase ones, so what
+is missing sits where the finding is.
+
 ## Why the commodity codes are not used
 
 They are assigned by the buyer and applied loosely. Class 918, "consulting

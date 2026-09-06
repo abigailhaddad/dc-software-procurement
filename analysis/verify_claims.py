@@ -40,7 +40,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from dcprocure import parse  # noqa: E402
+from dcprocure import parse, vocabulary  # noqa: E402
 
 
 @dataclass(frozen=True)
@@ -913,6 +913,72 @@ def run_checks() -> list[Result]:
     check("FAST Enterprises $M", round(fast.amount.sum() / 1e6), 51, 2)
     check("FAST Enterprises purchase orders", len(fast), 11, 1)
     check("FAST median PO $M", round(fast.amount.median() / 1e6, 1), 3.5, 0.2)
+
+    section("competition")
+    # The portal has a marketType field and, for technology, it never records a
+    # sole source award. The justification is in the D&F documents instead.
+    # analysis/competition.py reads them; these figures come off its output, so
+    # a re-run that reads more documents will move them upward. They are a
+    # floor, not a rate: 652 of the 1,009 technology contracts carrying a D&F
+    # have not been sampled at all.
+    comp = pd.read_csv(ROOT / "data" / "competition" / "contract_competition.csv")
+    market = {
+        (d.get("marketType") or "(none)")
+        for d in details
+        if d["contractNumber"] in set(labels.loc[labels.is_technology.astype(bool), "contract_number"])
+    }
+    check("technology contracts recorded as sole source",
+          sum(1 for m in market if vocabulary.is_sole_source_market_type(m)), 0)
+    # Distinct contracts, not rows: a contract appears once per option period.
+    # Five spellings are in use and matching one of them undercounts. They are
+    # listed, with a contract named against each, in
+    # procurement_vocabulary.yaml -- the same list analysis/competition.py
+    # reads, so the two cannot drift apart into different answers.
+    sole_corpus = {
+        d["contractNumber"]
+        for d in details
+        if vocabulary.is_sole_source_market_type(d.get("marketType"))
+    }
+    check("contracts the portal does mark sole source", len(sole_corpus), 24)
+
+    def _flag(name: str) -> pd.Series:
+        return comp[name].fillna(False).astype(bool)
+
+    limiting = comp[_flag("limits_competition") | _flag("exempt_from_competition")
+                    | _flag("single_source_language")]
+    check("technology contracts with competition-limiting paperwork", len(limiting), 51)
+    check("their ceilings $M", round(limiting.ceiling.sum() / 1e6, 1), 45.5, 0.5)
+    check("of those, the portal calls open",
+          int((limiting.market_type == "Open").sum()), 31)
+    check("contracts citing the software lock-in provision",
+          int(_flag("software_lock_in_cite").sum()), 6)
+    check("D&F documents read", int((comp.coverage == "read").sum()), 294)
+    check("contracts returning only scans", int((comp.coverage == "scans_only").sum()), 63)
+    check("contracts not yet sampled", int((comp.coverage == "not_sampled").sum()), 652)
+
+    section("the site's own figures")
+    # site/index.html carries the same figures in prose and, until now, nothing
+    # checked it. The README had this cover and the site did not, which is the
+    # wrong way round: the site is the page a reader opens. Same construction as
+    # the README block below -- write the figure the way the site writes it and
+    # assert the string is still there.
+    #
+    # Only figures the site writes as numerals can be checked this way. It
+    # spells out a number that opens a sentence ("Twenty-five rested on a
+    # passage that describes a process"), and a check built from the data
+    # cannot produce that spelling, so those sentences are not covered.
+    site = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+    comp_open = int((limiting.market_type == "Open").sum())
+    for phrase in [
+        f"{len(tech):,} contracts classified as technology, "
+        f"${tech.ceiling.sum() / 1e6:,.0f}M in ceilings",
+        f"{len(lr):,} not-to-exceed rates in all",
+        f"{len(limiting)}, carrying ${limiting.ceiling.sum() / 1e6:,.1f}M of ceiling",
+        f"{comp_open} of those are labelled Open",
+        f"{len(sole_corpus)} contracts across the whole corpus do",
+        f"agrees with those {len(hand)} hand labels",
+    ]:
+        check(f"site: {phrase!r}", phrase in site, True)
 
     section("the README's own figures")
     # The README restates published figures in prose, and nothing used to check

@@ -103,13 +103,16 @@ def _numeric(value: object) -> float | None:
     return float(value)
 
 
-README_PREFIX = "README: '"
+# Prose checks are labelled "<file>: '<sentence>'". Both published files carry
+# the same figures in prose, so both are checked; the site is the one a reader
+# actually opens.
+PROSE_PREFIXES = ("README: '", "site: '")
 
 
 def prose_phrase(record: dict) -> str | None:
-    """The sentence a README prose check looked for, or None for an ordinary figure.
+    """The sentence a prose check looked for, or None for an ordinary figure.
 
-    The checks in verify_claims.py's "the README's own figures" section build a
+    The checks in verify_claims.py's prose sections build a
     sentence out of the *current* data and assert that README.md still contains
     it, so both sides of the check are booleans and the figure a reader wants is
     in the claim label rather than in the values. Pulling it out here is what
@@ -119,9 +122,12 @@ def prose_phrase(record: dict) -> str | None:
     if not (isinstance(record["asserted"], bool) and isinstance(record["computed"], bool)):
         return None
     claim = record["claim"]
-    if not (claim.startswith(README_PREFIX) and claim.endswith("'")):
+    if not claim.endswith("'"):
         return None
-    return claim[len(README_PREFIX) : -1]
+    for prefix in PROSE_PREFIXES:
+        if claim.startswith(prefix):
+            return claim[len(prefix) : -1]
+    return None
 
 
 def movement(record: dict) -> dict:
@@ -235,27 +241,34 @@ def render_text(report: dict) -> str:
 
 
 def render_stale_prose(stale: list[dict]) -> list[str]:
-    """The README sentences that no longer match, and the wording each would need.
+    """The published sentences that no longer match, and the wording each needs.
 
     These are not figures that moved by an amount, so they get no before-and-after
     pair and no percentage. What a reader needs is the sentence the current data
     supports, which is what the check built and searched for.
+
+    Both README.md and site/index.html carry the same figures in prose, so each
+    line says which file it belongs to. They drift together and have to be
+    edited together; the site is the one a reader opens.
     """
     noun = "sentence" if len(stale) == 1 else "sentences"
-    return (
-        [
-            "-- README.md sentences that no longer match the data --",
-            "  The README restates published figures in prose. It does not contain the",
-            (
-                f"  {len(stale)} {noun} below, each written the way the README "
-                "writes it from the"
-            ),
-            "  current data. Editing README.md to say them is the fix.",
-            "",
-        ]
-        + [f"      {claim['phrase']}" for claim in stale]
-        + [""]
-    )
+    by_file: dict[str, list[str]] = {}
+    for claim in stale:
+        where = claim["claim"].split(":", 1)[0].strip()
+        by_file.setdefault(where, []).append(claim["phrase"])
+    lines = [
+        "-- published sentences that no longer match the data --",
+        "  The briefing restates its figures in prose. The published files do not",
+        f"  contain the {len(stale)} {noun} below, each written the way that file",
+        "  writes it from the current data. Editing them there is the fix.",
+        "",
+    ]
+    for where in sorted(by_file):
+        target = "README.md" if where == "README" else "site/index.html"
+        lines.append(f"  {target}")
+        lines += [f"      {phrase}" for phrase in by_file[where]]
+        lines.append("")
+    return lines
 
 
 CONTRACT_LABELS = ROOT / "data" / "contract_classifications.csv"

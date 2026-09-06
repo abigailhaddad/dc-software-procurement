@@ -331,7 +331,7 @@ footer p{font-size:14px; color:var(--muted)}
 </table>
 </div>
 </figure>
-<span class="src">1,372 contracts classified as technology, $4,641M in ceilings. Notebook &sect;"What the District is buying".</span>
+<span class="src">1,372 contracts classified as technology, $4,641M in ceilings.</span>
 
 <p>Building software is the smallest line. Staff augmentation carries thirty times its ceilings; ordering vehicles carry nearly fifty times. And $38M is a floor in a specific sense: it counts contracts structured as building to specification. Custom work bought as hourly labor, or through task orders this data cannot see, is not in it.</p>
 
@@ -355,7 +355,7 @@ footer p{font-size:14px; color:var(--muted)}
 </table>
 </div>
 </figure>
-<span class="src">Notebook &sect;"Half the technology ceiling authority sits on one schedule".</span>
+<span class="src"></span>
 
 <p>The step in the middle is where the actual buying decision is made, and it is the one step the District does not publish. Everything after this point describes what can be seen around that gap.</p>
 
@@ -379,7 +379,7 @@ footer p{font-size:14px; color:var(--muted)}
 </table>
 </div>
 </figure>
-<span class="src">Option periods falling entirely inside FY2021&ndash;FY2025, against payments made in those same years. Recomputed by <code>verify_claims.py</code> &sect;"authorised against paid"; the whole-history version is Notebook &sect;"Ceilings are not spending".</span>
+<span class="src">Option periods falling entirely inside FY2021&ndash;FY2025, against payments made in those same years. Recomputed by <code>verify_claims.py</code> &sect;"authorised against paid"; the whole-history version is</span>
 
 <div class="caveat">
 <p><strong>Read those percentages as floors.</strong> Payments join to contracts by contract number, and a task order issued under an ordering vehicle is paid under the task order's own number, so it never joins back to the parent. Only 44% of technology contracts have any linked payment at all. And the portal keeps only surviving option periods &mdash; a finished contract's ceiling shrinks while its payments remain, which is how one system's $110M build shows a $7.3M record below.</p>
@@ -415,7 +415,7 @@ footer p{font-size:14px; color:var(--muted)}
 </table>
 </div>
 </figure>
-<span class="src">Vendor spellings are folded together by the rules in <code>vendor_aliases.yaml</code>, which also records the pairs deliberately left separate. Notebook &sect;"Ten vendors take half the traceable technology payments".</span>
+<span class="src">Vendor spellings are folded together by the rules in <code>vendor_aliases.yaml</code>, which also records the pairs deliberately left separate.</span>
 
 <p>Only one company in the top four sells the District software it wrote. Two are resellers and one is a consultancy.</p>
 
@@ -442,6 +442,13 @@ footer p{font-size:14px; color:var(--muted)}
 <span class="src">180 rates in all, $24.01 to $173.71, median $69.97, re-read from the cached award PDF by <code>verify_claims.py</code>.</span>
 
 <p>Compare FAST Enterprises, which builds tax and benefits systems: $51M across 11 purchase orders, median $3.5M, priced against the system delivered rather than the hour.</p>
+
+<h2>The portal has a word for sole source, and never uses it for technology</h2>
+<p>The portal records how a contract reached the market in a field called <code>marketType</code>. It can say Sole Source &mdash; 24 contracts across the whole corpus do, across five spellings of it. Not one of the 1,383 technology contracts does. For technology the field only ever says Set Aside, Open, GSA, DCSS or Agreement, so nothing in the published data marks an award as uncompeted.</p>
+<p>The justification exists anyway, as a document. A Determination and Findings is what a contracting officer signs to limit competition, exempt a purchase from it, or buy from a single available source; 21,722 of them are attached to contracts and none had been read. Of the technology contracts whose D&amp;Fs have been read, <strong>51, carrying $45.5M of ceiling, have one &mdash; and 31 of those are labelled Open</strong>.</p>
+<p>Six cite the provision that covers maintenance of existing software where the vendor owns the code, and they read plainly: &ldquo;The EGMS application is built on the proprietary software created and owned by MTW Solutions, LLC; therefore, no other Contractor has access to the rights and source codes.&rdquo; &ldquo;Netsmart is the only dealer/seller of the licenses associated with the Avatar System.&rdquo; &ldquo;Sandata is the only Contractor that can provide operations and maintenance portion of the contract due to its proprietary ownership of the District&rsquo;s EVV System.&rdquo;</p>
+<p>Fifty-one is a floor, not a rate. 1,009 technology contracts carry a D&amp;F: 294 have had one read, 63 returned nothing but scans, and 652 have not been opened. The unreadable ones are not scattered evenly &mdash; 56% of the documents named for sole source have no text layer, against 7% of the cooperative purchases &mdash; so the gap sits exactly where the finding is.</p>
+<span class="src">Read from the documents by <code>analysis/competition.py</code>, classifying each on its own header line rather than its filename; per-contract results in <code>data/competition/contract_competition.csv</code>.</span>
 
 <h2>What an hour of a person costs, where the District publishes it</h2>
 <p>Computer Aid's card is not the only one. 51 of the 434 technology contracts with a readable award document publish an hourly rate card &mdash; 2,471 not-to-exceed rates in all, from $24.01 for entry-level customer support to $1,015 for one vendor's IT subject matter expert, 325 of them read out of scanned awards the OCR recovery opened up. For 1,629 of those rates the match between job title and price was re-verified against the document text mechanically. The rest sit in documents whose PDF layout scrambles the columns, so their cards appear below as price ranges only, never as title-to-price pairs.</p>
@@ -524,7 +531,7 @@ footer p{font-size:14px; color:var(--muted)}
 <p><strong>How many people is that? The data never says.</strong> It records dollars and rates, not heads. The arithmetic: Computer Aid runs about $93M a year in purchase orders; at its card's median $69.97 an hour that is roughly 1.3 million hours, or about 640 people working full time. Count only the payments that link back to its contracts and the floor is about 140. Nothing published narrows it further.</p>
 </div>
 
-<h2>Twenty-five of eighty award documents say how the work will be run</h2>
+<h2>Most contracts do not say how the work will be run</h2>
 <p>Award documents were read for how delivery is organised: what the price schedule commits to, what the deliverables schedule requires, whether anything in the document describes a sequence of phases. Eighty of them were then read again by hand, blind to the classifier, recording the passage each judgement rested on. Twenty-five rested on a passage that describes a process. Twenty-five were read off the price schedule alone, twenty-five off what the work plainly is, four off a deliverables table, and one off nothing at all. Two readers given the same thirty documents agreed with each other 83% of the time; the classifier agrees with those 80 hand labels 57% of the time. Most of these documents do not say how the work will be run, so no six-way breakdown is published: a table that assigns every contract a category is reporting the reader rather than the contract. <button class="linklike" data-detail="ds:sequential_gated_deliverables">The classifier&rsquo;s output is still here, with the language it read</button>, for anyone who wants to judge it.</p>
 <span class="src">Blind hand labels, with the passage each rests on: <code>tests/hand_labels_delivery.csv</code>; the second reader&rsquo;s in <code>tests/hand_labels_delivery_rater2.csv</code>. How the agreement rates were measured, and what else the field gets wrong: <code>docs/CLASSIFIER_ACCURACY.md</code>. Recomputed by <code>verify_claims.py</code> &sect;"delivery structure".</span>
 
@@ -611,7 +618,7 @@ footer p{font-size:14px; color:var(--muted)}
 </table>
 </div>
 </figure>
-<span class="src">Notebook &sect;"Named systems".</span>
+<span class="src"></span>
 
 <p>DCAS is the clearest case of how the District sustains a large system: at least 28 separate contracts across the years in this data, for operations and maintenance, application development teams, licences, hosting, printing and mailing. No single contract builds it. It is kept running by a rolling series of awards, most of them for people and services rather than for software.</p>
 
