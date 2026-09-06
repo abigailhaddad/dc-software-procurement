@@ -35,6 +35,13 @@ Labels are in `tests/hand_labels_delivery.csv` (80 contracts, with the passage
 each rests on), `tests/hand_labels_delivery_rater2.csv` (30 second-rater labels)
 and `tests/hand_labels_work_type.csv` (40).
 
+The 55% above is the random sample alone, which is the unbiased estimate. Since
+the OCR pass, all 80 hand-labelled contracts carry a model label, and agreement
+across all 80 is 57% -- higher because the stratified half deliberately
+oversampled contested cases and scored better. `verify_claims.py` checks the
+57%, because that is the figure a reader can recompute from the files in the
+repository; the README and the site quote it with its denominator attached.
+
 ## What this means for published figures
 
 Of the 198 claims `verify_claims.py` checks:
