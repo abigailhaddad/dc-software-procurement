@@ -351,7 +351,12 @@ def pull_all(out_dir: Path = RAW_DIR, all_classes: bool = False) -> list[Snapsho
         ids = [row["id"] for row in contract_rows]
         snapshots.append(pull_contract_details(client, ids, out_dir))
 
-        years = [f"FY{y}" for y in range(2016, 2027)]
+        # The archive begins at FY2013: it holds 1,321 rows for FY2013 and
+        # about 1,300 a year after, against 46 for FY2012 and single digits
+        # before that. Those earlier years are the portal starting to keep
+        # records, not the District pausing, so FY2013 is where the usable
+        # history starts and there is no reason to stop at FY2016.
+        years = [f"FY{y}" for y in range(2013, 2027)]
         snapshots.append(pull_solicitations(client, years, out_dir))
 
         snapshots.append(pull_payments(client, out_dir))

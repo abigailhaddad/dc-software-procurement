@@ -1,6 +1,6 @@
 contract,title,agency,primary_group,ceiling,visibility,pdf_status,pdf_sol,title_match_score,title_match_sol,title_match_sol_title
 CW100042,DBH - Avatar Electronic Health Record  Upgrade,Behavioral Health (DBH),software_services,1389797.22,no_ref_award_text,no_ref_in_text,,0.577,Doc429041,FY'19 - DBH - Request for Information on Electronic Health Record System
-CW100159,DBH - Hardware and Accessories,Behavioral Health (DBH); Licensing & Consumer Protection (DLCP),software_services,4750000.0,no_ref_award_text,no_ref_in_text,,0.533,Doc449415,"DOC IT Hardware,Software & Accessories CBE Vendors only"
+CW100159,DBH - Hardware and Accessories,Behavioral Health (DBH); Licensing & Consumer Protection (DLCP),software_services,4750000.0,no_ref_award_text,no_ref_in_text,,0.54,Doc158665,FY14 -OAPT786 DOC IT HARDWARE ACCESSORIES
 CW100196,Production Staffing - OCTFME,"Cable Television, Film, Music and Entertainment (OFTE)",other,975000.0,visible_title_match,no_ref_in_text,,1.0,Doc608195,FY22 - Production Staffing OCTFME
 CW100261,DOES - Salesforce Cloud Licenses,Employment Services (DOES),it_goods,1560712.02,visible_title_match,no_award_text,,1.0,Doc614337,DOES - Salesforce Cloud Licenses
 CW100335,"DCSS Medical Equipment Supplies - Ink Systems, LLC - 475-00",Contracting and Procurement (OCP),other,500000.0,no_ref_award_text,no_ref_in_text,,0.463,Doc519508,COVID 19 Related PPE and Medical Equipment and Supplies Emergency
@@ -17,18 +17,18 @@ CW100807,DCAS - Mobile Application Support,Health Care Finance (DHCF),software_s
 CW100843,FY22-HSEMA-Behavioral Threat and Suicide Case Management (BTSCM) system,Homeland Security and Emergency Management Agency (HSEMA),it_adjacent,144750.0,no_ref_award_text,no_ref_in_text,,0.732,Doc616277,FY22- HSEMA Behavioral Threat & Suicide Assessment Case Management
 CW100945,"DCSS-TSS20225-Temporary Support Services-Changing Technologies, Inc",,other,30000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW100947,FY22 Hyperlocal Air Quality Monitoring,Energy and Environment (DOEE),other,536593.0,no_award_text_no_title_match,no_award_text,,0.743,Doc593911,Hyper-Local Air Quality Monitoring
-CW100972,"MPD Mark43 SaaS RMS licenses, maintenance and support services",Metropolitan Police Department (MPD),software_services,1990000.0,no_ref_award_text,no_ref_in_text,,0.502,Doc306342,FY17-OCTO- IBM Curam Licenses Maintenance and Support
+CW100972,"MPD Mark43 SaaS RMS licenses, maintenance and support services",Metropolitan Police Department (MPD),software_services,1990000.0,no_ref_award_text,no_ref_in_text,,0.516,Doc216427,IFB-MPD CCTV MAINTENANCE AND SUPPORT
 CW100985,"DCSS-TSS202122-Temporary Support Services-vTech Solution, Inc.",,other,40000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW100989,DCKT FY22 - X-Treme VAC by ODB Model DCL800TM25,Public Works (DPW),other,118703.75,no_award_text_no_title_match,no_award_text,,0,,
 CW101069,Contract Workspace (Procurement)-E7STRATEGIES INC,Contracting and Procurement (OCP),it_adjacent,1900000.0,schedule_vehicle_only,schedule_ref_only,,0,,
-CW101085,FY22-CF0-DOES-IT Equipment BPA- ABC Technical Solutions Inc.,Employment Services (DOES),it_goods,950000.0,no_award_text_no_title_match,no_award_text,,0.399,Doc262728,cf0-fy16-IT Equipment
+CW101085,FY22-CF0-DOES-IT Equipment BPA- ABC Technical Solutions Inc.,Employment Services (DOES),it_goods,950000.0,no_award_text_no_title_match,no_award_text,,0.428,Doc140276,FY14-CF0-DOES-Technical Writing
 CW101087,"FY22-CF0-DOES-IT Equipment BPA-Corporate Systems Resources, Inc.",Employment Services (DOES),it_goods,950000.0,no_award_text_no_title_match,no_award_text,,0.386,Doc262728,cf0-fy16-IT Equipment
 CW101089,"FY22-CF0-DOES-IT Equipment BPA-MVS, Inc.",Employment Services (DOES),it_goods,950000.0,no_award_text_no_title_match,no_award_text,,0.541,Doc262728,cf0-fy16-IT Equipment
 CW101102,FY22-OCTO-Computers Dell-Apple,Chief Technology Officer (OCTO),it_goods,164646.12,visible_title_match,no_award_text,,1.0,Doc617355,FY22-OCTO-Computers Dell-Apple
 CW101174,MPD - Digital Signage Solution,Metropolitan Police Department (MPD),other,147255.0,visible_title_match,no_award_text,,1.0,Doc616893,MPD - Digital Signage Solution
 CW101182,CCTV for DOC FY2022,Corrections (DC),other,409873.0,visible_title_match,no_award_text,,1.0,Doc518113,CCTV DOC 2020
 CW101206,FY22-CF0-DOES-DSI 1717 H Street IT Equipment,Employment Services (DOES),it_goods,112093.57,no_award_text_no_title_match,no_award_text,,0.583,Doc262728,cf0-fy16-IT Equipment
-CW101302,DCRA - Contract Specialists Resources,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),other,124277.12,no_award_text_no_title_match,no_award_text,,0,,
+CW101302,DCRA - Contract Specialists Resources,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),other,124277.12,no_award_text_no_title_match,no_award_text,,0.48,Doc83406,FY'13-RFQ-DCRA-PROGRAM LICENSE SPECIALISTS
 CW101323,Idemia Automated Fingerprint Indentification System,Metropolitan Police Department (MPD),it_goods,202460.52,cites_number_not_in_pull,ref_not_in_pull,,0,,
 CW101352,OPTION YEAR ONE DC Economic Strategy ? Reimagining Downtown,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,959167.0,cites_number_not_in_pull,ref_not_in_pull,,0.299,Doc405528,FY2018 - Psychiatrist Services - ( DCSS Preferred) - One Year BPA with 2 year Option
 CW101465,Dell Mobile Precision Workstation,Chief Technology Officer (OCTO),it_goods,112907.65,visible_pdf_verified,ref_found_in_pull,620162,1.0,Doc620162,FY22 Dell Mobile Precision Workstation
@@ -63,18 +63,18 @@ CW102346,Automic (UC4) Enterprise Automation Engine Software,Chief Technology Of
 CW102349,DC Health - Building Access Control and Monitoring,Health (DOH),other,272121.48,no_ref_award_text,no_ref_in_text,,0.41,Doc459316,DC Health - HAHSTA Capacity Building Logistics Program
 CW102395,FY22-DOES-CF0-Smartsheet Licenses-OIT for Agency,Employment Services (DOES),it_goods,364182.0,no_award_text_no_title_match,no_award_text,,0.473,Doc627809,FY22-CF0-DOES-SMARTSHEET BUSINESS PLAN LICENSES-DCSS IT EQUIPMENT AND SOFTWARE ONLY
 CW102446,DFS- IT Equipment,Forensic Sciences (DFS),it_goods,97039.7,no_award_text_no_title_match,no_award_text,,0.762,Doc525843,RFQ - IT Equipment
-CW102463,Acquisition Staffing Support- ASI Inc.,Behavioral Health (DBH),other,635222.4,no_award_text_no_title_match,no_award_text,,0.457,Doc542650,Temporary Staffing Support Services
+CW102463,Acquisition Staffing Support- ASI Inc.,Behavioral Health (DBH),other,635222.4,no_award_text_no_title_match,no_award_text,,0.477,Doc83281,HSEMA Staffing Support
 CW102586,Business Process Analysis and Reengineering (BPR) Assessment,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),software_services,817920.0,no_ref_award_text,no_ref_in_text,,0.471,Doc277120,Cooperative Agreement - FY17 Business Process Reengineering
 CW102839,FY22-OCTO-Invicti On Demand Application Scanning Platform,Chief Technology Officer (OCTO),software_services,278604.0,visible_title_match,no_ref_in_text,,0.808,Doc627395,Fy22-OCTO-Invicti OnDemand Application Scanning Platform
 CW102849,FY23-FA0-WALES eAgent Messaging Switch,Metropolitan Police Department (MPD),software_services,664313.94,no_ref_award_text,no_ref_in_text,,0,,
-CW102877,Medicaid Management Information System (MMIS) Core System and Supporting Services solution.,Health Care Finance (DHCF),it_adjacent,171898464.0,no_ref_award_text,no_ref_in_text,,0.393,Doc454213,LABORATORY INFORMATION MANAGEMENT SYSTEM
+CW102877,Medicaid Management Information System (MMIS) Core System and Supporting Services solution.,Health Care Finance (DHCF),it_adjacent,171898464.0,no_ref_award_text,no_ref_in_text,,0.584,Doc84042,Medicaid Management Information Systems (MMIS)
 CW102904,FY22-OCTO- SecureAuth IDP Platform maintenance,Chief Technology Officer (OCTO),other,146830.5,visible_pdf_verified,ref_found_in_pull,628336,1.0,Doc628336,FY22-OCTO-SecureAuth IDP Platform maintenance
 CW102915,FY22-OCTO-Tenable Exposure Vulnerability Management Platform,Chief Technology Officer (OCTO),other,159983.97,visible_title_match,no_ref_in_text,,1.0,Doc628513,FY22-OCTO-Tenable Exposure Vulnerability Management Platform
 CW102944,"FY23 DCSS MARKETING, MEDIA AND PUBLIC INFORMATION",Contracting and Procurement (OCP),other,4500000.0,no_award_text_no_title_match,no_award_text,,0.753,Doc640120,"FY23 DDS Marketing, Media and Public Information services and supplies"
 CW102954,FY22-OCTO-SolarWinds Annual Maintenance,Chief Technology Officer (OCTO),software_services,254806.34,cites_number_not_in_pull,ref_not_in_pull,,0.71,Doc489424,FY20 - OCTO - ALM Annual Maintenance
 CW102967,"FY22-OCTO-FOIAExpress Software, Support, and Training",Chief Technology Officer (OCTO),it_goods,283131.25,visible_title_match,no_ref_in_text,,1.0,Doc628455,"FY22-OCTO-FOIAExpress Software, Support, and Training"
 CW102977,FY22-OCTO-Computer Associates (Broadcom),Chief Technology Officer (OCTO),other,538643.52,no_award_text_no_title_match,no_award_text,,0.486,Doc504692,FY20 - OCTO - Computer Equipment
-CW103044,FY23 - Maintenance & Support of ESSP - OUC,Employment Services (DOES),it_adjacent,1875070.33,no_ref_award_text,no_ref_in_text,,0.565,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT
+CW103044,FY23 - Maintenance & Support of ESSP - OUC,Employment Services (DOES),it_adjacent,1875070.33,no_ref_award_text,no_ref_in_text,,0.582,DCRL-2015-A-0025,Maintenance & Support Renewal Services
 CW103059,FY23 DCSS INFORMATION TECHNOLOGY EQUIPMENT & SOFTWARE,Contracting and Procurement (OCP),software_services,950000.0,visible_title_match,no_ref_in_text,,0.877,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW103085,"DCSS - Industrial Services - Monument Enterprises, LLC 934-00",Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW103109,Inmate Phones (DOC),Corrections (DC),other,0.0,no_award_text_no_title_match,no_award_text,,0.528,Doc393715,DOC Inmate Handbook DCSS Vendors only
@@ -112,7 +112,7 @@ CW104996,FY23 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and
 CW105012,Dell Laptops Latitude 7430 and Premium Active Pens,Human Services (DHS),it_goods,121092.0,no_award_text_no_title_match,no_award_text,,0.54,Doc463299,FY2019 -  Dell Latitude 3390 Laptops - ( DCSS Only)
 CW105043,HGT Black Box Technology,Public Works (DPW),other,680000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW105049,FY23-Palo Alto Content Filtering Maintenance,Chief Technology Officer (OCTO),other,518399.04,visible_pdf_verified,ref_found_in_pull,640614,0.887,Doc640614,FY23-OCTO-Palo Alto Content Filtering Maintenance
-CW105091,DCORM ERMS - Maintenance and Support,Office of Risk Management (ORM),other,589000.0,no_ref_award_text,no_ref_in_text,,0.611,Doc291136,DCAFIS Maintenance and Support
+CW105091,DCORM ERMS - Maintenance and Support,Office of Risk Management (ORM),other,589000.0,no_ref_award_text,no_ref_in_text,,0.629,Doc134553,Copier Maintenance and Support
 CW105133,DBH - Syra Health Corp (Nurses Temporary Staffing),Behavioral Health (DBH),other,996000.0,no_award_text_no_title_match,no_award_text,,0.538,Doc568591,FY'21 - DBH - Temporary Staffing Services
 CW105141,Splunk Support Renewal & Professional Services,Health Care Finance (DHCF),other,177754.5,visible_title_match,no_ref_in_text,,1.0,Doc642055,SPLUNK Support Renewal and Professional Services
 CW105221,"CW105221-VLI, Inc Information Technology, Equipment & Software",Contracting and Procurement (OCP),software_services,2850000.0,no_award_text_no_title_match,no_award_text,,0.667,Doc633402,FY23 OCP Information Technology Equipment and Software
@@ -128,7 +128,7 @@ CW105629,"DCSS-ITE-SYSMEGA, LLC",,software_services,950000.0,schedule_vehicle_on
 CW105702,DCSS - Information Technology Equipment and Software - MVS Inc,,other,21900000.0,no_ref_award_text,no_ref_in_text,,0.722,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW105745,FY23-Communications-OUC,Employment Services (DOES),it_adjacent,680000.0,visible_title_match,no_award_text,,1.0,Doc630961,FY23 - Communications OUC
 CW105798,FY23 OAH Temporary Support Services,Administrative Hearings (OAH),other,200000.0,visible_title_match,schedule_ref_only,,1.0,Doc641468,FY23 OAH Temporary Support Services
-CW105827,Comprehensive Statewide Needs Assessment for District of Columbia,Department on Disability Services (DDS),it_adjacent,200000.0,no_award_text_no_title_match,no_award_text,,0,,
+CW105827,Comprehensive Statewide Needs Assessment for District of Columbia,Department on Disability Services (DDS),it_adjacent,200000.0,no_award_text_no_title_match,no_award_text,,0.592,DCJM-2014-R-0011,Comprehensive State-wide Needs Assessment
 CW106017,"FY13 DCSS Nimbus Solutions Provider, LLC",,it_adjacent,3800000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW106039,Request For Proposals Technology One,State Superintendent of Education (OSSE),other,139881.37,visible_title_match,no_ref_in_text,,1.0,Doc645740,Request For Proposals Technology One
 CW106141,DCHR Career Fair Platform,Human Resources (DCHR),other,471289.5,no_ref_award_text,no_ref_in_text,,0,,
@@ -142,7 +142,7 @@ CW106558,FY23 DCSS The Triage Group,,it_adjacent,30000000.0,no_award_text_no_tit
 CW106730,IDIQ - Service vehicle,Fire and Emergency Services Department (FEMS),other,230103.68,no_ref_award_text,no_ref_in_text,,0.542,Doc264018,DCFX-2016-Vehicle
 CW106799,DCSS - Information Technology Equipment and Software - ABC Technical Solutions Inc  -,Contracting and Procurement (OCP),software_services,3800000.0,no_ref_award_text,no_ref_in_text,,0.582,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW106860,FY23 DCSS Deon Samad LLC,,other,3800000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW106928,Acquisition Staffing Support,Behavioral Health (DBH),other,173500.0,no_award_text_no_title_match,no_award_text,,0.583,Doc542650,Temporary Staffing Support Services
+CW106928,Acquisition Staffing Support,Behavioral Health (DBH),other,173500.0,no_award_text_no_title_match,no_award_text,,0.61,Doc83281,HSEMA Staffing Support
 CW106951,FY23 - DOH Emergency Crisis Management Notification System,Health (DOH),other,253045.22,no_award_text_no_title_match,no_award_text,,0.489,Doc260034,FY16-MPD-Emergency Management Voice Manager Telecommunications System
 CW106979,FY23 DCSS Bert Smith & Company - AFM,,other,500000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW107041,FY23 DCSS The Robert Bobb Group - MOBIS,,it_adjacent,20000000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -157,7 +157,7 @@ CW107361,Dell Laptop Latitude 7440,Health Care Finance (DHCF),it_goods,323593.2,
 CW107371,DC Housing Authority Consulting Services - Phase II,City Administrator (OCA),other,995000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW107403,"DCSS - Training Services & Products - 924-00 - Dramatic Solutions, Inc.",,other,500000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW107416,SNF and HHA Payment Methodology Consultant,Health Care Finance (DHCF),it_adjacent,1317707.7000000002,visible_title_match,no_ref_in_text,,1.0,Doc653486,SNF and HHA Payment Methodology Consultant
-CW107442,FY23-DOES-Identification Verification Software,Employment Services (DOES),other,1581167.32,no_ref_award_text,no_ref_in_text,,0,,
+CW107442,FY23-DOES-Identification Verification Software,Employment Services (DOES),other,1581167.32,no_ref_award_text,no_ref_in_text,,0.459,Doc134958,FY-14-CF0-DOES- UI Verification Services
 CW107660,FY23 DELL Equipment -DOEE,Energy and Environment (DOEE),other,394873.95,no_ref_award_text,no_ref_in_text,,0.758,Doc301590,Dell Equipment - DCSS Preferred Vendors
 CW107692,DOB- Commercial Permit Management SME Services,Licensing & Consumer Protection (DLCP),other,344617.52,schedule_vehicle_only,schedule_ref_only,,0,,
 CW107694,DOB ? Vacant Buildings Enforcement Sales Force Application,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),other,345000.0,visible_pdf_verified,ref_found_in_pull,656150,1.0,Doc656150,DOB ? Vacant Buildings Enforcement Sales Force Application
@@ -184,7 +184,7 @@ CW108644,CJCC Cloud Migration Assessment & Solution,Criminal Justice Coordinatin
 CW108646,M3 BNI LLC- DCSS- Information Technology Equipment & Software,Contracting and Procurement (OCP),software_services,950000.0,schedule_vehicle_only,schedule_ref_only,,0.693,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW108658,MPD FileOnQ SaaS subscription,Metropolitan Police Department (MPD),software_services,100000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW108782,FY23-DME-Public Procurement Consulting Services,Deputy Mayor for Education (DME),it_adjacent,239020.0,no_ref_award_text,no_ref_in_text,,0,,
-CW108796,Scanner and high-speed scanner. The Office of Public Records OPR is buildin,Secretary (EOM-OS),other,154263.0,no_ref_award_text,no_ref_in_text,,0,,
+CW108796,Scanner and high-speed scanner. The Office of Public Records OPR is buildin,Secretary (EOM-OS),other,154263.0,no_ref_award_text,no_ref_in_text,,0.415,Doc193532,FY15-Office of Public Records-Records Managment
 CW108854,Cisco Wireless Equipment (DACL),Chief Technology Officer (OCTO),telecom,115613.02,visible_title_match,no_award_text,,0.828,Doc388309,Cisco Wireless Equipment
 CW108871,FY23 Temporary Staffing Services FOR DBH,Behavioral Health (DBH),other,200000.0,visible_title_match,no_award_text,,0.909,Doc568591,FY'21 - DBH - Temporary Staffing Services
 CW108902,FY23 Temporary Staffing for DBH,Behavioral Health (DBH),other,987155.2,visible_title_match,no_award_text,,0.909,Doc568591,FY'21 - DBH - Temporary Staffing Services
@@ -199,19 +199,19 @@ CW109125,FY23 DCSS  TEMPORARY SUPPORT SERVICES,Contracting and Procurement (OCP)
 CW109151,FY23 DBH Integrated Care Applications Management System (ICAMS,Behavioral Health (DBH),other,865920.0,no_ref_award_text,no_ref_in_text,,0.527,Doc600237,FY22 - DDOT Integrated Parking Management System
 CW109161,FEMS FY23 Maritime Night Vision Equipment and Supplies,Fire and Emergency Services Department (FEMS),other,450416.08,no_ref_award_text,no_ref_in_text,,0.374,Doc546453,FY21 FEMS Logistics Pharmaceutical Drugs Medical Supplies and Equipment
 CW109183,Learning Management System,Public Works (DPW),software_services,9995.0,visible_title_match,no_ref_in_text,,0.831,Doc399544,DCKT-2019-Learning Management System
-CW109328,Comprehensive Knowledge Testing System,Motor Vehicles (DMV),software_services,454070.0,no_ref_award_text,no_ref_in_text,,0,,
+CW109328,Comprehensive Knowledge Testing System,Motor Vehicles (DMV),software_services,454070.0,no_ref_award_text,no_ref_in_text,,0.548,Doc146960,"DMV, Knowledge Test System, FY2014"
 CW109355,FY23 - FS0 - Court Consulting Services and Feasibility Study,Administrative Hearings (OAH),it_adjacent,224814.0,no_ref_award_text,no_ref_in_text,,0.794,Doc659438,FY23 OAH Court Consulting Services and Feasibility Study
-CW109381,Oracle StorageTek SL4000 Hardware Maintenance,Chief Technology Officer (OCTO),software_services,36031.13,no_ref_award_text,no_ref_in_text,,0.481,Doc411200,Silo Hardware Maintenance
+CW109381,Oracle StorageTek SL4000 Hardware Maintenance,Chief Technology Officer (OCTO),software_services,36031.13,no_ref_award_text,no_ref_in_text,,0.514,Doc186423,Oracle Software & Maintenance
 CW109524,FY23-DMV-BIS Digital Court Recorder System,Motor Vehicles (DMV),it_adjacent,1650000.0,visible_pdf_verified,ref_found_in_pull,665044,1.0,Doc665044,FY23-DMV-BIS Digital Court Recorder System
 CW109550,FY23-EOM-Digital Preservation Software System,Mayor (EOM),other,186182.0,visible_pdf_verified,ref_found_in_pull,654725,0.711,Doc643487,IFB-EOM-Preservica Digital Preservation System
 CW109564,"Two Stand-alone, self-service vehicle inspection kiosks",Motor Vehicles (DMV),other,536200.0,no_award_text_no_title_match,no_award_text,,0,,
 CW109689,IT Infrastructure Support and Management Consulting Services,Behavioral Health (DBH),software_services,2345348.0,no_ref_award_text,no_ref_in_text,,0.647,Doc585062,Invitation for Bid- IT Infrastructure Support Services
 CW109707,DHCD-CW109707 Document Systems- Imaging Document (Award FY23),Housing and Community Development (DHCD),it_goods,826422.1199999999,no_award_text_no_title_match,no_award_text,,0.351,Doc664166,FY23-DHCD Imaging Services
 CW109712,Electric Vehicle Charging Stations and Related Equipment,Public Works (DPW),telecom,750000.0,no_ref_award_text,no_ref_in_text,,0,,
-CW109817,Temporary Staffing - Contract Specialist,Public Works (DPW),other,100000.0,no_award_text_no_title_match,no_award_text,,0.571,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
+CW109817,Temporary Staffing - Contract Specialist,Public Works (DPW),other,100000.0,visible_title_match,no_award_text,,1.0,Doc109798,Temporary Staffing - Contract Specialist
 CW109989,"FY23-OCME-Agilent GS, MS, NPD-Agilent Technologies",Chief Medical Examiner (OCME),other,1160368.94,no_award_text_no_title_match,no_award_text,,0.61,Doc666173,"GSA-FY23-OCME-RTOB-Agilent GS, MS, NPD"
 CW110007,Phase II Disparity Study,Contracting and Procurement (OCP),it_adjacent,124750.0,visible_pdf_verified,ref_found_in_pull,|DCEB-2021-R-0001,0.357,DCKA-2022-Q-0023,BLM Plaza Phase II
-CW110052,Broadview Software Maintenance,"Cable Television, Film, Music and Entertainment (OFTE)",it_adjacent,161000.0,no_ref_award_text,no_ref_in_text,,0.657,Doc579164,FY21-BMC Software Maintenance
+CW110052,Broadview Software Maintenance,"Cable Television, Film, Music and Entertainment (OFTE)",it_adjacent,161000.0,no_ref_award_text,no_ref_in_text,,0.671,Doc186423,Oracle Software & Maintenance
 CW110076,FY23- API Gateway Maintenance,Chief Technology Officer (OCTO),other,108383.2,visible_pdf_verified,ref_found_in_pull,668988,0.657,Doc668988,API Gateway
 CW110195,CAQH Proview Database System,Health Care Finance (DHCF),it_adjacent,196680.0,no_ref_award_text,no_ref_in_text,,0.559,Doc328083,CHA-FY17-UPC Database System
 CW110201,DBH-SEH- FIRE ALARAM SERVICES,Behavioral Health (DBH),other,462500.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -219,7 +219,7 @@ CW110206,MMIS IV&V,Health Care Finance (DHCF),other,1948731.0,visible_title_matc
 CW110223,Electronic Grants Management System,FE0,it_adjacent,1073244.0,visible_title_match,no_ref_in_text,,1.0,Doc665686,Electronic Grants Management System
 CW110259,"FY23-RFTOB-FEMS-Hardware Supplies-Annie's Hardware, LLC",Fire and Emergency Services Department (FEMS),other,441400.0,no_award_text_no_title_match,no_award_text,,0.532,Doc668835,FY23-FEMS-RFTOB-Various Hardware Supplies-DCSS Industrial Supplies Vendors
 CW110291,Contract Workspace (Procurement),Contracting and Procurement (OCP),it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
-CW110552,DataBuileders Q5i Technical Maintenance and Support,Human Services (DHS),software_services,323040.0,no_ref_award_text,no_ref_in_text,,0.482,Doc291136,DCAFIS Maintenance and Support
+CW110552,DataBuileders Q5i Technical Maintenance and Support,Human Services (DHS),software_services,323040.0,no_ref_award_text,no_ref_in_text,,0.487,Doc115753,Informatica Maintenance and Support
 CW110658,Digital Signage Solution,Public Works (DPW),other,63980.0,visible_title_match,no_award_text,,0.837,Doc616893,MPD - Digital Signage Solution
 CW110755,DOB - Accela Civic Application site license,Department Of Buildings (DOB),it_adjacent,1810816.0,no_ref_award_text,no_ref_in_text,,0,,
 CW110757,DLCP - Accela Civic Application site license,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),it_adjacent,441558.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -236,7 +236,7 @@ CW111368,FY23 DCSS Tech Civic LLC,,it_adjacent,1900000.0,no_award_text_no_title_
 CW111415,Equinix Datacenter Colocation Services,Chief Technology Officer (OCTO),software_services,120135.96,no_ref_award_text,no_ref_in_text,,0,,
 CW111422,DCSS - Temporary Support Services  - Palmer Staffing Services,Contracting and Procurement (OCP),other,30000000.0,no_ref_award_text,no_ref_in_text,,0.68,Doc542650,Temporary Staffing Support Services
 CW111430,FY23 - JSAT Website Redesign and Platform Development (CJCC),Criminal Justice Coordinating Council (CJCC),it_adjacent,110830.0,visible_pdf_verified,ref_found_in_pull,657924,0.947,Doc657924,CJCC FY23 JSAT Website Redesign & Platform Development
-CW111483,"CAD Maintenance, RSAs and Ancillary Services",Unified Communications (OUC),it_adjacent,2286686.47,no_award_text_no_title_match,no_award_text,,0,,
+CW111483,"CAD Maintenance, RSAs and Ancillary Services",Unified Communications (OUC),it_adjacent,2286686.47,no_award_text_no_title_match,no_award_text,,0.513,Doc127409,I CAD Maintenance Services - OUC - FY14 - IT
 CW111548,OD - FY23-24 Informatica Contract,Health (DOH),other,877474.08,no_award_text_no_title_match,no_award_text,,0,,
 CW111575,"DCSS - MOBIS - Perseverance Staffing, LLC - 918-00",Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW111579,DCSS - MOBIS - Edera L3C - 918-00,Contracting and Procurement (OCP),it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -260,7 +260,7 @@ CW112221,"DCSS-ITE20242-SupreTech, Inc",,software_services,950000.0,schedule_veh
 CW112314,"FY24 DCSS The Impact Group, LLC",,other,2700000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW112340,Temporary Staffing Ross Professional,Human Services (DHS),other,1900000.0,no_award_text_no_title_match,no_award_text,,0.644,Doc631081,Professional Temporary Staffing
 CW112344,Temporary Staffing Changing Technologies,Human Services (DHS),other,2850000.0,no_award_text_no_title_match,no_award_text,,0.56,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
-CW112420,Admin Services - Temporary Staff,Health Care Finance (DHCF),it_adjacent,699420.0,no_award_text_no_title_match,no_award_text,,0.564,Doc281836,KG0-FY17-OCR Temporary Staff- DCSS Vendors Only
+CW112420,Admin Services - Temporary Staff,Health Care Finance (DHCF),it_adjacent,699420.0,no_award_text_no_title_match,no_award_text,,0.665,Doc225292,DCKT - 2015 - Temporary Staff Services
 CW112546,Emergency Staff Augmentation - Migrant,Human Services (DHS),other,999403.0,no_award_text_no_title_match,no_award_text,,0.583,Doc250595,Staff Augmentation
 CW112550,Emergency Staff Augmentation - Migrant,Human Services (DHS),other,967933.0,no_award_text_no_title_match,no_award_text,,0.583,Doc250595,Staff Augmentation
 CW112585,"Temporary Staffing  Avid Systems, LLC",Human Services (DHS),other,950000.0,no_award_text_no_title_match,no_award_text,,0.54,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
@@ -269,7 +269,7 @@ CW112605,DC Department of Corrections GSA Schedule Xerox Multi-Functional Color 
 CW112684,DCAS - Informatica Maintenance and Support Services,Health Care Finance (DHCF),it_adjacent,154552.0,visible_pdf_verified,ref_found_in_pull,687342,0.838,Doc687342,Informatica Maintenance and Support Services
 CW112697,DCAS Multi-Line Licensing Product and Support Services,Health Care Finance (DHCF),it_adjacent,560431.78,no_award_text_no_title_match,no_award_text,,0,,
 CW112708,Enabling Technology for DDA - FY24,Department on Disability Services (DDS),it_goods,1923550.0,visible_title_match,no_award_text,,1.0,Doc624329,Enabling Technology for DDA
-CW112748,DCSS - Training Services - Tiye Consulting,,other,500000.0,no_award_text_no_title_match,no_award_text,,0.461,Doc662574,Consulting Services
+CW112748,DCSS - Training Services - Tiye Consulting,,other,500000.0,no_award_text_no_title_match,no_award_text,,0.775,DCRL-2014-A-0042,Training and Consulting Services
 CW112773,DOB - Temporary Personnel - Sr. Product Manager,Department Of Buildings (DOB),other,346000.0,no_award_text_no_title_match,no_award_text,,0.497,Doc587655,FY21-DCRA Senior Product Manager Temporary Personnel Services
 CW112831,Temporary Staffing Netwworking for the Future,Human Services (DHS),other,1900000.0,no_award_text_no_title_match,no_award_text,,0.577,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
 CW112838,Operations and maintenance of the GRID system,Chief Technology Officer (OCTO),it_adjacent,731400.1799999999,no_ref_award_text,no_ref_in_text,,0.529,Doc526404,DCAS Operations and Maintenance (O&M) Support Services
@@ -283,7 +283,7 @@ CW113122,DCSS TEMPORARY SUPPORT SERVICES,Contracting and Procurement (OCP),other
 CW113174,FY24 - OCTO - Cisco Expert Services HTOM - Capital,Chief Technology Officer (OCTO),software_services,244816.63,no_ref_award_text,no_ref_in_text,,0.595,Doc303256,FY17-OCTO-Cisco Equipment DCPS-Capital
 CW113232,ROFTOP - Temporary Resources,Health (DOH),other,701556.0,no_award_text_no_title_match,no_award_text,,0.65,Doc535678,DCAS Temporary Resources
 CW113270,DCAS Cloud Services,Health Care Finance (DHCF),software_services,615759.2,no_award_text_no_title_match,no_award_text,,0.439,Doc307417,DCAS Release 3
-CW113311,Capital Bikeshare Equipment,Transportation (DDOT),other,50000000.0,no_ref_award_text,no_ref_in_text,,0.545,Doc612500,FY22 Capital Bikeshare Concrete Pads
+CW113311,Capital Bikeshare Equipment,Transportation (DDOT),other,50000000.0,no_ref_award_text,no_ref_in_text,,0.6,Doc100172,FY13-KAO-CAPITAL BIKESHARE HELMET
 CW113430,"DCSS-TSS20244-Temporary Services-Praxtion, LLLC",,other,2850000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW113432,Task Order - MDC Replacement (DGS-DCHA) FY24,Unified Communications (OUC),it_goods,192545.82,no_ref_award_text,no_ref_in_text,,0,,
 CW113574,"DCSS-Information Technology Equipment and Software-HI-TECH SOLUTION, INC",,software_services,950000.0,no_ref_award_text,no_ref_in_text,,0.605,Doc633402,FY23 OCP Information Technology Equipment and Software
@@ -307,9 +307,9 @@ CW114369,CISCO-DNAC Redundancy,Chief Technology Officer (OCTO),it_goods,640848.2
 CW114371,Scrum Services,Chief Technology Officer (OCTO),it_goods,788700.0,no_award_text_no_title_match,no_award_text,,0,,
 CW114404,Project Oversight and Permit Submittal Review for DCCR and Mega Projects,Transportation (DDOT),it_adjacent,4875000.0,cites_number_not_in_pull,ref_not_in_pull,,0,,
 CW114443,FY24 DCSS TEMPORARY SUPPORT SERVICES,Contracting and Procurement (OCP),other,950000.0,no_ref_award_text,no_ref_in_text,,0.793,Doc573851,FY21 - OA- RFQ - Temporary Support Services - (CBE & SBE Preferred)
-CW114527,"DCSS-MMPI20241-Marketing, Media and Public Information-District Consultant",,other,1800000.0,no_ref_award_text,no_ref_in_text,,0.59,Doc710932,"FY24 ONSE Marketing, Media and Public Information Services- SBE only"
+CW114527,"DCSS-MMPI20241-Marketing, Media and Public Information-District Consultant",,other,1800000.0,no_ref_award_text,no_ref_in_text,,0.633,Doc144103,FY14 DIS - A Marketing and Public Information Consultant
 CW114574,Analytics Platform System Hardware,Health Care Finance (DHCF),it_adjacent,262398.0,no_award_text_no_title_match,no_award_text,,0,,
-CW114593,DOEE-TMDL Implementation Plan-FY24,Energy and Environment (DOEE),it_adjacent,2960300.0,no_ref_award_text,no_ref_in_text,,0.459,Doc386057,FY18 KGO DOEE - Total Maximum Daily Load (TMDL) Implementation
+CW114593,DOEE-TMDL Implementation Plan-FY24,Energy and Environment (DOEE),it_adjacent,2960300.0,no_ref_award_text,no_ref_in_text,,0.473,Doc108401,FY'13-RFQ-EOM-STRATEGIC PLAN IMPLEMENTATION
 CW114625,"FY2022 AE Schedule Award SZ PM Consultants, Inc",Transportation (DDOT),other,5000000.0,visible_pdf_verified,ref_found_in_pull,|DCKA-2020-Q-0048,0,,
 CW114627,FY2022 AE Schedule Award Sheladia Associates Inc,Transportation (DDOT),other,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW114631,FY2022 AE Schedule Award Mercado Consultants Inc,Transportation (DDOT),other,5000000.0,cites_number_not_in_pull,ref_not_in_pull,,0,,
@@ -325,7 +325,7 @@ CW114876,FY22 AE Schedule Award Stantec Consulting Services Inc,Transportation (
 CW114908,FY24-DMV-IEXMARK - Toner,Motor Vehicles (DMV),other,132000.0,visible_title_match,no_award_text,,0.824,Doc697964,FY24-DMV- Toner IEXMARK
 CW114983,FY22 AE Schedule DCKA-2022-T-0023 Precision Systems Inc.,Transportation (DDOT),it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW114997,DCAS Amazon Web Services (Carahsoft),Health Care Finance (DHCF),other,4072457.96,no_award_text_no_title_match,no_award_text,,0.53,Doc381749,CFSA-RFQ-Amazon Web Services (AWS) DCSS ONLY
-CW115164,Emergency Contract - CAD Maintenance,Unified Communications (OUC),it_adjacent,591671.62,no_award_text_no_title_match,no_award_text,,0,,
+CW115164,Emergency Contract - CAD Maintenance,Unified Communications (OUC),it_adjacent,591671.62,no_award_text_no_title_match,no_award_text,,0.525,Doc96240,FY12-KA0 Emergency and Routine Maintenance Services
 CW115193,FY24 - DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and Procurement (OCP),software_services,2850000.0,visible_title_match,no_ref_in_text,,0.877,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW115205,Traffic Signal Control System & Implementation,Transportation (DDOT),other,942000.0,cites_number_not_in_pull,ref_not_in_pull,,0.467,DCKA-2019-B-0072,Traffic Signal Maintenance
 CW115221,DCHR Temporary Staffing Services,Human Resources (DCHR),other,868744.39,visible_title_match,no_award_text,,1.0,Doc695234,DCHR Temporary Staffing Services - SBE Set-Aside
@@ -337,7 +337,7 @@ CW115541,ABCA System modernization,Alcohol Beverage Regulation Administration (A
 CW115545,BOE Runbeck Lexmark Portable printers,Board of Elections (DCBOE),other,2199000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW115647,FY24 - OCTO - Zero Trust,Chief Technology Officer (OCTO),software_services,20000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW115735,"FY24 DCSS Sterling Product Concepts, LLC - MOBIS",,it_adjacent,2850000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW115742,FY24 Zscaler DCPS,Chief Technology Officer (OCTO),software_services,267113.13,no_ref_award_text,no_ref_in_text,,0,,
+CW115742,FY24 Zscaler DCPS,Chief Technology Officer (OCTO),software_services,267113.13,no_ref_award_text,no_ref_in_text,,0.315,Doc182967,DCPS-FY15 RFQ- BOARDMAKER
 CW115820,OD - Oracle Cloud Services,Health (DOH),other,1037481.72,no_award_text_no_title_match,no_award_text,,0.566,Doc707225,Oracle Cloud DataBridge Services - DCSS ONLY!
 CW115825,DCSS - MOBIS- PB&J Promotions LLC,,it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW115955,BMC Software Maintenance,Chief Technology Officer (OCTO),it_goods,500445.38,visible_pdf_verified,ref_found_in_pull,579164,1.0,Doc579164,FY21-BMC Software Maintenance
@@ -358,7 +358,7 @@ CW116507,DCKA-2024-C-0017-Traffic Signal Maintenance,,other,42046521.599999994,v
 CW116631,"DCSS-ITES2024-Information Technology Equipment & Software-The Pittman Group, Inc. dba Vantix",,software_services,10000000.0,schedule_vehicle_only,schedule_ref_only,,0.534,Doc668741,FY23 DISB Information Technology Equipment and Software
 CW116643,Housing Demand and Neighborhood Change Assessment,Deputy Mayor for Planning and Economic Development (DMPED),other,386461.0,visible_title_match,ref_not_in_pull,,1.0,DCEB-2024-R-0002,Housing Demand and Neighborhood Change Assessment
 CW116651,DCSS - Information Technology Equipment and Software - Capital Consulting LLC,Contracting and Procurement (OCP),software_services,11000000.0,no_ref_award_text,no_ref_in_text,,0.626,Doc633402,FY23 OCP Information Technology Equipment and Software
-CW116772,CW116772- Total Office Products,Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0.487,Doc266094,FY2016 KV0 DMV Office Products
+CW116772,CW116772- Total Office Products,Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0.537,Doc137745,DDOT TOA Office Products
 CW116783,CFO-DOES-FY24 UI TRUST FUND MODELING AND PROGRAM ANALYTICS,Employment Services (DOES),it_adjacent,1583000.0,visible_title_match,no_ref_in_text,,0.879,Doc703895,CF0-DOES-FY24 UI TRUST FUND MODELING AND PROGRAM ANALYTICS
 CW116801,FY24 DELL Computers and Equipment,Energy and Environment (DOEE),it_goods,867044.38,visible_title_match,no_award_text,,1.0,Doc575850,FY21 DCSS PREFERRED DELL COMPUTERS AND EQUIPMENT
 CW116845,HSEMA FY24Staffing and Logistics + Logistics DCSS Only,Homeland Security and Emergency Management Agency (HSEMA),other,408200.0,no_award_text_no_title_match,no_award_text,,0.536,Doc707739,HSEMA FY24 Staffing and Logistics Facilities + Logistics Contract
@@ -391,7 +391,7 @@ CW118423,FY24- OIG IU and RAFP Case Management System,Inspector General (OIG),ot
 CW118489,FY24 - KnowBe4 Security Awareness Training Subscription,Chief Technology Officer (OCTO),software_services,112320.0,visible_title_match,no_ref_in_text,,1.0,Doc651142,FY23 - KnowBe4 Security Awareness Training Subscription
 CW118520,Operations and Maintenance of the Electronic Visit Verification System,Health Care Finance (DHCF),other,2212000.0,no_ref_award_text,no_ref_in_text,,0.551,Doc391587,Electronic Visit Verification (EVV)
 CW118564,RFK Development Consulting,Deputy Mayor for Planning and Economic Development (DMPED),other,565000.0,cites_number_not_in_pull,ref_not_in_pull,,0.444,Doc662574,Consulting Services
-CW118651,Operations and Maintenance for the Provider Data Management System,Health Care Finance (DHCF),other,7011292.0,no_ref_award_text,no_ref_in_text,,0.523,Doc258051,DCRA Data Management System
+CW118651,Operations and Maintenance for the Provider Data Management System,Health Care Finance (DHCF),other,7011292.0,no_ref_award_text,no_ref_in_text,,0.698,Doc190672,Provider Data Management System
 CW118679,HRSD Phase II implementation services,Chief Technology Officer (OCTO),it_adjacent,297812.0,no_award_text_no_title_match,no_award_text,,0.426,Doc628288,FY22 Integrated Technology Engine Project Implementation(Phase II)
 CW118680,DCSS - MOBIS - Actionuity LLC - 918-00,Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW118763,"DCSS - Training Services - Talentolog,LLC",,other,1000000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -401,7 +401,7 @@ CW118987,DCSS - Information Technology Equipment and Software - Development Inno
 CW119224,FY24-OTS-Grant Management System-Maiintenance and Support,Deputy Mayor for Education (DME),software_services,495500.0,award_says_no_solicitation,explicit_no_solicitation,,0.48,Doc565031,DCRB 2021 Financial Management System (FMS) Upgrade & Support Services
 CW119307,FY24 DCSS TEMPORARY SUPPORT SERVICES,Contracting and Procurement (OCP),other,2850000.0,no_award_text_no_title_match,no_award_text,,0.793,Doc573851,FY21 - OA- RFQ - Temporary Support Services - (CBE & SBE Preferred)
 CW119421,"DCSS - Marketing, Media and Public Information - Captiva, LLC",Contracting and Procurement (OCP),other,1800000.0,no_ref_award_text,no_ref_in_text,,0.686,Doc710932,"FY24 ONSE Marketing, Media and Public Information Services- SBE only"
-CW119531,"DCSS-TSS202421-Temporary Support Services-Midtown Personnel, Inc.",,other,20000000.0,no_award_text_no_title_match,no_award_text,,0.544,Doc528841,Request for Qualifications - Temporary Support Personnel
+CW119531,"DCSS-TSS202421-Temporary Support Services-Midtown Personnel, Inc.",,other,20000000.0,no_award_text_no_title_match,no_award_text,,0.572,Doc194049,Temporary Support Personnel Services for DHCD
 CW119667,FY25 - E- Filing System and Website maintenance and support,Campaign Finance (OCF),software_services,0.0,no_ref_award_text,no_ref_in_text,,0.51,Doc291136,DCAFIS Maintenance and Support
 CW119697,"Dell Mobile Precision 3490, Mobile Precision Workstation 5490",Chief Technology Officer (OCTO),it_goods,200100.2,visible_title_match,no_award_text,,1.0,Doc731518,"Dell Mobile Precision 3490, Mobile Precision Workstation 5490"
 CW119846,Maintenance and Support of Existing Election Equipment,Board of Elections (DCBOE),other,244100.0,no_ref_award_text,no_ref_in_text,,0.464,Doc370890,FY2018 - Delivery of Election Equipment -  (DCSS Preferred)
@@ -415,7 +415,7 @@ CW120381,"FY24 DCSS Davis Computer Technologies, LLC - MOBIS",,it_adjacent,19000
 CW120562,Okta Access Gateway Service.,Chief Technology Officer (OCTO),it_goods,334417.44,no_ref_award_text,no_ref_in_text,,0,,
 CW120601,DCSS - Information Technology Equipment and Software -  Corporate Systems Resources Inc,,software_services,1900000.0,schedule_vehicle_only,schedule_ref_only,,0.57,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW120603,AWS Cloud based services,Health (DOH),other,1900000.0,no_ref_award_text,no_ref_in_text,,0.435,Doc287621,FY17 OCTO - Amazon AWS (Amazon Web Services) Cloud Based Infrastructure Services
-CW120616,FY25-CF0-DOES-Employer Self Service Portal (ESSP) Maintenance and Support,Employment Services (DOES),it_adjacent,1992578.87,no_ref_award_text,no_ref_in_text,,0,,
+CW120616,FY25-CF0-DOES-Employer Self Service Portal (ESSP) Maintenance and Support,Employment Services (DOES),it_adjacent,1992578.87,no_ref_award_text,no_ref_in_text,,0.591,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
 CW120650,"Limbic Systems, Inc. - DCSS  MOBIS",,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW120701,"Capital One Arena Advisory Services - Kutak Rock, LLP",Deputy Mayor for Planning and Economic Development (DMPED),other,70000.0,cites_number_not_in_pull,ref_not_in_pull,,0,,
 CW120765,DCSS-TSS202425-Temporary Support Services-Corporate Systems Resources,,other,950000.0,no_ref_award_text,no_ref_in_text,,0.41,Doc485126,Temporary Resources - Administrative Support
@@ -448,13 +448,13 @@ CW121924,ABC Technical Solutions Inc.- FY25 IT BPA,Employment Services (DOES),it
 CW121926,"MVS, Inc. FY25 IT Equipment BPA",Employment Services (DOES),it_goods,950000.0,no_award_text_no_title_match,no_award_text,,0.533,Doc525843,RFQ - IT Equipment
 CW121929,FY25 IT Equipment BPA-Public Performance Managment,Employment Services (DOES),it_goods,950000.0,no_award_text_no_title_match,no_award_text,,0.377,Doc525843,RFQ - IT Equipment
 CW122015,DOB - FY25 Scout Implementation Services,Department Of Buildings (DOB),it_adjacent,874250.0,schedule_vehicle_only,schedule_ref_only,,0.55,Doc645331,DOB- Data Architecture Implementation
-CW122035,Load Runner,Chief Technology Officer (OCTO),software_services,286722.7,no_award_text_no_title_match,no_award_text,,0,,
+CW122035,Load Runner,Chief Technology Officer (OCTO),software_services,286722.7,no_award_text_no_title_match,no_award_text,,0.506,Doc115353,FY13 - OCTO HP Load Runner (FINAL)
 CW122088,"Salesforce Licenses, Renewals and File Storage",For-Hire Vehicles (DFHV),it_goods,265329.18,no_award_text_no_title_match,no_award_text,,0,,
 CW122261,"DMPED-OP OPTION YEAR ONE-Comprehensive Plan Rewrite-AECOM Technical Services, Inc.",Deputy Mayor for Planning and Economic Development (DMPED); Planning (OP),other,980000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW122341,DCSS - Information Technology Equipment and Software  - Davis Computer Technologies LLC,Contracting and Procurement (OCP),software_services,1900000.0,no_ref_award_text,no_ref_in_text,,0.57,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW122400,"Tyson Project Management Group, LLC - DCSS FFM",,other,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW122482,DELL Products,National Guard (DCNG),it_goods,31772.5,no_award_text_no_title_match,no_award_text,,0.548,Doc354060,Dell PCs
-CW122725,Licensure Management System (LMS),Health (DOH),other,265000.0,no_ref_award_text,no_ref_in_text,,0.564,Doc252986,Record Management System
+CW122725,Licensure Management System (LMS),Health (DOH),other,265000.0,no_ref_award_text,no_ref_in_text,,0.611,DCRL-2014-I-0044,Enterprise Learning Management System (LMS)
 CW122785,ROFTOP - Clinical Case Management System,Health Care Finance (DHCF),software_services,7917104.0,visible_title_match,no_ref_in_text,,0.849,Doc686658,Clinical Case Management System
 CW122859,FY25_SB0_FEMS Installation and removal of Drive Cameras_Lytx,SB0,other,115987.0,no_award_text_no_title_match,no_award_text,,0,,
 CW122941,DCSS - Information Technology Equipment and Software - Capital Sprints LLC,Contracting and Procurement (OCP),software_services,1900000.0,no_ref_award_text,no_ref_in_text,,0.637,Doc633402,FY23 OCP Information Technology Equipment and Software
@@ -462,7 +462,7 @@ CW122944,JUSTIS Cloud Migration,Criminal Justice Coordinating Council (CJCC),it_
 CW123005,Flock Safety License Plate Recognition Software-as-a-Service Solution FY25,Metropolitan Police Department (MPD),software_services,336046.54,award_says_no_solicitation,explicit_no_solicitation,,0,,
 CW123050,Tethered Drones,Transportation (DDOT),other,96006.0,no_award_text_no_title_match,no_award_text,,0,,
 CW123088,ApprentiScope Platform Subscription,Employment Services (DOES),it_goods,163778.0,no_award_text_no_title_match,no_award_text,,0.508,Doc370048,SecureAuth IDP Platform Subscription Renewal
-CW123141,DCSS - Industrial Services - G-Sida General Services,,other,1900000.0,no_ref_award_text,no_ref_in_text,,0,,
+CW123141,DCSS - Industrial Services - G-Sida General Services,,other,1900000.0,no_ref_award_text,no_ref_in_text,,0.459,Doc139113,FY-14 KTO General Industrial Supplies
 CW123208,ServiceNow Licenses,Chief Technology Officer (OCTO),it_adjacent,3295905.72,visible_pdf_verified,ref_found_in_pull,749299,1.0,Doc749299,ServiceNow licenses
 CW123247,DCSS-IT Equipment,Health Care Finance (DHCF),other,15893.69,visible_title_match,no_award_text,,1.0,Doc525843,RFQ - IT Equipment
 CW123311,FY25-Maintenance & Support AHD-CRB E-Filing System,Employment Services (DOES),software_services,238000.0,no_ref_award_text,no_ref_in_text,,0.392,Doc569019,FY21 Inspector Tracking System Maintenance and Support (GSA 70 Schedule Holders only)
@@ -471,10 +471,10 @@ CW123346,PCTEL Radio Interference Equipment -,Unified Communications (OUC),other
 CW123456,Granicus Rental Licensing,Licensing & Consumer Protection (DLCP),it_goods,530147.14,no_award_text_no_title_match,no_award_text,,0,,
 CW123461,EightZero DCSS-MOBIS,,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW123464,Splunk Enterprise subscription,Chief Technology Officer (OCTO),it_adjacent,1838346.8,visible_title_match,no_award_text,,1.0,Doc748313,Splunk Enterprise subscription
-CW123468,Re-Platforming of the Centalized Waitlist Management System,State Superintendent of Education (OSSE),it_adjacent,995299.98,no_award_text_no_title_match,no_award_text,,0.454,Doc252986,Record Management System
+CW123468,Re-Platforming of the Centalized Waitlist Management System,State Superintendent of Education (OSSE),it_adjacent,995299.98,no_award_text_no_title_match,no_award_text,,0.468,Doc87664,RFP-Grants Management System
 CW123473,"DCSS Information Technology Equioment and Software-Health IT 2 Business Solutions, LLC dba CODICE",,software_services,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW123481,DMPED-OPTION YEAR ONE Real Estate & Financial Advisory Services CSG,Deputy Mayor for Planning and Economic Development (DMPED),other,489732.0,cites_number_not_in_pull,ref_not_in_pull,,0.571,DCEB-2024-Q-1001,Real Estate and Financial Advisory Services
-CW123501,DCSS-Temporary Support Services-The Calpro Group,,other,950000.0,no_award_text_no_title_match,no_award_text,,0.573,Doc542211,FY21- TEMPORARY SUPPORT SERVICES- OAH
+CW123501,DCSS-Temporary Support Services-The Calpro Group,,other,950000.0,no_award_text_no_title_match,no_award_text,,0.585,Doc106337,Temporary Support Services - DCRA
 CW123553,FY25 - DCAS - Salesforce Cloud License and Lightening Platform Renewal and Support,Health Care Finance (DHCF),software_services,1045554.81,no_award_text_no_title_match,no_award_text,,0.473,Doc501858,Salesforce License Renewal
 CW123561,FY25 - OD-IT NEDSS Base System Implementation (AWS),Health (DOH),software_services,632000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW123571,District of Columbia Power Line Undergrounding,Transportation (DDOT),other,11096337.5,no_award_text_no_title_match,no_award_text,,0.738,DCKA-2021-B-0044,District of Columbia Power Line Undergrounding (DC Plug) Feeder 368
@@ -483,7 +483,7 @@ CW123638,DCKA-2023-C-0089 Traffic Engineering Design PSI,Transportation (DDOT),i
 CW123641,FY25 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and Procurement (OCP),software_services,950000.0,visible_title_match,no_ref_in_text,,0.877,Doc633402,FY23 OCP Information Technology Equipment and Software
 CW123643,"Simple Solutions, LLC dba Lisa Morgan Solutions - DCSS MOBIS",,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW123645,"DCSS - MOBIS - ICI Systems, Inc.",,it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW123681,FY25 ONSE Task Order for Staffing Serices,Neighborhood Safety and Engagement (ONSE),it_adjacent,120660.8,no_award_text_no_title_match,no_award_text,,0.517,Doc324435,FY17 DFHV  Task Order Temporary Staffing Services
+CW123681,FY25 ONSE Task Order for Staffing Serices,Neighborhood Safety and Engagement (ONSE),it_adjacent,120660.8,no_award_text_no_title_match,no_award_text,,0.522,Doc186935,HBX FY15- Request for Task Order Quote- Temporary Staffing Services-
 CW123716,DMPED-Real Estate and Financial Advisory Services (HR&A Advisors Inc),Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,990000.0,visible_pdf_verified,ref_found_in_pull,|DCEB-2024-Q-1001,0.616,DCEB-2024-Q-1001,Real Estate and Financial Advisory Services
 CW123727,O&M - Administrative Services Organization (ASO) System,Health Care Finance (DHCF),it_adjacent,2319000.0,no_ref_award_text,no_ref_in_text,,0.665,Doc517720,Administrative Services Organization
 CW123731,IT Equipment & Software (Cisco Network Equipment),Transportation (DDOT),it_goods,308852.06,no_award_text_no_title_match,no_award_text,,0.638,Doc388263,CISCO Network Equipment
@@ -495,7 +495,7 @@ CW124050,Colours Global Inc DCSS MOBIS,,it_adjacent,950000.0,no_award_text_no_ti
 CW124093,"DCSS - MOBIS - Cole Consulting, Inc.",,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW124299,"Broadband Equity, Access and Deployment (BEAD)",Chief Technology Officer (OCTO),it_adjacent,847200.0,no_ref_award_text,no_ref_in_text,,0,,
 CW124474,"Salesforce Service Cloud License Renewal, Salesforce Lightening Platform Renewal",Health Care Finance (DHCF),it_goods,784167.03,no_ref_award_text,no_ref_in_text,,0.518,Doc501858,Salesforce License Renewal
-CW124482,Cisco Master Agreement-OCTO-FY25-FY26,Chief Technology Officer (OCTO),it_goods,40000000.0,no_award_text_no_title_match,no_award_text,,0.473,Doc709403,Cisco AV Solution OCTO FY24
+CW124482,Cisco Master Agreement-OCTO-FY25-FY26,Chief Technology Officer (OCTO),it_goods,40000000.0,no_award_text_no_title_match,no_award_text,,0.54,Doc172483,Cisco Equipment- OCTO- FY14
 CW124522,Contract Workspace (Procurement)-PRM CONSULTING INC,Contracting and Procurement (OCP),it_adjacent,1000000.0,schedule_vehicle_only,schedule_ref_only,,0,,
 CW124619,"DMPED- OPTION YEAR ONE Urban Planning, - GENSLER & ASSOC.",Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,1980000.0,visible_pdf_verified,ref_found_in_pull,|DCEB-2024-Q-1002,0.253,Doc405528,FY2018 - Psychiatrist Services - ( DCSS Preferred) - One Year BPA with 2 year Option
 CW124673,ServiceNow licenses,Chief Technology Officer (OCTO),other,901581.6,visible_title_match,no_award_text,,1.0,Doc749299,ServiceNow licenses
@@ -506,7 +506,7 @@ CW124839,Traffic Accident Recording and Analysis System (TARAS2),Transportation 
 CW124889,"DCSS - MOBIS - SectorMax, Inc.",,it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW125025,FY25 Arbor Pravail,Chief Technology Officer (OCTO),other,458019.31,visible_pdf_verified,ref_found_in_pull,761800,1.0,Doc761800,FY25 Arbor Pravail
 CW125066,FY25_GD0_CIO_Student GPS Tracking and Transportation Management System,State Superintendent of Education (OSSE),it_goods,2070229.6,no_ref_award_text,no_ref_in_text,,0.534,Doc731163,"Request for Information - Routing, GPS, and Transportation Management System"
-CW125157,DHS_Temporary Staffing for OAH Staffing Contract (Hearing Examiner & Program Support Specialist),Human Services (DHS),other,938156.8,no_award_text_no_title_match,no_award_text,,0.473,Doc547955,Request for Quotation - FY21-DHS- Temporary Staffing Services (DCSS-Temporary Support Services )
+CW125157,DHS_Temporary Staffing for OAH Staffing Contract (Hearing Examiner & Program Support Specialist),Human Services (DHS),other,938156.8,no_award_text_no_title_match,no_award_text,,0.502,Doc109798,Temporary Staffing - Contract Specialist
 CW125247,Traffic Signal and Streetlight Utility Locating and Marking Citywide,,other,6982109.359999999,visible_title_match,no_award_text,,1.0,DCKA-2020-B-0058,Traffic Signal and Streetlight Utility Locating and Marking Citywide
 CW125301,"Mar-Sam, LLC - DCSS MOBIS",,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW125387,Procurement of Dell IT Equipment and Accessories,Health (DOH),it_goods,177211.11,no_award_text_no_title_match,no_award_text,,0.747,Doc763457,FY25 - AMP - SHSP Dell IT Equipment and Accessories
@@ -566,7 +566,7 @@ CW128135,DOC CTF Camera Project FY2025,Corrections (DC),other,286972.3,visible_p
 CW128225,Salesforce Licensing,Health (DOH),other,2000000.0,no_award_text_no_title_match,no_award_text,,0.52,Doc457182,TEEM Licensing
 CW128300,ESRI Enterprise Licenses,Chief Technology Officer (OCTO),software_services,750000.0,schedule_vehicle_only,schedule_ref_only,,0.505,Doc628743,FY22-OCTO-Google Workspace Enterprise licenses
 CW128424,OCP Requirements Engineering Technical Services,Contracting and Procurement (OCP),it_adjacent,248536.0,visible_title_match,no_award_text,,0.837,Doc775301,Fy25 OCP Requirements Engineering Technical Services Consultant - DCSS ONLY
-CW128449,DCSS - Temporary Support Services - Rizeup Technology Training,Contracting and Procurement (OCP),other,1000000.0,no_award_text_no_title_match,no_award_text,,0.47,Doc232030,FY15-Temporary Support-DCTC
+CW128449,DCSS - Temporary Support Services - Rizeup Technology Training,Contracting and Procurement (OCP),other,1000000.0,no_award_text_no_title_match,no_award_text,,0.485,Doc106337,Temporary Support Services - DCRA
 CW128516,Program Management PM Services the Requirement to support the DC PL,Transportation (DDOT),it_adjacent,11352171.6,visible_pdf_verified,ref_found_in_pull,|DCKA-2025-Q-0019,0.549,DCKA-2022-R-0040,DC Circulator Program Management Support Services
 CW128527,CCTV Equipment and Services for MPD - Aggregate A,Metropolitan Police Department (MPD),other,9118498.65,no_ref_award_text,no_ref_in_text,,0.766,Doc779376,CCTV Equipment and Services - MPD
 CW128529,CCTV Equipment and Services - MPD - Aggregates Group B,Metropolitan Police Department (MPD),other,150318.9,no_ref_award_text,no_ref_in_text,,0.64,Doc779376,CCTV Equipment and Services - MPD
@@ -583,8 +583,8 @@ CW128755,Contract Workspace (Procurement)-PROFESSIONAL MANAGEMENT CONSULTING SER
 CW128855,DCKT-FY25-Generators,Public Works (DPW),other,512375.0,no_ref_award_text,no_ref_in_text,,0.546,Doc576299,FY21-FA0-Generators
 CW128868,FY26 LCP Tracker,Employment Services (DOES),it_adjacent,109575.0,visible_title_match,no_ref_in_text,,1.0,Doc527367,lcp tracker
 CW128894,DPW - Panasonic Tablets and Related Mounting Equipment for the LPR,Public Works (DPW),other,999382.0,no_ref_award_text,no_ref_in_text,,0.643,Doc783418,License Plate Reader - Panasonic Tablets and Related Mounting Equipment
-CW128896,"PRM Consulting, Inc. - DCSS Training Services",,other,500000.0,no_ref_award_text,no_ref_in_text,,0.505,Doc377011,CFSA - RFQ - Smartsheet Consulting and Training
-CW128900,Workforce Management Implementation Services,Public Works (DPW),it_adjacent,165515.0,award_says_no_solicitation,explicit_no_solicitation,,0.335,DCKA-2015-B-0030,Implementation of Freeway Traffic Management System
+CW128896,"PRM Consulting, Inc. - DCSS Training Services",,other,500000.0,no_ref_award_text,no_ref_in_text,,0.511,DCRL-2014-A-0042,Training and Consulting Services
+CW128900,Workforce Management Implementation Services,Public Works (DPW),it_adjacent,165515.0,award_says_no_solicitation,explicit_no_solicitation,,0.594,Doc148064,MPD Workforce Central Implementation
 CW129102,Data Lakehouse and services,Health (DOH),software_services,706282.74,no_ref_award_text,no_ref_in_text,,0.36,Doc760009,FY2025-RFQ Data Storytelling
 CW129167,JUSTIS Cloud Migration,Criminal Justice Coordinating Council (CJCC),software_services,999402.67,schedule_vehicle_only,schedule_ref_only,,0.463,Doc652286,Cloud Migration Assessment and Solution
 CW129179,FY26 Cyber Incident Response Retainer,Chief Technology Officer (OCTO),other,162948.19,visible_title_match,no_ref_in_text,,0.864,Doc512944,FY20-OCTO-Cyber Incident Response Retainer
@@ -630,7 +630,7 @@ CW130729,DOB - Salesforce Licenses,Contracting and Procurement (OCP),it_adjacent
 CW130782,OCP Executive Project Manageement Services,Contracting and Procurement (OCP),it_adjacent,249600.0,no_award_text_no_title_match,no_award_text,,0,,
 CW130785,Aspen of DC Inc- DBA ADC Managment Solutions- MOBIS- DCSS,,it_adjacent,1000000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW130853,DMPED Grants Management Platform - Submittable Holdings,Deputy Mayor for Planning and Economic Development (DMPED),other,28200.0,cites_number_not_in_pull,ref_not_in_pull,,0,,
-CW130931,DCHR Learning Content Management System,Human Resources (DCHR),software_services,287236.93,no_ref_award_text,no_ref_in_text,,0.664,Doc399544,DCKT-2019-Learning Management System
+CW130931,DCHR Learning Content Management System,Human Resources (DCHR),software_services,287236.93,no_ref_award_text,no_ref_in_text,,0.762,DCRL-2014-R-0080,Enterprise Learning Content Management System
 CW131083,DCSS - Temporary Support Services -  Belen Network LLC,Contracting and Procurement (OCP),other,1000000.0,no_ref_award_text,no_ref_in_text,,0.518,Doc232030,FY15-Temporary Support-DCTC
 CW131110,Promesa Consulting Group- DCSS- MOBIS,,it_adjacent,1000000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW131154,Licensed Temporary Resources,Health Care Finance (DHCF),it_adjacent,103142.4,no_award_text_no_title_match,no_award_text,,0.673,Doc535678,DCAS Temporary Resources
@@ -654,7 +654,7 @@ CW132265,DCSS - MOBIS - Alade,,it_adjacent,1000000.0,no_award_text_no_title_matc
 CW132280,DOB - Near-Me Enterprise Marketplace License Subscription Services,Department Of Buildings (DOB),software_services,700035.0,no_ref_award_text,no_ref_in_text,,0.508,Doc525691,FY20-OCTO-Tableau Server Enterprise License Subscription
 CW132391,QLIK Sense Software,State Superintendent of Education (OSSE),software_services,500000.0,visible_title_match,no_award_text,,1.0,Doc772809,IFB Qlik Sense Software
 CW132411,"AIM Technical Group, LLC - DCSS MOBIS",,it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0.494,Doc455817,Technical Writing Services (DCSS-MOBIS ONLY)
-CW132447,DC General Construction Inc- DCSS- ELS,,it_goods,1000000.0,no_ref_award_text,no_ref_in_text,,0,,
+CW132447,DC General Construction Inc- DCSS- ELS,,it_goods,1000000.0,no_ref_award_text,no_ref_in_text,,0.592,Doc151950,FY14-GENERAL CONSTRUCTION
 CW132663,Informatica Software Licenses and Support Services,Health Care Finance (DHCF),other,235380.12,no_ref_award_text,no_ref_in_text,,0.553,Doc687342,Informatica Maintenance and Support Services
 CW132686,DC Plug Feeder 15171 CMI,Transportation (DDOT),other,2649399.0,no_award_text_no_title_match,no_award_text,,0.668,DCKA-2015-B-0042,DC PLUG-Feeder 308
 CW132688,DCSS- Innovation Horizons- TS,,other,500000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -673,7 +673,7 @@ CW133260,DHCF DCAS FY2026 - Sonar Cloud (SonarQube) Enterprise Plan,Contracting 
 CW133371,Meditech Software Maintenance,Health Care Finance (DHCF),other,107402.0,no_ref_award_text,no_ref_in_text,,0.684,Doc579164,FY21-BMC Software Maintenance
 CW133389,DOB - Temporary Resources Support,Department Of Buildings (DOB),other,658405.8,no_award_text_no_title_match,no_award_text,,0.67,Doc485126,Temporary Resources - Administrative Support
 CW133410,EIS SAS Premium Learning Subscription,Health (DOH),other,106319.88,no_ref_award_text,no_ref_in_text,,0,,
-CW133523,DHS_Temporary Staffing for OAH Staffing Contract (Supervisory Hearing Examiners),Human Services (DHS),other,178567.2,no_award_text_no_title_match,no_award_text,,0.455,Doc576158,FY21 - IFB - DHS - Temporary Staffing Services Staffing Augmentation
+CW133523,DHS_Temporary Staffing for OAH Staffing Contract (Supervisory Hearing Examiners),Human Services (DHS),other,178567.2,no_award_text_no_title_match,no_award_text,,0.461,Doc109798,Temporary Staffing - Contract Specialist
 CW133531,Enhance and fully integrate the Street Vending,Chief Technology Officer (OCTO),it_goods,250000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW133532,FY26 - DCSS RFDO Dell Computers,Youth Rehabilitation Services (DYRS),it_goods,295000.0,no_award_text_no_title_match,no_award_text,,0.758,Doc314408,FY2017 - Dell Computers (DCSS Only )
 CW133612,"E-Logic, Inc DCSS Engineering",,other,1000000.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -703,7 +703,7 @@ CW136064,"DCSS - Marketing, Media and Public Information - Collaborative Communi
 CW136077,DOC Conference Center Audio Visual Upgrade,Corrections (DC),other,299711.28,visible_title_match,no_award_text,,1.0,Doc827061,DOC Conference Center Audio Visual Upgrade w CBE Set Aside
 CW136221,Annual Grievance Reporting and Compliance Analysis Consulting,Health Care Finance (DHCF),it_adjacent,227997.76,visible_pdf_verified,ref_found_in_pull,825976,0.863,Doc825976,Annual Grievance Reporting and Compliance Analysis
 CW136228,DCSS - Temporary Support Services- J&A Hospitality Staffing,Contracting and Procurement (OCP),other,1000000.0,no_award_text_no_title_match,no_award_text,,0.656,Doc542650,Temporary Staffing Support Services
-CW136258,24-7 IT Monitoring Operations Center,Chief Technology Officer (OCTO),it_adjacent,216000.0,no_ref_award_text,no_ref_in_text,,0,,
+CW136258,24-7 IT Monitoring Operations Center,Chief Technology Officer (OCTO),it_adjacent,216000.0,no_ref_award_text,no_ref_in_text,,0.425,Doc154756,ELSAG Operations Center Software Licenses - OCTO-FY14-IT
 CW136286,Atlan Data Catalog Solution,Chief Technology Officer (OCTO),it_goods,177512.5,no_ref_award_text,no_ref_in_text,,0.668,Doc725882,Data Catalog Platform Solution
 CW136383,FY26-EOM-Digital Archiving,Mayor (EOM),it_adjacent,145000.0,no_ref_award_text,no_ref_in_text,,0.43,Doc655124,FY23-RFTOP EOM- Digital Preservation Sytem
 CW136430,Veeam Data Platform,Health Care Finance (DHCF),other,17000.0,no_award_text_no_title_match,no_award_text,,0.498,Doc796936,FY26-OIT-Veeam Data Platform Advanced Universal-Local
@@ -734,27 +734,27 @@ CW45924,OCTO Temporary Personnel - Midtown Personnel,Chief Technology Officer (O
 CW46136,DCSS-Training Services-The Privacy Advocate LLC,Contracting and Procurement (OCP),other,500000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW46138,DCSS-MOBIS - The Privacy Advocate LLC,Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW46410,Trakster System Support and Data Management Analysis,Public Works (DPW),software_services,246800.0,no_ref_award_text,no_ref_in_text,,0.494,Doc258051,DCRA Data Management System
-CW46714,"DCSS-Security Equipment & Services- Prism International, LLC",Contracting and Procurement (OCP),other,850000.0,no_ref_award_text,no_ref_in_text,,0,,
+CW46714,"DCSS-Security Equipment & Services- Prism International, LLC",Contracting and Procurement (OCP),other,850000.0,no_ref_award_text,no_ref_in_text,,0.428,Doc171216,Security Networks Equipment
 CW46721,Temporary Personnel - Triage Group,Chief Technology Officer (OCTO),other,9278596.0,no_award_text_no_title_match,no_award_text,,0.545,Doc260116,FY16-TO0-Temporary Personnel
-CW46773,e-SivicRMS Web-Based Software Maintenance and Support,State Superintendent of Education (OSSE),software_services,256400.0,no_ref_award_text,no_ref_in_text,,0,,
+CW46773,e-SivicRMS Web-Based Software Maintenance and Support,State Superintendent of Education (OSSE),software_services,256400.0,no_ref_award_text,no_ref_in_text,,0.532,Doc90150,Oracle Software License Maintenance Support
 CW46846,"DCSS-Temporary Support Services-96130-Prism International, LLC.",,other,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW46949,"DCSS-IT Equipment & Software-Prism International, LLC",Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW46957,OCTO DCSS  - Temporary Personnel - Advanced Network Consulting,Chief Technology Officer (OCTO),other,12682871.0,no_award_text_no_title_match,no_award_text,,0,,
+CW46957,OCTO DCSS  - Temporary Personnel - Advanced Network Consulting,Chief Technology Officer (OCTO),other,12682871.0,no_award_text_no_title_match,no_award_text,,0.457,Doc195837,RFTO - Temporary personnel resoources - OCTO - FY15 - IT group
 CW47017,OCTO - DCSS - Temporary Personnel - PMCS,Chief Technology Officer (OCTO),other,848160.0,no_award_text_no_title_match,no_award_text,,0.623,Doc260116,FY16-TO0-Temporary Personnel
 CW47090,OSSE_APS_IDEA Compliance Web-Based Database Software_DC CATS,State Superintendent of Education (OSSE),software_services,100742.0,no_ref_award_text,no_ref_in_text,,0,,
-CW47099,OCTO DCSS - Temporary Personnel - Synergetic Information Systems,Chief Technology Officer (OCTO),other,940560.0,no_award_text_no_title_match,no_award_text,,0,,
+CW47099,OCTO DCSS - Temporary Personnel - Synergetic Information Systems,Chief Technology Officer (OCTO),other,940560.0,no_award_text_no_title_match,no_award_text,,0.429,Doc195837,RFTO - Temporary personnel resoources - OCTO - FY15 - IT group
 CW47100,Temporary Personnel Services - Tecknomic,Chief Technology Officer (OCTO),other,938432.8,no_award_text_no_title_match,no_award_text,,0.615,Doc260116,FY16-TO0-Temporary Personnel
 CW47148,Pager Services,Chief Technology Officer (OCTO),other,19800.0,visible_title_match,no_award_text,,1.0,Doc273589,Pager Services
 CW47269,DCSS - MOBIS- Analytica,Contracting and Procurement (OCP),it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW47272,OSSE-DOT-GPS Vehicle Locator Services,State Superintendent of Education (OSSE),software_services,235424.6,no_ref_award_text,no_ref_in_text,,0,,
-CW47335,"DCSS-Temporary Support Services-Tildora Systems, LLC",Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0.506,Doc232030,FY15-Temporary Support-DCTC
+CW47335,"DCSS-Temporary Support Services-Tildora Systems, LLC",Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0.523,Doc106337,Temporary Support Services - DCRA
 CW47414,"DCSS - MOBIS - Crew Solutions, Inc.",Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW47499,DCSS-Temporary Support Services-KLSL Consulting,Contracting and Procurement (OCP),other,950000.0,no_ref_award_text,no_ref_in_text,,0.564,Doc232030,FY15-Temporary Support-DCTC
 CW47840,Business Process ReDesign (BPR),Human Services (DHS),it_adjacent,993750.0,no_ref_award_text,no_ref_in_text,,0.443,Doc255401,FY2016 - New Software and Business Process
 CW48017,"Mission Oriented Business Integrated Services (Mobis)- Hales Creative Solutions, LLC",,it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW48181,"DCSS-2006-R-96130-00-Temporary Support Services-Changing Technologies, Inc.",,other,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW48262,DCSS- Industrial Services - Spiritedone LLC,Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW48268,Accela License Maintenance and Support,Licensing & Consumer Protection (DLCP),it_goods,503261.04,no_award_text_no_title_match,no_award_text,,0.562,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT
+CW48268,Accela License Maintenance and Support,Licensing & Consumer Protection (DLCP),it_goods,503261.04,no_award_text_no_title_match,no_award_text,,0.666,Doc90150,Oracle Software License Maintenance Support
 CW48317,"CW48317 - MOBIS - ZC Solution, LLC",Contracting and Procurement (OCP),it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW48355,Dell-DELL SAN (Storage Area Network) SME Reengineering Solution,Chief Technology Officer (OCTO),it_adjacent,330560.0,no_ref_award_text,no_ref_in_text,,0.587,Doc232542,Dell SAN Reengineering Solution
 CW48365,"DCSS-MOBIS- Sylver Rain Consulting, LLC",Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -772,7 +772,7 @@ CW49160,Temporary Support Services,Licensing & Consumer Protection (DLCP),other,
 CW49341,MS Premier,Chief Technology Officer (OCTO),software_services,341959.0,no_award_text_no_title_match,no_award_text,,0,,
 CW49408,"DCSS - MOBIS - Alternatives Renewable Solutions, LLC",Contracting and Procurement (OCP),it_adjacent,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW49504,BMC Maintenance Renewal,Chief Technology Officer (OCTO),software_services,232206.71,visible_title_match,no_award_text,,1.0,Doc295632,BMC Maintenance Renewal
-CW49529,"DCSS-Marketing, Media and Public Information-Stratacomm",Contracting and Procurement (OCP),other,900000.0,no_ref_award_text,no_ref_in_text,,0,,
+CW49529,"DCSS-Marketing, Media and Public Information-Stratacomm",Contracting and Procurement (OCP),other,900000.0,no_ref_award_text,no_ref_in_text,,0.601,Doc185796,FY'15-RFQ-DISB-MEDIA AND PUBLIC INFORMATION SERVICES-DCSS SUPPLIERS ONLY
 CW49548,Netscout Network Hardware Monitoring Replacement,Chief Technology Officer (OCTO),it_goods,231140.28,visible_title_match,no_award_text,,1.0,Doc294883,Netscout Network Hardware Monitoring Replacement
 CW49629,Compuware Software Maintenance,Chief Technology Officer (OCTO),software_services,138695.33,visible_title_match,no_ref_in_text,,1.0,Doc296997,Compuware Software Maintenance
 CW49714,PPM- Oracle Database Grid,Chief Technology Officer (OCTO),software_services,1391847.98,no_ref_award_text,no_ref_in_text,,0.738,Doc295627,FY17-T0O- Oracle Database Grid
@@ -795,11 +795,11 @@ CW51925,Oracle Engineered Systems - High Availability (HA),Chief Technology Offi
 CW51929,DOH Building Access Control and Monitoring System,Health (DOH),other,128636.87,no_award_text_no_title_match,no_award_text,,0,,
 CW52081,E-Citation System,Metropolitan Police Department (MPD),software_services,499958.0,visible_pdf_verified,ref_found_in_pull,308925,0.538,Doc308925,Competition Exemption E-Citation System
 CW52115,"DCSS-Mobis-Educology Solutions, Inc.",,it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW52464,Additional Medicaid Data Warehouse Development,Health Care Finance (DHCF),it_adjacent,1.0,no_award_text_no_title_match,no_award_text,,0,,
+CW52464,Additional Medicaid Data Warehouse Development,Health Care Finance (DHCF),it_adjacent,1.0,no_award_text_no_title_match,no_award_text,,0.442,Doc205643,Parallel Data Warehouse
 CW52472,"DCSS-Temporary Support Services-Prime Source Technologies, LLC",Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW52476,"DCSS-MOBIS-Precision Capital Partners, LLC",Contracting and Procurement (OCP),it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW52543,DCSS-MOBIS(918)-Georgetown Technologies,,it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW52560,Ricoh Laser Multifunction Printers,State Superintendent of Education (OSSE),it_goods,215330.0,no_ref_award_text,no_ref_in_text,,0,,
+CW52560,Ricoh Laser Multifunction Printers,State Superintendent of Education (OSSE),it_goods,215330.0,no_ref_award_text,no_ref_in_text,,0.564,Doc116104,FY2013-KV0-LEXMARK MULTIFUNCTION PRINTERS
 CW52586,QuickBase,Chief Technology Officer (OCTO),software_services,1583548.0,visible_pdf_verified,ref_found_in_pull,312402,0.659,Doc312402,FY17-T0O- Quickbase
 CW52868,"DCSS-Information Technology, Equipment and Software-Accurate Conceptions, LLC",,software_services,950000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW53341,"Incapsulate, LLC - DOT Customer Relationship Management System",Special Education Transportation (SET),software_services,31500.0,no_ref_award_text,no_ref_in_text,,0.431,Doc270217,FY16_OSSE_DOT_Asset_Management_System
@@ -807,8 +807,8 @@ CW53355,DCSS - It Equipment & Software - A&M Technologies,Contracting and Procur
 CW53568,"DCSS-MOBIS-L.S. Caldwell & Associates, Inc.",Contracting and Procurement (OCP),it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW53865,"DCSS - MOBIS (918) - Savvy Technology Solution, LLC.",,it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW54223,DCSS-Training Services-Holistic Planners Network,Contracting and Procurement (OCP),other,500000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW54232,Parking Enforcement System Support and Maintenance,Public Works (DPW),other,1538257.27,no_ref_award_text,no_ref_in_text,,0.395,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT
-CW54310,Exadata Licenses and Maintenance,Chief Technology Officer (OCTO),it_goods,0.0,no_award_text_no_title_match,no_award_text,,0.589,Doc268761,Exalogic and Exadata Maintenance
+CW54232,Parking Enforcement System Support and Maintenance,Public Works (DPW),other,1538257.27,no_ref_award_text,no_ref_in_text,,0.506,Doc195463,DCKT-FY15- Request for Information - Parking Enforcement System
+CW54310,Exadata Licenses and Maintenance,Chief Technology Officer (OCTO),it_goods,0.0,no_award_text_no_title_match,no_award_text,,0.604,Doc120554,FY13-FA0-WASP Licenses & Maintenance
 CW54351,DOT Salesforce Software Licenses - CRM,Special Education Transportation (SET),software_services,298831.63,no_ref_award_text,no_ref_in_text,,0.545,Doc336392,FY2017 - Salesforce Software ( DCSS Preferred )
 CW54466,DCSS - MOBIS - KLSL Consulting,Contracting and Procurement (OCP),it_adjacent,20000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW54700,FY18_OSSE_ODA_Public Consulting Group,State Superintendent of Education (OSSE),it_adjacent,1085433.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -819,15 +819,15 @@ CW55344,DHS FY18 - TALX CORPORATION (The Work Number)-GSA schedule GS-02F-235X,H
 CW55360,"DCSS- MOBIS - THe Clearing, Inc.",,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW55833,IBM Mainframe License and Maintenance,Chief Technology Officer (OCTO),software_services,998446.92,no_award_text_no_title_match,no_award_text,,0.478,Doc278484,IBM Software & Maintenance - GSA
 CW56221,"DCSS -  MOBIS - Global, Inc",,it_adjacent,10000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW56542,"DCSS-Security Equipment & Services-Wilson Dependable Services, LLC",Contracting and Procurement (OCP),other,850000.0,schedule_vehicle_only,schedule_ref_only,,0,,
+CW56542,"DCSS-Security Equipment & Services-Wilson Dependable Services, LLC",Contracting and Procurement (OCP),other,850000.0,schedule_vehicle_only,schedule_ref_only,,0.435,Doc171216,Security Networks Equipment
 CW57103,MMIS IV&V,Health Care Finance (DHCF),it_adjacent,5487700.0,visible_title_match,no_award_text,,1.0,Doc299326,MMIS IV & V 2017
 CW57524,Fully Managed Juniper Optical Hardware (Bandwidth Services),Health (DOH),other,392828.8,no_award_text_no_title_match,no_award_text,,0,,
-CW57663,Computer Associates Software,Chief Technology Officer (OCTO),software_services,913242.64,no_award_text_no_title_match,no_award_text,,0.493,Doc319132,FY'17 HSEMA - Request for Quotation for Computer Software Update
+CW57663,Computer Associates Software,Chief Technology Officer (OCTO),software_services,913242.64,no_award_text_no_title_match,no_award_text,,0.55,Doc156669,Fy14-Apple Computer Hardware & Software
 CW57723,GovDelivery Enterprise Communication Solution,Chief Technology Officer (OCTO),software_services,451593.08,no_ref_award_text,no_ref_in_text,,0.533,Doc239877,Digital Communication Solution
 CW57818,"DCSS-2006-R-920-00-IT Equipment and Software-Precision Capital Partners, LLC",,software_services,1900000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW57892,Website Maintenance and Hosting Support,Board of Elections (DCBOE),software_services,92699.55,no_ref_award_text,no_ref_in_text,,0.556,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT
 CW57896,"DCSS MOBIS Capital Consulting, LLC",,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW58124,DCAS - Temporary Personnel - Analytica,Contracting and Procurement (OCP),other,1059440.0,no_award_text_no_title_match,no_award_text,,0.551,Doc260116,FY16-TO0-Temporary Personnel
+CW58124,DCAS - Temporary Personnel - Analytica,Contracting and Procurement (OCP),other,1059440.0,no_award_text_no_title_match,no_award_text,,0.568,Doc87581,FY13 - KA0 - Temporary Personnel Services
 CW58725,"DCSS-IT Equipment & Software-The Pittman Group, Inc.",Contracting and Procurement (OCP),software_services,950000.0,no_ref_award_text,no_ref_in_text,,0.482,Doc335624,FY2017 - I.T. Equipment and Software - (DCSS Preferred )
 CW58761,"DCSS - It Equipment & Software - Cradle Systems, LLC",Contracting and Procurement (OCP),software_services,20000000.0,no_ref_award_text,no_ref_in_text,,0.477,Doc335624,FY2017 - I.T. Equipment and Software - (DCSS Preferred )
 CW58776,DCSS Application for VCARE MOBIS,Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -843,7 +843,7 @@ CW59687,"DCSS-2006-R-918-00-Mission Oriented Business Integrated Services-Busine
 CW59986,"DCSS - MOBIS - Sol Support, LLC",,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW60126,FY18_Board of Elections_Audiovisual Equipment,Board of Elections (DCBOE),other,487848.0,visible_title_match,no_award_text,,1.0,Doc369706,FY18_Board of Elections - Audiovisual Equipment Services
 CW60229,DCSS-MOBIS-Blake Associates Technologies,,it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW60315,FEMS Streetcar Safety Consultation,Fire and Emergency Services Department (FEMS),it_adjacent,400000.0,no_award_text_no_title_match,no_award_text,,0,,
+CW60315,FEMS Streetcar Safety Consultation,Fire and Emergency Services Department (FEMS),it_adjacent,400000.0,no_award_text_no_title_match,no_award_text,,0.433,Doc88337,FY13-FB0-FEMS Streetcar Program
 CW60409,"DCSS - Mission Oriented Business Integrated Services (MOBIS)- 918- MVS,Inc.",,it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW60423,Qualys Vulnerability Platform,Chief Technology Officer (OCTO),software_services,231850.0,visible_title_match,no_ref_in_text,,1.0,Doc369613,Qualys Vulnerability Platform
 CW60526,SecureAuth IDP Platform Subscription Renewal,Chief Technology Officer (OCTO),software_services,332800.0,visible_title_match,no_ref_in_text,,1.0,Doc370048,SecureAuth IDP Platform Subscription Renewal
@@ -869,20 +869,20 @@ CW64003,"DCSS -  Temporary support Services (96130)-Coroporate Systems Resources
 CW64063,DCSS Application for MOBIS for Health IT 2 Business dba CODICE,Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW64065,MicroStrategy Business Software,Chief Technology Officer (OCTO),it_adjacent,380115.15,visible_title_match,no_award_text,,1.0,Doc398197,MicroStrategy Business Software
 CW64225,Solarwinds Licenses,Chief Technology Officer (OCTO),software_services,234665.22,visible_pdf_verified,ref_found_in_pull,396666,1.0,Doc396666,Solarwinds Licenses
-CW64233,DCSS Application for Supre Tech Inc. for IT,Contracting and Procurement (OCP),it_goods,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW64313,Broadview Software Maintenance and Telecomm Support,"Cable Television, Film, Music and Entertainment (OFTE)",it_goods,88206.0,no_award_text_no_title_match,no_award_text,,0.511,Doc425663,IBoss Content Filtering Software Maintenance and Support Services
+CW64233,DCSS Application for Supre Tech Inc. for IT,Contracting and Procurement (OCP),it_goods,1900000.0,no_award_text_no_title_match,no_award_text,,0.439,Doc215666,Request for Quotation - IT Application Development
+CW64313,Broadview Software Maintenance and Telecomm Support,"Cable Television, Film, Music and Entertainment (OFTE)",it_goods,88206.0,no_award_text_no_title_match,no_award_text,,0.57,Doc90150,Oracle Software License Maintenance Support
 CW64329,FY18 - CF0 - Office of Information Technology - Canon Copiers (DCIA and PFL),Employment Services (DOES),other,97638.87,visible_title_match,no_award_text,,0.853,Doc400195,FY18 - CF0 - Office of Information Technology - DCIA and PFL Copiers
 CW64583,"Department of Health Care Finance Office of the Ombudsman and Bill of Rights Temporary Staff support Period of Performance, October 1, 2018 thru September 30, 2019",Health Care Finance (DHCF),it_adjacent,765720.8,no_award_text_no_title_match,no_award_text,,0,,
 CW64800,"DCSS- MOBIS- Dranreft, LLC dba Business Transformation Group (BTG)",Contracting and Procurement (OCP),it_adjacent,11900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW64858,"DCSS - Marketing, Media and Public Information 961-00 - Rana Labs, LLC.",Contracting and Procurement (OCP),other,900000.0,no_award_text_no_title_match,no_award_text,,0.558,Doc410220,"CFO-FY19-MARKETING, MEDIA AND PUBLIC INFORMATION SERVICES-DCSS ONLY-(DOES, WIC, DMGEO)"
-CW64904,DCAS - Temporary Personnel - Avid Systems,Health Care Finance (DHCF),other,7270220.0,no_award_text_no_title_match,no_award_text,,0.5,Doc260116,FY16-TO0-Temporary Personnel
+CW64904,DCAS - Temporary Personnel - Avid Systems,Health Care Finance (DHCF),other,7270220.0,no_award_text_no_title_match,no_award_text,,0.517,Doc87581,FY13 - KA0 - Temporary Personnel Services
 CW64906,DHCF - Temporary Personnel Resources,Health Care Finance (DHCF),it_adjacent,8046875.2,no_award_text_no_title_match,no_award_text,,0.679,Doc290219,FY17-T0O- Temporary Personnel IT Resources
 CW64950,"MMPI201841-Marketing, Media and Public Information-Solution Focus, LLC.",,other,2700000.0,no_ref_award_text,no_ref_in_text,,0.509,Doc410220,"CFO-FY19-MARKETING, MEDIA AND PUBLIC INFORMATION SERVICES-DCSS ONLY-(DOES, WIC, DMGEO)"
 CW65045,FY19-CF0- Temporary Support Services - Staff Augmentmentation (DOES-DMGEO-WIC) - The Coles Group,Employment Services (DOES),other,300000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW65077,DCSS Application Walton & Green Consultant Temporary Service,Contracting and Procurement (OCP),other,20000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW65120,"DCSS-MOBIS- JLC Management, LLC",Contracting and Procurement (OCP),it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW65487,DCAS - Temporary Personnel - Networking for Future,Health Care Finance (DHCF),other,3899311.6,no_award_text_no_title_match,no_award_text,,0.474,Doc260116,FY16-TO0-Temporary Personnel
-CW65845,DCHR Consulting Services,Human Resources (DCHR),it_adjacent,1106635.2000000002,no_award_text_no_title_match,no_award_text,,0.51,RFI-PCSB-02,Financial Consulting Services
+CW65487,DCAS - Temporary Personnel - Networking for Future,Health Care Finance (DHCF),other,3899311.6,no_award_text_no_title_match,no_award_text,,0.49,Doc87581,FY13 - KA0 - Temporary Personnel Services
+CW65845,DCHR Consulting Services,Human Resources (DCHR),it_adjacent,1106635.2000000002,no_award_text_no_title_match,no_award_text,,0.549,Doc221807,Acturial Consulting Services
 CW65888,DCSS-Temporary Support Services- DigiDoc dba Document Managers,Contracting and Procurement (OCP),other,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW66126,SCDC GRID SYSTEM,Contracting and Procurement (OCP),it_adjacent,1000180.0,no_award_text_no_title_match,no_award_text,,0.474,Doc275331,FY 16 XTK Grid Aim System for MPD
 CW66132,FY19-CF0- Temporary Support Services - Staff Augmentation (DOES-DMGEO-WIC) - DanTech Corporation,Employment Services (DOES),other,400000.0,no_award_text_no_title_match,no_award_text,,0.521,Doc404285,FY19 - CFO - Temporary Support Services - Staff Augmentation
@@ -898,22 +898,22 @@ CW66770,DCRA Temporary Support Services,Licensing & Consumer Protection (DLCP),o
 CW66807,"DCSS - MOBIS - Plwatcher Media Group, LLC",,it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW67010,FOIAxpress Software,Chief Technology Officer (OCTO),it_goods,510644.61,no_ref_award_text,no_ref_in_text,,0.573,Doc351659,FOIA Software
 CW67019,SAS Software and Services,Health Care Finance (DHCF),software_services,95017.5,no_award_text_no_title_match,no_award_text,,0.65,Doc356393,Software Request - DCSS Preferred Vendor
-CW67070,FY19_BX0-DCCAH_Temporary Services,Commission on Arts and Humanities (CAH),it_adjacent,152041.2,no_award_text_no_title_match,no_award_text,,0.512,Doc413349,DCCAH-Temporary Staffing Service.  DCSS SUPPLIERS ONLY
+CW67070,FY19_BX0-DCCAH_Temporary Services,Commission on Arts and Humanities (CAH),it_adjacent,152041.2,no_award_text_no_title_match,no_award_text,,0.635,Doc220181,FY'15-RFQ-DCCAH-TEMPORARY SERVICES-CBE SUPPLIERS ONLY
 CW67170,DCAS R3 IV&V,Health Care Finance (DHCF),it_adjacent,23271000.0,no_ref_award_text,no_ref_in_text,,0.459,Doc346871,FY17_DHCF_DCAS_IV&V
-CW67215,"Datadvantage Software Licenses, Maintenance and Support Services",Chief Technology Officer (OCTO),other,91490.0,no_award_text_no_title_match,no_award_text,,0.51,Doc306342,FY17-OCTO- IBM Curam Licenses Maintenance and Support
+CW67215,"Datadvantage Software Licenses, Maintenance and Support Services",Chief Technology Officer (OCTO),other,91490.0,no_award_text_no_title_match,no_award_text,,0.634,Doc90150,Oracle Software License Maintenance Support
 CW67661,PFL Tax Collection System,Employment Services (DOES),software_services,750060.25,no_award_text_no_title_match,no_award_text,,0.486,Doc248157,CF0-FY 16 U.I. TAX AND BENEFIT SYSTEM
 CW67780,DCSS - Information Technology Equipment and Software - Advanced Network Consulting Inc,,software_services,20000000.0,no_ref_award_text,no_ref_in_text,,0.447,Doc399441,FY18 - CF0 - Office of Information Technology - Agency Wide IT Equipment and Software
 CW67904,DCSS - MOBIS - Limbic Systems Inc.,,it_adjacent,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW67910,"DCSS - Temporary Support Services - Kovais Innovative Solutions, Inc.",,other,2850000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW68010,FY19 - CF0 - OYP - Maintenance and Support Employer Online Portal & Training,Contracting and Procurement (OCP); Employment Services (DOES),software_services,1290000.0,no_award_text_no_title_match,no_award_text,,0.39,Doc357839,FY18-CF0-OYP-Support Services
-CW68042,KwikTag Electronic Content Management System,Public Works (DPW),it_goods,66540.0,no_ref_award_text,no_ref_in_text,,0.508,Doc356422,Content Management System (CMS) Maintenance
+CW68010,FY19 - CF0 - OYP - Maintenance and Support Employer Online Portal & Training,Contracting and Procurement (OCP); Employment Services (DOES),software_services,1290000.0,no_award_text_no_title_match,no_award_text,,0.454,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
+CW68042,KwikTag Electronic Content Management System,Public Works (DPW),it_goods,66540.0,no_ref_award_text,no_ref_in_text,,0.585,DCRL-2014-R-0080,Enterprise Learning Content Management System
 CW68235,FY18 - CF0 - Office of Information Technology - Maintenance and Support for the Grants Management System,Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),software_services,100000.0,no_award_text_no_title_match,no_award_text,,0.584,Doc366416,FY18 - CF0 - Office of Information Technology - DCIA Q-Matic System
 CW68297,"DCSS- MOBIS- Quixotec, LLC",Contracting and Procurement (OCP),it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW68303,FY19 DCSS TEMPORARY SUPPORT SERVICES,Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0.781,Doc218272,FY15-DOH Temporary Support Services
 CW68445,FY 19-License & Maintenance on its existing inventory of election vote equipment.,Board of Elections (DCBOE),other,300750.0,no_ref_award_text,no_ref_in_text,,0,,
 CW68611,"DCSS MOBIS Empowerment Enterprise Group, LLC",,it_adjacent,1900000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW68785,"DCSS - MOBIS - Systems Integration, LLC",Contracting and Procurement (OCP),it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW69027,DCSS - Marketing Media an Public Information - Marketing Me Consulting,,other,2700000.0,no_award_text_no_title_match,no_award_text,,0.542,Doc410220,"CFO-FY19-MARKETING, MEDIA AND PUBLIC INFORMATION SERVICES-DCSS ONLY-(DOES, WIC, DMGEO)"
+CW69027,DCSS - Marketing Media an Public Information - Marketing Me Consulting,,other,2700000.0,no_award_text_no_title_match,no_award_text,,0.554,Doc144103,FY14 DIS - A Marketing and Public Information Consultant
 CW69325,"DCSS-Audit20197-V-Tech Solutions, Inc.",,other,500000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW69360,DCSS Application for Mindfinders,Contracting and Procurement (OCP),other,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW69398,"DCSS - MOBIS - dBase Technologies, LLC",Contracting and Procurement (OCP),it_adjacent,20000000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -926,7 +926,7 @@ CW70675,Iboss Content Filtering Software Maintenance and Support Services,Chief 
 CW71073,"DCSS-2006-R-96130-00-Temporary Support Services-V-Tech Solutions, Inc.",,other,30000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW71191,Service Now,Chief Technology Officer (OCTO),other,296098.12,no_award_text_no_title_match,no_award_text,,0,,
 CW71202,Cisco Flex EA and Active Host WebEx,Chief Technology Officer (OCTO),software_services,1065061.4,visible_title_match,no_ref_in_text,,0.898,Doc440657,FY19-TO0-Cisco Flex EA and Active Host WebEx
-CW71270,FY19-OSSE- I-SIght Case Management System,State Superintendent of Education (OSSE),it_adjacent,335740.0,no_ref_award_text,no_ref_in_text,,0.595,Doc365500,CF0-FY18 - OWC - CASE MANAGEMENT SYSTEM RFI
+CW71270,FY19-OSSE- I-SIght Case Management System,State Superintendent of Education (OSSE),it_adjacent,335740.0,no_ref_award_text,no_ref_in_text,,0.617,Doc158615,FY14-Case Management System-SBOE
 CW71779,Contract Workspace (Procurement)-CSZNET INC,Contracting and Procurement (OCP),it_adjacent,20000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW71837,DCSS - Information Technology  Equipment & Software- Star Office Products,Contracting and Procurement (OCP),other,20000000.0,no_award_text_no_title_match,no_award_text,,0.545,Doc399441,FY18 - CF0 - Office of Information Technology - Agency Wide IT Equipment and Software
 CW71839,DCSS - MOBIS - Maru Solutions Incorporated,Contracting and Procurement (OCP),it_adjacent,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -935,7 +935,7 @@ CW72139,Amazon Web Services (AWS) Cloud Solutions,Chief Technology Officer (OCTO
 CW72252,FY19 - CF0 - License Seats for Developer Database (Labor Market Analytics),Employment Services (DOES),other,21500.0,no_award_text_no_title_match,no_award_text,,0,,
 CW72797,"DCSS MOBIS Metropolitan Strategies and Solutions, LLC",,it_adjacent,3800000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW72844,"MOBIS-MOBIS201976-STK Consulting and Services, Inc.",,it_adjacent,950000.0,schedule_vehicle_only,schedule_ref_only,,0,,
-CW72870,"DCSS - Temporary Support Services - Midtown Personnel, Inc.",Contracting and Procurement (OCP),other,30000000.0,no_award_text_no_title_match,no_award_text,,0.511,Doc232030,FY15-Temporary Support-DCTC
+CW72870,"DCSS - Temporary Support Services - Midtown Personnel, Inc.",Contracting and Procurement (OCP),other,30000000.0,no_award_text_no_title_match,no_award_text,,0.658,Doc194049,Temporary Support Personnel Services for DHCD
 CW72874,"DCSS - MOBIS - Seas Community Partners, LLC",Contracting and Procurement (OCP),it_adjacent,10000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW72876,DCSS - MOBIS - Data Net Systems Corporation,Contracting and Procurement (OCP),it_adjacent,20000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW73403,OCTO ITFM CAPABILITY MATURITY ASSESSMENT,Chief Technology Officer (OCTO),other,857899.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -946,7 +946,7 @@ CW74046,LSHH Database CRISP,Energy and Environment (DOEE),it_goods,40000.0,no_re
 CW74562,Customer Relationship Management,Licensing & Consumer Protection (DLCP),software_services,432409.6,visible_title_match,no_award_text,,0.813,Doc456936,Customer Relationship Management Licenses
 CW74704,FY19 DCSS MOBIS JADD Solutions LLC,,it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW75305,"DCSS Applicaton for Reingold Link, LLC dba LINK Strategic Partners",Contracting and Procurement (OCP),other,1800000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW75423,Riverbed Equipment Maintenance,Chief Technology Officer (OCTO),it_goods,175524.74,no_ref_award_text,no_ref_in_text,,0.468,Doc240244,FY16 - OCTO - Riverbed Appliance Maintenance & Support - DCSS Preferred
+CW75423,Riverbed Equipment Maintenance,Chief Technology Officer (OCTO),it_goods,175524.74,no_ref_award_text,no_ref_in_text,,0.65,Doc85899,FY13- HC0-EQUIPMENT MAINTENANCE
 CW75471,Data Management and Visualization Software,Licensing & Consumer Protection (DLCP),it_goods,892463.98,visible_title_match,no_award_text,,1.0,Doc466194,Data Management and Visualization Software
 CW75482,Web Based Case Management System,Department on Disability Services (DDS),software_services,584542.5,cites_number_not_in_pull,ref_not_in_pull,,0.76,RM-17-RFQ-001-BY4-JM,Web-Based Learning Management System
 CW75972,Medicaid Information Technology Architecture (MITA) 3.0 State Self-Assessment (SS-A),Health Care Finance (DHCF),it_adjacent,3901304.0,visible_title_match,no_award_text,,0.966,Doc384226,Medicaid Information Technology Architecture State Self-Assessment 3.0 (MITA SS-A)
@@ -955,30 +955,30 @@ CW76162,"DCSS - Information Technology Equipment an Software - TallyCode, LLC",C
 CW76223,PFLBAS - DOES - Geographic Solutions,Employment Services (DOES),software_services,3000600.0,no_award_text_no_title_match,no_award_text,,0,,
 CW76289,OPTION YEAR FOUR - DC Business Portal Expansion  - Department of Consumer and Regulatory Affairs (DCRA),Deputy Mayor for Planning and Economic Development (DMPED); Licensing & Consumer Protection (DLCP),other,2040727.0,no_award_text_no_title_match,no_award_text,,0,,
 CW76421,DFHV Mobile Applications & Digital Platforms,For-Hire Vehicles (DFHV),software_services,799893.0,no_award_text_no_title_match,no_award_text,,0,,
-CW76476,CF0-FY20 DOCS Maintenance and Support,Employment Services (DOES),it_adjacent,10000512.0,no_award_text_no_title_match,no_award_text,,0.626,Doc291136,DCAFIS Maintenance and Support
+CW76476,CF0-FY20 DOCS Maintenance and Support,Employment Services (DOES),it_adjacent,10000512.0,no_award_text_no_title_match,no_award_text,,0.782,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
 CW76550,Contract Workspace (Procurement)-K-CONSULTING GROUP LLC,Contracting and Procurement (OCP),other,500000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW76841,DCSS - MOBIS - Developement Institute LLC,,it_adjacent,40000000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW77036,DCAS - Temporary Personnel - Cradle Systems,,other,2609473.48,no_award_text_no_title_match,no_award_text,,0.489,Doc260116,FY16-TO0-Temporary Personnel
-CW77201,CF0-FY20 Maintenance and Support IVR,Employment Services (DOES),software_services,444347.08,no_award_text_no_title_match,no_award_text,,0.615,Doc291136,DCAFIS Maintenance and Support
+CW77036,DCAS - Temporary Personnel - Cradle Systems,,other,2609473.48,no_award_text_no_title_match,no_award_text,,0.505,Doc87581,FY13 - KA0 - Temporary Personnel Services
+CW77201,CF0-FY20 Maintenance and Support IVR,Employment Services (DOES),software_services,444347.08,no_award_text_no_title_match,no_award_text,,0.718,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
 CW77255,GRID System MPD Arrest Data Feed Enhancement,Contracting and Procurement (OCP); District of Columbia Sentencing Commission (DCSCCRC),it_adjacent,446570.0,no_award_text_no_title_match,no_award_text,,0.575,Doc472065,SOLE SOURCE-- MPD Arrest Feed GRID System Enhancement
-CW77282,DCAS - Temporary Personnel - ZC Solutions,Health Care Finance (DHCF),other,2097608.3200000003,no_award_text_no_title_match,no_award_text,,0.5,Doc260116,FY16-TO0-Temporary Personnel
+CW77282,DCAS - Temporary Personnel - ZC Solutions,Health Care Finance (DHCF),other,2097608.3200000003,no_award_text_no_title_match,no_award_text,,0.517,Doc87581,FY13 - KA0 - Temporary Personnel Services
 CW77381,Avaya Software Maintenance,Chief Technology Officer (OCTO),software_services,717253.68,visible_title_match,no_ref_in_text,,0.839,Doc480807,Avaya Software Maintenance - GSA
-CW77447,McAfee Annual Maintenance and Support Renewal for Endpoint Security & IPS Platforms,Chief Technology Officer (OCTO),software_services,746013.11,no_award_text_no_title_match,no_award_text,,0.398,Doc291963,McAfee Support Renewal
+CW77447,McAfee Annual Maintenance and Support Renewal for Endpoint Security & IPS Platforms,Chief Technology Officer (OCTO),software_services,746013.11,no_award_text_no_title_match,no_award_text,,0.437,DCRL-2015-A-0025,Maintenance & Support Renewal Services
 CW77571,OSSE-DOT_GPS_Navigation_Routing_and_Scheduling,Special Education Transportation (SET),other,2763473.0,no_ref_award_text,no_ref_in_text,,0,,
 CW77577,Silo Hardware Maintenance,Chief Technology Officer (OCTO),software_services,128049.01,visible_title_match,no_ref_in_text,,1.0,Doc411200,Silo Hardware Maintenance
-CW77668,Cisco Master Agreement-OCTO-FY20-FY24,Chief Technology Officer (OCTO),it_goods,20000000.0,no_award_text_no_title_match,no_award_text,,0.461,Doc273779,FY16-Cisco IP Telephones-OCTO
+CW77668,Cisco Master Agreement-OCTO-FY20-FY24,Chief Technology Officer (OCTO),it_goods,20000000.0,no_award_text_no_title_match,no_award_text,,0.54,Doc172483,Cisco Equipment- OCTO- FY14
 CW77834,Production Staffing,"Cable Television, Film, Music and Entertainment (OFTE)",other,2925000.0,no_award_text_no_title_match,no_award_text,,0.653,Doc311839,Prodution Staffing Services
 CW77848,DCAS - Temporary Personnel - Sylver Rain Consulting,Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW77874,CF0-FY20 - ESSP Maintenance and Support,Employment Services (DOES),software_services,1659262.5,no_award_text_no_title_match,no_award_text,,0.626,Doc291136,DCAFIS Maintenance and Support
+CW77874,CF0-FY20 - ESSP Maintenance and Support,Employment Services (DOES),software_services,1659262.5,no_award_text_no_title_match,no_award_text,,0.764,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
 CW77876,Identity Access Management Solution,Licensing & Consumer Protection (DLCP),other,142772.33,visible_title_match,no_award_text,,1.0,Doc459132,Identity and Access Management Solution
 CW77914,"DCss - Mission Oriented Business Integrated Services (MOBIS)  - Nean Consulting, LLC",,it_adjacent,3800000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW77923,Offender Management System,Corrections (DC),it_goods,2864531.9,visible_pdf_verified,ref_found_in_pull,350609,0.839,Doc350609,DOC Offender Management System
 CW77960,"DCSS- IT Equipment & Software - TPW Consultants, LLC",Contracting and Procurement (OCP),software_services,1900000.0,no_ref_award_text,no_ref_in_text,,0.472,Doc335624,FY2017 - I.T. Equipment and Software - (DCSS Preferred )
-CW78166,DCSS--Training Services--MMI Consulting Group,Contracting and Procurement (OCP),other,1000000.0,no_award_text_no_title_match,no_award_text,,0.385,Doc377011,CFSA - RFQ - Smartsheet Consulting and Training
+CW78166,DCSS--Training Services--MMI Consulting Group,Contracting and Procurement (OCP),other,1000000.0,no_award_text_no_title_match,no_award_text,,0.646,DCRL-2014-A-0042,Training and Consulting Services
 CW78340,SAS Viya Licenses,Licensing & Consumer Protection (DLCP),other,104236.0,visible_title_match,no_award_text,,1.0,Doc482710,SAS Viya Licenses
 CW78873,FY20 - OCTO - Software AG,Chief Technology Officer (OCTO),software_services,288368.48,no_ref_award_text,no_ref_in_text,,0.592,Doc454547,FY19-RFQ-OCTO- Cloudera Software-DCSS Only
 CW79159,"DCSS - Security Equipment, Security Services, and Emergency Preparedness - Emergency 911 Security",,other,850000.0,no_ref_award_text,no_ref_in_text,,0.46,Doc371520,FY18 Emergency Preparedness Kits
-CW79362,CF0-FY20 - Maintenance & Support AHD-CRB E-Filing System,Employment Services (DOES),software_services,594000.0,no_award_text_no_title_match,no_award_text,,0,,
+CW79362,CF0-FY20 - Maintenance & Support AHD-CRB E-Filing System,Employment Services (DOES),software_services,594000.0,no_award_text_no_title_match,no_award_text,,0.503,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
 CW79588,FY20-Octo-Oracle SOA Suite Software License (DCAS),Chief Technology Officer (OCTO),other,292846.51,no_ref_award_text,no_ref_in_text,,0.583,Doc489672,Oracle SOA Suite-OCTO-FY20
 CW79929,FY20-Octo-Dell SAN Storage Reengineering Solution,Chief Technology Officer (OCTO),it_goods,290000.0,no_award_text_no_title_match,no_award_text,,0.747,Doc232542,Dell SAN Reengineering Solution
 CW80026,ALM Annual Maintenance,Chief Technology Officer (OCTO),software_services,242551.15,visible_title_match,no_ref_in_text,,0.824,Doc489424,FY20 - OCTO - ALM Annual Maintenance
@@ -1001,12 +1001,12 @@ CW81475,Parking Control Beat Design Analysis Consultant,Public Works (DPW),it_ad
 CW81559,DBH Opioid Strategic Planning Consultant Services,Behavioral Health (DBH),it_adjacent,624704.0,visible_title_match,no_award_text,,0.827,Doc502771,DCSS Vendors Only - DBH Opioid Strategic Planing and Consultant Services
 CW81564,Data Center Migration Project- F5 Application Delivery Platform,Chief Technology Officer (OCTO),software_services,340156.0,visible_pdf_verified,ref_found_in_pull,504013,0.79,Doc504013,Data Center Migration Project-F5 Application
 CW81676,FY20 - DCRA - System Support Services (DCSS Only),Licensing & Consumer Protection (DLCP),it_adjacent,1290360.0,visible_title_match,no_award_text,,1.0,Doc501175,FY20 - DCRA - System Support Services (DCSS Only)
-CW81768,DCSS-Security Equipment & Services-The Hamilton Group,Contracting and Procurement (OCP),other,850000.0,no_award_text_no_title_match,no_award_text,,0.439,Doc516028,FY20 DYRS SECURITY SCREENING EQUIPMENT - OPEN MARKET (CBE PREFERRED)
+CW81768,DCSS-Security Equipment & Services-The Hamilton Group,Contracting and Procurement (OCP),other,850000.0,no_award_text_no_title_match,no_award_text,,0.5,Doc171216,Security Networks Equipment
 CW81839,Data Analytics and Business Transformation Support Services,Employment Services (DOES),it_adjacent,2848186.3499999996,visible_title_match,no_award_text,,0.808,Doc494745,FY20_OPFL_Data Analytics and Business Transformation Support
 CW81914,"DCSS - Temporary Support Services - Bayne, LLC",Contracting and Procurement (OCP),other,50000000.0,no_award_text_no_title_match,no_award_text,,0.596,Doc542211,FY21- TEMPORARY SUPPORT SERVICES- OAH
 CW82329,FY20 DCSS Tech Analysis,,it_adjacent,3800000.0,schedule_vehicle_only,schedule_ref_only,,0.409,Doc397299,Analysis of Impediments
 CW82410,TSS202023-Temporary Support Services-The Excalibur Group,,other,40000000.0,no_award_text_no_title_match,no_award_text,,0.476,Doc480743,FY20 - RPTAC - RFQ - Temporary Support - ( Temporary Support Services DCSS Vendors only)
-CW82420,FY20-OCTO-Online Legal Research Services,Chief Technology Officer (OCTO),software_services,350000.0,no_award_text_no_title_match,no_award_text,,0.436,Doc411652,Telecommunications Legal Services - OCTO
+CW82420,FY20-OCTO-Online Legal Research Services,Chief Technology Officer (OCTO),software_services,350000.0,no_award_text_no_title_match,no_award_text,,0.548,Doc191772,Online Legal Resarch - OCTO - FY15 - IT Group
 CW82572,Ombudsman Temporary Services,Health Care Finance (DHCF),it_adjacent,546895.0,visible_title_match,no_award_text,,1.0,Doc505266,Ombudsman Temporary Services
 CW82589,"DCSS - Temporary Support Services - Ross Professional Services, LLC",Contracting and Procurement (OCP),other,40000000.0,no_award_text_no_title_match,no_award_text,,0.5,Doc253587,FY16-TEMPORARY SUPPORT SERVICES-OCTFME
 CW82657,DC-NET Metropolitan Area Network Man-Based Telephony,Chief Technology Officer (OCTO),telecom,13000000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -1021,7 +1021,7 @@ CW83605,"DCSS - Temporary Support Services - MB Staffing Services, LLC",Contract
 CW83633,Staff Augmentation - Medical Staff - OFPL,Employment Services (DOES),it_adjacent,1441312.0,no_award_text_no_title_match,no_award_text,,0.726,Doc514813,Invitation for Bid - Staff Augmentation Medical - OPFL
 CW83657,DCSS-TSS202033-Temporary Support Services-RizeUp Technology Training,,other,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW83668,Contract Workspace (Procurement)-ROSS PROFESSIONAL SERVICES,Contracting and Procurement (OCP),it_adjacent,3800000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW83797,CF0-FY20 - VOS MAINTENANCE & SUPPORT,Employment Services (DOES),software_services,3993084.0,no_award_text_no_title_match,no_award_text,,0.634,Doc291136,DCAFIS Maintenance and Support
+CW83797,CF0-FY20 - VOS MAINTENANCE & SUPPORT,Employment Services (DOES),software_services,3993084.0,no_award_text_no_title_match,no_award_text,,0.773,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
 CW83826,"DCSS - Mission Oriented Integrated Services (MOBIS) - Tiber Hudson , LLC",,it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW83903,Contract Workspace (Procurement)-ADVANCED NETWORK CONSULTANT,Contracting and Procurement (OCP),it_adjacent,40000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW84041,"FY20 DCSS GriffD Enterprises, LLC",,other,3800000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -1045,7 +1045,7 @@ CW85750,FY20-OCTO-Tableau Server Enterprise License Subscription,Chief Technolog
 CW85781,TSS202018-Temporary Support Services-CSI Corporation of DC,,other,950000.0,no_ref_award_text,no_ref_in_text,,0.478,Doc456424,FY19 - Serve DC -RFQ - Temporary Support Services - CBE & SBE Preferred
 CW85861,FY 21  Election management software and support maintenance,Board of Elections (DCBOE),other,448802.0,no_ref_award_text,no_ref_in_text,,0.541,Doc426972,RFQ - SecureAuth Software Support Maintenance Assistance - DCSS ONLY
 CW85887,CF0-FY20 -LCP TRACKER,Employment Services (DOES),it_adjacent,291400.0,no_award_text_no_title_match,no_award_text,,0.756,Doc527367,lcp tracker
-CW85924,FY21 - DHS Copier Enterprise System,Human Services (DHS),other,114924.3,no_award_text_no_title_match,no_award_text,,0,,
+CW85924,FY21 - DHS Copier Enterprise System,Human Services (DHS),other,114924.3,no_award_text_no_title_match,no_award_text,,0.693,Doc223288,RFP - FY'16 - Copier Enterprise System Strategy
 CW85944,DC Health - Master Data Management (MDM) Subscription,Health (DOH),other,418955.0,no_award_text_no_title_match,no_award_text,,0.583,Doc528038,Informatica - Master Data Management (MDM)
 CW85955,DCAS IBM Curam Software and Support,Health Care Finance (DHCF),it_goods,11662800.0,no_ref_award_text,no_ref_in_text,,0.636,Doc231210,IBM Curam Software Upgrade
 CW86141,Staffing Resources for R1 R2 system fixes,Health Care Finance (DHCF),it_adjacent,9600.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -1057,7 +1057,7 @@ CW86532,"DCSS - MOBIS -  Development Innovation System C (DISC), L.L.C",,it_adja
 CW86571,FY21-Federal Budget Application,Chief Technology Officer (OCTO),it_goods,547650.0,visible_pdf_verified,ref_found_in_pull,533388,0.579,Doc533388,OCTO-FY21-Federal Budget Formulation and Execution Application
 CW86583,FY21 - FA0 - Dell Docking Stations and Monitors,Metropolitan Police Department (MPD),it_goods,187329.5,no_ref_award_text,no_ref_in_text,,0.793,Doc532066,FY21- FA0 - MPD Dell Docking Stations and Monitors - Local
 CW86671,GeoTab telematic equipment and tracking services,Public Works (DPW),other,1250300.0,no_award_text_no_title_match,no_award_text,,0,,
-CW86791,DMV Inspection Station System,Motor Vehicles (DMV),other,581290.0,no_award_text_no_title_match,no_award_text,,0.489,Doc528907,DMV Ticket and Adjudication Services System RFI
+CW86791,DMV Inspection Station System,Motor Vehicles (DMV),other,581290.0,no_award_text_no_title_match,no_award_text,,0.616,Doc135417,FY14-DMV-Inspection Station Support and Maintenance
 CW86864,FY21_GDO_CIO_Staff Augmentation (IT TEchnical Support),State Superintendent of Education (OSSE),other,2171400.0,visible_title_match,no_award_text,,1.0,Doc524048,FY21_GDO_CIO_Staff Augmentation (IT Technical Support)
 CW86884,IBM Curam Software License for DCAS,Health Care Finance (DHCF),other,1985956.94,no_award_text_no_title_match,no_award_text,,0.601,Doc231210,IBM Curam Software Upgrade
 CW86957,Acquia Drupal Platform Licenses,Chief Technology Officer (OCTO),it_goods,318174.54,schedule_vehicle_only,schedule_ref_only,,0.528,Doc248050,DCSS - Drupal Platform Maintenance-FY16
@@ -1086,7 +1086,7 @@ CW88141,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,Chief Tech
 CW88182,"DCSS - Marketing, Media and Public Information - SOS Human Capitol Solutions",,other,900000.0,no_ref_award_text,no_ref_in_text,,0.514,Doc410220,"CFO-FY19-MARKETING, MEDIA AND PUBLIC INFORMATION SERVICES-DCSS ONLY-(DOES, WIC, DMGEO)"
 CW88223,CF0-FY21 MTX Chatbot,Employment Services (DOES),other,897722.13,no_ref_award_text,no_ref_in_text,,0,,
 CW88347,FY21 DCSS IBG Consulting Group,,it_adjacent,4750000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW88384,Billing Enhancements & IT Professional Services,Behavioral Health (DBH),it_adjacent,908440.0,schedule_vehicle_only,schedule_ref_only,,0,,
+CW88384,Billing Enhancements & IT Professional Services,Behavioral Health (DBH),it_adjacent,908440.0,schedule_vehicle_only,schedule_ref_only,,0.356,Doc165686,KTO-FY 2014- Professional IT and Telecommunications Services
 CW88474,FY21 - DOCEBO CLOUD 700 E-LEARNING PLATFORM,Employment Services (DOES),other,140250.0,visible_title_match,no_ref_in_text,,1.0,Doc545982,FY21 - DOCEBO CLOUD 700 E-LEARNING PLATFORM
 CW88528,DCSS - Temporary Support Services - SOS Human Capital Solutions,Contracting and Procurement (OCP),other,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW88532,"DCSS - Temporary Support Services - E7 Strategies, Inc.",Contracting and Procurement (OCP),other,4750000.0,no_award_text_no_title_match,no_award_text,,0.522,Doc559438,FY2021 - Temporary Support Custodian - ( CBE's Only )
@@ -1102,7 +1102,7 @@ CW89124,FY21 - OCTO - CheckPoint Firewall Annual Support,Chief Technology Office
 CW89131,Cisco Ironport AntiSpam Software,Chief Technology Officer (OCTO),other,135252.16,visible_title_match,no_ref_in_text,,1.0,Doc563757,Cisco IronPort AntiSpam Software
 CW89194,Microsoft Premier Support Services,Health Care Finance (DHCF),it_adjacent,22215500.0,visible_title_match,no_award_text,,1.0,Doc295757,Microsoft Premier Support Services
 CW89208,TSS20217-Temporay Support Services-Cradle Systems,,other,50000000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW89216,FY21-Evidence on Q Application,Metropolitan Police Department (MPD),software_services,244614.0,no_ref_award_text,no_ref_in_text,,0,,
+CW89216,FY21-Evidence on Q Application,Metropolitan Police Department (MPD),software_services,244614.0,no_ref_award_text,no_ref_in_text,,0.447,Doc122762,FY13-FA0-Evidence on Q peripheral Devices
 CW89363,FY21-OCTO- Dell Storage Disk and Drives,Chief Technology Officer (OCTO),other,1146263.04,visible_title_match,no_award_text,,1.0,Doc548094,FY21-OCTO-Dell Storage Disk Drives
 CW89407,DCAS FY21 Infrastructure and Security,Health Care Finance (DHCF),it_adjacent,146736.4,visible_title_match,no_ref_in_text,,1.0,Doc549388,DCAS FY21 Infrastructure and Security
 CW89442,Geotab Keyless Solution,Public Works (DPW),other,200250.0,visible_title_match,no_award_text,,0.826,Doc549926,DCKT-2021-Geotab Keyless Solution
@@ -1116,7 +1116,7 @@ CW89727,FY21 - OCTO - Contact-Center-As-A-Service (CCaaS),Chief Technology Offic
 CW89782,FY21 - DELL VDI VXRail Infrastructure,Employment Services (DOES),other,349825.0,visible_title_match,no_award_text,,1.0,Doc554532,FY21 - DELL VDI VXRail Infrastructure
 CW89855,Next Generation 9-1-1,Unified Communications (OUC),it_adjacent,9000000.0,visible_title_match,no_award_text,,1.0,Doc538659,Next Generation 9-1-1
 CW89903,"DCSS - Temporary Support Services - ZC Solution, LLC",Contracting and Procurement (OCP),other,10000000.0,no_award_text_no_title_match,no_award_text,,0.55,Doc559438,FY2021 - Temporary Support Custodian - ( CBE's Only )
-CW89916,FY21 - OCTO - Infoblox Appliances Hardware,Chief Technology Officer (OCTO),other,467600.57,no_ref_award_text,no_ref_in_text,,0.649,Doc540366,FY21 - OCTO - Infoblox Hardware Refresh
+CW89916,FY21 - OCTO - Infoblox Appliances Hardware,Chief Technology Officer (OCTO),other,467600.57,no_ref_award_text,no_ref_in_text,,0.796,Doc165344,FY14 OCTO - Infoblox Appliances
 CW89922,Cisco Equipment (WAPs),Chief Technology Officer (OCTO),telecom,1080203.42,no_award_text_no_title_match,no_award_text,,0.762,Doc238231,CISCO Equipment
 CW89945,WebEOC 2021-Informatics qualified technical experts,Health (DOH),it_adjacent,141000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW89980,FY21 FEMS CBRNE Detection Meter Maintenance,Fire and Emergency Services Department (FEMS),other,961306.0,visible_title_match,no_award_text,,1.0,Doc551904,FY21 FEMS CBRNE Detection Meter Maintenance
@@ -1130,14 +1130,14 @@ CW90445,SoundThinking- Gunshot Detection System Support,Metropolitan Police Depa
 CW90472,FY21 - DHS - CEPL Training Continuation (SNAP Reinvestment) - Vogt Consulting Inc.,Human Services (DHS),it_adjacent,44900.0,no_ref_award_text,no_ref_in_text,,0,,
 CW90523,"Contract Workspace (Procurement)-ATMOST SOLUTIONS, INC.",Contracting and Procurement (OCP),other,900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW90552,DCRA - Agency Laptops and Accessories,Licensing & Consumer Protection (DLCP),software_services,125864.3,no_ref_award_text,no_ref_in_text,,0.544,Doc416972,FY19 - HSEMA - Dell Laptops and Accessories
-CW90566,"DCSS - Temporary Support Services - Tandem Conglomerate, LLC",Contracting and Procurement (OCP),other,50000000.0,no_ref_award_text,no_ref_in_text,,0.49,Doc253587,FY16-TEMPORARY SUPPORT SERVICES-OCTFME
+CW90566,"DCSS - Temporary Support Services - Tandem Conglomerate, LLC",Contracting and Procurement (OCP),other,50000000.0,no_ref_award_text,no_ref_in_text,,0.516,Doc106337,Temporary Support Services - DCRA
 CW90568,DCSS - Temporary Support Services - Advanced Network Consulting,Contracting and Procurement (OCP),other,10950000.0,no_ref_award_text,no_ref_in_text,,0.495,Doc232030,FY15-Temporary Support-DCTC
 CW90574,FY21- PFL Website Maintenance,Employment Services (DOES),it_adjacent,78727.86,no_award_text_no_title_match,no_award_text,,0,,
 CW90603,Pondera Fraud Detection Software,Employment Services (DOES),other,662350.69,no_ref_award_text,no_ref_in_text,,0.75,Doc554481,FY21 - PUA Fraud Detection Software
 CW90605,FY21 - ASSLA STUDY - OWH,Employment Services (DOES),other,70460.0,no_ref_award_text,no_ref_in_text,,0,,
 CW90707,FEMS Tools & Appliances,Fire and Emergency Services Department (FEMS),other,300000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW90718,Contract Workspace (Procurement),Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW90729,UIBS DOES,Employment Services (DOES),it_goods,13581691.0,visible_pdf_verified,ref_found_in_pull,523252,0.341,Doc546014,FY21-DOES-Brandlive
+CW90729,UIBS DOES,Employment Services (DOES),it_goods,13581691.0,visible_pdf_verified,ref_found_in_pull,523252,0.348,Doc113787,FY'13-RFQ-DOES-TRAINING
 CW90741,Software Licensing and Support Maintenance Services,Behavioral Health (DBH),it_adjacent,6814495.38,no_award_text_no_title_match,no_award_text,,0.684,Doc588090,Oracle Software Support and Maintenance
 CW90763,"FY21 DCSS Tandem Conglomerate, LLC",,it_adjacent,40000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW90800,"DCSS - Engineering & Logistics - 925 - North Arrow, Inc.",Contracting and Procurement (OCP),other,900000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -1145,7 +1145,7 @@ CW90804,FY21 - DELL VDI VXRail Infrastructure,Employment Services (DOES),other,7
 CW90928,Unemployment Insurance Claimant Portal,Employment Services (DOES),software_services,2083400.0,no_ref_award_text,no_ref_in_text,,0,,
 CW90981,Contract Workspace (Procurement)-THE HAMILTON GROUP,Contracting and Procurement (OCP),other,750000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW91017,Technical Assistance Consulting WIC,Deputy Mayor for Planning and Economic Development (DMPED),software_services,37250.0,visible_pdf_verified,ref_found_in_pull,255169,0.845,Doc556551,Technical Assistance Consulting
-CW91050,"DCSS - Training Services & Products - Dakota 3 Consulting Firm, Inc - 924-00",Contracting and Procurement (OCP),other,500000.0,no_award_text_no_title_match,no_award_text,,0,,
+CW91050,"DCSS - Training Services & Products - Dakota 3 Consulting Firm, Inc - 924-00",Contracting and Procurement (OCP),other,500000.0,no_award_text_no_title_match,no_award_text,,0.468,DCRL-2014-A-0042,Training and Consulting Services
 CW91081,DCSS - MOBIS - SOS Human Capital Solutions,,it_adjacent,4750000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW91124,FY21 - Dell Computer Laptops (FSA),Human Services (DHS),it_goods,92238.3,no_award_text_no_title_match,no_award_text,,0.656,Doc642053,DHS Dell Laptops (FSA)
 CW91150,FY21 - FX0 - CMS Phase Two Upgrade,Chief Medical Examiner (OCME),it_adjacent,146100.0,cites_number_not_in_pull,ref_not_in_pull,,0,,
@@ -1161,7 +1161,7 @@ CW91448,DCSS - Engineering & Logistics Services - Rett Consulting Group,,other,1
 CW91461,"DCSS-IT Equipment & Software- Datapillars, Inc.",Contracting and Procurement (OCP),software_services,2850000.0,schedule_vehicle_only,schedule_ref_only,,0.563,Doc524679,RFQ DCSS VENDORS PREFERED (IT Equipment and Software)
 CW91484,Government of the District of Columbia Disparity Study,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,771310.0,visible_title_match,ref_not_in_pull,,1.0,DCEB-2021-R-0001,Government of the District of Columbia Disparity Study
 CW91489,DHS-Temporary Staffing Support Services,Human Services (DHS),other,1213198.56,visible_title_match,no_award_text,,0.929,Doc547955,Request for Quotation - FY21-DHS- Temporary Staffing Services (DCSS-Temporary Support Services )
-CW91494,DCKT FY21 - Light Tower,Public Works (DPW),other,110427.38,no_award_text_no_title_match,no_award_text,,0,,
+CW91494,DCKT FY21 - Light Tower,Public Works (DPW),other,110427.38,no_award_text_no_title_match,no_award_text,,0.449,Doc190601,FY15-FA0-Portable Solar Light Tower
 CW91513,FY21 - Managed Trusted Internet Protocol Services MTIPS,Chief Technology Officer (OCTO),other,1077256.64,visible_title_match,no_award_text,,0.858,Doc432895,Managed Trusted Internet Protocol Services
 CW91546,"DCSS DataPillars, Inc.",,it_adjacent,4750000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW91583,Cisco Equipment (Data Center DC1),Chief Technology Officer (OCTO),it_goods,401713.1,visible_title_match,no_award_text,,0.866,Doc561465,Cisco Equipment (Data Center)
@@ -1177,7 +1177,7 @@ CW91989,"DCSS-IT Equipment & Software- The Triage Group, LLC",Contracting and Pr
 CW92050,CPPE REM- Informatician Technical Services -GGG Maintenance & Support,Health (DOH),it_adjacent,141000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW92062,"DCSS IT Equipment and Software-ICI Systems, Inc.",Contracting and Procurement (OCP),software_services,950000.0,schedule_vehicle_only,schedule_ref_only,,0.528,Doc524679,RFQ DCSS VENDORS PREFERED (IT Equipment and Software)
 CW92165,DCRA Temporary Support Services(CCCB),Licensing & Consumer Protection (DLCP),other,31200.0,visible_title_match,no_award_text,,0.824,Doc291199,FY'17-(DCRA) Temporary Support Services-DCSS SUPPLIERS PREFERRED
-CW92209,DHS_  Temporary Staffing for Contract  for OPRMI (Case Managers),Human Services (DHS),other,123305.28,no_award_text_no_title_match,no_award_text,,0.484,Doc547955,Request for Quotation - FY21-DHS- Temporary Staffing Services (DCSS-Temporary Support Services )
+CW92209,DHS_  Temporary Staffing for Contract  for OPRMI (Case Managers),Human Services (DHS),other,123305.28,no_award_text_no_title_match,no_award_text,,0.547,Doc109798,Temporary Staffing - Contract Specialist
 CW92223,"FY21 DCSS V-Tech Solutions, Inc.",,it_adjacent,4750000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW92289,DCRA Product Specialist Support Temporary Services(CCCB),Licensing & Consumer Protection (DLCP),other,51217.2,no_award_text_no_title_match,no_award_text,,0.708,Doc567598,FY21-DCRA Product Support Specialist Temporary Personnel Services
 CW92329,FY21 - Detention and Response Network,Chief Technology Officer (OCTO),software_services,911916.48,visible_title_match,no_ref_in_text,,0.831,Doc559176,FY21 - OCTO - Detention and Response Network
@@ -1192,7 +1192,7 @@ CW92477,"TSS202120-Temporary Support-Prism International, LLC",,other,22950000.0
 CW92520,FY2021-CFO-DOES-OIT-IT EQUIPMENT BPA-MVS INC,Employment Services (DOES),other,950000.0,no_award_text_no_title_match,no_award_text,,0.458,Doc569263,FY2021-CFO-DOES-OIT-TECHNOLOGY LEARNING PLATFORM SERVICES-DCSS IT EQUIPMENT AND SOFTWARE SERVICES CATEGORY
 CW92665,DCSS - Training Services & Products - Total Life Consultancy 924-00,Contracting and Procurement (OCP),other,500000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW92675,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and Procurement (OCP),software_services,13800000.0,no_ref_award_text,no_ref_in_text,,0.626,Doc449088,FY19-CFO-BPA-INFORMATION TECHNOLOGY EQUIPMENT-OIT-DCSS ONLY
-CW92685,FY2021-CFO-DOES-OIT-MAINTENANCE AND SUPPORT-FILENET LICENSES,Employment Services (DOES),software_services,110910.19,no_ref_award_text,no_ref_in_text,,0.456,Doc303171,FILENET & KOFAX Maintenance and Support
+CW92685,FY2021-CFO-DOES-OIT-MAINTENANCE AND SUPPORT-FILENET LICENSES,Employment Services (DOES),software_services,110910.19,no_ref_award_text,no_ref_in_text,,0.538,Doc134818,FY-14 -CF0-DOES-Maintenance and Support
 CW92708,Salesforce Licensing (Carahsoft Technology Corporation),Health (DOH),other,1407908.82,no_award_text_no_title_match,no_award_text,,0.461,RFI-PCSB-01,Salesforce Programing Technology Services
 CW92744,FY21 DCSS Avid System,,it_adjacent,50000000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW92802,Cisco Switches and Wireless Access Points (DCPS),Chief Technology Officer (OCTO),telecom,440000.0,visible_title_match,no_award_text,,0.885,Doc293310,Cisco Switches and Wireless Access Points
@@ -1200,7 +1200,7 @@ CW92877,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and 
 CW92942,"DCSS - MOBIS - Hayat Brown, LLC",,it_adjacent,3800000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW92993,Cisco Switches and End of Life Network Hardware (DC1),Chief Technology Officer (OCTO),it_goods,10119389.89,no_award_text_no_title_match,no_award_text,,0.66,Doc570318,Task Order - Cisco End of Life Network Hardware and Cisco Switches
 CW93000,CW93000 Emphasys Software  (Award FY23),Housing and Community Development (DHCD); Office on Aging (OA),it_adjacent,427322.0,no_award_text_no_title_match,no_award_text,,0,,
-CW93005,DPW Solid Waste Management System - RUBICONSmart City,Public Works (DPW),other,920175.0,no_award_text_no_title_match,no_award_text,,0,,
+CW93005,DPW Solid Waste Management System - RUBICONSmart City,Public Works (DPW),other,920175.0,no_award_text_no_title_match,no_award_text,,0.515,Doc97300,DCKT-FY13- Solid Waste Management Consulting Services
 CW93012,"FY22_GDO_PostSec_LACES Hosting, maintenance and modification",State Superintendent of Education (OSSE),software_services,332182.0,award_says_no_solicitation,explicit_no_solicitation,,0,,
 CW93023,"GD0_EGMS_Hosting, Maintenance, Technical Assistance and Enhancements",State Superintendent of Education (OSSE),it_goods,2061458.92,no_ref_award_text,no_ref_in_text,,0.483,Doc266745,FY16-GD0-ESSE-Training and Technical Assistance for MTES
 CW93173,Contract Workspace (Procurement) -,Contracting and Procurement (OCP),it_adjacent,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -1229,12 +1229,12 @@ CW93920,IT Supplies,Health Care Finance (DHCF),other,131289.0,no_award_text_no_t
 CW94127,DCSS-IT Equipment & Software- Dynamic Green Radiance LLC,Contracting and Procurement (OCP),it_goods,2850000.0,no_award_text_no_title_match,no_award_text,,0.457,Doc524679,RFQ DCSS VENDORS PREFERED (IT Equipment and Software)
 CW94147,DCSS - IT Equipment and Software - Gatekeepers Internet Marketing,Contracting and Procurement (OCP),software_services,4750000.0,no_award_text_no_title_match,no_award_text,,0.47,Doc524679,RFQ DCSS VENDORS PREFERED (IT Equipment and Software)
 CW94167,DCRA Case Management System,Licensing & Consumer Protection (DLCP),software_services,186142.5,no_ref_award_text,no_ref_in_text,,0.744,Doc258051,DCRA Data Management System
-CW94184,"FY21 - OCTO DCSS - Temporary Personnel - Information Unlimited, Inc",Chief Technology Officer (OCTO),other,1783590.0,no_award_text_no_title_match,no_award_text,,0,,
-CW94212,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,2850000.0,no_award_text_no_title_match,no_award_text,,0.659,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
-CW94214,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,950000.0,no_award_text_no_title_match,no_award_text,,0.659,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
-CW94218,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,4750000.0,no_award_text_no_title_match,no_award_text,,0.659,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
-CW94220,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,3800000.0,no_award_text_no_title_match,no_award_text,,0.659,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
-CW94253,DHCF - Temporary Support Personnel I,Health Care Finance (DHCF),other,8215872.0,no_award_text_no_title_match,no_award_text,,0.692,Doc528841,Request for Qualifications - Temporary Support Personnel
+CW94184,"FY21 - OCTO DCSS - Temporary Personnel - Information Unlimited, Inc",Chief Technology Officer (OCTO),other,1783590.0,no_award_text_no_title_match,no_award_text,,0.463,Doc195837,RFTO - Temporary personnel resoources - OCTO - FY15 - IT group
+CW94212,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,2850000.0,visible_title_match,no_award_text,,0.833,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services
+CW94214,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,950000.0,visible_title_match,no_award_text,,0.833,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services
+CW94218,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,4750000.0,visible_title_match,no_award_text,,0.833,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services
+CW94220,DHS-FSA Temporary Staffing Services,Human Services (DHS),other,3800000.0,visible_title_match,no_award_text,,0.833,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services
+CW94253,DHCF - Temporary Support Personnel I,Health Care Finance (DHCF),other,8215872.0,no_award_text_no_title_match,no_award_text,,0.769,Doc135521,FY'14-DCRA Temporary Support Personnel
 CW94285,"FY21-The Department of Insurance, Securities and Banking Insurance Code Modernization Project","Insurance, Securities and Banking (DISB)",it_adjacent,130000.0,visible_title_match,no_award_text,,1.0,Doc573361,"FY21-The Department of Insurance, Securities and Banking Insurance Code Modernization Project"
 CW94311,"Contract Workspace (Procurement) - COMPASS SOLUTIONS, LLC",Contracting and Procurement (OCP),it_adjacent,1900000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW94405,FY22 - OCTO - Temporary Personnel - Tandem Conglomerate (MODIFIED TO CW99486),Chief Technology Officer (OCTO),it_adjacent,1436842.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -1251,7 +1251,7 @@ CW94766,BPR Workflow Management SaaS & Services,Human Services (DHS),it_adjacent
 CW94768,Acquisition Support Services,Contracting and Procurement (OCP),other,30999500.0,no_award_text_no_title_match,no_award_text,,0.461,Doc564138,FY21 FileNet Support Services
 CW94770,Procurement Acquisition Support Services,Contracting and Procurement (OCP),other,10000000.0,no_ref_award_text,no_ref_in_text,,0.713,Doc510306,H&W - FY20 Procurement Support
 CW94839,FY22 - e-Citation System Maintenance & Support - DFHV,For-Hire Vehicles (DFHV),other,330315.24,no_ref_award_text,no_ref_in_text,,0.526,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT
-CW94841,FY22 - e-Citation System Maintenance & Support - MPD,Metropolitan Police Department (MPD),software_services,763842.79,visible_pdf_verified,ref_found_in_pull,580177,0.532,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT
+CW94841,FY22 - e-Citation System Maintenance & Support - MPD,Metropolitan Police Department (MPD),software_services,763842.79,visible_pdf_verified,ref_found_in_pull,580177,0.578,Doc216427,IFB-MPD CCTV MAINTENANCE AND SUPPORT
 CW94883,FY22-Microsoft EA,Chief Technology Officer (OCTO),software_services,30950000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW94950,Ultivo Triple Quadrupole Liquid LC MS System,Chief Medical Examiner (OCME),other,322776.07,visible_pdf_verified,ref_found_in_pull,571531,0.807,Doc571531,Ultivo Triple Quadrupole Liquid LCMS System
 CW95011,DCSS- MOBIS- Trillian Technologies,,it_adjacent,10000000.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -1261,25 +1261,25 @@ CW95143,OCTO-Airwatch,Chief Technology Officer (OCTO),other,338650.0,no_ref_awar
 CW95218,Internet Service Provider (ISP) Zayo,Chief Technology Officer (OCTO),other,346200.0,visible_title_match,no_award_text,,0.822,Doc570641,FY21 - Internet Service Provider (ISP)
 CW95363,FY22 - VMWare Licensing & Support Renewal - Dell Marketing LP,Human Services (DHS),it_goods,18986.88,no_award_text_no_title_match,no_award_text,,0.5,Doc578345,FY 21 VMware (Licensing & Support) Renewal Department of Human Serv. Office of Information Services (OIS)
 CW95375,DCSS- Audit & Financial Services -Swift Accounting  & Financial Consulting LLC,Contracting and Procurement (OCP),other,2500000.0,no_ref_award_text,no_ref_in_text,,0.426,RFI-PCSB-02,Financial Consulting Services
-CW95388,DCRA E-Plan Review Software,Licensing & Consumer Protection (DLCP),software_services,194434.0,no_ref_award_text,no_ref_in_text,,0.556,Doc434361,FY-19 Plan Review Services
+CW95388,DCRA E-Plan Review Software,Licensing & Consumer Protection (DLCP),software_services,194434.0,no_ref_award_text,no_ref_in_text,,0.595,Doc216161,FY15-CR0-DCRA Plan Review Technican
 CW95411,FY22 - OUC - Smart911 - 311 Rave Licenses,Unified Communications (OUC),software_services,804267.06,visible_pdf_verified,ref_found_in_pull,580126,1.0,Doc580126,FY21 - (OUC) Smart911 - 311 Rave Licenses
 CW95421,"Canon Solutions America, Inc. Lease Agreement (Contract).","Cable Television, Film, Music and Entertainment (OFTE)",other,14805.6,no_award_text_no_title_match,no_award_text,,0,,
-CW95425,Temporary Support Personnel II - Avid,Health Care Finance (DHCF),other,3696000.0,no_award_text_no_title_match,no_award_text,,0.601,Doc528841,Request for Qualifications - Temporary Support Personnel
-CW95427,Temporary Support Personnel II - IUI,Health Care Finance (DHCF),other,3660536.64,no_award_text_no_title_match,no_award_text,,0.605,Doc528841,Request for Qualifications - Temporary Support Personnel
-CW95429,Temporary Support Personnel II - Vtech,Health Care Finance (DHCF),other,1724651.52,no_award_text_no_title_match,no_award_text,,0.596,Doc528841,Request for Qualifications - Temporary Support Personnel
+CW95425,Temporary Support Personnel II - Avid,Health Care Finance (DHCF),other,3696000.0,no_award_text_no_title_match,no_award_text,,0.683,Doc194049,Temporary Support Personnel Services for DHCD
+CW95427,Temporary Support Personnel II - IUI,Health Care Finance (DHCF),other,3660536.64,no_award_text_no_title_match,no_award_text,,0.674,Doc194049,Temporary Support Personnel Services for DHCD
+CW95429,Temporary Support Personnel II - Vtech,Health Care Finance (DHCF),other,1724651.52,no_award_text_no_title_match,no_award_text,,0.676,Doc194049,Temporary Support Personnel Services for DHCD
 CW95440,FY21-CrowdStrike Software Subscription,Chief Technology Officer (OCTO),software_services,1975798.05,visible_pdf_verified,ref_found_in_pull,585008,1.0,Doc585008,FY21-CrowdStrike software subscription
 CW95481,OCTO STaR II,Chief Technology Officer (OCTO),other,120000000.0,no_ref_award_text,no_ref_in_text,,0.452,Doc551341,FY21-OCTO-RFQ-IT TECH SUPPORT II-DCSS SUPPLIERS PREFERRED
 CW95531,DDS-RSA Urban Equity Consulting Group,Department on Disability Services (DDS),other,75000.0,visible_pdf_verified,ref_found_in_pull,547675,0,,
 CW95576,DCSS-IT Equipment & Software- Page After Page Business Systems Inc.,Contracting and Procurement (OCP),software_services,4750000.0,schedule_vehicle_only,schedule_ref_only,,0.405,Doc524679,RFQ DCSS VENDORS PREFERED (IT Equipment and Software)
 CW95665,FY22 - DHS - Fraud Case Management and Data Analytics System Subscription,Human Services (DHS),software_services,1099800.0,visible_pdf_verified,ref_found_in_pull,517647,0.92,Doc517647,Fraud Case Management and Data Analytics System Subscription
 CW95732,DHS_ Internal Comprehensive Review (ICR),Human Services (DHS),other,622389.0,no_ref_award_text,no_ref_in_text,,0,,
-CW95738,Operations and Maintenance (O&M),Health Care Finance (DHCF),other,17727564.0,visible_pdf_verified,ref_found_in_pull,526404,0.636,Doc526404,DCAS Operations and Maintenance (O&M) Support Services
+CW95738,Operations and Maintenance (O&M),Health Care Finance (DHCF),other,17727564.0,visible_pdf_verified,ref_found_in_pull,526404,0.65,Doc133139,FY14-CT0-Operations-Copier Maintenance Services
 CW95748,"FY2022 - DBH IT - INFOMC Application Maintenance, Licensing, Application Enhancement & Consulting Services - INCEDO?",Behavioral Health (DBH),other,1868357.25,no_ref_award_text,no_ref_in_text,,0,,
 CW95884,DCSS-ISA20217-Global Government & Industry Partners,,other,3600000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW95885,DCRA Temporary Personnel Services- Senior Product Manager,Licensing & Consumer Protection (DLCP),other,432264.0,no_award_text_no_title_match,no_award_text,,0.787,Doc587655,FY21-DCRA Senior Product Manager Temporary Personnel Services
 CW95931,DHS-TEP Assessment Tool,Human Services (DHS),it_goods,972000.0,no_ref_award_text,no_ref_in_text,,0,,
 CW95945,FY21 UITS IV&V -UI TAX,Employment Services (DOES),it_adjacent,1373335.4,no_award_text_no_title_match,no_award_text,,0,,
-CW95958,FY22 DCSS Chaise Management,,it_adjacent,4750000.0,no_award_text_no_title_match,no_award_text,,0.545,Doc231217,Warehouse Management
+CW95958,FY22 DCSS Chaise Management,,it_adjacent,4750000.0,no_award_text_no_title_match,no_award_text,,0.549,DCRL-2013-A-0086,Travel Management Services
 CW96000,DC Health - Trauma System Maintenance Services,Health (DOH),it_goods,482857.75,no_ref_award_text,no_ref_in_text,,0.563,Doc407269,DCRA System Maintenance
 CW96012,"FY22 DCSS Peak Technology Solutions, Inc.",,it_adjacent,4750000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW96056,"DCSS - MOBIS - Suitless, Inc. - 918",Contracting and Procurement (OCP),it_adjacent,950000.0,no_ref_award_text,no_ref_in_text,,0,,
@@ -1305,7 +1305,7 @@ CW96748,Electronic Poll Pad Units,Board of Elections (DCBOE),other,269000.0,no_a
 CW96817,"DCSS-OFFICE SUPPLIES-HOUZMAZOO NETWORK, LLC",Contracting and Procurement (OCP),other,950000.0,no_award_text_no_title_match,no_award_text,,0.511,Doc322390,FY2017 -  Office Supplies- Toner
 CW96819,600 electronic poll books,Board of Elections (DCBOE),other,269400.0,visible_title_match,no_ref_in_text,,0.832,Doc233626,FY16-Electronic Poll Books-BOE
 CW96843,Contract Workspace (Procurement)-NJ3Q TECHNOLOGY,Contracting and Procurement (OCP),it_adjacent,950000.0,no_award_text_no_title_match,no_award_text,,0,,
-CW96866,"DCSS-Marketing, Media & Public Information-Nediam Consultants, LLC",Contracting and Procurement (OCP),other,4500000.0,no_ref_award_text,no_ref_in_text,,0.536,Doc410220,"CFO-FY19-MARKETING, MEDIA AND PUBLIC INFORMATION SERVICES-DCSS ONLY-(DOES, WIC, DMGEO)"
+CW96866,"DCSS-Marketing, Media & Public Information-Nediam Consultants, LLC",Contracting and Procurement (OCP),other,4500000.0,no_ref_award_text,no_ref_in_text,,0.557,Doc144103,FY14 DIS - A Marketing and Public Information Consultant
 CW96922,Ballot on Demand Printers (BODs,Board of Elections (DCBOE),other,286100.0,no_ref_award_text,no_ref_in_text,,0.482,Doc461344,FY 19- Portable Ballot on Demand (BOD) printing systems .
 CW96958,IT Service Management (ITSM) and Strategic Program Governance Services,Chief Technology Officer (OCTO),it_goods,998565.0,visible_title_match,no_ref_in_text,,0.831,Doc590103,TO0-OCTO-IT Service Management (ITSM) and Strategic Program Governance Services
 CW96963,Application Security Platform,Chief Technology Officer (OCTO),other,288890.0,visible_title_match,no_ref_in_text,,1.0,Doc592889,Application Security Platform
@@ -1313,7 +1313,7 @@ CW97064,"DCSS - MOBIS - Urban Equity Consulting Group, LLC",Contracting and Proc
 CW97073,OCTO- VMWare Maintenance and Support FY23-FY27,Chief Technology Officer (OCTO),other,674048.0,visible_title_match,no_ref_in_text,,0.831,Doc586096,VMWare Maintenance and Support
 CW97106,"FY22 DCSS MW Consulting, LLC",,it_adjacent,3800000.0,no_award_text_no_title_match,no_award_text,,0,,
 CW97116,DBH - Integrated Technology  Engine Project,Behavioral Health (DBH),software_services,988045.84,visible_pdf_verified,ref_found_in_pull,590736,0,,
-CW97174,"DCSS-Marketing, Media and Public Information- MW Consulting, LLC",Contracting and Procurement (OCP),other,4500000.0,no_award_text_no_title_match,no_award_text,,0.534,Doc410220,"CFO-FY19-MARKETING, MEDIA AND PUBLIC INFORMATION SERVICES-DCSS ONLY-(DOES, WIC, DMGEO)"
+CW97174,"DCSS-Marketing, Media and Public Information- MW Consulting, LLC",Contracting and Procurement (OCP),other,4500000.0,no_award_text_no_title_match,no_award_text,,0.556,Doc144103,FY14 DIS - A Marketing and Public Information Consultant
 CW97239,NASPO Enterprise Licensing Support,Chief Technology Officer (OCTO),software_services,12849009.7,visible_title_match,no_ref_in_text,,0.859,Doc597249,Cisco NASPO Enterprise Licensing Support
 CW97459,Granicus short term rental licensing,Licensing & Consumer Protection (DLCP),other,789701.7,no_award_text_no_title_match,no_award_text,,0.588,Doc489517,Short Term Rental Application
 CW97467,DCSS-IT Equipment & Software-BPM Bi Inc.,Contracting and Procurement (OCP),software_services,4750000.0,schedule_vehicle_only,schedule_ref_only,,0.553,Doc524679,RFQ DCSS VENDORS PREFERED (IT Equipment and Software)
@@ -1332,7 +1332,7 @@ CW97904,Cisco Equipment,Chief Technology Officer (OCTO),telecom,2788317.73,visib
 CW97927,FY22-MPD-Digital Conversion of Hard Copy Reports and Records,Metropolitan Police Department (MPD),it_goods,1265957.2,no_award_text_no_title_match,no_award_text,,0,,
 CW97944,DCRA Permit Wizard Platform,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),it_adjacent,860000.0,no_award_text_no_title_match,no_award_text,,0.548,Doc369963,DCRA Civic Platform Services
 CW98072,Salesforce File Storage (Carahsoft),Health (DOH),it_goods,20534.8,no_award_text_no_title_match,no_award_text,,0,,
-CW98149,"Workforce Software License, Maintenance, and Support (Immix Technology, Inc)",Special Education Transportation (SET),other,828349.8,no_award_text_no_title_match,no_award_text,,0.431,Doc588090,Oracle Software Support and Maintenance
+CW98149,"Workforce Software License, Maintenance, and Support (Immix Technology, Inc)",Special Education Transportation (SET),other,828349.8,no_award_text_no_title_match,no_award_text,,0.595,Doc90150,Oracle Software License Maintenance Support
 CW98174,FY22-CI0-PROGRAMMING - FIELD STUDIO AND NETWORK EQUIPMENT,"Cable Television, Film, Music and Entertainment (OFTE)",other,339987.97,no_award_text_no_title_match,no_award_text,,0.728,Doc600507,IFB - FIELD STUDIO AND NETWORK EQUIPMENT
 CW98216,FY22-Voter Registration and Election Management Database System-Maintenance and Support-BOE,Board of Elections (DCBOE),other,1056900.0,no_ref_award_text,no_ref_in_text,,0.55,Doc268643,Voter Registration and Election Management
 CW98237,DCHR LinkedIn Platform,Human Resources (DCHR),other,360450.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -1340,7 +1340,7 @@ CW98304,Inspector Temporary Services Positions,Department Of Buildings (DOB); Li
 CW98311,DCRA Fast Tracking Temporary Services,Licensing & Consumer Protection (DLCP),other,335393.04,visible_title_match,no_award_text,,1.0,Doc601843,DCRA Fast Tracking Temporary Services
 CW98327,Dell Laptops & Warranty (DISB),"Insurance, Securities and Banking (DISB)",it_goods,133905.6,visible_title_match,ref_not_in_pull,,0.822,Doc604809,FY22 Dell Laptops & Warranty
 CW98351,FY22- Starlight Situational Awareness Management - BOLO Integration-MPD,Metropolitan Police Department (MPD),it_goods,500000.0,no_ref_award_text,no_ref_in_text,,0,,
-CW98371,FY22-DBH-CSA-MicroStrategy Dashboard Design and Development Services,Behavioral Health (DBH),it_adjacent,99987.8,schedule_vehicle_only,schedule_ref_only,,0,,
+CW98371,FY22-DBH-CSA-MicroStrategy Dashboard Design and Development Services,Behavioral Health (DBH),it_adjacent,99987.8,schedule_vehicle_only,schedule_ref_only,,0.662,Doc187397,Microstrategy dashboard development
 CW98387,Dell Computer Equipment,Metropolitan Police Department (MPD),it_goods,131456.58,visible_title_match,no_award_text,,1.0,Doc395513,FY2018 - Dell Computer and Equipment - (DCSS Only)
 CW98426,FY22 - Enterprise Agreement Public Sector Subscription - GCP - OIT,Employment Services (DOES),other,232592.88,visible_title_match,no_award_text,,1.0,Doc600775,FY22 - Enterprise Agreement Public Sector Subscription - GCP - OIT
 CW98548,FY22 DCSS Susan Fitzgerald and Associates - MOBIS,,it_adjacent,4750000.0,no_award_text_no_title_match,no_award_text,,0,,
@@ -1350,7 +1350,7 @@ CW98733,FY22-DHCD - CW98733 Symphonic Strategies,Housing and Community Developme
 CW98745,FY 22 SPIDR TECH SYSTEM - MPD,Metropolitan Police Department (MPD),software_services,524337.84,no_award_text_no_title_match,no_award_text,,0.533,Doc342756,Robotic System - MPD
 CW98753,ESA - Temporary Staffing Services,Human Services (DHS),other,850000.0,no_award_text_no_title_match,no_award_text,,0.783,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services
 CW98879,Operations and Maintenance to the DPI Case Tracking System,Health Care Finance (DHCF),software_services,175375.0,no_ref_award_text,no_ref_in_text,,0.671,Doc292696,DPI Case Tracking System
-CW98981,Strategic and Implement Communications Plan,Campaign Finance (OCF),it_adjacent,339680.0,no_ref_award_text,no_ref_in_text,,0.555,Doc539656,FY 21  CAH Strategic Communications Plan-DCSS OnlyDC SUPPL...
+CW98981,Strategic and Implement Communications Plan,Campaign Finance (OCF),it_adjacent,339680.0,visible_title_match,no_ref_in_text,,0.801,Doc122179,Strategic Communications Plan
 CW99034,DCRA - Land Management Use Platform,Licensing & Consumer Protection (DLCP),other,310717.38,visible_pdf_verified,ref_found_in_pull,607626,1.0,Doc607626,DCRA - Land Management Use Platform
 CW99171,FY22-DBH-Web-Based Learning Management System (LMS),Behavioral Health (DBH),other,34040.0,visible_title_match,no_ref_in_text,,0.807,RM-17-RFQ-001-BY4-JM,Web-Based Learning Management System
 CW99298,DC CASI Framework & Evaluation Report - Office of Health Equity,Health (DOH),other,48307.0,cites_number_not_in_pull,ref_not_in_pull,,0.527,Doc611422,DC Health - Evaluation Report & Policy Framework Development - CBE Only
@@ -1374,7 +1374,7 @@ CW99768,Code Enforcement Advisor,Department Of Buildings (DOB); Licensing & Cons
 CW99783,DCSS - Ink Systems LLC - Information Technology Equipment and Software,Contracting and Procurement (OCP),software_services,4750000.0,no_ref_award_text,no_ref_in_text,,0.543,Doc615639,"FY22_CF0_Multifunction Printers_DCSS Information Technology, Equipment and Software Holders Only"
 CW99871,Brandlive Virtual Event Management Application,"Insurance, Securities and Banking (DISB)",software_services,413000.0,visible_title_match,no_award_text,,1.0,Doc613372,Brandlive Virtual Event Management Application
 CW99922,Recreation Management System,Parks and Recreation (DPR),software_services,276110.0,no_ref_award_text,no_ref_in_text,,0.673,Doc252986,Record Management System
-DCRL-2021-C-0048,FACES Maintenance and Operations,Child and Family Services Agency (CFSA),it_goods,2028684.04,no_award_text_no_title_match,no_award_text,,0.502,Doc526404,DCAS Operations and Maintenance (O&M) Support Services
+DCRL-2021-C-0048,FACES Maintenance and Operations,Child and Family Services Agency (CFSA),it_goods,2028684.04,no_award_text_no_title_match,no_award_text,,0.571,DCRL-2015-R-0100,"SACWIS Maintenance, Operations And Enhancements"
 DCRL-2022-F-0022,FACES Enhancements,Child and Family Services Agency (CFSA),it_goods,1624837.0,no_award_text_no_title_match,no_award_text,,0.599,Doc365374,Accela Enhancements
 DCRL-2024-B-0076,CFSA Lenovo Think Book Laptop Refresh,Child and Family Services Agency (CFSA),it_goods,218764.92,visible_title_match,no_award_text,,1.0,Doc729329,FY24 CFSA Lenovo Think Book Laptop Refresh
 DCRL-2024-K-0075,Artificial Intelligence Policy Support,Child and Family Services Agency (CFSA),it_adjacent,175340.0,visible_title_match,no_award_text,,1.0,Doc736075,Artificial Intelligence Policy Support - DCSS Vendors Only

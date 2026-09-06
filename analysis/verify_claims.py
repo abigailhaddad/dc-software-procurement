@@ -762,12 +762,12 @@ def run_checks() -> list[Result]:
     # that print their own solicitation number went 75 to 82 -- than in the
     # headline, because most of the recovered text is on contracts that cite
     # nothing.
-    check("trace to a posted solicitation", len(visible), 300)
+    check("trace to a posted solicitation", len(visible), 306)
     # 11.4 for the same reason the count above went to 300: the pdf scan now
     # reads all four text caches. The tolerance hid this one, so the site was
     # still printing 11.3 -- which is why the prose check below exists.
     check("their share of tech ceilings %",
-          round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.4, 0.2)
+          round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.7, 0.2)
     fy = pd.read_csv(ROOT / "data" / "solicitations" / "solicitations_by_fy.csv")
     for year, want in [("FY2016", 1351), ("FY2025", 749)]:
         check(f"solicitations posted {year}",
