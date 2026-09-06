@@ -1,0 +1,3 @@
+basis,total_M,vendors,top1_pct,top5_pct,top10_pct
+as published,578.7,295,17.4,42.3,52.5
+truncations merged,578.7,289,17.4,42.9,53.2

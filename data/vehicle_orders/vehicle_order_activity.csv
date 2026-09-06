@@ -1,0 +1,331 @@
+contract_number,title,vendor,agency,ceiling,first_start,vendor_key,traced_orders,traced_order_dollars,holder_orders_after_award,holder_order_dollars_after_award
+CW101085,FY22-CF0-DOES-IT Equipment BPA- ABC Technical Solutions Inc.,ABC TECHNICAL SOLUTIONS INC,Employment Services (DOES),950000.0,2022-10-01,ABC TECHNICAL SOLUTIONS,1,97811.32,425,16021753.22
+CW101475,"DCSS-Market, Media & Publication Information, Link Strategic Partners",LINK Strategic Partners,,1800000.0,2022-09-13,LINK STRATEGIC PARTNERS,0,0.0,0,0.0
+CW101608,DCSS FY22 The Lincoln Square Group,Lincoln Square Group,,3800000.0,2022-12-15,LINCOLN SQUARE,1,25353.12,15,524778.35
+CW101854,"DCSS-MLS20216-Marketing, Media and Public Information-Calvin Price Group, LLC",Calvin Price Group,,1800000.0,2022-12-19,CALVIN PRICE,2,61914.0,20,276783.25
+CW102944,"FY23 DCSS MARKETING, MEDIA AND PUBLIC INFORMATION",The Digital Sauce,Contracting and Procurement (OCP),4500000.0,2022-12-07,DIGITAL SAUCE,1,80000.0,2,92705.33
+CW103059,FY23 DCSS INFORMATION TECHNOLOGY EQUIPMENT & SOFTWARE,"BOCALJE SERVICES, INC.",Contracting and Procurement (OCP),950000.0,2022-11-15,BOCALJE SERVICES,0,0.0,1,33189.87
+CW103085,"DCSS - Industrial Services - Monument Enterprises, LLC 934-00",Monument Enterprises LLC,Contracting and Procurement (OCP),950000.0,2022-11-08,MONUMENT ENTERPRISES,0,0.0,0,0.0
+CW103302,"DCSS - Marketing, Media and Public Information  - Monumental Communication LLC","Monumental Communication, LLC",Contracting and Procurement (OCP),3600000.0,2023-01-12,MONUMENTAL COMMUNICATION,0,0.0,2,132700.0
+CW103408,"DCSS - MOBIS - Educology Solution, Co.","Educology Solutions, Inc.",,950000.0,2023-12-07,EDUCOLOGY SOLUTIONS,0,0.0,0,0.0
+CW103410,"DCSS - _ MOBIS - The Clearing, Inc.","The Clearing, Inc",,3800000.0,2023-01-19,CLEARING,0,0.0,19,1684762.32
+CW104180,FY23 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,bluebay office inc,Contracting and Procurement (OCP),2850000.0,2022-12-19,BLUEBAY OFFICE,0,0.0,30,450187.47000000003
+CW104299,FY23 OCP Information Technology Equipment and Software,"MVS, Inc.",Contracting and Procurement (OCP),200000.0,2022-12-12,MVS,0,0.0,926,112926904.12
+CW104339,"FY23 DCSS Deon Samad, LLC",Deon Samad LLC,,950000.0,2022-12-09,DEON SAMAD,0,0.0,0,0.0
+CW104843,"DCSS-ITE202312-Information Technology Equipment and Software-Daily Office Solutions, LLC",Daily Office Solutions LLC,,950000.0,2023-02-14,DAILY OFFICE SOLUTIONS,0,0.0,0,0.0
+CW104996,FY23 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Nimbus Solutions Provider,Contracting and Procurement (OCP),3800000.0,2023-02-07,NIMBUS SOLUTIONS PROVIDER,0,0.0,13,1342478.38
+CW105221,"CW105221-VLI, Inc Information Technology, Equipment & Software",VLI CORPORATION,Contracting and Procurement (OCP),2850000.0,2023-03-15,VLI,0,0.0,0,0.0
+CW105418,DCSS - Mission Oriented Business Integrated Services - (MOBIS),M3-BNI LLC,,10000000.0,2023-09-05,M3 BNI,0,0.0,0,0.0
+CW105440,"DCSS -Engineering Logistics Services -Prive' Demeure, Inc.","Prive' Demeure, Inc.",,900000.0,2023-10-30,PRIVE DEMEURE,0,0.0,0,0.0
+CW105629,"DCSS-ITE-SYSMEGA, LLC",SYSMEGA LLC,,950000.0,2023-11-01,SYSMEGA,0,0.0,0,0.0
+CW105702,DCSS - Information Technology Equipment and Software - MVS Inc,"MVS, Inc.",,21900000.0,2023-06-07,MVS,0,0.0,926,112926904.12
+CW106017,"FY13 DCSS Nimbus Solutions Provider, LLC",Nimbus Solutions Provider,,3800000.0,2023-04-04,NIMBUS SOLUTIONS PROVIDER,0,0.0,13,1342478.38
+CW106366,FY23 DCSS Area Probe Inc. - MOBIS,"Area Probe, LLC",,3800000.0,2023-06-20,AREA PROBE,0,0.0,2,9500.0
+CW106474,"DCSS-ITES202315-Public Performance Management, LLC",Public Performance Management,,30000000.0,2023-07-03,PUBLIC PERFORMANCE MANAGEMENT,0,0.0,138,8479166.04
+CW106558,FY23 DCSS The Triage Group,"THE TRIAGE GROUP, LLC",,30000000.0,2023-10-23,TRIAGE,0,0.0,228,19530300.94
+CW106730,IDIQ - Service vehicle,"First Priority Emergency Vehicles, Inc.",Fire and Emergency Services Department (FEMS),230103.68,2023-03-24,FIRST PRIORITY EMERGENCY VEHICLES,0,0.0,0,0.0
+CW106799,DCSS - Information Technology Equipment and Software - ABC Technical Solutions Inc  -,ABC TECHNICAL SOLUTIONS INC,Contracting and Procurement (OCP),3800000.0,2023-08-09,ABC TECHNICAL SOLUTIONS,3,129650.74,425,16021753.22
+CW106860,FY23 DCSS Deon Samad LLC,Deon Samad LLC,,3800000.0,2023-04-06,DEON SAMAD,0,0.0,0,0.0
+CW106979,FY23 DCSS Bert Smith & Company - AFM,"Bert W. Smith, Jr. & Co., Chartered d/b/a Bert Smith & Co.",,500000.0,2023-03-27,BERT W SMITH JR CHARTERED D B A BERT SMITH,0,0.0,0,0.0
+CW107041,FY23 DCSS The Robert Bobb Group - MOBIS,The Robert Bobb Group LLC,,20000000.0,2023-12-14,ROBERT BOBB,0,0.0,5,441952.6
+CW107089,"DCSS - MOBIS - JLAN Solutions, LLC","JLAN Solutions, LLC",,950000.0,2023-04-06,JLAN SOLUTIONS,0,0.0,0,0.0
+CW107403,"DCSS - Training Services & Products - 924-00 - Dramatic Solutions, Inc.","DRAMATIC SOLUTIONS, INC",,500000.0,2023-05-31,DRAMATIC SOLUTIONS,0,0.0,7,313800.0
+CW107877,"FY23 DCSS MRG Services, LLC",MRG SERVICES LLC,,2850000.0,2023-10-10,MRG SERVICES,0,0.0,5,366700.0
+CW108206,DSCC - Information Technology Equipment and Software - Securevian,Securevian,Contracting and Procurement (OCP),950000.0,2023-12-12,SECUREVIAN,0,0.0,0,0.0
+CW108321,"DCSS - Information Technology Equipment and Software - Cradle Systems, LLC",Cradle Systems,,40000000.0,2024-04-08,CRADLE SYSTEMS,0,0.0,72,6991641.86
+CW108368,"DCSS-ITE202323-Obverse, Inc-Information Technology Equipment and Software","Obverse Corporation, Inc.",,30000000.0,2024-05-13,OBVERSE,0,0.0,4,166075.49
+CW108442,"DCSS-ITES202325-DigiDoc, Inc-Information Technology Equipment & Software",DIGI DOCS INC DOCUMENT MGERS,,950000.0,2024-07-18,DIGI DOCS DOCUMENT MGERS,0,0.0,55,24762350.75
+CW108515,Contract Workspace (Procurement) - PMGL LLC,PMGLLLC,Contracting and Procurement (OCP),950000.0,2024-03-29,PMGLLLC,0,0.0,0,0.0
+CW108646,M3 BNI LLC- DCSS- Information Technology Equipment & Software,M3-BNI LLC,Contracting and Procurement (OCP),950000.0,2024-08-21,M3 BNI,0,0.0,0,0.0
+CW108946,DCSS - MOBIS - Networking for Future,"Networking For Future, Inc.",,30000000.0,2024-05-14,NETWORKING FOR FUTURE,1,120614.4,312,56145295.93
+CW108948,DCSS - MOBIS- J.Cain & Company,J.Cain & Company,,2850000.0,2023-11-03,J CAIN,0,0.0,0,0.0
+CW110291,Contract Workspace (Procurement),CC Tech Consulting,Contracting and Procurement (OCP),950000.0,2023-12-14,CC TECH CONSULTING,0,0.0,0,0.0
+CW110890,DCSS Holders Only - Cyber Security,vTech Solution Inc.,Health Care Finance (DHCF),222842.4,2023-09-08,VTECH SOLUTION,0,0.0,21,2243636.27
+CW111253,DCSS-ITE202334-Tyson Project Management-InformationTechnology Equipment & Software,Tyson Project Management Group,,1900000.0,2023-12-19,TYSON PROJECT MANAGEMENT,0,0.0,27,744902.52
+CW111268,DCSS - Mission Oriented Business Integrated Services (MOBIS) -Business Development,Business Development Associates LLC,,950000.0,2023-11-14,BUSINESS DEVELOPMENT ASSOCIATE,0,0.0,10,1724996.06
+CW111368,FY23 DCSS Tech Civic LLC,"TechCivic, LLC",,1900000.0,2023-10-10,TECHCIVIC,0,0.0,0,0.0
+CW111579,DCSS - MOBIS - Edera L3C - 918-00,Edera L3C,Contracting and Procurement (OCP),950000.0,2024-01-24,EDERA L3C,0,0.0,0,0.0
+CW111855,"DCSS - Setty & Associates International, PLLC - 925-00",SETTY & ASSOCIATES INTERNATION,Contracting and Procurement (OCP),900000.0,2023-12-18,SETTY ASSOCIATES INTERNATION,0,0.0,0,0.0
+CW112165,"DCSS - Information Technology Equipment and Software - Networking for Future, Inc","Networking For Future, Inc.",Contracting and Procurement (OCP),30000000.0,2024-03-12,NETWORKING FOR FUTURE,0,0.0,312,56145295.93
+CW112219,DCSS-CW112219- Gratitude Systems- INFORMATION TECHNOLOGY EQUIPMENT & SOFTWARE,Gratitude Systems,Contracting and Procurement (OCP),2700000.0,2024-02-22,GRATITUDE SYSTEMS,0,0.0,0,0.0
+CW112221,"DCSS-ITE20242-SupreTech, Inc","SUPRETECH, INC.",,950000.0,2024-01-03,SUPRETECH,0,0.0,282,9044150.85
+CW112314,"FY24 DCSS The Impact Group, LLC","The Impact Group, LLC",,2700000.0,2024-01-30,IMPACT,0,0.0,0,0.0
+CW112748,DCSS - Training Services - Tiye Consulting,Tiye Consulting,,500000.0,2024-01-11,TIYE CONSULTING,0,0.0,0,0.0
+CW113009,"DCSS - Information Technology Equipment and Software - Changing Technologies, Inc","Changing Technologies, Inc.",,12000000.0,2024-06-11,CHANGING TECHNOLOGIES,0,0.0,9,1434733.99
+CW113101,FY24 DCSS MOBIS  Carr International Newtworks Incorp.,Carr International Network,,950000.0,2023-11-27,CARR INTERNATIONAL NETWORK,0,0.0,0,0.0
+CW113103,"FY24 DCSS MOBIS Red Cana, Inc.",Red Canna Inc,,2850000.0,2024-02-21,RED CANNA,0,0.0,3,16600.0
+CW113574,"DCSS-Information Technology Equipment and Software-HI-TECH SOLUTION, INC","HI-TECH SOLUTION, INC.",,950000.0,2024-05-22,HI TECH SOLUTION,0,0.0,1,9989.0
+CW113600,"FY24 DCSS MOBIS New Light Technologies, Inc.","NEW LIGHT TECHNOLOGIES, INC.",,2850000.0,2024-04-10,NEW LIGHT TECHNOLOGIES,0,0.0,3,75713.74
+CW113603,"FY24 DCSS Health IT 2 Business Solutions, LLC DBA CODICE",Codice LLC,,30000000.0,2024-05-13,CODICE,0,0.0,93,24123122.77
+CW113822,DCSS -Training Services- Actionuity LLC,Actionuity LLC,,500000.0,2024-03-01,ACTIONUITY,0,0.0,2,53978.08
+CW113881,DCSS - Information Technology Equipment and Software - TechFlairs Inc,Techflairs inc,,20000000.0,2024-05-13,TECHFLAIRS,0,0.0,43,4380671.51
+CW113955,"DCSS - MOBIS - Softmax, LLC",Softmax LLC,,950000.0,2024-03-11,SOFTMAX,0,0.0,0,0.0
+CW114024,FY24 DCSS A&M Technologies,A&M Technologies,,2850000.0,2024-02-23,A M TECHNOLOGIES,0,0.0,0,0.0
+CW114105,DCSS - Information Technology Equipment and Software - JLC management LLC,JLC Management LLC,,1900000.0,2025-04-03,JLC MANAGEMENT,0,0.0,0,0.0
+CW114830,"DCSS - MOBIS - Change Bridge, LLC - 918-00",Change Bridge LLC,Contracting and Procurement (OCP),950000.0,2024-04-24,CHANGE BRIDGE,0,0.0,3,75350.0
+CW114983,FY22 AE Schedule DCKA-2022-T-0023 Precision Systems Inc.,PRECISION SYSTEMS INC,Transportation (DDOT),10000000.0,2024-10-01,PRECISION SYSTEMS,0,0.0,1,1768320.76
+CW115193,FY24 - DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Bayne LLC,Contracting and Procurement (OCP),2850000.0,2024-03-22,BAYNE,0,0.0,41,5157253.47
+CW115287,"FY24 DCSS MOBIS B. McNamee Consulting, LLC",B. McNamee Consulting LLC,,1900000.0,2024-04-12,B MCNAMEE CONSULTING,0,0.0,1,44875.0
+CW115538,FY22 AE Schedule DCKA-2022-T-0057 WBCM,WBCM,Transportation (DDOT),10000000.0,2023-08-08,WBCM,0,0.0,0,0.0
+CW115825,DCSS - MOBIS- PB&J Promotions LLC,PB&J Promotions LLC,,950000.0,2024-06-10,PB J PROMOTIONS,0,0.0,0,0.0
+CW115977,"FY24 DCSS Agilian, LLC  - MOBIS",Agilian LLC,,2850000.0,2024-05-15,AGILIAN,0,0.0,11,7890776.9
+CW115994,"DCSS - Marketing Media and Public Information - Jr Communications, LLC",JR COMMUNICATION LLC,Contracting and Procurement (OCP),1800000.0,2024-08-07,JR COMMUNICATION,0,0.0,0,0.0
+CW116254,"DCSS - Training Services & Products - Capital Business Solutions, LLC - 924-00","Capital Business Solutions, LLC",Contracting and Procurement (OCP),500000.0,2024-06-11,CAPITAL BUSINESS SOLUTION,0,0.0,3,103539.0
+CW116256,"DCSS - MOBIS - SKS Government Solutions, Inc. - 918-00",SKS Government Solutions Inc.,Contracting and Procurement (OCP),950000.0,2024-07-01,SKS GOVERNMENT SOLUTIONS,0,0.0,1,9430.72
+CW116346,"DCSS -  Marketing, Media and Public Information - Twelve 22 LLC",TWELVE 22,Contracting and Procurement (OCP),2700000.0,2024-06-14,TWELVE 22,0,0.0,2,34000.0
+CW116631,"DCSS-ITES2024-Information Technology Equipment & Software-The Pittman Group, Inc. dba Vantix","The Pittman Group, Inc DBA VANTIX",,10000000.0,2024-12-16,PITTMAN VANTIX,0,0.0,23,2879876.0
+CW116651,DCSS - Information Technology Equipment and Software - Capital Consulting LLC,Capital Consulting LLC dba Tharseo IT,Contracting and Procurement (OCP),11000000.0,2024-09-17,CAPITAL CONSULTING THARSEO IT,0,0.0,25,8501393.15
+CW117292,DCSS - MOBIS - Enlightmeds Technology Solutions LLC,Enlightmeds Technology Solutions,,1900000.0,2024-06-20,ENLIGHTMEDS TECHNOLOGY SOLUTIONS,0,0.0,0,0.0
+CW117718,"DCSS - MOBIS - STK Consulting & Services, Inc. - 918-00",STK Consulting & servcies Inc,Contracting and Procurement (OCP),950000.0,2024-07-29,STK CONSULTING SERVCIES,0,0.0,0,0.0
+CW118248,DCSS - Information Technology Equipment and Software  - CloudAI Technologies,CloudAI Technologies,Contracting and Procurement (OCP),2850000.0,2024-07-11,CLOUDAI TECHNOLOGIES,2,654910.0,29,3106603.45
+CW118361,DCSS - MOBIS - Tech Solutions Specialist TSS LLC,Tech Solutions Specialists TSS LLC,,950000.0,2024-07-16,TECH SOLUTIONS SPECIALISTS TSS,0,0.0,0,0.0
+CW118364,DCSS - Vernon Group LLC,Vernon Group LLC,,950000.0,2024-07-10,VERNON,0,0.0,0,0.0
+CW118680,DCSS - MOBIS - Actionuity LLC - 918-00,Actionuity LLC,Contracting and Procurement (OCP),950000.0,2024-08-14,ACTIONUITY,0,0.0,2,53978.08
+CW118763,"DCSS - Training Services - Talentolog,LLC","Talentology, LLC",,1000000.0,2024-07-23,TALENTOLOGY,0,0.0,0,0.0
+CW118987,DCSS - Information Technology Equipment and Software - Development Innovation System C -,"Development Innovation System C, LLC",Contracting and Procurement (OCP),1900000.0,2024-10-08,DEVELOPMENT INNOVATION SYSTEM C,0,0.0,0,0.0
+CW119421,"DCSS - Marketing, Media and Public Information - Captiva, LLC",Captiva L.L.C.,Contracting and Procurement (OCP),1800000.0,2024-10-22,CAPTIVA L L C,0,0.0,0,0.0
+CW120023,FY24 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,ADVANCED NETWORK CONSULTING,Contracting and Procurement (OCP),20000000.0,2025-01-13,ADVANCED NETWORK CONSULTING,0,0.0,320,51318506.68
+CW120381,"FY24 DCSS Davis Computer Technologies, LLC - MOBIS",Davis Computer Technologies LLC,,1900000.0,2024-10-07,DAVIS COMPUTER TECHNOLOGIES,0,0.0,0,0.0
+CW120601,DCSS - Information Technology Equipment and Software -  Corporate Systems Resources Inc,CORPORATE SYSTEMS RESOURCES,,1900000.0,2024-10-29,CORPORATE SYSTEMS RESOURCES,0,0.0,55,4859154.44
+CW120650,"Limbic Systems, Inc. - DCSS  MOBIS",LIMBIC SYSTEMS INC,,1900000.0,2024-11-13,LIMBIC SYSTEMS,0,0.0,37,14486825.08
+CW120844,CloudAI Technologies - DCSS MOBIS,CloudAI Technologies,,950000.0,2024-11-14,CLOUDAI TECHNOLOGIES,0,0.0,29,3106603.45
+CW120938,"DCSS-ITES20211-Information Technology Equipment-E7 Strategies, Inc",E7STRATEGIES INC,,950000.0,2025-02-27,E7STRATEGIES,0,0.0,4,320571.03
+CW121266,"DCSS - ITES - TPW Consultants, LLC","TPW Consultants, LLC",,950000.0,2024-10-25,TPW CONSULTANTS,0,0.0,26,392574.28
+CW121538,DCSS - MOBIS - The Aquillien Group LLC,THE AQUILINE GROUP,,1900000.0,2024-11-25,AQUILINE,0,0.0,0,0.0
+CW121924,ABC Technical Solutions Inc.- FY25 IT BPA,ABC TECHNICAL SOLUTIONS INC,Employment Services (DOES),950000.0,2024-10-30,ABC TECHNICAL SOLUTIONS,1,98938.98,425,16021753.22
+CW122341,DCSS - Information Technology Equipment and Software  - Davis Computer Technologies LLC,Davis Computer Technologies LLC,Contracting and Procurement (OCP),1900000.0,2024-12-18,DAVIS COMPUTER TECHNOLOGIES,0,0.0,0,0.0
+CW122400,"Tyson Project Management Group, LLC - DCSS FFM",Tyson Project Management Group,,1900000.0,2025-03-20,TYSON PROJECT MANAGEMENT,0,0.0,27,744902.52
+CW122941,DCSS - Information Technology Equipment and Software - Capital Sprints LLC,Capital Sprints LLC,Contracting and Procurement (OCP),1900000.0,2025-04-03,CAPITAL SPRINTS,0,0.0,1,277656.87
+CW123141,DCSS - Industrial Services - G-Sida General Services,G-Sida General Services,,1900000.0,2025-01-24,G SIDA GENERAL SERVICES,0,0.0,2,873800.7
+CW123247,DCSS-IT Equipment,"MVS, Inc.",Health Care Finance (DHCF),15893.69,2025-01-24,MVS,0,0.0,926,112926904.12
+CW123461,EightZero DCSS-MOBIS,Eightzero,,1900000.0,2025-05-12,EIGHTZERO,0,0.0,0,0.0
+CW123473,"DCSS Information Technology Equioment and Software-Health IT 2 Business Solutions, LLC dba CODICE",Codice LLC,,10000000.0,2025-11-22,CODICE,0,0.0,93,24123122.77
+CW123611,"DCSS - Information Technology Equipment and Software - Limbic Systems, Inc",LIMBIC SYSTEMS INC,Contracting and Procurement (OCP),2000000.0,2025-06-30,LIMBIC SYSTEMS,0,0.0,37,14486825.08
+CW123641,FY25 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Supplies Com Limited Liability Company,Contracting and Procurement (OCP),950000.0,2026-03-31,SUPPLIES COM LIABILITY,0,0.0,0,0.0
+CW123643,"Simple Solutions, LLC dba Lisa Morgan Solutions - DCSS MOBIS","SIMPLE SOLUTIONS, LLC",,1900000.0,2025-05-23,SIMPLE SOLUTIONS,0,0.0,0,0.0
+CW123645,"DCSS - MOBIS - ICI Systems, Inc.","ICI Systems, Inc.",,950000.0,2025-03-06,ICI SYSTEMS,0,0.0,2,761740.0
+CW124005,DCSS - MOBIS - Sugatu Consulting LLC,Sugatu Consulting LLC,,1900000.0,2025-03-05,SUGATU CONSULTING,0,0.0,0,0.0
+CW124050,Colours Global Inc DCSS MOBIS,"COLOURS GLOBAL, INC.",,950000.0,2025-02-05,COLOURS GLOBAL,0,0.0,0,0.0
+CW124093,"DCSS - MOBIS - Cole Consulting, Inc.",Cole Consulting Inc,,1900000.0,2025-05-14,COLE CONSULTING,0,0.0,0,0.0
+CW124818,Lorna Group Incorporated - DCSS MOBIS,"Lorna Group, Inc.",,2000000.0,2025-06-25,LORNA,0,0.0,0,0.0
+CW124889,"DCSS - MOBIS - SectorMax, Inc.",Sectormax Inc,,950000.0,2025-04-14,SECTORMAX,0,0.0,0,0.0
+CW125301,"Mar-Sam, LLC - DCSS MOBIS",Mar-Sam LLC,,1900000.0,2025-04-09,MAR SAM,0,0.0,0,0.0
+CW126167,"Purchase of Equipment  The Task Order issued under DC supply schedule, Contract Number CW106799",ABC TECHNICAL SOLUTIONS INC,Transportation (DDOT),118850.86,2025-04-24,ABC TECHNICAL SOLUTIONS,1,118850.86,425,16021753.22
+CW126268,"Metropolitan Strategies and Solutions, LLC - DCSS MOBIS",Metropolitan Strategies and Solutions LLC,,1900000.0,2025-05-09,METROPOLITAN STRATEGIES AND,0,0.0,17,6921719.06
+CW126442,"DCSS - Marketing, Media and Public Information - Ink Systems., LLC",Ink Systems LLC,Contracting and Procurement (OCP),1800000.0,2025-07-15,INK SYSTEMS,0,0.0,10,197563.03
+CW126544,DCSS - Information Technology Equipment and Software - ITPizza LLC,ITP LLC,Contracting and Procurement (OCP),1900000.0,2025-06-26,ITP,0,0.0,0,0.0
+CW126594,Argorand Inc- DCSS- MOBIS,Argorand Inc.,,950000.0,2025-05-16,ARGORAND,0,0.0,0,0.0
+CW126971,"DCSS - MOBIS - Innovation Horizons, Inc.","Innovation Horizons, Inc.",,950000.0,2025-07-16,INNOVATION HORIZONS,0,0.0,2,218751.21
+CW127004,"Mindcubed, LLC DCSS MOBIS",Mindcubed,,2000000.0,2025-06-24,MINDCUBED,0,0.0,1,5647.95
+CW127227,DCSS - Information Technology Equipment and Software - CSZNet Inc,CSZNet Inc,Contracting and Procurement (OCP),2000000.0,2025-08-05,CSZNET,0,0.0,2,74282.34
+CW127545,"Formost Advanced Creations, LLC- DCSS- PDMS",Formost Advanced Creations,,750000.0,2025-07-09,FORMOST ADVANCED CREATIONS,0,0.0,13,449942.96
+CW127938,The ELOCEN Group- DCSS- MOBIS,"The Elocen Group, LLC",,1000000.0,2025-07-28,ELOCEN,0,0.0,0,0.0
+CW128728,"Tecknomic, LLC - DCSS MOBIS",TECKNOMIC LLC,,950000.0,2026-02-09,TECKNOMIC,0,0.0,23,1870621.56
+CW128740,Development Institute LLC- DCSS- MOBIS,DEVELOPMENT INSTITUTE LLC DBA INSTITUTE FOR DEVELOPMENT IMPACT,,1000000.0,2025-08-27,DEVELOPMENT INSTITUTE,0,0.0,0,0.0
+CW128896,"PRM Consulting, Inc. - DCSS Training Services",PRM CONSULTING INC,,500000.0,2026-01-20,PRM CONSULTING,0,0.0,0,0.0
+CW129381,Contract Workspace (Procurement) - ADINKRA SOLUTIONS INC,"Adinkra Solutions, Inc",Contracting and Procurement (OCP),1000000.0,2025-11-18,ADINKRA SOLUTIONS,0,0.0,0,0.0
+CW129454,DCSS - MOBIS - DataNet Systems Corporation,DATANET SYSTEMS CORP,,1000000.0,2026-02-02,DATANET SYSTEMS,0,0.0,48,2432763.93
+CW129459,DCSS - MOBIS - Ross Professional Services LLC,Ross Professional Services,,1000000.0,2026-01-09,ROSS PROFESSIONAL SERVICES,0,0.0,0,0.0
+CW129716,Dhaka Technologies Limited Company- MOBIS- DCSS,Dhaka Technologies Limited Company,,1000000.0,2025-10-10,DHAKA TECHNOLOGIES,0,0.0,0,0.0
+CW129760,"DCSS - Marketing, Media and Public Information - Vanguard Communications of Falls Church Inc",Vanguard Communications,Contracting and Procurement (OCP),900000.0,2025-10-21,VANGUARD COMMUNICATIONS,0,0.0,0,0.0
+CW130174,DCSS - MOBIS - HRUCKUS LLC,HRUCKUS LLC,,1000000.0,2026-04-08,HRUCKUS,0,0.0,0,0.0
+CW130691,"CEA Enterprise, LLC - DCSS MOBIS","CEA Enterprise, LLC",,1000000.0,2026-01-15,CEA ENTERPRISE,0,0.0,0,0.0
+CW130785,Aspen of DC Inc- DBA ADC Managment Solutions- MOBIS- DCSS,"Aspen of DC, Inc. d/b/a ADC Management Solutions",,1000000.0,2025-11-26,ASPEN OF DC D B A ADC MANAGEMENT SOLUTIONS,0,0.0,0,0.0
+CW131110,Promesa Consulting Group- DCSS- MOBIS,Promesa Consulting Group,,1000000.0,2025-12-12,PROMESA CONSULTING,0,0.0,0,0.0
+CW131381,CW131381-KovaisInnovative Solutions-Information Technology Equipment & Software-,KoVais Innovative Solutions,Contracting and Procurement (OCP),950000.0,2026-03-09,KOVAIS INNOVATIVE SOLUTIONS,0,0.0,0,0.0
+CW132101,ICT Mondial - DCSS MOBIS,"ICT Mondial, Inc.",,1000000.0,2026-03-06,ICT MONDIAL,0,0.0,0,0.0
+CW132265,DCSS - MOBIS - Alade,ALADE LLC,,1000000.0,2026-03-16,ALADE,0,0.0,0,0.0
+CW132411,"AIM Technical Group, LLC - DCSS MOBIS",AIM TECHNICAL GROUP,,950000.0,2026-03-06,AIM TECHNICAL,0,0.0,0,0.0
+CW132447,DC General Construction Inc- DCSS- ELS,DC General Construction Inc,,1000000.0,2026-05-08,DC GENERAL CONSTRUCTION,0,0.0,0,0.0
+CW132688,DCSS- Innovation Horizons- TS,"Innovation Horizons, Inc.",,500000.0,2026-05-27,INNOVATION HORIZONS,0,0.0,2,218751.21
+CW132763,SyDar of DC LLC- DCSS- PDMS,"SYDAR OF DC, LLC",,750000.0,2026-03-31,SYDAR OF DC,0,0.0,0,0.0
+CW132812,"Midnight Sun Consulting, LLC - DCSS MOBIS",Midnight Sun Consulting,,1000000.0,2026-03-06,MIDNIGHT SUN CONSULTING,0,0.0,0,0.0
+CW132824,Contract Workspace (Procurement) - THE COLES GROUP LLC,The Coles Group LLC,Contracting and Procurement (OCP),10000000.0,2026-06-22,COLES,0,0.0,40,2490063.12
+CW132905,"Bayne, LLC DCSS Training Services",Bayne LLC,,500000.0,2026-03-12,BAYNE,0,0.0,41,5157253.47
+CW132991,"DCSS - Marketing, Media and Public Information - Rizeup Technology Training, LLC","RizeUp Technology Training, LLC",Contracting and Procurement (OCP),1000000.0,2026-02-26,RIZEUP TECHNOLOGY TRAINING,0,0.0,0,0.0
+CW133093,"DCSS - MOBIS - Majee Tech,Inc.",Majee Tech Inc.,,1000000.0,2026-03-26,MAJEE TECH,0,0.0,0,0.0
+CW133612,"E-Logic, Inc DCSS Engineering","E-LOGIC, INC.",,1000000.0,2026-04-20,E LOGIC,0,0.0,0,0.0
+CW134084,DCSS - MOBIS - Summit LLC,Summit LLC,,1000000.0,2026-03-30,SUMMIT,0,0.0,0,0.0
+CW134095,GovTech Advisors - DCSS MOBIS,GovTech Advisors,,1000000.0,2026-04-06,GOVTECH ADVISORS,0,0.0,0,0.0
+CW134314,"DCSS-Information Technology Equipment and Software-Zeno Associates, LLC",Zeno Associates L.L.C.,,1000000.0,2026-05-21,ZENO ASSOCIATES L L C,0,0.0,0,0.0
+CW134322,DHCD FY26 Laptops (DCSS IT Equipment & Software),"MVS, Inc.",Housing and Community Development (DHCD),111299.5,2026-03-26,MVS,0,0.0,926,112926904.12
+CW134446,"Georgetown Technologies, LLC - DCSS Audit and Financial",Georgetown Technologies LLC,,500000.0,2026-04-21,GEORGETOWN TECHNOLOGIES,0,0.0,12,902376.8
+CW134624,DCSS - MOBIS - Georgetown Technologies LLC,Georgetown Technologies LLC,,1000000.0,2026-04-17,GEORGETOWN TECHNOLOGIES,0,0.0,12,902376.8
+CW134647,"Tawiran, LLC DCSS MOBIS",Tawiran L.L.C.,,1000000.0,2026-05-01,TAWIRAN L L C,0,0.0,0,0.0
+CW135424,"SE Group, Inc. DCSS MOBIS",SE Group Inc,,1000000.0,2026-05-26,SE,0,0.0,0,0.0
+CW136053,DCSS - Industrial Services - ADSWAILES LLC dba A&A Premium Paint Distributor LLC,"ADSWAILES, LLC",,1000000.0,2026-07-21,ADSWAILES,0,0.0,0,0.0
+CW136064,"DCSS - Marketing, Media and Public Information - Collaborative Communications Group",Collaborative Communications,Contracting and Procurement (OCP),1000000.0,2026-06-24,COLLABORATIVE COMMUNICATIONS,0,0.0,4,100514.82
+CW136728,"KavaliConsulting, LLC - DCSS MOBIS",Kavali Consulting LLC,,1000000.0,2026-07-16,KAVALI CONSULTING,0,0.0,0,0.0
+CW136891,"DCSS-Information Technology Equipment & Software-CEA Enterprise, LLC","CEA Enterprise, LLC",,1000000.0,2026-08-03,CEA ENTERPRISE,0,0.0,0,0.0
+CW136974,"Tribeca Builds, LLC DCSS Engineering and Logistics","Tribeca Builds, LLC",,1000000.0,2026-08-04,TRIBECA BUILDS,0,0.0,0,0.0
+CW137026,"DCSS - Marketing, Media and Public Information - Black Robin Media, LLC",Black Robin Media,Contracting and Procurement (OCP),1000000.0,2026-07-16,BLACK ROBIN MEDIA,0,0.0,0,0.0
+CW137037,"DCSS - Marketing, Media and Public Information - Zuri Productions, LLC",Zuri Prodctions,Contracting and Procurement (OCP),900000.0,2026-07-28,ZURI PRODCTIONS,0,0.0,0,0.0
+CW137153,"Community Bridge, Inc, - DCSS IS","Community Bridges, Inc.",,1000000.0,2026-08-17,COMMUNITY BRIDGES,0,0.0,0,0.0
+CW137188,"DCSS-Information Technology Equipment & Software-Intuitive Resolutions, LLC","Intuitive Resolutions, LLC",,1000000.0,2026-08-28,INTUITIVE RESOLUTIONS,0,0.0,0,0.0
+CW137673,Socialwise Inc. -  DCSS MOBIS,Socialwise Inc.,,1000000.0,2026-08-19,SOCIALWISE,0,0.0,0,0.0
+CW46138,DCSS-MOBIS - The Privacy Advocate LLC,The Privacy Advocate LLC,Contracting and Procurement (OCP),950000.0,2020-11-17,PRIVACY ADVOCATE,0,0.0,0,0.0
+CW46714,"DCSS-Security Equipment & Services- Prism International, LLC","Prism International, LLC",Contracting and Procurement (OCP),850000.0,2020-11-14,PRISM INTERNATIONAL,0,0.0,11,1215873.9
+CW46949,"DCSS-IT Equipment & Software-Prism International, LLC","Prism International, LLC",Contracting and Procurement (OCP),950000.0,2020-11-14,PRISM INTERNATIONAL,0,0.0,11,1215873.9
+CW47269,DCSS - MOBIS- Analytica,Analytica LLC,Contracting and Procurement (OCP),10000000.0,2021-01-12,ANALYTICA,0,0.0,5,539201.4
+CW47414,"DCSS - MOBIS - Crew Solutions, Inc.",Crew Solutions Inc,Contracting and Procurement (OCP),950000.0,2020-11-14,CREW SOLUTIONS,0,0.0,0,0.0
+CW48262,DCSS- Industrial Services - Spiritedone LLC,Spiritedone LLC,Contracting and Procurement (OCP),950000.0,2021-05-24,SPIRITEDONE,0,0.0,0,0.0
+CW48365,"DCSS-MOBIS- Sylver Rain Consulting, LLC","Sylver Rain Consulting, LLC",Contracting and Procurement (OCP),950000.0,2020-12-07,SYLVER RAIN CONSULTING,0,0.0,3,689316.8200000001
+CW48572,"DCSS - MOBIS - Accurate Conceptions, LLC","ACCURATE CONCEPTIONS, LLC",,950000.0,2020-12-20,ACCURATE CONCEPTIONS,0,0.0,2,196225.76
+CW48961,DCSS-MOBIS-VIRE Consulting,Vire Consulting,Contracting and Procurement (OCP),950000.0,2021-04-06,VIRE CONSULTING,0,0.0,1,22330.0
+CW49156,"DCSS - IT Services, Equipment and Software - New Light Technologies(NLT)","NEW LIGHT TECHNOLOGIES, INC.",,950000.0,2021-01-10,NEW LIGHT TECHNOLOGIES,0,0.0,3,75713.74
+CW49408,"DCSS - MOBIS - Alternatives Renewable Solutions, LLC","Alternatives Renewable Solutions, LLC",Contracting and Procurement (OCP),10000000.0,2021-06-12,ALTERNATIVES RENEWABLE SOLUTIONS,0,0.0,3,673836.17
+CW49529,"DCSS-Marketing, Media and Public Information-Stratacomm",Stratacomm,Contracting and Procurement (OCP),900000.0,2021-02-16,STRATACOMM,0,0.0,0,0.0
+CW50063,DCSS - MOBIS - David Bishop Consulting,David Bishop Consulting,Contracting and Procurement (OCP),20000.0,2020-10-12,DAVID BISHOP CONSULTING,0,0.0,0,0.0
+CW50911,"DCSS-Training Services- VLi, Inc.",VLI CORPORATION,Contracting and Procurement (OCP),500000.0,2021-04-10,VLI,0,0.0,0,0.0
+CW51749,"DCSS-MOBIS-Prime Source Technologies, LLC",PRIME SOURCE TECHNOLOGIES LLC,Contracting and Procurement (OCP),950000.0,2021-06-28,PRIME SOURCE TECHNOLOGIES,0,0.0,93,14764752.29
+CW52115,"DCSS-Mobis-Educology Solutions, Inc.","Educology Solutions, Inc.",,10000000.0,2020-10-30,EDUCOLOGY SOLUTIONS,0,0.0,0,0.0
+CW52476,"DCSS-MOBIS-Precision Capital Partners, LLC","Precision Capital Partners, LLC",Contracting and Procurement (OCP),950000.0,2021-07-17,PRECISION CAPITAL PARTNERS,0,0.0,7,127905.08
+CW52543,DCSS-MOBIS(918)-Georgetown Technologies,Georgetown Technologies LLC,,950000.0,2021-07-07,GEORGETOWN TECHNOLOGIES,0,0.0,12,902376.8
+CW52868,"DCSS-Information Technology, Equipment and Software-Accurate Conceptions, LLC","ACCURATE CONCEPTIONS, LLC",,950000.0,2021-07-25,ACCURATE CONCEPTIONS,0,0.0,2,196225.76
+CW53355,DCSS - It Equipment & Software - A&M Technologies,A&M Technologies,Contracting and Procurement (OCP),950000.0,2021-08-15,A M TECHNOLOGIES,0,0.0,0,0.0
+CW53568,"DCSS-MOBIS-L.S. Caldwell & Associates, Inc.",L.S. CALDWELL & ASSOCIATES,Contracting and Procurement (OCP),10000000.0,2020-10-30,L S CALDWELL ASSOCIATES,0,0.0,10,4686170.41
+CW53865,"DCSS - MOBIS (918) - Savvy Technology Solution, LLC.",Savvy Technology Solutions,,950000.0,2021-09-27,SAVVY TECHNOLOGY SOLUTION,0,0.0,10,1765664.68
+CW54223,DCSS-Training Services-Holistic Planners Network,Holistic Planners Network,Contracting and Procurement (OCP),500000.0,2021-09-07,HOLISTIC PLANNERS NETWORK,0,0.0,0,0.0
+CW54466,DCSS - MOBIS - KLSL Consulting,"KLSL Consulting, LLC.",Contracting and Procurement (OCP),20000000.0,2020-11-16,KLSL CONSULTING,0,0.0,0,0.0
+CW55360,"DCSS- MOBIS - THe Clearing, Inc.","The Clearing, Inc",,1900000.0,2020-10-16,CLEARING,0,0.0,19,1684762.32
+CW56221,"DCSS -  MOBIS - Global, Inc","Global, Inc.",,10000.0,2021-03-01,GLOBAL,0,0.0,1,3550.0
+CW56542,"DCSS-Security Equipment & Services-Wilson Dependable Services, LLC","Wilson Dependable Services, LLC",Contracting and Procurement (OCP),850000.0,2020-11-29,WILSON DEPENDABLE SERVICES,0,0.0,1,6178.0
+CW57818,"DCSS-2006-R-920-00-IT Equipment and Software-Precision Capital Partners, LLC","Precision Capital Partners, LLC",,1900000.0,2021-06-04,PRECISION CAPITAL PARTNERS,0,0.0,7,127905.08
+CW57896,"DCSS MOBIS Capital Consulting, LLC",Capital Consulting LLC dba Tharseo IT,,1900000.0,2021-04-24,CAPITAL CONSULTING THARSEO IT,0,0.0,25,8501393.15
+CW58725,"DCSS-IT Equipment & Software-The Pittman Group, Inc.","The Pittman Group, Inc DBA VANTIX",Contracting and Procurement (OCP),950000.0,2021-06-14,PITTMAN VANTIX,0,0.0,23,2879876.0
+CW58761,"DCSS - It Equipment & Software - Cradle Systems, LLC",Cradle Systems,Contracting and Procurement (OCP),20000000.0,2021-06-04,CRADLE SYSTEMS,1,163566.09,72,6991641.86
+CW58776,DCSS Application for VCARE MOBIS,"VCare, LLC",Contracting and Procurement (OCP),950000.0,2021-09-17,VCARE,0,0.0,0,0.0
+CW58809,"DCSS-IT Equipment & Software-Dupont Computers, Inc.",Dupont Computers,Contracting and Procurement (OCP),950000.0,2021-06-11,DUPONT COMPUTERS,1,71559.99,21,427513.15
+CW58842,"DCSS- MOBIS - Dantech Corporation, Inc.",Dantech Corporation Inc,,20000000.0,2021-06-17,DANTECH,0,0.0,13,649717.17
+CW59003,"DCSS- IT Equipment & Software- Networking Unlimited, LLC","Networking Unlimited, LLC",Contracting and Procurement (OCP),950000.0,2021-06-29,NETWORKING UNLIMITED,0,0.0,0,0.0
+CW59144,"DCSS - MOBIS - The Triage Group, LLC","THE TRIAGE GROUP, LLC",,20000000.0,2021-09-06,TRIAGE,0,0.0,228,19530300.94
+CW59303,DCSS - IT Technology - Equipment and Software,"MVS, Inc.",,10950000.0,2021-03-29,MVS,3,221934.94,926,112926904.12
+CW59406,"DCSS- IT Equipment & Software - ABC Technical Solutions, Inc.",ABC TECHNICAL SOLUTIONS INC,Contracting and Procurement (OCP),1900000.0,2021-04-04,ABC TECHNICAL SOLUTIONS,0,0.0,425,16021753.22
+CW59559,"DCSS - MOBIS - KZN Consulting, Inc",KZN Consulting Inc,,950000.0,2021-09-11,KZN CONSULTING,0,0.0,0,0.0
+CW59687,"DCSS-2006-R-918-00-Mission Oriented Business Integrated Services-Business Development Associates, LLC.",Business Development Associates LLC,,950000.0,2021-04-18,BUSINESS DEVELOPMENT ASSOCIATE,0,0.0,10,1724996.06
+CW59986,"DCSS - MOBIS - Sol Support, LLC",Sol Support LLC,,1900000.0,2021-04-11,SOL SUPPORT,0,0.0,0,0.0
+CW60229,DCSS-MOBIS-Blake Associates Technologies,Blake Associates Technologies,,950000.0,2021-06-12,BLAKE ASSOCIATES TECHNOLOGIES,0,0.0,0,0.0
+CW60409,"DCSS - Mission Oriented Business Integrated Services (MOBIS)- 918- MVS,Inc.","MVS, Inc.",,950000.0,2020-11-01,MVS,0,0.0,926,112926904.12
+CW61163,"DCSS-MMPI201831-Blank, Inc.","BLANK, INC.",,900000.0,2021-06-12,BLANK,0,0.0,3,9936.34
+CW61406,DCSS MOBIS Bridging Technologies,Bridging Technologies LLC,,950000.0,2021-07-02,BRIDGING TECHNOLOGIES,0,0.0,2,157100.0
+CW61832,DCSS-2006-R-918-00-MOBIS201814-A&A,ADITYA & ASSOCIATES dba A&A,,950000.0,2021-08-07,ADITYA ASSOCIATES A A,0,0.0,0,0.0
+CW61927,"DCSS- MOBIS Networking for Future, Inc","Networking For Future, Inc.",,30000000.0,2020-10-29,NETWORKING FOR FUTURE,0,0.0,312,56145295.93
+CW62328,"DCSS-MOBIS-Abstract Evolutions, LLC",Abstract Evolutions LLC,Contracting and Procurement (OCP),1900000.0,2021-07-27,ABSTRACT EVOLUTIONS,0,0.0,2,88760.0
+CW62862,"DCSS - MOBIS - IdeaCrew, Inc","IdeaCrew, Inc.",,20000000.0,2021-01-02,IDEACREW,0,0.0,33,44834204.41
+CW63331,Contract Workspace-DCSS-CORPORATE SYSTEMS RESOURCES,CORPORATE SYSTEMS RESOURCES,Contracting and Procurement (OCP),950000.0,2021-09-17,CORPORATE SYSTEMS RESOURCES,0,0.0,55,4859154.44
+CW63887,"DCSS- IT Equipment & Software - Capital Consulting, LLC dba Tharseo IT",Capital Consulting LLC dba Tharseo IT,Contracting and Procurement (OCP),10000000.0,2021-05-13,CAPITAL CONSULTING THARSEO IT,0,0.0,25,8501393.15
+CW64063,DCSS Application for MOBIS for Health IT 2 Business dba CODICE,Codice LLC,Contracting and Procurement (OCP),950000.0,2021-03-18,CODICE,0,0.0,93,24123122.77
+CW64233,DCSS Application for Supre Tech Inc. for IT,"SUPRETECH, INC.",Contracting and Procurement (OCP),1900000.0,2020-10-16,SUPRETECH,2,33910.19,282,9044150.85
+CW64800,"DCSS- MOBIS- Dranreft, LLC dba Business Transformation Group (BTG)",BTG,Contracting and Procurement (OCP),11900000.0,2021-07-16,BTG,0,0.0,0,0.0
+CW64858,"DCSS - Marketing, Media and Public Information 961-00 - Rana Labs, LLC.",Rana Labs LLC,Contracting and Procurement (OCP),900000.0,2024-03-01,RANA LABS,0,0.0,0,0.0
+CW65120,"DCSS-MOBIS- JLC Management, LLC",JLC Management LLC,Contracting and Procurement (OCP),10000000.0,2021-05-31,JLC MANAGEMENT,0,0.0,0,0.0
+CW66281,"DCSS - Printing & Document Management Solution Focus, LLC",Solution Focus,,2250000.0,2021-01-04,SOLUTION FOCUS,0,0.0,0,0.0
+CW66703,"FY19 DCSS Brick & Story, LLC",Brick & Story LLC,,2700000.0,2021-01-16,BRICK STORY,0,0.0,0,0.0
+CW66807,"DCSS - MOBIS - Plwatcher Media Group, LLC",PLWATCHER MEDIA GRP LLC,,10000000.0,2021-09-03,PLWATCHER MEDIA GRP,0,0.0,0,0.0
+CW67780,DCSS - Information Technology Equipment and Software - Advanced Network Consulting Inc,ADVANCED NETWORK CONSULTING,,20000000.0,2021-09-23,ADVANCED NETWORK CONSULTING,0,0.0,320,51318506.68
+CW67904,DCSS - MOBIS - Limbic Systems Inc.,LIMBIC SYSTEMS INC,,10000000.0,2021-05-15,LIMBIC SYSTEMS,0,0.0,37,14486825.08
+CW68297,"DCSS- MOBIS- Quixotec, LLC",Quixotec LLC,Contracting and Procurement (OCP),950000.0,2021-06-28,QUIXOTEC,0,0.0,0,0.0
+CW68611,"DCSS MOBIS Empowerment Enterprise Group, LLC","Empowerment Enterprise Group, LLC",,1900000.0,2021-03-26,EMPOWERMENT ENTERPRISE,0,0.0,0,0.0
+CW68785,"DCSS - MOBIS - Systems Integration, LLC","Systems Integration, LLC",Contracting and Procurement (OCP),10000000.0,2021-07-16,SYSTEMS INTEGRATION,0,0.0,6,2650801.17
+CW69027,DCSS - Marketing Media an Public Information - Marketing Me Consulting,Market Me Consulting,,2700000.0,2021-04-22,MARKET ME CONSULTING,1,6487.5,6,108937.0
+CW69325,"DCSS-Audit20197-V-Tech Solutions, Inc.",V-TECH SOLUTIONS INC,,500000.0,2021-05-13,V TECH SOLUTIONS,0,0.0,10,2036136.81
+CW69360,DCSS Application for Mindfinders,MINDFINDERS INC,Contracting and Procurement (OCP),1900000.0,2021-09-23,MINDFINDERS,0,0.0,42,3339414.39
+CW69398,"DCSS - MOBIS - dBase Technologies, LLC",dBase Technologies,Contracting and Procurement (OCP),20000000.0,2020-11-25,DBASE TECHNOLOGIES,0,0.0,0,0.0
+CW70171,DCSS-2006-R-920-00-Tyson Project Management LLC,Tyson Project Management Group,,950000.0,2021-05-06,TYSON PROJECT MANAGEMENT,0,0.0,27,744902.52
+CW70394,DCSS APPLICATION - Agiliian LLC,Agilian LLC,Contracting and Procurement (OCP),950000.0,2021-05-31,AGILIAN,0,0.0,11,7890776.9
+CW70417,DCSS APPLICATION - EIGHTY2DEGREES LLC. MMPI201923,EIGHTY2DEGREES LLC,Contracting and Procurement (OCP),900000.0,2020-11-08,EIGHTY2DEGREES,0,0.0,2,13760.0
+CW71779,Contract Workspace (Procurement)-CSZNET INC,CSZNet Inc,Contracting and Procurement (OCP),20000000.0,2021-06-09,CSZNET,0,0.0,2,74282.34
+CW71837,DCSS - Information Technology  Equipment & Software- Star Office Products,"STAR OFFICE PRODUCTS, INC",Contracting and Procurement (OCP),20000000.0,2021-01-21,STAR OFFICE PRODUCTS,0,0.0,30,465551.31
+CW71839,DCSS - MOBIS - Maru Solutions Incorporated,"Maru Solutions, Inc.",Contracting and Procurement (OCP),10000000.0,2021-09-23,MARU SOLUTIONS,0,0.0,3,650885.74
+CW72797,"DCSS MOBIS Metropolitan Strategies and Solutions, LLC",Metropolitan Strategies and Solutions LLC,,3800000.0,2020-11-05,METROPOLITAN STRATEGIES AND,0,0.0,17,6921719.06
+CW72874,"DCSS - MOBIS - Seas Community Partners, LLC","SEAS Community Partners, LLC",Contracting and Procurement (OCP),10000000.0,2020-12-23,SEAS COMMUNITY PARTNERS,0,0.0,1,30000.0
+CW72876,DCSS - MOBIS - Data Net Systems Corporation,DATANET SYSTEMS CORP,Contracting and Procurement (OCP),20000000.0,2020-12-30,DATANET SYSTEMS,0,0.0,48,2432763.93
+CW73416,"DCSS - MOBIS - Techflairs, Inc.",Techflairs inc,Contracting and Procurement (OCP),3800000.0,2020-11-06,TECHFLAIRS,0,0.0,43,4380671.51
+CW74704,FY19 DCSS MOBIS JADD Solutions LLC,JADD SOLUTIONS LLC,,1900000.0,2020-11-05,JADD SOLUTIONS,0,0.0,0,0.0
+CW75305,"DCSS Applicaton for Reingold Link, LLC dba LINK Strategic Partners",LINK Strategic Partners,Contracting and Procurement (OCP),1800000.0,2021-03-11,LINK STRATEGIC PARTNERS,1,50000.0,0,0.0
+CW76081,"DCSS  - Information Technology Equipment and Software  - JLee Associates, Inc.","JLee Associates, Inc.",,2850000.0,2020-12-04,JLEE ASSOCIATES,0,0.0,0,0.0
+CW76162,"DCSS - Information Technology Equipment an Software - TallyCode, LLC",Tallycode LLC,Contracting and Procurement (OCP),20950000.0,2021-05-12,TALLYCODE,0,0.0,0,0.0
+CW76841,DCSS - MOBIS - Developement Institute LLC,DEVELOPMENT INSTITUTE LLC DBA INSTITUTE FOR DEVELOPMENT IMPACT,,40000000.0,2021-06-29,DEVELOPMENT INSTITUTE,0,0.0,0,0.0
+CW77914,"DCss - Mission Oriented Business Integrated Services (MOBIS)  - Nean Consulting, LLC","NEAN Consulting, LLC",,3800000.0,2021-06-03,NEAN CONSULTING,0,0.0,5,342975.2
+CW77960,"DCSS- IT Equipment & Software - TPW Consultants, LLC","TPW Consultants, LLC",Contracting and Procurement (OCP),1900000.0,2021-02-03,TPW CONSULTANTS,0,0.0,26,392574.28
+CW78166,DCSS--Training Services--MMI Consulting Group,"MMI Consulting Group, LLC.",Contracting and Procurement (OCP),1000000.0,2021-01-30,MMI CONSULTING,0,0.0,0,0.0
+CW80607,DCSS Application for Stockbridge for Industrial Supplies,Stockbridge Consulting LLC,Contracting and Procurement (OCP),900000.0,2021-06-01,STOCKBRIDGE CONSULTING,1,9000.0,201,6664320.47
+CW80884,FY2020-CFO-DOES-OAS-AGENCY OFFICE SUPPLIES-DCSS OFFICE SUPPLIES,"Metropolitan Office Products, LLC",Employment Services (DOES),400000.0,2021-03-12,METROPOLITAN OFFICE PRODUCTS,0,0.0,196,1404086.31
+CW81207,DCSS-IT Equipment & Software-Community Tech LLC,Community Tech,Contracting and Procurement (OCP),2850000.0,2021-08-05,COMMUNITY TECH,0,0.0,1,8000.0
+CW81768,DCSS-Security Equipment & Services-The Hamilton Group,The Hamilton Group,Contracting and Procurement (OCP),850000.0,2021-05-26,HAMILTON,0,0.0,12,358753.8
+CW83178,DCSS-Mission Oriented Business Integrated Services (MOBIS) Tecknomic LLC,TECKNOMIC LLC,,40000000.0,2021-08-03,TECKNOMIC,0,0.0,23,1870621.56
+CW83502,"FY20 DCSS Formost Advanced Creations, LLC",Formost Advanced Creations,,2250000.0,2021-06-29,FORMOST ADVANCED CREATIONS,0,0.0,13,449942.96
+CW83826,"DCSS - Mission Oriented Integrated Services (MOBIS) - Tiber Hudson , LLC",Tiber Hudson LLC,,950000.0,2020-11-24,TIBER HUDSON,0,0.0,8,83405.0
+CW84041,"FY20 DCSS GriffD Enterprises, LLC",GriffD Enterprises LLC,,3800000.0,2021-07-20,GRIFFD ENTERPRISES,0,0.0,5,77545.92
+CW84401,FY-20 DCSS-IT STOCKBRIDGE CONSULTING LLC,Stockbridge Consulting LLC,Contracting and Procurement (OCP),950000.0,2021-09-02,STOCKBRIDGE CONSULTING,0,0.0,201,6664320.47
+CW84942,"FY20 DCSS MMI Consulting Group, LLC","MMI Consulting Group, LLC.",,3800000.0,2021-09-09,MMI CONSULTING,0,0.0,0,0.0
+CW85514,Contract Workspace (Procurement)-THE COLES GROUP,The Coles Group LLC,Contracting and Procurement (OCP),10000000.0,2022-04-28,COLES,1,92665.4,40,2490063.12
+CW86532,"DCSS - MOBIS -  Development Innovation System C (DISC), L.L.C","Development Innovation System C, LLC",,950000.0,2020-10-28,DEVELOPMENT INNOVATION SYSTEM C,0,0.0,0,0.0
+CW87523,FY21 DCSS- INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,NSight365 LLC,Contracting and Procurement (OCP),950000.0,2020-11-10,NSIGHT365,0,0.0,0,0.0
+CW87736,"Contract Workspace (Procurement)- PC NET, INC.","PC NET, INC.",Contracting and Procurement (OCP),10000000.0,2021-04-30,NET,0,0.0,0,0.0
+CW87861,"DCSS-FFM20211-MDM Office Systems, Inc.",MDM Office Systems DBA Standard Office Supply,,500000.0,2021-02-24,MDM OFFICE SYSTEMS STANDARD OFFICE SUPPLY,0,0.0,0,0.0
+CW88112,Fy21 DCSS SOS Human Capital Solutions,SOS Human Capital Solutions,,3600000.0,2021-01-22,SOS HUMAN CAPITAL SOLUTIONS,0,0.0,8,405360.95999999996
+CW88182,"DCSS - Marketing, Media and Public Information - SOS Human Capitol Solutions",SOS Human Capital Solutions,,900000.0,2021-01-15,SOS HUMAN CAPITAL SOLUTIONS,0,0.0,8,405360.95999999996
+CW88347,FY21 DCSS IBG Consulting Group,IBG Consulting Group LLC,,4750000.0,2021-03-11,IBG CONSULTING,0,0.0,0,0.0
+CW89027,"DCSS-IT Equipment & Software-Tecknomic, LLC",TECKNOMIC LLC,Contracting and Procurement (OCP),4750000.0,2021-02-19,TECKNOMIC,0,0.0,23,1870621.56
+CW90025,FY21 DCSS IBG Consulting Group,IBG Consulting Group LLC,,2500000.0,2021-03-11,IBG CONSULTING,0,0.0,0,0.0
+CW90062,"FY21 DCSS Anglin Consulting Group, Inc.",Anglin Consulting Group,,3800000.0,2021-03-31,ANGLIN CONSULTING,0,0.0,1,17470.49
+CW90523,"Contract Workspace (Procurement)-ATMOST SOLUTIONS, INC.","Atmos Solutions, Inc.",Contracting and Procurement (OCP),900000.0,2021-07-12,ATMOS SOLUTIONS,0,0.0,10,1730004.26
+CW90718,Contract Workspace (Procurement),"Dakota 3 Consulting Firm, Inc.",Contracting and Procurement (OCP),950000.0,2021-05-03,DAKOTA 3 CONSULTING FIRM,0,0.0,0,0.0
+CW90763,"FY21 DCSS Tandem Conglomerate, LLC","TANDEM CONGLOMERATE, LLC",,40000000.0,2021-09-15,TANDEM CONGLOMERATE,0,0.0,76,5519695.19
+CW90800,"DCSS - Engineering & Logistics - 925 - North Arrow, Inc.","North Arrow, Inc.",Contracting and Procurement (OCP),900000.0,2021-04-09,NORTH ARROW,0,0.0,7,1402799.24
+CW91050,"DCSS - Training Services & Products - Dakota 3 Consulting Firm, Inc - 924-00","Dakota 3 Consulting Firm, Inc.",Contracting and Procurement (OCP),500000.0,2021-05-13,DAKOTA 3 CONSULTING FIRM,0,0.0,0,0.0
+CW91081,DCSS - MOBIS - SOS Human Capital Solutions,SOS Human Capital Solutions,,4750000.0,2021-05-05,SOS HUMAN CAPITAL SOLUTIONS,0,0.0,8,405360.95999999996
+CW91187,"DCSS - MOBIS - Synergetic Information Systems, Inc.",Synergetic Information Systems,,50000000.0,2021-09-15,SYNERGETIC INFORMATION SY,1,802623.4,8,3356199.8
+CW91269,"FY21- DCSS - Marketing, Media, and Public Information - H2o Strategies, LLC",H2O Strategies LLC,Contracting and Procurement (OCP),900000.0,2021-06-01,H2O STRATEGIES,0,0.0,0,0.0
+CW91311,Contract Workspace (Procurement)-ZC SOLUTIONS LLC,ZC Solutions,Contracting and Procurement (OCP),40000000.0,2021-11-18,ZC SOLUTIONS,0,0.0,15,2145645.45
+CW91428,"DCSS - MOBIS- Cradel Systems, LLC",Cradle Systems,,50000000.0,2022-02-03,CRADLE SYSTEMS,0,0.0,72,6991641.86
+CW91448,DCSS - Engineering & Logistics Services - Rett Consulting Group,RETT Consulting Group LLC,,1800000.0,2021-08-13,RETT CONSULTING,0,0.0,0,0.0
+CW91461,"DCSS-IT Equipment & Software- Datapillars, Inc.",DataPillars Inc.,Contracting and Procurement (OCP),2850000.0,2021-05-18,DATAPILLARS,0,0.0,2,452518.69
+CW91546,"DCSS DataPillars, Inc.",DataPillars Inc.,,4750000.0,2021-06-03,DATAPILLARS,0,0.0,2,452518.69
+CW91625,DCSS FY21 Anadria Consulting,Anadria Consulting,,4750000.0,2021-08-02,ANADRIA CONSULTING,0,0.0,0,0.0
+CW91809,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,"Enlightened, Inc.",Contracting and Procurement (OCP),10000000.0,2021-11-30,ENLIGHTENED,0,0.0,100,15500224.07
+CW91924,Contract Workspace (Procurement),"Enlightened, Inc.",Contracting and Procurement (OCP),30000000.0,2021-11-18,ENLIGHTENED,0,0.0,100,15500224.07
+CW91989,"DCSS-IT Equipment & Software- The Triage Group, LLC","THE TRIAGE GROUP, LLC",Contracting and Procurement (OCP),30950000.0,2023-05-25,TRIAGE,0,0.0,228,19530300.94
+CW92062,"DCSS IT Equipment and Software-ICI Systems, Inc.","ICI Systems, Inc.",Contracting and Procurement (OCP),950000.0,2021-07-28,ICI SYSTEMS,0,0.0,2,761740.0
+CW92223,"FY21 DCSS V-Tech Solutions, Inc.",V-TECH SOLUTIONS INC,,4750000.0,2021-08-18,V TECH SOLUTIONS,0,0.0,10,2036136.81
+CW92665,DCSS - Training Services & Products - Total Life Consultancy 924-00,Total Life Consultancy LLC,Contracting and Procurement (OCP),500000.0,2021-08-02,TOTAL LIFE CONSULTANCY,0,0.0,2,20600.0
+CW92675,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,"Prism International, LLC",Contracting and Procurement (OCP),13800000.0,2022-06-03,PRISM INTERNATIONAL,0,0.0,11,1215873.9
+CW92877,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,"AVID SYSTEMS, LLC",Contracting and Procurement (OCP),30000000.0,2022-02-28,AVID SYSTEMS,0,0.0,637,66877021.27
+CW92942,"DCSS - MOBIS - Hayat Brown, LLC",Hayat Brown LLC,,3800000.0,2021-09-29,HAYAT BROWN,0,0.0,12,10334984.88
+CW93173,Contract Workspace (Procurement) -,"ALIGNED DEV. STRATEGIES, INC.",Contracting and Procurement (OCP),10000000.0,2022-05-05,ALIGNED DEV STRATEGIES,0,0.0,0,0.0
+CW94127,DCSS-IT Equipment & Software- Dynamic Green Radiance LLC,Dynamic Green Radiance LLC,Contracting and Procurement (OCP),2850000.0,2021-11-12,DYNAMIC GREEN RADIANCE,0,0.0,2,703536.14
+CW94147,DCSS - IT Equipment and Software - Gatekeepers Internet Marketing,GATEKEEPERS INTERNET MARKETING,Contracting and Procurement (OCP),4750000.0,2022-04-21,GATEKEEPERS INTERNET MARKETING,0,0.0,1,30612.0
+CW94311,"Contract Workspace (Procurement) - COMPASS SOLUTIONS, LLC","COMPASS SOLUTIONS, LLC",Contracting and Procurement (OCP),1900000.0,2021-10-19,COMPASS SOLUTIONS,0,0.0,1,13915.0
+CW94427,"FY21 -DCSS - Security Equipment, Security Services & Emergency Preparedness","Prism International, LLC",Contracting and Procurement (OCP),2550000.0,2021-11-29,PRISM INTERNATIONAL,0,0.0,11,1215873.9
+CW94656,"FY21 DCSS Mondrian, LLC","Mondrian, LLC",,4750000.0,2021-06-30,MONDRIAN,0,0.0,3,211290.0
+CW95011,DCSS- MOBIS- Trillian Technologies,Trillian Technologies,,10000000.0,2022-07-20,TRILLIAN TECHNOLOGIES,0,0.0,0,0.0
+CW95031,"DCSS - MOBIS -  Inclusive Work Solutions, LLC - 918",Inclusive Work Solutions LLC,Contracting and Procurement (OCP),950000.0,2021-11-24,INCLUSIVE WORK SOLUTIONS,0,0.0,0,0.0
+CW95048,DCSS-IT Equipment & Software-NJ3Q Technology LLC,NJ3Q Technology,Contracting and Procurement (OCP),30950000.0,2021-11-12,NJ3Q TECHNOLOGY,1,8982.0,30,2340179.54
+CW95375,DCSS- Audit & Financial Services -Swift Accounting  & Financial Consulting LLC,SWIFT ACCOUNTING & FINANCIAL CONSULTING LLC,Contracting and Procurement (OCP),2500000.0,2022-01-21,SWIFT ACCOUNTING FINANCIAL,2,52000.0,3,92000.0
+CW95481,OCTO STaR II,"COMPUTER AID, INC.",Chief Technology Officer (OCTO),120000000.0,2022-03-07,COMPUTER AID,1357,121863842.74,4521,361776348.89
+CW95576,DCSS-IT Equipment & Software- Page After Page Business Systems Inc.,Page after Page Business Systems,Contracting and Procurement (OCP),4750000.0,2022-03-11,PAGE AFTER PAGE BUSINESS SYS,0,0.0,10,794561.29
+CW95884,DCSS-ISA20217-Global Government & Industry Partners,"Global Government and Industry Partners, LLC",,3600000.0,2022-02-28,GLOBAL GOVERNMENT AND INDUSTRY,0,0.0,1,70000.0
+CW95958,FY22 DCSS Chaise Management,"Chaise Management Group, LLC",,4750000.0,2021-12-01,CHAISE MANAGEMENT,0,0.0,26,642779.59
+CW96012,"FY22 DCSS Peak Technology Solutions, Inc.",PEAK TECHNOLOGY SOLUTIONS INC,,4750000.0,2022-01-05,PEAK TECHNOLOGY SOLUTIONS,0,0.0,0,0.0
+CW96056,"DCSS - MOBIS - Suitless, Inc. - 918",Suitless Inc,Contracting and Procurement (OCP),950000.0,2022-01-19,SUITLESS,0,0.0,0,0.0
+CW96185,"DCSS-MOBIS- Bayne, LLC",Bayne LLC,,4750000.0,2022-01-14,BAYNE,0,0.0,41,5157253.47
+CW96253,"FY22 DCSS TDB Communications, Inc",TDB Communications Inc,,3800000.0,2022-01-20,TDB COMMUNICATIONS,0,0.0,0,0.0
+CW96312,DCSS-IT Equipment & Software- The Impact Group LLC,"The Impact Group, LLC",Contracting and Procurement (OCP),4750000.0,2022-03-28,IMPACT,0,0.0,0,0.0
+CW96550,FY22 DCSS Captivate Perspectives Corporation,Captivate Perspectives,,2500000.0,2022-02-15,CAPTIVATE PERSPECTIVES,0,0.0,4,438316.0
+CW96817,"DCSS-OFFICE SUPPLIES-HOUZMAZOO NETWORK, LLC",Houzmazoo Network LLC,Contracting and Procurement (OCP),950000.0,2022-03-30,HOUZMAZOO NETWORK,0,0.0,0,0.0
+CW96866,"DCSS-Marketing, Media & Public Information-Nediam Consultants, LLC",Nediam Consulting,Contracting and Procurement (OCP),4500000.0,2022-03-11,NEDIAM CONSULTING,0,0.0,0,0.0
+CW97064,"DCSS - MOBIS - Urban Equity Consulting Group, LLC",Urban Equity Consulting Group,Contracting and Procurement (OCP),950000.0,2022-03-25,URBAN EQUITY CONSULTING,0,0.0,7,268194.02
+CW97106,"FY22 DCSS MW Consulting, LLC","MW Consulting, LLC_1",,3800000.0,2022-02-15,MW CONSULTING 1,0,0.0,0,0.0
+CW97174,"DCSS-Marketing, Media and Public Information- MW Consulting, LLC","MW Consulting, LLC_1",Contracting and Procurement (OCP),4500000.0,2022-03-11,MW CONSULTING 1,0,0.0,0,0.0
+CW97467,DCSS-IT Equipment & Software-BPM Bi Inc.,BPM BI INC.,Contracting and Procurement (OCP),4750000.0,2022-02-28,BPM BI,0,0.0,20,1170535.98
+CW97538,"DCSS - MOBIS - Dynamic Green Radiance, LLC - 918-00",Dynamic Green Radiance LLC,Contracting and Procurement (OCP),950000.0,2022-03-23,DYNAMIC GREEN RADIANCE,0,0.0,2,703536.14
+CW97603,"DCSS-ELS20227-General Services, Inc-Engineering and Logistics Services","General Services, Inc.",,900000.0,2024-03-24,GENERAL SERVICES,0,0.0,1,100000.0
+CW97653,DCSS-IT Equipment & Software- Document Systems Inc.,DOCUMENT SYSTEMS INC,Contracting and Procurement (OCP),3800000.0,2023-05-31,DOCUMENT SYSTEMS,0,0.0,27,4752600.99
+CW97802,FY22 DCSS Captivate Perspectives Corporation,Captivate Perspectives,,30950000.0,2023-02-02,CAPTIVATE PERSPECTIVES,0,0.0,4,438316.0
+CW98548,FY22 DCSS Susan Fitzgerald and Associates - MOBIS,"SUSAN FITZGERALD & ASSOC, INC.",,4750000.0,2022-04-08,SUSAN FITZGERALD ASSOC,0,0.0,0,0.0
+CW99424,DCSS - Faunt Imaging Solutions LLC - Information Technology Equipment & Software,Faunt imaging Solutions LLC,Contracting and Procurement (OCP),2850000.0,2023-06-23,FAUNT IMAGING SOLUTIONS,0,0.0,0,0.0
+CW99483,DCSS - Collaborative Communications Group Inc - Marketing Media & Public Information,Collaborative Communications,Contracting and Procurement (OCP),900000.0,2022-07-13,COLLABORATIVE COMMUNICATIONS,0,0.0,4,100514.82
+CW99749,FY22 DCSS Digidoc Inc.,DIGI DOCS INC DOCUMENT MGERS,,30000000.0,2023-04-03,DIGI DOCS DOCUMENT MGERS,0,0.0,55,24762350.75
+CW99751,"FY22DCSS  Senoda, Inc.","SENODA, INC.",,750000.0,2022-05-17,SENODA,0,0.0,22,190019.39
+CW99783,DCSS - Ink Systems LLC - Information Technology Equipment and Software,Ink Systems LLC,Contracting and Procurement (OCP),4750000.0,2022-07-05,INK SYSTEMS,0,0.0,10,197563.03

@@ -757,9 +757,17 @@ def run_checks() -> list[Result]:
     vis = pd.read_csv(ROOT / "data" / "solicitations" / "tech_contract_solicitation_visibility.csv")
     check("technology contracts assessed", len(vis), 1383)
     visible = vis[vis.visibility.str.startswith("visible")]
-    check("trace to a posted solicitation", len(visible), 298)
+    # 300 since the pdf scan started reading all four text caches rather than
+    # only data/pdftext. The gain is larger in the high-precision set -- awards
+    # that print their own solicitation number went 75 to 82 -- than in the
+    # headline, because most of the recovered text is on contracts that cite
+    # nothing.
+    check("trace to a posted solicitation", len(visible), 300)
+    # 11.4 for the same reason the count above went to 300: the pdf scan now
+    # reads all four text caches. The tolerance hid this one, so the site was
+    # still printing 11.3 -- which is why the prose check below exists.
     check("their share of tech ceilings %",
-          round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.3, 0.2)
+          round(100 * visible.ceiling.sum() / vis.ceiling.sum(), 1), 11.4, 0.2)
     fy = pd.read_csv(ROOT / "data" / "solicitations" / "solicitations_by_fy.csv")
     for year, want in [("FY2016", 1351), ("FY2025", 749)]:
         check(f"solicitations posted {year}",
@@ -973,6 +981,180 @@ def run_checks() -> list[Result]:
           int(comp["finding_rests_on_ocr"].fillna(False).astype(bool).sum()), 25)
     check("contracts not yet sampled", int((comp.coverage == "not_sampled").sum()), 652)
 
+    section("technology buyers the contracts table cannot see")
+    # Every ceiling figure in this file comes from the contracts table, and two
+    # of the largest technology buyers in the District are not in it. Purchase
+    # orders are the only table that carries them, so this is computed from
+    # orders -- analysis/technology_buyers.py (make buyers) prints its report
+    # and writes no CSV, so there is nothing else to read it out of.
+    #
+    # Core IT is the unambiguous slice: NIGP class 920 plus hardware, packaged
+    # software and telecom. The catch-all classes 918/958/961/962 are left out
+    # on purpose; district-wide they are dominated by construction and Medicaid
+    # managed care, and including them would put $20B of non-technology
+    # ordering into a technology figure.
+    DCPS = "District of Columbia Public Schools (DCPS)"
+    OCFO = "Chief Financial Officer (OCFO)"
+    core_it = orders[orders.group.isin(["software_services", "it_goods", "telecom"])]
+    core_window = core_it[core_it.fiscal_year.between(2017, 2025)]
+    buyer_orders = core_window.groupby("agency")["amount"].sum()
+    dcps_m = round(float(buyer_orders.get(DCPS, 0.0)) / 1e6, 1)
+    ocfo_m = round(float(buyer_orders.get(OCFO, 0.0)) / 1e6, 1)
+    check("DCPS core IT purchase orders FY2017-2025 $M", dcps_m, 209.4, 0.5)
+    check("OCFO core IT purchase orders FY2017-2025 $M", ocfo_m, 147.4, 0.5)
+    check("the two together $M", round(dcps_m + ocfo_m, 1), 356.8, 1.0)
+
+    def _agencies(values: pd.Series) -> set[str]:
+        """Every agency named, splitting the ';'-joined field the portal uses."""
+        return {
+            name.strip()
+            for value in values.fillna("")
+            for name in str(value).split(";")
+            if name.strip()
+        }
+
+    # "Under any spelling" is the claim, so it is tested against every agency
+    # named anywhere in the pull rather than against one string. Absence from
+    # the contract table entirely is the stronger statement and the one made.
+    tech_agencies = _agencies(labels.loc[labels.is_technology.astype(bool), "agency"])
+    every_agency = _agencies(contracts.agency)
+    for short, agency in [("DCPS", DCPS), ("OCFO", OCFO)]:
+        check(f"{short} named on a technology contract", agency in tech_agencies, False)
+        check(f"{short} named on any contract in the IT-commodity pull",
+              agency in every_agency, False)
+
+    section("orders traced to ordering vehicles")
+    # analysis/vehicle_orders.py (make vehicles) writes both files below. The
+    # link is a real join in the published data rather than an inference: a
+    # payment line carries a purchase-order number and a contract number, so an
+    # order reaches the contract it was booked against even though the order
+    # table holds no contract number of its own.
+    po_attr = pd.read_csv(ROOT / "data" / "vehicle_orders" / "po_contract_attribution.csv")
+    activity = pd.read_csv(ROOT / "data" / "vehicle_orders" / "vehicle_order_activity.csv")
+
+    # Computed from payments rather than from the CSV: the CSV is the
+    # FY2021-2025 IT-class window, and this figure is the whole table.
+    booked = (
+        payments[payments.po_number.notna()]
+        .groupby("po_number")["contract_number"]
+        .nunique()
+    )
+    po_resolved = int((booked > 0).sum())
+    check("purchase orders a payment line resolves to a contract",
+          po_resolved, 103990, 200)
+    check("purchase orders resolving to two contracts", int((booked > 1).sum()), 0)
+
+    check("FY2021-2025 IT purchase orders $M", round(po_attr.amount.sum() / 1e6, 1), 8460.0, 10)
+    traced = po_attr[po_attr.attribution == "A_traced_to_a_vehicle"]
+    check("traced to a technology ordering vehicle $M",
+          round(traced.amount.sum() / 1e6, 1), 124.8, 0.5)
+    check("orders so traced", len(traced), 1385, 10)
+    star = traced[traced.vehicle == "CW95481"]
+    check("STaR II traced order dollars $M", round(star.amount.sum() / 1e6, 1), 121.9, 0.5)
+    check("STaR II share of everything traced %",
+          round(100 * star.amount.sum() / traced.amount.sum(), 1), 97.7, 0.2)
+    check("agencies ordering against STaR II", star.agency.nunique(), 28, 1)
+    check("vehicles with no traced order at all",
+          int((activity.traced_orders == 0).sum()), 309, 2)
+    silent = activity[activity.holder_orders_after_award == 0]
+    check("vehicles whose holder placed no IT order after it started", len(silent), 143, 2)
+    check("their authorised ceilings $M", round(silent.ceiling.sum() / 1e6, 1), 388.2, 1)
+    # The upper bound, and it is a bound rather than a measurement: orders to a
+    # vendor holding a vehicle, placed after that vendor's first vehicle
+    # started, less the ones measurably booked against something that is not a
+    # vehicle. Not excluded is not the same as traced. The distance between
+    # this and $124.8M is the size of what the published data cannot settle.
+    other_vehicles = traced[traced.vehicle != "CW95481"]
+    check("orders traced to any other vehicle", len(other_vehicles), 28, 2)
+    check("their order dollars $M", round(other_vehicles.amount.sum() / 1e6, 1), 2.9, 0.2)
+    after = po_attr[po_attr.after_vendors_first_vehicle]
+    elsewhere = after[after.attribution.str.startswith("B_")]
+    check("orders to a holder after its first vehicle started $M",
+          round(after.amount.sum() / 1e6, 1), 983.5, 3)
+    check("of those, booked against something that is not a vehicle $M",
+          round(elsewhere.amount.sum() / 1e6, 1), 313.9, 2)
+    check("upper bound on order dollars through vehicles $M",
+          round((after.amount.sum() - elsewhere.amount.sum()) / 1e6, 1), 669.6, 2)
+
+    section("ten fiscal years of payments")
+    # analysis/trends.py (make trends). Everything here is measured on an
+    # October-August window in every year: the snapshot stops in early
+    # September, September is the largest payment month of the DC fiscal year,
+    # and a full-year FY2026 therefore reads as a collapse that did not happen.
+    #
+    # The series is built on purchase-order commodity codes, not on the
+    # contract join. The contract join cannot carry a decade -- the share of
+    # payment dollars matching any classified contract climbs from 0.5% to
+    # 13.6% across it, so a trend built that way measures how much of the past
+    # the portal still remembers.
+    # Why the series is not built on the contract join, recomputed here because
+    # trends.py prints this table rather than writing it.
+    known = set(labels.contract_number)
+    matched = payments.contract_number.isin(known)
+    by_year = payments.groupby("fiscal_year").amount.sum()
+    matched_year = payments[matched].groupby("fiscal_year").amount.sum()
+    matched_pct = 100 * matched_year / by_year
+    check("payment dollars matching any classified contract, FY2017 %",
+          round(float(matched_pct.loc[2017]), 1), 0.5, 0.1)
+    check("payment dollars matching any classified contract, FY2026 %",
+          round(float(matched_pct.loc[2026]), 1), 13.6, 0.3)
+
+    spend = pd.read_csv(
+        ROOT / "data" / "trends" / "technology_spending_by_year.csv"
+    ).set_index("fy")
+    tech_2017 = float(spend.it_core_octaug_M.loc[2017])
+    tech_2025 = float(spend.it_core_octaug_M.loc[2025])
+    all_2017 = float(spend.all_payments_octaug_M.loc[2017])
+    all_2025 = float(spend.all_payments_octaug_M.loc[2025])
+    check("technology payments FY2017 $M", round(tech_2017, 1), 67.0, 0.2)
+    check("technology payments FY2025 $M", round(tech_2025, 1), 166.3, 0.5)
+    check("technology growth FY2017-FY2025, x", round(tech_2025 / tech_2017, 1), 2.5, 0.1)
+    check("all District payments, same window, x", round(all_2025 / all_2017, 1), 1.4, 0.1)
+    # Recomputed from the two columns rather than read out of the stored share,
+    # which is already rounded to two places and rounds down from there.
+    check("technology share of payments FY2017 %",
+          round(100 * tech_2017 / all_2017, 1), 3.1, 0.1)
+    check("technology share of payments FY2025 %",
+          round(100 * tech_2025 / all_2025, 1), 5.6, 0.1)
+
+    # A null result. The top-ten share has no trend, which is not the same as
+    # having established that concentration is stable -- ten years of one
+    # commodity slice would not show a slow drift either.
+    conc = pd.read_csv(ROOT / "data" / "trends" / "concentration_by_year.csv").set_index("fy")
+    settled = conc.loc[2018:]
+    check("smallest top-ten share of technology dollars since FY2018 %",
+          round(settled.top10_pct.min(), 1), 43.5, 0.5)
+    check("largest top-ten share of technology dollars since FY2018 %",
+          round(settled.top10_pct.max(), 1), 52.7, 0.5)
+    check("most years any one vendor was the largest payee",
+          int(conc.largest_vendor.value_counts().max()), 4, 1)
+
+    tenure = pd.read_csv(
+        ROOT / "data" / "trends" / "vendor_tenure.csv"
+    ).set_index("fiscal_years_present")
+    check("vendors paid for technology across the decade", int(tenure.vendors.sum()), 1645, 20)
+    check("vendors paid in all ten years", int(tenure.vendors.loc[10]), 45, 2)
+    check("their share of the decade's technology dollars %",
+          round(float(tenure.share_of_dollars_pct.loc[10]), 1), 36.4, 0.5)
+    check("vendors paid in exactly one year", int(tenure.vendors.loc[1]), 662, 15)
+    check("their share of the decade's technology dollars %",
+          round(float(tenure.share_of_dollars_pct.loc[1]), 1), 2.6, 0.2)
+    carry = pd.read_csv(ROOT / "data" / "trends" / "vendor_carryover.csv").set_index("fy")
+    check("lowest year-on-year carryover %", round(carry.carryover_pct.min()), 79, 1)
+    check("highest year-on-year carryover %", round(carry.carryover_pct.max()), 93, 1)
+
+    # The nine contracts whose signed justification cites maintenance of
+    # software the vendor owns. LEFT-CENSORED: payments start in FY2017, so ten
+    # of ten years is a floor on the relationship and not its length.
+    lock = pd.read_csv(ROOT / "data" / "trends" / "lock_in_tenure.csv").set_index("vendor")
+    check("software lock-in vendors tracked", len(lock), 9)
+    check("paid in all ten years with no gap",
+          int(((lock.fys_paid == 10) & (lock.gap_years == 0)).sum()), 6)
+    check("still being paid in the last fiscal year",
+          int((lock.last_fy == int(lock.last_fy.max())).sum()), 9)
+    check("contract numbers Netsmart has been paid under",
+          int(at(lock.contract_numbers, "Netsmart New York", "Netsmart lock-in row")), 24, 2)
+
     section("the site's own figures")
     # site/index.html carries the same figures in prose and, until now, nothing
     # checked it. The README had this cover and the site did not, which is the
@@ -994,57 +1176,90 @@ def run_checks() -> list[Result]:
         f"{comp_open} of those are labelled Open",
         f"{len(sole_corpus)} contracts across the whole corpus do",
         f"agrees with those {len(hand)} hand labels",
+        f"finds one for {len(visible)}, carrying "
+        f"{100 * visible.ceiling.sum() / vis.ceiling.sum():.1f}% of the ceiling dollars",
+        # Two of the largest technology buyers hold no technology contracts.
+        f"DCPS placed ${dcps_m:,.1f}M of core-IT purchase orders between FY2017 "
+        f"and FY2025 and OCFO ${ocfo_m:,.1f}M, ${dcps_m + ocfo_m:,.1f}M between them",
+        f"{len(tech):,} contracts and ${tech.ceiling.sum() / 1e6:,.0f}M of ceilings describes",
+        # One vehicle carries 97.7% of the ordering anyone can follow.
+        f"{po_resolved:,} purchase orders resolve that way",
+        f"Of the ${po_attr.amount.sum() / 1e6:,.1f}M of IT-class purchase orders placed "
+        f"between FY2021 and FY2025, ${traced.amount.sum() / 1e6:,.1f}M traces to one of "
+        f"the {len(activity)} technology ordering vehicles",
+        f"${star.amount.sum() / 1e6:,.1f}M of that",
+        f"{100 * star.amount.sum() / traced.amount.sum():.1f}% of everything traced",
+        f"drawn on by {star.agency.nunique()} agencies",
+        f"accounts for {len(other_vehicles)} orders and "
+        f"${other_vehicles.amount.sum() / 1e6:,.1f}M",
+        f"{int((activity.traced_orders == 0).sum())} of the {len(activity)} vehicles show "
+        f"no traced order at all",
+        f"{len(silent)} of them, holding ${silent.ceiling.sum() / 1e6:,.1f}M of authorised ceiling",
+        f"total ${after.amount.sum() / 1e6:,.1f}M, of which "
+        f"${elsewhere.amount.sum() / 1e6:,.1f}M is measurably booked",
+        f"leaves ${(after.amount.sum() - elsewhere.amount.sum()) / 1e6:,.1f}M not excluded",
+        f"${traced.amount.sum() / 1e6:,.1f}M of five-year ordering",
+        # Technology payments doubled and the vendor list did not turn over.
+        f"climbs from {matched_pct.loc[2017]:.1f}% in FY2017 to "
+        f"{matched_pct.loc[2026]:.1f}% in FY2026",
+        f"from ${tech_2017:,.1f}M in FY2017 to ${tech_2025:,.1f}M in FY2025, "
+        f"{tech_2025 / tech_2017:.1f} times over, while all District payments grew "
+        f"{all_2025 / all_2017:.1f} times",
+        f"from {100 * tech_2017 / all_2017:.1f}% of what the District pays out to "
+        f"{100 * tech_2025 / all_2025:.1f}%",
+        f"between {settled.top10_pct.min():.1f}% and {settled.top10_pct.max():.1f}% of the "
+        "dollars in every year since FY2018",
+        f"top spot in more than {conc.largest_vendor.value_counts().max()} of the "
+        f"{len(conc)} years",
+        f"{tenure.vendors.sum():,} vendors were paid for technology across the decade",
+        f"The {tenure.vendors.loc[10]} paid in all ten years took "
+        f"{tenure.share_of_dollars_pct.loc[10]:.1f}% of the dollars between them; the "
+        f"{tenure.vendors.loc[1]} paid in a single year took "
+        f"{tenure.share_of_dollars_pct.loc[1]:.1f}%",
+        f"Between {carry.carryover_pct.min():.0f}% and {carry.carryover_pct.max():.0f}% of "
+        "each year",
+        f"{int(((lock.fys_paid == 10) & (lock.gap_years == 0)).sum())} of those {len(lock)} "
+        f"vendors have been paid in all ten years with no gap, all {len(lock)} are still "
+        "being paid",
+        f"paid under {int(at(lock.contract_numbers, 'Netsmart New York', 'Netsmart lock-in row'))} of them",
+        f"code run ${tech_2025:,.1f}M in FY2025",
     ]:
         check(f"site: {phrase!r}", phrase in site, True)
 
     section("the README's own figures")
-    # The README restates published figures in prose, and nothing used to check
-    # it: it carried a stale rate count (2,146, the native-only subtotal) for
-    # long enough to ship. Each entry below writes a computed figure the way the
-    # README writes it and asserts that string is still in the file, so prose
-    # drift fails here rather than going out.
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    custom = labels[labels.work_type == "custom_software_build"]
-    vehicles = labels[labels.work_type == "ordering_vehicle"]
-    staffaug = labels[labels.work_type == "staff_augmentation"]
-    def _act(column: str):
-        """One boolean action flag from the modification actions table."""
-        return actions[column].fillna(False).astype(bool)
+    # This section used to be 23 prose checks. Each wrote a computed figure the
+    # way the README wrote it and asserted that string was still in the file.
+    # That covered about a fifth of the numbers in the README, and the part it
+    # covered broke on things that have nothing to do with whether a figure is
+    # right: rewrapping a sentence moved a number onto the next line and the
+    # literal stopped matching, a figure the prose spelled out as a word could
+    # not be produced from data at all, and twice the prose and the asserted
+    # literal disagreed while the check still passed -- because it compared a
+    # computed value against the file, not against the sentence a reader sees.
+    #
+    # The README is generated now. analysis/build_readme.py computes every
+    # figure and renders README.md from README.md.in, so the assertion here is
+    # that re-rendering reproduces the committed file byte for byte. That is
+    # strictly stronger than what it replaced: it covers every figure in the
+    # file rather than a sample of them, and neither line wrapping nor a
+    # spelled-out number can hide a change from it.
+    #
+    # The loaded tables are handed over rather than re-read. build_readme.py
+    # loads its own otherwise, and reading the 870,000-row payments table twice
+    # doubles the cost of `make verify` for nothing.
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build_readme  # noqa: E402
 
-    for phrase in [
-        f"Of {len(tech):,} technology contracts",
-        f"${tech.ceiling.sum() / 1e9:.1f}B in ceilings",
-        f"{len(custom)} contracts and ${round(custom.ceiling.sum() / 1e6)}M",
-        f"${staffaug.ceiling.sum() / 1e9:.1f}B of staff",
-        f"Ordering vehicles\ncarry ${vehicles.ceiling.sum() / 1e9:.1f}B",
-        f"{lr.contract_number.nunique()} award documents publish hourly rate cards",
-        f"{len(lr):,}\nnot-to-exceed rates",
-        f"${lr.hourly_rate.min():.2f} to ${round(lr.hourly_rate.max()):,}",
-        f"The {len(lr):,} published rates",
-        f"Of {len(hand)} award documents\nread by hand, "
-        f"{int((hand.evidence_basis == 'explicit_process').sum())} describe a delivery process",
-        f"agrees with its {len(hand)} hand labels "
-        f"{round(100 * (scored.delivery_structure == scored.model).mean())}% of the time",
-        f"{len({c for c, _ in mod_names}):,} contracts carry {len(mod_names):,} modifications",
-        # What a modification actually does. The old check asserted a ratio of
-        # modification counts, which turned out to measure option periods more
-        # than scope: only 7% of the documents read change the work at all.
-        f"Of {len(actions)} downloaded, {int((actions.outcome == 'read').sum())} could be read",
-        f"{int(_act('option_or_extension').sum())} exercise an option or extend a term",
-        f"{int(_act('wage_adjustment').sum())} adjust a wage rate the law requires adjusting",
-        f"{int(_act('administrative').sum())} change an administrative detail",
-        f"{int(_act('funding_change').sum())} move funding",
-        f"and {int(changed.sum())} change what is being built or when it is due",
-        f"{len(contracts):,} rows\nare {contracts.contract_number.nunique():,} contracts",
-        f"Of {len(payments):,} rows, {int(payments.contract_number.isna().sum()):,} carry",
-        f"${payments.check_total.sum() / 1e9:.1f}B against "
-        f"${payments.amount.sum() / 1e9:.1f}B of actual vouchers",
-        f"{len(combined)} of {candidates} candidate contracts: "
-        f"{len(delivery)} with\na native text layer, {ocr_only} recovered",
-        f"The remaining {candidates - len(combined)} have no award document",
-    ]:
-        shown = phrase.replace("\n", " ")
-        check(f"README: '{shown}'", phrase in readme, True)
+    rendered = build_readme.render({
+        "contracts": contracts,
+        "payments": payments,
+        "labels": labels,
+        "delivery": delivery,
+    })
+    matches = rendered == (ROOT / "README.md").read_text(encoding="utf-8")
+    check("README.md is what README.md.in renders", matches, True)
+    if not matches:
+        print("         run: uv run python analysis/build_readme.py --check")
 
     return list(RESULTS)
 

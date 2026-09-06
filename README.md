@@ -1,10 +1,12 @@
 # How the District buys software
 
-> **Read the caveats with the numbers.** Every figure here is recomputed from the
-> published data by `analysis/verify_claims.py` and checked. Some rest on a model
-> reading contract text rather than on the District's own records, and those carry
-> a measured error rate: `docs/CLASSIFIER_ACCURACY.md` says which, and how far off
-> each is. `docs/NEXT_STEPS.md` is what remains.
+> **Read the caveats with the numbers.** Every figure here is computed from the
+> published data: `analysis/build_readme.py` renders this file from
+> `README.md.in`, and `analysis/verify_claims.py` fails if re-rendering would
+> change it. Some rest on a model reading contract text rather than on the
+> District's own records, and those carry a measured error rate:
+> `docs/CLASSIFIER_ACCURACY.md` says which, and how far off each is.
+> `docs/NEXT_STEPS.md` is what remains.
 
 Pulls the DC Contracts and Procurement Transparency Portal, sorts every contract
 by what it actually buys, and reads how the work is structured out of the award
@@ -30,50 +32,11 @@ on disk and classification is cached by content, so rerunning costs nothing.
 
 ## What it found
 
-Of 1,383 technology contracts carrying $4.7B in ceilings, custom software
-development accounts for 62 contracts and $39M. That is a floor on custom
-development in contract form; building also happens inside the $1.2B of staff
-augmentation and inside task orders this data cannot see. Ordering vehicles
-carry $1.9B. Half of the $579M in traceable technology payments went to ten
-vendors, and 17% to one — measured on the 44% of contracts whose payments carry
-their number, though the top vendor is corroborated separately by the
-purchase-order table. 60 award documents publish hourly rate cards — 2,581
-not-to-exceed rates, $23.68 to $1,015 — and job ads recruiting for the same
-tier names show what the workers are offered against them.
-
-How the work is organised is usually not written down. Of 80 award documents
-read by hand, 25 describe a delivery process; the rest have to be read off the
-price schedule, off what the work plainly is, or off nothing at all. Two readers
-given the same 30 documents agree 83% of the time, and the classifier agrees
-with the hand labels 57% of the time, so no six-way breakdown is published.
-
-1,609 contracts carry 8,547 modifications between them, and a modification is
-mostly not what the word suggests. Of 400 downloaded, 278 could be read.
-Among those, 144 exercise an option or extend a term,
-85 adjust a wage rate the law requires adjusting,
-60 change an administrative detail like the contracting officer's name,
-34 move funding,
-and 22 change what is being built or when it is due -- one in thirteen. The 121 that could not be read are counted as unknown, not as
-unchanged, so a document may fall into more than one of those groups and the
-counts do not sum to 279.
-
-So a modification count is not a measure of scope churn. It mostly counts option
-periods, which a longer contract accrues by construction, and statutory wage
-updates, which arrive on their own schedule regardless of the contract.
-
-The changes that do alter the work are real, and they sit on contracts whose
-award document fixes scope in advance. One deleted its price schedule outright
-and rewrote all five years, adding tenant portal development and a database
-redesign. One added phase-two Salesforce development and raised the base year
-149%. One folded eight numbered change requests in as a priced line item, which
-is iterative development running through the modification process. One added
-cost-reimbursable line items to a fixed-price contract. A fixed scope is a
-starting position, not a description of what happened.
-
-How often that occurs is not something 400 documents can settle. Restricting to
-the modifications that change the work, the fixed-scope contracts do it more
-often than the rest, but on nine such modifications against eighteen, which is
-too thin to put a rate on.
+The findings are on the briefing rather than in this file: what the District
+buys, what it pays, what the award documents say about how competitively it was
+awarded, and what ten years of payments show. The rest of this file is about the
+code -- how to run it, why contracts are sorted by reading them, and what will
+bite someone working on it.
 
 ## Refreshing the payments table
 
@@ -106,38 +69,6 @@ derived tables, report drift, rebuild the dashboard -- and
 `site/index.html` is not, because the briefing stays on the published baseline.
 Nothing in that chain rewrites the briefing: republishing is a human decision
 made after reading the drift report. `docs/SCHEDULING.md` has the details.
-
-## The portal has a word for sole source, and never uses it for technology
-
-`marketType` can say Sole Source: 24 contracts across the corpus do, across
-five spellings of it. No technology contract ever does. Across all 1,383 the field takes only Set Aside,
-Open, GSA, DCSS and Agreement, so nothing in the published data records that an
-award was not competed.
-
-The justifications exist as documents. A Determination and Findings is what a
-contracting officer signs to limit competition, exempt a purchase from it, or
-buy from a single available source, and 21,722 of them are attached to
-contracts. Of the technology contracts whose D&Fs have been read, 75 carrying
-$63.3M of ceiling have one. Forty-four of those 75 are labelled Open.
-
-Nine cite PPRA 2-354.13(8), maintenance of existing software where the vendor
-owns the code: "The EGMS application is built on the proprietary software
-created and owned by MTW Solutions, LLC; therefore, no other Contractor has
-access to the rights and source codes."
-
-A third of that rests on machine transcription. 1,009 technology contracts carry
-a D&F; 294 have had one read from its own text layer and 63 more were scans,
-recovered by running OCR over them. 25 of the 75 findings disappear without
-those transcriptions, so the rows carrying them are marked in
-`data/competition/contract_competition.csv` and can be counted separately.
-
-Reading the scans mattered because they were not randomly distributed. Among the
-documents named for sole source, 56% had no text layer, against 7% of the
-cooperative purchases -- the unreadable ones were disproportionately the ones
-that would carry a finding, so leaving them out understated the answer in the
-direction that flatters the portal.
-
-75 is still a floor. 652 of the 1,009 have not been sampled at all.
 
 ## Why the commodity codes are not used
 
@@ -200,6 +131,12 @@ distinguishes staffing a hospital from staffing a help desk.
 | `analysis/build_calc_comparison.py` | Match DC's published rates to federal titles and compare them |
 | `analysis/solicitations_*.py` | Trace technology contracts back to posted solicitations (`make solicitations`) |
 | `analysis/build_dcas.py` | Rebuild the DCAS roster and its attributed payments (`make dcas`) |
+| `analysis/solicitations_cycle_time.py` | Days from a solicitation closing to the award it produced (`make cycle-time`) |
+| `analysis/trends.py` | Ten fiscal years of payments: growth, concentration, incumbency (`make trends`) |
+| `analysis/vehicle_orders.py` | Trace purchase orders back to the ordering vehicle they were placed against (`make vehicles`) |
+| `analysis/technology_buyers.py` | Who buys technology, read three ways: contracts, payments, purchase orders (`make buyers`) |
+| `README.md.in` | This file with every figure replaced by a named placeholder; the rendered README is generated from it |
+| `analysis/build_readme.py` | Compute every figure the README states and render it (`make readme`) |
 | `analysis/verify_claims.py` | Recomputes every published figure; fails loudly on drift |
 | `analysis/drift_report.py` | The same checks, reporting movement instead of failing on it (`make drift`) |
 | `analysis/build_dashboard_data.py` | Rebuild the data behind the dashboard (`make dashboard`) |
@@ -209,6 +146,26 @@ distinguishes staffing a hospital from staffing a help desk.
 | `tests/` | Hand-read labels and the scripts that score against them |
 
 ## Things that will bite you
+
+**Payments joined to contracts do not make a time series.** The contracts table
+is a current-state snapshot: contracts that ended are not in it. Joining
+payments to it and plotting by fiscal year gives technology spending rising from
+$3.2M to $199M, a 62-fold increase that is entirely an artifact -- the share of
+payment dollars matching any classified contract climbs from 0.5% in FY2017 to
+13.6% in FY2026, so the series measures how much of the past the portal still
+remembers. The published FY2021-2025 figures are safe because a recent window is
+where the join works. Nothing built that way should be extended backwards. Use
+the commodity codes on the purchase orders instead, which reach FY2013 with no
+comparable decay.
+
+**Vendor names in the payments table are truncated at 30 characters.** 73,061
+rows are exactly 30 characters long against 2,073 at 31. That defeats the
+suffix-stripping in `vendor_aliases.yaml`: "CARAHSOFT TECHNOLOGY CORP" loses its
+suffix and "CARAHSOFT TECHNOLOGY CORPORATI" does not, so one company becomes two
+keys. Repairing it moves the published top-ten share from 52.5% to 53.2%, small
+enough that the published figures stand, large enough to matter to anything
+finer.
+
 
 Found by testing the API against itself. Each is handled in code rather than
 left as a comment.
@@ -255,11 +212,25 @@ titles.
 
 Independent agencies procure separately and do not appear in the portal.
 
-The portal has no record type for task orders issued under ordering vehicles.
-Some schedule buying surfaces as purchase orders or later contracts, but nothing
-links those back to their vehicle. Schedule vehicles carry the largest ceilings
-in the technology set, so the biggest single channel of technology buying cannot
-be followed. That is the largest gap.
+The portal has no record type for task orders issued under ordering vehicles,
+and a task order is filed as its own contract with the parent named only inside
+the PDF. Purchase orders can be traced, though: a payment line carries both a PO
+number and a contract number, so 103,990 orders resolve to the contract they
+were booked against, and no order resolves to two. That link runs through the
+payments table rather than the order table, which is why it looked absent.
+
+It does not fill the gap. Of FY2021-2025 IT-class orders, $124.8M traces to one
+of the 330 technology ordering vehicles, and $121.9M of that -- 97.7% -- is a
+single vehicle: OCTO's STaR II, drawn on by 28 agencies. 309 of the 330 show no
+traced order at all, and 143 holding $388.2M of ceiling have a vendor who placed
+no IT order of any kind after the vehicle started. Either the ordering is
+invisible or it is not happening, and the data does not say which.
+
+Matching orders to vehicles by vendor name instead was tried and fails. The
+rise in a holder's orders after its vehicle starts sits inside the range seen
+for vendors who never held one, so it measures a relationship that already
+existed rather than the vehicle. `analysis/vehicle_orders.py` reports the
+comparison.
 
 Delivery structure could be read for 387 of 480 candidate contracts: 313 with
 a native text layer, 74 recovered from scans and extraction failures by

@@ -2,9 +2,9 @@
 # what is already on disk, and classification is cached by content, so a repeat
 # run costs nothing.
 
-.PHONY: help install pull classify verify test report site rates ocr h1b \
+.PHONY: help install pull classify verify test report site readme rates ocr h1b \
         h1b-dol calc solicitations dcas pull-payments drift dashboard \
-        modifications all
+        modifications trends vehicles buyers cycle-time all
 
 help:
 	@echo "make install    install dependencies"
@@ -15,6 +15,7 @@ help:
 	@echo "make drift      recompute every published figure and report what moved"
 	@echo "make test       check document handling, then score the classifiers"
 	@echo "make report     print the headline figures"
+	@echo "make readme     recompute every figure the README states and re-render it"
 	@echo "make site       rebuild the drill-down data behind site/index.html"
 	@echo "make dashboard  rebuild the data behind site/dashboard.html"
 	@echo "make rates      re-extract hourly rate cards from the cached award texts"
@@ -25,6 +26,10 @@ help:
 	@echo "make calc       pull GSA CALC rates and rebuild the federal comparison"
 	@echo "make solicitations  trace technology contracts back to posted solicitations"
 	@echo "make dcas       rebuild the DCAS roster and its attributed payments"
+	@echo "make trends     ten-year payment trends: spending, concentration, incumbency"
+	@echo "make vehicles   trace purchase orders back to the technology ordering vehicles"
+	@echo "make buyers     who buys technology: contracts, payments and purchase orders"
+	@echo "make cycle-time days from a solicitation closing to the award it produced"
 	@echo "make all        pull, classify, verify, test"
 
 install:
@@ -61,6 +66,13 @@ test:
 
 report:
 	uv run dcprocure report
+
+# README.md is generated from README.md.in. Edit the template, never the
+# rendered file: `make verify` fails if re-rendering would change it. Running
+# this after a pull restates the README's published figures, so it is a human
+# decision like republishing the briefing, and is not in the weekly chain.
+readme:
+	uv run python analysis/build_readme.py
 
 site:
 	uv run python analysis/build_site_data.py
@@ -104,5 +116,27 @@ solicitations:
 
 dcas:
 	uv run python analysis/build_dcas.py
+
+# Reads only the payments and purchase-order tables already on disk, so it
+# needs no pull and takes about a minute.
+trends:
+	uv run python analysis/trends.py
+
+# Joins the purchase-order table to the payments table on PO number, which is
+# the only link between an order and the contract it was placed against.
+# Reads what is already on disk; no pull.
+vehicles:
+	uv run python analysis/vehicle_orders.py
+
+# Prints its report and writes no CSV: the three views of the buyer disagree,
+# and the point is which one you are reading.
+buyers:
+	uv run python analysis/technology_buyers.py
+
+# Reads what `make solicitations` wrote, so run that first. There is no
+# posting date in the solicitations module, so this measures close-to-award
+# and not the whole procurement cycle.
+cycle-time:
+	uv run python analysis/solicitations_cycle_time.py
 
 all: pull classify verify test

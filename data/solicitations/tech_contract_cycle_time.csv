@@ -1,0 +1,320 @@
+contract,source,agency,primary_group,ceiling,solicitation,solicitation_title,solicitation_open,market_type,closing_date,award_date,start_date,option_period,days_close_to_award,days_close_to_start
+CW100159,cited_in_award_doc,Behavioral Health (DBH); Licensing & Consumer Protection (DLCP),software_services,4750000.0,Doc614826,FY22  Request for Laptops and Accessories- (DCSS Authorized Dell Resalers ONLY),False,Set Aside,6/9/2022,7/21/2022,7/21/2022,Base Period,42,42
+CW100196,title_match,"Cable Television, Film, Music and Entertainment (OFTE)",other,975000.0,Doc608195,FY22 - Production Staffing OCTFME,False,Open,5/27/2022,6/9/2022,7/21/2024,Base Period,13,786
+CW100261,title_match,Employment Services (DOES),it_goods,1560712.02,Doc614337,DOES - Salesforce Cloud Licenses,False,Open,6/9/2022,6/28/2022,6/28/2022,Base Period,19,19
+CW100632,cited_in_award_doc,Chief Technology Officer (OCTO),other,110160.0,Doc616945,Task Order Proposal Enterprise Cybersecurity Platform Awareness Training Subscription,False,Set Aside,6/27/2022,6/29/2022,6/29/2022,Base Period,2,2
+CW100647,title_match,Human Resources (DCHR),software_services,260597.0,Doc333686,DCHR IT Equipment,False,Set Aside,8/25/2017,9/27/2021,9/27/2021,Base Period,1494,1494
+CW101102,title_match,Chief Technology Officer (OCTO),it_goods,164646.12,Doc617355,FY22-OCTO-Computers Dell-Apple,False,Open,7/5/2022,7/20/2022,7/22/2022,Base Period,15,17
+CW101174,title_match,Metropolitan Police Department (MPD),other,147255.0,Doc616893,MPD - Digital Signage Solution,False,Open,7/15/2022,8/12/2022,8/12/2022,Base Period,28,28
+CW101182,title_match,Corrections (DC),other,409873.0,Doc518113,CCTV DOC 2020,False,Set Aside,8/3/2020,9/9/2022,9/9/2022,Base Period,767,767
+CW101465,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,112907.65,Doc620162,FY22 Dell Mobile Precision Workstation,False,Set Aside,8/2/2022,8/12/2022,8/12/2022,Base Period,10,10
+CW101704,title_match,Homeland Security and Emergency Management Agency (HSEMA),it_goods,322030.46,Doc621051,FY22- HSEMA- Dell Laptop Computers and Support,False,Set Aside,8/5/2022,8/17/2022,8/18/2022,Base Period,12,13
+CW101713,title_match,Metropolitan Police Department (MPD),other,142401.0,Doc619085,DocuSign Software as a Service (SaaS),False,Open,8/2/2022,9/1/2022,9/1/2022,Base Period,30,30
+CW101783,title_match,Chief Technology Officer (OCTO),other,1047515.6,Doc621117,FY22-OCTO-Cisco IP phones,False,Open,8/8/2022,8/17/2022,8/18/2022,Base Period,9,10
+CW101861,title_match,Licensing & Consumer Protection (DLCP),it_adjacent,140000.0,Doc622499,DCRA - IT Needs Assessment,False,Set Aside,8/8/2022,8/22/2022,8/23/2022,Base Period,14,15
+CW101885,title_match,Chief Technology Officer (OCTO),it_goods,2043539.93,Doc621002,FY22- OCTO-Enterprise Hardware Renewal Support,False,Set Aside,8/8/2022,8/25/2022,9/24/2022,Base Period,17,47
+CW101930,cited_in_award_doc,Health Care Finance (DHCF),other,390000.0,Doc623041,SME-Mastery Level Program Manager IV,False,Set Aside,8/18/2022,8/25/2022,8/26/2022,Base Period,7,8
+CW102346,title_match,Chief Technology Officer (OCTO),software_services,211768.88,Doc619471,Automic (UC4) Enterprise Automation Engine Software Maintenance,False,Open,9/13/2022,9/29/2022,10/1/2023,Base Period,16,383
+CW102839,title_match,Chief Technology Officer (OCTO),software_services,278604.0,Doc627395,Fy22-OCTO-Invicti OnDemand Application Scanning Platform,False,Open,9/20/2022,9/30/2022,10/3/2022,Base Period,10,13
+CW102904,cited_in_award_doc,Chief Technology Officer (OCTO),other,146830.5,Doc628336,FY22-OCTO-SecureAuth IDP Platform maintenance,False,Open,9/26/2022,9/30/2022,10/1/2022,Base Period,4,5
+CW102915,title_match,Chief Technology Officer (OCTO),other,159983.97,Doc628513,FY22-OCTO-Tenable Exposure Vulnerability Management Platform,False,Open,9/22/2022,10/7/2022,10/7/2023,Base Period,15,380
+CW102967,title_match,Chief Technology Officer (OCTO),it_goods,283131.25,Doc628455,"FY22-OCTO-FOIAExpress Software, Support, and Training",False,Open,9/26/2022,10/1/2022,10/1/2022,Base Period,5,5
+CW103059,title_match,Contracting and Procurement (OCP),software_services,950000.0,Doc633402,FY23 OCP Information Technology Equipment and Software,False,Set Aside,12/5/2022,11/15/2022,11/15/2022,Base Period,-20,-20
+CW103123,cited_in_award_doc,Behavioral Health (DBH),other,1266689.9,Doc603555,FY22-DBH Customer Relationship Management (CRM) Platform,False,Open,5/2/2022,1/5/2023,1/5/2026,Option 3,248,1344
+CW103421,title_match,Employment Services (DOES),it_adjacent,504829.8,Doc620467,FY22 - Communications-Infrastructure Audit - OUC,False,Set Aside,8/22/2022,12/14/2022,12/14/2022,Base Period,114,114
+CW103703,cited_in_award_doc,Behavioral Health (DBH),software_services,994550.0,Doc628288,FY22 Integrated Technology Engine Project Implementation(Phase II),False,Set Aside,10/11/2022,11/23/2022,11/23/2022,Base Period,43,43
+CW104095,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,819761.43,Doc632728,Ivanti Endpoint Manager Platform,False,Open,11/10/2022,12/10/2022,12/10/2022,Base Period,30,30
+CW104180,title_match,Contracting and Procurement (OCP),software_services,2850000.0,Doc633402,FY23 OCP Information Technology Equipment and Software,False,Set Aside,12/5/2022,12/19/2022,12/19/2022,Base Period,14,14
+CW104299,title_match,Contracting and Procurement (OCP),it_goods,200000.0,Doc633402,FY23 OCP Information Technology Equipment and Software,False,Set Aside,12/5/2022,12/7/2022,12/12/2022,Base Period,2,7
+CW104985,title_match,Employment Services (DOES),software_services,2633518.82,Doc365500,CF0-FY18 - OWC - CASE MANAGEMENT SYSTEM RFI,False,Open,3/5/2018,7/17/2023,7/17/2023,Base Period,1960,1960
+CW104996,title_match,Contracting and Procurement (OCP),software_services,3800000.0,Doc633402,FY23 OCP Information Technology Equipment and Software,False,Set Aside,12/5/2022,2/7/2023,2/7/2023,Base Period,64,64
+CW105049,cited_in_award_doc,Chief Technology Officer (OCTO),other,518399.04,Doc640614,FY23-OCTO-Palo Alto Content Filtering Maintenance,False,Open,1/9/2023,1/10/2023,1/11/2023,Base Period,1,2
+CW105141,title_match,Health Care Finance (DHCF),other,177754.5,Doc642055,SPLUNK Support Renewal and Professional Services,False,Set Aside,1/19/2023,1/12/2023,1/17/2023,Base Period,-7,-2
+CW105416,title_match,Metropolitan Police Department (MPD),software_services,750329.6,Doc631765,FY23-MPD-CCTV Performance Monitoring Solution,False,Open,11/21/2022,3/20/2023,3/20/2023,Base Period,119,119
+CW105614,title_match,Metropolitan Police Department (MPD),other,583092.88,Doc622710,FY22 MPD - Technology Refresh - DELL Computer Equipment - TASB,False,Open,8/9/2022,2/2/2023,2/3/2023,Base Period,177,178
+CW105745,title_match,Employment Services (DOES),it_adjacent,680000.0,Doc630961,FY23 - Communications OUC,False,Set Aside,10/28/2022,2/15/2023,2/15/2023,Base Period,110,110
+CW105798,title_match,Administrative Hearings (OAH),other,200000.0,Doc641468,FY23 OAH Temporary Support Services,False,Set Aside,1/30/2023,2/9/2023,2/13/2023,Base Period,10,14
+CW106039,title_match,State Superintendent of Education (OSSE),other,139881.37,Doc645740,Request For Proposals Technology One,False,Set Aside,1/30/2023,2/17/2023,2/21/2023,Base Period,18,22
+CW106174,cited_in_award_doc,Forensic Sciences (DFS),software_services,684393.6,Doc643061,FY23-DFS-Cohesity Data Project,False,Set Aside,2/22/2023,3/17/2023,3/17/2025,Base Period,23,754
+CW106369,cited_in_award_doc,Licensing & Consumer Protection (DLCP),it_goods,3346157.3,Doc645331,DOB- Data Architecture Implementation,False,Set Aside,2/23/2023,3/9/2023,3/9/2023,Base Period,14,14
+CW107276,cited_in_award_doc,Chief Technology Officer (OCTO),it_adjacent,581400.0,Doc653520,Request for Task Order Proposal - Cyber Security Plan,False,Open,4/5/2023,4/5/2023,4/5/2023,Base Period,0,0
+CW107416,cited_in_award_doc,Health Care Finance (DHCF),it_adjacent,1317707.7000000002,Doc653486,SNF and HHA Payment Methodology Consultant,False,Set Aside,4/5/2023,4/12/2023,4/12/2023,Base Period,7,7
+CW107694,cited_in_award_doc,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),other,345000.0,Doc656150,DOB ? Vacant Buildings Enforcement Sales Force Application,False,Set Aside,4/24/2023,4/26/2023,5/2/2023,Base Period,2,8
+CW108266,title_match,Corrections (DC),other,126000.0,Doc648813,CCTV Maintenance DOC FY2023,False,Set Aside,5/17/2023,6/28/2023,6/28/2023,Base Period,42,42
+CW108291,title_match,Licensing & Consumer Protection (DLCP),it_goods,131438.25,Doc659608,DLCP - Laptops & Equipment,False,Set Aside,5/19/2023,5/25/2023,5/29/2023,Base Period,6,10
+CW108513,title_match,Parks and Recreation (DPR),other,375000.0,Doc594118,HA0 - FY22 - PRODUCTION MANAGER,False,Open,1/12/2022,6/13/2023,6/13/2023,Base Period,517,517
+CW108644,title_match,Criminal Justice Coordinating Council (CJCC),software_services,424637.0,Doc657868,CJCC Cloud Migration Assessment and Solution,False,Open,5/26/2023,7/27/2023,7/27/2023,Base Period,62,62
+CW108854,title_match,Chief Technology Officer (OCTO),telecom,115613.02,Doc388309,Cisco Wireless Equipment,False,Set Aside,7/11/2018,6/27/2023,6/27/2023,Base Period,1812,1812
+CW108871,title_match,Behavioral Health (DBH),other,200000.0,Doc568591,FY'21 - DBH - Temporary Staffing Services,False,Set Aside,7/14/2021,9/18/2023,9/18/2023,Base Period,796,796
+CW108902,title_match,Behavioral Health (DBH),other,987155.2,Doc568591,FY'21 - DBH - Temporary Staffing Services,False,Set Aside,7/14/2021,7/28/2023,7/28/2023,Base Period,744,744
+CW109112,title_match,Department on Disability Services (DDS),it_goods,71554.08,Doc643007,FY23- DDS - IT Equipment,False,Set Aside,1/26/2023,7/5/2023,7/5/2023,Base Period,160,160
+CW109183,title_match,Public Works (DPW),software_services,9995.0,Doc399544,DCKT-2019-Learning Management System,False,Open,9/24/2018,7/28/2023,7/28/2023,Base Period,1768,1768
+CW109524,cited_in_award_doc,Motor Vehicles (DMV),it_adjacent,1650000.0,Doc665044,FY23-DMV-BIS Digital Court Recorder System,False,Set Aside,7/18/2023,7/19/2023,7/24/2023,Base Period,1,6
+CW109550,cited_in_award_doc,Mayor (EOM),other,186182.0,Doc654725,FY23- DC Supply Schedule RFTOP- Digital Preservation Software System,False,Set Aside,4/20/2023,7/20/2023,7/24/2023,Base Period,91,95
+CW110007,cited_in_award_doc,Contracting and Procurement (OCP),it_adjacent,124750.0,DCEB-2021-R-0001,Government of the District of Columbia Disparity Study,False,Set Aside,1/27/2021,8/7/2023,8/23/2023,Base Period,922,938
+CW110076,cited_in_award_doc,Chief Technology Officer (OCTO),other,108383.2,Doc668988,API Gateway,False,Set Aside,8/7/2023,8/14/2023,9/14/2023,Base Period,7,38
+CW110206,title_match,Health Care Finance (DHCF),other,1948731.0,Doc299326,MMIS IV & V 2017,False,Open,2/10/2017,8/15/2023,10/1/2023,Base Period,2377,2424
+CW110223,title_match,FE0,it_adjacent,1073244.0,Doc665686,Electronic Grants Management System,False,Set Aside,7/3/2023,8/16/2023,8/21/2023,Base Period,44,49
+CW110658,title_match,Public Works (DPW),other,63980.0,Doc616893,MPD - Digital Signage Solution,False,Open,7/15/2022,8/30/2023,8/30/2023,Base Period,411,411
+CW110890,title_match,Health Care Finance (DHCF),it_adjacent,222842.4,Doc674730,DCSS Holders Only - Cyber Security,False,Set Aside,9/1/2023,9/8/2023,9/8/2023,Base Period,7,7
+CW110895,title_match,Human Services (DHS),it_goods,22680.9,Doc675684,DHS-FY23-Dell IT Equipment Caseload Increase,False,Set Aside,9/6/2023,9/7/2023,9/7/2023,Base Period,1,1
+CW111241,title_match,Health Care Finance (DHCF),it_adjacent,557964.0,Doc384226,Medicaid Information Technology Architecture State Self-Assessment 3.0 (MITA SS-A),False,Open,6/20/2018,8/20/2023,8/21/2023,Base Period,1887,1888
+CW111255,cited_in_award_doc,Employment Services (DOES),it_adjacent,750000.0,Doc663620,FY23-DOES-DCIA Infrastructure Training Services,False,Open,8/8/2023,9/14/2023,10/2/2023,Base Period,37,55
+CW111430,cited_in_award_doc,Criminal Justice Coordinating Council (CJCC),it_adjacent,110830.0,Doc657924,CJCC FY23 JSAT Website Redesign & Platform Development,False,Set Aside,6/9/2023,11/1/2023,11/1/2023,Base Period,145,145
+CW112098,title_match,Health (DOH),other,999940.24,Doc542650,Temporary Staffing Support Services,False,Set Aside,12/9/2020,10/20/2023,10/24/2023,Base Period,1045,1049
+CW112684,cited_in_award_doc,Health Care Finance (DHCF),it_adjacent,154552.0,Doc687342,Informatica Maintenance and Support Services,False,Set Aside,11/6/2023,11/9/2023,11/14/2023,Base Period,3,8
+CW112708,title_match,Department on Disability Services (DDS),it_goods,1923550.0,Doc624329,Enabling Technology for DDA,False,Open,11/14/2022,7/1/2024,7/1/2024,Base Period,595,595
+CW114315,title_match,Metropolitan Police Department (MPD),it_goods,983594.0,Doc657493,MPD - CCTV Surveillance Camera Systems  - FY23,False,Open,5/10/2023,1/26/2024,1/26/2024,Base Period,261,261
+CW114625,cited_in_award_doc,Transportation (DDOT),other,5000000.0,DCKA-2020-Q-0048,FY20 Architect-Engineer (A/E) Schedule,False,Full and Open,3/4/2026,10/1/2022,10/1/2022,Base Period,-1250,-1250
+CW114627,cited_in_award_doc,Transportation (DDOT),other,10000000.0,DCKA-2020-Q-0048,FY20 Architect-Engineer (A/E) Schedule,False,Full and Open,3/4/2026,10/1/2022,10/1/2023,Base Period,-1250,-885
+CW114644,title_match,Health (DOH),it_adjacent,995000.0,Doc693445,Salesforce Professionals and Information Technology (IT) Resources,False,Set Aside,12/22/2023,2/8/2024,2/8/2024,Base Period,48,48
+CW114695,cited_in_award_doc,Health Care Finance (DHCF),software_services,390000.0,Doc697202,"DHCF-Goverance, Risk, and Compliance (GRC) Software",False,Set Aside,1/31/2024,3/1/2024,3/1/2024,Base Period,30,30
+CW114876,cited_in_award_doc,Transportation (DDOT),other,5000000.0,DCKA-2020-Q-0048,FY20 Architect-Engineer (A/E) Schedule,False,Full and Open,3/4/2026,10/1/2022,10/1/2022,Base Period,-1250,-1250
+CW114908,title_match,Motor Vehicles (DMV),other,132000.0,Doc697964,FY24-DMV- Toner IEXMARK,False,Set Aside,2/6/2024,2/11/2024,2/19/2024,Base Period,5,13
+CW115193,title_match,Contracting and Procurement (OCP),software_services,2850000.0,Doc633402,FY23 OCP Information Technology Equipment and Software,False,Set Aside,12/5/2022,3/22/2024,3/22/2024,Base Period,473,473
+CW115221,title_match,Human Resources (DCHR),other,868744.39,Doc695234,DCHR Temporary Staffing Services - SBE Set-Aside,False,Set Aside,1/23/2024,4/2/2024,4/2/2024,Base Period,70,70
+CW115533,cited_in_award_doc,Transportation (DDOT),it_adjacent,10000000.0,DCKA-2020-Q-0048,FY20 Architect-Engineer (A/E) Schedule,False,Full and Open,3/4/2026,11/4/2022,11/4/2022,Base Period,-1216,-1216
+CW115541,cited_in_award_doc,Alcohol Beverage Regulation Administration (ABRA),it_adjacent,498793.52,Doc694413,FY23-ABCA-ABCA System modernization,False,Open,2/16/2024,3/19/2024,3/19/2024,Base Period,32,32
+CW115955,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,500445.38,Doc579164,FY21-BMC Software Maintenance,False,Set Aside,9/15/2021,3/25/2024,3/25/2024,Base Period,922,922
+CW116104,title_match,Chief Technology Officer (OCTO),it_goods,120564.38,Doc708200,Dell latitude 3540 and Dell Mobile Precision Workstation 5680,False,Set Aside,3/20/2024,3/19/2024,3/25/2024,Base Period,-1,5
+CW116241,cited_in_award_doc,Transportation (DDOT),other,2495652.22,DCKA-2023-Q-0056,Citywide Traffic Signal Optimization,False,Open,7/14/2023,3/25/2024,3/25/2024,Base Period,255,255
+CW116507,title_match,,other,42046521.599999994,DCKA-2019-B-0072,Traffic Signal Maintenance,False,9688300 and 9132700,8/3/2020,3/28/2024,3/28/2024,Base Period,1333,1333
+CW116643,title_match,Deputy Mayor for Planning and Economic Development (DMPED),other,386461.0,DCEB-2024-R-0002,Housing Demand and Neighborhood Change Assessment,False,Open,12/27/2023,4/9/2024,4/9/2024,Base Period,104,104
+CW116783,title_match,Employment Services (DOES),it_adjacent,1583000.0,Doc703895,CF0-DOES-FY24 UI TRUST FUND MODELING AND PROGRAM ANALYTICS,False,Set Aside,3/12/2024,5/9/2024,5/9/2024,Base Period,58,58
+CW116801,title_match,Energy and Environment (DOEE),it_goods,867044.38,Doc575850,FY21 DCSS PREFERRED DELL COMPUTERS AND EQUIPMENT,False,Set Aside,8/20/2021,5/30/2024,5/30/2024,Base Period,1014,1014
+CW116910,title_match,Chief Technology Officer (OCTO),it_goods,1534389.76,Doc674128,DLCP - Corporate Registry System,False,Open,9/26/2023,4/19/2024,7/1/2024,Base Period,206,279
+CW116988,cited_in_award_doc,Behavioral Health (DBH),other,270120.0,Doc690633,Needs Assessment and Strategic Plan,False,Open,2/26/2024,5/30/2024,5/30/2024,Base Period,94,94
+CW117913,title_match,Energy and Environment (DOEE),it_adjacent,150025.0,Doc702454,Invitation for Bid - FY24 Stormwater Collection and Analysis,False,Open,3/7/2024,5/30/2024,5/30/2024,Base Period,84,84
+CW118030,title_match,Transportation (DDOT),it_adjacent,3824769.25,DCKA-2024-B-0066,Intelligent Transportation System Maintenance,False,Open,5/15/2024,5/31/2024,5/31/2024,Base Period,16,16
+CW118397,cited_in_award_doc,Small and Local Business Development (DSLBD),software_services,903389.3999999999,Doc721796,Salesforce Licenses and Maintenance - Federal Supply Schedule Holder,False,Open,6/10/2024,6/18/2024,6/25/2024,Base Period,8,15
+CW118489,title_match,Chief Technology Officer (OCTO),software_services,112320.0,Doc651142,FY23 - KnowBe4 Security Awareness Training Subscription,False,Set Aside,4/28/2023,6/21/2024,6/29/2024,Base Period,420,428
+CW118792,title_match,Employment Services (DOES),it_adjacent,1100000.0,Doc612021,FY22-DOES-Youth Program Management System,False,Open,8/25/2022,7/2/2024,9/2/2024,Base Period,677,739
+CW119697,title_match,Chief Technology Officer (OCTO),it_goods,200100.2,Doc731518,"Dell Mobile Precision 3490, Mobile Precision Workstation 5490",False,Set Aside,8/7/2024,8/8/2024,8/16/2024,Base Period,1,9
+CW120023,title_match,Contracting and Procurement (OCP),software_services,20000000.0,Doc633402,FY23 OCP Information Technology Equipment and Software,False,Set Aside,12/5/2022,1/13/2025,1/13/2025,Base Period,770,770
+CW120039,cited_in_award_doc,Health Care Finance (DHCF),software_services,93675.0,Doc730931,Data Catalog Platform Solution,False,Set Aside,8/15/2024,8/24/2024,8/24/2024,Base Period,9,9
+CW120781,cited_in_award_doc,Health Care Finance (DHCF),other,2400000.0,Doc702784,MMIS IV&V,False,Open,8/21/2024,4/1/2025,4/1/2025,Base Period,223,223
+CW120801,cited_in_award_doc,Human Rights (OHR),it_adjacent,1068640.0,Doc715378,FY24 - OHR - CMS,False,Open,5/31/2024,9/17/2024,2/26/2025,Base Period,109,271
+CW120846,title_match,Department Of Buildings (DOB),it_goods,125914.43,Doc738447,DOB - Audio Video (AV) Equipment for Conference Rooms,False,Set Aside,9/18/2024,9/19/2024,9/20/2024,Base Period,1,2
+CW121343,cited_in_award_doc,Energy and Environment (DOEE),other,249028.0,Doc715658,FY24 Air Quality LTE-Enabled Sensors,False,Open,8/9/2024,10/29/2024,10/29/2024,Base Period,81,81
+CW121347,cited_in_award_doc,Energy and Environment (DOEE),it_goods,499992.0,Doc726801,FY24 SGS Database Development and Maintenance,False,Open,9/3/2024,1/13/2025,1/13/2025,Base Period,132,132
+CW121373,title_match,Energy and Environment (DOEE),it_adjacent,487496.0,Doc730309,FY24 Pollution Source Tracking,False,Open,9/10/2024,2/26/2025,2/26/2025,Base Period,169,169
+CW121488,title_match,Health Care Finance (DHCF),software_services,83697969.0,Doc526404,DCAS Operations and Maintenance (O&M) Support Services,False,Open,11/23/2020,1/20/2025,1/20/2025,Base Period,1519,1519
+CW121657,title_match,Motor Vehicles (DMV),it_adjacent,211760.27,Doc665044,FY23-DMV-BIS Digital Court Recorder System,False,Set Aside,7/18/2023,10/22/2024,10/31/2024,Base Period,462,471
+CW122785,title_match,Health Care Finance (DHCF),software_services,7917104.0,Doc686658,Clinical Case Management System,False,Open,12/22/2023,2/1/2026,2/1/2026,Base Period,772,772
+CW123208,cited_in_award_doc,Chief Technology Officer (OCTO),it_adjacent,3295905.72,Doc749299,ServiceNow licenses,False,Set Aside,12/13/2024,1/2/2025,2/28/2025,Base Period,20,77
+CW123247,title_match,Health Care Finance (DHCF),other,15893.69,Doc525843,RFQ - IT Equipment,False,Set Aside,9/2/2020,1/24/2025,1/24/2025,Base Period,1605,1605
+CW123464,title_match,Chief Technology Officer (OCTO),it_adjacent,1838346.8,Doc748313,Splunk Enterprise subscription,False,Open,12/15/2024,1/13/2025,1/22/2025,Base Period,29,38
+CW123641,title_match,Contracting and Procurement (OCP),software_services,950000.0,Doc633402,FY23 OCP Information Technology Equipment and Software,False,Set Aside,12/5/2022,3/31/2025,3/31/2026,Base Period,847,1212
+CW123716,cited_in_award_doc,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,990000.0,DCEB-2024-Q-1001,Real Estate and Financial Advisory Services,False,Open,8/19/2024,1/28/2025,1/28/2025,Base Period,162,162
+CW123733,cited_in_award_doc,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,990000.0,DCEB-2024-Q-1001,Real Estate and Financial Advisory Services,False,Open,8/19/2024,1/24/2025,1/24/2025,Base Period,158,158
+CW124619,cited_in_award_doc,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,1980000.0,DCEB-2024-Q-1002,"Urban Planning, Design, Land Use and Architectural  Services",False,Open,9/18/2024,2/24/2025,2/24/2025,Base Period,159,159
+CW124673,title_match,Chief Technology Officer (OCTO),other,901581.6,Doc749299,ServiceNow licenses,False,Set Aside,12/13/2024,2/26/2025,2/28/2025,Base Period,75,77
+CW124831,title_match,Health Care Finance (DHCF),it_goods,761823.48,Doc760160,"DCAS Cloud Migration Oracle Licenses, Support, and Maintenance",False,Set Aside,3/5/2025,3/14/2025,3/14/2025,Base Period,9,9
+CW125025,cited_in_award_doc,Chief Technology Officer (OCTO),other,458019.31,Doc761800,FY25 Arbor Pravail,False,Set Aside,3/12/2025,3/13/2025,3/24/2025,Base Period,1,12
+CW125247,title_match,,other,6982109.359999999,DCKA-2020-B-0058,Traffic Signal and Streetlight Utility Locating and Marking Citywide,False,OPEN MARKET,3/26/2021,10/5/2022,10/5/2022,Base Period,558,558
+CW125490,cited_in_award_doc,Health Care Finance (DHCF),it_adjacent,537499.94,Doc754128,Thirty Party Assessment and Penetration Testing,False,Set Aside,2/28/2025,5/13/2025,5/13/2025,Base Period,74,74
+CW125784,title_match,Health Care Finance (DHCF),it_adjacent,167035.75,Doc765538,DCAS-Jira and Confluence Software,False,Set Aside,4/4/2025,4/8/2025,4/13/2025,Base Period,4,9
+CW126051,title_match,Chief Technology Officer (OCTO),other,985547.99,Doc384260,Cisco Equipment (DCPS),False,Set Aside,6/19/2018,4/22/2025,4/30/2025,Base Period,2499,2507
+CW126133,title_match,Transportation (DDOT),it_adjacent,376119.72,DCKA-2019-R-0076,DIGITAL CURBSIDE PERMIT MANAGEMENT SYSTEM,False,Full and Open,8/5/2019,3/30/2025,3/30/2025,Base Period,2064,2064
+CW126434,title_match,Employment Services (DOES),other,326956.87,Doc756038,DOES-CF0-FY25 Conference Rooms AV Upgrades,False,Open,4/16/2025,5/13/2025,5/13/2025,Base Period,27,27
+CW126788,cited_in_award_doc,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,998462.05,DCEB-2025-R-0001,Downtown Comprehensive Transportation Plan,False,Open,1/7/2025,5/22/2025,5/22/2025,Base Period,135,135
+CW127190,cited_in_award_doc,Board of Elections (DCBOE),software_services,250000.0,Doc766611,"BOE - Web Redesign, Hosting, and Maintenance",False,Set Aside,6/5/2025,6/10/2025,8/24/2025,Base Period,5,80
+CW127338,title_match,Employment Services (DOES),it_adjacent,338644.8,Doc514813,Invitation for Bid - Staff Augmentation Medical - OPFL,False,Set Aside,6/12/2020,7/15/2025,7/15/2025,Base Period,1859,1859
+CW127401,cited_in_award_doc,Employment Services (DOES),it_adjacent,1682320.0,Doc769186,FY25-CF0-DOES-OPFL Data Analysis and Support Services,False,Set Aside,5/12/2025,7/10/2025,7/10/2025,Base Period,59,59
+CW127560,title_match,Forensic Sciences (DFS),other,190822.58,Doc454213,LABORATORY INFORMATION MANAGEMENT SYSTEM,False,Open,9/20/2019,6/26/2025,9/4/2025,Base Period,2106,2176
+CW128135,cited_in_award_doc,Corrections (DC),other,286972.3,Doc765997,DOC CTF Camera Project FY2025,False,Set Aside,6/4/2025,8/20/2025,8/20/2025,Base Period,77,77
+CW128424,title_match,Contracting and Procurement (OCP),it_adjacent,248536.0,Doc775301,Fy25 OCP Requirements Engineering Technical Services Consultant - DCSS ONLY,False,Set Aside,6/17/2025,8/6/2025,8/6/2025,Base Period,50,50
+CW128516,cited_in_award_doc,Transportation (DDOT),it_adjacent,11352171.6,DCKA-2025-Q-0019,Request for Qualifications  Program Management For the DC PLUG Program,False,Open,2/18/2025,6/10/2025,6/10/2025,Base Period,112,112
+CW128868,title_match,Employment Services (DOES),it_adjacent,109575.0,Doc527367,lcp tracker,False,Set Aside,9/21/2020,10/1/2025,10/1/2025,Base Period,1836,1836
+CW129179,title_match,Chief Technology Officer (OCTO),other,162948.19,Doc512944,FY20-OCTO-Cyber Incident Response Retainer,False,Open,6/10/2020,9/5/2025,9/22/2025,Base Period,1913,1930
+CW129402,title_match,Department Of Buildings (DOB),it_adjacent,585957.45,Doc787232,DOB ? Salesforce Professional Services,False,Set Aside,9/4/2025,9/10/2025,9/26/2025,Base Period,6,22
+CW129438,title_match,Health Care Finance (DHCF),other,10922.78,Doc786768,Oracle TOAD 2025,False,Set Aside,9/8/2025,9/11/2025,10/1/2025,Base Period,3,23
+CW129573,title_match,Health (DOH),other,950000.0,Doc542650,Temporary Staffing Support Services,False,Set Aside,12/9/2020,9/19/2025,10/1/2025,Base Period,1745,1757
+CW129591,title_match,Metropolitan Police Department (MPD),other,2308100.0,Doc779376,CCTV Equipment and Services - MPD,False,Set Aside,8/1/2025,9/19/2025,10/1/2025,Base Period,49,61
+CW129647,title_match,Health (DOH),other,950000.0,Doc542650,Temporary Staffing Support Services,False,Set Aside,12/9/2020,9/19/2025,10/1/2025,Base Period,1745,1757
+CW129651,title_match,Health (DOH),other,950000.0,Doc542650,Temporary Staffing Support Services,False,Set Aside,12/9/2020,9/19/2025,10/1/2025,Base Period,1745,1757
+CW129653,title_match,Health (DOH),other,950000.0,Doc542650,Temporary Staffing Support Services,False,Set Aside,12/9/2020,9/19/2025,10/1/2025,Base Period,1745,1757
+CW129708,cited_in_award_doc,Department Of Buildings (DOB),it_adjacent,510121.56,Doc792044,DOB - Accela Maintenance and Enhancement,False,Set Aside,9/24/2025,9/25/2025,10/1/2025,Base Period,1,7
+CW130273,cited_in_award_doc,Behavioral Health (DBH),other,197470.0,Doc766123,FY 25 DBH Request for Proposal to provide LIVE.LONG.DC. Implementation Support,False,Set Aside,7/28/2025,10/14/2025,12/11/2025,Base Period,78,136
+CW130729,title_match,Contracting and Procurement (OCP),it_adjacent,885883.25,Doc798353,DOB - Salesforce Licenses Services,False,Set Aside,10/30/2025,10/30/2025,10/31/2025,Base Period,0,1
+CW131188,cited_in_award_doc,Department Of Buildings (DOB),it_adjacent,400000.0,Doc799892,DOB ? Salesforce Migration Service,False,Open,11/19/2025,11/25/2025,12/8/2025,Base Period,6,19
+CW131575,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,543611.0,Doc799754,OCTO FY26 -RedHat Enterprise Linux Extended Life Cycle Support,False,Set Aside,11/17/2025,12/12/2025,12/16/2025,Base Period,25,29
+CW132391,title_match,State Superintendent of Education (OSSE),software_services,500000.0,Doc772809,IFB Qlik Sense Software,False,Open,6/1/2025,1/20/2026,1/22/2026,Base Period,233,235
+CW133224,cited_in_award_doc,Health Care Finance (DHCF),other,324296.0,Doc811799,Open Text,False,Set Aside,2/11/2026,2/18/2026,2/18/2026,Base Period,7,7
+CW133724,title_match,Chief Technology Officer (OCTO),it_goods,559823.0,Doc813391,Cisco firewall refresh,False,Open,2/18/2026,3/5/2026,3/6/2026,Base Period,15,16
+CW134233,title_match,Health Care Finance (DHCF),other,68968.0,Doc549388,DCAS FY21 Infrastructure and Security,False,Set Aside,1/27/2021,3/23/2026,3/24/2026,Base Period,1881,1882
+CW134322,title_match,Housing and Community Development (DHCD),it_goods,111299.5,Doc803476,DHCD FY26 Laptops (DCSS IT Equipment & Software),False,Set Aside,12/19/2025,3/25/2026,3/26/2026,Base Period,96,97
+CW134326,title_match,Department Of Buildings (DOB),it_adjacent,615110.04,Doc804384,DOB - IT Consultant Assessment Services,False,Open,1/20/2026,3/25/2026,4/10/2026,Base Period,64,80
+CW134345,title_match,Board of Ethics and Government Accountability (BEGA),other,105000.0,Doc399544,DCKT-2019-Learning Management System,False,Open,9/24/2018,3/31/2026,3/31/2026,Base Period,2745,2745
+CW135962,title_match,Behavioral Health (DBH),other,75000.0,Doc822373,Comprehensive Feasibility Study,False,Set Aside,4/17/2026,5/12/2026,5/12/2026,Base Period,25,25
+CW136077,title_match,Corrections (DC),other,299711.28,Doc827061,DOC Conference Center Audio Visual Upgrade w CBE Set Aside,False,Open,4/7/2026,6/9/2026,6/9/2026,Base Period,63,63
+CW136221,cited_in_award_doc,Health Care Finance (DHCF),it_adjacent,227997.76,Doc825976,Annual Grievance Reporting and Compliance Analysis,False,Open,5/11/2026,6/15/2026,6/15/2026,Base Period,35,35
+CW136835,title_match,Chief Technology Officer (OCTO),other,644668.2,Doc504435,FY20 - OCTO - Managed Trusted Internet Protocol Services (MTIPS) - EIS,False,Open,3/31/2021,6/17/2026,6/30/2026,Base Period,1904,1917
+CW137049,title_match,Transportation (DDOT),it_adjacent,3414155.75,DCKA-2026-B-0087,Traffic Signal Controller Replacement  Phase 1,False,,4/29/2026,6/5/2026,6/5/2026,Base Period,37,37
+CW138421,title_match,Health Care Finance (DHCF),it_goods,193990.0,Doc838710,RFTOP - Dell Pro 14 Plus Laptop (Model PB14255),False,Set Aside,8/3/2026,8/17/2026,9/3/2026,Base Period,14,31
+CW138773,title_match,Transportation (DDOT),other,81162.0,DCKA-2026-B-0131,Asset Management Key System,False,Open,7/14/2026,8/28/2026,9/1/2026,Base Period,45,49
+CW47148,title_match,Chief Technology Officer (OCTO),other,19800.0,Doc273589,Pager Services,False,Open,9/23/2016,9/23/2016,10/1/2020,Option 4,0,1469
+CW47840,cited_in_award_doc,Human Services (DHS),it_adjacent,993750.0,Doc277120,Cooperative Agreement - FY17 Business Process Reengineering,False,Open,9/23/2016,10/31/2016,10/31/2020,Option 4,38,1499
+CW48527,title_match,Chief Technology Officer (OCTO),other,143107.61,Doc288920,NICE Software Upgrade & Expansion,False,Set Aside,11/18/2016,11/28/2016,11/28/2020,Option 4,10,1471
+CW48560,title_match,Licensing & Consumer Protection (DLCP),software_services,180353.0,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT,False,Open,11/21/2016,12/22/2016,10/1/2020,Option 4,31,1410
+CW49032,title_match,Zoning (OZ),it_goods,99930.0,Doc292806,Zoning Map Enhancements,False,Open,12/22/2016,1/5/2017,10/1/2020,Option 4,14,1379
+CW49149,title_match,Chief Technology Officer (OCTO),software_services,238396.69,Doc292055,FY17-OCTO-RED HAT LICENSES AND SUPPORT,False,Open,12/27/2016,1/10/2017,10/1/2020,Option 4,14,1374
+CW49154,title_match,Chief Technology Officer (OCTO),software_services,332488.12,Doc295935,FY17-OCTO-BOX LICENSES AND SUPPORT,False,Set Aside,12/27/2016,1/9/2017,12/30/2020,Option 4,13,1464
+CW49504,title_match,Chief Technology Officer (OCTO),software_services,232206.71,Doc295632,BMC Maintenance Renewal,False,Open,1/9/2017,1/17/2017,10/1/2020,Option 4,8,1361
+CW49548,title_match,Chief Technology Officer (OCTO),it_goods,231140.28,Doc294883,Netscout Network Hardware Monitoring Replacement,False,Open,1/5/2017,2/16/2017,10/1/2020,Option 4,42,1365
+CW49629,title_match,Chief Technology Officer (OCTO),software_services,138695.33,Doc296997,Compuware Software Maintenance,False,Open,1/14/2017,1/24/2017,10/1/2020,Option 4,10,1356
+CW50327,title_match,Health Care Finance (DHCF),it_adjacent,1.0,Doc305817,COTS Saas Solution,False,Set Aside,3/6/2017,3/3/2017,11/14/2020,Option 4,-3,1349
+CW50363,title_match,State Superintendent of Education (OSSE),it_adjacent,27000.0,Doc292621,FY17 - OSSE - DEL - Professional Development Information System,False,Open,2/28/2017,3/22/2017,3/22/2021,Option 4,22,1483
+CW51089,title_match,Administrative Hearings (OAH),software_services,138973.0,Doc302593,"OAH Annual eCourt License, Maintenance & Updates Support",False,Open,3/10/2017,4/4/2017,1/1/2022,Option 4,25,1758
+CW51129,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,274341.0,Doc306540,FY17-TO0-OCTO-LANDesk Maintenance,False,Set Aside,3/24/2017,5/3/2017,10/1/2020,Option 4,40,1287
+CW51270,title_match,Contracting and Procurement (OCP),software_services,50000.0,Doc292696,DPI Case Tracking System,False,Open,1/10/2017,4/12/2017,4/13/2021,Option 4,92,1554
+CW52081,cited_in_award_doc,Metropolitan Police Department (MPD),software_services,499958.0,Doc308925,Competition Exemption E-Citation System,False,Set Aside,5/5/2017,6/30/2017,10/1/2020,Option 4,56,1245
+CW52586,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,1583548.0,Doc312402,FY17-T0O- Quickbase,False,Open,6/16/2017,6/15/2017,10/1/2020,Option 4,-1,1203
+CW53341,cited_in_award_doc,Special Education Transportation (SET),software_services,31500.0,Doc312250,CRM Implementation and Support Project,False,Open,7/3/2017,8/31/2017,9/1/2021,Option 4,59,1521
+CW57103,title_match,Health Care Finance (DHCF),it_adjacent,5487700.0,Doc299326,MMIS IV & V 2017,False,Open,2/10/2017,12/6/2018,12/11/2021,Option 4,664,1765
+CW57892,cited_in_award_doc,Board of Elections (DCBOE),software_services,92699.55,Doc356422,Content Management System (CMS) Maintenance,False,Set Aside,12/21/2017,1/9/2018,1/9/2022,Option 4,19,1480
+CW60126,title_match,Board of Elections (DCBOE),other,487848.0,Doc369706,FY18_Board of Elections - Audiovisual Equipment Services,False,Set Aside,3/23/2018,4/10/2018,4/10/2021,Option 3,18,1114
+CW60423,title_match,Chief Technology Officer (OCTO),software_services,231850.0,Doc369613,Qualys Vulnerability Platform,False,Open,3/29/2018,4/23/2018,10/1/2020,Option 3,25,917
+CW60526,title_match,Chief Technology Officer (OCTO),software_services,332800.0,Doc370048,SecureAuth IDP Platform Subscription Renewal,False,Open,4/9/2018,4/30/2018,10/1/2021,Option 4,21,1271
+CW60896,title_match,Chief Technology Officer (OCTO),other,999000.0,Doc283376,RFTOB - AT&T Wireless Services and Related Equipment,False,Set Aside,11/21/2016,10/1/2018,10/1/2020,Option 2,679,1410
+CW61144,title_match,Chief Technology Officer (OCTO),software_services,54745.9,Doc377403,NetBrain Software License,False,Set Aside,5/4/2018,5/29/2018,10/1/2020,Option 3,25,881
+CW61603,title_match,Chief Technology Officer (OCTO),software_services,128938.68,Doc378910,IBM Z13 Hardware Maintenance,False,Open,5/23/2018,6/14/2018,10/1/2020,Option 3,22,862
+CW62027,cited_in_award_doc,State Superintendent of Education (OSSE),other,291750.0,Doc345275,RFP-GD0-DAR-Science 2.0,False,Open,11/17/2017,6/18/2018,10/1/2022,Option 4,213,1779
+CW62693,cited_in_award_doc,Chief Technology Officer (OCTO),it_adjacent,122000.0,Doc383993,Filenet & Kofax,False,Set Aside,7/13/2018,7/25/2018,10/1/2021,Option 4,12,1176
+CW63476,title_match,Chief Technology Officer (OCTO),other,415228.31999999995,Doc395856,Call Center Support Services - DCSS MOBIS,False,Set Aside,8/24/2018,9/5/2018,9/5/2022,Option 4,12,1473
+CW64065,title_match,Chief Technology Officer (OCTO),it_adjacent,380115.15,Doc398197,MicroStrategy Business Software,False,Set Aside,9/13/2018,9/20/2018,10/1/2022,Option 4,7,1479
+CW64225,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,234665.22,Doc396666,Solarwinds Licenses,False,Open,9/11/2018,9/21/2018,10/1/2020,Option 3,10,751
+CW64329,title_match,Employment Services (DOES),other,97638.87,Doc400195,FY18 - CF0 - Office of Information Technology - DCIA and PFL Copiers,False,Set Aside,9/25/2018,9/26/2018,9/26/2022,Option 4,1,1462
+CW66598,title_match,Employment Services (DOES),it_adjacent,1500000.0,Doc412018,CFO-FY-19-Technical Assistance Support-(DOES),False,Open,12/3/2018,12/17/2018,12/17/2022,Option 4,14,1475
+CW66734,title_match,Employment Services (DOES),it_adjacent,500000.0,Doc412018,CFO-FY-19-Technical Assistance Support-(DOES),False,Open,12/3/2018,12/20/2018,12/20/2020,Option 2,17,748
+CW66765,cited_in_award_doc,Chief Technology Officer (OCTO),other,453235.52,Doc415480,Palo Alto Support Renewal,False,Set Aside,12/10/2018,12/17/2018,10/1/2020,Option 2,7,661
+CW66770,title_match,Licensing & Consumer Protection (DLCP),other,182160.0,Doc291199,FY'17-(DCRA) Temporary Support Services-DCSS SUPPLIERS PREFERRED,False,Set Aside,12/16/2016,12/21/2018,12/21/2021,Option 3,735,1831
+CW67010,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,510644.61,Doc414237,Freedom of Information Act (FOIA) Software,False,Open,12/13/2018,12/27/2018,10/1/2021,Option 3,14,1023
+CW69868,title_match,Health Care Finance (DHCF),other,250566.24,Doc394057,FY2018 - Canon Copiers - ( DCSS Preferred ),False,Open,8/21/2018,1/30/2019,10/1/2021,Option 3,162,1137
+CW70675,title_match,Chief Technology Officer (OCTO),other,211416.66,Doc425663,IBoss Content Filtering Software Maintenance and Support Services,False,Set Aside,1/22/2019,5/6/2019,10/1/2020,Option 2,104,618
+CW71202,title_match,Chief Technology Officer (OCTO),software_services,1065061.4,Doc440657,FY19-TO0-Cisco Flex EA and Active Host WebEx,False,Open,5/6/2019,5/22/2019,5/22/2021,Option 2,16,747
+CW74562,title_match,Licensing & Consumer Protection (DLCP),software_services,432409.6,Doc456936,Customer Relationship Management Licenses,False,Open,8/9/2019,9/5/2019,9/5/2021,Option 2,27,758
+CW75423,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,175524.74,Doc463847,Riverbed Software,False,Open,9/16/2019,9/25/2019,10/1/2020,Option 1,9,381
+CW75471,title_match,Licensing & Consumer Protection (DLCP),it_goods,892463.98,Doc466194,Data Management and Visualization Software,False,Open,9/19/2019,9/26/2019,10/1/2021,Option 2,7,743
+CW75972,title_match,Health Care Finance (DHCF),it_adjacent,3901304.0,Doc384226,Medicaid Information Technology Architecture State Self-Assessment 3.0 (MITA SS-A),False,Open,6/20/2018,9/30/2019,8/21/2023,Option 4,467,1888
+CW77381,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,717253.68,Doc480807,Avaya Software Maintenance - GSA,False,Open,11/18/2019,11/18/2019,10/1/2020,Option 1,0,318
+CW77577,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,128049.01,Doc481373,FY19-TO0-Silo Hardware Maintenance,False,Set Aside,11/26/2019,12/20/2019,10/1/2020,Option 1,24,310
+CW77876,title_match,Licensing & Consumer Protection (DLCP),other,142772.33,Doc459132,Identity and Access Management Solution,False,Set Aside,9/6/2019,12/4/2019,1/9/2021,Option 1,89,491
+CW77923,cited_in_award_doc,Corrections (DC),it_goods,2864531.9,Doc350609,DOC Offender Management System,False,Open,12/20/2017,12/5/2019,3/30/2022,Option 2,715,1561
+CW78340,title_match,Licensing & Consumer Protection (DLCP),other,104236.0,Doc482710,SAS Viya Licenses,False,Open,12/6/2019,12/18/2019,10/1/2021,Option 2,12,665
+CW80026,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,242551.15,Doc489424,FY20 - OCTO - ALM Annual Maintenance,False,Open,1/21/2020,1/31/2020,1/31/2022,Option 2,10,741
+CW80214,title_match,Employment Services (DOES),other,980473.63,Doc484482,CF0-FY20 - Paid Family Leave Benefits Administrative System (PFLBAS) IV&V,False,Set Aside,1/3/2020,2/19/2020,2/19/2021,Option 1,47,413
+CW80790,title_match,Chief Technology Officer (OCTO),other,426360.29,Doc490747,FY20 - OCTO - Arbor Pravail Data Center,False,Open,2/18/2020,3/24/2020,3/24/2023,Option 3,35,1130
+CW80884,title_match,Employment Services (DOES),other,400000.0,Doc497656,RFQ-FY2020-CFO-DOES-OAS-AGENCY OFFICE SUPPLIES-DCSS-OFFICES SUPPLIES SCHEDULE,False,Set Aside,2/10/2020,3/12/2020,3/12/2024,Option 4,31,1492
+CW81102,title_match,Chief Technology Officer (OCTO),software_services,806894.29,Doc502864,FY20 - OCTO - CRM Licenses Solutions Mayor's Office,False,Open,3/6/2020,3/16/2020,3/16/2023,Option 3,10,1105
+CW81244,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,392964.48,Doc503024,FY20-OCTO-Virtual Storage Platform,False,Set Aside,3/10/2020,3/20/2020,3/20/2023,Option 3,10,1105
+CW81475,cited_in_award_doc,Public Works (DPW),it_adjacent,285257.35,Doc496296,DCKT-2020-Parking Control Beat Design Analysis Consultant,False,Open,2/27/2020,10/5/2020,10/5/2020,Base Period,221,221
+CW81559,cited_in_award_doc,Behavioral Health (DBH),it_adjacent,624704.0,Doc502771,DCSS Vendors Only - DBH Opioid Strategic Planing and Consultant Services,False,Set Aside,3/24/2020,7/1/2020,10/1/2024,Option 5,99,1652
+CW81564,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,340156.0,Doc504013,Data Center Migration Project-F5 Application,False,Set Aside,3/13/2020,4/1/2020,4/1/2021,Option 1,19,384
+CW81676,title_match,Licensing & Consumer Protection (DLCP),it_adjacent,1290360.0,Doc501175,FY20 - DCRA - System Support Services (DCSS Only),False,Set Aside,2/21/2020,4/2/2020,10/1/2021,Option 2,41,588
+CW81839,cited_in_award_doc,Employment Services (DOES),it_adjacent,2848186.3499999996,Doc494745,FY20_OPFL_Data Analytics and Business Transformation Support,False,Set Aside,2/7/2020,4/9/2020,4/13/2024,Option 4,62,1527
+CW82572,title_match,Health Care Finance (DHCF),it_adjacent,546895.0,Doc505266,Ombudsman Temporary Services,False,Open,4/2/2020,5/5/2020,5/6/2024,Option 4,33,1495
+CW84195,cited_in_award_doc,Contracting and Procurement (OCP); Health Care Finance (DHCF),other,2186718.0,Doc517963,Payment Methodology Consultant,False,Set Aside,7/10/2020,7/15/2020,7/15/2021,Base Period,5,370
+CW84963,cited_in_award_doc,Chief Medical Examiner (OCME),software_services,688815.0,Doc454213,LABORATORY INFORMATION MANAGEMENT SYSTEM,False,Open,9/20/2019,10/1/2020,10/1/2020,Base Period,377,377
+CW85448,cited_in_award_doc,Forensic Sciences (DFS),software_services,569516.36,Doc522040,JusticeTrax LIMS Upgrade - DFS,False,Open,8/24/2020,9/4/2020,9/4/2024,Option 4,11,1472
+CW85691,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,1090000.0,Doc525470,FY20-OCTO-GIS Enterprise License Maintenance,False,Set Aside,9/8/2020,9/25/2020,9/25/2022,Option 2,17,747
+CW85750,title_match,Chief Technology Officer (OCTO),it_goods,1573446.67,Doc525691,FY20-OCTO-Tableau Server Enterprise License Subscription,False,Set Aside,9/10/2020,9/22/2020,9/22/2022,Option 2,12,742
+CW85861,cited_in_award_doc,Board of Elections (DCBOE),other,448802.0,Doc255169,FY16 - Training -DCTC,False,Set Aside,6/15/2016,10/27/2020,10/27/2020,Base Period,1595,1595
+CW86331,title_match,Chief Technology Officer (OCTO),telecom,30680000.0,Doc544562,FY21 - OCTO - CellularPCS - Verizon Wireless,False,Open,12/10/2020,3/8/2021,3/8/2021,Base Period,88,88
+CW86571,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,547650.0,Doc533388,OCTO-FY21-Federal Budget Formulation and Execution Application,False,Set Aside,10/15/2020,10/28/2020,10/28/2020,Base Period,13,13
+CW86864,title_match,State Superintendent of Education (OSSE),other,2171400.0,Doc524048,FY21_GDO_CIO_Staff Augmentation (IT Technical Support),False,Set Aside,8/28/2020,10/28/2020,11/2/2020,Base Period,61,66
+CW87109,title_match,State Superintendent of Education (OSSE),other,402705.4,Doc524048,FY21_GDO_CIO_Staff Augmentation (IT Technical Support),False,Set Aside,8/28/2020,10/30/2020,11/6/2020,Base Period,63,70
+CW87257,title_match,Chief Technology Officer (OCTO),other,1830728.29,Doc532670,Red Hat OpenShift Container & API Management,False,Open,10/14/2020,11/20/2020,11/20/2020,Base Period,37,37
+CW87331,title_match,Health Care Finance (DHCF),it_adjacent,31649600.0,Doc511374,DCAS Application Development Team,False,Open,8/18/2020,12/10/2021,12/10/2021,Base Period,479,479
+CW87471,title_match,Health Care Finance (DHCF),other,1811600.0,Doc535678,DCAS Temporary Resources,False,Set Aside,10/21/2020,12/10/2020,12/10/2020,Base Period,50,50
+CW87709,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,129016.32,Doc540130,Cisco Firewall Hardware,False,Open,11/17/2020,12/1/2020,12/1/2020,Base Period,14,14
+CW87765,title_match,Metropolitan Police Department (MPD),it_goods,158193.44,Doc539530,FY21 - FA0 - MPD - Dell Laptops (DCSS ONLY),False,Set Aside,11/12/2020,11/20/2020,12/1/2020,Base Period,8,19
+CW87983,cited_in_award_doc,State Superintendent of Education (OSSE),software_services,3484562.87,Doc430326,Case Management System - OSSE,False,Open,2/28/2020,3/11/2021,3/11/2021,Base Period,377,377
+CW88056,title_match,Chief Technology Officer (OCTO),it_goods,111453.77,Doc541485,FY21-OCTO-Fiber trunk cables and fiber patch cords,False,Set Aside,11/23/2020,12/8/2020,12/8/2020,Base Period,15,15
+CW88137,cited_in_award_doc,Metropolitan Police Department (MPD),other,539600.0,Doc536530,Genetec Clearance SAAS,False,Set Aside,12/7/2020,12/28/2020,12/29/2020,Base Period,21,22
+CW88141,cited_in_award_doc,Chief Technology Officer (OCTO); Contracting and Procurement (OCP),it_goods,123373.8,Doc540624,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,False,Set Aside,11/17/2020,12/16/2020,12/16/2020,Base Period,29,29
+CW88474,title_match,Employment Services (DOES),other,140250.0,Doc545982,FY21 - DOCEBO CLOUD 700 E-LEARNING PLATFORM,False,Set Aside,12/22/2020,12/22/2020,12/22/2020,Base Period,0,0
+CW88546,title_match,Metropolitan Police Department (MPD),it_goods,564303.76,Doc545315,Isilon Data Storage - DCSS Only,False,Set Aside,12/23/2020,1/5/2021,1/5/2021,Base Period,13,13
+CW88674,cited_in_award_doc,Licensing & Consumer Protection (DLCP),software_services,767841.3,Doc546184,Enterprise Near-Me Marketplace Software,False,Open,1/6/2021,1/7/2021,1/12/2021,Base Period,1,6
+CW88923,cited_in_award_doc,Metropolitan Police Department (MPD),other,37000.0,Doc544424,CAD Integration Platform,False,Open,1/12/2021,1/15/2021,1/19/2021,Base Period,3,7
+CW89046,title_match,Commission on Arts and Humanities (CAH),other,96000.0,Doc544755,CAH-Strategic Plan Development,False,Open,1/18/2021,1/21/2021,1/20/2022,Base Period,3,367
+CW89121,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,434114.5,Doc546202,FY21-OCTO-FileNet License Renewal and Maintenance Support,False,Set Aside,1/11/2021,1/29/2021,1/29/2021,Base Period,18,18
+CW89124,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,1919463.44,Doc546794,FY21 - OCTO - CheckPoint Firewall Annual Support,False,Set Aside,2/5/2021,3/2/2021,3/2/2021,Base Period,25,25
+CW89131,title_match,Chief Technology Officer (OCTO),other,135252.16,Doc563757,Cisco IronPort AntiSpam Software,False,Open,1/27/2021,2/3/2021,2/3/2021,Base Period,7,7
+CW89194,title_match,Health Care Finance (DHCF),it_adjacent,22215500.0,Doc295757,Microsoft Premier Support Services,False,Open,1/5/2017,1/29/2021,2/4/2021,Base Period,1485,1491
+CW89363,title_match,Chief Technology Officer (OCTO),other,1146263.04,Doc548094,FY21-OCTO-Dell Storage Disk Drives,False,Set Aside,1/19/2021,2/5/2021,2/5/2021,Base Period,17,17
+CW89407,title_match,Health Care Finance (DHCF),it_adjacent,146736.4,Doc549388,DCAS FY21 Infrastructure and Security,False,Set Aside,1/27/2021,3/16/2021,3/16/2021,Base Period,48,48
+CW89442,title_match,Public Works (DPW),other,200250.0,Doc549926,DCKT-2021-Geotab Keyless Solution,False,Open,2/4/2021,2/10/2021,2/10/2021,Base Period,6,6
+CW89498,cited_in_award_doc,Chief Technology Officer (OCTO),other,392187.5,Doc546741,Proofpoint Data Extraction,False,Open,2/9/2021,4/22/2021,4/22/2021,Base Period,72,72
+CW89534,title_match,Administrative Hearings (OAH),other,322560.0,Doc542211,FY21- TEMPORARY SUPPORT SERVICES- OAH,False,Set Aside,12/3/2020,2/17/2021,2/17/2021,Base Period,76,76
+CW89543,title_match,Transportation (DDOT),it_goods,96125.0,Doc499993,FY20 Project Delivery GIS Esri Hub Project Development & GIS Technology Consulting Services,False,Open,4/1/2020,2/26/2021,2/26/2021,Base Period,331,331
+CW89727,cited_in_award_doc,Chief Technology Officer (OCTO),it_adjacent,657063.0700000001,Doc546897,FY21 - OCTO - Contact Center-As-A-Service (CCaaS),False,Set Aside,2/9/2021,3/8/2021,3/8/2021,Base Period,27,27
+CW89782,title_match,Employment Services (DOES),other,349825.0,Doc554532,FY21 - DELL VDI VXRail Infrastructure,False,Set Aside,3/16/2021,2/19/2021,2/23/2021,Base Period,-25,-21
+CW89855,title_match,Unified Communications (OUC),it_adjacent,9000000.0,Doc538659,Next Generation 9-1-1,False,Open,11/24/2020,3/25/2022,3/25/2022,Base Period,486,486
+CW89980,title_match,Fire and Emergency Services Department (FEMS),other,961306.0,Doc551904,FY21 FEMS CBRNE Detection Meter Maintenance,False,Open,2/23/2021,2/25/2021,3/5/2021,Base Period,2,10
+CW90258,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,108000.0,Doc548142,FY21-OCTO-Data Security Solution Software,False,Set Aside,2/2/2021,3/19/2021,3/19/2021,Base Period,45,45
+CW90295,title_match,Chief Technology Officer (OCTO),other,131222.05,Doc384173,DC Power Equipment (DCPS),False,Set Aside,6/14/2018,3/22/2021,3/22/2021,Base Period,1012,1012
+CW90729,cited_in_award_doc,Employment Services (DOES),it_goods,13581691.0,Doc523252,Unemployment Insurance Benefits System (UIBS) - DOES,False,Open,1/8/2021,6/11/2021,6/11/2021,Base Period,154,154
+CW90804,title_match,Employment Services (DOES),other,753100.02,Doc554532,FY21 - DELL VDI VXRail Infrastructure,False,Set Aside,3/16/2021,4/1/2021,4/5/2021,Base Period,16,20
+CW91017,cited_in_award_doc,Deputy Mayor for Planning and Economic Development (DMPED),software_services,37250.0,Doc255169,FY16 - Training -DCTC,False,Set Aside,6/15/2016,5/4/2021,5/4/2021,Base Period,1784,1784
+CW91484,title_match,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,771310.0,DCEB-2021-R-0001,Government of the District of Columbia Disparity Study,False,Set Aside,1/27/2021,4/21/2021,4/21/2021,Base Period,84,84
+CW91489,title_match,Human Services (DHS),other,1213198.56,Doc547955,Request for Quotation - FY21-DHS- Temporary Staffing Services (DCSS-Temporary Support Services ),False,Set Aside,1/22/2021,5/19/2021,5/19/2021,Base Period,117,117
+CW91513,title_match,Chief Technology Officer (OCTO),other,1077256.64,Doc432895,Managed Trusted Internet Protocol Services,False,Set Aside,4/10/2019,6/30/2021,6/30/2021,Base Period,812,812
+CW91583,title_match,Chief Technology Officer (OCTO),it_goods,401713.1,Doc561465,Cisco Equipment (Data Center),False,Set Aside,5/11/2021,5/21/2021,5/21/2021,Base Period,10,10
+CW91776,title_match,Metropolitan Police Department (MPD),other,371320.0,Doc559336,DCKT-2021-MobilePro CCTV Surveillance Camera Trailers,False,Open,4/28/2021,6/10/2021,6/10/2021,Base Period,43,43
+CW91857,cited_in_award_doc,Behavioral Health (DBH),other,634035.0,Doc563725,RFQ Consultant to provide technical assistance to DBH in drafting an implementation plan for the redesign of publicly financed and delivered behavioral health services,False,Open,5/21/2021,6/7/2021,6/7/2021,Base Period,17,17
+CW92165,title_match,Licensing & Consumer Protection (DLCP),other,31200.0,Doc291199,FY'17-(DCRA) Temporary Support Services-DCSS SUPPLIERS PREFERRED,False,Set Aside,12/16/2016,6/14/2021,6/15/2021,Base Period,1641,1642
+CW92329,title_match,Chief Technology Officer (OCTO),software_services,911916.48,Doc559176,FY21 - OCTO - Detention and Response Network,False,Open,6/7/2021,7/13/2021,7/13/2021,Base Period,36,36
+CW92388,cited_in_award_doc,Department Of Buildings (DOB),software_services,1259318.83,Doc564138,FY21 FileNet Support Services,False,Set Aside,6/24/2021,8/2/2021,8/2/2021,Base Period,39,39
+CW92433,title_match,Chief Technology Officer (OCTO),software_services,415168.0,Doc566275,FY21 - KONY Software License and Cloud Subscription,False,Open,6/24/2021,7/1/2021,7/1/2021,Base Period,7,7
+CW92444,title_match,State Superintendent of Education (OSSE),it_goods,3921120.0,Doc434196,Special Education System,False,Open,10/22/2019,6/29/2021,7/1/2021,Base Period,616,618
+CW92446,title_match,Chief Technology Officer (OCTO),telecom,401113.14,Doc566582,Cisco Switches and Outdoor WAPs (DPR),False,Set Aside,6/28/2021,7/9/2021,7/9/2021,Base Period,11,11
+CW92802,title_match,Chief Technology Officer (OCTO),telecom,440000.0,Doc293310,Cisco Switches and Wireless Access Points,False,Open,12/20/2016,7/23/2021,7/23/2021,Base Period,1676,1676
+CW93564,title_match,Chief Technology Officer (OCTO),it_goods,127260.0,Doc570398,Invitation for Bid - BlueZone Terminal Emulator Software,False,Open,8/11/2021,9/17/2021,9/17/2021,Base Period,37,37
+CW93695,title_match,Behavioral Health (DBH),other,2387580.0,Doc568591,FY'21 - DBH - Temporary Staffing Services,False,Set Aside,7/14/2021,8/22/2021,9/15/2021,Base Period,39,63
+CW93784,title_match,Chief Technology Officer (OCTO),software_services,200000.0,Doc560641,FY21- First Alert License Subscription Renewal,False,Set Aside,5/7/2021,8/17/2021,8/27/2021,Base Period,102,112
+CW94253,cited_in_award_doc,Health Care Finance (DHCF),other,8215872.0,Doc564193,Temporary Personnel for Health Care Operations Administration,False,Open,6/9/2021,1/1/2022,1/1/2022,Base Period,206,206
+CW94285,title_match,"Insurance, Securities and Banking (DISB)",it_adjacent,130000.0,Doc573361,"FY21-The Department of Insurance, Securities and Banking Insurance Code Modernization Project",False,Set Aside,9/1/2021,9/24/2021,9/24/2021,Base Period,23,23
+CW94459,title_match,Human Services (DHS),other,599000.0,Doc577161,DHS-Asset Verification System (AVS)Project-FY21,False,Set Aside,9/10/2021,9/22/2021,10/1/2021,Base Period,12,21
+CW94584,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,459682.73,Doc580281,FY21-RFTOP SeamlessDocs,False,Set Aside,9/21/2021,10/1/2021,10/1/2021,Base Period,10,10
+CW94841,cited_in_award_doc,Metropolitan Police Department (MPD),software_services,763842.79,Doc580177,FY22 - FA0 - MPD - e-Citation System (Exempt from Competition),False,Set Aside,9/27/2021,9/30/2021,10/1/2021,Base Period,3,4
+CW94950,cited_in_award_doc,Chief Medical Examiner (OCME),other,322776.07,Doc571531,Ultivo Triple Quadrupole Liquid LCMS System,False,Open,10/6/2021,10/8/2021,10/8/2021,Base Period,2,2
+CW95143,cited_in_award_doc,Chief Technology Officer (OCTO),other,338650.0,Doc580413,OCTO Workspace One-Airwatch,False,Set Aside,9/28/2021,12/3/2021,12/3/2021,Base Period,66,66
+CW95218,title_match,Chief Technology Officer (OCTO),other,346200.0,Doc570641,FY21 - Internet Service Provider (ISP),False,Open,8/3/2021,10/1/2021,10/1/2021,Base Period,59,59
+CW95411,cited_in_award_doc,Unified Communications (OUC),software_services,804267.06,Doc580126,FY21 - (OUC) Smart911 - 311 Rave Licenses,False,Set Aside,10/13/2021,10/29/2021,10/29/2021,Base Period,16,16
+CW95440,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,1975798.05,Doc585008,FY21-CrowdStrike software subscription,False,Set Aside,10/27/2021,11/1/2021,11/1/2021,Base Period,5,5
+CW95531,cited_in_award_doc,Department on Disability Services (DDS),other,75000.0,Doc547675,FY21 Vocational Services for RSA,False,Open,2/25/2021,11/3/2021,12/1/2021,Base Period,251,279
+CW95665,cited_in_award_doc,Human Services (DHS),software_services,1099800.0,Doc517647,Fraud Case Management and Data Analytics System Subscription,False,Open,8/18/2020,10/6/2020,10/6/2020,Base Period,49,49
+CW95738,cited_in_award_doc,Health Care Finance (DHCF),other,17727564.0,Doc526404,DCAS Operations and Maintenance (O&M) Support Services,False,Open,11/23/2020,2/28/2022,2/28/2022,Base Period,462,462
+CW96061,cited_in_award_doc,Health Care Finance (DHCF),it_adjacent,1927592.88,Doc562379,"DHCF - Risk Assessment, risk management, and impact analysis servicces for security and privacy cmpliance",False,Set Aside,6/7/2021,12/6/2021,12/7/2021,Base Period,182,183
+CW96101,title_match,Contracting and Procurement (OCP),it_adjacent,1800000.0,Doc542870,FY'21-RFTOP-OCP-TEMPORARY SUPPORT SERVICES-DCSS SUPPLIERS ONLY,False,Set Aside,11/27/2020,12/8/2021,12/8/2021,Base Period,376,376
+CW96365,cited_in_award_doc,State Superintendent of Education (OSSE),software_services,664107.88,Doc584806,FY22 - GD0 - Professional Learning Management System - OSSE,False,Open,11/17/2021,12/20/2021,12/20/2021,Base Period,33,33
+CW96513,title_match,Chief Technology Officer (OCTO),other,1144762.35,Doc592410,FY21-Box Enterprise User License,False,Set Aside,12/22/2021,1/5/2022,1/5/2022,Base Period,14,14
+CW96668,cited_in_award_doc,State Superintendent of Education (OSSE),it_adjacent,64698.0,Doc578156,FY21 - GD0 - Case Management System - OSSE,False,Open,10/7/2021,1/4/2022,1/4/2022,Base Period,89,89
+CW96709,cited_in_award_doc,Employment Services (DOES),it_adjacent,316310.08,Doc593372,FY22-CFO-DOES-Invitation For Bid - Learning Management System 365,False,Set Aside,1/4/2022,1/28/2022,1/28/2026,Option 4,24,1485
+CW96712,cited_in_award_doc,Employment Services (DOES),other,425583.0,Doc593041,FY22-DOES-Brandlive,False,Set Aside,1/6/2022,1/24/2022,1/24/2022,Base Period,18,18
+CW96819,title_match,Board of Elections (DCBOE),other,269400.0,Doc233626,FY16-Electronic Poll Books-BOE,False,Open,1/6/2016,4/21/2022,4/21/2022,Base Period,2297,2297
+CW96958,title_match,Chief Technology Officer (OCTO),it_goods,998565.0,Doc590103,TO0-OCTO-IT Service Management (ITSM) and Strategic Program Governance Services,False,Open,12/22/2021,1/19/2022,1/19/2022,Base Period,28,28
+CW96963,cited_in_award_doc,Chief Technology Officer (OCTO),other,288890.0,Doc592889,Application Security Platform,False,Set Aside,1/13/2022,1/28/2022,1/28/2022,Base Period,15,15
+CW97073,title_match,Chief Technology Officer (OCTO),other,674048.0,Doc586096,VMWare Maintenance and Support,False,Set Aside,12/15/2021,1/25/2022,2/14/2022,Base Period,41,61
+CW97116,cited_in_award_doc,Behavioral Health (DBH),software_services,988045.84,Doc590736,FY21 Integrated Information Technology (IT) & Management Consulting Services,False,Set Aside,12/17/2021,2/17/2022,2/22/2022,Base Period,62,67
+CW97239,title_match,Chief Technology Officer (OCTO),software_services,12849009.7,Doc597249,Cisco NASPO Enterprise Licensing Support,False,Open,1/27/2022,1/28/2022,1/28/2022,Base Period,1,1
+CW97904,title_match,Chief Technology Officer (OCTO),telecom,2788317.73,Doc238231,CISCO Equipment,False,Open,12/31/2015,2/22/2022,2/22/2022,Base Period,2245,2245
+CW98304,title_match,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),other,524160.0,Doc603177,Inspector Temporary Services Positions,False,Set Aside,3/4/2022,3/30/2022,3/31/2022,Base Period,26,27
+CW98311,title_match,Licensing & Consumer Protection (DLCP),other,335393.04,Doc601843,DCRA Fast Tracking Temporary Services,False,Set Aside,3/3/2022,3/14/2022,3/16/2022,Base Period,11,13
+CW98327,title_match,"Insurance, Securities and Banking (DISB)",it_goods,133905.6,Doc604809,FY22 Dell Laptops & Warranty,False,Open,3/10/2022,3/29/2022,3/29/2022,Base Period,19,19
+CW98387,title_match,Metropolitan Police Department (MPD),it_goods,131456.58,Doc395513,FY2018 - Dell Computer and Equipment - (DCSS Only),False,Set Aside,8/20/2018,3/29/2022,3/29/2022,Base Period,1317,1317
+CW98426,title_match,Employment Services (DOES),other,232592.88,Doc600775,FY22 - Enterprise Agreement Public Sector Subscription - GCP - OIT,False,Set Aside,3/4/2022,3/18/2022,3/23/2022,Base Period,14,19
+CW98575,title_match,Commission on Arts and Humanities (CAH),other,1008000.0,Doc602272,CAH Temporary Staffing Services,False,Open,3/16/2022,4/7/2022,4/7/2022,Base Period,22,22
+CW98981,cited_in_award_doc,Campaign Finance (OCF),it_adjacent,339680.0,Doc601989,Strategic Communications Plan-DCSS DC SUPPLY SCHEDULE ONLY Marking Media and Public Information,False,Set Aside,3/11/2022,4/21/2022,4/21/2022,Base Period,41,41
+CW99034,cited_in_award_doc,Licensing & Consumer Protection (DLCP),other,310717.38,Doc607626,DCRA - Land Management Use Platform,False,Open,4/8/2022,4/14/2022,4/19/2022,Base Period,6,11
+CW99171,title_match,Behavioral Health (DBH),other,34040.0,RM-17-RFQ-001-BY4-JM,Web-Based Learning Management System,False,Open,8/8/2016,4/20/2022,5/2/2022,Base Period,2081,2093
+CW99604,cited_in_award_doc,Employment Services (DOES),other,1069014.0,Doc610398,FY22_UI Fraud Detection Software,False,Set Aside,5/6/2022,5/24/2022,6/1/2022,Base Period,18,26
+CW99686,title_match,Licensing & Consumer Protection (DLCP),it_goods,210203.56,Doc610906,DCRA - Laptops and Equipment,False,Set Aside,5/10/2022,5/19/2022,5/19/2022,Base Period,9,9
+CW99768,cited_in_award_doc,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),other,137820.0,Doc608617,Code Enforcement Advisor,False,Open,5/11/2022,5/25/2022,5/25/2022,Base Period,14,14
+CW99871,title_match,"Insurance, Securities and Banking (DISB)",software_services,413000.0,Doc613372,Brandlive Virtual Event Management Application,False,Open,6/6/2022,7/13/2022,7/13/2022,Base Period,37,37
+DCRL-2024-B-0076,title_match,Child and Family Services Agency (CFSA),it_goods,218764.92,Doc729329,FY24 CFSA Lenovo Think Book Laptop Refresh,False,Set Aside,8/2/2024,8/19/2024,8/19/2024,Base,17,17
+DCRL-2024-K-0075,title_match,Child and Family Services Agency (CFSA),it_adjacent,175340.0,Doc736075,Artificial Intelligence Policy Support - DCSS Vendors Only,False,Set Aside,9/13/2024,10/22/2024,10/22/2024,Base,39,39
+DCRL-2024-T-0063,title_match,D.C. Child and Family Services Agency (CFSA),other,130136.9,Doc670747,CFSA - FY23 QuickBase Professional Service Sprint Delivery - DCSS Vendors Only,False,Set Aside,8/17/2023,6/21/2024,6/21/2024,Base Year,309,309
+DCRL-2025-R-0025,title_match,CFSA,other,467830.0,Doc811736,Revenue Optimization Project FY26,False,Open,3/11/2026,7/1/2026,7/1/2026,Base,112,112
+F23S51098MSS-1,title_match,District of Columbia Public Charter School Board (DPCSB),it_adjacent,276800.0,PCSB-2022-02,"Individuals and organizations that are experienced in creating conceptual, logical, physical, and dimensional data models for the revised accountability framework project.",False,Open,8/15/2022,10/11/2022,10/1/2022,Base,57,47

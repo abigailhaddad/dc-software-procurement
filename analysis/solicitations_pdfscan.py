@@ -12,8 +12,22 @@ cls = list(csv.DictReader(open(ROOT / 'data/contract_classifications.csv')))
 det_by_num = {c['contractNumber']: c for c in det}
 tech = [r for r in cls if r['is_technology'] == 'True']
 
-TXT = ROOT / 'data/pdftext'
-have = set(p.name[:-7] for p in TXT.glob('*.txt.gz'))
+# Award text has accumulated in four caches, not one: the original pull, the
+# OCR pass over scanned awards, and the two the D&F reading added. Scanning only
+# the first missed award text for 199 technology contracts and undercounted the
+# high-precision traces -- the ones where an award document prints its own
+# solicitation number -- by a third.
+TXT_DIRS = [
+    ROOT / 'data/pdftext',
+    ROOT / 'data/pdftext_ocr',
+    ROOT / 'data/pdftext_df',
+    ROOT / 'data/pdftext_df_ocr',
+]
+CACHED = {}
+for _d in TXT_DIRS:
+    for _p in _d.glob('*.txt.gz'):
+        CACHED.setdefault(_p.name[:-7], _p)
+have = set(CACHED)
 
 sol_by_doc = {}
 for s in sols:
@@ -42,7 +56,7 @@ for r in tech:
     for d in (c.get('documents') or []) if c else []:
         dig = hashlib.sha1(d['id'].encode()).hexdigest()
         if dig in have:
-            texts.append(gzip.open(TXT / f'{dig}.txt.gz', 'rt', errors='replace').read())
+            texts.append(gzip.open(CACHED[dig], 'rt', errors='replace').read())
     if not texts:
         stats['no_award_text'] += 1
         rows_out.append(dict(contract=num, status='no_award_text', doc_ids='', dc_nums='', sched='', doc_in_pull='', pull_title=''))

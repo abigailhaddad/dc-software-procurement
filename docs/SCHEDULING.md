@@ -62,9 +62,13 @@ named labor category on a rate card. If the portal drops one, that claim reports
 distinctly from a zero on purpose: a contract leaving the portal is a different
 event from a number moving, and worth a look.
 
-**Roughly fifteen checks verify the README's own prose.** Once the data moves,
-those read as `True -> False` in the report. That is correct and it means the
-prose is stale, not that the check is broken.
+**One check verifies the whole README.** README.md is generated: `make readme`
+renders it from `README.md.in`, computing every figure it states, and the check
+is that re-rendering reproduces the committed file byte for byte. Once the data
+moves it reads as `True -> False` in the report, which means the README is
+stale, not that the check is broken. Re-rendering restates published figures,
+so it is a decision someone makes after reading the drift report -- which is why
+`make readme` is not in the weekly chain.
 
 **Editing `classifier_config.yaml` invalidates the entire classification cache.**
 The cache key is (model, config fingerprint, sample count, record fields), so a
