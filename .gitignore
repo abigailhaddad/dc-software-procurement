@@ -2,6 +2,12 @@
 .env
 
 # Pulled data and caches. Regenerate with: make pull
+#
+# The rule is what it costs to rebuild, not what kind of file it is. Anything
+# recoverable by re-downloading is ignored; anything that cost model calls is
+# tracked, so a fresh checkout does not have to pay for it again. That is why
+# data/pdftext/ is here and data/ratecache/, data/pdftext_ocr/ and
+# data/classifications.json are tracked.
 data/raw/
 data/pdftext/
 data/pdf/

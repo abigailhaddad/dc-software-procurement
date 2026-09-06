@@ -312,8 +312,13 @@ def run_checks() -> list[Result]:
     check("CW95481 if summed wrong $B", round(star.check_total.sum() / 1e9, 1), 17.3, 0.2)
     # The portal is live: counts move a little between pulls, so these carry a
     # tolerance rather than pretending to be exact.
+    #
+    # 478,716 is what the briefing, the site and the README actually say. The
+    # literal here was 478,700, and the tolerance of 200 hid the difference --
+    # so this check passed against a number nothing published. The tolerance is
+    # for portal movement, not for the baseline being approximate.
     check("payments with no contract number",
-          int(payments.contract_number.isna().sum()), 478700, 200)
+          int(payments.contract_number.isna().sum()), 478716, 200)
 
     section("agile language")
     build_types = {"custom_software_build", "cots_implementation",

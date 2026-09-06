@@ -1,5 +1,9 @@
 # Solicitations data: profile, joins, and what it can defensibly say
 
+> Written by hand on the 2026-08-24 snapshot. No script regenerates it, so
+> `make drift` does not check it and the counts below will fall behind the
+> portal. Re-derive before quoting any figure from it.
+
 Source: `data/raw/solicitations.json`, 12,273 rows, pulled 2026-08-24 (manifest).
 Universe: 35 currently-open solicitations plus the archive for FY2016–FY2026
 (12,238 rows). The portal archive holds roughly 17,800 solicitations in total
