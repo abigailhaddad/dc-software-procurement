@@ -96,10 +96,6 @@ which is common here, and no way to say "half build, half hosting". Collapsing
 it -- fixed scope, capacity, neither -- would likely raise both the ceiling and
 the classifier.
 
-**The notebook.** `analysis/how_dc_buys_software.ipynb` still contains the old
-delivery-structure prose. The rewrite covered README and the site. The notebook
-needs the same treatment and then re-execution.
-
 ## Traps that have already cost time
 
 - `is_technology` comes back from pandas as a numpy bool. `x is True` is False.

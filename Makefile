@@ -2,7 +2,7 @@
 # what is already on disk, and classification is cached by content, so a repeat
 # run costs nothing.
 
-.PHONY: help install pull classify verify test report notebook site rates ocr h1b \
+.PHONY: help install pull classify verify test report site rates ocr h1b \
         h1b-dol calc solicitations dcas pull-payments drift dashboard \
         modifications all
 
@@ -15,7 +15,6 @@ help:
 	@echo "make drift      recompute every published figure and report what moved"
 	@echo "make test       check document handling, then score the classifiers"
 	@echo "make report     print the headline figures"
-	@echo "make notebook   execute the briefing notebook end to end"
 	@echo "make site       rebuild the drill-down data behind site/index.html"
 	@echo "make dashboard  rebuild the data behind site/dashboard.html"
 	@echo "make rates      re-extract hourly rate cards from the cached award texts"
@@ -62,9 +61,6 @@ test:
 
 report:
 	uv run dcprocure report
-
-notebook:
-	cd analysis && uv run jupyter nbconvert --to notebook --execute --inplace how_dc_buys_software.ipynb
 
 site:
 	uv run python analysis/build_site_data.py

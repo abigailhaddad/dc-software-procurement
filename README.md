@@ -10,10 +10,9 @@ Pulls the DC Contracts and Procurement Transparency Portal, sorts every contract
 by what it actually buys, and reads how the work is structured out of the award
 PDFs.
 
-The briefing built from this is `analysis/how_dc_buys_software.ipynb`. Every
-figure in it comes from a cell you can rerun. `site/index.html` is the same
-briefing as one static page: open it in a browser, and the contracts behind
-each figure are a click away.
+The briefing is `site/index.html`: open it in a browser, and the contracts
+behind each figure are a click away. Every number on it is recomputed by
+`analysis/verify_claims.py`, which fails if one has drifted.
 
 ## Run it
 
@@ -42,13 +41,11 @@ purchase-order table. 51 award documents publish hourly rate cards — 2,471
 not-to-exceed rates, $24.01 to $1,015 — and job ads recruiting for the same
 tier names show what the workers are offered against them.
 
-How the work is organised is usually not written down. Eighty award documents
-were read by hand, blind, with the passage each judgement rested on recorded:
-25 of the 80 describe a delivery process. The rest were labelled off the price
-schedule, off what the work plainly is, off a deliverables table, or off
-nothing at all. Two readers given the same 30 documents agreed 83% of the time,
-and the classifier agrees with those 80 hand labels 57% of the time, so the
-six-way breakdown it produces is not published.
+How the work is organised is usually not written down. Of 80 award documents
+read by hand, 25 describe a delivery process; the rest have to be read off the
+price schedule, off what the work plainly is, or off nothing at all. Two readers
+given the same 30 documents agree 83% of the time, and the classifier agrees
+with the hand labels 57% of the time, so no six-way breakdown is published.
 
 What contracts do after they are awarded is better evidenced. 1,609 contracts
 carry 8,547 modifications, and counting those mostly measures how long a
