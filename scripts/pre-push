@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Refuse to push when the published figures do not match the data.
+#
+# Installed by scripts/install_hooks.sh. This exists because a commit went out
+# whose message described updating an asserted figure, while the edit that was
+# meant to update it had failed: the prose said 22 and the tripwire still said
+# 27. make verify caught it, but only after the push.
+#
+# Skip deliberately with: git push --no-verify
+
+set -uo pipefail
+cd "$(git rev-parse --show-toplevel)" || exit 1
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+
+printf 'pre-push: recomputing published figures... '
+if out=$(make verify 2>&1); then
+  echo "ok"
+  exit 0
+fi
+echo "FAILED"
+echo "$out" | grep -E "^  FAIL" | head -20
+echo
+echo "A published figure does not match the data it is computed from."
+echo "Fix it, or push with --no-verify if the mismatch is deliberate."
+exit 1
