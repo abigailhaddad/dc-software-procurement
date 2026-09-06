@@ -1,0 +1,8 @@
+{
+ "documents_ocred": 72,
+ "pages": 205,
+ "prompt_tokens": 601642,
+ "completion_tokens": 67634,
+ "cost_usd": 0.7509189,
+ "calls": 205
+}

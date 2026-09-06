@@ -946,14 +946,19 @@ def run_checks() -> list[Result]:
 
     limiting = comp[_flag("limits_competition") | _flag("exempt_from_competition")
                     | _flag("single_source_language")]
-    check("technology contracts with competition-limiting paperwork", len(limiting), 51)
-    check("their ceilings $M", round(limiting.ceiling.sum() / 1e6, 1), 45.5, 0.5)
+    check("technology contracts with competition-limiting paperwork", len(limiting), 76)
+    check("their ceilings $M", round(limiting.ceiling.sum() / 1e6, 1), 63.5, 0.5)
     check("of those, the portal calls open",
-          int((limiting.market_type == "Open").sum()), 31)
+          int((limiting.market_type == "Open").sum()), 45)
     check("contracts citing the software lock-in provision",
-          int(_flag("software_lock_in_cite").sum()), 6)
+          int(_flag("software_lock_in_cite").sum()), 9)
     check("D&F documents read", int((comp.coverage == "read").sum()), 294)
-    check("contracts returning only scans", int((comp.coverage == "scans_only").sum()), 63)
+    # Every sampled scan was recovered by OCR, so "still unreadable" is now zero
+    # and the informative number is how many contracts the transcriptions carry.
+    check("contracts recovered by OCR", int((comp.coverage == "ocr_readable").sum()), 63)
+    check("contracts still unreadable", int((comp.coverage == "scans_only").sum()), 0)
+    check("findings that rest on a transcription",
+          int(comp["finding_rests_on_ocr"].fillna(False).astype(bool).sum()), 25)
     check("contracts not yet sampled", int((comp.coverage == "not_sampled").sum()), 652)
 
     section("the site's own figures")

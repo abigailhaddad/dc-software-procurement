@@ -99,19 +99,27 @@ award was not competed.
 The justifications exist as documents. A Determination and Findings is what a
 contracting officer signs to limit competition, exempt a purchase from it, or
 buy from a single available source, and 21,722 of them are attached to
-contracts. Of the technology contracts whose D&Fs have been read, 51 carrying
-$45.5M of ceiling have one. Thirty-one of those 51 are labelled Open.
+contracts. Of the technology contracts whose D&Fs have been read, 76 carrying
+$63.5M of ceiling have one. Forty-five of those 76 are labelled Open.
 
-Six cite PPRA 2-354.13(8), maintenance of existing software where the vendor
+Nine cite PPRA 2-354.13(8), maintenance of existing software where the vendor
 owns the code: "The EGMS application is built on the proprietary software
 created and owned by MTW Solutions, LLC; therefore, no other Contractor has
 access to the rights and source codes."
 
-51 is a floor rather than a rate. 1,009 technology contracts carry a D&F; 294
-have had one read, 63 returned only scans, and 652 have not been sampled. The
-unreadable documents are not spread evenly: 56% of the ones named for sole
-source have no text layer, against 7% of the cooperative-purchase ones, so what
-is missing sits where the finding is.
+A third of that rests on machine transcription. 1,009 technology contracts carry
+a D&F; 294 have had one read from its own text layer and 63 more were scans,
+recovered by running OCR over them. 25 of the 76 findings disappear without
+those transcriptions, so the rows carrying them are marked in
+`data/competition/contract_competition.csv` and can be counted separately.
+
+Reading the scans mattered because they were not randomly distributed. Among the
+documents named for sole source, 56% had no text layer, against 7% of the
+cooperative purchases -- the unreadable ones were disproportionately the ones
+that would carry a finding, so leaving them out understated the answer in the
+direction that flatters the portal.
+
+76 is still a floor. 652 of the 1,009 have not been sampled at all.
 
 ## Why the commodity codes are not used
 

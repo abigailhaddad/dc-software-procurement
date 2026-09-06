@@ -61,9 +61,24 @@ directory from ``data/pdftext/``. That matters: ``analysis/solicitations_pdfscan
 reads *every* cached text for a contract's documents, so writing D&F text into
 the shared cache would silently change a published result.
 
-No model calls. Everything here is regex over the text layer; scanned D&Fs are
-counted and left unread rather than OCRed, because OCR costs money per page and
-the scan rate is high.
+Documents that fail the text-layer test are OCRed. ``analysis/competition_ocr.py``
+priced the trial first -- 75 documents, $0.77, every one of them returning
+usable text and 99% of those returning a subtype from the header regex above --
+and it is folded in here because the unreadability is concentrated exactly
+where the finding is: over half the D&Fs whose filename names a sole source are
+image-only scans, against a handful of the cooperative-purchase ones. Leaving
+them unread does not make the answer conservative, it makes it wrong in one
+direction. OCR text is cached in ``data/pdftext_df_ocr/``, a third directory, so
+no page is paid for twice and the native-text cache stays exactly what a text
+layer said.
+
+An OCRed document is NOT relabelled ``readable``. It carries ``ocr_readable``
+in ``text_status`` and its contract carries ``ocr_readable`` in ``coverage``,
+because a finding resting on a machine transcription of a scan should be
+visible as one and the two populations have to stay separable. The parsing
+after that point is identical -- the same regexes, the same length and
+readable-share guard -- so an OCR result that comes back as garbage is recorded
+as still unreadable rather than as a document with no justification in it.
 
 The District's own vocabulary -- the subtype tables, the PPRA sections and what
 they mean, the spellings the portal uses for a sole source award -- is in
@@ -72,8 +87,9 @@ parsing mechanics: the length caps, the field labels that stop a header regex,
 the en-dash forms a citation number is printed in.
 
     uv run python analysis/competition.py --enumerate       # counts, no network
-    uv run python analysis/competition.py --limit 400       # download and read
-    uv run python analysis/competition.py --report          # re-read the cache
+    uv run python analysis/competition.py --limit 400       # download, read, OCR
+    uv run python analysis/competition.py --report          # re-read both caches
+    uv run python analysis/competition.py --no-ocr          # text layers only
     uv run python analysis/competition.py --task-orders 6   # peek inside task orders
 """
 
@@ -116,6 +132,7 @@ log = logging.getLogger("competition")
 DETAILS = ROOT / "data" / "raw" / "contract_details.json"
 CLASSES = ROOT / "data" / "contract_classifications.csv"
 TEXT_DIR = ROOT / "data" / "pdftext_df"
+OCR_TEXT_DIR = ROOT / "data" / "pdftext_df_ocr"
 OUT_DIR = ROOT / "data" / "competition"
 DOC_CSV = OUT_DIR / "df_documents.csv"
 CONTRACT_CSV = OUT_DIR / "contract_competition.csv"
@@ -288,23 +305,70 @@ _NOT_ONLY_SOURCE = re.compile(
     re.I,
 )
 
+#: THE SECOND TRAP, and it is the same words meaning something else: "sole" and
+#: "exclusive" are the adjectives of ordinary contract boilerplate about
+#: ownership and liability -- "sole and exclusive rights, title and interest",
+#: "sole property", "sole discretion", "sole risk", "sole cost and expense".
+#: None of them says anything about how many vendors exist. CW52081 was flagged
+#: on "Contractor shall convey, assign, and transfer to the District the sole
+#: and exclusive rights, title and interest in Custom Products": an
+#: intellectual-property assignment, the District taking ownership of what it
+#: paid to have built, which is close to the opposite of a claim that only this
+#: vendor can supply the work.
+#:
+#: Written as a shape rather than a phrase list, because the same clause is
+#: printed a dozen ways: an assignment verb reaching an exclusivity or
+#: proprietary word, "sole and exclusive" before any noun, and "sole" before an
+#: ownership or liability noun.
+_OWNERSHIP_BOILERPLATE = re.compile(
+    r"sole\s+and\s+exclusive"
+    r"|exclusive\s+rights?,?\s+title"
+    r"|(?:convey|assign|transfer|vest|grant|reserve)\w*[^.]{0,60}?"
+    r"\b(?:exclusive|proprietary)\b"
+    r"|sole\s+(?:propert|ownership|discretion|judg|risk|cost|expense|"
+    r"responsibilit|liabilit|obligation|remed|option|benefit|negligence|fault)",
+    re.I,
+)
+
+#: How far either side of a flagged phrase the boilerplate guard looks. It is
+#: deliberately short and the match has to OVERLAP the flagged phrase, unlike
+#: :data:`_NOT_ONLY_SOURCE`, which reads a plain context window. A document can
+#: carry an assignment clause and a genuine single-source finding one sentence
+#: apart, and a context-window test would throw the finding away with the
+#: boilerplate.
+_BOILERPLATE_LEAD = 70
+_BOILERPLATE_TRAIL = 40
+
+
+def _is_ownership_boilerplate(text: str, match: re.Match) -> bool:
+    """Whether a flagged phrase is part of an ownership or liability clause."""
+    start = max(0, match.start() - _BOILERPLATE_LEAD)
+    window = text[start : match.end() + _BOILERPLATE_TRAIL]
+    for found in _OWNERSHIP_BOILERPLATE.finditer(window):
+        if start + found.start() < match.end() and start + found.end() > match.start():
+            return True
+    return False
+
 
 def single_source_quote(text: str, window: int = 260) -> str:
     """The sentence asserting one available source, if the document has one.
 
-    Three things are skipped: the small-business checkbox that
-    :data:`_NOT_ONLY_SOURCE` describes; a window whose own characters are
-    mojibake, which some of these forms produce in the middle of an otherwise
-    readable document; and a match inside the first ``header_zone`` characters,
-    which on a sole-source D&F is the title -- "DETERMINATION AND FINDINGS FOR
-    A SOLE SOURCE PROCUREMENT" is not a finding, it is a heading. The heading
-    is used only if the document says it nowhere else.
+    Four things are skipped: the small-business checkbox that
+    :data:`_NOT_ONLY_SOURCE` describes; the ownership and liability boilerplate
+    that :data:`_OWNERSHIP_BOILERPLATE` describes; a window whose own characters
+    are mojibake, which some of these forms produce in the middle of an
+    otherwise readable document; and a match inside the first ``header_zone``
+    characters, which on a sole-source D&F is the title -- "DETERMINATION AND
+    FINDINGS FOR A SOLE SOURCE PROCUREMENT" is not a finding, it is a heading.
+    The heading is used only if the document says it nowhere else.
     """
     header_zone = 400
     fallback = ""
     for match in _ONLY_SOURCE.finditer(text):
         context = text[max(0, match.start() - 80) : match.end() + 80]
         if _NOT_ONLY_SOURCE.search(context):
+            continue
+        if _is_ownership_boilerplate(text, match):
             continue
         start = max(0, match.start() - window // 2)
         quote = re.sub(r"\s+", " ", text[start : match.end() + window]).strip()
@@ -494,10 +558,17 @@ def select_for_download(docs: list[dict], limit: int) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 STATUS_READABLE = "readable"
+#: The document had no usable text layer and was recovered by OCR. A separate
+#: value from :data:`STATUS_READABLE` on purpose -- see the module docstring.
+STATUS_OCR_READABLE = "ocr_readable"
 STATUS_SCAN = "scan_no_text_layer"
 STATUS_MOJIBAKE = "mojibake"
 STATUS_ERROR = "download_error"
 STATUS_UNREAD = "not_downloaded"
+
+#: The statuses whose text is parsed for findings. Everything else is unknown,
+#: not empty.
+PARSED_STATUSES = (STATUS_READABLE, STATUS_OCR_READABLE)
 
 #: D&Fs are short -- the readable ones in this corpus run 1,600 to 6,300
 #: characters -- so the award-document floor of 500 is too high. A one-page
@@ -542,37 +613,146 @@ def classify_status(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# OCR, for the documents that fail the text-layer test
+# ---------------------------------------------------------------------------
+
+#: D&Fs are one to three pages. The cap is for the occasional bundled packet
+#: uploaded under the same category, because OCR is priced per page. The trial
+#: sent 205 pages for 72 documents and nothing hit the cap.
+MAX_OCR_PAGES = 8
+
+
+def pages_needing_ocr(doc) -> list[int]:
+    """Pages with ink and no *usable* text, mojibake included.
+
+    THE TRAP: ``ocr_awards._pages_needing_ocr`` answers "ink but no text" and
+    skips any page with 100+ characters that clears its ``is_gibberish`` check.
+    A page whose font carries no character map returns thousands of printable
+    Latin-1 characters, which ``is_gibberish`` passes, so every mojibake
+    document would take the native-text fallback and come back as the same
+    garbage it went in as. This adds ``looks_unreadable`` -- the same 0.85
+    readable-share test :func:`classify_status` uses -- on top of that selector.
+    """
+    import ocr_awards
+
+    targets = set(ocr_awards._pages_needing_ocr(doc))
+    for i, page in enumerate(doc):
+        if i in targets:
+            continue
+        if looks_unreadable(page.get_text()) and (page.get_image_info() or page.get_drawings()):
+            targets.add(i)
+    return sorted(targets)
+
+
+def ocr_df_bytes(pdf_bytes: bytes, label: str) -> tuple[str, int, int]:
+    """OCR one D&F. Returns (text, pages OCRed, pages in the document).
+
+    Mirrors ``ocr_awards.ocr_pdf_bytes`` -- same per-page call, same discard of
+    a page that comes back as gibberish -- with the mojibake-aware page selector
+    above and a lower page cap. There is no native-text fallback: every document
+    reaching here already failed :func:`classify_status` on its extracted text
+    layer, so handing that same layer back would only relabel a scan as
+    readable.
+    """
+    import fitz
+    import ocr_awards
+
+    with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
+        total = doc.page_count
+        targets = pages_needing_ocr(doc)
+        if len(targets) > MAX_OCR_PAGES:
+            log.info("  %s: %d pages need OCR, capping at %d", label, len(targets), MAX_OCR_PAGES)
+            targets = targets[:MAX_OCR_PAGES]
+        chunks = []
+        for i in targets:
+            try:
+                png = doc[i].get_pixmap(dpi=ocr_awards.OCR_DPI).tobytes("png")
+                page_text = ocr_awards._ocr_page_image(png)
+                if page_text:
+                    chunks.append(page_text)
+            except Exception as exc:  # noqa: BLE001 - one bad page must not end the run
+                log.warning("  OCR failed on page %d of %s: %s", i + 1, label, exc)
+    return "\n".join(chunks), len(targets), total
+
+
+def _ocr_path(document_id: str) -> Path:
+    return OCR_TEXT_DIR / f"{hashlib.sha1(document_id.encode()).hexdigest()}.txt.gz"
+
+
+def cached_ocr_text(document_id: str) -> str | None:
+    """The cached OCR of one document, or None.
+
+    An empty cache entry is not an answer -- same rule as ``ocr_awards.run_ocr``
+    -- so a later fix to the page selector can reach a document that previously
+    produced nothing rather than being locked out by its own failure.
+    """
+    path = _ocr_path(document_id)
+    if not path.exists():
+        return None
+    text = gzip.decompress(path.read_bytes()).decode("utf-8")
+    return text if text.strip() else None
+
+
+def fetch_ocr_text(client: DCProcurementClient, document_id: str, label: str) -> str:
+    """Download one D&F and OCR it, caching the result. "" on any failure."""
+    OCR_TEXT_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        pdf_bytes = client.attachment(document_id)
+    except Exception as exc:  # noqa: BLE001 - one bad download must not end the run
+        log.warning("%s: download for OCR failed: %s", label, exc)
+        return ""
+    try:
+        text, pages, total = ocr_df_bytes(pdf_bytes, label)
+    except Exception as exc:  # noqa: BLE001
+        log.warning("%s: OCR failed: %s", label, exc)
+        return ""
+    _ocr_path(document_id).write_bytes(gzip.compress(text.encode("utf-8"), 6))
+    log.info("%s: OCRed %d/%d pages, %d chars", label, pages, total, len(text))
+    return text
+
+
+# ---------------------------------------------------------------------------
 # Per-document and per-contract records
 # ---------------------------------------------------------------------------
 
 DOC_COLUMNS = [
     "contract_number", "option_period", "file_name", "tier", "text_status",
-    "text_chars", "readable_share", "subtype_text", "header_phrase",
-    "subtype_filename", "code_citations", "dcmr_citations",
+    "text_layer_status", "text_chars", "readable_share", "subtype_text",
+    "header_phrase", "subtype_filename", "code_citations", "dcmr_citations",
     "software_lock_in_cite", "stated_amount", "amount_basis",
     "single_source_language", "exempt_from_competition", "single_source_quote",
 ]
 
 CONTRACT_COLUMNS = [
     "contract_number", "title", "vendor", "agency", "ceiling", "work_type",
-    "market_type", "df_attachments", "df_unique", "df_read", "df_scanned",
-    "subtypes", "limits_competition", "avoids_dc_market",
+    "market_type", "df_attachments", "df_unique", "df_read", "df_ocr_read",
+    "df_scanned", "subtypes", "limits_competition", "avoids_dc_market",
     "single_source_language", "exempt_from_competition", "software_lock_in_cite",
-    "coverage",
+    "finding_rests_on_ocr", "coverage",
 ]
 
 
-def read_documents(docs: list[dict], download: bool, limit: int) -> list[dict]:
-    """Fetch (or re-read from cache) each selected D&F and pull it apart."""
+def read_documents(docs: list[dict], download: bool, limit: int,
+                   ocr: bool = True, ocr_limit: int | None = None) -> list[dict]:
+    """Fetch (or re-read from cache) each selected D&F and pull it apart.
+
+    A document whose text layer fails :func:`classify_status` is OCRed, from
+    ``data/pdftext_df_ocr/`` when it is already there and over the network when
+    it is not. ``text_layer_status`` keeps what the text layer alone said, so
+    the OCR rows can be found and the pre-OCR figures can still be reproduced
+    off the same file.
+    """
     rows: list[dict] = []
     client = DCProcurementClient() if download else None
     fetched = 0
+    ocred = 0
     try:
         for doc in docs:
             text = cached_text(doc["document_id"])
             if text is None:
                 if client is None or fetched >= limit:
-                    rows.append(dict(doc, text_status=STATUS_UNREAD, text_chars=0,
+                    rows.append(dict(doc, text_status=STATUS_UNREAD,
+                                     text_layer_status=STATUS_UNREAD, text_chars=0,
                                      readable_share="", subtype_text="", header_phrase="",
                                      subtype_filename=subtype_from_filename(doc["file_name"]),
                                      code_citations="", dcmr_citations="",
@@ -585,13 +765,31 @@ def read_documents(docs: list[dict], download: bool, limit: int) -> list[dict]:
                 fetched += 1
                 if fetched % 25 == 0:
                     log.info("downloaded %d/%d", fetched, limit)
-            status = classify_status(text)
+            layer_status = classify_status(text)
+            status = layer_status
+            if ocr and layer_status in (STATUS_SCAN, STATUS_MOJIBAKE):
+                recovered = cached_ocr_text(doc["document_id"])
+                if recovered is None and client is not None and (
+                        ocr_limit is None or ocred < ocr_limit):
+                    recovered = fetch_ocr_text(
+                        client, doc["document_id"],
+                        f"{doc['contract_number']} {doc['file_name'][:40]}") or None
+                    ocred += 1
+                # Same guard a text layer faces. OCR that comes back short or
+                # garbled stays unreadable rather than becoming a document
+                # with no justification in it.
+                if recovered and classify_status(recovered) == STATUS_READABLE:
+                    text = recovered
+                    status = STATUS_OCR_READABLE
             row = dict(doc)
             row["text_status"] = status
+            row["text_layer_status"] = layer_status
+            # These two describe the text that was actually parsed, which on an
+            # ocr_readable row is the transcription, not the broken text layer.
             row["text_chars"] = len(text)
             row["readable_share"] = round(readable_share(text), 3) if text.strip() else ""
             row["subtype_filename"] = subtype_from_filename(doc["file_name"])
-            if status == STATUS_READABLE:
+            if status in PARSED_STATUSES:
                 subtype, phrase = subtype_from_text(text)
                 code, dcmr = citations(text)
                 amount, basis = stated_amount(text)
@@ -628,11 +826,21 @@ def contract_records(doc_rows: list[dict], all_docs: list[dict],
     """One competition record per technology contract that has any D&F.
 
     ``coverage`` is the honest field. ``read`` means at least one of the
-    contract's D&Fs was downloaded and had a text layer. ``scans_only`` means
-    documents were downloaded and none could be read -- the contract may well
-    carry a sole-source justification and this run cannot say. ``not_sampled``
-    means the download budget never reached it. Only ``read`` rows support a
+    contract's D&Fs was downloaded and had a usable text layer.
+    ``ocr_readable`` means none of them did and at least one was recovered by
+    OCR -- a real reading, but of a machine transcription of a scan, so it is
+    named separately and can be excluded from any figure that should not rest
+    on one. ``scans_only`` means documents were downloaded and neither the text
+    layer nor OCR could read them; the contract may well carry a sole-source
+    justification and this run cannot say. ``not_sampled`` means the download
+    budget never reached it. Only ``read`` and ``ocr_readable`` rows support a
     negative finding.
+
+    ``finding_rests_on_ocr`` is the companion field: a contract can have one
+    D&F with a text layer and another that had to be OCRed, in which case
+    coverage says ``read`` and the flag can still have come off the
+    transcription. It is True when dropping the OCR rows would drop the
+    finding.
     """
     market: dict[str, str] = {}
     for record in details:
@@ -650,14 +858,25 @@ def contract_records(doc_rows: list[dict], all_docs: list[dict],
         meta = contracts.get(number, {})
         rows = by_contract.get(number, [])
         read = [r for r in rows if r["text_status"] == STATUS_READABLE]
+        ocr_read = [r for r in rows if r["text_status"] == STATUS_OCR_READABLE]
+        parsed = read + ocr_read
         scanned = [r for r in rows if r["text_status"] in (STATUS_SCAN, STATUS_MOJIBAKE)]
-        subtypes = sorted({r["subtype_text"] for r in read if r["subtype_text"]})
+        subtypes = sorted({r["subtype_text"] for r in parsed if r["subtype_text"]})
+        native_subtypes = {r["subtype_text"] for r in read if r["subtype_text"]}
         if read:
             coverage = "read"
+        elif ocr_read:
+            coverage = "ocr_readable"
         elif scanned:
             coverage = "scans_only"
         else:
             coverage = "not_sampled"
+
+        def _flagged(group: list[dict], names: set[str]) -> bool:
+            return (bool(names & LIMITS_COMPETITION)
+                    or any(r["single_source_language"] for r in group)
+                    or any(r["exempt_from_competition"] for r in group))
+
         out.append({
             "contract_number": number,
             "title": meta.get("title", ""),
@@ -669,13 +888,16 @@ def contract_records(doc_rows: list[dict], all_docs: list[dict],
             "df_attachments": attachment_counts[number],
             "df_unique": unique_counts[number],
             "df_read": len(read),
+            "df_ocr_read": len(ocr_read),
             "df_scanned": len(scanned),
             "subtypes": ";".join(subtypes),
             "limits_competition": bool(set(subtypes) & LIMITS_COMPETITION),
             "avoids_dc_market": bool(set(subtypes) & AVOIDS_DC_MARKET),
-            "single_source_language": any(r["single_source_language"] for r in read),
-            "exempt_from_competition": any(r["exempt_from_competition"] for r in read),
-            "software_lock_in_cite": any(r["software_lock_in_cite"] for r in read),
+            "single_source_language": any(r["single_source_language"] for r in parsed),
+            "exempt_from_competition": any(r["exempt_from_competition"] for r in parsed),
+            "software_lock_in_cite": any(r["software_lock_in_cite"] for r in parsed),
+            "finding_rests_on_ocr": (_flagged(parsed, set(subtypes))
+                                     and not _flagged(read, native_subtypes)),
             "coverage": coverage,
         })
     return out
@@ -692,26 +914,40 @@ def _pct(part: int, whole: int) -> str:
 def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict],
            market_all: Counter, market_tech: Counter) -> None:
     read = [r for r in doc_rows if r["text_status"] == STATUS_READABLE]
+    ocr_read = [r for r in doc_rows if r["text_status"] == STATUS_OCR_READABLE]
+    parsed = read + ocr_read
     attempted = [r for r in doc_rows if r["text_status"] != STATUS_UNREAD]
     scans = [r for r in attempted if r["text_status"] == STATUS_SCAN]
     moji = [r for r in attempted if r["text_status"] == STATUS_MOJIBAKE]
+    # The scan-rate sections below read text_layer_status, not text_status: the
+    # point they make is about how many of these PDFs arrive as images, and
+    # OCRing them does not change that.
+    no_layer = [r for r in attempted
+                if r["text_layer_status"] in (STATUS_SCAN, STATUS_MOJIBAKE)]
 
     print("=== corpus ===")
     print(f"unique technology D&Fs: {len(all_docs)} on "
           f"{len({d['contract_number'] for d in all_docs})} contracts")
-    print(f"downloaded: {len(attempted)}  readable: {len(read)} ({_pct(len(read), len(attempted))})"
-          f"  scans: {len(scans)} ({_pct(len(scans), len(attempted))})"
-          f"  mojibake: {len(moji)}")
+    print(f"downloaded: {len(attempted)}  readable text layer: {len(read)} "
+          f"({_pct(len(read), len(attempted))})"
+          f"  recovered by OCR: {len(ocr_read)} ({_pct(len(ocr_read), len(attempted))})"
+          f"  still unreadable: {len(scans) + len(moji)} "
+          f"(scans {len(scans)}, mojibake {len(moji)})")
+    print(f"documents with no usable text layer at all: {len(no_layer)} "
+          f"({_pct(len(no_layer), len(attempted))}); OCR read "
+          f"{_pct(len(ocr_read), len(no_layer))} of them")
 
-    print("\n=== scan rate by filename tier (downloads only) ===")
+    print("\n=== no-text-layer rate by filename tier (downloads only) ===")
     for tier in (TIER_COMPETITION, TIER_UNINFORMATIVE, TIER_PRICE, TIER_RESPONSIBILITY):
         group = [r for r in attempted if r["tier"] == tier]
-        bad = [r for r in group if r["text_status"] in (STATUS_SCAN, STATUS_MOJIBAKE)]
-        print(f"  {tier:18s} n={len(group):4d}  unreadable={len(bad):4d} ({_pct(len(bad), len(group))})")
+        bad = [r for r in group if r["text_layer_status"] in (STATUS_SCAN, STATUS_MOJIBAKE)]
+        print(f"  {tier:18s} n={len(group):4d}  no text layer={len(bad):4d} "
+              f"({_pct(len(bad), len(group))})")
 
-    print("\n=== scan rate by what the filename says, which is the point ===")
-    print("  The documents that cannot be read are not spread evenly. They are")
-    print("  concentrated on the subtype that carries the finding.")
+    print("\n=== no-text-layer rate by what the filename says, which is the point ===")
+    print("  The documents that arrive as images are not spread evenly. They are")
+    print("  concentrated on the subtype that carries the finding, which is why")
+    print("  they are OCRed rather than counted and left.")
     keywords = [
         ("sole source", r"sole\s*sourc"),
         ("exempt/competition", r"exempt|competit"),
@@ -722,34 +958,49 @@ def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict]
     ]
     for label, pattern in keywords:
         group = [r for r in attempted if re.search(pattern, r["file_name"], re.I)]
-        bad = [r for r in group if r["text_status"] in (STATUS_SCAN, STATUS_MOJIBAKE)]
-        print(f"  {label:28s} n={len(group):4d}  unreadable={len(bad):4d} "
-              f"({_pct(len(bad), len(group))})")
+        bad = [r for r in group if r["text_layer_status"] in (STATUS_SCAN, STATUS_MOJIBAKE)]
+        got = [r for r in bad if r["text_status"] == STATUS_OCR_READABLE]
+        print(f"  {label:28s} n={len(group):4d}  no text layer={len(bad):4d} "
+              f"({_pct(len(bad), len(group))})  of those, OCR read {len(got)}")
+
+    print("\n=== what OCR recovered ===")
+    print(f"  documents OCRed into usable text: {len(ocr_read)} of {len(no_layer)} "
+          f"with no usable text layer ({_pct(len(ocr_read), len(no_layer))})")
+    hdr = [r for r in ocr_read if r["subtype_text"]]
+    print(f"  of those, the header regex found a subtype: {len(hdr)} "
+          f"({_pct(len(hdr), len(ocr_read))})")
+    print("  subtypes recovered:",
+          dict(Counter(r["subtype_text"] or "(no header)" for r in ocr_read)))
+    print("  prior text-layer status of the recovered:",
+          dict(Counter(r["text_layer_status"] for r in ocr_read)))
 
     print("\n=== subtype, read from the document text ===")
-    counts = Counter(r["subtype_text"] or "(no header found)" for r in read)
+    print("  (native text layer and OCR together; the OCR column is the subset)")
+    counts = Counter(r["subtype_text"] or "(no header found)" for r in parsed)
+    ocr_counts = Counter(r["subtype_text"] or "(no header found)" for r in ocr_read)
     for name, n in counts.most_common():
         tag = ("limits competition" if name in LIMITS_COMPETITION else
                "avoids DC market" if name in AVOIDS_DC_MARKET else "")
-        print(f"  {n:5d}  {name:34s} {tag}")
+        print(f"  {n:5d}  (ocr {ocr_counts[name]:3d})  {name:34s} {tag}")
 
     print("\n=== the same documents, subtype guessed from the filename ===")
-    fcounts = Counter(r["subtype_filename"] or "(nothing in the name)" for r in read)
+    fcounts = Counter(r["subtype_filename"] or "(nothing in the name)" for r in parsed)
     for name, n in fcounts.most_common():
         print(f"  {n:5d}  {name}")
 
-    agree = sum(r["subtype_text"] == r["subtype_filename"] for r in read)
-    silent = sum(1 for r in read if not r["subtype_filename"] and r["subtype_text"])
-    wrong = sum(1 for r in read if r["subtype_filename"] and r["subtype_text"]
+    agree = sum(r["subtype_text"] == r["subtype_filename"] for r in parsed)
+    silent = sum(1 for r in parsed if not r["subtype_filename"] and r["subtype_text"])
+    wrong = sum(1 for r in parsed if r["subtype_filename"] and r["subtype_text"]
                 and r["subtype_filename"] != r["subtype_text"])
-    nohdr = sum(1 for r in read if not r["subtype_text"])
-    print(f"\ntext vs filename over {len(read)} readable documents: agree {agree}, "
+    nohdr = sum(1 for r in parsed if not r["subtype_text"])
+    print(f"\ntext vs filename over {len(parsed)} documents that could be read "
+          f"({len(read)} text layer, {len(ocr_read)} OCR): agree {agree}, "
           f"filename silent where the text names a subtype {silent}, "
           f"filename disagrees with the text {wrong}, text has no header {nohdr}")
     if wrong:
         print("  disagreements (filename -> text):")
         for name, n in Counter(
-            f"{r['subtype_filename']} -> {r['subtype_text']}" for r in read
+            f"{r['subtype_filename']} -> {r['subtype_text']}" for r in parsed
             if r["subtype_filename"] and r["subtype_text"]
             and r["subtype_filename"] != r["subtype_text"]
         ).most_common(12):
@@ -770,7 +1021,9 @@ def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict]
                          ("any of the three", either)):
         mk = Counter(c["market_type"] for c in group)
         total = sum(float(c["ceiling"] or 0) for c in group)
-        print(f"  {label}: {len(group)} contracts, ${total:,.0f} of ceiling")
+        on_ocr = sum(1 for c in group if c["finding_rests_on_ocr"])
+        print(f"  {label}: {len(group)} contracts, ${total:,.0f} of ceiling"
+              f"  ({on_ocr} resting on OCR of a scan)")
         for name, n in mk.most_common():
             # The spellings are in procurement_vocabulary.yaml, matched on
             # the whole field rather than as substrings. No group prints the
@@ -788,7 +1041,7 @@ def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict]
     print("\n=== the uninformative-filename stratum on its own ===")
     print("  Tier B is the closest thing here to an unbiased sample: 220 documents drawn")
     print("  one per contract from the 503 whose filename names no subtype at all.")
-    tier_b = [r for r in read if r["tier"] == TIER_UNINFORMATIVE]
+    tier_b = [r for r in parsed if r["tier"] == TIER_UNINFORMATIVE]
     b_counts = Counter(r["subtype_text"] or "(no header found)" for r in tier_b)
     for name, n in b_counts.most_common():
         tag = ("limits competition" if name in LIMITS_COMPETITION else
@@ -804,11 +1057,16 @@ def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict]
 
     print("\n=== coverage ===")
     cov = Counter(c["coverage"] for c in contract_rows)
-    for name, n in cov.most_common():
-        print(f"  {name}: {n} contracts")
-    print("  A 'scans_only' or 'not_sampled' contract is unknown, not clean.")
+    for name in ("read", "ocr_readable", "scans_only", "not_sampled"):
+        print(f"  {name}: {cov[name]} contracts")
+    print("  'read' rests on a text layer, 'ocr_readable' on a machine")
+    print("  transcription of a scan. A 'scans_only' or 'not_sampled' contract is")
+    print("  unknown, not clean.")
+    on_ocr = sum(1 for c in contract_rows if c["finding_rests_on_ocr"])
+    print(f"  contracts whose finding would disappear without the OCR rows: {on_ocr}")
 
-    read_contracts = [c for c in contract_rows if c["coverage"] == "read"]
+    read_contracts = [c for c in contract_rows
+                      if c["coverage"] in ("read", "ocr_readable")]
     flagged = [c for c in read_contracts
                if c["limits_competition"] or c["single_source_language"]
                or c["exempt_from_competition"]]
@@ -822,14 +1080,18 @@ def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict]
 
     remaining = len(all_docs) - len(attempted)
     print(f"\nFull coverage would need {remaining} more downloads "
-          f"({len(all_docs)} unique documents in total). At the measured scan rate "
-          f"of {_pct(len(scans) + len(moji), len(attempted))}, roughly "
-          f"{round((len(scans) + len(moji)) / max(len(attempted), 1) * len(all_docs))} "
-          f"of them would need OCR to be read at all.")
+          f"({len(all_docs)} unique documents in total). At the measured rate, "
+          f"{_pct(len(no_layer), len(attempted))} of them would arrive with no usable "
+          f"text layer and need OCR, which the trial priced at about $0.01 a document.")
 
 
 def publishable_quotes(doc_rows: list[dict], contracts: dict[str, dict], top: int = 15) -> list[dict]:
-    """Single-source assertions, one per contract, biggest contract first."""
+    """Single-source assertions, one per contract, biggest contract first.
+
+    ``text_status`` rides along so a quote taken off an OCR transcription is
+    labelled as one. A quote from a scan is a reading of a machine's guess at
+    the characters and should be checked against the PDF before it is printed.
+    """
     out = []
     seen: set[str] = set()
     for row in doc_rows:
@@ -842,6 +1104,7 @@ def publishable_quotes(doc_rows: list[dict], contracts: dict[str, dict], top: in
             "vendor": meta.get("vendor", ""),
             "title": meta.get("title", ""),
             "ceiling": float(meta.get("ceiling") or 0),
+            "text_status": row["text_status"],
             "subtype": row["subtype_text"],
             "code_citations": row["code_citations"],
             "stated_amount": row["stated_amount"],
@@ -923,8 +1186,19 @@ def main() -> None:
                         help="re-read the existing cache; no network")
     parser.add_argument("--task-orders", type=int, default=0, metavar="N",
                         help="also open N Task Orders attachments")
+    parser.add_argument("--no-ocr", action="store_true",
+                        help="read text layers only; do not OCR the scans")
+    parser.add_argument("--ocr-limit", type=int, default=None, metavar="N",
+                        help="OCR at most N documents this run (cache hits are free)")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(message)s")
+    if not args.no_ocr and not args.report:
+        # The OCR calls need the key, and ocr_awards is where the .env reader
+        # lives. Loaded here rather than at import so --report and --enumerate
+        # stay free of it.
+        import ocr_awards
+
+        ocr_awards._load_dotenv()
 
     details = json.load(open(DETAILS))
     contracts = technology_contracts()
@@ -951,7 +1225,8 @@ def main() -> None:
         return
 
     selected = select_for_download(all_docs, args.limit)
-    doc_rows = read_documents(selected, download=not args.report, limit=args.limit)
+    doc_rows = read_documents(selected, download=not args.report, limit=args.limit,
+                              ocr=not args.no_ocr, ocr_limit=args.ocr_limit)
     contract_rows = contract_records(doc_rows, all_docs, contracts, details, attachment_counts)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
