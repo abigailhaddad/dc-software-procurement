@@ -336,7 +336,12 @@ SCOPE_CHANGE = [
 SCHEDULE_CHANGE = [
     r"\bdeliver(?:y|able)\w*\s+(?:schedule|dates?)\b[^.;]{0,50}"
     r"\b(?:revis|chang|extend|modif|delet|replac)",
-    r"\bSection\s+F[\.\d]*\b[^.;]{0,60}\b(?:delete|replace|revis|amend)",
+    # F.1 is "Term of Contract" and F.2 is "Option to Extend" on DC's standard
+    # form; deliverables start at F.3. Without excluding the first two, every
+    # term extension and option exercise reads as a deliverable slipping:
+    # CW96709 ("exercise option year one"), CW93311 twice, and CW102877 were all
+    # caught this way, which is four of the six this flag used to fire on.
+    r"\bSection\s+F(?!\.[12]\b)[\.\d]*\b[^.;]{0,60}\b(?:delete|replace|revis|amend)",
     r"\bmilestone\s+(?:dates?|schedule)\b[^.;]{0,50}\b(?:revis|chang|extend|modif)",
     r"\bchange (?:the )?(?:Period of Performance|implementation) dates?\b",
     r"\bdue date\b[^.;]{0,60}\b(?:delay|extend|revis|chang)",

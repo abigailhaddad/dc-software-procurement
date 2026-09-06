@@ -48,12 +48,12 @@ given the same 30 documents agree 83% of the time, and the classifier agrees
 with the hand labels 57% of the time, so no six-way breakdown is published.
 
 1,609 contracts carry 8,547 modifications between them, and a modification is
-mostly not what the word suggests. Of 400 downloaded, 279 could be read.
-Among those, 145 exercise an option or extend a term,
-86 adjust a wage rate the law requires adjusting,
+mostly not what the word suggests. Of 400 downloaded, 278 could be read.
+Among those, 144 exercise an option or extend a term,
+85 adjust a wage rate the law requires adjusting,
 60 change an administrative detail like the contracting officer's name,
-35 move funding,
-and 27 change what is being built or when it is due -- one in ten. The 121 that could not be read are counted as unknown, not as
+34 move funding,
+and 22 change what is being built or when it is due -- one in thirteen. The 121 that could not be read are counted as unknown, not as
 unchanged, so a document may fall into more than one of those groups and the
 counts do not sum to 279.
 
