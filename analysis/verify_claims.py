@@ -576,7 +576,11 @@ def run_checks() -> list[Result]:
           int(legible.administrative.sum()), 60, 3)
     check("move money", int(legible.funding_change.sum()), 35, 3)
     changed = legible.scope_change | legible.schedule_change
-    check("change what is built or when it is due", int(changed.sum()), 27, 2)
+    # 21 scope changes plus one genuine schedule slip. It was 27 until the
+    # Section F pattern stopped reading "delete Section F.1, Term of Contract"
+    # as a deliverable moving: on DC's form F.1 and F.2 are the term and option
+    # clauses, and deliverables start at F.3.
+    check("change what is built or when it is due", int(changed.sum()), 22, 2)
     check("of those, on fixed-scope contracts",
           int(changed[legible.fixed_scope].sum()), 9, 1)
     check("legible modifications on fixed-scope contracts",
