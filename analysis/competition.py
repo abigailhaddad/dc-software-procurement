@@ -65,6 +65,12 @@ No model calls. Everything here is regex over the text layer; scanned D&Fs are
 counted and left unread rather than OCRed, because OCR costs money per page and
 the scan rate is high.
 
+The District's own vocabulary -- the subtype tables, the PPRA sections and what
+they mean, the spellings the portal uses for a sole source award -- is in
+``procurement_vocabulary.yaml``, not in this file. What stays here is the
+parsing mechanics: the length caps, the field labels that stop a header regex,
+the en-dash forms a citation number is printed in.
+
     uv run python analysis/competition.py --enumerate       # counts, no network
     uv run python analysis/competition.py --limit 400       # download and read
     uv run python analysis/competition.py --report          # re-read the cache
@@ -95,6 +101,15 @@ from dcprocure.documents import (  # noqa: E402
     other_contracts_named,
     readable_share,
 )
+from dcprocure.vocabulary import (  # noqa: E402
+    AVOIDS_DC_MARKET,
+    FILENAME_TIER_PATTERNS,
+    LIMITS_COMPETITION,
+    LOCK_IN_CITES,
+    SUBTYPE_BODY_FALLBACKS,
+    SUBTYPE_HEADER_PATTERNS,
+    is_sole_source_market_type,
+)
 
 log = logging.getLogger("competition")
 
@@ -119,19 +134,10 @@ TASK_ORDER_CATEGORY = "Task Orders"
 # Filename tiers -- used ONLY to decide what to download, never to classify.
 # ---------------------------------------------------------------------------
 
-#: Names that promise something about competition. Deliberately broad: this is
-#: a download priority, so a false positive costs one request and a false
-#: negative costs a document that would have mattered.
-NAME_COMPETITION = re.compile(
-    r"sole\s*sourc|single\s*sourc|non-?competit|other than (?:full and )?open"
-    r"|non-?use of|dcss|set-?aside|cooperativ|\bcoop\b|\bgsa\b|naspo|omnia"
-    r"|sourcewell|letter contract|unusual and compelling|urgen|emergen"
-    r"|proprietar|brand name|exemption|only source",
-    re.I,
-)
-NAME_PRICE = re.compile(r"price|reasonab|\bfair\b", re.I)
-NAME_RESPONSIBILITY = re.compile(r"respons\w*b|resposib|responsb|reponsib|\bresp\b|\bcr\b", re.I)
-
+#: The words a filename can carry, and which tier each one buys, are in
+#: procurement_vocabulary.yaml under `filename_tiers`. The order they are
+#: checked in is here, in :func:`filename_tier`, because it is the ordering
+#: that makes the tiers exclusive rather than anything about the words.
 TIER_COMPETITION = "A_competition"
 TIER_UNINFORMATIVE = "B_uninformative"
 TIER_PRICE = "C_price"
@@ -148,12 +154,9 @@ TIER_QUOTA = {TIER_COMPETITION: None, TIER_UNINFORMATIVE: 220, TIER_PRICE: 40,
 
 def filename_tier(free_text: str) -> str:
     """Download priority for one D&F, from its filename alone."""
-    if NAME_COMPETITION.search(free_text):
-        return TIER_COMPETITION
-    if NAME_PRICE.search(free_text):
-        return TIER_PRICE
-    if NAME_RESPONSIBILITY.search(free_text):
-        return TIER_RESPONSIBILITY
+    for tier in (TIER_COMPETITION, TIER_PRICE, TIER_RESPONSIBILITY):
+        if FILENAME_TIER_PATTERNS[tier].search(free_text):
+            return tier
     return TIER_UNINFORMATIVE
 
 
@@ -200,76 +203,13 @@ _HEADER_NO_FOR = re.compile(
     re.I,
 )
 
-#: Header phrase -> canonical subtype. Order matters: the first pattern that
-#: matches wins, so the specific sits above the general.
-SUBTYPE_PATTERNS: list[tuple[str, str]] = [
-    ("sole_source", r"sole\s*sourc|single\s*sourc"),
-    ("emergency", r"emergenc"),
-    ("unusual_and_compelling_urgency", r"unusual and compelling|urgenc"),
-    ("non_use_of_dcss_or_set_aside", r"non-?\s*use of|dcss|set-?\s*aside|\bdslbd\b"),
-    ("federal_supply_schedule",
-     (r"federal supply\s*(?:\(gsa\)\s*)?(?:schedule|service)"
-      r"|gsa schedule|general services administration")),
-    ("cooperative_purchase", r"cooperativ|joint (?:purchas|procure)|intergovernment"),
-    ("letter_contract", r"letter contract"),
-    ("brand_name", r"brand\s*name"),
-    ("human_care_agreement", r"human care"),
-    ("competition_exemption", r"exempt\w*|other than (?:full and )?open"),
-    ("competitive_sealed_proposals", r"competitive sealed proposal|\bcsp\b|request for proposal|\brfp\b"),
-    ("competitive_sealed_bids", r"competitive sealed bid|invitation for bid|\bifb\b"),
-    ("shortened_advertising_period", r"shorten\w*\s+(?:the\s+)?advertis"),
-    ("award_other_than_low_bid", r"other than (?:the )?low(?:est)?\s*(?:priced?\s*)?bid"),
-    ("rejection_of_bids", r"reject\w*\s+of\s+(?:individual\s+|all\s+)?bids?"),
-    ("multiyear_contract", r"multi-?\s*year"),
-    ("option_exercise", r"exercis\w*|option (?:year|period)"),
-    ("price_reasonableness", r"price reasonab|reasonab\w* of (?:the )?price|fair and reasonab|\bprice\b"),
-    ("contractor_responsibility", r"responsib|resposib|responsb|reponsib"),
-    ("contract_modification", r"modification|change order"),
-    ("termination", r"terminat"),
-    ("advance_payment", r"advance payment"),
-]
-
-#: Documents whose own header is missing but whose body is a recognisable form.
-#: The cooperative-purchase waiver is the common one: several agencies file it
-#: as an ordinary memorandum whose subject line names the outside vehicle and
-#: whose first paragraph recites the authorising code section.
-BODY_FALLBACKS: list[tuple[str, str]] = [
-    ("federal_supply_schedule", r"federal supply schedule|gsa (?:federal supply )?schedule"),
-    ("cooperative_purchase",
-     (r"2-354\.11|cooperative (?:purchas|agreement)|sourcewell|\bnaspo\b|\bomnia\b"
-      r"|\bhgac\b|u\.?s\.? communities")),
-    ("sole_source", r"2-354\.04\b|sole source procurement"),
-    ("emergency", r"2-354\.05\b"),
-    ("non_use_of_dcss_or_set_aside", r"2-354\.13\b|non-?use of dcss"),
-    ("contractor_responsibility", r"prospective contractor .{0,40}responsib|responsibility of the contractor"),
-    ("price_reasonableness", r"price(?:s)? (?:is|are) (?:fair and )?reasonab"),
-]
-
-#: Subtypes that record the District choosing not to run an open competition
-#: for this award. Split in two because they are not the same claim.
-LIMITS_COMPETITION = {
-    "sole_source",
-    "emergency",
-    "unusual_and_compelling_urgency",
-    "brand_name",
-    "competition_exemption",
-    "human_care_agreement",
-}
-#: Subtypes that record the District buying off somebody else's competition, or
-#: stepping outside the DC Supply Schedule / small-business set-aside market.
-#: These are weaker: a cooperative award was competed, by another jurisdiction,
-#: and a set-aside waiver can mean the buy went to the open market. Counted
-#: apart from LIMITS_COMPETITION and never merged into it silently.
-AVOIDS_DC_MARKET = {"cooperative_purchase", "non_use_of_dcss_or_set_aside",
-                    "federal_supply_schedule"}
-
-#: Subtypes that say nothing about how the award was competed.
-NEUTRAL = {
-    "contractor_responsibility", "price_reasonableness", "multiyear_contract",
-    "option_exercise", "contract_modification", "termination", "advance_payment",
-    "competitive_sealed_proposals", "competitive_sealed_bids", "letter_contract",
-    "shortened_advertising_period", "award_other_than_low_bid", "rejection_of_bids",
-}
+# The subtype tables -- which header phrase means which subtype, which body
+# text stands in when a document has no header, and which subtypes count as the
+# District choosing not to compete an award -- are in
+# procurement_vocabulary.yaml. They are vocabulary and judgement, not
+# mechanics: SUBTYPE_HEADER_PATTERNS, SUBTYPE_BODY_FALLBACKS,
+# LIMITS_COMPETITION and AVOIDS_DC_MARKET are imported above. Order is the
+# file's order, and it decides the answer, because the first match wins.
 
 
 def subtype_from_text(text: str, head_chars: int = 900) -> tuple[str, str]:
@@ -284,13 +224,13 @@ def subtype_from_text(text: str, head_chars: int = 900) -> tuple[str, str]:
     match = _HEADER.search(head) or _HEADER_NO_FOR.search(head)
     if match:
         phrase = match.group(1).strip(" .:-\u2013")
-        for name, pattern in SUBTYPE_PATTERNS:
+        for name, pattern in SUBTYPE_HEADER_PATTERNS:
             if re.search(pattern, phrase, re.I):
                 return name, phrase
         if phrase:
             return "other", phrase
     body = re.sub(r"\s+", " ", text[:4000])
-    for name, pattern in BODY_FALLBACKS:
+    for name, pattern in SUBTYPE_BODY_FALLBACKS:
         if re.search(pattern, body, re.I):
             return name, ""
     return "", ""
@@ -299,7 +239,7 @@ def subtype_from_text(text: str, head_chars: int = 900) -> tuple[str, str]:
 def subtype_from_filename(free_text: str) -> str:
     """The same taxonomy, guessed from the filename. For comparison only."""
     name = free_text.replace(".pdf", " ")
-    for subtype, pattern in SUBTYPE_PATTERNS:
+    for subtype, pattern in SUBTYPE_HEADER_PATTERNS:
         if re.search(pattern, name, re.I):
             return subtype
     return ""
@@ -318,11 +258,10 @@ _DASH = r"[-‐-―]"
 _CODE_CITE = re.compile(r"\b2" + _DASH + r"3\d{2}\.\d{2}(?:\s*\(\s*\d{1,2}\s*\))?")
 _DCMR_CITE = re.compile(r"\b27\s*DCMR\b[^.;\n]{0,60}?(\d{3,4}(?:\.\d+)?)")
 
-#: § 2-354.13(8): goods or services for the maintenance of existing software
-#: where the creator of the intellectual property is the only source. A
-#: countable vendor-lock-in provision, and the only subsection of 2-354.13 that
-#: is a single-source claim on its face.
-SOFTWARE_LOCK_IN_CITE = "2-354.13(8)"
+# Which PPRA sections mean what is in procurement_vocabulary.yaml under
+# `ppra_sections`. LOCK_IN_CITES, imported above, is the subset that is a
+# single-source claim on its face: § 2-354.13(8), maintenance of existing
+# software where the creator of the intellectual property is the only source.
 
 #: Language asserting that one vendor is the only one who can do the work.
 #: Checked over the whole document, because it lives in MINIMUM NEED or in the
@@ -660,7 +599,7 @@ def read_documents(docs: list[dict], download: bool, limit: int) -> list[dict]:
                 row.update(
                     subtype_text=subtype, header_phrase=phrase,
                     code_citations=";".join(code), dcmr_citations=";".join(dcmr),
-                    software_lock_in_cite=SOFTWARE_LOCK_IN_CITE in code,
+                    software_lock_in_cite=any(c in code for c in LOCK_IN_CITES),
                     stated_amount=amount if amount is not None else "",
                     amount_basis=basis, single_source_language=bool(quote),
                     exempt_from_competition=exempt_from_competition(text),
@@ -833,7 +772,12 @@ def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict]
         total = sum(float(c["ceiling"] or 0) for c in group)
         print(f"  {label}: {len(group)} contracts, ${total:,.0f} of ceiling")
         for name, n in mk.most_common():
-            print(f"      marketType={name!r}: {n}")
+            # The spellings are in procurement_vocabulary.yaml, matched on
+            # the whole field rather than as substrings. No group prints the
+            # tag today: no technology contract in the corpus carries any of
+            # them, which is what this section exists to show.
+            agrees = " -- the portal says so" if is_sole_source_market_type(name) else ""
+            print(f"      marketType={name!r}: {n}{agrees}")
 
     print("\n  The field's own vocabulary is not the limit -- it has values for this.")
     print("  marketType across every contract in the portal:")
@@ -852,7 +796,7 @@ def report(doc_rows: list[dict], contract_rows: list[dict], all_docs: list[dict]
         print(f"    {n:4d}  {name:34s} {tag}")
 
     lock = [c for c in contract_rows if c["software_lock_in_cite"]]
-    print(f"\n  cite PPRA {SOFTWARE_LOCK_IN_CITE} (maintenance of existing software, "
+    print(f"\n  cite PPRA {', '.join(LOCK_IN_CITES)} (maintenance of existing software, "
           f"IP creator the only source): {len(lock)} contracts")
     for c in lock:
         print(f"      {c['contract_number']}  {c['vendor']}  ${float(c['ceiling'] or 0):,.0f}  "

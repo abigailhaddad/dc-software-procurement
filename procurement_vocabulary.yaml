@@ -1,0 +1,334 @@
+# Procurement vocabulary: the words the District uses, and what they are taken
+# to mean.
+#
+# The competition analysis is regex over documents the District wrote, so a
+# large part of it is not logic but transcription -- the five ways the portal
+# spells "sole source", the phrase that opens a Determination and Findings, the
+# code section a contracting officer cites when the vendor that wrote the
+# software is the only one who can maintain it. That is data about how DC
+# writes things, found by reading files, and it belongs where a person can read
+# it, correct it, and see what was decided.
+#
+# Two kinds of thing live here. `sole_source_market_types` and `ppra_sections`
+# are records of what the portal and the documents actually contain, with a
+# contract named against each entry so the next person can check it instead of
+# trusting it. The pattern tables are decisions: which phrases fold into which
+# subtype, and which subtypes count as the District choosing not to compete an
+# award. Change one and the published competition figures move with it.
+#
+# What is deliberately NOT here: the parsing mechanics. The en-dash forms a
+# citation gets printed in, the 100-character cap on a header phrase, the field
+# labels that stop the header regex before it runs into the next block of the
+# form, the $1,000 floor under a dollar figure. Nobody maintains those by
+# reading DC documents; they are there because a particular PDF broke a
+# particular regex, and moving them here would make this file a second program.
+# They stay in analysis/competition.py, next to the traps that produced them.
+#
+# Read by analysis/competition.py and analysis/verify_claims.py, through
+# src/dcprocure/vocabulary.py. This file is NOT part of the classifier cache
+# fingerprint (that is classifier_config.yaml and delivery_config.yaml only) --
+# nothing here reaches a model, and editing it costs nothing.
+#
+# Check the figures after any edit with:
+#     uv run python analysis/competition.py --report
+#     uv run python analysis/verify_claims.py
+
+
+# ---------------------------------------------------------------------------
+# What the portal calls a sole source award
+# ---------------------------------------------------------------------------
+
+# The portal's `marketType` field describes the market a solicitation was
+# advertised to, and its vocabulary does include sole source -- it just never
+# says so on a technology contract. 24 distinct contracts corpus-wide carry one
+# of these spellings and none of them is technology, which is the finding, so
+# the spelling list has to be complete or the finding is an artefact of
+# matching one spelling.
+#
+# Contracts, not rows: a contract appears once per option period, so the raw
+# field counts are higher.
+#
+# Matched case-insensitively, on the whole field after squeezing whitespace --
+# not as a substring. "SOLE SOURCE" therefore matches "Sole Source" on its own,
+# but it is listed anyway because the record of what the portal contains is the
+# point of the file. A substring match on "sole" is what the two scripts used
+# to do separately, and they disagreed with each other.
+sole_source_market_types:
+  - Sole Source              # 17 contracts, e.g. DCRL-2017-D-0024 (Physician Services, PRTF)
+  - Single Available Source  # 3 contracts, e.g. DCRL-2019-R-0003 (Therapeutic Group Home)
+  - SOLE SOURCE              # 2 contracts, e.g. DCRL-2017-R-0049 (Unaccompanied Refugee Minor Program)
+  - Sole Source-HCA          # 1 contract, DCRL-2018-H-0007 (Family Based Foster Care Services)
+  - Sole Source Contract     # 1 contract, DCRL-2021-R-0025 (Pre and Post Permeancy Services)
+
+
+# ---------------------------------------------------------------------------
+# What a D&F filename promises
+# ---------------------------------------------------------------------------
+
+# Used ONLY to decide which documents to spend the download budget on, never to
+# classify one. Filenames are free text a person typed into an upload form and
+# they are wrong in both directions, so a name is a hint about what to open.
+#
+# Deliberately broad, and the breadth is asymmetric on purpose: a false
+# positive costs one HTTP request, a false negative costs a document that would
+# have mattered. The misspellings are real filenames -- "Resposibility",
+# "Responsbility", "Reponsibility" all appear -- and are matched so that a
+# contractor-responsibility memo is recognised as one and does not fall into
+# the uninformative tier, where it would crowd out documents about competition.
+#
+# Checked in the order below; anything matching none of them is uninformative.
+# Each tier's entries are alternatives, joined into one case-insensitive
+# pattern in the order written.
+filename_tiers:
+
+  A_competition:
+    - 'sole\s*sourc'
+    - 'single\s*sourc'
+    - 'non-?competit'
+    - 'other than (?:full and )?open'
+    - 'non-?use of'
+    - 'dcss'
+    - 'set-?aside'
+    - 'cooperativ'
+    - '\bcoop\b'
+    - '\bgsa\b'
+    - 'naspo'
+    - 'omnia'
+    - 'sourcewell'
+    - 'letter contract'
+    - 'unusual and compelling'
+    - 'urgen'
+    - 'emergen'
+    - 'proprietar'
+    - 'brand name'
+    - 'exemption'
+    - 'only source'
+
+  C_price:
+    - 'price'
+    - 'reasonab'
+    - '\bfair\b'
+
+  D_responsibility:
+    - 'respons\w*b'
+    - 'resposib'    # misspellings, all of them real filenames
+    - 'responsb'
+    - 'reponsib'
+    - '\bresp\b'
+    - '\bcr\b'     # "CR" is how several agencies abbreviate it
+
+
+# ---------------------------------------------------------------------------
+# D&F subtype, from the document's own header
+# ---------------------------------------------------------------------------
+
+# These documents open with "DETERMINATION AND FINDINGS FOR <subtype>". The
+# code pulls that phrase out; this table decides what the phrase is called.
+#
+# Order matters: the first pattern that matches the phrase wins, so the
+# specific sits above the general. "DETERMINATION AND FINDINGS FOR A SOLE
+# SOURCE PROCUREMENT AND PRICE REASONABLENESS" is a sole source D&F, which is
+# only true because sole_source is listed above price_reasonableness.
+#
+# A phrase that matches nothing is recorded as "other" rather than dropped, so
+# a subtype this table does not know about shows up in the run's own output
+# instead of disappearing into the same bucket as a document with no header.
+subtype_header_patterns:
+  - subtype: sole_source
+    pattern: 'sole\s*sourc|single\s*sourc'
+  - subtype: emergency
+    pattern: 'emergenc'
+  - subtype: unusual_and_compelling_urgency
+    pattern: 'unusual and compelling|urgenc'
+  - subtype: non_use_of_dcss_or_set_aside
+    pattern: 'non-?\s*use of|dcss|set-?\s*aside|\bdslbd\b'
+  - subtype: federal_supply_schedule
+    pattern: 'federal supply\s*(?:\(gsa\)\s*)?(?:schedule|service)|gsa schedule|general services administration'
+  - subtype: cooperative_purchase
+    pattern: 'cooperativ|joint (?:purchas|procure)|intergovernment'
+  - subtype: letter_contract
+    pattern: 'letter contract'
+  - subtype: brand_name
+    pattern: 'brand\s*name'
+  - subtype: human_care_agreement
+    pattern: 'human care'
+  - subtype: competition_exemption
+    pattern: 'exempt\w*|other than (?:full and )?open'
+  - subtype: competitive_sealed_proposals
+    pattern: 'competitive sealed proposal|\bcsp\b|request for proposal|\brfp\b'
+  - subtype: competitive_sealed_bids
+    pattern: 'competitive sealed bid|invitation for bid|\bifb\b'
+  - subtype: shortened_advertising_period
+    pattern: 'shorten\w*\s+(?:the\s+)?advertis'
+  - subtype: award_other_than_low_bid
+    pattern: 'other than (?:the )?low(?:est)?\s*(?:priced?\s*)?bid'
+  - subtype: rejection_of_bids
+    pattern: 'reject\w*\s+of\s+(?:individual\s+|all\s+)?bids?'
+  - subtype: multiyear_contract
+    pattern: 'multi-?\s*year'
+  - subtype: option_exercise
+    pattern: 'exercis\w*|option (?:year|period)'
+  - subtype: price_reasonableness
+    pattern: 'price reasonab|reasonab\w* of (?:the )?price|fair and reasonab|\bprice\b'
+  - subtype: contractor_responsibility
+    pattern: 'responsib|resposib|responsb|reponsib'
+  - subtype: contract_modification
+    pattern: 'modification|change order'
+  - subtype: termination
+    pattern: 'terminat'
+  - subtype: advance_payment
+    pattern: 'advance payment'
+
+
+# Documents whose own header is missing or unreadable, but whose body is a
+# recognisable form. Tried only after the header table has failed, and matched
+# over the first 4,000 characters.
+#
+# The cooperative-purchase waiver is the common one: several agencies file it
+# as an ordinary memorandum whose subject line names the outside vehicle
+# (Sourcewell, NASPO, OMNIA) and whose first paragraph recites the authorising
+# code section instead of carrying a D&F header at all. This table is what
+# recovers those: 20 of the 325 readable documents get their subtype here
+# rather than from a header -- 10 cooperative_purchase, 7
+# non_use_of_dcss_or_set_aside and 3 sole_source.
+#
+# Order matters here too, and for a different reason: a document can match two
+# of these. CW133809's "D&F Non-Use DCSS CBE.pdf" matches both
+# cooperative_purchase and non_use_of_dcss_or_set_aside, and is read as the
+# first, because the cooperative vehicle is the more specific statement about
+# how the award was made.
+subtype_body_fallbacks:
+  - subtype: federal_supply_schedule
+    pattern: 'federal supply schedule|gsa (?:federal supply )?schedule'
+  - subtype: cooperative_purchase
+    pattern: '2-354\.11|cooperative (?:purchas|agreement)|sourcewell|\bnaspo\b|\bomnia\b|\bhgac\b|u\.?s\.? communities'
+  - subtype: sole_source
+    pattern: '2-354\.04\b|sole source procurement'
+  - subtype: emergency
+    pattern: '2-354\.05\b'
+  - subtype: non_use_of_dcss_or_set_aside
+    pattern: '2-354\.13\b|non-?use of dcss'
+  - subtype: contractor_responsibility
+    pattern: 'prospective contractor .{0,40}responsib|responsibility of the contractor'
+  - subtype: price_reasonableness
+    pattern: 'price(?:s)? (?:is|are) (?:fair and )?reasonab'
+
+
+# ---------------------------------------------------------------------------
+# What each subtype is taken to say about competition
+# ---------------------------------------------------------------------------
+
+# Three groups, kept apart because they are three different claims and merging
+# them would overstate the finding. A subtype named in the tables above but in
+# none of these groups is counted, reported, and left out of every competition
+# figure.
+subtype_meaning:
+
+  # The District chose not to run an open competition for this award.
+  limits_competition:
+    - sole_source
+    - emergency
+    - unusual_and_compelling_urgency
+    - brand_name
+    - competition_exemption
+    - human_care_agreement
+
+  # The District bought off somebody else's competition, or stepped outside the
+  # DC Supply Schedule and the small-business set-aside market. Weaker, and
+  # never merged into limits_competition silently: a cooperative award was
+  # competed, by another jurisdiction, and a set-aside waiver can mean the buy
+  # went to the open market rather than away from it.
+  #
+  # "Non-Use of DCSS or SBE Set-Aside Market" in particular is NOT a statement
+  # that competition was limited. It only evidences a single source when the
+  # document says so -- when it cites 2-354.13(8), or when its own text asserts
+  # one available vendor -- and those are counted separately.
+  avoids_dc_market:
+    - cooperative_purchase
+    - non_use_of_dcss_or_set_aside
+    - federal_supply_schedule
+
+  # Say nothing about how the award was competed. letter_contract sits here
+  # rather than in limits_competition: it records that work started before the
+  # contract was definitised, which is a schedule decision, not a competition
+  # one. price_reasonableness and contractor_responsibility are two thirds of
+  # every readable document in the corpus and are analytically empty -- a
+  # vendor's Dun & Bradstreet date, its tax and wage compliance dates.
+  neutral:
+    - contractor_responsibility
+    - price_reasonableness
+    - multiyear_contract
+    - option_exercise
+    - contract_modification
+    - termination
+    - advance_payment
+    - competitive_sealed_proposals
+    - competitive_sealed_bids
+    - letter_contract
+    - shortened_advertising_period
+    - award_other_than_low_bid
+    - rejection_of_bids
+
+
+# ---------------------------------------------------------------------------
+# The PPRA sections the documents cite
+# ---------------------------------------------------------------------------
+
+# D.C. Official Code Title 2, Chapter 3, the Procurement Practices Reform Act.
+# A D&F carries a numbered AUTHORITY clause naming the section relied on, and
+# the section is often the only thing in the document that says what kind of
+# award this was -- CW90741's header reads "DETERMINATION AND FINDINGS FOR
+# CONTRACT AWARD" and says nothing, while its findings read "exempt from
+# competition under the Procurement Practices Reform Act (PPRA) Section
+# 2-354.13(8)".
+#
+# This is a glossary, not a matcher. The patterns that actually recognise a
+# section are in `subtype_body_fallbacks` above, because they need word
+# boundaries, and the code that reads citations off a page has to cope with the
+# section number being printed with an en dash. Adding a section here does not
+# make anything match it.
+#
+# `contracts` is how many technology contracts in the current sample have a
+# readable D&F citing the section. It is a floor: 63 contracts returned only
+# scans and 652 have not been sampled.
+ppra_sections:
+
+  '2-354.04':
+    means: sole source procurement
+    contracts: 11    # e.g. CW104434, CW110007
+    subtype: sole_source
+
+  '2-354.05':
+    means: emergency procurement
+    contracts: 1     # CW104514
+    subtype: emergency
+
+  '2-354.11':
+    means: >
+      cooperative purchase -- riding another jurisdiction's competed contract.
+      The most cited section in the sample, and the reason cooperative_purchase
+      is the largest competition-relevant subtype found.
+    contracts: 29    # e.g. CW101603, CW106730
+    subtype: cooperative_purchase
+
+  '2-354.13':
+    means: >
+      the PPRA's list of exemptions from competition. Citing it, in any
+      subsection, is the District recording that it did not compete the award.
+      The subtype it maps to is the weaker non_use_of_dcss_or_set_aside,
+      because the DCSS waiver form recites the section as boilerplate; the
+      competition claim is made separately, off the text.
+    contracts: 8     # e.g. CW112026, CW113022
+    subtype: non_use_of_dcss_or_set_aside
+
+  '2-354.13(8)':
+    means: >
+      goods or services for the maintenance of existing software where the
+      creator of the intellectual property is the only source. The vendor
+      lock-in provision, and the only subsection of 2-354.13 that is a
+      single-source claim on its face.
+    contracts: 6     # CW107442, CW112026, CW123727, CW124474, CW90741, CW98879
+    # Counted and reported on its own. Subsections matter: a document citing
+    # 2-354.13(8) is saying the incumbent cannot be replaced; one citing bare
+    # 2-354.13 is usually saying it skipped the DC Supply Schedule.
+    counts_as_vendor_lock_in: true
