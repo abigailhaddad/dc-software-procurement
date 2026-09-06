@@ -3,7 +3,8 @@
 # run costs nothing.
 
 .PHONY: help install pull classify verify test report notebook site rates ocr h1b \
-        h1b-dol calc solicitations dcas pull-payments drift dashboard all
+        h1b-dol calc solicitations dcas pull-payments drift dashboard \
+        modifications all
 
 help:
 	@echo "make install    install dependencies"
@@ -19,6 +20,7 @@ help:
 	@echo "make dashboard  rebuild the data behind site/dashboard.html"
 	@echo "make rates      re-extract hourly rate cards from the cached award texts"
 	@echo "make ocr        OCR scanned award documents and classify them separately"
+	@echo "make modifications  count contract modifications and read what they change"
 	@echo "make h1b        pull H-1B LCA filings for DC tech vendors, flag DC worksites"
 	@echo "make h1b-dol    filter DOL's own LCA disclosure files to the vendor set"
 	@echo "make calc       pull GSA CALC rates and rebuild the federal comparison"
@@ -78,6 +80,11 @@ rates:
 
 ocr:
 	uv run python analysis/ocr_awards.py
+
+# Caps itself at 400 downloads and caches their text, so a repeat run is free.
+# --check-duplicates redoes the byte-hash test behind the deduplication.
+modifications:
+	uv run python analysis/modifications.py
 
 h1b:
 	uv run python analysis/pull_h1b.py

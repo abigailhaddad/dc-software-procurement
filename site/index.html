@@ -524,31 +524,54 @@ footer p{font-size:14px; color:var(--muted)}
 <p><strong>How many people is that? The data never says.</strong> It records dollars and rates, not heads. The arithmetic: Computer Aid runs about $93M a year in purchase orders; at its card's median $69.97 an hour that is roughly 1.3 million hours, or about 640 people working full time. Count only the payments that link back to its contracts and the floor is about 140. Nothing published narrows it further.</p>
 </div>
 
-<h2>Eighty-six of ninety-five build contracts fix the scope before work starts</h2>
-<p>Award documents were read for how delivery is organised: what the price schedule commits to and what the deliverables schedule requires. 288 award documents carry a readable text layer; another 75 were scans or extraction failures, recovered by running the pages through a vision model, which brings the readable set to 363 of 476.</p>
+<h2>Twenty-five of eighty award documents say how the work will be run</h2>
+<p>Award documents were read for how delivery is organised: what the price schedule commits to, what the deliverables schedule requires, whether anything in the document describes a sequence of phases. Eighty of them were then read again by hand, blind to the classifier, recording the passage each judgement rested on. Twenty-five rested on a passage that describes a process. Twenty-five were read off the price schedule alone, twenty-five off what the work plainly is, four off a deliverables table, and one off nothing at all. Two readers given the same thirty documents agreed with each other 83% of the time; the classifier agrees with those 80 hand labels 57% of the time. A six-way breakdown of delivery structure used to sit here and it has been taken out. Most of these documents do not say how the work will be run, and a table that assigns all of them a category is reporting the reader rather than the contract. <button class="linklike" data-detail="ds:sequential_gated_deliverables">The classifier&rsquo;s output is still here, with the language it read</button>, for anyone who wants to judge it.</p>
+<span class="src">Blind hand labels, with the passage each rests on: <code>tests/hand_labels_delivery.csv</code>; the second reader&rsquo;s in <code>tests/hand_labels_delivery_rater2.csv</code>. How the agreement rates were measured, and what else the field gets wrong: <code>docs/CLASSIFIER_ACCURACY.md</code>. Recomputed by <code>verify_claims.py</code> &sect;"delivery structure".</span>
+
+<h3>What contracts do after award is on the record</h3>
+<p>1,609 contracts carry 8,547 modifications between them. The portal makes that number easy to get wrong: it lists 24,471 attachment rows for those 8,547 documents, the same PDF reappearing under every option period and, in one case, twenty times inside a single one &mdash; with a different document id each time. Downloading the duplicates and hashing them settles it; the bytes are identical. What the count does track is time. A contract on its first option period averages 1.3 modifications and one on its third averages 5.3, so any comparison that does not hold that fixed is measuring how long a contract has been running.</p>
 
 <figure>
 <div class="scroll">
 <table>
-<caption>Delivery structure &middot; 363 readable award documents, 75 of them recovered by OCR &middot; select a row to read the contract language in it</caption>
-<thead><tr><th>Structure</th><th class="num">Contracts</th><th class="num">Share</th><th>What the contract commits to</th></tr></thead>
+<caption>Modifications per contract, by how far through its option periods it has been taken &middot; the build contracts whose award document could be read</caption>
+<thead><tr><th>Option-period rows</th><th class="num">Contracts</th><th class="num">Modifications, average</th></tr></thead>
 <tbody>
-<tr data-detail="ds:recurring_operations" tabindex="0"><td>Recurring operations</td><td class="num">108</td><td class="num">30%<span class="cellbar" style="width:100%"></span></td><td class="note">Ongoing support at a recurring price; nothing is being built</td></tr>
-<tr class="mark" data-detail="ds:sequential_gated_deliverables" tabindex="0"><td>Sequential and gated</td><td class="num">95</td><td class="num">26%<span class="cellbar" style="width:88%"></span></td><td class="note">Scope fixed in advance, deliverables accepted in order, payment following acceptance</td></tr>
-<tr data-detail="ds:goods_or_licenses" tabindex="0"><td>Goods or licences</td><td class="num">69</td><td class="num">19%<span class="cellbar" style="width:64%"></span></td><td class="note">No delivery method applies</td></tr>
-<tr data-detail="ds:incremental_capacity" tabindex="0"><td>Incremental capacity</td><td class="num">43</td><td class="num">12%<span class="cellbar" style="width:40%"></span></td><td class="note">A team or block of capacity, redirected as priorities change</td></tr>
-<tr data-detail="ds:structure_not_stated" tabindex="0"><td>Not stated</td><td class="num">43</td><td class="num">12%<span class="cellbar" style="width:40%"></span></td><td class="note">The document does not say</td></tr>
-<tr data-detail="ds:milestone_payments_only" tabindex="0"><td>Milestone payments only</td><td class="num">5</td><td class="num">1%<span class="cellbar" style="width:5%"></span></td><td class="note">Dated milestones without a described sequence</td></tr>
+<tr><td>1</td><td class="num">225</td><td class="num">1.31<span class="cellbar" style="width:25%"></span></td></tr>
+<tr><td>2</td><td class="num">79</td><td class="num">2.20<span class="cellbar" style="width:41%"></span></td></tr>
+<tr class="mark"><td>3</td><td class="num">51</td><td class="num">5.31<span class="cellbar" style="width:100%"></span></td></tr>
+<tr><td>4</td><td class="num">21</td><td class="num">4.38<span class="cellbar" style="width:82%"></span></td></tr>
+<tr><td>5</td><td class="num">12</td><td class="num">4.42<span class="cellbar" style="width:83%"></span></td></tr>
 </tbody>
 </table>
 </div>
 </figure>
-<span class="src">Read from award documents by the pass in <code>delivery_config.yaml</code>; counts recomputed by <code>verify_claims.py</code> &sect;"delivery structure". Notebook &sect;"Agile language".</span>
+<span class="src">Counted from the attachment lists in <code>data/raw/contract_details.json</code> by <code>analysis/modifications.py</code>, deduplicated on the filename the portal prepends its own prefix to. Recomputed by <code>verify_claims.py</code> &sect;"modifications".</span>
 
-<p>Waterfall is the largest structure among contracts where a delivery method applies at all, and it is waterfall in the strict sense: 86 of the 95 fix their scope in advance, so changing what gets built requires modifying the contract. Incremental arrangements, where a team can be pointed at something different next month without a modification, account for 43.</p>
+<p>Held against that, contracts whose award documents fix scope in advance are not modified less. Among the 121 that reached a second option period and were modified at least once, the 15 with scope fixed in advance average 6.5 modifications and the other 106 average 4.7. Fifteen contracts is not much to go on, and the label that sorts them into the two groups is the 57% one, so the size of that gap is not worth arguing about. The direction is the useful part: fixing scope on paper does not go with fewer modifications afterwards.</p>
 
-<h3>Eleven of the 95 also promise to work in sprints</h3>
-<p>Fourteen contracts in the readable set commit to agile delivery at all &mdash; and eleven of them are structurally sequential and gated, saying so in the same document that fixes the scope and sets the acceptance gates. About a quarter of everything else is gated. Two of the fourteen are hand-read corrections of classifier misses, recorded with reasons in <code>delivery_overrides.yaml</code>; three more surfaced in the OCR-recovered scans, including the DC.gov redesign, which commits to Scrum by name. Three are worth reading directly; <button class="linklike" data-detail="commit">here are all fourteen, with what they promise</button>.</p>
+<p>Reading the modifications says what they change. 400 of the 589 filed on those contracts were downloaded, and 121 could not be read at all &mdash; 76 are scans with no text layer, 12 have fonts that extract as mojibake, and 33 carry no recognisable amendment block. Those are counted as unread, not as unchanged. Of the 279 that could be read, most do the routine things: 145 exercise an option or extend the term, 86 adjust a living wage rate, 60 change a contracting officer or a requisition number, 35 move money. Twenty-seven change what is being built or when it is due &mdash; 9 of the 61 read on the fixed-scope contracts and 18 of the 218 read on the rest.</p>
+
+<blockquote>
+<p>"Delete Section C of the contract in its entirety and substitute Attachment I revised SECTION C: SPECIFICATIONS/WORK STATEMENT &hellip; Delete Section F of the contract in its entirety and substitute Attachment II revised SECTION F: PERIOD OF PERFORMANCE AND DELIVERABLES &hellip; This modification is at no additional cost to the District."</p>
+<cite>CW122261 M03 &middot; Comprehensive Plan Rewrite &middot; scope fixed in advance</cite>
+</blockquote>
+
+<blockquote>
+<p>"Section B.3.3 Option Year Two, ADD CLIN 2006, Change Request Numbers CR-002, CR-006, CR-007, CR-009, CR-011, CR-012, CR-013 and CR-014.1 in the amount of $54,521.60"</p>
+<cite>CW77923 M0005 &middot; Offender Management System &middot; scope fixed in advance</cite>
+</blockquote>
+
+<blockquote>
+<p>"Section B.3 Price Schedule is revised to add CLIN 0007, CLIN 1007 and CLIN 2007 Cost Reimbursable Items to the base year and each option year"</p>
+<cite>CW91857 M0001 &middot; Behavioral health implementation plan &middot; scope fixed in advance</cite>
+</blockquote>
+
+<p>All three of those contracts are ones the classifier called scope-fixed-in-advance. Eight numbered change requests priced as a new line item, cost-reimbursable items added to a fixed-price schedule, and a specifications section replaced whole are changes to what was bought. This data does not say whether any of them was avoidable.</p>
+<span class="src">The amendment text is block 14 of DC&rsquo;s SF30-style modification form, pulled out by regex in <code>analysis/modifications.py</code> and written per document to <code>data/modification_actions.csv</code>. 400 documents is the download cap; full coverage of these contracts is 589.</span>
+
+<h3>Fourteen contracts commit to agile delivery</h3>
+<p>Fourteen contracts in the readable set commit to agile delivery rather than merely mentioning it. Two of the fourteen are hand-read corrections of classifier misses, recorded with reasons in <code>delivery_overrides.yaml</code>; three more surfaced in the OCR-recovered scans, including the DC.gov redesign, which commits to Scrum by name. Whether the same documents also fix the scope is the question the delivery-structure field was supposed to answer and cannot, so it is not cross-tabulated here. Three are worth reading directly; <button class="linklike" data-detail="commit">here are all fourteen, with what they promise</button>.</p>
 
 <blockquote>
 <p>"using a hybrid waterfall and Agile methodology"</p>
@@ -615,7 +638,7 @@ footer p{font-size:14px; color:var(--muted)}
 <h2>Where the reading is incomplete</h2>
 <p>Delivery structure could be read for 363 of 476 candidate contracts: 288 with a native text layer, 75 recovered from scans and extraction failures. The remaining 113 have no award document attached at all.</p>
 <p>Payments join to a contract for 44% of technology contracts. Of 866,823 payment rows, 478,716 carry no contract number at all, covering $17.8B of real spending that cannot be attributed to any contract.</p>
-<p>Contracts were sorted by a language model reading titles, vendors and agencies, not contract text. Scored against 20 hand-read cases picked to be hard: 20 of 20 on what is bought, 20 of 20 on delivery structure, 18 of 20 on what agile language is doing &mdash; the two misses are genuine commitments it filed as incidental, corrected by hand as described above. Twenty cases bound the error loosely. Treat category totals as approximate; the ordering between categories is what survives.</p>
+<p>Contracts were sorted by a language model reading titles, vendors and agencies, not contract text. Scored against blind hand labels on random samples: 95% on whether a contract is technology at all, 90% on what it buys, 57% on delivery structure &mdash; against a ceiling of 83%, which is how often two human readers agree with each other on the same question. That is why no delivery-structure breakdown is published. On what agile language is doing the model scores 18 of 20 against a gold set, and the two misses are genuine commitments it filed as incidental, corrected by hand as described above. <code>docs/CLASSIFIER_ACCURACY.md</code> has the samples and the method. Treat category totals as approximate; the ordering between categories is what survives.</p>
 
 <h2>Questions this will raise</h2>
 <p>The ones an incoming administration should ask, answered here where the data can answer them, and marked plainly where it cannot.</p>
@@ -632,8 +655,8 @@ footer p{font-size:14px; color:var(--muted)}
 <h3>Is Computer Aid overpaid? Are these vendors any good?</h3>
 <p>This data cannot say, in either direction. It shows what was authorised, what rates were agreed and what was paid &mdash; not what was delivered, whether it worked, or what the same work costs elsewhere. The rate card is reproduced above so the agreed prices are at least visible; judging them needs comparators this data does not contain, and nothing in it measures performance.</p>
 
-<h3>Why does it matter that contracts say agile and run waterfall?</h3>
-<p>Because the contract binds and the method language does not. A contract that fixes scope, sequences deliverables and gates payment on acceptance stays waterfall whatever method its statement of work names: changing what gets built requires a contract modification. The teams inside can hold every ceremony they like, but the thing the District can change its mind about was set at award. Whether that is the right way to buy software is a policy choice this data does not make. It only shows which choice is actually written down.</p>
+<h3>Why does it matter how a contract structures the work?</h3>
+<p>Because the contract binds and the method language does not. What a statement of work calls its method does not change what the parties are committed to; the price schedule and the deliverables schedule do. The reading here found that most award documents do not describe a method at all, and that the ones which fix scope are modified at least as often as the ones which do not. Whether the District should buy software this way is a policy question this data does not answer. What it shows is that the award document is a weaker description of how a project will run than it looks.</p>
 
 <h3>Would another city look different?</h3>
 <p>Unknown; no comparison was attempted, and most large governments also buy technology heavily through staffing and schedule vehicles. What can be compared today is disclosure: the federal government publishes its task orders on USAspending, and the District does not publish its own.</p>
@@ -828,7 +851,7 @@ function detailHtml(id) {
     </blockquote>`).join('');
     return `
       <div class="dialog-head"><div>
-        <p class="eyebrow">${st.n} of 363 readable awards</p>
+        <p class="eyebrow">${st.n} contracts the classifier put here</p>
         <h3 id="dialog-title">${esc(DS[key][0])}</h3>
       </div><button class="close" data-close>esc</button></div>
       <p>${esc(DS[key][1])}</p>
@@ -838,8 +861,10 @@ function detailHtml(id) {
       <div class="how">
         <p>Structure is judged from what the parties are committed to, never from vocabulary
         (<code>delivery_config.yaml</code> keeps the two axes apart). Quotes come straight from the
-        award document text cached in <code>data/pdftext/</code>; counts are recomputed by
-        <code>make verify</code> under "delivery structure".</p>
+        award document text cached in <code>data/pdftext/</code>. These counts are the classifier&rsquo;s
+        own output and are not published as figures: it agrees with blind hand labels 57% of the
+        time, against 83% for two human readers on the same question. They are here so the
+        classification can be read against the words it was made from.</p>
       </div>`;
   }
 
@@ -911,14 +936,14 @@ function detailHtml(id) {
     const quotes = DATA.commitments.map(r => `<blockquote>
       <p>&ldquo;${quoteText(r.agile_quote, 220)}&rdquo;</p>
       <cite>${esc(r.contract_number)} &middot; ${esc(r.title)} &middot; ${esc(r.vendor)} &middot; ${money(r.ceiling)}
-      &middot; ${r.delivery_structure === 'sequential_gated_deliverables' ? 'sequential and gated' : 'incremental capacity'}${overridden.has(r.contract_number) ? ' &middot; hand-read correction' : ''}</cite>
+${overridden.has(r.contract_number) ? ' &middot; hand-read correction' : ''}</cite>
     </blockquote>`).join('');
     return `
       <div class="dialog-head"><div>
-        <p class="eyebrow">${DATA.commitments.length} delivery commitments &middot; ${DATA.commitments.filter(c => c.delivery_structure === 'sequential_gated_deliverables').length} structurally gated</p>
+        <p class="eyebrow">${DATA.commitments.length} delivery commitments</p>
         <h3 id="dialog-title">Every contract that commits to agile delivery</h3>
       </div><button class="close" data-close>esc</button></div>
-      <p>What each award document actually promises, next to how it structures the work.</p>
+      <p>What each award document actually promises.</p>
       ${quotes}
       <div class="how">
         <p>Two are commitments the classifier filed as incidental language, caught by hand-reading
@@ -978,12 +1003,14 @@ function detailHtml(id) {
       Medicaid managed care, the software class holds a plumbing contract, and the biggest IT
       staffing vehicles sit in "miscellaneous services, not otherwise classified". So a language
       model sorts each contract instead, against a fixed schema
-      (<code>classifier_config.yaml</code>), and its accuracy is scored on 20 hand-read contracts
-      picked to be hard: 20 of 20 on what is bought, 20 of 20 on delivery structure, 18 of 20 on
-      what agile language is doing. The two misses are genuine commitments it filed as incidental;
-      they are corrected by hand in <code>delivery_overrides.yaml</code>, and the eval expects
-      exactly those two. Twenty cases bound the error loosely &mdash; treat totals as approximate
-      and trust the ordering between categories.</p>
+      (<code>classifier_config.yaml</code>), and its accuracy is scored against blind hand labels
+      on random samples: 95% on whether a contract is technology at all, 90% on what it buys, and
+      57% on delivery structure &mdash; where two human readers only agree with each other 83% of
+      the time, so no delivery-structure breakdown is published. On what agile language is doing
+      the model scores 18 of 20 against a gold set; the two misses are genuine commitments it
+      filed as incidental, corrected by hand in <code>delivery_overrides.yaml</code>, and the eval
+      expects exactly those two. <code>docs/CLASSIFIER_ACCURACY.md</code> has the measurements
+      &mdash; treat totals as approximate and trust the ordering between categories.</p>
 
       <h3>Two defects in the portal, found by testing it against itself</h3>
       <p>The fiscal-year filter on contract search does nothing: any year returns the whole

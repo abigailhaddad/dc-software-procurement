@@ -42,9 +42,23 @@ purchase-order table. 51 award documents publish hourly rate cards — 2,471
 not-to-exceed rates, $24.01 to $1,015 — and job ads recruiting for the same
 tier names show what the workers are offered against them.
 
-Among contracts that build or run something, the largest group fixes its scope
-before work starts: 74 of 82 sequential, gated contracts cannot change what is
-built without a contract modification.
+How the work is organised is usually not written down. Eighty award documents
+were read by hand, blind, with the passage each judgement rested on recorded:
+25 of the 80 describe a delivery process. The rest were labelled off the price
+schedule, off what the work plainly is, off a deliverables table, or off
+nothing at all. Two readers given the same 30 documents agreed 83% of the time,
+and the classifier agrees with those 80 hand labels 57% of the time, so the
+six-way breakdown it produces is not published.
+
+What contracts do after they are awarded is better evidenced. 1,609 contracts
+carry 8,547 modifications, and counting those mostly measures how long a
+contract has run: one option period averages 1.3, three averages 5.3. Holding
+that roughly fixed, the 15 build contracts whose award document fixes scope in
+advance average 6.5 modifications against 4.7 for the other 106. Fixing scope
+in the award document does not go with fewer changes afterwards, though 15
+contracts is thin and the label separating the two groups is the 57% one. Of
+400 modification documents read, 279 were legible, and 27 of those change what
+is being built or when it is due.
 
 ## Refreshing the payments table
 
@@ -91,9 +105,14 @@ while the purchase orders written against them are coded 918.
 So contracts are sorted by reading them. `classifier_config.yaml` holds the
 schema and prompt for what a contract buys; `delivery_config.yaml` does the same
 for how the work is structured. Accuracy is scored against contracts labelled by
-hand in `tests/`: 20 of 21 on what is being bought, 20 of 20 on delivery
-structure, 18 of 20 on what agile language is doing. The two delivery misses are
-genuine commitments the model filed as incidental; they are corrected by hand in
+hand in `tests/`, blind. On a random sample the work-type classifier agrees with
+the hand labels 90% of the time and `is_technology` 95%; `delivery_structure`
+agrees with its 80 hand labels 57% of the time, against a ceiling of 83% set by
+what two human readers agree on, which is why no delivery-structure breakdown
+is published. `docs/CLASSIFIER_ACCURACY.md` has the measurements and what they
+were run on.
+On what agile language is doing the model scores 18 of 20; the two misses are
+genuine commitments it filed as incidental, corrected by hand in
 `delivery_overrides.yaml`, with reasons, and the eval expects exactly those two.
 
 The work-type miss is case 21, and it is not corrected anywhere. "DOH FY25 Nurse
@@ -127,6 +146,7 @@ distinguishes staffing a hospital from staffing a help desk.
 | `analysis/pull_h1b_dol.py` | Filter DOL's own LCA disclosure files to the vendor set — case status, worksite address, and the client-naming secondary-entity field |
 | `analysis/extract_rates.py` | Pull hourly rate cards out of the award texts, every rate verified verbatim |
 | `data/labor_rates.csv` | The 2,471 published rates, with whether each title-to-price pairing verified |
+| `analysis/modifications.py` | Count and read contract modifications (`make modifications`); the deduplication trap is in its docstring |
 | `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |
 | `evidence/job_ads/` | Job postings quoted in the briefing: screenshots, raw pages, archive links |
 | `analysis/pull_calc.py` | Pull GSA CALC awarded ceiling rates, the federal comparison set (`make calc`) |

@@ -331,11 +331,11 @@ def run_checks() -> list[Result]:
     check("genuine delivery commitments", len(commits), 11)
     check("mentions that are staff qualifications",
           int((delivery.agile_mention_kind == "personnel_qualification").sum()), 14)
-    gated = (commits.delivery_structure == "sequential_gated_deliverables").sum()
-    check("commitments that are structurally gated", int(gated), 9)
-    other = delivery[delivery.agile_mention_kind != "delivery_commitment"]
-    check("baseline gated %",
-          round(100 * (other.delivery_structure == "sequential_gated_deliverables").mean()), 26, 1)
+    # What used to sit here -- how many of the agile commitments are also
+    # structurally gated, and the gated rate among everything else -- was a
+    # cross-tab on delivery_structure, and is not published any more. The field
+    # agrees with blind hand labels 57% of the time, so a cross-tab on it is
+    # noise crossed with a finding.
 
     # Two of the eleven commitments are hand-read corrections of classifier
     # misses. The overrides file must stay in agreement with the gold labels,
@@ -465,13 +465,120 @@ def run_checks() -> list[Result]:
           lambda: round(first(by_system, top_system).ceiling / 1e6, 1), 198.3, 1.0)
 
     section("delivery structure")
-    check("sequential and gated contracts", int((delivery.delivery_structure == "sequential_gated_deliverables").sum()), 82)
-    waterfall = delivery[delivery.delivery_structure == "sequential_gated_deliverables"]
-    check("of those, scope fixed in advance", int((waterfall.scope_fixed_in_advance == "yes").sum()), 74)
-    check("of those, also commit to agile",
-          int((waterfall.agile_mention_kind == "delivery_commitment").sum()), 9)
+    # No count of delivery structures is published any more. What is published
+    # is why: the field cannot be read out of most of these documents, and the
+    # blind hand labels are the evidence for that. hand.evidence_basis records
+    # what each hand label actually rested on -- the four values below are the
+    # published sentence, in order.
+    hand = pd.read_csv(ROOT / "tests" / "hand_labels_delivery.csv")
+    check("blind hand labels read", len(hand), 80)
+    basis = hand.evidence_basis.value_counts()
+    check("labels resting on an explicit process description",
+          lambda: int(at(basis, "explicit_process", "evidence_basis explicit_process")), 25)
+    check("labels resting on the price schedule alone",
+          lambda: int(at(basis, "pricing_structure_only",
+                         "evidence_basis pricing_structure_only")), 25)
+    check("labels resting on what the work plainly is",
+          lambda: int(at(basis, "scope_description", "evidence_basis scope_description")), 25)
+    check("labels resting on a deliverables table alone",
+          lambda: int(at(basis, "deliverables_table_only",
+                         "evidence_basis deliverables_table_only")), 4)
+    check("labels resting on nothing",
+          lambda: int(at(basis, "none", "evidence_basis none")), 1)
+
+    # Two readers on the same 30 contracts. This is the ceiling the classifier
+    # is measured against, not 100%.
+    rater2 = pd.read_csv(ROOT / "tests" / "hand_labels_delivery_rater2.csv")
+    pair = hand.merge(rater2, on="contract_number", suffixes=("", "_2"))
+    check("contracts both readers labelled", len(pair), 30)
+    check("inter-rater agreement %",
+          round(100 * (pair.delivery_structure == pair.delivery_structure_2).mean()), 83, 1)
+
+    # And the classifier against those hand labels. 57% here rather than the
+    # 55% in docs/CLASSIFIER_ACCURACY.md: that figure is the random sample
+    # alone, this one is all 80, and the stratified half scored better. See the
+    # note in that file.
+    model_labels = pd.concat(
+        [delivery, pd.read_csv(ROOT / "data" / "delivery_structure_ocr.csv")],
+        ignore_index=True,
+    ).drop_duplicates("contract_number").set_index("contract_number")
+    scored = hand.assign(
+        model=hand.contract_number.map(model_labels.delivery_structure)
+    )
+    check("hand-labelled contracts the classifier also labelled",
+          int(scored.model.notna().sum()), 80)
+    check("classifier agreement with the hand labels %",
+          round(100 * (scored.delivery_structure == scored.model).mean()), 57, 1)
+
     check("agile only as a hiring requirement",
           int((delivery.agile_mention_kind == "personnel_qualification").sum()), 14)
+
+    section("modifications")
+    # analysis/modifications.py writes both of these. The counting trap is in
+    # its docstring: 24,471 attachment rows are 8,547 documents, and the
+    # duplicates are byte-identical.
+    mods = pd.read_csv(ROOT / "data" / "modifications.csv")
+    actions = pd.read_csv(ROOT / "data" / "modification_actions.csv")
+    details_raw = _json.load(open(ROOT / "data" / "raw" / "contract_details.json"))
+    mod_rows = sum(
+        1
+        for record in details_raw
+        for document in record.get("documents") or []
+        if (document.get("name") or "").split("-")[2:3] == ["Modifications"]
+    )
+    check("modification attachment rows the portal lists", mod_rows, 24471, 200)
+    mod_names = {
+        (record["contractNumber"], "-".join((document.get("name") or "").split("-")[3:]))
+        for record in details_raw
+        for document in record.get("documents") or []
+        if (document.get("name") or "").split("-")[2:3] == ["Modifications"]
+    }
+    check("distinct modification documents", len(mod_names), 8547, 100)
+    check("contracts carrying at least one", len({c for c, _ in mod_names}), 1609, 20)
+
+    # The confound, stated as the published figures state it.
+    by_periods = mods.groupby("option_periods").modifications.mean()
+    check("mean modifications, one option-period row",
+          lambda: round(float(at(by_periods, 1, "contracts with one option period")), 1), 1.3, 0.05)
+    check("mean modifications, three option-period rows",
+          lambda: round(float(at(by_periods, 3, "contracts with three option periods")), 1),
+          5.3, 0.05)
+
+    # The comparison, conditioned on having had the chance to be modified.
+    conditioned = mods[(mods.option_periods >= 2) & (mods.modifications > 0)]
+    check("build contracts in the conditioned comparison", len(conditioned), 121, 2)
+    fixed = conditioned[conditioned.fixed_scope]
+    rest = conditioned[~conditioned.fixed_scope]
+    check("of those, scope fixed in advance", len(fixed), 15, 1)
+    check("their mean modifications", round(fixed.modifications.mean(), 1), 6.5, 0.1)
+    check("everything else", len(rest), 106, 2)
+    check("its mean modifications", round(rest.modifications.mean(), 1), 4.7, 0.1)
+
+    # What the modifications do. Coverage is reported, not assumed: an
+    # unreadable modification is unread, never "no scope change".
+    check("modification documents read", len(actions), 400)
+    outcomes = actions.outcome.value_counts()
+    check("of those, legible with an amendment block",
+          lambda: int(at(outcomes, "read", "readable modification documents")), 279, 5)
+    check("scans with no text layer",
+          lambda: int(at(outcomes, "scanned, no text layer", "scanned modifications")), 76, 5)
+    check("text layers that extract as mojibake",
+          lambda: int(at(outcomes, "text layer is mojibake", "mojibake modifications")), 12, 3)
+    check("readable but no amendment block",
+          lambda: int(at(outcomes, "no block 14 found", "modifications with no block 14")), 33, 5)
+    legible = actions[actions.outcome == "read"]
+    check("exercise an option or extend the term",
+          int(legible.option_or_extension.sum()), 145, 3)
+    check("adjust a living wage rate", int(legible.wage_adjustment.sum()), 86, 3)
+    check("change a contracting officer or requisition",
+          int(legible.administrative.sum()), 60, 3)
+    check("move money", int(legible.funding_change.sum()), 35, 3)
+    changed = legible.scope_change | legible.schedule_change
+    check("change what is built or when it is due", int(changed.sum()), 27, 2)
+    check("of those, on fixed-scope contracts",
+          int(changed[legible.fixed_scope].sum()), 9, 1)
+    check("legible modifications on fixed-scope contracts",
+          int(legible.fixed_scope.sum()), 61, 3)
 
     section("authorised against paid, FY2021-FY2025 window")
     # The briefing compares ceilings and payments over the same five fiscal
@@ -786,17 +893,11 @@ def run_checks() -> list[Result]:
     combined = pd.concat([delivery, ocr], ignore_index=True)
     check("readable awards combined", len(combined), 363)
     check("of 476 candidates, contracts with no award document at all", 476 - 363, 113)
-    check("combined recurring operations",
-          int((combined.delivery_structure == "recurring_operations").sum()), 108)
-    check("combined sequential and gated",
-          int((combined.delivery_structure == "sequential_gated_deliverables").sum()), 95)
-    gated_combined = combined[combined.delivery_structure == "sequential_gated_deliverables"]
-    check("of those, scope fixed in advance",
-          int((gated_combined.scope_fixed_in_advance == "yes").sum()), 86)
+    # The per-structure counts this section used to assert backed the six-way
+    # table on the site, which has been removed. See the note in "delivery
+    # structure" above.
     combined_commits = combined[combined.agile_mention_kind == "delivery_commitment"]
     check("combined delivery commitments", len(combined_commits), 14)
-    check("of those, structurally gated",
-          int((combined_commits.delivery_structure == "sequential_gated_deliverables").sum()), 11)
     check("combined agile-as-hiring-requirement",
           int((combined.agile_mention_kind == "personnel_qualification").sum()), 15)
 
@@ -833,8 +934,16 @@ def run_checks() -> list[Result]:
         f"{len(lr):,}\nnot-to-exceed rates",
         f"${lr.hourly_rate.min():.2f} to ${round(lr.hourly_rate.max()):,}",
         f"The {len(lr):,} published rates",
-        f"{int((waterfall.scope_fixed_in_advance == 'yes').sum())} of "
-        f"{int((delivery.delivery_structure == 'sequential_gated_deliverables').sum())} sequential",
+        f"{int((hand.evidence_basis == 'explicit_process').sum())} of the "
+        f"{len(hand)} describe a delivery process",
+        f"agrees with those {len(hand)} hand labels "
+        f"{round(100 * (scored.delivery_structure == scored.model).mean())}% of the time",
+        f"{len({c for c, _ in mod_names}):,} contracts\ncarry {len(mod_names):,} modifications",
+        f"the {len(fixed)} build contracts whose award document fixes scope in",
+        f"average {round(fixed.modifications.mean(), 1)} modifications against "
+        f"{round(rest.modifications.mean(), 1)} for the other {len(rest)}",
+        f"Of\n{len(actions)} modification documents read, {int((actions.outcome == 'read').sum())} "
+        f"were legible, and {int(changed.sum())} of those change what",
         f"{len(contracts):,} rows\nare {contracts.contract_number.nunique():,} contracts",
         f"Of {len(payments):,} rows, {int(payments.contract_number.isna().sum()):,} carry",
         f"${payments.check_total.sum() / 1e9:.1f}B against "
