@@ -47,15 +47,33 @@ price schedule, off what the work plainly is, or off nothing at all. Two readers
 given the same 30 documents agree 83% of the time, and the classifier agrees
 with the hand labels 57% of the time, so no six-way breakdown is published.
 
-What contracts do after they are awarded is better evidenced. 1,609 contracts
-carry 8,547 modifications, and counting those mostly measures how long a
-contract has run: one option period averages 1.3, three averages 5.3. Holding
-that roughly fixed, the 15 build contracts whose award document fixes scope in
-advance average 6.5 modifications against 4.7 for the other 106. Fixing scope
-in the award document does not go with fewer changes afterwards, though 15
-contracts is thin and the label separating the two groups is the 57% one. Of
-400 modification documents read, 279 were legible, and 27 of those change what
-is being built or when it is due.
+1,609 contracts carry 8,547 modifications between them, and a modification is
+mostly not what the word suggests. Of 400 downloaded, 279 could be read.
+Among those, 145 exercise an option or extend a term,
+86 adjust a wage rate the law requires adjusting,
+60 change an administrative detail like the contracting officer's name,
+35 move funding,
+and 27 change what is being built or when it is due -- one in ten. The 121 that could not be read are counted as unknown, not as
+unchanged, so a document may fall into more than one of those groups and the
+counts do not sum to 279.
+
+So a modification count is not a measure of scope churn. It mostly counts option
+periods, which a longer contract accrues by construction, and statutory wage
+updates, which arrive on their own schedule regardless of the contract.
+
+The changes that do alter the work are real, and they sit on contracts whose
+award document fixes scope in advance. One deleted its price schedule outright
+and rewrote all five years, adding tenant portal development and a database
+redesign. One added phase-two Salesforce development and raised the base year
+149%. One folded eight numbered change requests in as a priced line item, which
+is iterative development running through the modification process. One added
+cost-reimbursable line items to a fixed-price contract. A fixed scope is a
+starting position, not a description of what happened.
+
+How often that occurs is not something 400 documents can settle. Restricting to
+the modifications that change the work, the fixed-scope contracts do it more
+often than the rest, but on nine such modifications against eighteen, which is
+too thin to put a rate on.
 
 ## Refreshing the payments table
 

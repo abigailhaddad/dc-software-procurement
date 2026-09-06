@@ -1003,6 +1003,10 @@ def run_checks() -> list[Result]:
     custom = labels[labels.work_type == "custom_software_build"]
     vehicles = labels[labels.work_type == "ordering_vehicle"]
     staffaug = labels[labels.work_type == "staff_augmentation"]
+    def _act(column: str):
+        """One boolean action flag from the modification actions table."""
+        return actions[column].fillna(False).astype(bool)
+
     for phrase in [
         f"Of {len(tech):,} technology contracts",
         f"${tech.ceiling.sum() / 1e9:.1f}B in ceilings",
@@ -1017,12 +1021,16 @@ def run_checks() -> list[Result]:
         f"{int((hand.evidence_basis == 'explicit_process').sum())} describe a delivery process",
         f"agrees with its {len(hand)} hand labels "
         f"{round(100 * (scored.delivery_structure == scored.model).mean())}% of the time",
-        f"{len({c for c, _ in mod_names}):,} contracts\ncarry {len(mod_names):,} modifications",
-        f"the {len(fixed)} build contracts whose award document fixes scope in",
-        f"average {round(fixed.modifications.mean(), 1)} modifications against "
-        f"{round(rest.modifications.mean(), 1)} for the other {len(rest)}",
-        f"Of\n{len(actions)} modification documents read, {int((actions.outcome == 'read').sum())} "
-        f"were legible, and {int(changed.sum())} of those change what",
+        f"{len({c for c, _ in mod_names}):,} contracts carry {len(mod_names):,} modifications",
+        # What a modification actually does. The old check asserted a ratio of
+        # modification counts, which turned out to measure option periods more
+        # than scope: only 7% of the documents read change the work at all.
+        f"Of {len(actions)} downloaded, {int((actions.outcome == 'read').sum())} could be read",
+        f"{int(_act('option_or_extension').sum())} exercise an option or extend a term",
+        f"{int(_act('wage_adjustment').sum())} adjust a wage rate the law requires adjusting",
+        f"{int(_act('administrative').sum())} change an administrative detail",
+        f"{int(_act('funding_change').sum())} move funding",
+        f"and {int(changed.sum())} change what is being built or when it is due",
         f"{len(contracts):,} rows\nare {contracts.contract_number.nunique():,} contracts",
         f"Of {len(payments):,} rows, {int(payments.contract_number.isna().sum()):,} carry",
         f"${payments.check_total.sum() / 1e9:.1f}B against "
