@@ -2,6 +2,9 @@
 
 > **Work in progress.** These figures are still being checked and the data
 > behind them is being rebuilt. Do not rely on them.
+>
+> What is known about which figures hold up: `docs/CLASSIFIER_ACCURACY.md`.
+> What is left to do: `docs/NEXT_STEPS.md`.
 
 Pulls the DC Contracts and Procurement Transparency Portal, sorts every contract
 by what it actually buys, and reads how the work is structured out of the award
