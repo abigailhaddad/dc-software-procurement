@@ -61,9 +61,19 @@ def main(model: str = DEFAULT_MODEL) -> int:
                   "confidence", "is_technology"):
         labelled[field] = [p.get(field) if p else None for p in predictions]
 
+    # How much of the vote backed the work_type shown. Below 1.0 means the model
+    # gave more than one answer to the same title, so the row is a coin flip and
+    # any count it feeds carries model noise. See dcprocure.classify.
+    labelled["work_type_agreement"] = [
+        (p.get("field_agreement") or {}).get("work_type") if p else None
+        for p in predictions
+    ]
+
     failed = labelled["work_type"].isna().sum()
     if failed:
         print(f"warning: {failed} contracts could not be classified")
+    split = (labelled["work_type_agreement"] < 1).sum()
+    print(f"{split:,} contracts where the repeat draws disagreed on work_type")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     labelled.to_csv(OUT_PATH, index=False)
