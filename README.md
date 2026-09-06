@@ -16,7 +16,7 @@ each figure are a click away.
 
 ```bash
 make install
-make pull        # ~10 min, writes ~320MB into data/raw
+make pull        # ~10 min, writes ~360MB into data/raw
 make classify    # needs OPENAI_API_KEY in .env
 make pull-payments  # refresh just the payments table
 make verify      # recomputes every published figure, fails on drift
@@ -68,9 +68,12 @@ recent run. It exits zero whether or not anything moved, and non-zero only when
 the run itself breaks.
 
 `scripts/weekly_refresh.sh` chains those together -- pull, classify, rebuild the
-derived tables, report drift -- and `scripts/install_schedule.sh` installs it as
-a weekly launchd job. Nothing in that chain rewrites the briefing: republishing
-is a human decision made after reading the drift report.
+derived tables, report drift, rebuild the dashboard -- and
+`scripts/install_schedule.sh` installs it as a weekly launchd job.
+`site/dashboard.html` is in the chain because it reports the current snapshot;
+`site/index.html` is not, because the briefing stays on the published baseline.
+Nothing in that chain rewrites the briefing: republishing is a human decision
+made after reading the drift report. `docs/SCHEDULING.md` has the details.
 
 ## Why the commodity codes are not used
 
@@ -85,10 +88,19 @@ while the purchase orders written against them are coded 918.
 So contracts are sorted by reading them. `classifier_config.yaml` holds the
 schema and prompt for what a contract buys; `delivery_config.yaml` does the same
 for how the work is structured. Accuracy is scored against contracts labelled by
-hand in `tests/`: 20 of 20 on what is being bought, 20 of 20 on delivery
-structure, 18 of 20 on what agile language is doing. The two misses are genuine
-commitments the model filed as incidental; they are corrected by hand in
+hand in `tests/`: 20 of 21 on what is being bought, 20 of 20 on delivery
+structure, 18 of 20 on what agile language is doing. The two delivery misses are
+genuine commitments the model filed as incidental; they are corrected by hand in
 `delivery_overrides.yaml`, with reasons, and the eval expects exactly those two.
+
+The work-type miss is case 21, and it is not corrected anywhere. "DOH FY25 Nurse
+Staffing Temporary Support Services" is nurse staffing, and the model files it as
+technology staff augmentation, because "temporary support services" reads as staff
+augmentation whatever the staff do. It is in the eval because it was caught in the
+wild: it was labelled not_technology in August and moved in September, so it is
+counted in the technology figures now. Nothing overrides work_type, so that
+inflation stands in the published numbers until the taxonomy or the prompt
+distinguishes staffing a hospital from staffing a help desk.
 
 ## Layout
 
@@ -104,7 +116,8 @@ commitments the model filed as incidental; they are corrected by hand in
 | `delivery_config.yaml` | How the work is structured, and what agile language is doing |
 | `vendor_aliases.yaml` | Which vendor spellings are one company, and which are deliberately not |
 | `delivery_overrides.yaml` | Hand-read corrections applied on top of the delivery classifier, with reasons |
-| `site/index.html` | The briefing as a single static page |
+| `site/index.html` | The briefing as a single static page, frozen on the published baseline |
+| `site/dashboard.html` | The current snapshot and how far it has moved from that baseline |
 | `analysis/rebuild_manifest.py` | Rebuild the provenance manifest from the files on disk |
 | `analysis/ocr_awards.py` | OCR scanned award documents with a vision model; results cached and classified separately |
 | `analysis/pull_h1b.py` | Pull public H-1B wage filings for the vendor set (`make h1b`); DOL's disclosure files are authoritative |
@@ -118,6 +131,11 @@ commitments the model filed as incidental; they are corrected by hand in
 | `analysis/solicitations_*.py` | Trace technology contracts back to posted solicitations (`make solicitations`) |
 | `analysis/build_dcas.py` | Rebuild the DCAS roster and its attributed payments (`make dcas`) |
 | `analysis/verify_claims.py` | Recomputes every published figure; fails loudly on drift |
+| `analysis/drift_report.py` | The same checks, reporting movement instead of failing on it (`make drift`) |
+| `analysis/build_dashboard_data.py` | Rebuild the data behind the dashboard (`make dashboard`) |
+| `scripts/weekly_refresh.sh` | The weekly chain: pull, classify, rebuild, report drift, rebuild the dashboard |
+| `scripts/install_schedule.sh` | Install that chain as a launchd job, from the plist template beside it |
+| `docs/SCHEDULING.md` | What the weekly run does, what it deliberately skips, and what will bite |
 | `tests/` | Hand-read labels and the scripts that score against them |
 
 ## Things that will bite you

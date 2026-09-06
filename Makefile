@@ -7,12 +7,12 @@
 
 help:
 	@echo "make install    install dependencies"
-	@echo "make pull       fetch the portal snapshot into data/raw (~10 min, ~320MB)"
+	@echo "make pull       fetch the portal snapshot into data/raw (~10 min, ~360MB)"
 	@echo "make pull-payments  refresh only the payments table (~300MB, one request)"
 	@echo "make classify   sort contracts by what they buy, and read delivery structure"
 	@echo "make verify     recompute every published figure and fail on drift"
 	@echo "make drift      recompute every published figure and report what moved"
-	@echo "make test       score the classifiers against hand-read labels"
+	@echo "make test       check document handling, then score the classifiers"
 	@echo "make report     print the headline figures"
 	@echo "make notebook   execute the briefing notebook end to end"
 	@echo "make site       rebuild the drill-down data behind site/index.html"
@@ -54,6 +54,7 @@ drift:
 	uv run python analysis/drift_report.py
 
 test:
+	uv run python tests/test_documents.py
 	uv run python tests/eval_labels.py
 	uv run python tests/eval_delivery.py
 

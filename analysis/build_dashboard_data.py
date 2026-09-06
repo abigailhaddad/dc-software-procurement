@@ -23,6 +23,12 @@ change. A README sentence that no longer matches the data has no such pair -- th
 check only asks whether README.md still contains the sentence the current figures
 give -- so those are carried as the sentences themselves, in stale_prose.
 
+The report's corpus_change block is passed through whole. It says how much of a
+contract count's movement was the District adding contracts and how much was this
+pipeline relabelling contracts it had already classified, which is the difference
+between a figure that should be rewritten and a classification that should be
+looked at. The panel shows the relabelled contracts by name.
+
     uv run python analysis/build_dashboard_data.py
 """
 
@@ -109,6 +115,11 @@ def load_drift() -> dict | None:
                 f"{DRIFT} claims carry no 'kind'/'phrase'; drift_report.py schema "
                 "changed -- rerun: uv run python analysis/drift_report.py"
             )
+    if "corpus_change" not in report:
+        raise KeyError(
+            f"{DRIFT} carries no 'corpus_change'; it predates the new-against-relabelled "
+            "split -- rerun: uv run python analysis/drift_report.py"
+        )
 
     # Only the claims that moved are worth carrying; the ones that held are a
     # count. The two kinds go to two places on the page: a figure that moved is
@@ -143,15 +154,21 @@ def load_drift() -> dict | None:
         ],
         "moved_claims_shown": min(len(figures), 40),
         "stale_prose": stale_prose,
+        # Passed through as it stands. It is already a summary -- counts, plus one
+        # record per relabelled or vanished contract -- and both of those lists are
+        # short by construction, since a week in which either ran long is itself the
+        # thing a reader would want to see in full.
+        "corpus_change": report["corpus_change"],
     }
 
 
 def rate_histogram(rates: pd.Series) -> list[dict]:
-    """The 2,471 published rates in $25 buckets, with a long tail bucket.
+    """The published rates in $25 buckets, with a long tail bucket.
 
-    106 rates sit above $400 and one sits at $1,015, so a linear axis run to
-    the maximum would be mostly empty. The tail is one bucket, labelled as
-    open-ended so it cannot be read as a $25 band like the others.
+    106 of the 2,472 rates sit at or above $400 and the top of the range is
+    $1,015, so a linear axis run to the maximum would be mostly empty. The tail
+    is one bucket, labelled as open-ended so it cannot be read as a $25 band
+    like the others.
     """
     buckets = []
     for lo in range(0, RATE_BUCKET_TOP, RATE_BUCKET_WIDTH):

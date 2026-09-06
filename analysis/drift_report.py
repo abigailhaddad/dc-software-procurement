@@ -33,6 +33,16 @@ data supports and asks whether the file still contains it, so there is no amount
 by which one moved -- the sentence is either there or stale. Those are grouped at
 the end of the report, each shown as the wording the README would need.
 
+A count of contracts moving does not say why it moved, and the two reasons are
+not the same event. New contract numbers in the portal are the District buying
+things; an existing contract that comes back with a different work type is this
+pipeline changing its mind about something it had already seen, and it moves a
+published figure with nothing having happened at the portal at all. The contract
+corpus section separates them, comparing data/contract_classifications.csv
+against the copy at git HEAD, which is the labels as published. It leads with the
+relabels and names each one. If that baseline cannot be read out of git the
+section says so and the rest of the report is unaffected.
+
 A number of checks index into a specific row -- contract CW91684's detail
 record, the FY2021 payment total, a named labor category on a rate card. When
 the portal drops one of those, the claim fails on its own and the run carries
@@ -49,7 +59,10 @@ did run, with the exception recorded at the top and a non-zero exit.
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import json
+import subprocess
 import sys
 import traceback
 from datetime import datetime, timezone
@@ -145,8 +158,8 @@ def fmt(value: object) -> str:
 
 
 def render_text(report: dict) -> str:
-    """The human-readable report: the counts, the figures that moved, then the
-    README sentences that no longer match."""
+    """The human-readable report: the counts, what the contract corpus did, the
+    figures that moved, then the README sentences that no longer match."""
     lines = [
         "Published claim drift",
         f"data snapshot:  {report['pulled_on']}  (data/raw/manifest.json)",
@@ -184,6 +197,7 @@ def render_text(report: dict) -> str:
             "figures, listed last."
         )
     lines.append("")
+    lines += render_corpus(report.get("corpus_change"))
 
     if not moved:
         lines += ["Every published figure still holds against this snapshot.", ""]
@@ -244,6 +258,245 @@ def render_stale_prose(stale: list[dict]) -> list[str]:
     )
 
 
+CONTRACT_LABELS = ROOT / "data" / "contract_classifications.csv"
+BASELINE_REF = "HEAD"
+
+
+def _labels_from_csv(text: str) -> dict[str, dict[str, str]]:
+    """The label rows keyed by contract number, read as plain strings.
+
+    Deliberately the stdlib reader rather than pandas. Everything below either
+    compares two label strings or prints one, so there is nothing to gain from a
+    frame, and pandas hands is_technology back as numpy.bool_, which is not the
+    True that `is True` tests against -- the obvious comparison silently finds no
+    technology contracts at all.
+    """
+    rows = {}
+    for row in csv.DictReader(io.StringIO(text)):
+        number = (row.get("contract_number") or "").strip()
+        if number:
+            rows[number] = row
+    return rows
+
+
+def _truthy(value: object) -> bool:
+    """A CSV boolean cell as a bool. 'False' is a non-empty string, so bool() alone lies."""
+    if isinstance(value, str):
+        return value.strip().lower() in {"true", "1", "yes"}
+    return bool(value)
+
+
+def baseline_labels() -> tuple[dict[str, dict[str, str]] | None, str | None]:
+    """The published contract labels out of git, or None and the reason there are none.
+
+    The comparison sits on top of the drift run rather than being part of it, so
+    every way git can fail to produce that file -- no git on PATH, a shallow or
+    detached checkout, the path not tracked at that ref -- degrades to a line in
+    the report saying so. This job runs unattended every week and a missing
+    baseline must not cost the rest of it.
+    """
+    rel = CONTRACT_LABELS.relative_to(ROOT).as_posix()
+    try:
+        proc = subprocess.run(
+            ["git", "show", f"{BASELINE_REF}:{rel}"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except OSError as exc:
+        return None, f"could not run git ({exc})"
+    if proc.returncode != 0:
+        detail = proc.stderr.strip().splitlines()
+        why = detail[0] if detail else "no output"
+        return None, f"git show {BASELINE_REF}:{rel} failed ({why})"
+    rows = _labels_from_csv(proc.stdout)
+    if not rows:
+        return None, f"{BASELINE_REF} holds no contract rows at {rel}"
+    return rows, None
+
+
+def relabel_record(number: str, was: dict, now: dict) -> dict:
+    """One contract whose work type changed, with what else about it changed.
+
+    The ceiling and the option-period count are carried because they are the
+    usual reason a settled contract gets re-judged: exercising an option changes
+    the summed ceiling, which invalidates the classifier's cache entry for that
+    contract and sends it back for a fresh answer that need not match the old one.
+    """
+    return {
+        "contract_number": number,
+        "title": now.get("title", ""),
+        "old_work_type": was.get("work_type", ""),
+        "new_work_type": now.get("work_type", ""),
+        "old_is_technology": _truthy(was.get("is_technology")),
+        "new_is_technology": _truthy(now.get("is_technology")),
+        "old_ceiling": was.get("ceiling", ""),
+        "new_ceiling": now.get("ceiling", ""),
+        "old_option_periods": was.get("option_periods", ""),
+        "new_option_periods": now.get("option_periods", ""),
+    }
+
+
+def corpus_change() -> dict:
+    """New contracts against relabelled ones, for the contract corpus.
+
+    A contract count that moved says nothing on its own about why it moved. Ten
+    new contract numbers in the portal and one existing contract re-judged into a
+    different work type both add to a published total, and they mean opposite
+    things: the first is the District buying something, the second is this
+    pipeline changing its mind about something it had already seen. The report
+    was showing the sum and leaving a reader to guess the split, so this computes
+    it against the labels as they were published.
+    """
+    baseline, reason = baseline_labels()
+    if baseline is None:
+        return {"available": False, "unavailable_reason": reason, "baseline_ref": BASELINE_REF}
+    current = _labels_from_csv(CONTRACT_LABELS.read_text(encoding="utf-8"))
+
+    added = sorted(set(current) - set(baseline))
+    dropped = sorted(set(baseline) - set(current))
+    relabeled = [
+        relabel_record(n, baseline[n], current[n])
+        for n in sorted(set(baseline) & set(current))
+        if baseline[n].get("work_type") != current[n].get("work_type")
+    ]
+
+    tech_baseline = sum(1 for r in baseline.values() if _truthy(r.get("is_technology")))
+    tech_current = sum(1 for r in current.values() if _truthy(r.get("is_technology")))
+    new_tech = sum(1 for n in added if _truthy(current[n].get("is_technology")))
+    dropped_tech = sum(1 for n in dropped if _truthy(baseline[n].get("is_technology")))
+    relabeled_tech = sum(
+        (1 if r["new_is_technology"] else -1)
+        for r in relabeled
+        if r["new_is_technology"] != r["old_is_technology"]
+    )
+    return {
+        "available": True,
+        "unavailable_reason": None,
+        "baseline_ref": BASELINE_REF,
+        "baseline_rows": len(baseline),
+        "current_rows": len(current),
+        "new_contracts": len(added),
+        "new_technology_contracts": new_tech,
+        "disappeared_contracts": [
+            {
+                "contract_number": n,
+                "title": baseline[n].get("title", ""),
+                "work_type": baseline[n].get("work_type", ""),
+                "is_technology": _truthy(baseline[n].get("is_technology")),
+            }
+            for n in dropped
+        ],
+        "relabeled": relabeled,
+        "technology_baseline": tech_baseline,
+        "technology_current": tech_current,
+        # What each cause contributed, so the movement the technology-contract
+        # check reports adds back up from the three of them.
+        "technology_from_new": new_tech,
+        "technology_from_relabel": relabeled_tech,
+        "technology_from_dropped": -dropped_tech,
+    }
+
+
+def render_corpus(corpus: dict | None) -> list[str]:
+    """The contract corpus section: what the District added against what we re-judged.
+
+    Relabels lead. A new contract number is the portal doing its job and needs
+    nothing from anyone; a relabel means a published figure moved because this
+    pipeline answered its own question differently on the second pass, which is
+    the one a person has to look at before the figure is rewritten.
+    """
+    head = ["-- contract corpus, against the published labels --"]
+    if corpus is None:
+        return []
+    if not corpus.get("available"):
+        return head + [
+            f"  Not compared: {corpus.get('unavailable_reason')}.",
+            "  New contracts and relabelled ones cannot be told apart in this run.",
+            "",
+        ]
+
+    lines = head + [
+        "  A contract count can move because the District bought something or because",
+        "  this pipeline relabelled something it had already seen. Baseline:",
+        f"  data/contract_classifications.csv at git {corpus['baseline_ref']}"
+        f" ({corpus['baseline_rows']:,} contracts), now {corpus['current_rows']:,}.",
+        "",
+    ]
+
+    relabeled = corpus["relabeled"]
+    if relabeled:
+        noun = "contract" if len(relabeled) == 1 else "contracts"
+        lines += [
+            f"  {len(relabeled)} existing {noun} changed classification. A relabel moves a "
+            "published",
+            "  figure without anything having happened at the portal, so it is the finding",
+            "  here to check first:",
+            "",
+        ]
+        for rec in relabeled:
+            lines += render_relabel(rec)
+    else:
+        lines += ["  No existing contract changed classification.", ""]
+
+    lines += [
+        f"  {corpus['new_contracts']:,} contract numbers are new since the baseline, "
+        f"{corpus['new_technology_contracts']:,} of them classified",
+        "  as technology.",
+    ]
+    dropped = corpus["disappeared_contracts"]
+    if dropped:
+        noun = "contract" if len(dropped) == 1 else "contracts"
+        lines.append(f"  {len(dropped):,} {noun} left the portal:")
+        lines += [
+            f"      {rec['contract_number']}  {rec['title']}"
+            f"  ({rec['work_type'] or 'unlabelled'})"
+            for rec in dropped
+        ]
+    else:
+        lines.append("  No contract disappeared.")
+    lines += [
+        "",
+        f"  Technology contracts: {corpus['technology_baseline']:,} at the baseline, "
+        f"{corpus['technology_current']:,} now"
+        f" ({fmt_signed(corpus['technology_from_new'])} new,"
+        f" {fmt_signed(corpus['technology_from_relabel'])} relabelled,"
+        f" {fmt_signed(corpus['technology_from_dropped'])} gone).",
+        "",
+    ]
+    return lines
+
+
+def fmt_signed(count: int) -> str:
+    """A contributing count with its sign kept, so the three parts read as a sum."""
+    return f"{count:+,}"
+
+
+def render_relabel(rec: dict) -> list[str]:
+    """One relabelled contract: what it is, what it was called, and what moved under it."""
+    tech = ""
+    if rec["old_is_technology"] != rec["new_is_technology"]:
+        was = "technology" if rec["old_is_technology"] else "not technology"
+        now = "technology" if rec["new_is_technology"] else "not technology"
+        tech = f"   ({was} -> {now})"
+    lines = [
+        f"      {rec['contract_number']}  {rec['title']}",
+        f"          {rec['old_work_type']} -> {rec['new_work_type']}{tech}",
+    ]
+    underlying = []
+    if rec["old_ceiling"] != rec["new_ceiling"]:
+        underlying.append(f"ceiling {rec['old_ceiling']} -> {rec['new_ceiling']}")
+    if rec["old_option_periods"] != rec["new_option_periods"]:
+        underlying.append(
+            f"option periods {rec['old_option_periods']} -> {rec['new_option_periods']}"
+        )
+    if underlying:
+        lines.append("          " + ", ".join(underlying))
+    lines.append("")
+    return lines
+
+
 def build_report(pulled_on: str) -> dict:
     """Run the checks and assemble the report, finished run or not."""
     verify_claims.VERBOSE = False
@@ -259,6 +512,16 @@ def build_report(pulled_on: str) -> dict:
     # RESULTS holds whatever ran, which is everything unless a check raised.
     claims = [movement(r.as_dict()) for r in verify_claims.RESULTS]
     moved = sum(1 for c in claims if c["moved"])
+    try:
+        corpus = corpus_change()
+    except (OSError, csv.Error) as exc:  # noqa: BLE001 -- reported, not swallowed
+        # The comparison is an addition to the run. Losing it should cost the
+        # section, not the report the rest of the checks produced.
+        corpus = {
+            "available": False,
+            "unavailable_reason": f"{type(exc).__name__}: {exc}",
+            "baseline_ref": BASELINE_REF,
+        }
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "pulled_on": pulled_on,
@@ -267,6 +530,7 @@ def build_report(pulled_on: str) -> dict:
         "held": len(claims) - moved,
         "beyond_tolerance": sum(1 for c in claims if c["moved"] and not c["ok"]),
         "error": error,
+        "corpus_change": corpus,
         "claims": claims,
     }
 

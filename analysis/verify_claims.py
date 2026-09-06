@@ -19,7 +19,7 @@ reuses the same checks and reports movement instead of failing on it.
 built from two runs is diffable. Nothing about the default run changes: same
 lines on stdout, same non-zero exit when a claim no longer holds.
 
-Around a dozen claims name one particular row -- contract CW91684's detail
+Around two dozen claims name one particular row -- contract CW91684's detail
 record, the FY2021 payment total, a labor category on a rate card. The portal is
 live and rows do leave it. Those lookups go through the helpers below rather
 than through .loc / .iloc / next() directly, so a row that is gone fails its own
