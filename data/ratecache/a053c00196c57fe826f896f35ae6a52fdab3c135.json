@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Program Manager",
+  "level": "Senior Researcher",
+  "hourly_rate": 323.32,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Program Manager",
+  "level": "Senior Researcher",
+  "hourly_rate": 260.66,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Scientist",
+  "level": "",
+  "hourly_rate": 193.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Accountant",
+  "level": "Strategy and Transformation Lead",
+  "hourly_rate": 150.13,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Accountant",
+  "level": "Strategy and Transformation Lead",
+  "hourly_rate": 248.06,
+  "unit": "hour"
+ }
+]

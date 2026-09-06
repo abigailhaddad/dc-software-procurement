@@ -1,0 +1,56 @@
+[
+ {
+  "labor_category": "Subject Matter Expert III Project Manager",
+  "level": "",
+  "hourly_rate": 303.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant II",
+  "level": "",
+  "hourly_rate": 181.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Transformation Lead",
+  "level": "",
+  "hourly_rate": 202.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 202.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Scientist",
+  "level": "",
+  "hourly_rate": 125.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Consultant III",
+  "level": "",
+  "hourly_rate": 303.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Sr. Researcher",
+  "level": "",
+  "hourly_rate": 181.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Analyst III",
+  "level": "",
+  "hourly_rate": 202.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Accountant",
+  "level": "",
+  "hourly_rate": 202.0,
+  "unit": "hour"
+ }
+]

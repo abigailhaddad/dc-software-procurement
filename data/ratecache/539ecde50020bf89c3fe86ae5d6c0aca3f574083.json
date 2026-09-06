@@ -1,0 +1,26 @@
+[
+ {
+  "labor_category": "Project Manager/Facilitator",
+  "level": "",
+  "hourly_rate": 140.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Principal Consultant",
+  "level": "",
+  "hourly_rate": 220.8,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Graphic Designer",
+  "level": "",
+  "hourly_rate": 123.2,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Editor",
+  "level": "",
+  "hourly_rate": 112.0,
+  "unit": "hour"
+ }
+]

@@ -1315,7 +1315,7 @@ CW120248,DCFB-FY24-Refrigerated Response Box Truck (FEMS),"First Priority Emerge
 CW120263,INSTI HIV Tests and Controls,Biolytical Laboratories Inc.,Health (DOH),498000.0,2,Indefinite Delivery Indefinite Quantity,other,['193'],not_technology,no,,high,False,
 CW120272,DCHR Certified Public Manager Program,GEORGE WASHINGTON UNIVERSITY,Human Resources (DCHR),491291.13,2,Requirements,other,['924'],not_technology,no,,high,False,
 CW120281,DOB - Kustomer Enterprise Licenses,Bayne LLC,Department Of Buildings (DOB),1618272.0,2,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,Kustomer,high,True,
-CW120285,DOB - Translation Services,"TRANSPERFECT TRANSLATIONS,INC.",Department Of Buildings (DOB),1999998.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
+CW120285,DOB - Translation Services,"TRANSPERFECT TRANSLATIONS,INC.",Department Of Buildings (DOB),2899998.0,3,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
 CW120287,FY24-Group Foster Homes,THE WIN TEAM,Youth Rehabilitation Services (DYRS),834390.0,1,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
 CW120303,Human Care Agreement - Bright Minds HLC,Bright Minds Hlc,State Superintendent of Education (OSSE),1980000.0,2,Labor Hour,other,['924'],not_technology,no,,high,False,
 CW120381,"FY24 DCSS Davis Computer Technologies, LLC - MOBIS",Davis Computer Technologies LLC,,1900000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,

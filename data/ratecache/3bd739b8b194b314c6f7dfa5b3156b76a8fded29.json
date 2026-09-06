@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Principal Management Analyst",
+  "level": "",
+  "hourly_rate": 150.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Programmer Analyst",
+  "level": "",
+  "hourly_rate": 110.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Management Analyst",
+  "level": "",
+  "hourly_rate": 110.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Analyst",
+  "level": "",
+  "hourly_rate": 60.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Admin Analyst",
+  "level": "",
+  "hourly_rate": 45.0,
+  "unit": "hour"
+ }
+]

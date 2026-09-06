@@ -1,0 +1,38 @@
+[
+ {
+  "labor_category": "Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 187.55,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 152.38,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 98.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Subject Matter Expert",
+  "level": "",
+  "hourly_rate": 194.11,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Project Manager",
+  "level": "",
+  "hourly_rate": 157.71,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Writer",
+  "level": "",
+  "hourly_rate": 102.16,
+  "unit": "hour"
+ }
+]

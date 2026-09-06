@@ -1,0 +1,50 @@
+[
+ {
+  "labor_category": "Risk and Remediation Engagement Plan.",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Update the inventory of all DHCF IT infrastructure in order to identify where all FTI, PHI, and ePHI reside.",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Updated Risk Assessment of the potential risks and vulnerabilities of DHCF\u2019s business operations, including a current assessment of the confidentiality, integrity and availability of ePHI.",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Draft and update Risk Management Plan, which would include mitigation recommendations consistent with HIPAA, HITECH, and Omnibus Rule regulatory requirements, including NIST publication SP 800-53a (Rev 4 or 5); NIST publication SP 800-66a, and; NIST publication SP 800-30.",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Conduct and update the Business Impact Analysis (BIA) for all agencies of the DHCF (bi-annually or as needed)",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Develop Implementation Pathway for identified Priority Risk #1 (based upon assessment and findings in Current Option year)",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Develop Implementation Pathway for identified Priority Risk #2 (based upon assessment and findings in Current Option year) including tabletop simulation exercise and after action report",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Develop Implementation pathway for identified Priority Risk #3 (based upon assessment findings in Current Option Year)",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ }
+]

@@ -1,0 +1,32 @@
+[
+ {
+  "labor_category": "Review and update the agencywide Comprehensive Security Program including the cybersecurity strategy (based upon assessment findings in Current Option Year)",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Conduct and document results of System Penetration Testing for the DHCF Information Technology assets. (biennially, or as needed for new IT assets)",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Perform and document Remediation Services",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Perform and document DCAS Risk Assessment",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Perform and document DCAS Third Party IT Security Review",
+  "level": "",
+  "hourly_rate": 112.94,
+  "unit": "hour"
+ }
+]
