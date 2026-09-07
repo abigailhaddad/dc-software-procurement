@@ -1,0 +1,9 @@
+part_number,product,contracts,cross_reseller,note
+KMSATD-N-J12-G,"KnowBe4 Security Awareness Training Subscription, Diamond tier","['CW100632', 'CW118489']",True,"MVS then Avid Systems, both OCTO, both 36,000 seats"
+CLR-MPD-USGOV-1Y,"Genetec Clearance digital evidence platform, MPD, USGOV","['CW88137', 'CW126928']",False,Pittman Vantix both times; a renewal four years apart
+PAN-PA-5250-TP-HA2-R,"Palo Alto threat prevention subscription, PA-5250 HA pair","['CW66765', 'CW105049']",False,Sun Management both times; the same appliance serial numbers
+PAN-SVC-PREM-5250-R,"Palo Alto premium support renewal, PA-5250","['CW66765', 'CW105049']",False,Sun Management both times
+E0501LL,IBM FileNet Content Manager Authorized User Value Unit,"['CW92388', 'CW131291', 'CW137541']",False,Document Systems all three times
+E0E6ALL,Curam Business Intelligence and Analytics Authorized User,"['CW85955', 'CW111811']",False,"IBM, then Merative after IBM sold Curam to it; maker direct both times"
+121-0175,Salesforce Government Cloud Plus,"['CW102136', 'CW107764', 'CW99034']",False,Carahsoft all three times
+121-0218,Salesforce Shield,"['CW102136', 'CW107764', 'CW99034']",False,Carahsoft all three times

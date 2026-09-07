@@ -1155,6 +1155,49 @@ def run_checks() -> list[Result]:
     check("contract numbers Netsmart has been paid under",
           int(at(lock.contract_numbers, "Netsmart New York", "Netsmart lock-in row")), 24, 2)
 
+    section("the reseller layer")
+    # Payments joined to purchase orders on the BASE order number: the order
+    # table versions revised orders (PO731165-V2) and the payments table does
+    # not, so joining on the number as spelled loses half the rows. Unlike the
+    # contract join, this one does not decay with age -- match rates run 34-48%
+    # across ten years against the contract join's 0.5% to 13.6% -- which is why
+    # a trend computed on it is a trend rather than a survivorship artifact.
+    core = pd.read_csv(ROOT / "data" / "reseller_layer" / "reseller_share_it_core.csv")
+    core = core.set_index("fy")
+    check("reseller share of core IT payments, FY2017 %",
+          round(float(core.reseller_pct.loc[2017]), 1), 31.6, 0.5)
+    check("reseller share of core IT payments, FY2026 %",
+          round(float(core.reseller_pct.loc[2026]), 1), 54.3, 0.5)
+    check("manufacturers selling direct, FY2017 % (a floor)",
+          round(float(core.oem_direct_pct_floor.loc[2017]), 1), 28.5, 0.5)
+    check("manufacturers selling direct, FY2026 % (a floor)",
+          round(float(core.oem_direct_pct_floor.loc[2026]), 1), 13.3, 0.5)
+
+    # The check that stops this being an artifact of who is large today: drop
+    # the three biggest resellers and the trend nearly vanishes. Two firms, not
+    # a structural shift, and the prose says so.
+    sens = pd.read_csv(ROOT / "data" / "reseller_layer" / "sensitivity.csv")
+    sens = sens.set_index("definition")
+    check("rise in points, full reseller list",
+          round(float(sens.change_2017_2026_pts.loc["full list"]), 1), 22.7, 0.5)
+    check("rise in points, without the three largest",
+          round(float(sens.change_2017_2026_pts.loc["full list minus the three largest"]), 1),
+          2.6, 0.5)
+
+    dell = pd.read_csv(ROOT / "data" / "reseller_layer" / "dell_named_contracts.csv")
+    check("contracts naming a Dell product", int(dell.contracts.sum()), 41)
+    check("of those, held by a Dell company",
+          int(dell.loc[dell.holder == "Dell itself", "contracts"].sum()), 5)
+
+    # The price question, closed. Part numbers in award documents almost never
+    # repeat across suppliers, so there is nothing to compare a price against.
+    shared = pd.read_csv(ROOT / "data" / "part_numbers" / "shared_tokens.csv")
+    repeated = pd.read_csv(ROOT / "data" / "part_numbers" / "repeated_products.csv")
+    check("part-number tokens shared by two or more contracts", len(shared), 386, 5)
+    check("of those, real product families after adjudication", len(repeated), 8)
+    check("product families bought through more than one reseller",
+          int(repeated.cross_reseller.fillna(False).astype(bool).sum()), 1)
+
     section("the site's own figures")
     # site/index.html carries the same figures in prose and, until now, nothing
     # checked it. The README had this cover and the site did not, which is the

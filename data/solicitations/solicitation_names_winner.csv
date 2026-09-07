@@ -1,0 +1,83 @@
+contract,vendor,contract_title,solicitation,solicitation_title,vendor_tokens,vendor_matchable,solicitation_names_winner,contract_title_names_winner,brand_in_solicitation_title,brand_owner_won,other_vendor_keys_matched,other_vendor_names
+CW101465,ABC TECHNICAL SOLUTIONS INC,Dell Mobile Precision Workstation,Doc620162,FY22 Dell Mobile Precision Workstation,ABC TECHNICAL,True,False,False,Dell,False,DELL; MOBILE; PRECISION,"Dell; T-MOBILE USA, INC.; PRECISION SYSTEMS INC"
+CW101930,"Diona US, Inc.",SME-Mastery Level Program Manager IV,Doc623041,SME-Mastery Level Program Manager IV,DIONA,True,False,False,,False,LEVEL,LEVEL 3 COMMUNICATIONS LLC
+CW102904,"The Pittman Group, Inc DBA VANTIX",FY22-OCTO- SecureAuth IDP Platform maintenance,Doc628336,FY22-OCTO-SecureAuth IDP Platform maintenance,PITTMAN VANTIX,True,False,False,SecureAuth,False,,
+CW103123,CoreSphere LLC,Customer Relationship Management (CRM) Platform for DBH,Doc603555,FY22-DBH Customer Relationship Management (CRM) Platform,CORESPHERE,True,False,False,,False,,
+CW103703,"IdeaCrew, Inc.",FY23  INTEGRATED TECHN ENGINE PROJECT -PHASE II,Doc628288,FY22 Integrated Technology Engine Project Implementation(Phase II),IDEACREW,True,False,False,,False,,
+CW104095,"Changing Technologies, Inc.",Ivanti Endpoint Manager Platform,Doc632728,Ivanti Endpoint Manager Platform,CHANGING,True,False,False,Ivanti,False,,
+CW105049,"Sun Management, Inc.",FY23-Palo Alto Content Filtering Maintenance,Doc640614,FY23-OCTO-Palo Alto Content Filtering Maintenance,SUN,True,False,False,Palo Alto,False,,
+CW106369,EASTBANC TECHNOLOGIES,DOB- Data Architecture Implementation,Doc645331,DOB- Data Architecture Implementation,EASTBANC,True,False,False,,False,,
+CW107276,"McKinsey & Company, Inc. Washington D.C.",Cyber Security Plan,Doc653520,Request for Task Order Proposal - Cyber Security Plan,MCKINSEY,True,False,False,,False,PLAN,"E-Plan, Inc"
+CW107694,"Incapsulate, LLC",DOB ? Vacant Buildings Enforcement Sales Force Application,Doc656150,DOB ? Vacant Buildings Enforcement Sales Force Application,INCAPSULATE,True,False,False,Salesforce (spelled 'Sales Force'),False,,
+CW109524,"SUPRETECH, INC.",FY23-DMV-BIS Digital Court Recorder System,Doc665044,FY23-DMV-BIS Digital Court Recorder System,SUPRETECH,True,False,False,,False,DMV,DMV IT Consulting
+CW109550,DIGI DOCS INC DOCUMENT MGERS,FY23-EOM-Digital Preservation Software System,Doc654725,FY23- DC Supply Schedule RFTOP- Digital Preservation Software System,DIGI DOCS DOCUMENT MGERS,True,False,False,,False,,
+CW110007,BBC Research & Consulting,Phase II Disparity Study,DCEB-2021-R-0001,Government of the District of Columbia Disparity Study,BBC,True,False,False,,False,,
+CW110076,"MVS, Inc.",FY23- API Gateway Maintenance,Doc668988,API Gateway,MVS,True,False,False,,False,,
+CW111255,"Center for Innovation, Research, and Transformation in Education",FY24-DOES-DCIA-Infrastructure Training Services,Doc663620,FY23-DOES-DCIA Infrastructure Training Services,TRANSFORMATION,True,False,False,,False,INFRASTRUCTURE,"Infrastructure Solutions Group, Inc."
+CW111430,Techflairs inc,FY23 - JSAT Website Redesign and Platform Development (CJCC),Doc657924,CJCC FY23 JSAT Website Redesign & Platform Development,TECHFLAIRS,True,False,False,,False,,
+CW112684,BPM BI INC.,DCAS - Informatica Maintenance and Support Services,Doc687342,Informatica Maintenance and Support Services,BPM,True,False,False,Informatica,False,,
+CW114625,"SZ PM Consultants, Inc","FY2022 AE Schedule Award SZ PM Consultants, Inc",DCKA-2020-Q-0048,FY20 Architect-Engineer (A/E) Schedule,,False,False,False,,False,,
+CW114695,Tyson Project Management Group,"DHCF Governance, Risk and Compliance (GRC) Software",Doc697202,"DHCF-Goverance, Risk, and Compliance (GRC) Software",TYSON,True,False,False,,False,,
+CW114876,STANTEC CONSULTING SVCS INC.,FY22 AE Schedule Award Stantec Consulting Services Inc,DCKA-2020-Q-0048,FY20 Architect-Engineer (A/E) Schedule,STANTEC SVCS,True,False,False,,False,,
+CW115533,Sam Schwartz Engineering PLLC,FY22 AE Schedule DCKA-2022-T-0064 SAM Schwartz Consulting,DCKA-2020-Q-0048,FY20 Architect-Engineer (A/E) Schedule,SAM SCHWARTZ,True,False,True,,False,,
+CW115541,Carahsoft Technology Corporation,ABCA System modernization,Doc694413,FY23-ABCA-ABCA System modernization,CARAHSOFT,True,False,False,,False,,
+CW115955,"MVS, Inc.",BMC Software Maintenance,Doc579164,FY21-BMC Software Maintenance,MVS,True,False,False,BMC,False,BMC,BMC SOFTWARE
+CW116241,"Mead and Hunt, Inc.",T.O No. 1 - DCKA-2023-C-0056 - Citywide Traffic Signal Optimization Round 3 (BY),DCKA-2023-Q-0056,Citywide Traffic Signal Optimization,MEAD HUNT,True,False,False,,False,TRAFFIC,"American Traffic Solutions, Inc."
+CW116988,"Advocates for Human Potential, Inc.",Needs Assessment and Strategic Plan,Doc690633,Needs Assessment and Strategic Plan,ADVOCATES HUMAN POTENTIAL,True,False,False,,False,ASSESSMENT; PLAN,"Assessment Solutions Group; E-Plan, Inc"
+CW118397,Carahsoft Technology Corporation,"Salesforce License, Maintenance, and Support",Doc721796,Salesforce Licenses and Maintenance - Federal Supply Schedule Holder,CARAHSOFT,True,False,False,Salesforce,False,HOLDER,"HOLDER ENTERPRISES, INC."
+CW120781,"Public Consulting Group, Inc.",Independent Verification and Validation for the Medicaid Management Information System,Doc702784,MMIS IV&V,,False,False,False,,False,,
+CW121347,Karder Corporation,FY24 SGS Database Development and Maintenance,Doc726801,FY24 SGS Database Development and Maintenance,KARDER,True,False,False,,False,,
+CW123208,Carahsoft Technology Corporation,ServiceNow Licenses,Doc749299,ServiceNow licenses,CARAHSOFT,True,False,False,ServiceNow,False,,
+CW123716,HR&A Advisors Inc.,DMPED-Real Estate and Financial Advisory Services (HR&A Advisors Inc),DCEB-2024-Q-1001,Real Estate and Financial Advisory Services,ADVISORS,True,False,True,,False,ADVISORY; FINANCIAL,"Medical Advisory Services, LLC; FM Financial Services, LLC"
+CW123733,CSG ADVISORS,DMPED-Real Estate and Financial Advisory Services (CSG),DCEB-2024-Q-1001,Real Estate and Financial Advisory Services,CSG ADVISORS,True,False,False,,False,ADVISORY; FINANCIAL,"Medical Advisory Services, LLC; FM Financial Services, LLC"
+CW124619,M. Arthur Gensler Jr. & Assoc.,"DMPED- OPTION YEAR ONE Urban Planning, - GENSLER & ASSOC.",DCEB-2024-Q-1002,"Urban Planning, Design, Land Use and Architectural  Services",ARTHUR GENSLER ASSOC,True,False,False,,False,URBAN,THE URBAN INSTITUTE
+CW125025,THE PRESIDIO CORPORATION,FY25 Arbor Pravail,Doc761800,FY25 Arbor Pravail,PRESIDIO,True,False,False,Arbor Pravail,False,ARBOR,"ARBOR E & T, LLC"
+CW125490,vTech Solution Inc.,Third Party Assessment and Penetration Testing,Doc754128,Thirty Party Assessment and Penetration Testing,VTECH,True,False,False,,False,ASSESSMENT,Assessment Solutions Group
+CW127190,DATANET SYSTEMS CORP,"BOE Web Redesign, Hosting, and Maintenance",Doc766611,"BOE - Web Redesign, Hosting, and Maintenance",DATANET,True,False,False,,False,,
+CW128135,"MVS, Inc.",DOC CTF Camera Project FY2025,Doc765997,DOC CTF Camera Project FY2025,MVS,True,False,False,,False,,
+CW128516,Capitol Underground Partners,Program Management PM Services the Requirement to support the DC PL,DCKA-2025-Q-0019,Request for Qualifications  Program Management For the DC PLUG Program,CAPITOL UNDERGROUND,True,False,False,,False,,
+CW129708,Carahsoft Technology Corporation,DOB - Accela Maintenance and Enhancement,Doc792044,DOB - Accela Maintenance and Enhancement,CARAHSOFT,True,False,False,Accela,False,ACCELA,"ACCELA, INC."
+CW130273,"The Clearing, Inc",DBH FY26 LIVE.LONG.DC. Implementation Support,Doc766123,FY 25 DBH Request for Proposal to provide LIVE.LONG.DC. Implementation Support,CLEARING,True,False,False,,False,,
+CW131188,Carahsoft Technology Corporation,DOB - Salesforce Migration Services,Doc799892,DOB ? Salesforce Migration Service,CARAHSOFT,True,False,False,Salesforce,False,,
+CW131575,ADVANCED NETWORK CONSULTING,OCTO FY26 - RedHat Enterprise Linux ExtendedLife Cycle  Support,Doc799754,OCTO FY26 -RedHat Enterprise Linux Extended Life Cycle Support,,False,False,False,Red Hat,False,LIFE,INNOVATIVE LIFE SOLUTIONS
+CW133224,NJ3Q Technology,OpenText Exstream,Doc811799,Open Text,NJ3Q,True,False,False,OpenText,False,,
+CW136221,"Innovation Horizons, Inc.",Annual Grievance Reporting and Compliance Analysis Consulting,Doc825976,Annual Grievance Reporting and Compliance Analysis,HORIZONS,True,False,False,,False,,
+CW52081,gtechna USA Corporation,E-Citation System,Doc308925,Competition Exemption E-Citation System,GTECHNA,True,False,False,,False,,
+CW52586,"Quickbase, Inc",QuickBase,Doc312402,FY17-T0O- Quickbase,QUICKBASE,True,True,True,Quickbase,True,,
+CW64225,"MVS, Inc.",Solarwinds Licenses,Doc396666,Solarwinds Licenses,MVS,True,False,False,SolarWinds,False,,
+CW77923,"AVID SYSTEMS, LLC",Offender Management System,Doc350609,DOC Offender Management System,AVID,True,False,False,,False,,
+CW81244,VION CORPORATION,FY20-OCTO-Virtual Storage Platform (Hitachi G1000),Doc503024,FY20-OCTO-Virtual Storage Platform,VION,True,False,False,,False,,
+CW81475,"Kimley-Horn & Associates, Inc",Parking Control Beat Design Analysis Consultant,Doc496296,DCKT-2020-Parking Control Beat Design Analysis Consultant,KIMLEY HORN,True,False,False,,False,,
+CW81564,ADVANCED NETWORK CONSULTING,Data Center Migration Project- F5 Application Delivery Platform,Doc504013,Data Center Migration Project-F5 Application,,False,False,False,F5,False,,
+CW84195,MIDTOWN PERSONNEL INC,Payment Methodology Consultant,Doc517963,Payment Methodology Consultant,MIDTOWN PERSONNEL,True,False,False,,False,,
+CW84963,Computer Solution LLC,LABORATORY INFORMATION MANAGEMENT SYSTEM,Doc454213,LABORATORY INFORMATION MANAGEMENT SYSTEM,,False,False,False,,False,LABORATORY,Laboratory Corporation of America
+CW86571,Carahsoft Technology Corporation,FY21-Federal Budget Application,Doc533388,OCTO-FY21-Federal Budget Formulation and Execution Application,CARAHSOFT,True,False,False,,False,,
+CW87709,n2grate,Cisco Firewall Hardware,Doc540130,Cisco Firewall Hardware,N2GRATE,True,False,False,Cisco,False,CISCO,"CISCO SYSTEMS, INC."
+CW87983,Creative Information Technology Inc.,Case Management System -  OSSE,Doc430326,Case Management System - OSSE,CREATIVE,True,False,False,,False,,
+CW88141,ADVANCED NETWORK CONSULTING,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,Doc540624,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,,False,False,False,Red Hat,False,,
+CW88674,"MVS, Inc.",Enterprise Near-Me Marketplace Software Subscription,Doc546184,Enterprise Near-Me Marketplace Software,MVS,True,False,False,,False,,
+CW88923,"The Pittman Group, Inc DBA VANTIX",CAD Integration Platform,Doc544424,CAD Integration Platform,PITTMAN VANTIX,True,False,False,,False,,
+CW89121,DOCUMENT SYSTEMS INC,FY21-OCTO-FileNet License Renewal and Maintenance Support,Doc546202,FY21-OCTO-FileNet License Renewal and Maintenance Support,DOCUMENT,True,False,False,FileNet,False,FILENET,FILENET CORPORATION
+CW89124,"AVID SYSTEMS, LLC",FY21 - OCTO - CheckPoint Firewall Annual Support,Doc546794,FY21 - OCTO - CheckPoint Firewall Annual Support,AVID,True,False,False,Check Point,False,,
+CW89498,"EC America, INC.",Proofpoint Data Extraction,Doc546741,Proofpoint Data Extraction,,False,False,False,Proofpoint,False,,
+CW89727,"AVID SYSTEMS, LLC",FY21 - OCTO - Contact-Center-As-A-Service (CCaaS),Doc546897,FY21 - OCTO - Contact Center-As-A-Service (CCaaS),AVID,True,False,False,,False,,
+CW90258,"AVID SYSTEMS, LLC",FY21-OCTO-Data Security Solution Software,Doc548142,FY21-OCTO-Data Security Solution Software,AVID,True,False,False,,False,,
+CW90729,GEOGRAPHIC SOLUTIONS INC,UIBS DOES,Doc523252,Unemployment Insurance Benefits System (UIBS) - DOES,GEOGRAPHIC,True,False,False,,False,INSURANCE,United Healthcare Insurance Company
+CW91017,WorkED Consulting LLC,Technical Assistance Consulting WIC,Doc255169,FY16 - Training -DCTC,WORKED,True,False,False,,False,,
+CW91857,"StollenWerks, LLC",Consultant Services- Draft a Policy Implementation Plan for the redesign of publicly financed and delivered behavioral health services.,Doc563725,RFQ Consultant to provide technical assistance to DBH in drafting an implementation plan for the redesign of publicly financed and delivered behavioral health services,STOLLENWERKS,True,False,False,,False,BEHAVIORAL; PLAN; TECHNICAL,"P&G Behavioral Health Services, LLC; E-Plan, Inc; AMERICAN TECHNICAL SERVICES"
+CW92388,DOCUMENT SYSTEMS INC,DCRA FileNet Support Services,Doc564138,FY21 FileNet Support Services,DOCUMENT,True,False,False,FileNet,False,FILENET,FILENET CORPORATION
+CW94584,TELECOMMUNICATIONS DEV CORP,FY21-GovOS Seamless Doc License Renewal,Doc580281,FY21-RFTOP SeamlessDocs,TELECOMMUNICATIONS DEV,True,False,False,SeamlessDocs,False,,
+CW94841,gtechna USA Corporation,FY22 - e-Citation System Maintenance & Support - MPD,Doc580177,FY22 - FA0 - MPD - e-Citation System (Exempt from Competition),GTECHNA,True,False,False,,False,,
+CW94950,AGILENT TECHNOLOGIES,Ultivo Triple Quadrupole Liquid LC MS System,Doc571531,Ultivo Triple Quadrupole Liquid LCMS System,AGILENT,True,False,False,Ultivo (an Agilent product),True,,
+CW95411,"MVS, Inc.",FY22 - OUC - Smart911 - 311 Rave Licenses,Doc580126,FY21 - (OUC) Smart911 - 311 Rave Licenses,MVS,True,False,False,Smart911 / Rave,False,,
+CW95440,DLT SOLUTIONS INC,FY21-CrowdStrike Software Subscription,Doc585008,FY21-CrowdStrike software subscription,DLT,True,False,False,CrowdStrike,False,,
+CW95531,Urban Equity Consulting Group,DDS-RSA Urban Equity Consulting Group,Doc547675,FY21 Vocational Services for RSA,URBAN EQUITY,True,False,True,,False,,
+CW95665,WEST PUBLISHING CORP,FY22 - DHS - Fraud Case Management and Data Analytics System Subscription,Doc517647,Fraud Case Management and Data Analytics System Subscription,WEST PUBLISHING,True,False,False,,False,,
+CW95738,NTE Systems,Operations and Maintenance (O&M),Doc526404,DCAS Operations and Maintenance (O&M) Support Services,NTE,True,False,False,,False,,
+CW96365,POWERSCHOOL GROUP LLC,Professional Learning Management System - OSSE,Doc584806,FY22 - GD0 - Professional Learning Management System - OSSE,POWERSCHOOL,True,False,False,,False,,
+CW96668,SoftSages Technology,Case Management System - OSSE,Doc578156,FY21 - GD0 - Case Management System - OSSE,SOFTSAGES,True,False,False,,False,,
+CW96709,Public Performance Management,FY22- DOES-LMS 365,Doc593372,FY22-CFO-DOES-Invitation For Bid - Learning Management System 365,PERFORMANCE,True,False,False,,False,,
+CW96712,"Tech Analysis, Inc.",FY22-DOES-Brandlive,Doc593041,FY22-DOES-Brandlive,,False,False,False,Brandlive,False,,
+CW97116,"IdeaCrew, Inc.",DBH - Integrated Technology  Engine Project,Doc590736,FY21 Integrated Information Technology (IT) & Management Consulting Services,IDEACREW,True,False,False,,False,,
+CW99034,Carahsoft Technology Corporation,DCRA - Land Management Use Platform,Doc607626,DCRA - Land Management Use Platform,CARAHSOFT,True,False,False,,False,,
+CW99768,DIGI DOCS INC DOCUMENT MGERS,Code Enforcement Advisor,Doc608617,Code Enforcement Advisor,DIGI DOCS DOCUMENT MGERS,True,False,False,,False,CODE,"Code IT, Inc."
