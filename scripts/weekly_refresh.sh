@@ -54,6 +54,10 @@ step "classify new contracts" make classify || failed=1
 step "rebuild rate cards"   make rates         || failed=1
 step "rebuild solicitations" make solicitations || failed=1
 step "rebuild DCAS"          make dcas          || failed=1
+# Everything else verify_claims checks. Without this the run refreshes the
+# snapshot and leaves these tables frozen, so their checks pass against stale
+# data and the drift report goes quiet exactly where the newest findings are.
+step "rebuild derived tables" make derived     || failed=1
 
 # Drift reporting runs even if classification failed: a stale-label drift
 # report is still worth having, and it records what it could not compute.

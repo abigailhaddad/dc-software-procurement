@@ -3,7 +3,7 @@
 # run costs nothing.
 
 .PHONY: help install pull classify verify test report site readme rates ocr h1b \
-        h1b-dol calc solicitations dcas pull-payments drift dashboard \
+        h1b-dol calc solicitations dcas pull-payments drift dashboard derived competition reseller part-numbers \
         modifications trends vehicles buyers cycle-time all
 
 help:
@@ -26,6 +26,7 @@ help:
 	@echo "make calc       pull GSA CALC rates and rebuild the federal comparison"
 	@echo "make solicitations  trace technology contracts back to posted solicitations"
 	@echo "make dcas       rebuild the DCAS roster and its attributed payments"
+	@echo "make derived    rebuild every other table verify_claims checks"
 	@echo "make trends     ten-year payment trends: spending, concentration, incumbency"
 	@echo "make vehicles   trace purchase orders back to the technology ordering vehicles"
 	@echo "make buyers     who buys technology: contracts, payments and purchase orders"
@@ -116,6 +117,22 @@ solicitations:
 
 dcas:
 	uv run python analysis/build_dcas.py
+
+competition:
+	uv run python analysis/competition.py --report
+
+reseller:
+	uv run python analysis/reseller_layer.py
+
+part-numbers:
+	uv run python analysis/part_number_prices.py
+
+# Every table verify_claims checks that is not rebuilt by an earlier step.
+# Without this the weekly run refreshes the portal snapshot and leaves these
+# frozen, so their checks compare a stale CSV against a stale literal and pass
+# while saying nothing. None of these calls a model; competition re-reads its
+# document cache rather than downloading.
+derived: modifications competition trends vehicles cycle-time reseller part-numbers
 
 # Reads only the payments and purchase-order tables already on disk, so it
 # needs no pull and takes about a minute.

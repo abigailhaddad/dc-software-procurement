@@ -51,6 +51,7 @@ CW109112,title_match,Department on Disability Services (DDS),it_goods,71554.08,D
 CW109183,title_match,Public Works (DPW),software_services,9995.0,Doc399544,DCKT-2019-Learning Management System,False,Open,9/24/2018,7/28/2023,7/28/2023,Base Period,1768,1768
 CW109524,cited_in_award_doc,Motor Vehicles (DMV),it_adjacent,1650000.0,Doc665044,FY23-DMV-BIS Digital Court Recorder System,False,Set Aside,7/18/2023,7/19/2023,7/24/2023,Base Period,1,6
 CW109550,cited_in_award_doc,Mayor (EOM),other,186182.0,Doc654725,FY23- DC Supply Schedule RFTOP- Digital Preservation Software System,False,Set Aside,4/20/2023,7/20/2023,7/24/2023,Base Period,91,95
+CW109817,title_match,Public Works (DPW),other,100000.0,Doc109798,Temporary Staffing - Contract Specialist,False,Set Aside,6/3/2013,8/3/2023,8/3/2023,Base Period,3713,3713
 CW110007,cited_in_award_doc,Contracting and Procurement (OCP),it_adjacent,124750.0,DCEB-2021-R-0001,Government of the District of Columbia Disparity Study,False,Set Aside,1/27/2021,8/7/2023,8/23/2023,Base Period,922,938
 CW110076,cited_in_award_doc,Chief Technology Officer (OCTO),other,108383.2,Doc668988,API Gateway,False,Set Aside,8/7/2023,8/14/2023,9/14/2023,Base Period,7,38
 CW110206,title_match,Health Care Finance (DHCF),other,1948731.0,Doc299326,MMIS IV & V 2017,False,Open,2/10/2017,8/15/2023,10/1/2023,Base Period,2377,2424
@@ -273,6 +274,10 @@ CW92802,title_match,Chief Technology Officer (OCTO),telecom,440000.0,Doc293310,C
 CW93564,title_match,Chief Technology Officer (OCTO),it_goods,127260.0,Doc570398,Invitation for Bid - BlueZone Terminal Emulator Software,False,Open,8/11/2021,9/17/2021,9/17/2021,Base Period,37,37
 CW93695,title_match,Behavioral Health (DBH),other,2387580.0,Doc568591,FY'21 - DBH - Temporary Staffing Services,False,Set Aside,7/14/2021,8/22/2021,9/15/2021,Base Period,39,63
 CW93784,title_match,Chief Technology Officer (OCTO),software_services,200000.0,Doc560641,FY21- First Alert License Subscription Renewal,False,Set Aside,5/7/2021,8/17/2021,8/27/2021,Base Period,102,112
+CW94212,title_match,Human Services (DHS),other,2850000.0,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services,False,Open,8/31/2015,10/1/2021,10/1/2021,Base Period,2223,2223
+CW94214,title_match,Human Services (DHS),other,950000.0,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services,False,Open,8/31/2015,10/1/2021,10/1/2021,Base Period,2223,2223
+CW94218,title_match,Human Services (DHS),other,4750000.0,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services,False,Open,8/31/2015,10/1/2021,10/1/2021,Base Period,2223,2223
+CW94220,title_match,Human Services (DHS),other,3800000.0,Doc219888,FY16 - RFP - DHS- Temporary Staffing Services,False,Open,8/31/2015,10/1/2021,10/1/2021,Base Period,2223,2223
 CW94253,cited_in_award_doc,Health Care Finance (DHCF),other,8215872.0,Doc564193,Temporary Personnel for Health Care Operations Administration,False,Open,6/9/2021,1/1/2022,1/1/2022,Base Period,206,206
 CW94285,title_match,"Insurance, Securities and Banking (DISB)",it_adjacent,130000.0,Doc573361,"FY21-The Department of Insurance, Securities and Banking Insurance Code Modernization Project",False,Set Aside,9/1/2021,9/24/2021,9/24/2021,Base Period,23,23
 CW94459,title_match,Human Services (DHS),other,599000.0,Doc577161,DHS-Asset Verification System (AVS)Project-FY21,False,Set Aside,9/10/2021,9/22/2021,10/1/2021,Base Period,12,21
