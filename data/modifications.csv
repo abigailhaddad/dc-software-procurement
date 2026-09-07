@@ -25,7 +25,7 @@ CW102915,FY22-OCTO-Tenable Exposure Vulnerability Management Platform,cots_imple
 CW102954,FY22-OCTO-SolarWinds Annual Maintenance,software_om_support,goods_or_licenses,yes,False,1,11.6,0,0
 CW102967,"FY22-OCTO-FOIAExpress Software, Support, and Training",software_om_support,structure_not_stated,not_stated,False,1,12.0,0,0
 CW103044,FY23 - Maintenance & Support of ESSP - OUC,software_om_support,recurring_operations,not_stated,False,2,24.0,1,1
-CW103123,Customer Relationship Management (CRM) Platform for DBH,cots_implementation,recurring_operations,yes,False,3,32.0,8,22
+CW103123,Customer Relationship Management (CRM) Platform for DBH,cots_implementation,recurring_operations,yes,False,3,32.1,8,22
 CW103402,IFB- DOEE Storm Water Management and monitoring Platform,cots_implementation,sequential_gated_deliverables,yes,True,1,12.0,2,2
 CW103421,FY23 OUC COMMUNICATIONS-INFRASTRUCTURE AUDIT,it_consulting_advisory,sequential_gated_deliverables,not_stated,False,1,12.0,0,0
 CW103594,FY23 Internal Comprehensive Review,it_consulting_advisory,incremental_capacity,no,False,2,33.0,6,6
@@ -56,7 +56,7 @@ CW107780,External Threat Management Platform,cots_implementation,sequential_gate
 CW108421,FEMS FY23 IT Printer Software Services and Maintenance,software_om_support,recurring_operations,not_stated,False,1,12.0,0,0
 CW108644,CJCC Cloud Migration Assessment & Solution,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW108782,FY23-DME-Public Procurement Consulting Services,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,1,1
-CW108992,FY23-DHCD-  BOA CW108992  Atmos Solutions,cots_implementation,recurring_operations,no,False,4,39.6,1,1
+CW108992,FY23-DHCD-  BOA CW108992  Atmos Solutions,cots_implementation,recurring_operations,no,False,4,39.7,1,1
 CW109045,FY23 - UI Benefits Modernization Advisory & Assistance,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW109110,Digital Equity Planning (BEAD),it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW109151,FY23 DBH Integrated Care Applications Management System (ICAMS,software_om_support,recurring_operations,yes,False,2,23.2,4,6
@@ -65,7 +65,7 @@ CW109328,Comprehensive Knowledge Testing System,custom_software_build,sequential
 CW109355,FY23 - FS0 - Court Consulting Services and Feasibility Study,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW109524,FY23-DMV-BIS Digital Court Recorder System,cots_implementation,goods_or_licenses,not_stated,False,3,35.9,0,0
 CW109550,FY23-EOM-Digital Preservation Software System,software_om_support,recurring_operations,not_stated,False,1,12.0,0,0
-CW109689,IT Infrastructure Support and Management Consulting Services,it_consulting_advisory,incremental_capacity,no,False,4,37.2,4,6
+CW109689,IT Infrastructure Support and Management Consulting Services,it_consulting_advisory,incremental_capacity,no,False,4,37.3,4,6
 CW110007,Phase II Disparity Study,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW110076,FY23- API Gateway Maintenance,software_om_support,recurring_operations,not_stated,False,1,11.0,3,3
 CW110223,Electronic Grants Management System,custom_software_build,goods_or_licenses,not_stated,False,2,25.8,4,6
@@ -102,48 +102,48 @@ CW116328,Weigh-In-Motion Maintenance Contract,software_om_support,recurring_oper
 CW116358,Comprehensive Plan,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW116368,OCTO - Grant Management Platform,custom_software_build,goods_or_licenses,yes,False,1,12.0,0,0
 CW116643,Housing Demand and Neighborhood Change Assessment,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,15.7,0,0
-CW116783,CFO-DOES-FY24 UI TRUST FUND MODELING AND PROGRAM ANALYTICS,it_consulting_advisory,structure_not_stated,not_stated,False,3,27.9,7,11
+CW116783,CFO-DOES-FY24 UI TRUST FUND MODELING AND PROGRAM ANALYTICS,it_consulting_advisory,structure_not_stated,not_stated,False,3,28.0,7,11
 CW116988,Needs Assessment and Strategic Plan,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW117438,"Contract Workspace (Procurement)-CORE ENGINEERS CONSULTING GROUP, INC",it_consulting_advisory,structure_not_stated,no,False,1,12.0,0,0
 CW117585,Contract Workspace (Procurement)-INSPIRE CONSULTING INC.,it_consulting_advisory,structure_not_stated,not_stated,False,1,12.0,0,0
 CW117882,Street Design Software Remix,custom_software_build,goods_or_licenses,not_stated,False,2,4.3,0,0
 CW117913,FY24 Stormwater Collection and Analysis,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW118030,Intelligent Transportation System Maintenance,software_om_support,incremental_capacity,not_stated,False,1,12.0,0,0
-CW118064,ProjectDox -  Upgrade and Migrate plan review solution,custom_software_build,goods_or_licenses,not_stated,False,3,26.3,2,2
+CW118064,ProjectDox -  Upgrade and Migrate plan review solution,custom_software_build,goods_or_licenses,not_stated,False,3,26.4,2,2
 CW118123,DOB AskHumans Artificial Intelligence (AI) Survey- Customer Service,it_consulting_advisory,structure_not_stated,not_stated,False,2,18.6,2,2
 CW118423,FY24- OIG IU and RAFP Case Management System,custom_software_build,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW118564,RFK Development Consulting,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,3.8,0,0
-CW118651,Operations and Maintenance for the Provider Data Management System,software_om_support,recurring_operations,yes,False,2,19.9,2,3
+CW118651,Operations and Maintenance for the Provider Data Management System,software_om_support,recurring_operations,yes,False,2,20.0,2,3
 CW118806,"Contract Workspace (Procurement)-Global Strategic Advisors Group, LLC",it_consulting_advisory,incremental_capacity,no,False,1,12.0,0,0
 CW119224,FY24-OTS-Grant Management System-Maiintenance and Support,software_om_support,recurring_operations,not_stated,False,2,23.6,1,1
 CW119667,FY25 - E- Filing System and Website maintenance and support,software_om_support,recurring_operations,not_stated,False,1,12.0,0,0
 CW119881,Securities Bureau Securities Registration and Licensing database system,custom_software_build,structure_not_stated,not_stated,False,1,12.2,0,0
 CW120562,Okta Access Gateway Service.,cots_implementation,recurring_operations,yes,False,1,12.0,1,1
 CW120603,AWS Cloud based services,cots_implementation,recurring_operations,not_stated,False,2,23.2,1,2
-CW120616,FY25-CF0-DOES-Employer Self Service Portal (ESSP) Maintenance and Support,software_om_support,recurring_operations,yes,False,2,23.1,4,4
-CW120701,"Capital One Arena Advisory Services - Kutak Rock, LLP",it_consulting_advisory,sequential_gated_deliverables,not_stated,False,2,23.8,0,0
+CW120616,FY25-CF0-DOES-Employer Self Service Portal (ESSP) Maintenance and Support,software_om_support,recurring_operations,yes,False,2,23.2,4,4
+CW120701,"Capital One Arena Advisory Services - Kutak Rock, LLP",it_consulting_advisory,sequential_gated_deliverables,not_stated,False,2,23.9,0,0
 CW120781,Independent Verification and Validation for the Medicaid Management Information System,it_consulting_advisory,recurring_operations,not_stated,False,2,17.2,3,3
 CW120801,OHR - Case Management System,custom_software_build,sequential_gated_deliverables,not_stated,False,2,18.3,0,0
 CW121064,DOB - Permit Wizard,cots_implementation,recurring_operations,not_stated,False,4,18.9,0,0
 CW121290,Guideline Reporting Information Data (GRID) system,custom_software_build,recurring_operations,not_stated,False,2,21.6,0,0
 CW121292,DOB - Enhancement (System Support Services),software_om_support,incremental_capacity,not_stated,False,3,17.8,0,0
-CW121347,FY24 SGS Database Development and Maintenance,software_om_support,incremental_capacity,no,False,2,19.7,0,0
+CW121347,FY24 SGS Database Development and Maintenance,software_om_support,incremental_capacity,no,False,2,19.8,0,0
 CW121373,FY24 Pollution Source Tracking,it_consulting_advisory,milestone_payments_only,not_stated,False,2,18.3,2,2
 CW121488,FY25 - DCAS - Operations Maintenance Services,software_om_support,recurring_operations,not_stated,False,2,19.5,2,2
 CW121655,DFHV Mobile Applications & Digital Platforms,custom_software_build,recurring_operations,not_stated,False,1,22.4,0,0
-CW121861,Market Me Consulting - DCSS Training Servies,it_consulting_advisory,structure_not_stated,not_stated,False,2,19.9,2,2
+CW121861,Market Me Consulting - DCSS Training Servies,it_consulting_advisory,structure_not_stated,not_stated,False,2,20.0,2,2
 CW122015,DOB - FY25 Scout Implementation Services,cots_implementation,milestone_payments_only,not_stated,False,2,21.9,0,0
 CW122035,Load Runner,it_consulting_advisory,recurring_operations,not_stated,False,2,12.0,1,1
 CW122261,"DMPED-OP OPTION YEAR ONE-Comprehensive Plan Rewrite-AECOM Technical Services, Inc.",it_consulting_advisory,sequential_gated_deliverables,yes,True,2,21.8,3,3
-CW122725,Licensure Management System (LMS),cots_implementation,recurring_operations,not_stated,False,1,11.4,1,1
-CW122785,ROFTOP - Clinical Case Management System,cots_implementation,sequential_gated_deliverables,yes,True,1,7.1,1,1
-CW122944,JUSTIS Cloud Migration,cots_implementation,sequential_gated_deliverables,yes,True,2,17.6,0,0
+CW122725,Licensure Management System (LMS),cots_implementation,recurring_operations,not_stated,False,1,11.5,1,1
+CW122785,ROFTOP - Clinical Case Management System,cots_implementation,sequential_gated_deliverables,yes,True,1,7.2,1,1
+CW122944,JUSTIS Cloud Migration,cots_implementation,sequential_gated_deliverables,yes,True,2,17.7,0,0
 CW123005,Flock Safety License Plate Recognition Software-as-a-Service Solution FY25,cots_implementation,goods_or_licenses,yes,False,1,12.0,0,0
 CW123311,FY25-Maintenance & Support AHD-CRB E-Filing System,software_om_support,recurring_operations,not_stated,False,2,18.7,1,1
 CW123322,FY25_SB0 (MPD)_Barrier Package_Safeware,cots_implementation,goods_or_licenses,yes,False,1,0.5,0,0
 CW123481,DMPED-OPTION YEAR ONE Real Estate & Financial Advisory Services CSG,it_consulting_advisory,incremental_capacity,not_stated,False,2,19.9,0,0
 CW123561,FY25 - OD-IT NEDSS Base System Implementation (AWS),cots_implementation,recurring_operations,not_stated,False,1,12.0,0,0
-CW123638,DCKA-2023-C-0089 Traffic Engineering Design PSI,it_consulting_advisory,structure_not_stated,not_stated,False,2,19.4,1,1
+CW123638,DCKA-2023-C-0089 Traffic Engineering Design PSI,it_consulting_advisory,structure_not_stated,not_stated,False,2,19.5,1,1
 CW123716,DMPED-Real Estate and Financial Advisory Services (HR&A Advisors Inc),it_consulting_advisory,incremental_capacity,no,False,1,8.0,2,2
 CW123727,O&M - Administrative Services Organization (ASO) System,software_om_support,sequential_gated_deliverables,yes,True,1,11.8,0,0
 CW123733,DMPED-Real Estate and Financial Advisory Services (CSG),it_consulting_advisory,incremental_capacity,no,False,1,8.2,0,0
@@ -153,50 +153,50 @@ CW124299,"Broadband Equity, Access and Deployment (BEAD)",it_consulting_advisory
 CW124522,Contract Workspace (Procurement)-PRM CONSULTING INC,it_consulting_advisory,structure_not_stated,no,False,1,12.0,0,0
 CW124619,"DMPED- OPTION YEAR ONE Urban Planning, - GENSLER & ASSOC.",it_consulting_advisory,incremental_capacity,no,False,2,18.4,0,0
 CW125025,FY25 Arbor Pravail,cots_implementation,goods_or_licenses,yes,False,1,12.0,3,3
-CW125066,FY25_GD0_CIO_Student GPS Tracking and Transportation Management System,cots_implementation,structure_not_stated,not_stated,False,1,9.3,2,2
+CW125066,FY25_GD0_CIO_Student GPS Tracking and Transportation Management System,cots_implementation,structure_not_stated,not_stated,False,1,9.4,2,2
 CW125490,Third Party Assessment and Penetration Testing,it_consulting_advisory,goods_or_licenses,yes,False,2,15.8,4,4
 CW126001,"Untitled Contract Workspace-DEVELOPMENT INNOVATION SYSTEM CD,LLC",custom_software_build,incremental_capacity,no,False,1,12.0,0,0
 CW126921,Audit and Compliance-LCP tracker,it_consulting_advisory,recurring_operations,yes,False,1,12.0,0,0
 CW127190,"BOE Web Redesign, Hosting, and Maintenance",custom_software_build,recurring_operations,yes,False,1,12.0,0,0
 CW127401,FY25 OPFL Data Analysis and Support Services,it_consulting_advisory,sequential_gated_deliverables,yes,True,2,13.9,2,2
 CW127560,LABORATORY INFORMATION MANAGEMENT SYSTEM (LIMS),custom_software_build,recurring_operations,not_stated,False,1,12.0,0,0
-CW127666,Advanced Network Consulting - DCSS MOBIS,it_consulting_advisory,structure_not_stated,no,False,1,6.0,0,0
+CW127666,Advanced Network Consulting - DCSS MOBIS,it_consulting_advisory,structure_not_stated,no,False,1,6.1,0,0
 CW127692,FY26 OCTO - Identity and Account Management,it_consulting_advisory,goods_or_licenses,yes,False,1,12.0,0,0
 CW127755,NetBackup and Cohesity Support,software_om_support,sequential_gated_deliverables,yes,True,1,12.6,0,0
 CW127803,UI-Geographic Solutions Web Services and Maintenance & Support,software_om_support,recurring_operations,yes,False,1,12.0,3,3
 CW127884,ROFTOP - Program Integrity Data Analytics Module,cots_implementation,sequential_gated_deliverables,yes,True,1,7.7,0,0
 CW127969,Software Maintenance,software_om_support,recurring_operations,not_stated,False,1,11.9,0,0
 CW128516,Program Management PM Services the Requirement to support the DC PL,it_consulting_advisory,incremental_capacity,no,False,1,14.9,0,0
-CW128755,Contract Workspace (Procurement)-PROFESSIONAL MANAGEMENT CONSULTING SERVICES LLC,it_consulting_advisory,incremental_capacity,no,False,1,4.7,0,0
+CW128755,Contract Workspace (Procurement)-PROFESSIONAL MANAGEMENT CONSULTING SERVICES LLC,it_consulting_advisory,incremental_capacity,no,False,1,4.8,0,0
 CW128868,FY26 LCP Tracker,it_consulting_advisory,structure_not_stated,not_stated,False,1,11.2,5,5
 CW128900,Workforce Management Implementation Services,cots_implementation,sequential_gated_deliverables,yes,True,1,0.0,0,0
 CW129167,JUSTIS Cloud Migration,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,3.9,0,0
-CW129402,DOB - Salesforce Professional Services,cots_implementation,structure_not_stated,not_stated,False,1,11.3,0,0
+CW129402,DOB - Salesforce Professional Services,cots_implementation,structure_not_stated,not_stated,False,1,11.4,0,0
 CW129708,DOB - Accela Maintenance and Enhancement,software_om_support,incremental_capacity,no,False,1,11.2,0,0
 CW129729,OUC Technology Fire Station Alerting System Maintenance,software_om_support,structure_not_stated,not_stated,False,1,11.2,0,0
-CW130273,DBH FY26 LIVE.LONG.DC. Implementation Support,cots_implementation,sequential_gated_deliverables,yes,True,1,8.8,0,0
+CW130273,DBH FY26 LIVE.LONG.DC. Implementation Support,cots_implementation,sequential_gated_deliverables,yes,True,1,8.9,0,0
 CW130494,Upgrading and Maintenance Offender Management System,software_om_support,sequential_gated_deliverables,yes,True,1,7.4,3,3
 CW130498,Strategic Action Plan,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,10.5,0,0
 CW130853,DMPED Grants Management Platform - Submittable Holdings,cots_implementation,recurring_operations,not_stated,False,1,10.1,1,1
-CW130931,DCHR Learning Content Management System,custom_software_build,goods_or_licenses,not_stated,False,1,7.3,0,0
-CW131188,DOB - Salesforce Migration Services,cots_implementation,sequential_gated_deliverables,yes,True,1,8.9,1,1
+CW130931,DCHR Learning Content Management System,custom_software_build,goods_or_licenses,not_stated,False,1,7.4,0,0
+CW131188,DOB - Salesforce Migration Services,cots_implementation,sequential_gated_deliverables,yes,True,1,9.0,1,1
 CW131575,OCTO FY26 - RedHat Enterprise Linux ExtendedLife Cycle  Support,software_om_support,recurring_operations,not_stated,False,1,8.7,1,1
 CW131583,OCME-Agilent Technologies-Maintenance and Service Agreement,software_om_support,recurring_operations,yes,False,1,7.0,0,0
 CW131688,Bridgehead Cloud Software as a Saas,cots_implementation,goods_or_licenses,yes,False,1,5.2,0,0
 CW131736,JUSTIS Modernization Project,it_consulting_advisory,structure_not_stated,not_stated,False,1,1.5,0,0
-CW132768,DMPED-Grant Reviewer Consultant Services- Advantageous Strategies,it_consulting_advisory,incremental_capacity,not_stated,False,1,7.2,1,1
-CW132781,DMPED-Grant Reviewer Consultant Services-Captivate Perspective,it_consulting_advisory,incremental_capacity,no,False,1,7.2,0,0
+CW132768,DMPED-Grant Reviewer Consultant Services- Advantageous Strategies,it_consulting_advisory,incremental_capacity,not_stated,False,1,7.3,1,1
+CW132781,DMPED-Grant Reviewer Consultant Services-Captivate Perspective,it_consulting_advisory,incremental_capacity,no,False,1,7.3,0,0
 CW133224,OpenText Exstream,cots_implementation,goods_or_licenses,yes,False,1,6.6,0,0
 CW133371,Meditech Software Maintenance,software_om_support,recurring_operations,yes,False,1,1.1,0,0
 CW133670,FY26 DHS Independent HIPAA Security Rule Risk Analysis and Business Impact Analysis,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,5.9,0,0
 CW133809,Data Catalog Platform,cots_implementation,goods_or_licenses,not_stated,False,1,5.4,0,0
-CW134345,Learning Management System,cots_implementation,recurring_operations,not_stated,False,1,5.2,0,0
+CW134345,Learning Management System,cots_implementation,recurring_operations,not_stated,False,1,5.3,0,0
 CW134571,Power Plateform SME Services,it_consulting_advisory,structure_not_stated,not_stated,False,1,5.2,0,0
-CW136221,Annual Grievance Reporting and Compliance Analysis Consulting,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,2.7,0,0
+CW136221,Annual Grievance Reporting and Compliance Analysis Consulting,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,2.8,0,0
 CW136258,24-7 IT Monitoring Operations Center,software_om_support,recurring_operations,not_stated,False,1,3.4,0,0
 CW136286,Atlan Data Catalog Solution,cots_implementation,goods_or_licenses,not_stated,False,1,1.5,0,0
 CW136383,FY26-EOM-Digital Archiving,custom_software_build,sequential_gated_deliverables,yes,True,1,2.9,0,0
-CW137541,DOB Public Records Systems (eRecords & SurDocs),custom_software_build,incremental_capacity,no,False,1,1.1,0,0
+CW137541,DOB Public Records Systems (eRecords & SurDocs),custom_software_build,incremental_capacity,no,False,1,1.2,0,0
 CW137717,Cool Corridors Multi-Hazard Resilience Study - 2,it_consulting_advisory,goods_or_licenses,yes,False,1,1.3,0,0
 CW138773,Asset Management Key System,custom_software_build,incremental_capacity,no,False,1,0.2,0,0
 CW46773,e-SivicRMS Web-Based Software Maintenance and Support,software_om_support,recurring_operations,yes,False,1,12.0,9,35
@@ -316,17 +316,17 @@ CW100632,Enterprise  Cybersecurity Platform Awareness,it_consulting_advisory,goo
 CW103206,FY23-FA0-Strategy Implementation Support,it_consulting_advisory,milestone_payments_only,not_stated,False,1,12.0,0,0
 CW104722,FY23-FEMS-Telestaff Workforce-Kronos Inc.,cots_implementation,goods_or_licenses,yes,False,2,20.6,2,3
 CW106039,Request For Proposals Technology One,it_consulting_advisory,goods_or_licenses,yes,False,1,12.0,0,0
-CW107416,SNF and HHA Payment Methodology Consultant,it_consulting_advisory,structure_not_stated,not_stated,False,4,40.8,6,13
+CW107416,SNF and HHA Payment Methodology Consultant,it_consulting_advisory,structure_not_stated,not_stated,False,4,40.9,6,13
 CW107442,FY23-DOES-Identification Verification Software,cots_implementation,goods_or_licenses,not_stated,False,4,40.4,7,13
 CW110052,Broadview Software Maintenance,software_om_support,recurring_operations,not_stated,False,1,12.0,1,1
 CW110195,CAQH Proview Database System,cots_implementation,recurring_operations,yes,False,3,34.8,4,4
-CW111767,FY24_GD0_CIO_e-School Plus Hosting and Maintenance,software_om_support,recurring_operations,not_stated,False,3,25.7,4,7
+CW111767,FY24_GD0_CIO_e-School Plus Hosting and Maintenance,software_om_support,recurring_operations,not_stated,False,3,25.8,4,7
 CW112026,NICE systems maintenance and training services - OUC FY24,software_om_support,recurring_operations,not_stated,False,1,12.0,0,0
 CW113022,DC 311Capsule Service and Custom Enhancements - FY23,custom_software_build,recurring_operations,not_stated,False,3,35.2,4,4
 CW114627,FY2022 AE Schedule Award Sheladia Associates Inc,it_consulting_advisory,incremental_capacity,no,False,2,35.2,0,0
 CW116223,Petition Management Signature Validation software solution.,cots_implementation,goods_or_licenses,not_stated,False,1,12.0,3,3
 CW116910,Corporate Registry System,custom_software_build,sequential_gated_deliverables,yes,True,1,12.0,1,1
-CW118520,Operations and Maintenance of the Electronic Visit Verification System,software_om_support,recurring_operations,yes,False,2,22.8,2,2
+CW118520,Operations and Maintenance of the Electronic Visit Verification System,software_om_support,recurring_operations,yes,False,2,22.9,2,2
 CW119846,Maintenance and Support of Existing Election Equipment,software_om_support,recurring_operations,not_stated,False,1,12.0,3,3
 CW120039,Data Catalog Platform Solution,cots_implementation,sequential_gated_deliverables,yes,True,1,12.0,3,4
 CW120077,Navman GPS System Maintenance and Support,software_om_support,recurring_operations,not_stated,False,2,23.2,2,5
@@ -337,8 +337,8 @@ CW126133,Digital Curbside Permit Management System (DCPMS),custom_software_build
 CW126788,DMPED- Downtown Comprehensive Transportation Plan,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,15.5,0,0
 CW126928,Genetec Cloud Storage,cots_implementation,goods_or_licenses,yes,False,1,11.2,0,0
 CW129179,FY26 Cyber Incident Response Retainer,it_consulting_advisory,recurring_operations,not_stated,False,1,11.5,1,1
-CW131291,"FY26 - OCTO - FileNet Licenses, Maintenance & Support",software_om_support,recurring_operations,not_stated,False,1,9.1,0,0
-CW133531,Enhance and fully integrate the Street Vending,custom_software_build,sequential_gated_deliverables,yes,True,1,6.1,0,0
+CW131291,"FY26 - OCTO - FileNet Licenses, Maintenance & Support",software_om_support,recurring_operations,not_stated,False,1,9.2,0,0
+CW133531,Enhance and fully integrate the Street Vending,custom_software_build,sequential_gated_deliverables,yes,True,1,6.2,0,0
 CW135692,State Freight Plan Delivery Micro-Hub Feasibility Study,it_consulting_advisory,structure_not_stated,not_stated,False,1,4.5,0,0
 CW46136,DCSS-Training Services-The Privacy Advocate LLC,it_consulting_advisory,incremental_capacity,no,False,1,12.0,11,11
 CW46410,Trakster System Support and Data Management Analysis,it_consulting_advisory,recurring_operations,not_stated,False,1,12.0,5,5

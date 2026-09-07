@@ -59,7 +59,7 @@ CW110223,title_match,FE0,it_adjacent,1073244.0,Doc665686,Electronic Grants Manag
 CW110658,title_match,Public Works (DPW),other,63980.0,Doc616893,MPD - Digital Signage Solution,False,Open,7/15/2022,8/30/2023,8/30/2023,Base Period,411,411
 CW110890,title_match,Health Care Finance (DHCF),it_adjacent,222842.4,Doc674730,DCSS Holders Only - Cyber Security,False,Set Aside,9/1/2023,9/8/2023,9/8/2023,Base Period,7,7
 CW110895,title_match,Human Services (DHS),it_goods,22680.9,Doc675684,DHS-FY23-Dell IT Equipment Caseload Increase,False,Set Aside,9/6/2023,9/7/2023,9/7/2023,Base Period,1,1
-CW111241,title_match,Health Care Finance (DHCF),it_adjacent,557964.0,Doc384226,Medicaid Information Technology Architecture State Self-Assessment 3.0 (MITA SS-A),False,Open,6/20/2018,8/20/2023,8/21/2023,Base Period,1887,1888
+CW111241,title_match,Health Care Finance (DHCF),it_adjacent,557964.0,Doc99420,Medicaid Information Technology Architecture State Self-Assessment (MITA SS-A),False,Open,5/24/2013,8/20/2023,8/21/2023,Base Period,3740,3741
 CW111255,cited_in_award_doc,Employment Services (DOES),it_adjacent,750000.0,Doc663620,FY23-DOES-DCIA Infrastructure Training Services,False,Open,8/8/2023,9/14/2023,10/2/2023,Base Period,37,55
 CW111430,cited_in_award_doc,Criminal Justice Coordinating Council (CJCC),it_adjacent,110830.0,Doc657924,CJCC FY23 JSAT Website Redesign & Platform Development,False,Set Aside,6/9/2023,11/1/2023,11/1/2023,Base Period,145,145
 CW112098,title_match,Health (DOH),other,999940.24,Doc542650,Temporary Staffing Support Services,False,Set Aside,12/9/2020,10/20/2023,10/24/2023,Base Period,1045,1049
@@ -197,7 +197,7 @@ CW71202,title_match,Chief Technology Officer (OCTO),software_services,1065061.4,
 CW74562,title_match,Licensing & Consumer Protection (DLCP),software_services,432409.6,Doc456936,Customer Relationship Management Licenses,False,Open,8/9/2019,9/5/2019,9/5/2021,Option 2,27,758
 CW75423,cited_in_award_doc,Chief Technology Officer (OCTO),it_goods,175524.74,Doc463847,Riverbed Software,False,Open,9/16/2019,9/25/2019,10/1/2020,Option 1,9,381
 CW75471,title_match,Licensing & Consumer Protection (DLCP),it_goods,892463.98,Doc466194,Data Management and Visualization Software,False,Open,9/19/2019,9/26/2019,10/1/2021,Option 2,7,743
-CW75972,title_match,Health Care Finance (DHCF),it_adjacent,3901304.0,Doc384226,Medicaid Information Technology Architecture State Self-Assessment 3.0 (MITA SS-A),False,Open,6/20/2018,9/30/2019,8/21/2023,Option 4,467,1888
+CW75972,title_match,Health Care Finance (DHCF),it_adjacent,3901304.0,Doc99420,Medicaid Information Technology Architecture State Self-Assessment (MITA SS-A),False,Open,5/24/2013,9/30/2019,8/21/2023,Option 4,2320,3741
 CW77381,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,717253.68,Doc480807,Avaya Software Maintenance - GSA,False,Open,11/18/2019,11/18/2019,10/1/2020,Option 1,0,318
 CW77577,cited_in_award_doc,Chief Technology Officer (OCTO),software_services,128049.01,Doc481373,FY19-TO0-Silo Hardware Maintenance,False,Set Aside,11/26/2019,12/20/2019,10/1/2020,Option 1,24,310
 CW77876,title_match,Licensing & Consumer Protection (DLCP),other,142772.33,Doc459132,Identity and Access Management Solution,False,Set Aside,9/6/2019,12/4/2019,1/9/2021,Option 1,89,491

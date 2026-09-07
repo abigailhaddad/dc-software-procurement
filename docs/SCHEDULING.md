@@ -31,17 +31,30 @@ Logs go to `data/drift/logs/run-<timestamp>.log`, last 12 runs kept.
 1. `make pull` -- refresh the portal snapshot into `data/raw/`.
 2. `make classify` -- label anything new.
 3. `make rates`, `make solicitations`, `make dcas` -- rebuild the derived tables.
-4. `make drift` -- recompute all 198 published figures and report what moved.
-5. `make dashboard` -- rebuild `site/dashboard.html`'s data from the new
+4. `make derived` -- rebuild everything else `verify_claims` reads:
+   modifications, competition, trends, vehicles, cycle time, the reseller layer
+   and part numbers.
+5. `make drift` -- recompute every published figure and report what moved.
+6. `make dashboard` -- rebuild `site/dashboard.html`'s data from the new
    snapshot and the drift report.
 
-Step 3 exists because those tables are computed from the snapshot. Without it
-the report mixes "the portal changed" with "we never re-ran the downstream
-steps", and the output does not distinguish the two.
+Steps 3 and 4 exist because those tables are computed from the snapshot.
+Without them the report mixes "the portal changed" with "we never re-ran the
+downstream steps", and the output does not distinguish the two. Step 4 was
+added after the checks grew to read five directories -- competition,
+part_numbers, reseller_layer, trends, vehicle_orders -- that nothing in the
+chain rebuilt, so roughly sixty checks would compare a stale table against a
+stale literal, pass, and report nothing.
 
-Step 5 is in the chain and `make site` is not. The dashboard reports the current
+Step 6 is in the chain and `make site` is not. The dashboard reports the current
 snapshot, so it should follow every refresh; the briefing stays on the published
 baseline until a human restates it.
+
+`make readme` is also outside the chain, for the same reason as `make site`.
+README.md is rendered from README.md.in by `analysis/build_readme.py`, and
+`verify_claims` fails when re-rendering would change it. That failure is the
+signal that the data has moved past what the README says, and restating it is a
+decision rather than a step.
 
 Deliberately not in the weekly run:
 

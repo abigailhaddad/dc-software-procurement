@@ -2,9 +2,9 @@ agency,solicitations,tech_flagged,dcss_flagged
 Chief Technology Officer (OCTO),1400,405,231
 Parks and Recreation (DPR),983,61,108
 Metropolitan Police Department (MPD),948,160,37
-State Superintendent of Education (OSSE),933,79,46
-Transportation (DDOT),923,92,26
-Public Works (DPW),792,62,10
+State Superintendent of Education (OSSE),929,79,46
+Transportation (DDOT),905,91,26
+Public Works (DPW),789,62,10
 Health (DOH),702,115,130
 Employment Services (DOES),691,145,123
 Youth Rehabilitation Services (DYRS),644,30,139
@@ -12,12 +12,12 @@ Fire and Emergency Services Department (FEMS),571,24,11
 Energy and Environment (DOEE),471,34,267
 Corrections (DC),448,69,65
 Forensic Sciences (DFS),443,46,70
-Housing and Community Development (DHCD),418,22,24
-Child and Family Services Agency (CFSA),409,62,122
+Housing and Community Development (DHCD),417,21,24
+Child and Family Services Agency (CFSA),404,62,122
 Human Services (DHS),377,60,90
-Behavioral Health (DBH),351,19,12
-Department on Disability Services (DDS),339,17,9
-Health Care Finance (DHCF),318,70,19
+Behavioral Health (DBH),349,19,12
+Department on Disability Services (DDS),337,17,9
+Health Care Finance (DHCF),317,70,19
 Contracting and Procurement (OCP),302,72,87
 Licensing & Consumer Protection (DLCP),299,51,35
 Motor Vehicles (DMV),260,58,48
@@ -38,13 +38,13 @@ Administrative Hearings (OAH),94,14,18
 Alcohol Beverage Regulation Administration (ABRA),94,23,17
 Human Resources (DCHR),89,15,14
 "Cable Television, Film, Music and Entertainment (OFTE)",88,17,22
-Mayor (EOM),88,25,24
+Mayor (EOM),86,25,24
 Neighborhood Safety and Engagement (ONSE),65,9,5
 CT0,64,14,2
 Deputy Mayor for Education (DME),63,4,16
-Deputy Mayor for Planning and Economic Development (DMPED),60,2,2
-Attorney General (OAG),59,12,8
 Zoning (OZ),59,10,7
+Deputy Mayor for Planning and Economic Development (DMPED),58,2,2
+Attorney General (OAG),57,12,8
 Office of Risk Management (ORM),57,7,22
 Deputy Mayor for Greater Economic Opportunity (DMGEO),53,22,9
 Department Of Buildings (DOB),47,16,15
@@ -67,8 +67,8 @@ District of Columbia Public Charter School Board (DPCSB),17,4,0
 Secretary (EOM-OS),16,1,7
 Deputy Mayor for Public Safety and Justice (DMPSJ),13,2,3
 Public Employee Relations Board (PERB),12,0,2
-General Services (DGS),11,0,0
 Retirement Board (DCRB),11,2,2
+General Services (DGS),10,0,0
 BI0,9,0,0
 Mayor's Office on Latino Affairs (MOLA),9,2,1
 Chief Financial Officer (OCFO),6,1,0
@@ -93,7 +93,6 @@ Lottery and Charitable Games (DLCB),3,0,0
 Senior Advisor (OSA),3,1,0
 UW0,3,0,0
 Unemployment Compensation Fund (UCF),3,0,0
-University of the District of Columbia (UDC),3,0,0
 CC0,2,0,0
 Criminal Code Reform Commission (CCRC),2,1,0
 DC Public Charter School,2,1,0
@@ -117,7 +116,6 @@ Council of the District of Columbia (Council),1,0,0
 DC Auditor (ODCA),1,0,0
 DC HBX,1,0,0
 DC PSC,1,0,0
-DCTC,1,0,0
 Department of Employment,1,0,0
 EC0,1,0,0
 EF0,1,0,0
@@ -142,5 +140,6 @@ Settlements and Judgments (SJ),1,0,0
 UV0,1,0,0
 Unemployment Insurance Trust Fund (UITF),1,0,0
 Uniform Law Commission (ULC),1,0,0
+University of the District of Columbia (UDC),1,0,0
 Washington Metro Area Transit Authority (WMATA),1,0,0
 ZX0,1,0,0

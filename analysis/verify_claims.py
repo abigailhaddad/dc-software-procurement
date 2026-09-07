@@ -259,7 +259,7 @@ def run_checks() -> list[Result]:
     check("contract option periods", len(contracts), 7169)
     check("distinct contracts", contracts.contract_number.nunique(), 4013)
     check("contracts classified", len(labels), 4013)
-    check("purchase orders (IT classes)", len(orders), 114435)
+    check("purchase orders (IT classes)", len(orders), 114436)
     check("payments", len(payments), 869839)
     check("earliest PO fiscal year", int(orders.fiscal_year.min()), 2013)
 
