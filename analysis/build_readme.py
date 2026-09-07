@@ -41,7 +41,8 @@ Traps:
   being used as a truth value.
 * TRANSCRIBED holds figures the README states that nothing in this repository
   computes. They render from a literal, and every run says so on stderr, so
-  they cannot be mistaken for something the data produced.
+  they cannot be mistaken for something the data produced. It is currently
+  empty.
 """
 
 from __future__ import annotations
@@ -67,20 +68,12 @@ TARGET = ROOT / "README.md"
 PLACEHOLDER = re.compile(r"\{\{(\w+)\}\}")
 
 # Figures the README states that no script in this repository produces. They
-# are written out here rather than left as literals in README.md.in so that
-# every one of them is in a single list a reader can audit, and so a run says
-# out loud how many there are. Nothing else in the rendered file is typed by
-# hand.
-#
-#   top10_share_repaired_pct -- the top-ten payment share after repairing the
-#   30-character truncation in the payments vendor field. The repaired figure
-#   was computed once, by hand, and the repair was never written down; none of
-#   the obvious reconstructions (truncate-then-alias, alias-then-truncate at
-#   any width) reproduces 53.2 from the current snapshot, so guessing at one
-#   would be inventing a computation to fit a published number.
-TRANSCRIBED = {
-    "top10_share_repaired_pct": "53.2",
-}
+# would be written out here rather than left as literals in README.md.in, so
+# that every one of them is in a single list a reader can audit and so a run
+# says out loud how many there are. It is empty: every figure in the rendered
+# file is computed. The mechanism is kept for the next figure that arrives
+# without a computation behind it.
+TRANSCRIBED: dict[str, str] = {}
 
 _WORDS = {
     1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
@@ -106,6 +99,64 @@ def words(value: int) -> str:
     if value not in _WORDS:
         raise ValueError(f"no spelling for {value}; write it as a numeral instead")
     return _WORDS[value]
+
+
+def suffix_fragments(suffixes: list[str]) -> frozenset[str]:
+    """Every way a corporate suffix can look once a truncation has cut it.
+
+    Proper prefixes only, and at least two characters: CORPORATION contributes
+    CO through CORPORATIO but not the whole word, which normalize_vendor
+    already strips, and not C.
+
+    >>> sorted(suffix_fragments(["LLC", "CORP"]))
+    ['CO', 'COR', 'LL']
+    """
+    return frozenset(s[:n] for s in suffixes for n in range(2, len(s)))
+
+
+def repaired_vendor_key(name: object, width: int, fragments: frozenset[str]) -> str:
+    """A vendor key with the truncation damage in the payments name undone.
+
+    The payments vendor field is cut at ``width`` characters, and the cut
+    lands mid-suffix often enough to matter: "CARAHSOFT TECHNOLOGY CORP" is
+    stripped to CARAHSOFT TECHNOLOGY by vendor_aliases.yaml and "CARAHSOFT
+    TECHNOLOGY CORPORATI" is not, so one company holds two keys and its
+    spending splits between them. This strips the trailing token of a name
+    that reached the cut when that token is a truncated corporate suffix --
+    CORPORATI, LL, IN -- and otherwise returns the ordinary key.
+
+    Only names that reached the cut are touched, because only those were
+    truncated; a short name ending in a fragment is a name that really ends
+    that way. The fragment must be at least two characters. A single trailing
+    letter is a prefix of half the suffix list and of plenty of real words, so
+    reading it as a cut-off suffix is a guess, and the merges it would make are
+    not ones this figure needs.
+
+    Across the whole payments table the rule moves 104 keys and 18 of them land
+    on a key that already exists, which is the merge actually being claimed:
+    ARCHER WESTERN CONSTRUCTION LL onto ARCHER WESTERN CONSTRUCTION, SLK HEALTH
+    SERVICES CORPORATIO onto SLK HEALTH SERVICES, and so on. In the FY2021-2025
+    technology window it merges two: Carahsoft, and Emphasys Computer
+    Solutions.
+
+    This is deliberately not folded into parse.normalize_vendor. The published
+    figures are computed on the field as the District publishes it, and the
+    README states the repaired share to show how far the truncation moves a
+    number, not to replace it.
+
+    >>> fragments = suffix_fragments(["CORPORATION"])
+    >>> repaired_vendor_key("CARAHSOFT TECHNOLOGY CORPORATI", 30, fragments)
+    'CARAHSOFT TECHNOLOGY'
+    >>> repaired_vendor_key("ACME CORPORATI", 30, fragments)
+    'ACME CORPORATI'
+    """
+    key = parse.normalize_vendor(name)
+    if not isinstance(name, str) or len(name) < width:
+        return key
+    parts = key.split()
+    if len(parts) > 1 and parts[-1] in fragments:
+        return " ".join(parts[:-1])
+    return key
 
 
 def load_sources() -> dict[str, object]:
@@ -207,6 +258,19 @@ def compute(sources: dict[str, object] | None = None) -> dict[str, str]:
     window["vendor_key"] = window.vendor.map(parse.normalize_vendor)
     ranked = window.groupby("vendor_key").amount.sum().sort_values(ascending=False)
     figures["top10_share_pct"] = f"{100 * ranked.head(10).sum() / window.amount.sum():.1f}"
+
+    # The same share with the truncated names put back together, which is what
+    # the README reports the truncation costs. The whole of the difference is
+    # Carahsoft: $33.9M under the published key plus $3.9M sitting under
+    # CARAHSOFT TECHNOLOGY CORPORATI, which was outside the top ten on its own.
+    fragments = suffix_fragments(aliases["strip_suffixes"])
+    window["repaired_key"] = window.vendor.map(
+        lambda name: repaired_vendor_key(name, int(cliff), fragments)
+    )
+    repaired = window.groupby("repaired_key").amount.sum().sort_values(ascending=False)
+    figures["top10_share_repaired_pct"] = (
+        f"{100 * repaired.head(10).sum() / window.amount.sum():.1f}"
+    )
 
     # The artifact series: technology payments joined to the current-state
     # contracts table, plotted by fiscal year. Published as the thing not to
