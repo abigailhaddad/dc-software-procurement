@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About This Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <h1>DC procurement data</h1>
+  <p class="sub">What the District of Columbia's Contracts and Procurement Transparency Portal publishes, in tables you can filter, total and check.</p>
+  <nav class="pages">
+    <a href="index.html">Contracts</a>
+    <a href="about.html" aria-current="page">About this data</a>
+  </nav>
+</header>
+
+<section class="about-hero">
+  <h2>About this data</h2>
+  <p>Every table on this site is the District's own record from its
+  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, pulled weekly and kept in a public archive.
+  Fields are shown as the District entered them. Nothing is classified or estimated. The one thing filled in is a short list of agency
+  names published only as an abbreviation or a budget code, listed below with a source for each.</p>
+  <p class="meta" id="asof"></p>
+  <div class="hero-links">
+    <a class="button primary" id="dataset" href="#">Download the tables</a>
+    <a class="button" href="https://contracts.ocp.dc.gov">Go to the portal</a>
+    <a class="button" href="index.html">Explore contracts</a>
+  </div>
+</section>
+<div id="status"></div>
+
+<section class="block">
+  <h2>Things to know before you total anything</h2>
+  <div class="notes" id="notes"></div>
+</section>
+
+<section class="block">
+  <h2>Agency names filled in</h2>
+  <p class="muted">The value as published is kept beside the name shown in every table, as <code>agency_as_published</code>.
+  Values with no source, such as ELC, are left as published. Abbreviations are never merged on their own: two different agencies publish as OPC.</p>
+  <div class="tablewrap" style="max-height:none"><table class="plain" id="agency-names"></table></div>
+</section>
+
+<section class="block">
+  <h2>What each column is</h2>
+  <p class="muted">Columns ending in <code>_text</code> are exactly as published; the numbers and dates beside them are parsed from those.</p>
+  <div class="tabs" id="col-tabs" role="tablist"></div>
+  <dl class="glossary" id="columns"></dl>
+</section>
+
+<footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly.</footer>
+</div>
+<script type="module">
+import {manifest, LOCAL, PARQUET_DIR, DATASET_PAGE} from "./shared/db.js";
+import {n, money, esc} from "./shared/explorer.js";
+
+const data = new URLSearchParams(location.search).get("data");
+const keep = (href) => data ? href + (href.includes("?") ? "&" : "?") + "data=" + encodeURIComponent(data) : href;
+const local = (path) => new URL(PARQUET_DIR + path, location.href).href;
+
+async function json(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`could not load ${url}: ${response.status}`);
+  return response.json();
+}
+
+// Each note leads with one number from summary.json, written by the same
+// export that writes the tables.
+function notes(s) {
+  const pct = (a, b) => `${Math.round(100 * a / b)}%`;
+  return [
+    {big: money(s.payments.paid), label: "paid, summing each payment line",
+     text: `The portal gives every payment line two amounts. voucherAmount is the line's own amount. paymentAmount is the total of the
+       whole check or ACH run the line was paid in, repeated on every line in that run: summing it gives ${money(s.payments.check_totals)}.
+       Only voucherAmount is summed here.`},
+    {big: pct(s.payments.no_contract, s.payments.lines), label: "of payment lines carry no contract number",
+     text: `${n(s.payments.no_contract)} of ${n(s.payments.lines)} lines, covering ${money(s.payments.no_contract_paid)}. A contract's
+       payments are the lines that carry its number, so a contract page can show less than was paid on it.`},
+    {big: n(s.contracts.periods), label: `option periods for ${n(s.contracts.contracts)} contracts`,
+     text: `The portal lists each option period as its own record with its own amount. That amount is what the period authorises, a
+       ceiling. Adding a contract's periods gives the most it could be paid over its life, not what it was paid.`,
+     link: ["See the contracts", "index.html"]},
+    {big: n(s.delisted.periods), label: `option periods no longer on the portal`,
+     text: `The portal does not keep everything it publishes. These periods, on ${n(s.delisted.contracts)} contracts, plus
+       ${n(s.delisted.orders)} purchase orders and ${n(s.delisted.payments)} payment lines, came from earlier pulls and are marked
+       "no longer listed" wherever they appear.`,
+     link: ["See them", "index.html?listed=No+longer+listed"]},
+    {big: n(s.contracts.vendors), label: "vendor names on contracts, as spelled",
+     text: `Vendor, agency, contract type and market type are typed in, and shown as typed. One company can appear under more than one
+       spelling, and market type has ${n(s.contracts.market_types)} distinct values, several of them variants of one another. Check the
+       spellings before totalling one name.`},
+    {big: n(s.payments.ids), label: `distinct ids on ${n(s.payments.lines)} payment lines`,
+     text: `A payment id is not unique: some lines share one, so there are ${n(s.payments.lines - s.payments.ids)} more lines than ids.
+       Removing duplicate ids would drop real payments.`},
+    {big: n(s.purchase_orders.classes), label: "commodity classes on purchase orders",
+     text: `Each contract and order carries an NIGP commodity code chosen when the record was entered. A class total is only as good as
+       those choices, so read the titles in a class before relying on one.`},
+    {big: `${s.payments.first_date.slice(0, 4)}–${s.payments.last_date.slice(0, 4)}`, label: "years of payments",
+     text: `Payments run from ${esc(s.payments.first_date)} to ${esc(s.payments.last_date)}. The portal gives a payment no fiscal year,
+       so the one here comes from its date (1 October to 30 September); the first and last are partial.`},
+  ];
+}
+
+function sourceLink(source) {
+  const m = source.match(/https?:\/\/\S+/);
+  const label = source.split(/:\s*https?:|\(data\/raw|,\s*which pairs/)[0].trim();
+  return m ? `<a href="${esc(m[0].replace(/[),.]+$/, ""))}">${esc(label)}</a>` : esc(source);
+}
+
+async function main() {
+  const status = document.getElementById("status");
+  const [s, cols, m] = await Promise.all([json(local("summary.json")), json(local("columns.json")), manifest()]);
+  const stamps = m.snapshots.map((x) => (x.pulled_at || "").slice(0, 10)).filter(Boolean).sort();
+  document.getElementById("asof").textContent =
+    `Latest pull: ${stamps.at(-1)}${LOCAL ? " · reading the local build" : ""}`;
+  document.getElementById("dataset").href = DATASET_PAGE;
+
+  document.getElementById("notes").innerHTML = notes(s).map((x) => `<article class="note-card">
+      <div class="note-big">${x.big}</div><div class="note-label">${esc(x.label)}</div>
+      <p>${x.text}</p>${x.link ? `<a href="${keep(x.link[1])}">${esc(x.link[0])} →</a>` : ""}</article>`).join("");
+
+  document.getElementById("agency-names").innerHTML = `<thead><tr><th>Published as</th><th>Shown as</th>
+      <th class="num">Contracts</th><th class="num">Orders</th><th class="num">Payments</th><th>Source</th></tr></thead><tbody>` +
+    s.agency_names.map((a) => `<tr><td class="mono">${esc(a.published)}</td><td>${esc(a.shown)}</td>
+      <td class="num">${n(a.contracts)}</td><td class="num">${n(a.orders)}</td><td class="num">${n(a.payments)}</td>
+      <td>${sourceLink(a.source)}</td></tr>`).join("") + "</tbody>";
+
+  const tables = Object.keys(cols);
+  const tabs = document.getElementById("col-tabs");
+  const TAB_LABELS = {contracts: "Contracts", documents: "Documents", purchase_orders: "Purchase orders", payments: "Payments", nigp_classes: "NIGP classes"};
+  tabs.innerHTML = tables.map((t, i) => `<button role="tab" data-t="${t}" aria-selected="${i === 0}">${esc(TAB_LABELS[t] || t)}</button>`).join("");
+  const showCols = (t) => {
+    for (const b of tabs.querySelectorAll("button")) b.setAttribute("aria-selected", b.dataset.t === t);
+    document.getElementById("columns").innerHTML = Object.entries(cols[t]).map(([c, d]) =>
+      `<dt>${esc(c)}</dt><dd>${esc(d)}</dd>`).join("");
+  };
+  tabs.addEventListener("click", (e) => { const b = e.target.closest("button[data-t]"); if (b) showCols(b.dataset.t); });
+  showCols(tables[0]);
+  status.textContent = "";
+}
+main().catch((err) => {
+  document.getElementById("status").innerHTML = `<span class="error">${esc(err.message || err)}</span>`;
+  throw err;
+});
+</script>
+</body>
+</html>

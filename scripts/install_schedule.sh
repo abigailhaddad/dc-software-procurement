@@ -21,7 +21,7 @@ if [ "${1:-}" = "--remove" ]; then
   exit 0
 fi
 
-mkdir -p "$HOME/Library/LaunchAgents" "$REPO/data/drift/logs"
+mkdir -p "$HOME/Library/LaunchAgents" "$REPO/data/logs"
 sed "s|__REPO__|$REPO|g" "$REPO/scripts/com.dcbudget.weekly.plist" > "$TARGET"
 
 # bootout first so reinstalling picks up an edited schedule.

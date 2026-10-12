@@ -1,5 +1,12 @@
 # Where this stands, and what is left
 
+> **The briefing is retired (October 2026).** `site/index.html` is now an explorer
+> over the portal's own rows, with no classifications, estimates or findings on
+> it. Everything below describes the analysis behind the old briefing: the code
+> and its outputs are still in `analysis/` and `data/`, unpublished, and their
+> comments still refer to `verify_claims.py` and the briefing, both removed. Treat
+> the findings below as leads to re-derive, not as results.
+
 Written 2026-09-07. It exists so the next person -- including a version of you
 with no memory of any of this -- can pick the work up without reconstructing it.
 Read `docs/CLASSIFIER_ACCURACY.md` alongside it.

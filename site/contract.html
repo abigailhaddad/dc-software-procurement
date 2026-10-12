@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC Contract</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="shared/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <h1>DC procurement data</h1>
+  <p class="sub">What the District of Columbia's Contracts and Procurement Transparency Portal publishes, in tables you can filter, total and check.</p>
+  <nav class="pages">
+    <a href="index.html">Contracts</a>
+    <a href="about.html">About this data</a>
+  </nav>
+</header>
+
+<p class="meta"><a href="index.html" id="back">← All contracts</a></p>
+<div id="status"></div>
+<div id="contract" hidden>
+  <h2 class="contract-title" id="title"></h2>
+  <dl class="facts" id="facts"></dl>
+  <div class="stats" id="stats"></div>
+
+  <section class="block">
+    <h2>Option periods</h2>
+    <p class="muted">Each option period is its own record on the portal, with its own amount: what that period authorises, not what was paid.</p>
+    <div class="tablewrap" id="periods"></div>
+  </section>
+
+  <section class="block">
+    <h2>Payments</h2>
+    <p class="muted" id="payments-note"></p>
+    <div class="card chart wide" id="pay-chart" hidden><h3>Paid by fiscal year</h3><p class="chart-note muted">Sum of voucherAmount by the fiscal year of the payment date. Hover for the line count.</p><div class="canvas" style="--h:220px"><canvas></canvas></div></div>
+    <div class="bar"><button id="payments-csv">Download these payments (CSV)</button></div>
+    <div id="payments"></div>
+  </section>
+
+  <section class="block">
+    <h2>Purchase orders</h2>
+    <p class="muted">An order has no contract number of its own on the portal. These are the orders that this contract's payments were paid against:
+    a payment line carries both a contract number and an order number. A revised order's <code>-V</code> suffix is ignored in matching, because the
+    payments table leaves it off. Orders placed under this contract but never paid will not appear.</p>
+    <div class="bar"><button id="orders-csv">Download these orders (CSV)</button></div>
+    <div id="orders"></div>
+  </section>
+
+  <section class="block">
+    <h2>Documents</h2>
+    <p class="muted">Every attachment the portal lists on this contract's option periods, linking to the PDF on the portal. A document filed under several
+    option periods appears once for each.</p>
+    <div id="documents"></div>
+  </section>
+
+</div>
+<footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB.</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script type="module">
+// One contract: its option periods, then everything linked to it by the
+// portal's own fields -- payments by contract number, orders through those
+// payments, documents by the option periods they are filed under.
+import {boot, q, downloadCsv, manifest} from "./shared/db.js";
+import {n, money, esc} from "./shared/explorer.js";
+
+const params = new URLSearchParams(location.search);
+const number = (params.get("n") || "").trim();
+const data = params.get("data");
+const keep = data ? `data=${encodeURIComponent(data)}` : "";
+document.getElementById("back").href = "index.html" + (keep ? "?" + keep : "");
+async function run(title, sql, binds) {
+  return q(sql, binds);
+}
+function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+function moneyExact(x) {
+  return x === null || x === undefined ? "–" : Number(x).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2});
+}
+
+const PERIODS = `SELECT option_period, CAST(start_date AS VARCHAR) AS start_date, CAST(end_date AS VARCHAR) AS end_date, amount,
+       title, vendor, agency, agency_as_published, contract_type, market_type, array_to_string(nigp_codes, '; ') AS nigp_codes,
+       contracting_officer, documents, portal_url, listed
+FROM contracts
+WHERE contract_number = ?
+ORDER BY start_date`;
+const PAYMENTS = `SELECT CAST(payment_date AS VARCHAR) AS payment_date, fiscal_year, agency, vendor, po_number, voucher_number,
+       voucher_amount, check_total, listed
+FROM payments
+WHERE contract_number = ?
+ORDER BY payment_date`;
+const PAY_BY_YEAR = `SELECT fiscal_year, count(*) AS lines, sum(voucher_amount) AS paid
+FROM payments
+WHERE contract_number = ?
+GROUP BY fiscal_year
+ORDER BY fiscal_year`;
+const ORDERS = `SELECT o.po_number, CAST(o.ordered_date AS VARCHAR) AS ordered_date, o.fiscal_year, o.agency, o.supplier,
+       o.nigp_code, o.po_total, o.listed
+FROM purchase_orders o
+WHERE regexp_replace(o.po_number, '-V[0-9]+$', '') IN (
+  SELECT DISTINCT regexp_replace(po_number, '-V[0-9]+$', '')
+  FROM payments
+  WHERE contract_number = ? AND po_number IS NOT NULL)
+ORDER BY o.ordered_date`;
+const DOCUMENTS = `SELECT category, name, url
+FROM documents
+WHERE contract_number = ?
+ORDER BY category, name`;
+
+async function main() {
+  const status = document.getElementById("status");
+  if (!number) {
+    status.innerHTML = `No contract number given. <a href="index.html">Pick one from the contracts table.</a>`;
+    return;
+  }
+  status.textContent = "Loading the data into your browser…";
+  await boot(["contracts", "documents", "purchase_orders", "payments", "nigp_classes"]);
+  const periods = await run("Option periods", PERIODS, [number]);
+  if (!periods.length) {
+    status.innerHTML = `No contract numbered <span class="mono">${esc(number)}</span> in the data.`;
+    return;
+  }
+  const payments = await run("Payments", PAYMENTS, [number]);
+  const byYear = await run("Payments by fiscal year", PAY_BY_YEAR, [number]);
+  const orders = await run("Purchase orders", ORDERS, [number]);
+  const docs = await run("Documents", DOCUMENTS, [number]);
+  const classes = Object.fromEntries((await q("SELECT nigp_class, description FROM nigp_classes")).map((r) => [r.nigp_class, r.description]));
+
+  const latest = periods.at(-1);
+  document.title = `${number} · DC Contract`;
+  document.getElementById("title").innerHTML = `<span class="mono">${esc(number)}</span> ${esc(latest.title)}`;
+  // Fields that differ between periods are listed with every value.
+  const distinct = (key) => [...new Set(periods.map((p) => p[key]).filter((v) => v !== null && v !== ""))];
+  const facts = [
+    ["Vendor", distinct("vendor")],
+    ["Agency", distinct("agency").concat(distinct("agency_as_published").filter((a) => !distinct("agency").includes(a))
+      .map((a) => `(published as: ${a}, named by agency_names.yaml)`))],
+    ["Contract type", distinct("contract_type")],
+    ["Market type", distinct("market_type")],
+    ["Commodity code (NIGP)", distinct("nigp_codes").map((c) => `${c} · ${classes[c.slice(0, 3)] || ""}`)],
+    ["Contracting officer", distinct("contracting_officer")],
+  ];
+  document.getElementById("facts").innerHTML = facts.map(([k, v]) =>
+    `<dt>${esc(k)}</dt><dd>${v.length ? v.map(esc).join("<br>") : '<span class="muted">not given</span>'}</dd>`).join("") +
+    `<dt>On the portal</dt><dd>${periods.map((p) => `<a href="${esc(p.portal_url)}" target="_blank" rel="noopener">${esc(p.option_period)}&nbsp;↗</a>`).join(" · ")}</dd>`;
+
+  const authorised = periods.reduce((s, p) => s + (p.amount || 0), 0);
+  const paid = payments.reduce((s, p) => s + (p.voucher_amount || 0), 0);
+  const stats = [
+    ["Option periods", n(periods.length), "Records on the portal for this contract number."],
+    ["Authorised", money(authorised), "Sum of the periods' amounts. A ceiling, not spending."],
+    ["Paid", money(paid), `Sum of voucherAmount over ${n(payments.length)} payment lines carrying this contract number.`],
+    ["Purchase orders", n(orders.length), "Orders that those payments were paid against."],
+    ["Documents", n(docs.length), "Attachments listed on its option periods."],
+  ];
+  document.getElementById("stats").innerHTML = stats.map(([l, v, w]) =>
+    `<div class="stat"><div class="stat-label">${esc(l)}</div><div class="stat-value">${v}</div><div class="stat-what">${esc(w)}</div></div>`).join("");
+
+  document.getElementById("periods").innerHTML = `<table class="plain"><thead><tr><th>Period</th><th class="num">Starts</th><th class="num">Ends</th><th class="num">Amount</th><th>Contract type</th><th class="num">Documents</th><th></th></tr></thead><tbody>` +
+    periods.map((p) => `<tr><td>${esc(p.option_period)}${p.listed ? "" : '<span class="tag">no longer listed</span>'}</td><td class="num">${esc(p.start_date)}</td><td class="num">${esc(p.end_date)}</td>` +
+      `<td class="num">${moneyExact(p.amount)}</td><td>${esc(p.contract_type || "")}</td><td class="num">${n(p.documents)}</td>` +
+      `<td><a href="${esc(p.portal_url)}" target="_blank" rel="noopener">portal&nbsp;↗</a></td></tr>`).join("") + "</tbody></table>";
+
+  document.getElementById("payments-note").textContent = payments.length
+    ? `Payment lines whose contract number is ${number}. Many payments carry no contract number at all, so this can undercount what was paid on the contract.`
+    : `No payment line carries the contract number ${number}. Many payments carry no contract number, so this does not mean nothing was paid.`;
+  if (byYear.length) {
+    const box = document.getElementById("pay-chart");
+    box.hidden = false;
+    new Chart(box.querySelector("canvas"), {
+      type: "bar",
+      data: {labels: byYear.map((r) => String(r.fiscal_year)), datasets: [{data: byYear.map((r) => r.paid), backgroundColor: cssVar("--bar")}]},
+      options: {maintainAspectRatio: false, animation: false, plugins: {legend: {display: false},
+        tooltip: {callbacks: {label: (c) => `${moneyExact(byYear[c.dataIndex].paid)} · ${n(byYear[c.dataIndex].lines)} payment lines`}}},
+        scales: {y: {ticks: {callback: (v) => money(v), color: cssVar("--muted")}, grid: {color: cssVar("--rule")}}, x: {ticks: {color: cssVar("--muted")}, grid: {display: false}}}},
+    });
+  }
+  document.getElementById("payments").innerHTML = '<table class="display compact" style="width:100%"></table>';
+  $("#payments table").DataTable({
+    data: payments, pageLength: 25, order: [[0, "desc"]], scrollX: true,
+    columns: [
+      {data: "payment_date", title: "Paid", className: "num"},
+      {data: "fiscal_year", title: "FY", className: "num"},
+      {data: "agency", title: "Agency"},
+      {data: "vendor", title: "Vendor"},
+      {data: "po_number", title: "PO", render: (v) => `<span class="mono">${esc(v || "")}</span>`},
+      {data: "voucher_amount", title: "Line amount", className: "num", render: (v, t) => t === "display" ? moneyExact(v) : v},
+      {data: "check_total", title: "Check total (not this line)", className: "num", render: (v, t) => t === "display" ? `<span class="muted">${money(v)}</span>` : v},
+    ],
+  });
+
+  document.getElementById("orders").innerHTML = '<table class="display compact" style="width:100%"></table>';
+  $("#orders table").DataTable({
+    data: orders, pageLength: 25, order: [[1, "desc"]], scrollX: true,
+    columns: [
+      {data: "po_number", title: "PO", render: (v, t, r) => `<span class="mono">${esc(v)}</span>${r.listed ? "" : '<span class="tag">no longer listed</span>'}`},
+      {data: "ordered_date", title: "Ordered", className: "num"},
+      {data: "fiscal_year", title: "FY", className: "num"},
+      {data: "agency", title: "Agency"},
+      {data: "supplier", title: "Supplier"},
+      {data: "nigp_code", title: "NIGP code", render: (v) => `<span class="mono" title="${esc(classes[String(v).slice(0, 3)] || "")}">${esc(v)}</span>`},
+      {data: "po_total", title: "Amount", className: "num", render: (v, t) => t === "display" ? moneyExact(v) : v},
+    ],
+  });
+
+  const byCat = {};
+  for (const d of docs) (byCat[d.category || "(none)"] ||= []).push(d);
+  document.getElementById("documents").innerHTML = docs.length
+    ? Object.entries(byCat).map(([cat, list]) => `<h3>${esc(cat)} <span class="muted">(${n(list.length)})</span></h3><ul class="doclist">` +
+        list.map((d) => `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.name)}</a></li>`).join("") + "</ul>").join("")
+    : '<p class="muted">The portal lists no attachments for this contract.</p>';
+
+  document.getElementById("payments-csv").onclick = () => downloadCsv(PAYMENTS, [number], `${number}-payments.csv`);
+  document.getElementById("orders-csv").onclick = () => downloadCsv(ORDERS, [number], `${number}-purchase-orders.csv`);
+  const m = await manifest();
+  const stamps = m.snapshots.map((s) => (s.pulled_at || "").slice(0, 10)).filter(Boolean).sort();
+  status.innerHTML = `<span class="meta">Pulled from the portal ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}.</span>`;
+  document.getElementById("contract").hidden = false;
+}
+
+main().catch((err) => {
+  document.getElementById("status").innerHTML = `<span class="error">${esc(err.message || err)}</span>`;
+  throw err;
+});
+</script>
+</body>
+</html>

@@ -1,3 +1,6 @@
+> These classifiers belong to the analysis behind the retired briefing. The site no
+> longer publishes anything they produce; this records how they were measured.
+
 # What the classifiers actually get right
 
 Measured 2026-09-06 against blind hand labels. Before this, the only evidence
@@ -123,3 +126,66 @@ bootstrap off the recorded passes suggests it buys little.
 3. Narrow the question. Report delivery structure only where the document states
    it, and count the rest as not stated, rather than forcing every contract into
    a six-way choice it cannot support.
+
+## Appendix: the delivery classifier rests on weak evidence
+
+This is a known, measured, unfixed problem. The labels in
+`data/delivery_structure.csv` stand, because the one attempt to fix it scored
+worse and was reverted.
+
+**The diagnosis.** `delivery_excerpt` gives the model Section B (pricing) and
+Section F (deliverables schedule), and never Section C, the scope of work --
+Section C is used only as a stop marker. The prompt then says to judge "from
+the price schedule and deliverables schedule alone". So the part of the document
+that describes how work runs is both absent and forbidden.
+
+What that produces, over the 292 readable awards:
+
+- Of 80 contracts labelled sequential_gated_deliverables, 1 mentions acceptance
+  of a deliverable, 2 mention a design phase, 2 mention a requirements phase.
+- 39% of them cite the same stock sentence as their evidence: "The Contractor
+  shall perform the activities required to successfully complete the District's
+  requirements and submit each deliverable". That sentence appears in 38% of all
+  award documents, spread evenly across every structure, so it separates nothing.
+
+The published claim "74 of 82 sequential, gated contracts fix scope before work
+starts" rests on this. The finding may still be directionally right -- District
+contracts probably are mostly fixed-scope -- but the stated evidence does not
+establish it.
+
+**What was tried, and what it scored.** Three arms, five runs each, against the
+20 hand-labelled cases in `tests/delivery_gold_labels.csv`:
+
+| arm | what it was | correct /20 per run |
+|---|---|---|
+| published | Section B + F, current prompt | 19, 19, 20, 19, 19 |
+| scope of work added | B + C + F, prompt revised to use it | 18, 18, 18, 18, 18 |
+| regex + model | as above, plus a mechanical signal block | 16, 16, 16, 16, 16 |
+
+Both attempts are worse, consistently, not within noise. Both were reverted.
+
+Why they failed, as far as one run of 20 cases can say:
+
+- Adding the scope of work makes licence purchases look like services. CW114695
+  is goods_or_licenses and moved to recurring_operations once Section C
+  described activities around the licences.
+- The revised prompt told the model to answer structure_not_stated when only
+  standard form is on offer. That over-fired: CW101069 is genuinely
+  incremental_capacity and became structure_not_stated every run.
+- The regex block listed presence flags from the full document. A mention of
+  "licence" anywhere flipped CW101861 and CW102586 from structure_not_stated to
+  goods_or_licenses. Presence is not characterisation, and saying so in the
+  prompt did not stop it being read that way.
+
+**What is worth trying next**, in rough order:
+
+1. A bigger hand-labelled set. Twenty cases cannot separate a 1-case difference
+   from noise, and the current twenty may not contain the failure mode at all --
+   the model can score 19/20 while reasoning from a sentence that means nothing.
+   Label cases where the stock sentence is the only evidence available.
+2. Passage selection inside Section C rather than its first 16,000 characters.
+   The prefix misses evidence that sits late in a long scope of work.
+3. `reasoning_effort` above "none". The model currently reads a 9,000-character
+   legal excerpt and answers 8 fields with zero reasoning tokens.
+
+Only the first makes the other two measurable.

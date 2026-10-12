@@ -35,3 +35,6 @@ data/raw_baseline_*/
 data/drift/
 
 .DS_Store
+
+# Weekly run logs (scripts/weekly_refresh.sh).
+data/logs/

@@ -2,8 +2,8 @@
 # what is already on disk, and classification is cached by content, so a repeat
 # run costs nothing.
 
-.PHONY: help install pull classify verify test report site rates ocr h1b \
-        h1b-dol calc solicitations dcas pull-payments publish hydrate prune drift dashboard derived competition reseller part-numbers \
+.PHONY: help install pull classify verify test report export serve rates ocr h1b \
+        h1b-dol calc solicitations dcas pull-payments publish hydrate prune derived competition reseller part-numbers \
         modifications trends vehicles buyers cycle-time all
 
 help:
@@ -12,12 +12,11 @@ help:
 	@echo "make pull-payments  refresh only the payments table (~300MB, one request)"
 	@echo "make publish    upload data/raw to the Hugging Face archive (needs HF_TOKEN)"
 	@echo "make classify   sort contracts by what they buy, and read delivery structure"
-	@echo "make verify     recompute every published figure and fail on drift"
-	@echo "make drift      recompute every published figure and report what moved"
+	@echo "make export     write data/raw as the Parquet tables the site reads"
+	@echo "make serve      serve the site locally, reading the local export"
+	@echo "make verify     check the export against the raw data, and the README for figures"
 	@echo "make test       check document handling, then score the classifiers"
 	@echo "make report     print the headline figures"
-	@echo "make site       rebuild the drill-down data behind site/index.html"
-	@echo "make dashboard  rebuild the data behind site/dashboard.html"
 	@echo "make rates      re-extract hourly rate cards from the cached award texts"
 	@echo "make ocr        OCR scanned award documents and classify them separately"
 	@echo "make modifications  count contract modifications and read what they change"
@@ -26,12 +25,12 @@ help:
 	@echo "make calc       pull GSA CALC rates and rebuild the federal comparison"
 	@echo "make solicitations  trace technology contracts back to posted solicitations"
 	@echo "make dcas       rebuild the DCAS roster and its attributed payments"
-	@echo "make derived    rebuild every other table verify_claims checks"
+	@echo "make derived    rebuild the unpublished analysis tables"
 	@echo "make trends     ten-year payment trends: spending, concentration, incumbency"
 	@echo "make vehicles   trace purchase orders back to the technology ordering vehicles"
 	@echo "make buyers     who buys technology: contracts, payments and purchase orders"
 	@echo "make cycle-time days from a solicitation closing to the award it produced"
-	@echo "make all        pull, classify, verify, test"
+	@echo "make all        pull, export, verify"
 
 install:
 	uv sync
@@ -64,14 +63,18 @@ classify:
 	uv run python analysis/classify_delivery.py
 	uv run python analysis/refresh_vendor_aliases.py
 
-verify:
-	uv run python analysis/verify_claims.py
+# The site's tables. Every figure on the site is a query over these, so
+# `verify` checks them against the raw files they come from.
+export:
+	uv run python -c "from dcprocure.export import export; print(export())"
 
-# verify fails on drift, which is what you want before publishing. drift only
-# reports it, which is what a weekly run needs; it exits non-zero only when the
-# run itself breaks. Reports land in data/drift.
-drift:
-	uv run python analysis/drift_report.py
+# The pre-push hook runs this. data/raw has to be on disk: hydrate fetches it.
+verify: hydrate export
+	uv run --with pytest python -m pytest -q tests/test_export.py tests/test_archive.py
+
+# http://127.0.0.1:8811/site/?data=local reads the local export.
+serve:
+	uv run python -m http.server 8811 --bind 127.0.0.1
 
 test:
 	uv run python tests/test_documents.py
@@ -81,15 +84,6 @@ test:
 
 report:
 	uv run dcprocure report
-
-site:
-	uv run python analysis/build_site_data.py
-
-# The dashboard shows the current snapshot, so it is rebuilt weekly. The
-# briefing stays on the published baseline until someone restates it, which
-# is why `site` is not in the weekly chain and this is.
-dashboard:
-	uv run python analysis/build_dashboard_data.py
 
 rates:
 	uv run python analysis/extract_rates.py
@@ -136,10 +130,8 @@ reseller:
 part-numbers:
 	uv run python analysis/part_number_prices.py
 
-# Every table verify_claims checks that is not rebuilt by an earlier step.
-# Without this the weekly run refreshes the portal snapshot and leaves these
-# frozen, so their checks compare a stale CSV against a stale literal and pass
-# while saying nothing. None of these calls a model; competition re-reads its
+# The analysis tables behind the retired briefing. Not published, and not in
+# the weekly run. None of these calls a model; competition re-reads its
 # document cache rather than downloading.
 derived: modifications competition trends vehicles cycle-time reseller part-numbers
 
@@ -165,4 +157,4 @@ buyers:
 cycle-time:
 	uv run python analysis/solicitations_cycle_time.py
 
-all: pull classify verify test
+all: pull export verify

@@ -40,6 +40,14 @@ FILES = (
     "agencies.json",
     "commodities.json",
     "manifest.json",
+    # The same rows as Parquet, for the site's explorer: see dcprocure.export.
+    "parquet/contracts.parquet",
+    "parquet/documents.parquet",
+    "parquet/purchase_orders.parquet",
+    "parquet/payments.parquet",
+    "parquet/nigp_classes.parquet",
+    "parquet/columns.json",
+    "parquet/summary.json",
 )
 
 GROWS_ONLY = frozenset(
@@ -74,6 +82,11 @@ four fields added and nothing else changed:
 | `first_listed` | First pull that returned it, from October 2026 on. |
 | `last_listed` | Last pull that returned it. |
 | `recovered_on` | Set on rows lost on 1 October 2026 and put back: from `raw/` (the 2026-09-05 pull) where it held them, otherwise fetched from the portal's detail endpoint, which still answers for delisted contracts. Every period fetched that way that `raw/` also holds matched it field for field. |
+
+`archive/parquet/` holds the same rows as Parquet, one file per table, for the
+explorer at the project's site and for anyone who wants to query them directly.
+Amounts and dates are parsed from the portal's text, and each parsed column sits
+beside the text it came from; `columns.json` says where every column comes from.
 
 `contract_details_older_periods.json` holds periods the detail endpoint still
 serves but the search had stopped listing before this project's first pull.
@@ -203,6 +216,7 @@ def hydrate(raw_dir: Path = RAW_DIR, repo_id: str = REPO_ID) -> list[str]:
                 token=os.environ.get("HF_TOKEN"),
                 local_dir=tmp,
             )
+            (raw_dir / name).parent.mkdir(parents=True, exist_ok=True)
             shutil.move(path, raw_dir / name)
             fetched.append(name)
     return fetched

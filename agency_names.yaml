@@ -1,0 +1,60 @@
+# Agency names the portal publishes in a form that hides which agency they
+# are: a bare abbreviation, a budget code, or a variant spelling of a name the
+# portal also uses. Each entry maps one value, exactly as published, to the name
+# the site shows, and says where that came from.
+#
+# The export keeps the published value beside the mapped one
+# (agency_as_published), so every mapping can be checked and undone.
+#
+# Rules:
+#   - Map a value only on a source that names it. A value with no source stays
+#     as published.
+#   - Map to a name the portal already uses for that agency when there is one,
+#     so the two group together.
+#   - Never map by abbreviation alone. "OPC" on the portal is two agencies:
+#     "Police Complaints (OPC)" and "People's Counsel (OPC)".
+
+PORTAL_LIST: &portal "The portal's own agency list (data/raw/agencies.json, from https://contracts.ocp.dc.gov/api/contracts/agencies), which pairs each abbreviation with this name"
+OCFO_FY2025_GDS: &ocfo_gds "DC OCFO, Fiscal Year 2025 Operating Budget Chapters, Governmental Direction and Support: https://cfo.dc.gov/node/1712356"
+
+names:
+  "CFSA":
+    name: "Child and Family Services Agency (CFSA)"
+    source: *portal
+  "D.C. Child and Family Services Agency (CFSA)":
+    name: "Child and Family Services Agency (CFSA)"
+    source: *portal
+  "AGENCY NAME: D.C. Child and Family Services Agency (CFSA)":
+    name: "Child and Family Services Agency (CFSA)"
+    source: *portal
+  "DDOT":
+    name: "Transportation (DDOT)"
+    source: *portal
+  "AK0":
+    name: "Office of Labor Relations and Collective Bargaining (AK0)"
+    source: *ocfo_gds
+  "JS0":
+    name: "Office for the Deaf, Deafblind, and Hard of Hearing (JS0)"
+    source: *ocfo_gds
+  "DR0":
+    name: "Rental Housing Commission (DR0)"
+    source: "DC OCFO, Fiscal Year 2025 Operating Budget Chapters, Economic Development and Regulation: https://cfo.dc.gov/node/1712426"
+  "KO0":
+    name: "Office of the Deputy Mayor for Operations and Infrastructure (KO0)"
+    source: "DC OCFO, Fiscal Year 2025 Operating Budget Chapters, Operations and Infrastructure: https://cfo.dc.gov/node/1712586"
+  "RC0":
+    name: "Office on Returning Citizen Affairs (RC0)"
+    source: "DC OCFO, Fiscal Year 2025 Operating Budget Chapters, Public Safety and Justice: https://cfo.dc.gov/node/1712441 (the code cell prints RCO with a letter O; the link to its chapter says RC0)"
+  "RO0":
+    name: "Office of the Ombudsperson for Children (RO0)"
+    source: "DC OCFO, Fiscal Year 2025 Operating Budget Chapters, Human Support Services: https://cfo.dc.gov/node/1712581"
+  "SB0":
+    name: "Inaugural Expenses (SB0, a budget line, not an agency)"
+    source: "DC OCFO, Fiscal Year 2025 Operating Budget Chapters, Financing and Other: https://cfo.dc.gov/node/1712591"
+  "FE0":
+    name: "Office of Victim Services (FE0)"
+    source: "DC OCFO, FY2011 budget, chapter (FE0) Office of Victim Services: https://cfo.dc.gov/node/368052. Not on the FY2025 lists; the code is not merged with Victim Services and Justice Grants (OVSJG), since no source ties the two."
+
+# Left as published, with no source found:
+#   "ELC" -- on no OCFO budget list checked (FY2025, all clusters). Its payments
+#   are fire apparatus, FY2017-2018, which is a hint and not a source.

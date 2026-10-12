@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Weekly refresh: pull the portal, classify what is new, and report drift.
+# Weekly refresh: pull the portal, rebuild the site's tables, check them, publish.
 #
-# This deliberately does NOT republish the briefing. It refreshes the data and
-# says which published figures have moved; deciding to restate them is a human
-# call. See docs/SCHEDULING.md.
+# The site states no figures of its own: everything on it is a query over the
+# published tables, so refreshing the tables is the whole job. See
+# docs/SCHEDULING.md.
 #
 # Run by hand, or on a schedule -- see scripts/com.dcbudget.weekly.plist.
-# Exits non-zero only when a step genuinely failed. Drift alone is not failure.
+# Exits non-zero when a step failed.
 
 set -uo pipefail
 
@@ -17,7 +17,7 @@ cd "$REPO" || exit 1
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 STAMP="$(date +%Y%m%dT%H%M%S)"
-LOG_DIR="$REPO/data/drift/logs"
+LOG_DIR="$REPO/data/logs"
 mkdir -p "$LOG_DIR"
 LOG="$LOG_DIR/run-$STAMP.log"
 
@@ -49,34 +49,18 @@ if ! step "restore raw archive" make hydrate; then
   log "stopping: could not restore data/raw from the archive; see $LOG"
   exit 1
 fi
-step "pull portal snapshot" make pull      || failed=1
-# Straight after the pull, before anything downstream can fail: the archive is
-# the one copy of contracts the portal has stopped listing.
-step "publish raw archive" make publish    || failed=1
-step "classify new contracts" make classify || failed=1
+step "pull portal snapshot" make pull || failed=1
 
-# The derived tables are computed from the snapshot, so they have to be rebuilt
-# before drift is measured. Otherwise the report mixes "the portal changed" with
-# "we never re-ran the downstream steps", and the two are not distinguishable in
-# the output. Left out on purpose: calc (re-pulling replaces the GSA provenance
-# snapshot every federal figure was computed from), h1b (other agencies' APIs),
-# and ocr (needs a local OCR toolchain). Those stay manual.
-step "rebuild rate cards"   make rates         || failed=1
-step "rebuild solicitations" make solicitations || failed=1
-step "rebuild DCAS"          make dcas          || failed=1
-# Everything else verify_claims checks. Without this the run refreshes the
-# snapshot and leaves these tables frozen, so their checks pass against stale
-# data and the drift report goes quiet exactly where the newest findings are.
-step "rebuild derived tables" make derived     || failed=1
-
-# Drift reporting runs even if classification failed: a stale-label drift
-# report is still worth having, and it records what it could not compute.
-step "drift report" make drift || failed=1
-
-# The dashboard reports the current snapshot, so it follows the refresh. The
-# briefing is deliberately NOT rebuilt: it stays on the published baseline
-# until a human restates it, and the drift panel explains the gap.
-step "rebuild dashboard" make dashboard || failed=1
+# The site reads the Parquet tables, so they are rebuilt from the pull and
+# checked against it before anything is published. A failed check stops the
+# publish: the live site would otherwise serve the broken tables. data/raw is
+# left on disk, so nothing is lost and next week's run publishes it.
+if [ "$failed" -eq 0 ] && step "export and check the tables" make verify; then
+  step "publish archive and tables" make publish || failed=1
+else
+  failed=1
+  log "not publishing: the pull or the checks failed"
+fi
 
 # Free the disk only on a clean run, and prune itself deletes nothing unless
 # every file matches what was published.
@@ -90,4 +74,4 @@ if [ "$failed" -ne 0 ]; then
   log "finished WITH FAILURES; see $LOG"
   exit 1
 fi
-log "finished clean; report in data/drift/"
+log "finished clean"

@@ -374,7 +374,10 @@ def pull_all(out_dir: Path = RAW_DIR, all_classes: bool = False) -> list[Snapsho
         contracts = pull_by_commodity(client, "contracts", classes, out_dir)
         snapshots.append(contracts)
 
-        orders = pull_by_commodity(client, "purchase", IT_ALL, out_dir)  # IT only: PO volume is large
+        # Every class, like contracts: limiting orders to the IT-related
+        # classes built a definition of technology into the data itself. The
+        # full table is about 240,000 orders, a minute or so to pull.
+        orders = pull_by_commodity(client, "purchase", classes, out_dir)
         snapshots.append(orders)
 
         contract_rows = json.loads(

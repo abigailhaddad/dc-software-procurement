@@ -4,14 +4,17 @@ Pulls the DC Contracts and Procurement Transparency Portal, sorts every contract
 by what it actually buys, and reads how the work is structured out of the award
 PDFs.
 
-The findings are on the briefing, `site/index.html`: open it in a browser, and
-the contracts behind each figure are a click away. Every number on it is
-recomputed by `analysis/verify_claims.py`, which fails if one has drifted. This
-file states no figures on purpose -- they would go stale with the next pull. It
-is about the code: how to run it, why contracts are sorted by reading them, and
-what will bite someone working on it. Some findings rest on a model reading
-contract text, and those carry a measured error rate; `docs/CLASSIFIER_ACCURACY.md`
-says which. `docs/NEXT_STEPS.md` is what remains.
+The site, `site/index.html`, is an explorer over the portal's own rows:
+contracts, the documents attached to them, purchase orders and payments, which a
+reader can filter, total and download, with links back to the District's own
+records. It states no findings
+and classifies nothing. `make serve` runs it locally.
+
+This file states no figures either -- they would go stale with the next pull. It
+is about the code: how to run it, and what will bite someone working on it. The
+analysis that once sorted contracts by reading them, and the briefing built on
+it, are retired from the site; the code is still here, unpublished, and
+`docs/NEXT_STEPS.md` says what state it is in.
 
 ## Run it
 
@@ -19,9 +22,9 @@ says which. `docs/NEXT_STEPS.md` is what remains.
 make install
 make hydrate     # fetch the archived snapshot into data/raw
 make pull        # refresh it from the portal
-make classify    # needs OPENAI_API_KEY in .env
-make verify      # recomputes every published figure, fails on drift
-make test        # scores the classifiers against hand-read labels
+make export      # write the Parquet tables the site reads
+make verify      # check those tables against the raw files
+make serve       # open the site against the local tables
 ```
 
 `make help` lists the rest. Every step is resumable: pulls merge into what is
@@ -56,32 +59,29 @@ the whole table, and refuses to overwrite the snapshot if it is not. To refresh
 just payments without re-pulling contracts and solicitations, run
 `make pull-payments`.
 
-## Drift: what the weekly refresh reports
+## The site and its tables
 
-`make verify` recomputes every published figure from the snapshot and fails if
-one no longer holds. The asserted figures in `analysis/verify_claims.py` are the
-published baseline -- what the briefing currently says -- and changing one is a
-decision made after looking at why it moved.
+`make export` writes `data/raw` as one Parquet table each for contracts,
+documents, purchase orders and payments (`src/dcprocure/export.py`). Every
+column is a portal field, as published or parsed into a number or a date by a
+stated rule, and the parsed value sits beside the text it came from. `make
+verify` checks the tables against the raw files through a second code path --
+counts, totals, a sample of rows field by field, and that no published value was
+lost in parsing -- and the pre-push hook runs it.
 
-The portal is live, so those figures drift. `make drift` runs the same checks and
-reports the movement instead of failing on it: how many claims were checked, how
-many moved, and for each one the published value, the current value and the
-change. Reports land in `data/drift/`, named for the snapshot date in
-`data/raw/manifest.json`, with `latest.txt` and `latest.json` pointing at the most
-recent run. It exits zero whether or not anything moved, and non-zero only when
-the run itself breaks.
+The site loads those tables from the Hugging Face archive and queries them in
+the browser with DuckDB. Every figure it shows is a count or a sum over rows the
+reader can see, so there is nothing on it to restate when the data moves.
 
-`scripts/weekly_refresh.sh` chains those together -- hydrate, pull, publish,
-classify, rebuild the derived tables, report drift, rebuild the dashboard, prune
--- and `scripts/install_schedule.sh` installs it as a weekly launchd job.
-`site/dashboard.html` is in the chain because it reports the current snapshot;
-`site/index.html` is not, because the briefing stays on the published baseline.
-Nothing in that chain rewrites the briefing: republishing is a human decision
-made after reading the drift report. `docs/SCHEDULING.md` has the details.
+`scripts/weekly_refresh.sh` runs hydrate, pull, export, verify, publish and
+prune, and `scripts/install_schedule.sh` installs it as a weekly launchd job. A
+failed check stops the publish. `docs/SCHEDULING.md` has the details.
 
-## Why the commodity codes are not used
+## Why the site does not total "technology"
 
-They are assigned by the buyer and applied loosely. Class 918, "consulting
+The portal codes every record with an NIGP commodity code, and no published
+definition of technology spending maps onto those codes. They are assigned by
+the buyer and applied loosely. Class 918, "consulting
 services", holds Medicaid managed care contracts worth billions. Class 920,
 "data processing, computer, programming and software services", holds a plumbing
 contractor's contract. The District's largest IT staffing vehicles -- including
@@ -89,24 +89,12 @@ one titled "Information Technology Staff Augmentation Services" -- are filed
 under 961/962, "miscellaneous services, not otherwise classified", while the
 purchase orders written against them are coded 918.
 
-So contracts are sorted by reading them. `classifier_config.yaml` holds the
-schema and prompt for what a contract buys; `delivery_config.yaml` does the same
-for how the work is structured. Accuracy is scored against contracts labelled by
-hand in `tests/`, blind, and `docs/CLASSIFIER_ACCURACY.md` has the measurements
-and what they were run on. Delivery structure agrees with the hand labels well
-below the rate at which two human readers agree with each other, which is why
-no delivery-structure breakdown is published. The model's misses on what agile
-language is doing are genuine commitments it filed as incidental; they are
-corrected by hand in `delivery_overrides.yaml`, with reasons, and the eval
-expects exactly those.
-
-One work-type miss is not corrected anywhere. "DOH FY25 Nurse Staffing Temporary
-Support Services" is nurse staffing, and the model files it as technology staff
-augmentation, because "temporary support services" reads as staff augmentation
-whatever the staff do. It is in the eval because it was caught in the wild.
-Nothing overrides work_type, so that inflation stands in the published numbers
-until the taxonomy or the prompt distinguishes staffing a hospital from staffing
-a help desk.
+An earlier version of this project sorted contracts by having a model read
+their titles, and published totals built on that. Those totals were a judgment
+about each contract, not a fact about it, so the site no longer shows them: it
+shows the codes the District assigned, with their descriptions, and leaves the
+reading to the reader. The classifier and its scoring against hand labels are
+still in `analysis/` and `tests/`.
 
 ## Layout
 
@@ -124,8 +112,9 @@ a help desk.
 | `delivery_config.yaml` | How the work is structured, and what agile language is doing |
 | `vendor_aliases.yaml` | Which vendor spellings are one company, and which are deliberately not |
 | `delivery_overrides.yaml` | Hand-read corrections applied on top of the delivery classifier, with reasons |
-| `site/index.html` | The briefing as a single static page, frozen on the published baseline |
-| `site/dashboard.html` | The current snapshot and how far it has moved from that baseline |
+| `site/index.html` | The explorer: the four tables, filters, totals, the SQL behind each, CSV downloads, links to the portal |
+| `src/dcprocure/export.py` | Write the archive as the Parquet tables the site reads, with where every column comes from |
+| `tests/test_export.py` | Check those tables against the raw files (`make verify`) |
 | `analysis/rebuild_manifest.py` | Rebuild the provenance manifest from the files on disk |
 | `analysis/ocr_awards.py` | OCR scanned award documents with a vision model; results cached and classified separately |
 | `analysis/pull_h1b.py` | Pull public H-1B wage filings for the vendor set (`make h1b`); DOL's disclosure files are authoritative |
@@ -134,8 +123,7 @@ a help desk.
 | `data/labor_rates.csv` | The published rates, with whether each title-to-price pairing verified |
 | `analysis/modifications.py` | Count and read contract modifications (`make modifications`); the deduplication trap is in its docstring |
 | `analysis/competition.py` | Read how competitively technology contracts were awarded, out of the D&Fs (`make competition`) |
-| `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |
-| `evidence/job_ads/` | Job postings quoted in the briefing: screenshots, raw pages, archive links |
+| `evidence/job_ads/` | Job postings gathered for the retired briefing: screenshots, raw pages, archive links |
 | `analysis/pull_calc.py` | Pull GSA CALC awarded ceiling rates, the federal comparison set (`make calc`) |
 | `analysis/build_calc_comparison.py` | Match DC's published rates to federal titles and compare them |
 | `analysis/solicitations_*.py` | Trace technology contracts back to posted solicitations (`make solicitations`) |
@@ -144,10 +132,7 @@ a help desk.
 | `analysis/trends.py` | Ten fiscal years of payments: growth, concentration, incumbency (`make trends`) |
 | `analysis/vehicle_orders.py` | Trace purchase orders back to the ordering vehicle they were placed against (`make vehicles`) |
 | `analysis/technology_buyers.py` | Who buys technology, read three ways: contracts, payments, purchase orders (`make buyers`) |
-| `analysis/verify_claims.py` | Recomputes every published figure; fails loudly on drift |
-| `analysis/drift_report.py` | The same checks, reporting movement instead of failing on it (`make drift`) |
-| `analysis/build_dashboard_data.py` | Rebuild the data behind the dashboard (`make dashboard`) |
-| `scripts/weekly_refresh.sh` | The weekly chain: hydrate, pull, publish, classify, rebuild, report drift, rebuild the dashboard, prune |
+| `scripts/weekly_refresh.sh` | The weekly chain: hydrate, pull, export, verify, publish, prune |
 | `scripts/install_schedule.sh` | Install that chain as a launchd job, from the plist template beside it |
 | `docs/SCHEDULING.md` | What the weekly run does, what it deliberately skips, and what will bite |
 | `tests/` | Hand-read labels and the scripts that score against them |
@@ -233,23 +218,8 @@ The portal has no record type for task orders issued under ordering vehicles,
 and a task order is filed as its own contract with the parent named only inside
 the PDF. Purchase orders can be traced, though: a payment line carries both a PO
 number and a contract number, so orders resolve to the contract they were booked
-against, and no order resolves to two. That link runs through the payments table
+against. That link runs through the payments table
 rather than the order table, which is why it looked absent.
-
-It does not fill the gap. Almost all of the ordering that can be traced to a
-technology ordering vehicle goes through a single one, OCTO's STaR II, and most
-vehicles show no traced order at all. Either the ordering is invisible or it is
-not happening, and the data does not say which.
-
-Matching orders to vehicles by vendor name instead was tried and fails. The
-rise in a holder's orders after its vehicle starts sits inside the range seen
-for vendors who never held one, so it measures a relationship that already
-existed rather than the vehicle. `analysis/vehicle_orders.py` reports the
-comparison.
-
-Delivery structure cannot be read for every candidate contract: some award
-documents are scans, recovered by vision-model OCR (`make ocr`), and some
-contracts have no award document attached at all.
 
 The portal is live and counts move between pulls, so `data/raw/manifest.json`
 records the date of the snapshot every figure was computed from.

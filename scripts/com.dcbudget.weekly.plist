@@ -32,9 +32,9 @@
   <false/>
 
   <key>StandardOutPath</key>
-  <string>__REPO__/data/drift/logs/launchd.out.log</string>
+  <string>__REPO__/data/logs/launchd.out.log</string>
   <key>StandardErrorPath</key>
-  <string>__REPO__/data/drift/logs/launchd.err.log</string>
+  <string>__REPO__/data/logs/launchd.err.log</string>
 
   <key>ProcessType</key>
   <string>Background</string>
