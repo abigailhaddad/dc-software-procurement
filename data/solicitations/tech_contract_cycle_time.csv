@@ -233,7 +233,7 @@ CW87765,title_match,Metropolitan Police Department (MPD),it_goods,158193.44,Doc5
 CW87983,cited_in_award_doc,State Superintendent of Education (OSSE),software_services,3484562.87,Doc430326,Case Management System - OSSE,False,Open,2/28/2020,3/11/2021,3/11/2021,Base Period,377,377
 CW88056,title_match,Chief Technology Officer (OCTO),it_goods,111453.77,Doc541485,FY21-OCTO-Fiber trunk cables and fiber patch cords,False,Set Aside,11/23/2020,12/8/2020,12/8/2020,Base Period,15,15
 CW88137,cited_in_award_doc,Metropolitan Police Department (MPD),other,539600.0,Doc536530,Genetec Clearance SAAS,False,Set Aside,12/7/2020,12/28/2020,12/29/2020,Base Period,21,22
-CW88141,cited_in_award_doc,Contracting and Procurement (OCP); Chief Technology Officer (OCTO),it_goods,123373.8,Doc540624,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,False,Set Aside,11/17/2020,12/16/2020,12/16/2020,Base Period,29,29
+CW88141,cited_in_award_doc,Chief Technology Officer (OCTO); Contracting and Procurement (OCP),it_goods,123373.8,Doc540624,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,False,Set Aside,11/17/2020,12/16/2020,12/16/2020,Base Period,29,29
 CW88474,title_match,Employment Services (DOES),other,140250.0,Doc545982,FY21 - DOCEBO CLOUD 700 E-LEARNING PLATFORM,False,Set Aside,12/22/2020,12/22/2020,12/22/2020,Base Period,0,0
 CW88546,title_match,Metropolitan Police Department (MPD),it_goods,564303.76,Doc545315,Isilon Data Storage - DCSS Only,False,Set Aside,12/23/2020,1/5/2021,1/5/2021,Base Period,13,13
 CW88674,cited_in_award_doc,Licensing & Consumer Protection (DLCP),software_services,767841.3,Doc546184,Enterprise Near-Me Marketplace Software,False,Open,1/6/2021,1/7/2021,1/12/2021,Base Period,1,6
@@ -258,6 +258,7 @@ CW90295,title_match,Chief Technology Officer (OCTO),other,131222.05,Doc384173,DC
 CW90729,cited_in_award_doc,Employment Services (DOES),it_goods,13581691.0,Doc523252,Unemployment Insurance Benefits System (UIBS) - DOES,False,Open,1/8/2021,6/11/2021,6/11/2021,Base Period,154,154
 CW90804,title_match,Employment Services (DOES),other,753100.02,Doc554532,FY21 - DELL VDI VXRail Infrastructure,False,Set Aside,3/16/2021,4/1/2021,4/5/2021,Base Period,16,20
 CW91017,cited_in_award_doc,Deputy Mayor for Planning and Economic Development (DMPED),software_services,37250.0,Doc255169,FY16 - Training -DCTC,False,Set Aside,6/15/2016,5/4/2021,5/4/2021,Base Period,1784,1784
+CW91484,title_match,Deputy Mayor for Planning and Economic Development (DMPED),it_adjacent,771310.0,DCEB-2021-R-0001,Government of the District of Columbia Disparity Study,False,Set Aside,1/27/2021,4/21/2021,4/21/2021,Base Period,84,84
 CW91489,title_match,Human Services (DHS),other,1213198.56,Doc547955,Request for Quotation - FY21-DHS- Temporary Staffing Services (DCSS-Temporary Support Services ),False,Set Aside,1/22/2021,5/19/2021,5/19/2021,Base Period,117,117
 CW91513,title_match,Chief Technology Officer (OCTO),other,1077256.64,Doc432895,Managed Trusted Internet Protocol Services,False,Set Aside,4/10/2019,6/30/2021,6/30/2021,Base Period,812,812
 CW91583,title_match,Chief Technology Officer (OCTO),it_goods,401713.1,Doc561465,Cisco Equipment (Data Center),False,Set Aside,5/11/2021,5/21/2021,5/21/2021,Base Period,10,10
@@ -270,7 +271,6 @@ CW92433,title_match,Chief Technology Officer (OCTO),software_services,415168.0,D
 CW92444,title_match,State Superintendent of Education (OSSE),it_goods,3921120.0,Doc434196,Special Education System,False,Open,10/22/2019,6/29/2021,7/1/2021,Base Period,616,618
 CW92446,title_match,Chief Technology Officer (OCTO),telecom,401113.14,Doc566582,Cisco Switches and Outdoor WAPs (DPR),False,Set Aside,6/28/2021,7/9/2021,7/9/2021,Base Period,11,11
 CW92802,title_match,Chief Technology Officer (OCTO),telecom,440000.0,Doc293310,Cisco Switches and Wireless Access Points,False,Open,12/20/2016,7/23/2021,7/23/2021,Base Period,1676,1676
-CW93508,title_match,Employment Services (DOES); Contracting and Procurement (OCP),it_adjacent,31415.39,Doc571806,FY21-CFO-OYP Annual Evaluation Report,False,Set Aside,7/28/2021,8/12/2021,8/18/2021,Base Period,15,21
 CW93564,title_match,Chief Technology Officer (OCTO),it_goods,127260.0,Doc570398,Invitation for Bid - BlueZone Terminal Emulator Software,False,Open,8/11/2021,9/17/2021,9/17/2021,Base Period,37,37
 CW93695,title_match,Behavioral Health (DBH),other,2637390.0,Doc568591,FY'21 - DBH - Temporary Staffing Services,False,Set Aside,7/14/2021,8/22/2021,9/15/2021,Base Period,39,63
 CW93784,title_match,Chief Technology Officer (OCTO),software_services,200000.0,Doc560641,FY21- First Alert License Subscription Renewal,False,Set Aside,5/7/2021,8/17/2021,8/27/2021,Base Period,102,112

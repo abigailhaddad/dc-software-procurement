@@ -215,6 +215,7 @@ CW72121,Implementation-Technical Assistance to Proprietary Database Upgrades,it_
 CW72844,"MOBIS-MOBIS201976-STK Consulting and Services, Inc.",it_consulting_advisory,incremental_capacity,no,False,1,12.0,5,5
 CW74046,LSHH Database CRISP,software_om_support,sequential_gated_deliverables,yes,True,1,18.0,13,25
 CW75482,Web Based Case Management System,custom_software_build,recurring_operations,not_stated,False,2,23.9,2,2
+CW77571,OSSE-DOT_GPS_Navigation_Routing_and_Scheduling,cots_implementation,goods_or_licenses,not_stated,False,3,35.9,12,84
 CW77923,Offender Management System,software_om_support,sequential_gated_deliverables,yes,True,2,23.9,7,18
 CW80322,Rent Control Clearinghouse Database (RCCD) (CA ISSUE PREVENTING PUBLISHING),custom_software_build,sequential_gated_deliverables,yes,True,3,36.0,11,11
 CW80790,FY20 - OCTO - Arbor Pravail Data Center,cots_implementation,goods_or_licenses,yes,False,3,36.0,4,6
@@ -251,14 +252,16 @@ CW89498,Proofpoint Data Extraction,cots_implementation,sequential_gated_delivera
 CW89681,Enterprise Secure Edge Services Gateways,cots_implementation,goods_or_licenses,yes,False,1,12.0,2,2
 CW89727,FY21 - OCTO - Contact-Center-As-A-Service (CCaaS),cots_implementation,recurring_operations,not_stated,False,2,23.9,1,1
 CW90258,FY21-OCTO-Data Security Solution Software,cots_implementation,goods_or_licenses,not_stated,False,1,12.0,0,0
+CW90472,FY21 - DHS - CEPL Training Continuation (SNAP Reinvestment) - Vogt Consulting Inc.,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,5.8,0,0
 CW90603,Pondera Fraud Detection Software,cots_implementation,goods_or_licenses,yes,False,1,12.0,0,0
 CW90605,FY21 - ASSLA STUDY - OWH,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW90729,UIBS DOES,cots_implementation,sequential_gated_deliverables,yes,True,3,36.0,6,9
 CW90928,Unemployment Insurance Claimant Portal,cots_implementation,sequential_gated_deliverables,yes,True,1,12.0,0,0
 CW90981,Contract Workspace (Procurement)-THE HAMILTON GROUP,it_consulting_advisory,incremental_capacity,no,False,1,12.0,0,0
 CW91017,Technical Assistance Consulting WIC,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,4.9,1,1
-CW91150,FY21 - FX0 - CMS Phase Two Upgrade ,custom_software_build,sequential_gated_deliverables,yes,True,1,4.6,0,0
+CW91150,FY21 - FX0 - CMS Phase Two Upgrade,custom_software_build,sequential_gated_deliverables,yes,True,1,4.6,0,0
 CW91290,"DMPED Advisory Services, Executive Dashboards and Data Analysis",it_consulting_advisory,sequential_gated_deliverables,yes,True,1,5.3,0,0
+CW91484,Government of the District of Columbia Disparity Study,it_consulting_advisory,sequential_gated_deliverables,yes,True,1,15.0,0,0
 CW91689,QuickBase FY22-FY26,cots_implementation,goods_or_licenses,yes,False,1,12.0,0,0
 CW91857,Consultant Services- Draft a Policy Implementation Plan for the redesign of publicly financed and delivered behavioral health services.,it_consulting_advisory,sequential_gated_deliverables,yes,True,3,36.0,4,4
 CW92388,DCRA FileNet Support Services,software_om_support,recurring_operations,yes,False,5,60.0,0,0

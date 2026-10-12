@@ -41,7 +41,7 @@ bite someone working on it.
 ## Refreshing the payments table
 
 `make pull` fetches everything, including the full payments table -- about
-870,000 voucher lines in a single 300MB response. The payments module ignores
+880,000 voucher lines in a single 300MB response. The payments module ignores
 every filter it is given, so there is no way to pull a slice of it: the pull
 instead checks that what came back is the whole table, and refuses to overwrite
 the snapshot if it is not. To refresh just payments without re-pulling contracts
@@ -85,7 +85,7 @@ schema and prompt for what a contract buys; `delivery_config.yaml` does the same
 for how the work is structured. Accuracy is scored against contracts labelled by
 hand in `tests/`, blind. On a random sample the work-type classifier agrees with
 the hand labels 90% of the time and `is_technology` 95%; `delivery_structure`
-agrees with its 80 hand labels 57% of the time, against a ceiling of 83% set by
+agrees with its 80 hand labels 56% of the time, against a ceiling of 83% set by
 what two human readers agree on, which is why no delivery-structure breakdown
 is published. `docs/CLASSIFIER_ACCURACY.md` has the measurements and what they
 were run on.
@@ -123,7 +123,7 @@ distinguishes staffing a hospital from staffing a help desk.
 | `analysis/pull_h1b.py` | Pull public H-1B wage filings for the vendor set (`make h1b`); DOL's disclosure files are authoritative |
 | `analysis/pull_h1b_dol.py` | Filter DOL's own LCA disclosure files to the vendor set — case status, worksite address, and the client-naming secondary-entity field |
 | `analysis/extract_rates.py` | Pull hourly rate cards out of the award texts, every rate verified verbatim |
-| `data/labor_rates.csv` | The 2,581 published rates, with whether each title-to-price pairing verified |
+| `data/labor_rates.csv` | The 2,606 published rates, with whether each title-to-price pairing verified |
 | `analysis/modifications.py` | Count and read contract modifications (`make modifications`); the deduplication trap is in its docstring |
 | `analysis/build_site_data.py` | Rebuild the drill-down data behind the site (`make site`) |
 | `evidence/job_ads/` | Job postings quoted in the briefing: screenshots, raw pages, archive links |
@@ -150,19 +150,19 @@ distinguishes staffing a hospital from staffing a help desk.
 **Payments joined to contracts do not make a time series.** The contracts table
 is a current-state snapshot: contracts that ended are not in it. Joining
 payments to it and plotting by fiscal year gives technology spending rising from
-$3.2M to $199M, a 62-fold increase that is entirely an artifact -- the share of
+$3.2M to $5M, a 2-fold increase that is entirely an artifact -- the share of
 payment dollars matching any classified contract climbs from 0.5% in FY2017 to
-13.6% in FY2026, so the series measures how much of the past the portal still
+8.7% in FY2026, so the series measures how much of the past the portal still
 remembers. The published FY2021-2025 figures are safe because a recent window is
 where the join works. Nothing built that way should be extended backwards. Use
 the commodity codes on the purchase orders instead, which reach FY2013 with no
 comparable decay.
 
-**Vendor names in the payments table are truncated at 30 characters.** 73,061
-rows are exactly 30 characters long against 2,073 at 31. That defeats the
+**Vendor names in the payments table are truncated at 30 characters.** 73,667
+rows are exactly 30 characters long against 2,262 at 31. That defeats the
 suffix-stripping in `vendor_aliases.yaml`: "CARAHSOFT TECHNOLOGY CORP" loses its
 suffix and "CARAHSOFT TECHNOLOGY CORPORATI" does not, so one company becomes two
-keys. Repairing it moves the published top-ten share from 52.5% to 53.2%, small
+keys. Repairing it moves the published top-ten share from 52.6% to 53.2%, small
 enough that the published figures stand, large enough to matter to anything
 finer.
 
@@ -178,13 +178,13 @@ was sent and raises rather than hand back a wider slice than requested.
 
 **`paymentAmount` is not the amount of that payment.** It is the total of the
 whole check or ACH run the voucher was paid in, repeated on every row in that
-run. Summing it gives $114.7B against $33.5B of actual vouchers, and made one
-contract with a $120M ceiling look like it had been paid $17.4B.
+run. Summing it gives $117.3B against $33.9B of actual vouchers, and made one
+contract with a $120M ceiling look like it had been paid $17.7B.
 `load_payments` returns `voucherAmount` as `amount` and keeps the other as
 `check_total` so it cannot be summed by accident.
 
-**A contract search row is one option period, not one contract.** 7,169 rows
-are 4,013 contracts. Summing them gives a lifetime ceiling, which is neither an
+**A contract search row is one option period, not one contract.** 7,362 rows
+are 4,109 contracts. Summing them gives a lifetime ceiling, which is neither an
 annual figure nor money spent.
 
 **Ceilings and payments cover different windows.** Option periods run from
@@ -195,8 +195,8 @@ windowing counts $11.9B of payments made before the ceilings existed.
 technology payments alone. `vendor_aliases.yaml` records the rules, what they
 merge, and the pairs left separate on purpose.
 
-**Most payments cannot be tied to a contract.** Of 869,839 rows, 481,031 carry
-no contract number, covering $17.8B. That is a ceiling on any share-of-spend
+**Most payments cannot be tied to a contract.** Of 879,645 rows, 487,228 carry
+no contract number, covering $18.1B. That is a ceiling on any share-of-spend
 analysis built by joining payments to contracts.
 
 **NIGP coding is noisy in both directions.** Treat any single-class total as
@@ -215,14 +215,14 @@ Independent agencies procure separately and do not appear in the portal.
 The portal has no record type for task orders issued under ordering vehicles,
 and a task order is filed as its own contract with the parent named only inside
 the PDF. Purchase orders can be traced, though: a payment line carries both a PO
-number and a contract number, so 103,990 orders resolve to the contract they
+number and a contract number, so 105,330 orders resolve to the contract they
 were booked against, and no order resolves to two. That link runs through the
 payments table rather than the order table, which is why it looked absent.
 
 It does not fill the gap. Of FY2021-2025 IT-class orders, $124.8M traces to one
-of the 330 technology ordering vehicles, and $121.9M of that -- 97.7% -- is a
-single vehicle: OCTO's STaR II, drawn on by 28 agencies. 309 of the 330 show no
-traced order at all, and 143 holding $388.2M of ceiling have a vendor who placed
+of the 334 technology ordering vehicles, and $121.9M of that -- 97.7% -- is a
+single vehicle: OCTO's STaR II, drawn on by 28 agencies. 313 of the 334 show no
+traced order at all, and 147 holding $393.9M of ceiling have a vendor who placed
 no IT order of any kind after the vehicle started. Either the ordering is
 invisible or it is not happening, and the data does not say which.
 
@@ -232,9 +232,9 @@ for vendors who never held one, so it measures a relationship that already
 existed rather than the vehicle. `analysis/vehicle_orders.py` reports the
 comparison.
 
-Delivery structure could be read for 387 of 480 candidate contracts: 313 with
+Delivery structure could be read for 392 of 488 candidate contracts: 318 with
 a native text layer, 74 recovered from scans and extraction failures by
-vision-model OCR (`make ocr`). The remaining 93 have no award document
+vision-model OCR (`make ocr`). The remaining 96 have no award document
 attached at all.
 
 The portal is live and counts move between pulls, so `data/raw/manifest.json`
