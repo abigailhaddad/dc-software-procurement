@@ -30,6 +30,7 @@
 <div id="contract" hidden>
   <h2 class="contract-title" id="title"></h2>
   <dl class="facts" id="facts"></dl>
+  <div class="note interest-note" id="interest" hidden></div>
   <div class="stats" id="stats"></div>
 
   <section class="block">
@@ -94,7 +95,7 @@ function moneyExact(x) {
 }
 
 const PERIODS = `SELECT option_period, CAST(start_date AS VARCHAR) AS start_date, CAST(end_date AS VARCHAR) AS end_date, amount,
-       amount_text, period_kind, corrected_amount, same_award_as, correction, base_amount,
+       amount_text, period_kind, corrected_amount, same_award_as, correction, base_amount, of_interest, of_interest_detail,
        title, vendor, agency, agency_as_published, contract_type, market_type, array_to_string(nigp_codes, '; ') AS nigp_codes,
        contracting_officer, documents, portal_url, listed
 FROM contracts
@@ -181,6 +182,14 @@ async function main() {
         : p.corrected_amount !== null ? `${moneyExact(p.corrected_amount)} <span class="tag" title="DC's site says ${esc(p.amount_text)}">corrected</span>`
         : moneyExact(p.amount)}</td><td>${esc(p.contract_type || "")}</td><td class="num">${n(p.documents)}</td>` +
       `<td><a href="${esc(p.portal_url)}" target="_blank" rel="noopener">portal&nbsp;↗</a></td></tr>`).join("") + "</tbody></table>";
+
+  const interest = periods.find((p) => p.of_interest);
+  if (interest) {
+    const box = document.getElementById("interest");
+    box.innerHTML = `<strong>Of interest:</strong> ${interest.of_interest.split("; ").map((c) => `<span class="tag interest">${esc(c)}</span>`).join(" ")}
+      <p>${esc(interest.of_interest_detail)}</p><span class="muted">Read by hand from the documents below; recorded in of_interest.yaml. Not a finding of wrongdoing.</span>`;
+    box.hidden = false;
+  }
 
   const notes = [];
   for (const p of periods.filter((p) => p.corrected_amount !== null))

@@ -28,6 +28,7 @@ from .pull import RAW_DIR
 PORTAL = "https://contracts.ocp.dc.gov"
 AGENCY_NAMES = Path(__file__).resolve().parents[2] / "agency_names.yaml"
 CORRECTIONS = Path(__file__).resolve().parents[2] / "corrections.yaml"
+OF_INTEREST = Path(__file__).resolve().parents[2] / "of_interest.yaml"
 
 
 def agency_map() -> dict[str, str]:
@@ -59,6 +60,22 @@ def corrections() -> tuple[list[dict], dict[str, str]]:
     return amounts, same
 
 
+def of_interest() -> list[tuple[str, str, str]]:
+    """(contract number, category labels, what the paperwork shows). See of_interest.yaml."""
+    doc = yaml.safe_load(OF_INTEREST.read_text(encoding="utf-8"))
+    labels = {k: v["label"] for k, v in doc["categories"].items()}
+    out = []
+    for e in doc["contracts"]:
+        if not e.get("source") or not e.get("categories"):
+            raise ValueError(f"of_interest.yaml: {e.get('contract_number')!r} needs categories and a source")
+        detail = " ".join(e["summary"].split())
+        if e.get("quote"):
+            detail += " Quoted: " + " ".join(e["quote"].split())
+        detail += " Source: " + " ".join(e["source"].split())
+        out.append((e["contract_number"], "; ".join(labels[c] for c in e["categories"]), detail))
+    return out
+
+
 # Column, then where it comes from. The site prints this as its data dictionary.
 COLUMNS: dict[str, dict[str, str]] = {
     "contracts": {
@@ -88,6 +105,8 @@ COLUMNS: dict[str, dict[str, str]] = {
         "recovered_on": "Set when the row was put back after DC's site stopped returning it in its search",
         "period_kind": "Not from DC's site. 'base' when option_period starts with 'Base' and does not mention an option; 'option' when it mentions an option and does not start with 'Base'; 'unclear' otherwise (labels such as '2' or 'N/A')",
         "base_amount": "Not from DC's site. The amount totals use: for a base period, corrected_amount where there is one and amount otherwise; empty for option and unclear periods, and for rows that same_award_as says are counted under another number. Option-period amounts are left out because a random sample found about three in ten disagreed with the District's own paperwork (see the About page)",
+        "of_interest": "Not from DC's site. How the award was made, where of_interest.yaml records that its paperwork shows a sole-source, exempt, emergency, letter-contract or pilot award, or an extension past the last option; categories joined with '; '. Empty for contracts not read, which is most of them",
+        "of_interest_detail": "Not from DC's site. What the paperwork shows, the quote and the document, from of_interest.yaml",
         "corrected_amount": "Not from DC's site. The amount the District's own paperwork gives for this period, where corrections.yaml records that DC's figure contradicts it; empty otherwise. Applied only while amount_text still reads as it did when checked",
         "same_award_as": "Not from DC's site. Set when corrections.yaml records that this row is the same award as another contract number, which totals count instead; empty otherwise",
         "correction": "Not from DC's site. The document corrections.yaml cites for corrected_amount or same_award_as",
@@ -208,6 +227,8 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
         [(r, keep, " ".join(next(g for g in groups if r in g["records"])["source"].split())) for r, keep in same.items()],
         columns=["contract_number", "same_award_as", "source"]))
     con.execute("CREATE TABLE same_award AS SELECT * FROM same_award_py")
+    con.register("of_interest_py", pd.DataFrame(of_interest(), columns=["contract_number", "labels", "detail"]))
+    con.execute("CREATE TABLE of_interest AS SELECT * FROM of_interest_py")
 
     con.execute(f"""
         CREATE TABLE contracts AS
@@ -242,6 +263,8 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
                CASE WHEN lower(trim(s.currentOptionPeriod)) LIKE 'base%' AND lower(s.currentOptionPeriod) NOT LIKE '%option%'
                          AND sa.same_award_as IS NULL
                     THEN coalesce(f.amount, {_money('s.contractAmount')}) END AS base_amount,
+               oi.labels AS of_interest,
+               oi.detail AS of_interest_detail,
                f.amount AS corrected_amount,
                sa.same_award_as,
                nullif(concat_ws(' | ', f.source, sa.source), '') AS correction
@@ -250,6 +273,7 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
         LEFT JOIN fix_amounts f ON f.contract_number = s.contractNumber
              AND f.option_period = s.currentOptionPeriod AND f.published = s.contractAmount
         LEFT JOIN same_award sa ON sa.contract_number = s.contractNumber
+        LEFT JOIN of_interest oi ON oi.contract_number = s.contractNumber
         ORDER BY contract_number, start_date
     """)
     con.execute(f"""
@@ -377,6 +401,8 @@ def summary(con: duckdb.DuckDBPyConnection) -> dict:
             "same_award": one("""SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts,
                 sum(coalesce(corrected_amount, amount)) AS amount FROM contracts WHERE same_award_as IS NOT NULL"""),
         },
+        "of_interest_categories": {v["label"]: " ".join(v["means"].split())
+                                   for v in yaml.safe_load(OF_INTEREST.read_text(encoding="utf-8"))["categories"].values()},
         "agency_names": [
             {"published": raw, "shown": shown, "source": names[raw]["source"],
              "contracts": c, "orders": o, "payments": p}

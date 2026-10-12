@@ -62,7 +62,7 @@ agency, vendor, contract type, market type and commodity code are what was enter
 </section>
 
 <section class="block">
-  <h2>The rows</h2>
+  <h2>Every option period</h2>
   <p class="error" id="rows-error"></p>
   <div id="rows"></div>
 </section>
@@ -76,6 +76,12 @@ agency, vendor, contract type, market type and commodity code are what was enter
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script type="module">
 import {start, esc, money, n, nigpLabel} from "./shared/explorer.js";
+import {PARQUET_DIR} from "./shared/db.js";
+// What each "of interest" category means, from of_interest.yaml by way of summary.json.
+const CATEGORIES = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href)
+  .then((r) => r.ok ? r.json() : {}).then((s) => s.of_interest_categories || {}).catch(() => ({}));
+const interestBadges = (v) => v ? v.split("; ").map((c) =>
+  `<span class="tag interest" title="${esc(CATEGORIES[c] || c)}">${esc(c)}</span>`).join(" ") : "";
 const pct = (a, b) => `${Math.round(100 * a / b)}%`;
 
 const portal = (row) => row.portal_url
@@ -126,6 +132,9 @@ start({
       expr: "array_to_string(nigp_classes, '; ')", describe: nigpLabel},
     start_fiscal_year: {label: "Fiscal year the period starts", from: "From startDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(start_fiscal_year AS VARCHAR)"},
     option_period: {label: "Option period", from: "currentOptionPeriod on DC's site, as typed.", filter: "multi", expr: "option_period"},
+    of_interest: {label: "Of interest", from: "How the award was made, where its paperwork shows a sole-source, exempt, emergency, letter-contract or pilot award, or an extension past the last option (of_interest.yaml). Only contracts flagged for review were read, so a blank means not read, not ordinary.",
+      filter: "multi", expr: "coalesce(of_interest, '(not flagged)')", listExpr: "string_split(coalesce(of_interest, '(not flagged)'), '; ')",
+      optionExpr: "unnest(string_split(coalesce(of_interest, '(not flagged)'), '; '))"},
     listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
       expr: "CASE WHEN listed THEN 'In DC site search' ELSE 'Not in DC site search' END"},
     contract_number: {label: "Contract number", from: "contractNumber.", filter: "text", exact: true, expr: "contract_number"},
@@ -141,29 +150,32 @@ start({
     {id: "class", field: "nigp_class", title: "By commodity class"},
     {id: "market", field: "market_type", title: "By market type"},
   ],
-  breakdown: ["vendor", "agency", "contract_type", "market_type", "nigp_class", "start_fiscal_year", "option_period", "listed"],
+  breakdown: ["of_interest", "vendor", "agency", "contract_type", "market_type", "nigp_class", "start_fiscal_year", "option_period", "listed"],
   breakdownDefault: ["contract_type"],
   search: ["contract_number", "title", "vendor"],
-  select: ["contract_number", "title", "vendor", "agency", "contract_type", "market_type", "option_period",
+  select: ["contract_number", "of_interest", "title", "vendor", "agency", "contract_type", "market_type", "option_period",
     "CAST(start_date AS VARCHAR) AS start_date", "CAST(end_date AS VARCHAR) AS end_date",
     "CASE WHEN period_kind = 'base' THEN coalesce(corrected_amount, amount) END AS amount", "period_kind", "corrected_amount IS NOT NULL AS corrected", "same_award_as",
     "array_to_string(nigp_codes, '; ') AS nigp_codes", "portal_url", "listed"],
-  defaultOrder: [[9, "desc"]],
+  // Contracts of interest first, then the largest base amounts.
+  defaultOrder: [[1, "asc"], [10, "desc"]],
   columns: [
-    {key: "contract_number", label: "Contract", render: (v, r) => `<a class="mono" href="${contractPage(v)}" title="Its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
-    {key: "title", label: "Title", cls: "wide"},
-    {key: "vendor", label: "Vendor"},
-    {key: "agency", label: "Agency"},
-    {key: "contract_type", label: "Contract type"},
-    {key: "market_type", label: "Market type"},
-    {key: "option_period", label: "Period"},
-    {key: "start_date", label: "Starts", cls: "num"},
-    {key: "end_date", label: "Ends", cls: "num"},
+    {key: "contract_number", label: "Contract", title: "The contract number on DC's site. Click it for the contract's periods, payments, orders and documents; \"DC site\" opens this period's page there.", render: (v, r) => `<a class="mono" href="${contractPage(v)}" title="Its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
+    {key: "of_interest", label: "Of interest", render: interestBadges,
+      title: "How the award was made, read from its paperwork: sole source, exempt from competition, emergency, letter contract, pilot, or extended past its last option. Hover a badge for what it means. Only contracts flagged for review were read, so a blank means not read, not ordinary."},
+    {key: "title", label: "Title", cls: "wide", title: "The contract's title on DC's site."},
+    {key: "vendor", label: "Vendor", title: "The vendor on DC's site, as spelled there."},
+    {key: "agency", label: "Agency", title: "The agency on DC's site; abbreviations are filled in from agency_names.yaml."},
+    {key: "contract_type", label: "Contract type", title: "contractType on DC's site, as entered."},
+    {key: "market_type", label: "Market type", title: "marketType on DC's site, as entered. It says Open or Set Aside even for most sole-source awards, so it can't tell you whether an award was competed."},
+    {key: "option_period", label: "Period", title: "Which period of the contract this row is, as DC's site labels it: the base period, or an option year."},
+    {key: "start_date", label: "Starts", cls: "num", title: "When this period starts, per DC's site."},
+    {key: "end_date", label: "Ends", cls: "num", title: "When this period ends, per DC's site."},
     {key: "amount", label: "Base amount", cls: "num", render: (v, r) => r.period_kind === "base"
-      ? `${money(v)}${r.corrected ? ' <span class="tag" title="Corrected: DC\'s figure contradicts the District\'s own paperwork. See the contract page.">corrected</span>' : ""}` +
-        (r.same_award_as ? ` <span class="tag" title="The same award as ${esc(r.same_award_as)}, which totals count instead.">same as ${esc(r.same_award_as)}</span>` : "")
-      : `<span class="muted" title="Option-period amounts are not shown: about three in ten we checked disagreed with the District's own paperwork.">–</span>`},
-    {key: "nigp_codes", label: "NIGP code", render: (v) => `<span class="mono">${esc(v)}</span>`},
+      ? `${money(v)}${r.corrected ? ' <span class="tag">corrected</span>' : ""}${r.same_award_as ? ` <span class="tag">dup.</span>` : ""}`
+      : '<span class="muted">–</span>',
+      title: "What the base period authorises, a ceiling, not spending. Option periods show – because about three in ten we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"dup.\": the same award as another contract number, which totals count instead. Open the contract for details."},
+    {key: "nigp_codes", label: "NIGP code", title: "The commodity code DC's site gives the contract, chosen when it was entered.", render: (v) => `<span class="mono">${esc(v)}</span>`},
   ],
 });
 </script>

@@ -300,7 +300,7 @@ async function renderBreakdown(where) {
 function buildTable() {
   const cols = CFG.columns;
   document.getElementById("rows").innerHTML = `<table class="display compact" style="width:100%"><thead><tr>` +
-    cols.map((c) => `<th>${esc(c.label)}</th>`).join("") + "</tr></thead></table>";
+    cols.map((c) => `<th${c.title ? ` title="${esc(c.title)}"` : ""}>${esc(c.label)}</th>`).join("") + "</tr></thead></table>";
   TABLE = $("#rows table").DataTable({
     serverSide: true,
     processing: true,
@@ -308,6 +308,9 @@ function buildTable() {
     pageLength: 25,
     order: CFG.defaultOrder,
     scrollX: true,
+    // DataTables otherwise sizes columns from the longest markup a cell renders,
+    // tooltip text included, which made short columns very wide.
+    autoWidth: false,
     language: {search: `Search ${CFG.searchLabel}:`},
     columns: cols.map((c) => ({
       data: c.key,
