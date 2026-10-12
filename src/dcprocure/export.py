@@ -40,7 +40,7 @@ def agency_map() -> dict[str, str]:
 # Column, then where it comes from. The site prints this as its data dictionary.
 COLUMNS: dict[str, dict[str, str]] = {
     "contracts": {
-        "id": "Portal id of the option period (base64 of contract number and period name)",
+        "id": "The id DC's site gives the option period (base64 of contract number and period name)",
         "contract_number": "contractNumber",
         "title": "title",
         "vendor": "vendor",
@@ -59,20 +59,20 @@ COLUMNS: dict[str, dict[str, str]] = {
         "market_type": "marketType, from the contract's detail page",
         "contracting_officer": "contractingOfficerName, from the contract's detail page",
         "documents": "Number of attachments listed on the detail page for this option period",
-        "portal_url": "The District's detail page for this option period",
-        "listed": "Whether the portal's search returned this row on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
+        "portal_url": "This option period's page on DC's site",
+        "listed": "Whether DC's site returned this row in its search on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
         "first_listed": "First pull that returned it (tracked from October 2026)",
         "last_listed": "Last pull that returned it",
-        "recovered_on": "Set when the row was put back after the portal stopped listing it",
+        "recovered_on": "Set when the row was put back after DC's site stopped returning it in its search",
     },
     "documents": {
         "contract_number": "contractNumber of the option period the document is filed under",
-        "contract_id": "Portal id of that option period",
-        "document_id": "Portal id of the document",
+        "contract_id": "The id DC's site gives that option period",
+        "document_id": "The id DC's site gives the document",
         "name": "Document name as published",
-        "category": "The category the portal writes into the name ('Contract Award', 'Modifications', 'D&Fs', ...); empty when the name does not follow the portal's pattern",
-        "url": "Direct link to the PDF on the portal",
-        "listed": "Whether the portal still lists the option period",
+        "category": "The category DC's site writes into the name ('Contract Award', 'Modifications', 'D&Fs', ...); empty when the name does not follow DC's site's pattern",
+        "url": "Direct link to the PDF on DC's site",
+        "listed": "Whether DC's site still returns the option period in its search",
     },
     "purchase_orders": {
         "po_number": "poNumber; a revised order carries a -V suffix",
@@ -85,10 +85,10 @@ COLUMNS: dict[str, dict[str, str]] = {
         "ordered_date": "orderedDate, parsed from M/D/YYYY",
         "po_total": "poTotal, parsed",
         "po_total_text": "poTotal exactly as published",
-        "listed": "Whether the portal's search returned this row on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
+        "listed": "Whether DC's site returned this row in its search on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
     },
     "payments": {
-        "id": "Portal id of the payment line. Not unique: several lines can share one",
+        "id": "The id DC's site gives the payment line. Not unique: several lines can share one",
         "agency": "agencyName, with abbreviated and variant names mapped by agency_names.yaml",
         "agency_as_published": "agencyName exactly as published",
         "contract_number": "contractNumber; empty on most rows",
@@ -100,12 +100,12 @@ COLUMNS: dict[str, dict[str, str]] = {
         "voucher_amount": "voucherAmount, parsed; the amount of this line. Sum this one",
         "voucher_amount_text": "voucherAmount exactly as published",
         "check_total": "paymentAmount, parsed. NOT this line's amount: the total of the whole check or ACH run, repeated on every line in it. Do not sum",
-        "payment_number": "paymentNumber, as published (masked by the portal)",
-        "listed": "Whether the portal's search returned this row on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
+        "payment_number": "paymentNumber, as published (masked by DC's site)",
+        "listed": "Whether DC's site returned this row in its search on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
     },
     "nigp_classes": {
         "nigp_class": "Three-digit NIGP class",
-        "description": "The portal's description of the class",
+        "description": "DC's site's description of the class",
     },
 }
 

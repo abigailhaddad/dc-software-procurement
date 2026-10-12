@@ -14,10 +14,9 @@
 <div class="wrap">
 <header class="site">
   <h1>DC procurement data</h1>
-  <p class="sub">A copy of what the District of Columbia's
-  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, the public site the Office of Contracting
-  and Procurement runs for District contracting records, lists, as we pulled it. <a href="about.html#portal">What the portal is</a>.
-  <strong>Not a complete record of District contracting or spending.</strong></p>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="index.html">Contracts</a>
     <a href="payments.html">Payments</a>
@@ -27,7 +26,7 @@
 </header>
 
 <p class="intro">One row per <strong>purchase order</strong>, in every commodity class. An order is a commitment to spend, not a payment, and it
-carries no contract number of its own. A revised order carries a <code>-V</code> suffix (PO123456-V2); the portal lists one version
+carries no contract number of its own. A revised order carries a <code>-V</code> suffix (PO123456-V2); DC's site lists one version
 of each order at a time. Agency, supplier, commodity code and fiscal year are as published.</p>
 
 <aside class="coverage" id="coverage" aria-label="What this covers"></aside>
@@ -83,8 +82,8 @@ start({
   coverage: {
     sql: `SELECT CAST(min(ordered_date) AS VARCHAR) AS first, CAST(max(ordered_date) AS VARCHAR) AS last, count(DISTINCT nigp_class) AS classes FROM purchase_orders`,
     text: (r) => `<ul>
-      <li>Only the purchase orders the portal lists, in all ${n(r.classes)} commodity classes, ordered ${esc(r.first)} to ${esc(r.last)}.</li>
-      <li>An order is a commitment to spend, not a payment. When an order is revised the portal shows only the latest version, and so does this.</li></ul>`,
+      <li>Only the purchase orders DC's site lists, in all ${n(r.classes)} commodity classes, ordered ${esc(r.first)} to ${esc(r.last)}.</li>
+      <li>An order is a commitment to spend, not a payment. When an order is revised DC's site shows only the latest version, and so does this.</li></ul>`,
   },
   rowLabel: "Orders",
   searchLabel: "PO number or supplier",
@@ -94,17 +93,17 @@ start({
   stats: [
     {label: "Orders", expr: "count(*)", what: "Rows matching the filters."},
     {label: "Amount ordered", expr: "sum(po_total)", money: true, what: "Sum of poTotal. Commitments, not payments."},
-    {label: "Suppliers", expr: "count(DISTINCT supplier)", what: "Distinct supplier names, as spelled on the portal."},
+    {label: "Suppliers", expr: "count(DISTINCT supplier)", what: "Distinct supplier names, as spelled on DC's site."},
     {label: "Agencies", expr: "count(DISTINCT agency)", what: "Distinct agency names on the orders."},
   ],
   fields: {
-    agency: {label: "Agency", from: "agencyName on the portal.", filter: "multi", expr: "coalesce(agency, '(blank)')"},
-    supplier: {label: "Supplier", from: "supplierName on the portal, as spelled.", filter: "multi", expr: "coalesce(supplier, '(blank)')"},
-    supplier_contains: {label: "Supplier name contains", from: "supplierName on the portal; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "supplier"},
+    agency: {label: "Agency", from: "agencyName on DC's site.", filter: "multi", expr: "coalesce(agency, '(blank)')"},
+    supplier: {label: "Supplier", from: "supplierName on DC's site, as spelled.", filter: "multi", expr: "coalesce(supplier, '(blank)')"},
+    supplier_contains: {label: "Supplier name contains", from: "supplierName on DC's site; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "supplier"},
     nigp_class: {label: "Commodity class (NIGP)", from: "The first three digits of commodityCode.", filter: "multi", expr: "nigp_class", describe: nigpLabel},
-    fiscal_year: {label: "Fiscal year", from: "fiscalYear, as the portal publishes it.", filter: "multi", ordered: true, expr: "CAST(fiscal_year AS VARCHAR)"},
-    listed: {label: "In the portal's search now", from: "Whether the portal's search returned the row on the latest pull. Rows it no longer returns come from earlier pulls; their detail pages may still open.", filter: "multi",
-      expr: "CASE WHEN listed THEN 'In portal search' ELSE 'Not in portal search' END"},
+    fiscal_year: {label: "Fiscal year", from: "fiscalYear, as DC's site publishes it.", filter: "multi", ordered: true, expr: "CAST(fiscal_year AS VARCHAR)"},
+    listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
+      expr: "CASE WHEN listed THEN 'In DC site search' ELSE 'Not in DC site search' END"},
     po_number: {label: "PO number", from: "poNumber, without any -V revision suffix.", filter: "text", exact: true, expr: "regexp_replace(po_number, '-V[0-9]+$', '')"},
     ordered_date: {label: "Order date", from: "orderedDate.", filter: "date", expr: "ordered_date"},
     po_total: {label: "Order amount", from: "poTotal, in dollars.", filter: "number", expr: "po_total"},
@@ -122,7 +121,7 @@ start({
   defaultOrder: [[1, "desc"]],
   columns: [
     {key: "po_number", label: "PO", render: (v, r) => `<a class="mono" href="payments.html?po_number=${encodeURIComponent(v.replace(/-V[0-9]+$/, ""))}${keep}" title="Payments against it">${esc(v)}</a>` +
-      (r.listed === false ? '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>' : "")},
+      (r.listed === false ? '<span class="tag" title="DC\'s site no longer returns this record in its search. Its page there may still open by direct link; this row comes from an earlier pull.">not in DC site search</span>' : "")},
     {key: "ordered_date", label: "Ordered", cls: "num"},
     {key: "fiscal_year", label: "FY", cls: "num"},
     {key: "agency", label: "Agency"},

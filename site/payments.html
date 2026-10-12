@@ -14,10 +14,9 @@
 <div class="wrap">
 <header class="site">
   <h1>DC procurement data</h1>
-  <p class="sub">A copy of what the District of Columbia's
-  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, the public site the Office of Contracting
-  and Procurement runs for District contracting records, lists, as we pulled it. <a href="about.html#portal">What the portal is</a>.
-  <strong>Not a complete record of District contracting or spending.</strong></p>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="index.html">Contracts</a>
     <a href="payments.html" aria-current="page">Payments</a>
@@ -26,9 +25,8 @@
   </nav>
 </header>
 
-<p class="intro">One row per <strong>payment line</strong>, as the portal lists it, including the lines no contract page can reach: most carry no
-contract number, or one that is not on the portal's contract list. The amount summed is each line's <code>voucherAmount</code>; the
-portal's <code>paymentAmount</code>, shown as <em>check total</em>, is the total of the whole check run, repeated on every line in it,
+<p class="intro">One row per <strong>payment line</strong>, as DC's site lists it, including the lines no contract page can reach: most carry no
+contract number, or one that is not on DC's published contract list. The amount summed is each line's <code>voucherAmount</code>; DC's <code>paymentAmount</code>, shown as <em>check total</em>, is the total of the whole check run, repeated on every line in it,
 and is never summed. Agency, vendor and contract number are as entered.</p>
 
 <aside class="coverage" id="coverage" aria-label="What this covers"></aside>
@@ -79,21 +77,21 @@ import {start, esc, money, n} from "./shared/explorer.js";
 const pct = (a, b) => `${Math.round(100 * a / b)}%`;
 const data = new URLSearchParams(location.search).get("data");
 const keep = data ? "&data=" + encodeURIComponent(data) : "";
-// A payment's contract number links to that contract's page when the portal
+// A payment's contract number links to that contract's page when DC's site
 // lists it; most numbers on payments are not published contracts.
 const contractCell = (v, r) => !v ? '<span class="muted">none</span>'
   : r.published ? `<a class="mono" href="contract.html?n=${encodeURIComponent(v)}${keep}">${esc(v)}</a>`
-  : `<span class="mono">${esc(v)}</span> <span class="tag" title="No contract with this number is on the portal's contract list">not a listed contract</span>`;
+  : `<span class="mono">${esc(v)}</span> <span class="tag" title="No contract with this number is on DC's published contract list">not a listed contract</span>`;
 start({
   table: "payments",
   coverage: {
     sql: `SELECT CAST(min(payment_date) AS VARCHAR) AS first, CAST(max(payment_date) AS VARCHAR) AS last FROM payments`,
     text: (r, s) => `<ul>
-      <li>Only the payment lines the portal lists, dated ${esc(r.first)} to ${esc(r.last)}. The first and last fiscal years are partial.</li>
+      <li>Only the payment lines DC's site lists, dated ${esc(r.first)} to ${esc(r.last)}. The first and last fiscal years are partial.</li>
       <li>Only ${money(s.payments.listed_contract_paid)} of ${money(s.payments.paid)} (${pct(s.payments.listed_contract_paid, s.payments.paid)})
-        is on lines carrying the number of a contract the portal lists. ${pct(s.payments.no_contract, s.payments.lines)} of lines carry no
+        is on lines carrying the number of a contract DC's site lists. ${pct(s.payments.no_contract, s.payments.lines)} of lines carry no
         contract number, and others carry one of ${n(s.payments.unlisted_numbers)} numbers not on its contract list.</li>
-      <li>Nothing here can be checked against the District's own accounts; this is what the portal shows.</li></ul>`,
+      <li>Nothing here can be checked against the District's own accounts; this is what DC's site shows.</li></ul>`,
   },
   tables: ["payments", "contracts", "nigp_classes"],
   rowLabel: "Payment lines",
@@ -104,18 +102,18 @@ start({
   stats: [
     {label: "Payment lines", expr: "count(*)", what: "Rows matching the filters."},
     {label: "Amount paid", expr: "sum(voucher_amount)", money: true, what: "Sum of voucherAmount, each line's own amount."},
-    {label: "Vendors", expr: "count(DISTINCT vendor)", what: "Distinct vendor names, as spelled on the portal."},
-    {label: "On a listed contract", expr: "count(*) FILTER (WHERE contract_number IN (SELECT contract_number FROM contracts))", what: "Lines whose contract number is on the portal's contract list."},
+    {label: "Vendors", expr: "count(DISTINCT vendor)", what: "Distinct vendor names, as spelled on DC's site."},
+    {label: "On a listed contract", expr: "count(*) FILTER (WHERE contract_number IN (SELECT contract_number FROM contracts))", what: "Lines whose contract number is on DC's published contract list."},
   ],
   fields: {
-    agency: {label: "Agency", from: "agencyName on the portal.", filter: "multi", expr: "coalesce(agency, '(blank)')"},
-    vendor: {label: "Vendor", from: "vendorName on the portal, as spelled (often cut off at a fixed length).", filter: "multi", expr: "coalesce(vendor, '(blank)')"},
-    vendor_contains: {label: "Vendor name contains", from: "vendorName on the portal; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
+    agency: {label: "Agency", from: "agencyName on DC's site.", filter: "multi", expr: "coalesce(agency, '(blank)')"},
+    vendor: {label: "Vendor", from: "vendorName on DC's site, as spelled (often cut off at a fixed length).", filter: "multi", expr: "coalesce(vendor, '(blank)')"},
+    vendor_contains: {label: "Vendor name contains", from: "vendorName on DC's site; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
     fiscal_year: {label: "Fiscal year", from: "From paymentDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(fiscal_year AS VARCHAR)"},
-    contract_link: {label: "Contract number", from: "Whether contractNumber is filled in, and whether the portal lists a contract with that number.", filter: "multi",
+    contract_link: {label: "Contract number", from: "Whether contractNumber is filled in, and whether DC's site lists a contract with that number.", filter: "multi",
       expr: "CASE WHEN contract_number IS NULL THEN 'None' WHEN contract_number IN (SELECT contract_number FROM contracts) THEN 'A listed contract' ELSE 'Not a listed contract' END"},
-    listed: {label: "In the portal's search now", from: "Whether the portal's search returned the row on the latest pull. Rows it no longer returns come from earlier pulls; their detail pages may still open.", filter: "multi",
-      expr: "CASE WHEN listed THEN 'In portal search' ELSE 'Not in portal search' END"},
+    listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
+      expr: "CASE WHEN listed THEN 'In DC site search' ELSE 'Not in DC site search' END"},
     contract_number: {label: "Contract number", from: "contractNumber.", filter: "text", exact: true, expr: "contract_number"},
     po_number: {label: "PO number", from: "poNumber.", filter: "text", exact: true, expr: "po_number"},
     payment_date: {label: "Payment date", from: "paymentDate.", filter: "date", expr: "payment_date"},

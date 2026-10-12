@@ -197,6 +197,7 @@ async function renderStats(where) {
 }
 
 // ---------- charts ----------
+const MIN_BAR_SHARE = 0.01;   // see renderChart
 function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
 
 // Which number sizes the bars: the dollar measure, or the count. One value,
@@ -215,13 +216,23 @@ async function renderChart(spec, where) {
   const ordered = spec.byKey ? "k" : `s DESC NULLS LAST`;
   const sql = `SELECT ${field.expr} AS k, ${CFG.count.expr} AS c, ${CFG.measure.expr} AS m, ${size.expr} AS s\nFROM ${CFG.table}\n${where.sql}\nGROUP BY k\nORDER BY ${ordered}`;
   const rows = await q(sql, where.binds);
-  const shown = spec.byKey ? rows : rows.slice(0, spec.limit || 12);
+  const fmt = SIZE_BY === "measure" ? (x) => measureFmt(x) : n;
+  // A bar under 1% of the largest is a hairline: it reads as blank, and a run
+  // of them buries the few that matter. Those are left off and counted in the
+  // note instead; "Break it down" lists every value. Year charts keep every
+  // year, since a gap there means something.
+  const largest = rows.length ? Math.max(...rows.map((r) => r.s ?? 0)) : 0;
+  const shown = spec.byKey ? rows
+    : rows.filter((r) => (r.s ?? 0) > 0 && (r.s ?? 0) >= largest * MIN_BAR_SHARE).slice(0, spec.limit || 12);
+  const left = rows.filter((r) => !shown.includes(r));
+  const leftTotal = left.reduce((t, r) => t + (r.s ?? 0), 0);
   const box = document.getElementById("chart-" + spec.id);
   box.querySelector(".chart-note").textContent = spec.byKey
     ? `${size.label} by ${field.label.toLowerCase()}. Hover for both numbers.`
-    : `Top ${shown.length} of ${n(rows.length)} values, by ${size.label.toLowerCase()}. Hover for both numbers. Click a bar to filter to it.`;
+    : `${shown.length < rows.length ? `Top ${shown.length} of ${n(rows.length)} values` : `All ${n(rows.length)} values`}, ` +
+      `by ${size.label.toLowerCase()}. Hover for both numbers. Click a bar to filter to it.` +
+      (left.length ? ` Not shown: ${n(left.length)} more, together ${fmt(leftTotal)}. Every value is in "Break it down" below.` : "");
   const labels = shown.map((r) => r.k === null ? "(blank)" : (field.describe ? field.describe(r.k) : String(r.k)));
-  const fmt = SIZE_BY === "measure" ? (x) => measureFmt(x) : n;
   if (CHARTS[spec.id]) CHARTS[spec.id].destroy();
   CHARTS[spec.id] = new Chart(box.querySelector("canvas"), {
     type: "bar",
@@ -374,7 +385,7 @@ export async function start(cfg) {
     const m = await manifest();
     const stamps = m.snapshots.map((s) => (s.pulled_at || "").slice(0, 10)).filter(Boolean).sort();
     document.getElementById("asof").innerHTML =
-      `Pulled from the portal ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}` +
+      `Pulled from contracts.ocp.dc.gov ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}` +
       ` · <a href="${DATASET_PAGE}">full dataset</a> · <a href="${new URL(PARQUET_DIR + cfg.table + ".parquet", location.href).href}">this table (Parquet)</a>` +
       (LOCAL ? " · <strong>reading the local build</strong>" : "");
     // Charts sit in a <details> that the HTML marks open. On a phone they make
@@ -430,5 +441,5 @@ export async function start(cfg) {
   }
 }
 
-// For configs: describe an NIGP class with the portal's own description.
+// For configs: describe an NIGP class with DC's own description.
 export function nigpLabel(cls) { return NIGP[cls] ? `${cls} ${NIGP[cls]}` : String(cls); }

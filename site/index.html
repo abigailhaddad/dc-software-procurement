@@ -14,10 +14,9 @@
 <div class="wrap">
 <header class="site">
   <h1>DC procurement data</h1>
-  <p class="sub">A copy of what the District of Columbia's
-  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, the public site the Office of Contracting
-  and Procurement runs for District contracting records, lists, as we pulled it. <a href="about.html#portal">What the portal is</a>.
-  <strong>Not a complete record of District contracting or spending.</strong></p>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="index.html" aria-current="page">Contracts</a>
     <a href="payments.html">Payments</a>
@@ -28,7 +27,7 @@
 
 <p class="intro">One row per contract <strong>option period</strong>: a contract with a base period and two option years is three rows.
 Each row's amount is what that period authorises the District to spend, not what was paid. Every field below is the District's, as published:
-agency, vendor, contract type, market type and commodity code are what was entered on the portal, not categories added here.</p>
+agency, vendor, contract type, market type and commodity code are what was entered on DC's site, not categories added here.</p>
 
 <aside class="coverage" id="coverage" aria-label="What this covers"></aside>
 
@@ -78,10 +77,10 @@ import {start, esc, money, n, nigpLabel} from "./shared/explorer.js";
 const pct = (a, b) => `${Math.round(100 * a / b)}%`;
 
 const portal = (row) => row.portal_url
-  ? ` <a href="${esc(row.portal_url)}" target="_blank" rel="noopener" title="The District's page for this option period">portal&nbsp;↗</a>` : "";
+  ? ` <a href="${esc(row.portal_url)}" target="_blank" rel="noopener" title="This option period's page on DC's site">DC site&nbsp;↗</a>` : "";
 const data = new URLSearchParams(location.search).get("data");
 const contractPage = (v) => `contract.html?n=${encodeURIComponent(v)}${data ? "&data=" + encodeURIComponent(data) : ""}`;
-const dropped = (row) => row.listed === false ? '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>' : "";
+const dropped = (row) => row.listed === false ? '<span class="tag" title="DC\'s site no longer returns this record in its search. Its page there may still open by direct link; this row comes from an earlier pull.">not in DC site search</span>' : "";
 
 start({
   table: "contracts",
@@ -89,13 +88,13 @@ start({
     sql: `SELECT CAST(min(start_date) AS VARCHAR) AS first, CAST(max(end_date) AS VARCHAR) AS last,
                  count(*) FILTER (WHERE NOT listed) AS dropped FROM contracts`,
     text: (r, s) => `<ul>
-      <li>Only contracts the portal's search returns. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts its
+      <li>Only contracts that DC's site returns in its search. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts its
         search had stopped returning before our first pull, in August 2026, are not here.</li>
-      <li>${n(r.dropped)} option periods its search has since stopped returning are kept from earlier pulls, marked "not in portal search".
-        Their detail pages on the portal may still open by direct link.</li>
+      <li>${n(r.dropped)} option periods its search has since stopped returning are kept from earlier pulls, marked "not in DC site search".
+        Their pages on DC's site may still open by direct link.</li>
       <li>Amounts are ceilings, not spending. Of ${money(s.payments.paid)} in payments, only ${money(s.payments.listed_contract_paid)}
         (${pct(s.payments.listed_contract_paid, s.payments.paid)}) is on lines carrying the number of a contract listed here. The rest carry
-        no contract number, or one of ${n(s.payments.unlisted_numbers)} numbers not on the portal's contract list. Those payments are only
+        no contract number, or one of ${n(s.payments.unlisted_numbers)} numbers not on DC's published contract list. Those payments are only
         on the payments page.</li></ul>`,
   },
   rowLabel: "Option periods",
@@ -108,22 +107,22 @@ start({
   stats: [
     {label: "Option periods", expr: "count(*)", what: "Rows matching the filters."},
     {label: "Contracts", expr: "count(DISTINCT contract_number)", what: "Distinct contract numbers among them."},
-    {label: "Vendors", expr: "count(DISTINCT vendor)", what: "Distinct vendor names, as spelled on the portal."},
+    {label: "Vendors", expr: "count(DISTINCT vendor)", what: "Distinct vendor names, as spelled on DC's site."},
     {label: "Amount authorised", expr: "sum(amount)", money: true, what: "Sum of each period's contractAmount. A ceiling, not spending."},
   ],
   fields: {
-    agency: {label: "Agency", from: "agencyNames on the portal.", filter: "multi", expr: "agency",
+    agency: {label: "Agency", from: "agencyNames on DC's site.", filter: "multi", expr: "agency",
       listExpr: "string_split(agency, '; ')", optionExpr: "unnest(string_split(agency, '; '))"},
-    vendor: {label: "Vendor", from: "vendor on the portal, as spelled.", filter: "multi", expr: "vendor"},
-    vendor_contains: {label: "Vendor name contains", from: "vendor on the portal; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
-    contract_type: {label: "Contract type", from: "contractType on the portal's detail page.", filter: "multi", expr: "coalesce(contract_type, '(blank)')"},
-    market_type: {label: "Market type", from: "marketType on the portal's detail page, as typed (spellings vary).", filter: "multi", expr: "coalesce(market_type, '(blank)')"},
-    nigp_class: {label: "Commodity class (NIGP)", from: "The first three digits of the commodityCode on the portal.", filter: "multi",
+    vendor: {label: "Vendor", from: "vendor on DC's site, as spelled.", filter: "multi", expr: "vendor"},
+    vendor_contains: {label: "Vendor name contains", from: "vendor on DC's site; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
+    contract_type: {label: "Contract type", from: "contractType on each contract's page on DC's site.", filter: "multi", expr: "coalesce(contract_type, '(blank)')"},
+    market_type: {label: "Market type", from: "marketType on each contract's page on DC's site, as typed (spellings vary).", filter: "multi", expr: "coalesce(market_type, '(blank)')"},
+    nigp_class: {label: "Commodity class (NIGP)", from: "The first three digits of the commodityCode on DC's site.", filter: "multi",
       expr: "array_to_string(nigp_classes, '; ')", describe: nigpLabel},
     start_fiscal_year: {label: "Fiscal year the period starts", from: "From startDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(start_fiscal_year AS VARCHAR)"},
-    option_period: {label: "Option period", from: "currentOptionPeriod on the portal, as typed.", filter: "multi", expr: "option_period"},
-    listed: {label: "In the portal's search now", from: "Whether the portal's search returned the row on the latest pull. Rows it no longer returns come from earlier pulls; their detail pages may still open.", filter: "multi",
-      expr: "CASE WHEN listed THEN 'In portal search' ELSE 'Not in portal search' END"},
+    option_period: {label: "Option period", from: "currentOptionPeriod on DC's site, as typed.", filter: "multi", expr: "option_period"},
+    listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
+      expr: "CASE WHEN listed THEN 'In DC site search' ELSE 'Not in DC site search' END"},
     contract_number: {label: "Contract number", from: "contractNumber.", filter: "text", exact: true, expr: "contract_number"},
     title: {label: "Title", from: "title.", filter: "text", expr: "title"},
     start_date: {label: "Period start date", from: "startDate.", filter: "date", expr: "start_date"},

@@ -14,10 +14,9 @@
 <div class="wrap">
 <header class="site">
   <h1>DC procurement data</h1>
-  <p class="sub">A copy of what the District of Columbia's
-  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, the public site the Office of Contracting
-  and Procurement runs for District contracting records, lists, as we pulled it. <a href="about.html#portal">What the portal is</a>.
-  <strong>Not a complete record of District contracting or spending.</strong></p>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="index.html">Contracts</a>
     <a href="payments.html">Payments</a>
@@ -35,7 +34,7 @@
 
   <section class="block">
     <h2>Option periods</h2>
-    <p class="muted">Each option period is its own record on the portal, with its own amount: what that period authorises, not what was paid.</p>
+    <p class="muted">Each option period is its own record on DC's site, with its own amount: what that period authorises, not what was paid.</p>
     <div class="tablewrap" id="periods"></div>
   </section>
 
@@ -49,7 +48,7 @@
 
   <section class="block">
     <h2>Purchase orders</h2>
-    <p class="muted">An order has no contract number of its own on the portal. These are the orders that this contract's payments were paid against:
+    <p class="muted">An order has no contract number of its own on DC's site. These are the orders that this contract's payments were paid against:
     a payment line carries both a contract number and an order number. A revised order's <code>-V</code> suffix is ignored in matching, because the
     payments table leaves it off. Orders placed under this contract but never paid will not appear.</p>
     <div class="bar"><button id="orders-csv">Download these orders (CSV)</button></div>
@@ -58,7 +57,7 @@
 
   <section class="block">
     <h2>Documents</h2>
-    <p class="muted">Every attachment the portal lists on this contract's option periods, linking to the PDF on the portal. A document filed under several
+    <p class="muted">Every attachment DC's site lists on this contract's option periods, linking to the PDF on DC's site. A document filed under several
     option periods appears once for each.</p>
     <div id="documents"></div>
   </section>
@@ -72,7 +71,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script type="module">
 // One contract: its option periods, then everything linked to it by the
-// portal's own fields -- payments by contract number, orders through those
+// site's own fields -- payments by contract number, orders through those
 // payments, documents by the option periods they are filed under. Payments
 // and orders come from the export's link tables (contract_payments,
 // contract_orders), cut down to listed contracts, not the full tables.
@@ -155,12 +154,12 @@ async function main() {
   ];
   document.getElementById("facts").innerHTML = facts.map(([k, v]) =>
     `<dt>${esc(k)}</dt><dd>${v.length ? v.map(esc).join("<br>") : '<span class="muted">not given</span>'}</dd>`).join("") +
-    `<dt>On the portal</dt><dd>${periods.map((p) => `<a href="${esc(p.portal_url)}" target="_blank" rel="noopener">${esc(p.option_period)}&nbsp;↗</a>`).join(" · ")}</dd>`;
+    `<dt>On DC's site</dt><dd>${periods.map((p) => `<a href="${esc(p.portal_url)}" target="_blank" rel="noopener">${esc(p.option_period)}&nbsp;↗</a>`).join(" · ")}</dd>`;
 
   const authorised = periods.reduce((s, p) => s + (p.amount || 0), 0);
   const paid = payments.reduce((s, p) => s + (p.voucher_amount || 0), 0);
   const stats = [
-    ["Option periods", n(periods.length), "Records on the portal for this contract number."],
+    ["Option periods", n(periods.length), "Records on DC's site for this contract number."],
     ["Authorised", money(authorised), "Sum of the periods' amounts. A ceiling, not spending."],
     ["Paid", money(paid), `Sum of voucherAmount over ${n(payments.length)} payment lines carrying this contract number.`],
     ["Purchase orders", n(orders.length), "Orders that those payments were paid against."],
@@ -170,7 +169,7 @@ async function main() {
     `<div class="stat"><div class="stat-label">${esc(l)}</div><div class="stat-value">${v}</div><div class="stat-what">${esc(w)}</div></div>`).join("");
 
   document.getElementById("periods").innerHTML = `<table class="plain"><thead><tr><th>Period</th><th class="num">Starts</th><th class="num">Ends</th><th class="num">Amount</th><th>Contract type</th><th class="num">Documents</th><th></th></tr></thead><tbody>` +
-    periods.map((p) => `<tr><td>${esc(p.option_period)}${p.listed ? "" : '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>'}</td><td class="num">${esc(p.start_date)}</td><td class="num">${esc(p.end_date)}</td>` +
+    periods.map((p) => `<tr><td>${esc(p.option_period)}${p.listed ? "" : '<span class="tag" title="DC\'s site no longer returns this record in its search. Its page there may still open by direct link; this row comes from an earlier pull.">not in DC site search</span>'}</td><td class="num">${esc(p.start_date)}</td><td class="num">${esc(p.end_date)}</td>` +
       `<td class="num">${moneyExact(p.amount)}</td><td>${esc(p.contract_type || "")}</td><td class="num">${n(p.documents)}</td>` +
       `<td><a href="${esc(p.portal_url)}" target="_blank" rel="noopener">portal&nbsp;↗</a></td></tr>`).join("") + "</tbody></table>";
 
@@ -206,7 +205,7 @@ async function main() {
   $("#orders table").DataTable({
     data: orders, pageLength: 25, order: [[1, "desc"]], scrollX: true,
     columns: [
-      {data: "po_number", title: "PO", render: (v, t, r) => `<span class="mono">${esc(v)}</span>${r.listed ? "" : '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>'}`},
+      {data: "po_number", title: "PO", render: (v, t, r) => `<span class="mono">${esc(v)}</span>${r.listed ? "" : '<span class="tag" title="DC\'s site no longer returns this record in its search. Its page there may still open by direct link; this row comes from an earlier pull.">not in DC site search</span>'}`},
       {data: "ordered_date", title: "Ordered", className: "num"},
       {data: "fiscal_year", title: "FY", className: "num"},
       {data: "agency", title: "Agency"},
@@ -221,13 +220,13 @@ async function main() {
   document.getElementById("documents").innerHTML = docs.length
     ? Object.entries(byCat).map(([cat, list]) => `<h3>${esc(cat)} <span class="muted">(${n(list.length)})</span></h3><ul class="doclist">` +
         list.map((d) => `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.name)}</a></li>`).join("") + "</ul>").join("")
-    : '<p class="muted">The portal lists no attachments for this contract.</p>';
+    : '<p class="muted">DC\'s site lists no attachments for this contract.</p>';
 
   document.getElementById("payments-csv").onclick = () => downloadCsv(PAYMENTS, [number], `${number}-payments.csv`);
   document.getElementById("orders-csv").onclick = () => downloadCsv(ORDERS, [number], `${number}-purchase-orders.csv`);
   const m = await manifest();
   const stamps = m.snapshots.map((s) => (s.pulled_at || "").slice(0, 10)).filter(Boolean).sort();
-  status.innerHTML = `<span class="meta">Pulled from the portal ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}.</span>`;
+  status.innerHTML = `<span class="meta">Pulled from contracts.ocp.dc.gov ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}.</span>`;
   document.getElementById("contract").hidden = false;
 }
 
