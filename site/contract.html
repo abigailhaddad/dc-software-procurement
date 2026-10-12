@@ -45,22 +45,22 @@
     <h2>Payments</h2>
     <p class="muted" id="payments-note"></p>
     <div class="card chart wide" id="pay-chart" hidden><h3>Paid by fiscal year</h3><p class="chart-note muted">Sum of voucherAmount by the fiscal year of the payment date. Hover for the line count.</p><div class="canvas" style="--h:220px"><canvas></canvas></div></div>
-    <div class="bar"><button id="payments-csv">Download these payments (CSV)</button></div>
+    <div class="bar" id="payments-bar"><button id="payments-csv">Download these payments (CSV)</button></div>
     <div id="payments"></div>
   </section>
 
   <section class="block">
     <h2>Purchase orders</h2>
-    <p class="muted">An order has no contract number of its own on DC's site. These are the orders that this contract's payments were paid against:
+    <p class="muted" id="orders-note">An order has no contract number of its own on DC's site. These are the orders that this contract's payments were paid against:
     a payment line carries both a contract number and an order number. A revised order's <code>-V</code> suffix is ignored in matching, because the
     payments table leaves it off. Orders placed under this contract but never paid will not appear.</p>
-    <div class="bar"><button id="orders-csv">Download these orders (CSV)</button></div>
+    <div class="bar" id="orders-bar"><button id="orders-csv">Download these orders (CSV)</button></div>
     <div id="orders"></div>
   </section>
 
   <section class="block">
     <h2>Documents</h2>
-    <p class="muted">Every attachment DC's site lists on this contract's option periods, linking to the PDF on DC's site. A document filed under several
+    <p class="muted" id="documents-note">Every attachment DC's site lists on this contract's option periods, linking to the PDF on DC's site. A document filed under several
     option periods appears once for each.</p>
     <div id="documents"></div>
   </section>
@@ -208,7 +208,8 @@ async function main() {
 
   document.getElementById("payments-note").textContent = payments.length
     ? `Payment lines whose contract number is ${number}. Many payments carry no contract number at all, so this can undercount what was paid on the contract.`
-    : `No payment line carries the contract number ${number}. Many payments carry no contract number, so this does not mean nothing was paid.`;
+    : `No payments found. No payment line carries the contract number ${number}, but many payments carry no contract number, so this does not mean nothing was paid.`;
+  document.getElementById("payments-bar").hidden = !payments.length;
   if (byYear.length) {
     const box = document.getElementById("pay-chart");
     box.hidden = false;
@@ -220,6 +221,7 @@ async function main() {
         scales: {y: {ticks: {callback: (v) => money(v), color: cssVar("--muted")}, grid: {color: cssVar("--rule")}}, x: {ticks: {color: cssVar("--muted")}, grid: {display: false}}}},
     });
   }
+  if (payments.length) {
   document.getElementById("payments").innerHTML = '<table class="display compact" style="width:100%"></table>';
   $("#payments table").DataTable({
     data: payments, pageLength: 25, order: [[0, "desc"]], scrollX: true,
@@ -233,7 +235,14 @@ async function main() {
       {data: "check_total", title: "Check total (not this line)", className: "num", render: (v, t) => t === "display" ? `<span class="muted">${money(v)}</span>` : v},
     ],
   });
+  }
 
+  document.getElementById("orders-bar").hidden = !orders.length;
+  if (!orders.length) {
+    document.getElementById("orders-note").textContent = payments.length
+      ? "No purchase orders found. None of this contract's payment lines names an order that is on DC's site."
+      : "No purchase orders found. Orders are linked to a contract through its payments, and no payment carries this contract's number.";
+  } else {
   document.getElementById("orders").innerHTML = '<table class="display compact" style="width:100%"></table>';
   $("#orders table").DataTable({
     data: orders, pageLength: 25, order: [[1, "desc"]], scrollX: true,
@@ -247,13 +256,15 @@ async function main() {
       {data: "po_total", title: "Amount", className: "num", render: (v, t) => t === "display" ? moneyExact(v) : v},
     ],
   });
+  }
 
   const byCat = {};
   for (const d of docs) (byCat[d.category || "(none)"] ||= []).push(d);
   document.getElementById("documents").innerHTML = docs.length
     ? Object.entries(byCat).map(([cat, list]) => `<h3>${esc(cat)} <span class="muted">(${n(list.length)})</span></h3><ul class="doclist">` +
         list.map((d) => `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.name)}</a></li>`).join("") + "</ul>").join("")
-    : '<p class="muted">DC\'s site lists no attachments for this contract.</p>';
+    : "";
+  if (!docs.length) document.getElementById("documents-note").textContent = "No documents found. DC's site lists no attachments for this contract.";
 
   document.getElementById("payments-csv").onclick = () => downloadCsv(PAYMENTS, [number], `${number}-payments.csv`);
   document.getElementById("orders-csv").onclick = () => downloadCsv(ORDERS, [number], `${number}-purchase-orders.csv`);

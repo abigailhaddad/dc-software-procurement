@@ -127,3 +127,4 @@ dl.glossary dd{color:var(--soft); font-size:.92rem}
 .coverage p,.coverage li{color:var(--soft); font-size:.92rem; margin:0 0 4px; max-width:90ch}
 .coverage ul{margin:0 0 6px; padding-left:20px}
 .coverage:empty{display:none}
+[hidden]{display:none !important}
