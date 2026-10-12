@@ -74,8 +74,13 @@ the browser with DuckDB. Every figure it shows is a count or a sum over rows the
 reader can see, so there is nothing on it to restate when the data moves.
 
 `scripts/weekly_refresh.sh` runs hydrate, pull, export, verify, publish and
-prune, and `scripts/install_schedule.sh` installs it as a weekly launchd job. A
-failed check stops the publish. `docs/SCHEDULING.md` has the details.
+prune. A GitHub Actions workflow (`.github/workflows/weekly.yml`) runs it every
+week and can be started by hand with `gh workflow run weekly.yml`; the launchd
+job that `scripts/install_schedule.sh` installs is the fallback. A failed check
+stops the publish, and nothing is committed back to the repo. The site is
+deployed to Cloudflare Pages by `.github/workflows/deploy-site.yml` only when
+`site/` changes, since it reads the tables from Hugging Face when a page loads.
+`docs/SCHEDULING.md` has the details and the secrets each workflow needs.
 
 ## Why the site does not total "technology"
 
@@ -133,7 +138,9 @@ still in `analysis/` and `tests/`.
 | `analysis/vehicle_orders.py` | Trace purchase orders back to the ordering vehicle they were placed against (`make vehicles`) |
 | `analysis/technology_buyers.py` | Who buys technology, read three ways: contracts, payments, purchase orders (`make buyers`) |
 | `scripts/weekly_refresh.sh` | The weekly chain: hydrate, pull, export, verify, publish, prune |
-| `scripts/install_schedule.sh` | Install that chain as a launchd job, from the plist template beside it |
+| `.github/workflows/weekly.yml` | Runs that chain weekly on GitHub Actions |
+| `.github/workflows/deploy-site.yml` | Deploys `site/` to Cloudflare Pages when it changes |
+| `scripts/install_schedule.sh` | Install that chain as a launchd job, the fallback schedule, from the plist template beside it |
 | `docs/SCHEDULING.md` | What the weekly run does, what it deliberately skips, and what will bite |
 | `tests/` | Hand-read labels and the scripts that score against them |
 

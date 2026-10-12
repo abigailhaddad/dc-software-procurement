@@ -47,6 +47,10 @@ button.primary,#add-filter{background:var(--accent); color:var(--bg); border-col
 .stat-what{font-size:.82rem; color:var(--muted); line-height:1.35}
 #charts{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:12px; margin-bottom:16px}
 .chart.wide{grid-column:1/-1}
+/* Charts fold away; the page opens them on wide screens and closes them on phones. */
+.charts-box{margin-bottom:16px}
+.charts-box>summary{cursor:pointer; font-family:var(--head); font-weight:600; color:var(--accent); margin:0 0 8px; width:max-content}
+.charts-box[open] .when-closed,.charts-box:not([open]) .when-open{display:none}
 .card h3{font-family:var(--head); font-size:1.02rem; margin:0 0 2px}
 .chart-note{font-size:.82rem; margin:0 0 8px}
 .canvas{position:relative; height:var(--h,240px)}
@@ -112,3 +116,8 @@ dl.glossary dt,dl.glossary dd{padding:8px 14px; border-bottom:1px solid var(--ru
 dl.glossary dt{font-family:var(--mono); font-size:.85rem}
 dl.glossary dd{color:var(--soft); font-size:.92rem}
 @media (max-width:640px){ dl.glossary{grid-template-columns:1fr} dl.glossary dt{border-bottom:none; padding-bottom:0} }
+.coverage{background:var(--warn-soft); border:1px solid var(--rule); border-left:4px solid var(--warn); border-radius:8px; padding:12px 16px; margin:4px 0 14px}
+.coverage h2{font-family:var(--head); font-size:1rem; margin:0 0 4px; color:var(--ink)}
+.coverage p,.coverage li{color:var(--soft); font-size:.92rem; margin:0 0 4px; max-width:90ch}
+.coverage ul{margin:0 0 6px; padding-left:20px}
+.coverage:empty{display:none}

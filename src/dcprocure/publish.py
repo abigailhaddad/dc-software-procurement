@@ -46,6 +46,8 @@ FILES = (
     "parquet/purchase_orders.parquet",
     "parquet/payments.parquet",
     "parquet/nigp_classes.parquet",
+    "parquet/contract_payments.parquet",
+    "parquet/contract_orders.parquet",
     "parquet/columns.json",
     "parquet/summary.json",
 )
@@ -84,7 +86,8 @@ four fields added and nothing else changed:
 | `recovered_on` | Set on rows lost on 1 October 2026 and put back: from `raw/` (the 2026-09-05 pull) where it held them, otherwise fetched from the portal's detail endpoint, which still answers for delisted contracts. Every period fetched that way that `raw/` also holds matched it field for field. |
 
 `archive/parquet/` holds the same rows as Parquet, one file per table, for the
-explorer at the project's site and for anyone who wants to query them directly.
+explorer at https://dc-procurement.pages.dev and for anyone who wants to query
+them directly.
 Amounts and dates are parsed from the portal's text, and each parsed column sits
 beside the text it came from; `columns.json` says where every column comes from.
 

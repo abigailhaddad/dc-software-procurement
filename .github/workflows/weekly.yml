@@ -1,0 +1,59 @@
+name: Weekly refresh
+
+# The weekly run: restore data/raw from the Hugging Face archive, pull the
+# portal, export and check the Parquet tables, publish, prune. It runs
+# scripts/weekly_refresh.sh unchanged, so the order and the stop rules are the
+# script's: a failed hydrate stops the run, and a failed pull or check skips the
+# publish. See docs/SCHEDULING.md.
+#
+# Nothing is committed back to the repo. The archive and the tables live in the
+# Hugging Face dataset, and the site reads them from there at load time.
+
+on:
+  schedule:
+    # Mondays 10:00 UTC (06:00 in Washington in summer, 05:00 in winter).
+    - cron: "0 10 * * 1"
+  workflow_dispatch:
+
+# Two runs at once would both merge into and publish the same archive. A
+# second run waits for the first rather than cancelling it mid-publish.
+concurrency:
+  group: weekly-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    # The pull takes about ten minutes, and the payments table is one ~300MB
+    # response with a 300-second client timeout and retries. Hydrate and
+    # publish move the whole archive each way.
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.30"
+
+      # uv picks an interpreter that satisfies requires-python in pyproject.toml
+      # (and uv.lock), downloading one if the runner has none.
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run the weekly refresh
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: scripts/weekly_refresh.sh
+
+      - name: Upload the run log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-refresh-log-${{ github.run_id }}
+          path: data/logs/
+          retention-days: 14
+          if-no-files-found: warn

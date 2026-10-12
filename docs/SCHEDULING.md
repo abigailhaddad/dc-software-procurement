@@ -4,24 +4,75 @@ The weekly run keeps the archive and the site's tables current. The site states
 no figures of its own -- everything on it is a query over the tables -- so there
 is nothing to restate when the data moves.
 
-## Install
+## Where it runs
 
-    scripts/install_schedule.sh            # install and load the launchd job
-    scripts/install_schedule.sh --remove   # unload and delete it
+**GitHub Actions is the schedule.** `.github/workflows/weekly.yml` runs
+`scripts/weekly_refresh.sh` on an Ubuntu runner every Monday at 10:00 UTC
+(06:00 in Washington during daylight time, 05:00 otherwise). It installs uv and
+the locked dependencies, runs the script unchanged, and uploads `data/logs/` as
+a run artifact kept for 14 days. A laptop that is asleep or off no longer means
+a missed week.
 
-Mondays at 06:00. If the machine is asleep then, launchd runs the job once when
-it next wakes rather than skipping the week. `RunAtLoad` is false, so installing
-the job does not immediately start a pull.
+Because the workflow runs the same script, the order and the stop rules are the
+same as by hand: a failed hydrate stops the run, and a failed pull or check
+skips the publish and fails the job. The workflow commits nothing back to this
+repo; everything it produces goes to the Hugging Face dataset. Runs never
+overlap: a second one waits for the first to finish. The job times out after
+90 minutes.
 
 Run it now without waiting for Monday:
 
+    gh workflow run weekly.yml
+    gh run watch    # follow it; or open the Actions tab
+
+The run's log is the `weekly-refresh-log-<run id>` artifact on the run's page.
+
+### Secrets
+
+Set in the repo's Settings -> Secrets and variables -> Actions:
+
+| Secret | Used by | What it needs |
+|---|---|---|
+| `HF_TOKEN` | `weekly.yml` | Write access to the `abigailhaddad/dc-procurement-raw` dataset. Hydrate, publish and prune all use it; without it publish stops with "HF_TOKEN is not set" and nothing is published. |
+| `CLOUDFLARE_API_TOKEN` | `deploy-site.yml` | A token with Cloudflare Pages edit permission. |
+| `CLOUDFLARE_ACCOUNT_ID` | `deploy-site.yml` | The account that owns the `dc-procurement` Pages project. |
+
+    gh secret set HF_TOKEN
+    gh secret set CLOUDFLARE_API_TOKEN
+    gh secret set CLOUDFLARE_ACCOUNT_ID
+
+### The site deploys separately
+
+The site reads its tables from the Hugging Face dataset when a page loads, so
+a weekly refresh shows up on it without a redeploy. It needs redeploying only
+when the code in `site/` changes. `.github/workflows/deploy-site.yml` does that
+on every push to `main` that touches `site/`, uploading `site/` as-is to the
+`dc-procurement` Cloudflare Pages project (there is no build step). Redeploy by
+hand with:
+
+    gh workflow run deploy-site.yml
+
+### The launchd job is the fallback
+
+Before Actions, a launchd job on the owner's laptop ran the script at Mondays
+06:00 local time. Keep it installed until the Actions job has completed a clean
+run end to end (hydrate through prune, publish included), then remove it so the
+two do not both publish in the same week:
+
+    scripts/install_schedule.sh --remove   # unload and delete it
+    scripts/install_schedule.sh            # reinstall, if Actions has to be abandoned
+
+If the machine is asleep at 06:00, launchd runs the job once when it next wakes
+rather than skipping the week. `RunAtLoad` is false, so installing the job does
+not immediately start a pull. To start it by hand:
+
     launchctl kickstart -p gui/$(id -u)/com.dcbudget.weekly
 
-Or run the script directly, which is the same thing without launchd:
+Or run the script directly, which is the same thing without any scheduler:
 
     scripts/weekly_refresh.sh
 
-Logs go to `data/logs/run-<timestamp>.log`, last 12 runs kept.
+Locally, logs go to `data/logs/run-<timestamp>.log`, last 12 runs kept.
 
 ## What the weekly run does
 
@@ -86,3 +137,11 @@ Only raw source material is published there. Everything the model or the OCR
 produced -- classifications, extracted rate cards, delivery labels -- stays
 local on purpose, so it cannot be mistaken for what the
 District published.
+
+**Publish data before site code that needs it.** The site reads its tables from
+the dataset at load time. A site change that reads a new table or a new field
+in `summary.json` breaks until `make publish` has put it there, so publish
+first, then deploy. The first deploy, on 12 October 2026, went out before its
+two new tables and showed a 404 on every contract page until they were
+published.
+

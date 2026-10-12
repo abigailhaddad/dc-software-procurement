@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DC Contract</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
@@ -13,9 +14,14 @@
 <div class="wrap">
 <header class="site">
   <h1>DC procurement data</h1>
-  <p class="sub">What the District of Columbia's Contracts and Procurement Transparency Portal publishes, in tables you can filter, total and check.</p>
+  <p class="sub">A copy of what the District of Columbia's
+  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, the public site the Office of Contracting
+  and Procurement runs for District contracting records, lists, as we pulled it. <a href="about.html#portal">What the portal is</a>.
+  <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="index.html">Contracts</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
     <a href="about.html">About this data</a>
   </nav>
 </header>
@@ -67,7 +73,9 @@
 <script type="module">
 // One contract: its option periods, then everything linked to it by the
 // portal's own fields -- payments by contract number, orders through those
-// payments, documents by the option periods they are filed under.
+// payments, documents by the option periods they are filed under. Payments
+// and orders come from the export's link tables (contract_payments,
+// contract_orders), cut down to listed contracts, not the full tables.
 import {boot, q, downloadCsv, manifest} from "./shared/db.js";
 import {n, money, esc} from "./shared/explorer.js";
 
@@ -92,22 +100,21 @@ WHERE contract_number = ?
 ORDER BY start_date`;
 const PAYMENTS = `SELECT CAST(payment_date AS VARCHAR) AS payment_date, fiscal_year, agency, vendor, po_number, voucher_number,
        voucher_amount, check_total, listed
-FROM payments
+FROM contract_payments
 WHERE contract_number = ?
 ORDER BY payment_date`;
 const PAY_BY_YEAR = `SELECT fiscal_year, count(*) AS lines, sum(voucher_amount) AS paid
-FROM payments
+FROM contract_payments
 WHERE contract_number = ?
 GROUP BY fiscal_year
 ORDER BY fiscal_year`;
-const ORDERS = `SELECT o.po_number, CAST(o.ordered_date AS VARCHAR) AS ordered_date, o.fiscal_year, o.agency, o.supplier,
-       o.nigp_code, o.po_total, o.listed
-FROM purchase_orders o
-WHERE regexp_replace(o.po_number, '-V[0-9]+$', '') IN (
-  SELECT DISTINCT regexp_replace(po_number, '-V[0-9]+$', '')
-  FROM payments
-  WHERE contract_number = ? AND po_number IS NOT NULL)
-ORDER BY o.ordered_date`;
+// contract_orders links an order to a contract when a payment line carrying
+// the contract number has the order's po_number, -V suffix ignored on both.
+const ORDERS = `SELECT po_number, CAST(ordered_date AS VARCHAR) AS ordered_date, fiscal_year, agency, supplier,
+       nigp_code, po_total, listed
+FROM contract_orders
+WHERE contract_number = ?
+ORDER BY ordered_date`;
 const DOCUMENTS = `SELECT category, name, url
 FROM documents
 WHERE contract_number = ?
@@ -120,7 +127,7 @@ async function main() {
     return;
   }
   status.textContent = "Loading the data into your browser…";
-  await boot(["contracts", "documents", "purchase_orders", "payments", "nigp_classes"]);
+  await boot(["contracts", "documents", "contract_payments", "contract_orders", "nigp_classes"]);
   const periods = await run("Option periods", PERIODS, [number]);
   if (!periods.length) {
     status.innerHTML = `No contract numbered <span class="mono">${esc(number)}</span> in the data.`;

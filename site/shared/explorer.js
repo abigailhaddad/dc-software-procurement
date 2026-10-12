@@ -99,7 +99,9 @@ function readUrl() {
 function chipText(key, f) {
   const label = CFG.fields[key].label;
   if (f.values) return `${label}: ${f.values.length > 2 ? f.values.slice(0, 2).join(", ") + ` +${f.values.length - 2}` : f.values.join(", ")}`;
-  if (f.text) return CFG.fields[key].exact ? `${label} is ${f.text}` : `${label} contains "${f.text}"`;
+  // A label that already says "contains" ("Vendor name contains") is not repeated.
+  if (f.text) return CFG.fields[key].exact ? `${label} is ${f.text}`
+    : / contains$/.test(label) ? `${label} "${f.text}"` : `${label} contains "${f.text}"`;
   if ("from" in f) return `${label}: ${f.from || "…"} to ${f.to || "…"}`;
   return `${label}: ${f.min || "…"} to ${f.max || "…"}`;
 }
@@ -198,7 +200,7 @@ async function renderStats(where) {
 function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
 
 // Which number sizes the bars: the dollar measure, or the count. One value,
-// set by the page's switch.
+// set from cfg.sizeDefault at start and then by the page's switch.
 let SIZE_BY = "measure";
 function sizing() { return SIZE_BY === "measure" ? CFG.measure : CFG.count; }
 // Pages whose measure is not money (documents) format it as a count.
@@ -346,6 +348,20 @@ async function refresh() {
   if (TABLE) TABLE.ajax.reload(null, true);
 }
 
+// ---------- what this covers ----------
+// Every page says up front what its table is and is not, with figures from
+// the table itself and from summary.json (which the same export writes), so
+// the statement stays true as the data moves.
+async function renderCoverage(cfg) {
+  const [row] = await q(cfg.coverage.sql);
+  const response = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href);
+  if (!response.ok) throw new Error(`could not load summary.json: ${response.status}`);
+  const summary = await response.json();
+  const about = "about.html" + (new URLSearchParams(location.search).get("data") ? "?data=" + new URLSearchParams(location.search).get("data") : "");
+  document.getElementById("coverage").innerHTML = `<h2>What this covers</h2>${cfg.coverage.text(row, summary)}` +
+    `<p><a href="${about}">More on what the data does and does not include →</a></p>`;
+}
+
 // ---------- start ----------
 export async function start(cfg) {
   CFG = cfg;
@@ -361,6 +377,15 @@ export async function start(cfg) {
       `Pulled from the portal ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}` +
       ` · <a href="${DATASET_PAGE}">full dataset</a> · <a href="${new URL(PARQUET_DIR + cfg.table + ".parquet", location.href).href}">this table (Parquet)</a>` +
       (LOCAL ? " · <strong>reading the local build</strong>" : "");
+    // Charts sit in a <details> that the HTML marks open. On a phone they make
+    // the page very long, so start it closed there. A chart drawn while closed
+    // has no size, so redraw each one at its real size when it is opened.
+    const chartsBox = document.getElementById("charts-box");
+    if (matchMedia("(max-width: 639.98px)").matches) chartsBox.open = false;
+    chartsBox.addEventListener("toggle", () => {
+      if (!chartsBox.open) return;
+      for (const chart of Object.values(CHARTS)) chart.resize();
+    });
     document.getElementById("charts").innerHTML = cfg.charts.map((c) =>
       `<div class="card chart${c.byKey ? " wide" : ""}" id="chart-${c.id}"><h3>${esc(c.title)}</h3><p class="chart-note muted"></p><div class="canvas"><canvas></canvas></div></div>`).join("");
     const opts = `<option value="">—</option>` + cfg.breakdown.map((k) => `<option value="${k}">${esc(cfg.fields[k].label)}</option>`).join("");
@@ -369,8 +394,12 @@ export async function start(cfg) {
     document.getElementById("by1").value = cfg.breakdownDefault?.[0] || "";
     document.getElementById("by2").value = cfg.breakdownDefault?.[1] || "";
     for (const id of ["by1", "by2"]) document.getElementById(id).addEventListener("change", refresh);
+    const sizeDefault = cfg.sizeDefault || "measure";
+    if (sizeDefault !== "measure" && sizeDefault !== "count") throw new Error(`sizeDefault must be "measure" or "count", not ${sizeDefault}`);
+    SIZE_BY = sizeDefault;
     document.getElementById("size-by").innerHTML =
       `<option value="measure">${esc(cfg.measure.label)}</option><option value="count">${esc(cfg.count.label)}</option>`;
+    document.getElementById("size-by").value = SIZE_BY;
     document.getElementById("size-by").addEventListener("change", (e) => { SIZE_BY = e.target.value; refresh(); });
     document.getElementById("add-filter").addEventListener("click", pickField);
     document.getElementById("clear").addEventListener("click", () => { FILTERS = {}; refresh(); });
@@ -391,6 +420,7 @@ export async function start(cfg) {
       if (total > 300000 && !confirm(`That is ${n(total)} rows. The Parquet file in the full dataset may be easier. Download as CSV anyway?`)) return;
       await downloadCsv(`SELECT * FROM ${cfg.table} ${where.sql}`, where.binds, `${cfg.table}.csv`);
     });
+    if (cfg.coverage) await renderCoverage(cfg);
     buildTable();
     status.textContent = "";
     await refresh();

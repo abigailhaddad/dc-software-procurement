@@ -5,7 +5,10 @@ hold the portal's rows and nothing else: every column is a portal field, either
 as published (the ``*_text`` columns) or parsed into a number or a date by a
 rule stated in :data:`COLUMNS`. There are no classifications, joins across
 tables, or derived categories here, so every figure the site shows is a query a
-reader can see and rerun.
+reader can see and rerun. The exception is two link tables, ``contract_payments``
+and ``contract_orders``: copies of payments and purchase_orders rows cut down to
+the listed contracts by the rule stated in :data:`COLUMNS`, so a contract's page
+need not download the full tables.
 
 The one thing added is the archive's own bookkeeping -- ``listed``,
 ``first_listed``, ``last_listed``, ``recovered_on`` -- which says whether the
@@ -104,6 +107,21 @@ COLUMNS: dict[str, dict[str, str]] = {
         "nigp_class": "Three-digit NIGP class",
         "description": "The portal's description of the class",
     },
+}
+
+# Two link tables repeat rows of payments and purchase_orders, cut down to the
+# listed contracts, so one contract's page loads a small file instead of both
+# full tables. Their columns are the source table's, described the same way.
+COLUMNS["contract_payments"] = {
+    "contract_number": "contractNumber. Every payments row whose contract_number is the contract_number of a row in contracts, "
+                       "and no other; the columns are those of payments",
+    **{k: v for k, v in COLUMNS["payments"].items() if k != "contract_number"},
+}
+COLUMNS["contract_orders"] = {
+    "contract_number": "A contract_number in contracts. The order is linked to it through payments: some payment line carrying "
+                       "this contract number has the order's po_number, once a trailing -V<digits> revision suffix is removed "
+                       "from both. One row per contract and order; an order never paid under a contract number is not here",
+    **COLUMNS["purchase_orders"],
 }
 
 _MONEY = """
@@ -224,6 +242,26 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
         FROM pay LEFT JOIN agency_names n ON n.raw = pay.agencyName ORDER BY payment_date, id
     """)
     con.execute("CREATE TABLE nigp_classes AS SELECT code AS nigp_class, description FROM classes ORDER BY code")
+    con.execute("""
+        CREATE TABLE contract_payments AS
+        SELECT * FROM payments
+        WHERE contract_number IN (SELECT contract_number FROM contracts)
+        ORDER BY contract_number, payment_date, id
+    """)
+    # An order carries no contract number; it is linked through the payment
+    # lines that carry both. The payments table leaves off a revised order's
+    # -V suffix, so it is dropped on both sides. Same rule as the ORDERS query
+    # contract.html used before this table existed.
+    con.execute("""
+        CREATE TABLE contract_orders AS
+        WITH links AS (
+            SELECT DISTINCT contract_number, regexp_replace(po_number, '-V[0-9]+$', '') AS po_base
+            FROM contract_payments WHERE po_number IS NOT NULL
+        )
+        SELECT l.contract_number, o.*
+        FROM purchase_orders o JOIN links l ON l.po_base = regexp_replace(o.po_number, '-V[0-9]+$', '')
+        ORDER BY l.contract_number, o.ordered_date, o.po_number
+    """)
 
     counts = {}
     for table in COLUMNS:
@@ -257,7 +295,10 @@ def summary(con: duckdb.DuckDBPyConnection) -> dict:
             sum(voucher_amount) AS paid, sum(check_total) AS check_totals,
             count(*) FILTER (WHERE contract_number IS NULL) AS no_contract,
             sum(voucher_amount) FILTER (WHERE contract_number IS NULL) AS no_contract_paid,
-            CAST(min(payment_date) AS VARCHAR) AS first_date, CAST(max(payment_date) AS VARCHAR) AS last_date
+            CAST(min(payment_date) AS VARCHAR) AS first_date, CAST(max(payment_date) AS VARCHAR) AS last_date,
+            sum(voucher_amount) FILTER (WHERE contract_number IN (SELECT contract_number FROM contracts)) AS listed_contract_paid,
+            count(DISTINCT contract_number) FILTER (WHERE contract_number NOT IN (SELECT contract_number FROM contracts)) AS unlisted_numbers,
+            sum(voucher_amount) FILTER (WHERE contract_number NOT IN (SELECT contract_number FROM contracts)) AS unlisted_paid
             FROM payments"""),
         "contracts": one("""SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts,
             count(DISTINCT vendor) AS vendors, count(DISTINCT agency) AS agencies,

@@ -126,3 +126,27 @@ def test_agency_mapping_is_sourced_and_reversible():
     # Two agencies share the abbreviation OPC; neither is mapped onto the other.
     opc = _q(f"SELECT DISTINCT agency FROM '{PARQUET}/payments.parquet' WHERE agency LIKE '%(OPC)'")
     assert sorted(r[0] for r in opc) == ["People's Counsel (OPC)", "Police Complaints (OPC)"]
+
+
+def test_contract_link_tables_hold_what_the_full_tables_give(payments):
+    # contract_payments: every payment line carrying a listed contract number,
+    # recomputed from the raw JSON with pandas.
+    listed = {r["contractNumber"] for r in _raw("contracts_by_commodity.json")}
+    expected = payments[payments.contract_number.fillna("").str.strip().isin(listed)]
+    lines, paid = _q(f"SELECT count(*), sum(voucher_amount) FROM '{PARQUET}/contract_payments.parquet'")[0]
+    assert lines == len(expected)
+    assert round(paid, 2) == round(expected.amount.sum(), 2)
+
+    # contract_orders: the subquery contract.html ran over the full tables.
+    for number, count in [("CW91684", 22), ("CW98098", None), ("CW95425", None)]:
+        original = _q(f"""SELECT po_number, ordered_date, po_total_text FROM '{PARQUET}/purchase_orders.parquet'
+            WHERE regexp_replace(po_number, '-V[0-9]+$', '') IN (
+              SELECT DISTINCT regexp_replace(po_number, '-V[0-9]+$', '') FROM '{PARQUET}/payments.parquet'
+              WHERE contract_number = '{number}' AND po_number IS NOT NULL)
+            ORDER BY po_number""")
+        linked = _q(f"""SELECT po_number, ordered_date, po_total_text FROM '{PARQUET}/contract_orders.parquet'
+            WHERE contract_number = '{number}' ORDER BY po_number""")
+        assert linked == original, number
+        assert len(original) > 1, number
+        if count is not None:
+            assert len(linked) == count, number

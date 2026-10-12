@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About This Data</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared/style.css">
@@ -12,19 +13,27 @@
 <div class="wrap">
 <header class="site">
   <h1>DC procurement data</h1>
-  <p class="sub">What the District of Columbia's Contracts and Procurement Transparency Portal publishes, in tables you can filter, total and check.</p>
+  <p class="sub">A copy of what the District of Columbia's
+  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, the public site the Office of Contracting
+  and Procurement runs for District contracting records, lists, as we pulled it. <a href="about.html#portal">What the portal is</a>.
+  <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="index.html">Contracts</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
     <a href="about.html" aria-current="page">About this data</a>
   </nav>
 </header>
 
 <section class="about-hero">
   <h2>About this data</h2>
-  <p>Every table on this site is the District's own record from its
-  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, pulled weekly and kept in a public archive.
-  Fields are shown as the District entered them. Nothing is classified or estimated. The one thing filled in is a short list of agency
-  names published only as an abbreviation or a budget code, listed below with a source for each.</p>
+  <p><strong>This is a selection, not everything.</strong> It is what the District's
+  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> listed when we pulled it, weekly since
+  August 2026. Records the portal had stopped listing before then are not here, and a record it never published cannot be. Payments
+  in particular often carry no contract number, or one the portal's contract list does not include, so the contracts here cover only
+  part of what was paid. None of it can be checked against the District's own accounts; it is what the portal shows.</p>
+  <p>Fields are shown as the District entered them. Nothing is classified or estimated. The one thing filled in is a short list of
+  agency names published only as an abbreviation or a budget code, listed below with a source for each.</p>
   <p class="meta" id="asof"></p>
   <div class="hero-links">
     <a class="button primary" id="dataset" href="#">Download the tables</a>
@@ -33,6 +42,30 @@
   </div>
 </section>
 <div id="status"></div>
+
+<section class="block" id="portal">
+  <h2>What the portal is</h2>
+  <p class="intro">The <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> (contracts.ocp.dc.gov)
+  is the District's public site for its contracting records. In its own words, it "was created by the Office of Contracting and
+  Procurement (OCP) … as a public clearinghouse for all information related to the District Government's contracting and procurement
+  efforts." Anyone can search it; this site keeps a copy of three of its sections so they can be filtered, totalled and kept after the
+  portal drops them.</p>
+  <div class="tablewrap" style="max-height:none"><table class="plain">
+    <thead><tr><th>Section of the portal</th><th>Here?</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://contracts.ocp.dc.gov/contracts/search">Contracts</a></td><td>Yes: the <a href="index.html">contracts</a> page, with each contract's attached documents</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/purchase/search">Purchase Orders</a></td><td>Yes: the <a href="purchase-orders.html">purchase orders</a> page</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/payments/search">Payments</a></td><td>Yes: the <a href="payments.html">payments</a> page</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/solicitations/search">Solicitations</a></td><td>No. They are archived with the rest of the data but not shown here.</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/forecast/search">Forecast</a></td><td>No</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/agencies">Independent Agencies</a></td><td>No. This is the portal's list of
+        "Non OCP Agencies": ones "Subject to the Procurement Practices Reform Act of 2010 (PPRA) and Independent from the CPO's Authority",
+        "Exempt from the PPRA and CPO's Authority", or with "Limited Applicability of the PPRA". The CPO is the Chief Procurement
+        Officer, who heads OCP. Agencies on that list, such as the Office of the Chief Financial Officer and the Attorney General, contract
+        outside OCP's authority, so the portal's other sections may hold only part of their contracting, or none of it.</td></tr>
+      <tr><td><a href="https://app.smartsheet.com/b/publish?EQBCT=0ea1a2b1cb014ff3ada12550ef0989a8">COVID-19 expenditure and contract files</a></td><td>No</td></tr>
+    </tbody></table></div>
+</section>
 
 <section class="block">
   <h2>Things to know before you total anything</h2>
@@ -77,10 +110,13 @@ function notes(s) {
     {big: money(s.payments.paid), label: "paid, summing each payment line",
      text: `The portal gives every payment line two amounts. voucherAmount is the line's own amount. paymentAmount is the total of the
        whole check or ACH run the line was paid in, repeated on every line in that run: summing it gives ${money(s.payments.check_totals)}.
-       Only voucherAmount is summed here.`},
+       Only voucherAmount is summed here.`,
+     link: ["See the payments", "payments.html"]},
     {big: pct(s.payments.no_contract, s.payments.lines), label: "of payment lines carry no contract number",
      text: `${n(s.payments.no_contract)} of ${n(s.payments.lines)} lines, covering ${money(s.payments.no_contract_paid)}. A contract's
-       payments are the lines that carry its number, so a contract page can show less than was paid on it.`},
+       payments are the lines that carry its number, so a contract page can show less than was paid on it, and these lines appear
+       only on the payments page.`,
+     link: ["See them", "payments.html?contract_link=None"]},
     {big: n(s.contracts.periods), label: `option periods for ${n(s.contracts.contracts)} contracts`,
      text: `The portal lists each option period as its own record with its own amount. That amount is what the period authorises, a
        ceiling. Adding a contract's periods gives the most it could be paid over its life, not what it was paid.`,
@@ -99,7 +135,8 @@ function notes(s) {
        Removing duplicate ids would drop real payments.`},
     {big: n(s.purchase_orders.classes), label: "commodity classes on purchase orders",
      text: `Each contract and order carries an NIGP commodity code chosen when the record was entered. A class total is only as good as
-       those choices, so read the titles in a class before relying on one.`},
+       those choices, so read the titles in a class before relying on one.`,
+     link: ["See the purchase orders", "purchase-orders.html"]},
     {big: `${s.payments.first_date.slice(0, 4)}–${s.payments.last_date.slice(0, 4)}`, label: "years of payments",
      text: `Payments run from ${esc(s.payments.first_date)} to ${esc(s.payments.last_date)}. The portal gives a payment no fiscal year,
        so the one here comes from its date (1 October to 30 September); the first and last are partial.`},

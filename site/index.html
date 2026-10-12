@@ -8,14 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="shared/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <div class="wrap">
 <header class="site">
   <h1>DC procurement data</h1>
-  <p class="sub">What the District of Columbia's Contracts and Procurement Transparency Portal publishes, in tables you can filter, total and check.</p>
+  <p class="sub">A copy of what the District of Columbia's
+  <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, the public site the Office of Contracting
+  and Procurement runs for District contracting records, lists, as we pulled it. <a href="about.html#portal">What the portal is</a>.
+  <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="index.html" aria-current="page">Contracts</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
     <a href="about.html">About this data</a>
   </nav>
 </header>
@@ -23,6 +29,8 @@
 <p class="intro">One row per contract <strong>option period</strong>: a contract with a base period and two option years is three rows.
 Each row's amount is what that period authorises the District to spend, not what was paid. Every field below is the District's, as published:
 agency, vendor, contract type, market type and commodity code are what was entered on the portal, not categories added here.</p>
+
+<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
 
 <div class="toolbar">
   <button id="add-filter">+ Add filter</button>
@@ -36,7 +44,10 @@ agency, vendor, contract type, market type and commodity code are what was enter
 <div id="status"></div>
 
 <div class="stats" id="stats"></div>
-<div id="charts"></div>
+<details class="charts-box" id="charts-box" open>
+  <summary><span class="when-closed">Show charts</span><span class="when-open">Hide charts</span></summary>
+  <div id="charts"></div>
+</details>
 
 <section class="block">
   <h2>Break it down</h2>
@@ -63,7 +74,8 @@ agency, vendor, contract type, market type and commodity code are what was enter
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script type="module">
-import {start, esc, money, nigpLabel} from "./shared/explorer.js";
+import {start, esc, money, n, nigpLabel} from "./shared/explorer.js";
+const pct = (a, b) => `${Math.round(100 * a / b)}%`;
 
 const portal = (row) => row.portal_url
   ? ` <a href="${esc(row.portal_url)}" target="_blank" rel="noopener" title="The District's page for this option period">portal&nbsp;↗</a>` : "";
@@ -73,11 +85,25 @@ const dropped = (row) => row.listed === false ? '<span class="tag">no longer lis
 
 start({
   table: "contracts",
+  coverage: {
+    sql: `SELECT CAST(min(start_date) AS VARCHAR) AS first, CAST(max(end_date) AS VARCHAR) AS last,
+                 count(*) FILTER (WHERE NOT listed) AS dropped FROM contracts`,
+    text: (r, s) => `<ul>
+      <li>Only contracts the portal lists. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts the portal had
+        stopped listing before our first pull, in August 2026, are not here.</li>
+      <li>${n(r.dropped)} option periods the portal has since stopped listing are kept from earlier pulls, marked "no longer listed".</li>
+      <li>Amounts are ceilings, not spending. Of ${money(s.payments.paid)} in payments, only ${money(s.payments.listed_contract_paid)}
+        (${pct(s.payments.listed_contract_paid, s.payments.paid)}) is on lines carrying the number of a contract listed here. The rest carry
+        no contract number, or one of ${n(s.payments.unlisted_numbers)} numbers not on the portal's contract list. Those payments are only
+        on the payments page.</li></ul>`,
+  },
   rowLabel: "Option periods",
   searchLabel: "contract number, title or vendor",
   measure: {expr: "sum(amount)", label: "Amount authorised"},
   distinct: {expr: "count(DISTINCT contract_number)", label: "Contracts"},
   count: {expr: "count(DISTINCT contract_number)", label: "Number of contracts", noun: "contracts"},
+  // A few very large Medicaid contracts dominate the dollars, so bars start sized by count.
+  sizeDefault: "count",
   stats: [
     {label: "Option periods", expr: "count(*)", what: "Rows matching the filters."},
     {label: "Contracts", expr: "count(DISTINCT contract_number)", what: "Distinct contract numbers among them."},
@@ -88,6 +114,7 @@ start({
     agency: {label: "Agency", from: "agencyNames on the portal.", filter: "multi", expr: "agency",
       listExpr: "string_split(agency, '; ')", optionExpr: "unnest(string_split(agency, '; '))"},
     vendor: {label: "Vendor", from: "vendor on the portal, as spelled.", filter: "multi", expr: "vendor"},
+    vendor_contains: {label: "Vendor name contains", from: "vendor on the portal; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
     contract_type: {label: "Contract type", from: "contractType on the portal's detail page.", filter: "multi", expr: "coalesce(contract_type, '(blank)')"},
     market_type: {label: "Market type", from: "marketType on the portal's detail page, as typed (spellings vary).", filter: "multi", expr: "coalesce(market_type, '(blank)')"},
     nigp_class: {label: "Commodity class (NIGP)", from: "The first three digits of the commodityCode on the portal.", filter: "multi",

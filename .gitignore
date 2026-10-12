@@ -38,3 +38,4 @@ data/drift/
 
 # Weekly run logs (scripts/weekly_refresh.sh).
 data/logs/
+.wrangler/
