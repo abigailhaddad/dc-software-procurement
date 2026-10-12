@@ -36,10 +36,13 @@ each rests on), `tests/hand_labels_delivery_rater2.csv` (30 second-rater labels)
 and `tests/hand_labels_work_type.csv` (40).
 
 The 55% above is the random sample alone, which is the unbiased estimate. Since
-the OCR pass, all 80 hand-labelled contracts carry a model label, and agreement
-across all 80 is 57% -- higher because the stratified half deliberately
-oversampled contested cases and scored better. `verify_claims.py` checks the
-57%, because that is the figure a reader can recompute from the files in the
+the OCR pass, 79 of the 80 hand-labelled contracts carry a model label, and
+agreement across all 80 is 56% -- higher because the stratified half deliberately
+oversampled contested cases and scored better. The 80th is CW124619, an urban
+planning contract the District extended in October 2026; on its new title the
+classifier moved it out of technology, so it left the delivery set and counts
+here as a miss. It was 57% before that. `verify_claims.py` checks the 56%,
+because that is the figure a reader can recompute from the files in the
 repository; the README and the site quote it with its denominator attached.
 
 ## What this means for published figures

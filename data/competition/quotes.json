@@ -12,6 +12,18 @@
   "quote": "d service is $3,505,646 for the base year. 4. FACTS WHICH JUSTIFY DETERMINATION OF THE ISSUANCE OF A LETTER CONTRACT: The current sole source contract for the operations and maintenance of the Provider Data Management System is set to expire on January 6, 2024. To prevent a service interruption while the Office of Contracting and Procurement (OCP) seeks approval from the D.C. Council, a letter cont"
  },
  {
+  "contract_number": "CW90741",
+  "vendor": "NETSMART NEW YORK INC.",
+  "title": "Software Licensing and Support Maintenance Services",
+  "ceiling": 6814495.38,
+  "text_status": "readable",
+  "subtype": "other",
+  "code_citations": "2-354.06;2-354.13(8);2-353.01",
+  "stated_amount": 1307042.61,
+  "file_name": "Exhibit A  D&F PPRA Award 08-04-2021.pdf",
+  "quote": "ort of existing software and technology to the extent that the creator of the intellectual property is still protected and is the only source of the maintenance and support of the existing software and technology\u201d. Netsmart is the only dealer/seller of the licenses associated with the Avatar System, the custom information technology platform used by St. Elizabeths Hospital as its electronic health"
+ },
+ {
   "contract_number": "CW114404",
   "vendor": "KCI ASSOCIATES OF DC",
   "title": "Project Oversight and Permit Submittal Review for DCCR and Mega Projects",
@@ -22,6 +34,30 @@
   "stated_amount": 1400000.0,
   "file_name": "9.E. D&F for Sole Source.pdf",
   "quote": "for the remaining work. The funds are supplied through a Memorandum of Agreement with D.C. Water. 3. FACTS JUSTIFYING AWARD OF A SOLE SOURCE CONTRACT: (a) The Contractor, KCI, commenced work for the first phase of project oversight and permit submittal support of the project as the result of a task order awarded after a competitive qualifications-based selection process from the District\u2019s Archit"
+ },
+ {
+  "contract_number": "CW123727",
+  "vendor": "Public Consulting Group, Inc.",
+  "title": "O&M - Administrative Services Organization (ASO) System",
+  "ceiling": 4707900.0,
+  "text_status": "readable",
+  "subtype": "competition_exemption",
+  "code_citations": "2-354.13(8);2-303.03",
+  "stated_amount": 2319000.0,
+  "file_name": "DF Exempt from Competition.pdf",
+  "quote": "cessible to the DHCF and Partner agencies for uninterrupted and continued claims and payment management activities. b) PCG is the only entity that can provide O&M to DHCF\u2019s ASO System. c) In accordance with the Procurement Practices Reform Act of 2010, Section 413-8; this procurement has been determined to be exempt from competition due to the maintenance and support of existing software and techno"
+ },
+ {
+  "contract_number": "CW120616",
+  "vendor": "Sagitec Solutions",
+  "title": "FY25-CF0-DOES-Employer Self Service Portal (ESSP) Maintenance and Support",
+  "ceiling": 3094211.05,
+  "text_status": "ocr_readable",
+  "subtype": "non_use_of_dcss_or_set_aside",
+  "code_citations": "",
+  "stated_amount": 998759.91,
+  "file_name": "CW120616 M4 OY1-Sagitec-ESSP-D&F Non-Use of DCSS or CBE Set-Aside Market.pdf",
+  "quote": "es are for maintenance and support of the Employer Self-Service Portal (ESSP) for the Department of Employment Services (DOES), a proprietary software that requires the expertise of the developers internal team for development, integration, and maintenance. Additionally, given the complexity and confidentiality of the software, these tasks cannot be outsourced. Was DSLBD contacted to assist in identifying"
  },
  {
   "contract_number": "CW118520",
@@ -72,6 +108,18 @@
   "quote": "ms & Software (ES&S). 3. ESTIMATED REASONABLE COST: The fair and reasonable price shall be $999,660.00. 4. FACTS WHICH JUSTIFY SOLE SOURCE PROCUREMENT: A. BOE's voting equipment vendor is ES&S. ES&S' equipment is used by the BOE to permit registered voters to cast their ballots and have them tabulated by the optical scanning system, the express votes touch screen voting system, and the high spe"
  },
  {
+  "contract_number": "CW127803",
+  "vendor": "GEOGRAPHIC SOLUTIONS INC",
+  "title": "UI-Geographic Solutions Web Services and Maintenance & Support",
+  "ceiling": 1996542.0,
+  "text_status": "readable",
+  "subtype": "non_use_of_dcss_or_set_aside",
+  "code_citations": "",
+  "stated_amount": 998271.0,
+  "file_name": "CW127803-Determination and Findings for Non-Use of DCSS or CBE-Executed.pdf",
+  "quote": "t from competition because Geographic Solutions, Inc. is the sole source for the required maintenance and support to the existing proprietary technology. 5. Justification to Not Use DCSS or Award to a SBE or CBE: Good or Service not available on DCSS No qualified SBE or CBE identified can provide required good/service. \uf0d8 Due to the proprietary nature of this product, Geographic Solutions is the only vendor t"
+ },
+ {
   "contract_number": "CW107442",
   "vendor": "V3Gate, LLC",
   "title": "FY23-DOES-Identification Verification Software",
@@ -108,75 +156,27 @@
   "quote": "LANDOCTO-FEMS-DOCDCRA-DOES-DDOT-MPDIPT HR POLICY IT GC OPA BO PT PRC BUSS/DEVELOP Date ID# Initials SUBJECT: CW86671 - D&F for Sole Source Procurement - Assured Telematics REQUIRED ACTION (S) 1. 2. 3. 4. 5. RECEIVED INITIAL DATE A/H A/H A Tonia C. Nixon, Deputy Chief Contracting Officer Courtney B. Lattimore, Chief Contracting Officer Treva Henderson-Neblett, Executive Assistant to the Assist"
  },
  {
-  "contract_number": "CW109045",
-  "vendor": "CENTER FOR EDUCATION AND EMPLO",
-  "title": "FY23 - UI Benefits Modernization Advisory & Assistance",
-  "ceiling": 999127.2,
-  "text_status": "ocr_readable",
-  "subtype": "sole_source",
-  "code_citations": "2-303.05;2-354.04;2-354.03",
-  "stated_amount": 950000.0,
-  "file_name": "Justification for Sole Source NASWA CESER  SIGNED 06_23_2023.pdf",
-  "quote": "be a 12-month base year. 3. Estimated Reasonable Price The estimated reasonable cost is $950,000.00 4. Facts that justify the Sole Source a. DOES is a member of NASWA, the national organization which represents all states, the District, and U.S. territories and provides members with resources to enhance state workforce agencies' ability to meet statutory responsibilities. CESER is NASWA's sole"
- },
- {
-  "contract_number": "CW100374",
-  "vendor": "CENTER FOR EDUCATION AND EMPLO",
-  "title": "FY22 - UI Benefits Modernization Advisory & Assistance",
-  "ceiling": 995000.0,
-  "text_status": "ocr_readable",
-  "subtype": "sole_source",
-  "code_citations": "2-303.05;2-354.04;2-354.03",
-  "stated_amount": 950000.0,
-  "file_name": "SIGNED Advisory Assistance Service CESER Sole Source(2).pdf",
-  "quote": "be a 12-month base year. 3. Estimated Reasonable Price The estimated reasonable cost is $950,000.00 4. Facts that justify the Sole Source a. DOES is a member of the National Association of State Workforce Agencies (NASWA), the national organization which represents all states, the District, and U.S. territories and provides members with resources to enhance state workforce agencies' ability to"
- },
- {
-  "contract_number": "CW122261",
-  "vendor": "AECOM Technical Service Inc",
-  "title": "DMPED-OP OPTION YEAR ONE-Comprehensive Plan Rewrite-AECOM Technical Services, Inc.",
-  "ceiling": 980000.0,
-  "text_status": "readable",
-  "subtype": "sole_source",
-  "code_citations": "2-354.04",
-  "stated_amount": 450000.0,
-  "file_name": "D&F for Sole Source Procurement-AECOM, approved 6-28-24.pdf",
-  "quote": "r 30, 2025, with two (2) one-year options. 3. ESTIMATED FAIR AND REASONABLE PRICE: $450,000.00 (Base year) 4. FACTS WHICH JUSTIFY SOLE SOURCE PROCUREMENT: A. The District of Columbia Home Rule Act requires the Mayor to prepare and maintain the District\u2019s Comp Plan, which sets forth a 20-year vision and blueprint that guides land use and policy for development in the District. In early FY 2024, OP i"
- },
- {
-  "contract_number": "CW126921",
-  "vendor": "Stockbridge Consulting LLC",
-  "title": "Audit and Compliance-LCP tracker",
-  "ceiling": 812755.0,
-  "text_status": "readable",
-  "subtype": "sole_source",
-  "code_citations": "2-354.04;2-354.02;2-354.03",
-  "stated_amount": 4183775.0,
-  "file_name": "DDOT DF Sole Source- FINAL.pdf",
-  "quote": "RICE: The estimated fair and reasonable price for the base period and four option years is $4,183,775.00 4. FACTS WHICH JUSTIFY A SOLE SOURCE EXTENSION MODIFICATION: The District needs to monitor contractors\u2019 prevailing wages through a web-based labor compliance software for all construction contracts to ensure compliance with federal Davis-Bacon Act reporting, minority and disadvantaged business e"
- },
- {
-  "contract_number": "CW124474",
-  "vendor": "Carahsoft Technology Corporation",
-  "title": "Salesforce Service Cloud License Renewal, Salesforce Lightening Platform Renewal",
-  "ceiling": 784167.03,
+  "contract_number": "CW95665",
+  "vendor": "WEST PUBLISHING CORP",
+  "title": "FY22 - DHS - Fraud Case Management and Data Analytics System Subscription",
+  "ceiling": 1099800.0,
   "text_status": "readable",
   "subtype": "competition_exemption",
-  "code_citations": "2-354.13(8);2-303.03",
-  "stated_amount": 784167.03,
-  "file_name": "DF Competition Exemption CW124474.pdf",
-  "quote": "tion does not have a counterpart in the market today that would meet the user license and support services. b) Carahsoft is the only entity that can provide Salesforce Service Cloud and Lightening Platform user license renewal and support. c) In accordance with the Procurement Practices Reform Act of 2010, Section 413-8; this procurement has been determined to be exempt from competition due to th"
+  "code_citations": "",
+  "stated_amount": 295000.0,
+  "file_name": "DF for Exempt for Competition (Base Year) CW85535 (Executed).pdf",
+  "quote": "of the existing software and technology to the extent that the creator of the intellectual property is still protected and is the only source of the maintenance and support of the existing software and technology are exempt from the competition requirements. 2. Minimum Need: The Government of the District of Columbia (\u201cDistrict\u201d), through the Office of Contracting and Procurement, on behalf of the"
  },
  {
-  "contract_number": "CW109712",
-  "vendor": "EJ WARD, INC.",
-  "title": "Electric Vehicle Charging Stations and Related Equipment",
-  "ceiling": 750000.0,
+  "contract_number": "CW54700",
+  "vendor": "Public Consulting Group, Inc.",
+  "title": "FY18_OSSE_ODA_Public Consulting Group",
+  "ceiling": 1085433.0,
   "text_status": "ocr_readable",
-  "subtype": "sole_source",
-  "code_citations": "2-354.04;2-354.02;2-354.03",
-  "stated_amount": 78457.0,
-  "file_name": "D&F for Sole Source Procurement CW109712 signed on 10-02-23.pdf",
-  "quote": "electric vehicle charging stations for the DC government fleet. 3. ESTIMATED REASONABLE PRICE: $750,000 4. FACTS WHICH JUSTIFY SOLE SOURCE PROCUREMENT: A. On January 1, 2023, E.J. Ward, Inc. was contracted through sole source procurement to upgrade current fuel control terminals that they built for the District over the past years and to install a cloud-based commercial-off-the-shelf (COTS) soft"
+  "subtype": "competition_exemption",
+  "code_citations": "2-354.13",
+  "stated_amount": 756350.0,
+  "file_name": "D&F Exempt From Competition - CW54700.pdf",
+  "quote": "ort of existing software and technology to the extent that the creator of the intellectual property is still protected and is the only source of the maintenance and support of the existing software and technology. 2. MINIMUM NEED: The Government of the District of Columbia, Office of Contracting and Procurement (OCP), on behalf of the Office of the State Superintendent of Education (OSSE) (the Di"
  }
 ]

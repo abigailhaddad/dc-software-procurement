@@ -168,7 +168,7 @@ CW102023,DCRA - Accela Enhancement and Support Services,RAZAVI APPLICATION DEVEL
 CW102037,FY22_CFO_Office of Paid Family Leave_Professional Development Leadership Training,CAPITOL SVCS MGMT INC,Employment Services (DOES),252750.0,1,Firm Fixed Price,other,['924'],not_technology,no,,high,False,1.0
 CW102058,DCRA ? Kustomer CRM Licenses for its the existing CRM,Bayne LLC,Licensing & Consumer Protection (DLCP),999648.0,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,Kustomer CRM,high,True,
 CW102066,FY22-DHCD- CW102066- SFRRP 210 - Simon Development,Simon Development & Construction Corporation,Housing and Community Development (DHCD),164338.0,1,Firm Fixed Price,other,['770'],not_technology,no,,low,False,
-CW102086,FY21 DCHR Employment Tax Services ,"KPMG, LLP",Human Resources (DCHR),175000.0,1,Requirements,other,['961'],not_technology,no,,high,False,1.0
+CW102086,FY21 DCHR Employment Tax Services,"KPMG, LLP",Human Resources (DCHR),175000.0,1,Requirements,other,['961'],not_technology,no,,high,False,
 CW102129,FY22 GSI Assessment,"HGS, LLC",Energy and Environment (DOEE),2888748.88,4,Indefinite Delivery Indefinite Quantity,other,['926'],it_consulting_advisory,no,,low,True,
 CW102136,Carahsoft Software License Renewal,Carahsoft Technology Corporation,Special Education Transportation (SET),357140.05,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,
 CW102141,Office Supplies for DHCF- FY23,"SKY, LLC DBA US OFFICE SOLUTION",Health Care Finance (DHCF),140475.38999999998,3,Firm Fixed Price,other,['615'],not_technology,no,,high,False,
@@ -2319,7 +2319,7 @@ CW139300,Asset Verification System (AVS) Services,"Public Consulting Group, Inc.
 CW139503,BONNELL OLYMPIAN LEAF PRO PLUS TRAILER,"Atlantic Machinery, Inc.",Public Works (DPW),230905.0,1,Firm Fixed Price,other,['065'],not_technology,no,,high,False,1.0
 CW139506,15 2027 Chevrolet Bolts,72 Hour LLC,Transportation (DDOT),427739.76,1,Firm Fixed Price,other,['070'],not_technology,no,,high,False,1.0
 CW34843,Waste to Energy Facility,COVANTA SECURE SERVICES,Public Works (DPW),41486175.0,1,Requirements,other,['968'],not_technology,no,,low,False,
-CW41352,Verizon Telecommunication Services ,"VERIZON FEDERAL, INC",Chief Technology Officer (OCTO),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],telecom_or_network,no,,high,True,1.0
+CW41352,Verizon Telecommunication Services,"VERIZON FEDERAL, INC",Chief Technology Officer (OCTO),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],telecom_or_network,no,,high,True,
 CW43125,Woodward Academy-Residential Treatment Services,WOODWARD Academy,Youth Rehabilitation Services (DYRS),475000.0,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW43447,Child and Adolescent Supplemental Security Income Program (CASSIP),Health Services for Children with Special Needs (HSCSN),Health Care Finance (DHCF),1132962436.08,2,Requirements,other,['948'],not_technology,no,,high,False,
 CW45729,DCSS-Temporary Support - The Coles Group LLC,The Coles Group LLC,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
@@ -2341,7 +2341,7 @@ CW47090,OSSE_APS_IDEA Compliance Web-Based Database Software_DC CATS,SPEDSIS,Sta
 CW47099,OCTO DCSS - Temporary Personnel - Synergetic Information Systems,Synergetic Information Systems,Chief Technology Officer (OCTO),940560.0,1,Labor Hour,other,['961'],staff_augmentation,yes,,high,True,
 CW47100,Temporary Personnel Services - Tecknomic,TECKNOMIC LLC,Chief Technology Officer (OCTO),938432.8,1,Labor Hour,other,['962'],staff_augmentation,yes,,high,True,
 CW47148,Pager Services,"SPOK, INC",Chief Technology Officer (OCTO),19800.0,1,Firm Fixed Price,other,['915'],telecom_or_network,no,,medium,True,
-CW47269,DCSS - MOBIS- Analytica ,Analytica LLC,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,1.0
+CW47269,DCSS - MOBIS- Analytica,Analytica LLC,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW47272,OSSE-DOT-GPS Vehicle Locator Services,NAVMAN WIRELESS NORTH AMERICA,State Superintendent of Education (OSSE),235424.6,1,Firm Fixed Price,software_services,['920'],telecom_or_network,no,,medium,True,
 CW47306,Community Support Services - Art and Soul Solutions,"Art and Soul Solutions, Inc.",Human Services (DHS),217400.0,1,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
 CW47310,Community Support Services - Georgetown University,Georgetown University,Human Services (DHS),82100.0,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
@@ -2359,7 +2359,7 @@ CW47658,FY17_GD0_ODR Impartial Hearing Officer_Ruff,COLES B RUFF JR,State Superi
 CW47683,FY17_GD0_ODR Impartial Hearing Officer_Seat,"K.L.S. INC./KEITH L. SEAT, JD.",State Superintendent of Education (OSSE),144000.0,1,Firm Fixed Price,other,['961'],not_technology,no,,high,False,
 CW47816,Comprehensive Academic and Non-Academic Program for Jellef,Boys & Girls Clubs of Greater Washington,Parks and Recreation (DPR),498921.0,1,Firm Fixed Price,other,['961'],not_technology,no,,high,False,
 CW47818,Comprehensive Academic and Non Academic Program at Rita Bright,LATIN AMERICAN YOUTH CENTER,Parks and Recreation (DPR),488339.0,1,Firm Fixed Price,other,['961'],not_technology,no,,low,False,
-CW47840,Business Process ReDesign (BPR) ,"Change and Innovation Agency, LLC",Human Services (DHS),993750.0,1,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,,low,True,1.0
+CW47840,Business Process ReDesign (BPR),"Change and Innovation Agency, LLC",Human Services (DHS),993750.0,1,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,,low,True,
 CW47914,Permanent Supportive Housing - Case Management Services - National Center for Children and Family - CW47914,National Center for Children and Family,Human Services (DHS),815510.0,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW47996,"FY17 - DOH QuantumMark, LLC - Cause of Death Data Quality",QuantumMark,Health (DOH),218100.0,1,Firm Fixed Price,other,['962'],not_technology,no,,low,False,
 CW48015,Training Services-Hales Creative Solutions,Bayne LLC,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['924'],not_technology,no,,low,False,
@@ -2372,7 +2372,7 @@ CW48355,Dell-DELL SAN (Storage Area Network) SME Reengineering Solution,"Dell Ma
 CW48365,"DCSS-MOBIS- Sylver Rain Consulting, LLC","Sylver Rain Consulting, LLC",Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW48527,Nice Software Upgrade and Expansion,NICE SYSTEMS INC.,Chief Technology Officer (OCTO),143107.61,1,Firm Fixed Price,other,['906'],cots_implementation,no,,medium,True,
 CW48560,FY17-OCTO-cGOV360 Maintenance and Support,"CC INTELLIGENT SOLUTION, INC",Licensing & Consumer Protection (DLCP),180353.0,1,Firm Fixed Price,software_services,['920'],software_om_support,no,cGOV360,high,True,
-CW48572,"DCSS - MOBIS - Accurate Conceptions, LLC ","ACCURATE CONCEPTIONS, LLC",,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,1.0
+CW48572,"DCSS - MOBIS - Accurate Conceptions, LLC","ACCURATE CONCEPTIONS, LLC",,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW48612,"PODS-2003-R-925-00-Engineering & Logistics Services-Alternatives Renewable Solutions, LLC.","Alternatives Renewable Solutions, LLC",,900000.0,1,Indefinite Delivery Indefinite Quantity,other,['925'],not_technology,no,,low,False,
 CW48705,OCTO DCSS - Temporary Personnel - Networking for Future,"Networking For Future, Inc.",Chief Technology Officer (OCTO),10545519.0,2,Labor Hour,other,['961'],staff_augmentation,yes,,high,True,
 CW48783,Art Framing Services,"ExpertsinFraming, LLC",Commission on Arts and Humanities (CAH),250000.0,1,Firm Fixed Price,other,['962'],not_technology,no,,high,False,
@@ -2385,9 +2385,9 @@ CW49156,"DCSS - IT Services, Equipment and Software - New Light Technologies(NLT
 CW49160,Temporary Support Services,WALTON & GREEN CONSULTANTS,Licensing & Consumer Protection (DLCP),172224.0,1,Labor Hour,other,['961'],staff_augmentation,yes,,high,True,
 CW49253,DCSS-Mobis- H.E.P. Construction,HEP Construction,,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,low,False,
 CW49327,"Pre & Post Transitional Care Homes (PTCH) -CGC, Inc","CGC, Inc",Youth Rehabilitation Services (DYRS),800000.0,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
-CW49341,MS Premier ,MICROSOFT CORPORATION,Chief Technology Officer (OCTO),341959.0,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,high,True,1.0
+CW49341,MS Premier,MICROSOFT CORPORATION,Chief Technology Officer (OCTO),341959.0,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,high,True,
 CW49387,Occuaptional Skill Training - 1st CDL,1st CDL Training Ctr of NOVA,Employment Services (DOES),300000.0,1,Firm Fixed Price,other,['715'],not_technology,no,,high,False,
-CW49408,"DCSS - MOBIS - Alternatives Renewable Solutions, LLC ","Alternatives Renewable Solutions, LLC",Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,1.0
+CW49408,"DCSS - MOBIS - Alternatives Renewable Solutions, LLC","Alternatives Renewable Solutions, LLC",Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW49504,BMC Maintenance Renewal,"Prism International, LLC",Chief Technology Officer (OCTO),232206.71,1,Firm Fixed Price,software_services,['920'],software_om_support,no,BMC,medium,True,
 CW49529,"DCSS-Marketing, Media and Public Information-Stratacomm",Stratacomm,Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],ordering_vehicle,no,,medium,True,
 CW49548,Netscout Network Hardware Monitoring Replacement,"AVID SYSTEMS, LLC",Chief Technology Officer (OCTO),231140.28,1,Firm Fixed Price,it_goods,['208'],telecom_or_network,no,,medium,True,
@@ -2400,7 +2400,7 @@ CW50063,DCSS - MOBIS - David Bishop Consulting,David Bishop Consulting,Contracti
 CW50327,COTS Saas  Solution,"Prism International, LLC",Health Care Finance (DHCF),1.0,1,Firm Fixed Price,it_adjacent,['918'],cots_implementation,no,,low,True,
 CW50328,OSSE Secondary Transition Services Contract,SCHOOLTALK INC,State Superintendent of Education (OSSE),164399.0,1,Firm Fixed Price,other,['924'],not_technology,no,,low,False,
 CW50358,Oracle Engineered Systems - Maximum Availability Architecture (MAA),Public Performance Management,Chief Technology Officer (OCTO),156404.16,1,Firm Fixed Price,other,['840'],cots_implementation,no,,medium,True,
-CW50363,FY17- OSSE - DEL - Professional Development Information System -(PDIS) ,"Netsource Interactive, Inc.",State Superintendent of Education (OSSE),27000.0,1,Firm Fixed Price,it_adjacent,['918'],custom_software_build,no,PDIS (Professional Development Information System),low,True,1.0
+CW50363,FY17- OSSE - DEL - Professional Development Information System -(PDIS),"Netsource Interactive, Inc.",State Superintendent of Education (OSSE),27000.0,1,Firm Fixed Price,it_adjacent,['918'],custom_software_build,no,PDIS,low,True,
 CW50369,Vocational Services- Health Resources Service Intake Center,Health Resources Service Intake Center,Department on Disability Services (DDS),26100.0,1,Requirements,other,['924'],not_technology,no,,low,False,
 CW50424,"Commercial Light-Duty Vehicle Leasing - Groups I, II & III",ACME AUTO LEASING LLC,Public Works (DPW),2016105.0,2,Requirements,other,['975'],not_technology,no,,high,False,
 CW50538,"DOT Workforce Time and Attendance Implementation, Maintenance, and Support",IMMIX TECHNOLOGY INC,Special Education Transportation (SET),200891.66,1,Firm Fixed Price,other,['195'],cots_implementation,no,,medium,True,
@@ -2433,7 +2433,7 @@ CW52325,"DCSS - General Office Supplies - Precision Capital Partners, LLC","Prec
 CW52464,Additional Medicaid Data Warehouse Development,"Prism International, LLC",Health Care Finance (DHCF),1.0,1,Firm Fixed Price,it_adjacent,['918'],custom_software_build,no,,medium,True,
 CW52472,"DCSS-Temporary Support Services-Prime Source Technologies, LLC",PRIME SOURCE TECHNOLOGIES LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW52476,"DCSS-MOBIS-Precision Capital Partners, LLC","Precision Capital Partners, LLC",Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
-CW52537,DCSS - Training Services 924 - Georgetown Technologies - ,Georgetown Technologies LLC,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['924'],not_technology,no,,low,False,1.0
+CW52537,DCSS - Training Services 924 - Georgetown Technologies -,Georgetown Technologies LLC,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['924'],not_technology,no,,low,False,
 CW52543,DCSS-MOBIS(918)-Georgetown Technologies,Georgetown Technologies LLC,,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW52560,Ricoh Laser Multifunction Printers,"MVS, Inc.",State Superintendent of Education (OSSE),215330.0,1,Indefinite Delivery Indefinite Quantity,it_goods,['204'],hardware_or_license_resale,no,,high,True,
 CW52586,QuickBase,"Quickbase, Inc",Chief Technology Officer (OCTO),1583548.0,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,
@@ -2446,7 +2446,7 @@ CW53291,"Residential Expenses (Woods Services, Inc.)","WOODS SERVICES, INC.",Dep
 CW53299,(RSA) DC Public Charter School Cooperative (known as DC Special Education Cooperative),DC PUBLIC CHARTER SCHOOL COOP,Department on Disability Services (DDS),667000.0,1,Requirements,other,['952'],not_technology,no,,low,False,
 CW53341,"Incapsulate, LLC - DOT Customer Relationship Management System","Incapsulate, LLC",Special Education Transportation (SET),31500.0,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,DOT Customer Relationship Management System,low,True,
 CW53355,DCSS - It Equipment & Software - A&M Technologies,A&M Technologies,Contracting and Procurement (OCP),950000.0,1,Firm Fixed Price,software_services,['920'],ordering_vehicle,no,,high,True,
-CW53568,"DCSS-MOBIS-L.S. Caldwell & Associates, Inc. ",L.S. CALDWELL & ASSOCIATES,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,1.0
+CW53568,"DCSS-MOBIS-L.S. Caldwell & Associates, Inc.",L.S. CALDWELL & ASSOCIATES,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW53678,Procurememt Card Services,"JP MORGAN CHASE BANK, NA",Contracting and Procurement (OCP),90000000.0,3,Indefinite Delivery Indefinite Quantity,other,['946'],not_technology,no,,high,False,
 CW53865,"DCSS - MOBIS (918) - Savvy Technology Solution, LLC.",Savvy Technology Solutions,,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW53979,Housing Counseling Services,"Housing Counseling Services, Inc","Insurance, Securities and Banking (DISB)",983500.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
@@ -2455,11 +2455,11 @@ CW54057,"FY18_OSSE_ESSE_Electronic Healthcare Claim Files_Accelify Solutions, LL
 CW54127,"DCSS-Marketing, Media and Public Information-The DC Event Planner, LLC Marketing","The DC Event Planner, LLC",,900000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,low,False,
 CW54223,DCSS-Training Services-Holistic Planners Network,Holistic Planners Network,Contracting and Procurement (OCP),500000.0,1,Indefinite Delivery Indefinite Quantity,other,['924'],ordering_vehicle,no,,medium,True,
 CW54232,Parking Enforcement System Support and Maintenance,gtechna USA Corporation,Public Works (DPW),1538257.27,2,Firm Fixed Price,other,['936'],software_om_support,no,Parking Enforcement System,high,True,
-CW54310,Exadata Licenses and Maintenance,Public Performance Management,Chief Technology Officer (OCTO),0.0,1,Firm Fixed Price,it_goods,"['208', '967']",hardware_or_license_resale,no,,medium,True,1.0
+CW54310,Exadata Licenses and Maintenance,Public Performance Management,Chief Technology Officer (OCTO),0.0,1,Firm Fixed Price,it_goods,['208'],hardware_or_license_resale,no,,medium,True,
 CW54351,DOT Salesforce Software Licenses - CRM,Carahsoft Technology Corporation,Special Education Transportation (SET),298831.63,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,Salesforce CRM,high,True,
 CW54371,Resedential Expenses (Divine Connect Care Inc.),Divine Connect Care Inc,Department on Disability Services (DDS),52684.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
-CW54412,FY17-CF0-OYP-Pathways for Young Adults Program (PYAP) Toni Thomas ,TONI THOMAS ASSOCIATES INC,Employment Services (DOES); Contracting and Procurement (OCP),200000.0,1,Firm Fixed Price,other,['715'],not_technology,no,,low,False,1.0
-CW54424,FY17-CF0-OYP-Pathways for Young Adults Program (PYAP) CC Prep,Community College Prep Academy,Employment Services (DOES); Contracting and Procurement (OCP),300000.0,1,Firm Fixed Price,other,['715'],not_technology,no,,low,False,1.0
+CW54412,FY17-CF0-OYP-Pathways for Young Adults Program (PYAP) Toni Thomas,TONI THOMAS ASSOCIATES INC,Contracting and Procurement (OCP); Employment Services (DOES),200000.0,1,Firm Fixed Price,other,['715'],not_technology,no,,low,False,
+CW54424,FY17-CF0-OYP-Pathways for Young Adults Program (PYAP) CC Prep,Community College Prep Academy,Contracting and Procurement (OCP); Employment Services (DOES),300000.0,1,Firm Fixed Price,other,['715'],not_technology,no,,low,False,
 CW54436,External Quality Review Organization (EQRO),"Qlarant Quality Solutions, Inc.",Health Care Finance (DHCF),1602671.41,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,medium,False,
 CW54466,DCSS - MOBIS - KLSL Consulting,"KLSL Consulting, LLC.",Contracting and Procurement (OCP),20000000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW54565,Competency-Based Employee Training,"C L Russell Group, LLC",Human Resources (DCHR),250000.0,1,Indefinite Delivery Indefinite Quantity,other,['715'],not_technology,no,,high,False,
@@ -2475,7 +2475,7 @@ CW55325,"DCSS Temporary Support Service - 96130 - Avid Systems, LLC.","AVID SYST
 CW55344,DHS FY18 - TALX CORPORATION (The Work Number)-GSA schedule GS-02F-235X,"Equifax Workforce Solutions, llc",Human Services (DHS),309600.0,1,Firm Fixed Price,other,['946'],cots_implementation,no,,medium,True,
 CW55360,"DCSS- MOBIS - THe Clearing, Inc.","The Clearing, Inc",,1900000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW55371,HCA Non-Medical Case Management,TERRIFIC INC.,Health (DOH),125000.0,1,Firm Fixed Price,other,['948'],not_technology,no,,low,False,
-CW55383,OPTION YEAR THREE Davis-Bacon Monitoring Services ,"CHW SOLUTIONS, INC.",Deputy Mayor for Planning and Economic Development (DMPED),198811.95,1,Labor Hour,other,['990'],not_technology,no,,high,False,1.0
+CW55383,OPTION YEAR THREE Davis-Bacon Monitoring Services,"CHW SOLUTIONS, INC.",Deputy Mayor for Planning and Economic Development (DMPED),198811.95,1,Labor Hour,other,['990'],not_technology,no,,high,False,
 CW55802,"Residential Expenses (Lifeline, Inc)","LIFELINE, INC",Department on Disability Services (DDS),1014822.1,2,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW55833,IBM Mainframe License and Maintenance,International Business Machine,Chief Technology Officer (OCTO),998446.92,1,Firm Fixed Price,software_services,['920'],software_om_support,no,,high,True,
 CW55862,DPW FY17-18 Snow and Ice Removal,"Capitol Paving of D.C., Inc.",Public Works (DPW),8988360.0,2,Requirements,other,['968'],not_technology,no,,high,False,
@@ -2520,7 +2520,7 @@ CW57524,Fully Managed Juniper Optical Hardware (Bandwidth Services),"Smart Fiber
 CW57576,Comprehensive Animal and Disease Prevention Services,THE WASHINGTON HUMANE SOCIETY,Health (DOH),9128882.0,2,Labor Hour,other,['961'],not_technology,no,,high,False,
 CW57663,Computer Associates Software,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),913242.64,2,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,
 CW57721,"DCSS - Security Equipment, Security Services & Emergency Preparedness - Vision Security Solutions , LLC",Vision Security Solution,,1700000.0,2,Indefinite Delivery Indefinite Quantity,other,['990'],not_technology,no,,low,False,
-CW57723,GovDelivery Enterprise Communication Solution ,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),451593.08,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,medium,True,1.0
+CW57723,GovDelivery Enterprise Communication Solution,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),451593.08,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,
 CW57732,FY18 - CF0 - Basic Computer Training - Back to Work 50+,Vire Consulting,Employment Services (DOES),175000.0,2,Firm Fixed Price,other,['715'],not_technology,no,,medium,False,
 CW57760,DCHR Print Solutions,CANON FINANCIAL SERVICES,Human Resources (DCHR),395333.11,2,Firm Fixed Price,other,['600'],not_technology,no,,low,False,
 CW57818,"DCSS-2006-R-920-00-IT Equipment and Software-Precision Capital Partners, LLC","Precision Capital Partners, LLC",,1900000.0,2,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
@@ -2539,7 +2539,7 @@ CW58725,"DCSS-IT Equipment & Software-The Pittman Group, Inc.","The Pittman Grou
 CW58755,Document Translation and Face-to-Face Interpretation Service- TransPerfect Translations International,"TRANSPERFECT TRANSLATIONS,INC.",,1990000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
 CW58761,"DCSS - It Equipment & Software - Cradle Systems, LLC",Cradle Systems,Contracting and Procurement (OCP),20000000.0,2,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
 CW58776,DCSS Application for VCARE MOBIS,"VCare, LLC",Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
-CW58809,"DCSS-IT Equipment & Software-Dupont Computers, Inc. ",Dupont Computers,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,1.0
+CW58809,"DCSS-IT Equipment & Software-Dupont Computers, Inc.",Dupont Computers,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
 CW58818,"DCSS-Printing and Document Management Services-V Care, LLC","VCare, LLC",,1500000.0,2,Indefinite Delivery Indefinite Quantity,other,['966'],not_technology,no,,low,False,
 CW58842,"DCSS- MOBIS - Dantech Corporation, Inc.",Dantech Corporation Inc,,20000000.0,2,Firm Fixed Price,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW58868,"Residential Expenses (Frontline Community Services, Inc.)",Frontline Community Services,Department on Disability Services (DDS),1237588.23,1,Requirements,other,['952'],not_technology,no,,low,False,
@@ -2551,7 +2551,7 @@ CW59111,Youth Risk Behavior Survey Contract,ICF INCORPORATED,State Superintenden
 CW59144,"DCSS - MOBIS - The Triage Group, LLC","THE TRIAGE GROUP, LLC",,20000000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW59207,DCRA Accela Enhancements Services,RAZAVI APPLICATION DEVELOPERS,Licensing & Consumer Protection (DLCP),1277907.5,2,Labor Hour,other,['961'],custom_software_build,no,Accela,medium,True,
 CW59240,"Office Supplies, General-Laser Art, Inc.",LASER ART INC,,5000000.0,1,Indefinite Delivery Indefinite Quantity,other,['615'],not_technology,no,,high,False,
-CW59247,FY18 - CF0 - DC Infrastructure Academy Shuttle Service (VOW Transportation),VOW Transportation LLC,Employment Services (DOES); Deputy Mayor for Greater Economic Opportunity (DMGEO); Contracting and Procurement (OCP),100000.0,1,Firm Fixed Price,other,['962'],not_technology,no,,high,False,1.0
+CW59247,FY18 - CF0 - DC Infrastructure Academy Shuttle Service (VOW Transportation),VOW Transportation LLC,Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),100000.0,1,Firm Fixed Price,other,['962'],not_technology,no,,high,False,
 CW59265,"DCSS- Marketing, Media and Public Information- Isom Events","Isom Events,LLc",Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,low,False,
 CW59292,Residential Expenses - Wholistic Home & Community,WHOLISTIC HOME AND COMMUNITY,Department on Disability Services (DDS),2388010.0,2,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW59303,DCSS - IT Technology - Equipment and Software,"MVS, Inc.",,10950000.0,2,Firm Fixed Price,software_services,['920'],ordering_vehicle,no,,high,True,
@@ -2584,7 +2584,7 @@ CW60126,FY18_Board of Elections_Audiovisual Equipment,CORPORATE SYSTEMS RESOURCE
 CW60129,TANF - Education and Occupational Training (EOT) - Grant Associates,Grant Associates,Human Services (DHS),11220756.0,3,Requirements,other,['952'],not_technology,no,,low,False,
 CW60131,TANF - Education and Occupational Training (EOT) - Fedcap,Fedcap,Human Services (DHS),6803953.0,3,Requirements,other,['952'],not_technology,no,,low,False,
 CW60133,TANF - Education and Occupational Training (EOT) - Washington Literacy Center,Washington Literacy Center,Human Services (DHS),6390069.0,3,Requirements,other,['952'],not_technology,no,,low,False,
-CW60135,Residential Expenses - Center on Deafness ,CENTER ON DEAFNESS,Department on Disability Services (DDS),151110.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,1.0
+CW60135,Residential Expenses - Center on Deafness,CENTER ON DEAFNESS,Department on Disability Services (DDS),151110.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW60137,Residential Expenses - Project ReDirect,"PROJECT REDIRECT, INC.",Department on Disability Services (DDS),1807184.58,2,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW60140,"Residential Expenses - Total Care Services, Inc.","TOTAL CARE SERVICES, INC.",Department on Disability Services (DDS),1157626.06,2,Requirements,other,['952'],not_technology,no,,low,False,
 CW60151,Innovative Concepts (Residential Expenses),"INNOVATIVE CONCEPTS, INC.",Department on Disability Services (DDS),120000.0,2,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
@@ -2592,7 +2592,7 @@ CW60159,Residential Expenses - Vested Optimum,Vested Optimum Community Services,
 CW60229,DCSS-MOBIS-Blake Associates Technologies,Blake Associates Technologies,,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW60315,FEMS Streetcar Safety Consultation,"Transportation Resource Associates, Inc.",Fire and Emergency Services Department (FEMS),400000.0,1,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,,low,True,
 CW60409,"DCSS - Mission Oriented Business Integrated Services (MOBIS)- 918- MVS,Inc.","MVS, Inc.",,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
-CW60423,Qualys Vulnerability Platform	,"The Pittman Group, Inc DBA VANTIX",Chief Technology Officer (OCTO),231850.0,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,1.0
+CW60423,Qualys Vulnerability Platform,"The Pittman Group, Inc DBA VANTIX",Chief Technology Officer (OCTO),231850.0,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,
 CW60488,BPA 1 - School Bus Transportation Services,BATTLE'S TRANSPORTATION,Energy and Environment (DOEE),100000.0,2,Requirements,other,['961'],not_technology,no,,high,False,
 CW60526,SecureAuth IDP Platform Subscription Renewal,"The Pittman Group, Inc DBA VANTIX",Chief Technology Officer (OCTO),332800.0,2,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,SecureAuth IDP,high,True,
 CW60545,TANF - Job Placement Services (JP) - America Works of Washington DC - CW60545,America Works of Washington D.C.,Human Services (DHS),5593077.0,3,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
@@ -2609,8 +2609,8 @@ CW60786,"Onsite Fleet Maintenance, Inspection and Reporting Services",FLEETPRO I
 CW60835,"Specialized Residential Services (Tree of Life Services, Inc.)",Tree of Life Services,Department on Disability Services (DDS),240000.0,1,Requirements,other,['952'],not_technology,no,,high,False,
 CW60873,"DCSS-Advertising, Novelties, & Souvenirs-Alinea Promos, LLC",Alinea Promos LLC,Contracting and Procurement (OCP),400000.0,1,Indefinite Delivery Indefinite Quantity,other,['037'],not_technology,no,,high,False,
 CW60896,AT&T Wireless Services and Related Equipment,AT&T MOBILITY,Chief Technology Officer (OCTO),999000.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],telecom_or_network,no,,high,True,
-CW60905,FY18 - CF0 - DCIA Training (The Training Zone of the DMV),The Training Zone of the DMV LLC,Employment Services (DOES); Deputy Mayor for Greater Economic Opportunity (DMGEO); Contracting and Procurement (OCP),200000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,1.0
-CW61030,Vocational Services- Global Resources and Support ,Global Resources and Support,Department on Disability Services (DDS),123000.0,1,Cost Plus Fixed Fee,other,['924'],not_technology,no,,low,False,1.0
+CW60905,FY18 - CF0 - DCIA Training (The Training Zone of the DMV),The Training Zone of the DMV LLC,Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),200000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,medium,False,
+CW61030,Vocational Services- Global Resources and Support,Global Resources and Support,Department on Disability Services (DDS),123000.0,1,Cost Plus Fixed Fee,other,['924'],not_technology,no,,low,False,
 CW61136,Columbia Lighthouse for Blind (Vocational),COLUMBIA LIGHTHOUSE FOR BLIND,Department on Disability Services (DDS),100000.0,2,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,
 CW61144,NetBrain Software License,"ICI Systems, Inc.",Chief Technology Officer (OCTO),54745.9,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,high,True,
 CW61163,"DCSS-MMPI201831-Blank, Inc.","BLANK, INC.",,900000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],ordering_vehicle,no,,medium,True,
@@ -2624,7 +2624,7 @@ CW61551,"FY18 - DBH - SUD Outpatient Level 1 & 2.5 Treatment - SOME, Inc",SO OTH
 CW61555,FY18 - DBH - SUD Outpatient Level 1 & 2.5 Treatment - Volunteer of America,"Volunteers of America Chesapeake, Inc",Behavioral Health (DBH),100000.0,1,Requirements,other,['952'],not_technology,no,,high,False,
 CW61568,FY2018 ONSE Neighborhood Violence Intervention Services for Ward 8,FAR SOUTHEAST FAMILY,Deputy Mayor for Public Safety and Justice (DMPSJ),1999998.0,2,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW61570,FY2018 ONSE Neighborhood Violence Intervention Services for Wards 1-5,Collaborative Solutions for Communities,Deputy Mayor for Public Safety and Justice (DMPSJ),250000.0,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
-CW61603,IBM Z13 Hardware Maintenance ,MAINLINE INFORMATION SYSTEMS,Chief Technology Officer (OCTO),128938.68,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,high,True,1.0
+CW61603,IBM Z13 Hardware Maintenance,MAINLINE INFORMATION SYSTEMS,Chief Technology Officer (OCTO),128938.68,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,
 CW61622,"DCSS - Temporary Support Services (96130) - MVS,Inc.","MVS, Inc.",,950000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW61654,MMP1201821-Twelve 22,Twelve 22,,1800000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,low,False,
 CW61690,DCKT 2018 - Automotive Body Repair Services,"GTS AUTO SERVICE, INC.",Public Works (DPW),150000.0,1,Labor Hour,other,['928'],not_technology,no,,high,False,
@@ -2633,7 +2633,7 @@ CW61740,FY18 - CF0 - Urban ED - Occupation Skilled Training (WIC - ITA),URBAN ED
 CW61832,DCSS-2006-R-918-00-MOBIS201814-A&A,ADITYA & ASSOCIATES dba A&A,,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW61927,"DCSS- MOBIS Networking for Future, Inc","Networking For Future, Inc.",,30000000.0,3,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW62027,Next Generation Assessment Reporting Suite (Tembo),Tembo Consulting Inc,State Superintendent of Education (OSSE),291750.0,3,Firm Fixed Price,other,['924'],custom_software_build,no,Next Generation Assessment Reporting Suite (Tembo),medium,True,
-CW62039,ORM Call Center Services ,Endicott Comm Inc,Office of Risk Management (ORM),15250.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],not_technology,no,,low,False,1.0
+CW62039,ORM Call Center Services,Endicott Comm Inc,Office of Risk Management (ORM),15250.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],not_technology,no,,low,False,
 CW62045,FY18 - CF0 - DCIA Training (Opportunities Industrialization Center of DC),Opportunities Industrialization Center of DC,Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),400000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
 CW62049,"FY18 - CF0 - DCIA Training (Art and Soul Solutions, Inc.)","Art and Soul Solutions, Inc.",Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),1300000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW62120,Consolidated Agency Wide Printing,Formost Advanced Creations,Health Care Finance (DHCF),312044.0,2,Firm Fixed Price,other,['615'],not_technology,no,,high,False,
@@ -2646,8 +2646,8 @@ CW62814,FY18 - CF0 - DCIA Training (Community College Preparatory Academy-CC Pre
 CW62860,DCSS - Printing & Document -966 - Accurate Mailing Services Inc.,"Accurate Mailing Services, Inc",Contracting and Procurement (OCP),750000.0,1,Indefinite Delivery Indefinite Quantity,other,['966'],not_technology,no,,high,False,
 CW62862,"DCSS - MOBIS - IdeaCrew, Inc","IdeaCrew, Inc.",,20000000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW62968,FY'18 - DBH - Recovery Support Services - MBI Health Services,"MBI HEALTH SERVICES, LLC",Behavioral Health (DBH),10000.0,1,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
-CW63013,Long Term Care - Support Services,LIBERTY HEALTHCARE CORP.,Health Care Finance (DHCF),14246183.0,2,Indefinite Delivery Indefinite Quantity,other,"['924', '948']",not_technology,no,,high,False,1.0
-CW63136,FY18 - DBH - PRECISION CAPITAL PARTNERS - Janitorial & Housekeeping Supplies,"Precision Capital Partners, LLC",Behavioral Health (DBH),240000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,"['180', '436', '465', '470', '485', '486', '665', '801', '910', '952', '958', '967']",not_technology,no,,high,False,1.0
+CW63013,Long Term Care - Support Services,LIBERTY HEALTHCARE CORP.,Health Care Finance (DHCF),14246183.0,2,Indefinite Delivery Indefinite Quantity,other,['924'],not_technology,no,,low,False,
+CW63136,FY18 - DBH - PRECISION CAPITAL PARTNERS - Janitorial & Housekeeping Supplies,"Precision Capital Partners, LLC",Behavioral Health (DBH),240000.0,1,Indefinite Delivery Indefinite Quantity,other,['180'],not_technology,no,,high,False,
 CW63144,Vendor Fiscal Employer Agent Financial Management Services Support Services,"Consumer Direct District of Columbia, LLC",Health Care Finance (DHCF),12012400.0,3,Indefinite Delivery Indefinite Quantity,other,['946'],not_technology,no,,low,False,
 CW63174,DCAS Printing and Mailing (Long-Term Services),"Immediate Mailing Services, Inc",Health Care Finance (DHCF),2022917.1,2,Indefinite Delivery Indefinite Quantity,other,['915'],not_technology,no,,medium,False,
 CW63204,FY18 - CF0 - DCIA Work Readiness Training (CSW),Constituent Services Worldwide Public Benefit Corporation,Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),400000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
@@ -2663,11 +2663,11 @@ CW63612,FY'19 - DBH - Recovery Support Services - Federal City Recovery Services
 CW63649,"MBI Health Services, LLC (Vocational Services)","MBI HEALTH SERVICES, LLC",Department on Disability Services (DDS),290000.0,2,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW63655,FY'19 - DBH - Recovery Support Services - La Clinica del Pueblo,"LA CLINICA DEL PUEBLO, INC.",Behavioral Health (DBH),100000.0,2,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
 CW63665,"FY'19 - DBH - Recovery Support Services - SOME, Inc.",SO OTHERS MIGHT EAT,Behavioral Health (DBH),596000.0,3,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
-CW63781,Quality Improvement Organization,Comagine Health,Health Care Finance (DHCF),16082029.98,3,Requirements,it_adjacent,"['918', '948']",not_technology,no,,high,False,1.0
+CW63781,Quality Improvement Organization,Comagine Health,Health Care Finance (DHCF),16082029.98,3,Requirements,it_adjacent,['918'],not_technology,no,,low,False,
 CW63821,"FY'19 - DBH - Recovery Support Services - Samaritan Inns, Inc.",SAMARITAN INNS INC,Behavioral Health (DBH),368000.0,2,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
-CW63887,"DCSS- IT Equipment & Software - Capital Consulting, LLC dba Tharseo IT ",Capital Consulting LLC dba Tharseo IT,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,1.0
-CW63922,FY18 NEW LIHEAP Software,Joseph Associates Incorporated,Energy and Environment (DOEE),1205772.0,2,Firm Fixed Price,other,"['915', '920']",not_technology,no,,low,False,1.0
-CW64003,"DCSS -  Temporary support Services (96130)-Coroporate Systems Resources, Inc   ",CORPORATE SYSTEMS RESOURCES,,10000000.0,1,Firm Fixed Price,other,['961'],staff_augmentation,yes,,high,True,1.0
+CW63887,"DCSS- IT Equipment & Software - Capital Consulting, LLC dba Tharseo IT",Capital Consulting LLC dba Tharseo IT,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
+CW63922,FY18 NEW LIHEAP Software,Joseph Associates Incorporated,Energy and Environment (DOEE),1205772.0,2,Firm Fixed Price,other,['915'],not_technology,no,,low,False,
+CW64003,"DCSS -  Temporary support Services (96130)-Coroporate Systems Resources, Inc",CORPORATE SYSTEMS RESOURCES,,10000000.0,1,Firm Fixed Price,other,['961'],staff_augmentation,yes,,high,True,
 CW64005,"DCSS- Markating , Media and Public Information  (961) -Pendragwn Productions, LLC",Pendragwn Productions,,2700000.0,3,Firm Fixed Price,other,['961'],not_technology,no,,low,False,
 CW64063,DCSS Application for MOBIS for Health IT 2 Business dba CODICE,Codice LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW64065,MicroStrategy Business Software,DataPillars Inc.,Chief Technology Officer (OCTO),380115.15,2,Firm Fixed Price,it_adjacent,['918'],hardware_or_license_resale,no,,medium,True,
@@ -2682,7 +2682,7 @@ CW64800,"DCSS- MOBIS- Dranreft, LLC dba Business Transformation Group (BTG)",BTG
 CW64819,CAPTIONING SERVICES,"Captioning Services, LLC","Cable Television, Film, Music and Entertainment (OFTE)",439560.0,3,Firm Fixed Price,other,['915'],not_technology,no,,high,False,
 CW64858,"DCSS - Marketing, Media and Public Information 961-00 - Rana Labs, LLC.",Rana Labs LLC,Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],ordering_vehicle,no,,medium,True,
 CW64904,DCAS - Temporary Personnel - Avid Systems,"AVID SYSTEMS, LLC",Health Care Finance (DHCF),7270220.0,1,Labor Hour,other,['961'],staff_augmentation,yes,DCAS,high,True,
-CW64906,DHCF - Temporary Personnel Resources,"AVID SYSTEMS, LLC",Health Care Finance (DHCF),8046875.2,2,Labor Hour,it_adjacent,"['918', '962']",staff_augmentation,yes,,high,True,1.0
+CW64906,DHCF - Temporary Personnel Resources,"AVID SYSTEMS, LLC",Health Care Finance (DHCF),8046875.2,2,Labor Hour,it_adjacent,['918'],staff_augmentation,yes,,high,True,
 CW64931,OPTION YEAR FOUR Industrial Revenue Bond Counsel Legal Services - Ballard Spahr LLP,"BALLARD, SPAHR, ANDREWS &",Deputy Mayor for Planning and Economic Development (DMPED),718575.0,3,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
 CW64933,OPTION YEAR FOUR Industrial Revenue Bond Counsel Legal Services - Squire Patton Boggs,Squire Patton Boggs (US) LLP,Deputy Mayor for Planning and Economic Development (DMPED),713250.0,3,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
 CW64945,TS20192-Center for Innovation Research and Transformation Education,"Center for Innovation, Research, and Transformation in Education",,1500000.0,3,Indefinite Delivery Indefinite Quantity,other,['924'],not_technology,no,,low,False,
@@ -2700,7 +2700,7 @@ CW65366,Residential Expenses - Gentle Touch,Gentle Touch Senior Care,Department 
 CW65487,DCAS - Temporary Personnel - Networking for Future,"Networking For Future, Inc.",Health Care Finance (DHCF),3899311.6,3,Labor Hour,other,['961'],staff_augmentation,yes,,medium,True,
 CW65614,FY18 - DBH - Community Reach - Support Residence (SR) Service Community Residential Facility (CRF),Murchinson King Jr.,Behavioral Health (DBH),950000.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW65631,OPTION YEAR FOUR Industrial Revenue Bond Counsel Legal Services - Bryant Miller Olive P.A.,Bryant Miller Olive P.A.,Deputy Mayor for Planning and Economic Development (DMPED),727125.0,3,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
-CW65690,Science DLM Consortium Membership ,UNIVERSITY OF KANSAS C.R.INC.,State Superintendent of Education (OSSE),166000.0,1,Firm Fixed Price,other,['963'],not_technology,no,,low,False,1.0
+CW65690,Science DLM Consortium Membership,UNIVERSITY OF KANSAS C.R.INC.,State Superintendent of Education (OSSE),166000.0,1,Firm Fixed Price,other,['963'],not_technology,no,,low,False,
 CW65831,FY19 - CF0 - Urinalysis & TB Testing (B&W Stat Lab) DOES-Wide,B & W STAT LABORATORY,Employment Services (DOES),750000.0,3,Indefinite Delivery Indefinite Quantity,other,['193'],not_technology,no,,high,False,
 CW65845,DCHR Consulting Services,MIDTOWN PERSONNEL INC,Human Resources (DCHR),1106635.2000000002,3,Labor Hour,it_adjacent,['918'],it_consulting_advisory,yes,,low,True,
 CW65888,DCSS-Temporary Support Services- DigiDoc dba Document Managers,DIGI DOCS INC DOCUMENT MGERS,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
@@ -2711,7 +2711,7 @@ CW66015,IDIQ-4-Automotive Services and Parts for Medium and Heavy-duty Equipment
 CW66017,IDIQ-5-Automotive Services and Parts for Medium and Heavy-duty Equipment,"Tony's Fleet Service, LLC.",Public Works (DPW),750000.0,3,Indefinite Delivery Indefinite Quantity,other,['928'],not_technology,no,,high,False,
 CW66020,IDIQ-6-Automotive Services and Parts for Medium and Heavy-duty Equipment,MARYLAND INDUSTRIAL TRUCKS,Public Works (DPW),500000.0,2,Indefinite Delivery Indefinite Quantity,other,['928'],not_technology,no,,high,False,
 CW66022,IDIQ-7-Automotive Services and Parts for Medium and Heavy-duty Equipment,Norris Chesapeake Truck Sales LLc,Public Works (DPW),600000.0,1,Indefinite Delivery Indefinite Quantity,other,['928'],not_technology,no,,high,False,
-CW66115,Residential Expenses - Azure Healthcare Services ,AZURE LLC,Department on Disability Services (DDS),379000.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,1.0
+CW66115,Residential Expenses - Azure Healthcare Services,AZURE LLC,Department on Disability Services (DDS),379000.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW66126,SCDC GRID SYSTEM,Mindcubed,Contracting and Procurement (OCP),1000180.0,3,Firm Fixed Price,it_adjacent,['918'],cots_implementation,no,SCDC GRID SYSTEM,low,True,
 CW66132,FY19-CF0- Temporary Support Services - Staff Augmentation (DOES-DMGEO-WIC) - DanTech Corporation,Dantech Corporation Inc,Employment Services (DOES),400000.0,4,Labor Hour,other,['962'],staff_augmentation,yes,,high,True,
 CW66134,FY19 - CF0 - Staff Augmentation - Temporary Support Services - Soul Tree,Soul Tree,Employment Services (DOES),300000.0,3,Labor Hour,other,['962'],staff_augmentation,yes,,high,True,
@@ -2724,7 +2724,7 @@ CW66642,"DCSS - Medical Supply - Medical Supply  Systems , Inc.",MEDICAL SUPPLY 
 CW66646,Gigamon Hardware RFTOP GSA,Blackwood Associates,Chief Technology Officer (OCTO),498721.78,3,Firm Fixed Price,telecom,['725'],hardware_or_license_resale,no,,medium,True,
 CW66703,"FY19 DCSS Brick & Story, LLC",Brick & Story LLC,,2700000.0,3,Indefinite Delivery Indefinite Quantity,other,['961'],ordering_vehicle,no,,low,True,
 CW66734,FY19-CFO-TECHNICAL ASSISTANCE SUPPORT SERVICES,BRUSTEIN & MANASEVIT,Employment Services (DOES),500000.0,1,Labor Hour,it_adjacent,['918'],it_consulting_advisory,yes,,medium,True,
-CW66765,Palo Alto Support Renewal ,"Sun Management, Inc.",Chief Technology Officer (OCTO),453235.52,1,Firm Fixed Price,other,['956'],software_om_support,no,,high,True,1.0
+CW66765,Palo Alto Support Renewal,"Sun Management, Inc.",Chief Technology Officer (OCTO),453235.52,1,Firm Fixed Price,other,['956'],software_om_support,no,Palo Alto (security platform),medium,True,
 CW66770,DCRA Temporary Support Services,WALTON & GREEN CONSULTANTS,Licensing & Consumer Protection (DLCP),182160.0,2,Labor Hour,other,['961'],staff_augmentation,yes,,high,True,
 CW66807,"DCSS - MOBIS - Plwatcher Media Group, LLC",PLWATCHER MEDIA GRP LLC,,10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW66840,FY'19 - DHS - Leadership Development Training,GEORGE WASHINGTON UNIVERSITY,Human Services (DHS),176400.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
@@ -2738,7 +2738,7 @@ CW67022,"DCSS- Industrial Services- Earth Worth, LLC","Earth Worth, LLC",Contrac
 CW67070,FY19_BX0-DCCAH_Temporary Services,WALTON & GREEN CONSULTANTS,Commission on Arts and Humanities (CAH),152041.2,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],staff_augmentation,yes,,medium,True,
 CW67170,DCAS R3 IV&V,"Accenture, LLP",Health Care Finance (DHCF),23271000.0,3,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,DCAS,medium,True,
 CW67215,"Datadvantage Software Licenses, Maintenance and Support Services",ADVANCED NETWORK CONSULTING,Chief Technology Officer (OCTO),91490.0,1,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,medium,True,
-CW67301,OPTION YEAR TWO - DCEB-2018-D-0002 - Real Estate Appraisal and Related Services ,"Newmark Knight Frank V&A, LLC",Deputy Mayor for Planning and Economic Development (DMPED),106000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,"['918', '946']",not_technology,no,,high,False,1.0
+CW67301,OPTION YEAR TWO - DCEB-2018-D-0002 - Real Estate Appraisal and Related Services,"Newmark Knight Frank V&A, LLC",Deputy Mayor for Planning and Economic Development (DMPED),106000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,high,False,
 CW67330,Telecommunication Legal Services,"Baller Herbst Law Group, PC",Chief Technology Officer (OCTO),300000.0,1,Labor Hour,it_adjacent,['918'],not_technology,no,,low,False,
 CW67360,"DCSS -  Industrial Supplies & Apparel - Omega Supply Services, Inc.","Omega Supply Services, Inc",Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['485'],not_technology,no,,high,False,
 CW67434,Non-Medical Case Management Services (United Medical Center-Not-For-Profitr Hospital Corp),Not-For-Profit Hospital Corp.,Health (DOH),950000.0,1,Requirements,other,['952'],not_technology,no,,high,False,
@@ -2747,7 +2747,7 @@ CW67462,"Non-Medical Case Management Services(Greater Baden Medical Service, Inc
 CW67492,"Dental Services(Greater Baden Medical Services, Inc.)",GREATER BADEN MEDICAL SERV,Health (DOH),950000.0,1,Requirements,other,['948'],not_technology,no,,high,False,
 CW67541,DCSS - 924-00 - ALLIANCE TO END STRONG,"Alliance To End Strong, LLC",Chief Technology Officer (OCTO),1000000.0,2,Indefinite Delivery Indefinite Quantity,other,['715'],not_technology,no,,low,False,
 CW67554,FY19 Citywide Fitness Instructor Contract for DPR,Ink Systems LLC,Parks and Recreation (DPR),320980.0,2,Firm Fixed Price,other,['924'],not_technology,no,,high,False,
-CW67661,PFL Tax Collection System,Sagitec Solutions,Employment Services (DOES),750060.25,1,Firm Fixed Price,software_services,"['920', '956']",not_technology,no,,low,False,1.0
+CW67661,PFL Tax Collection System,Sagitec Solutions,Employment Services (DOES),750060.25,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,low,True,
 CW67765,"DCSS - Office Supplies - The Sky, LLC dba U.S. Office Solutions","SKY, LLC DBA US OFFICE SOLUTION",Contracting and Procurement (OCP),15000000.0,3,Indefinite Delivery Indefinite Quantity,other,['615'],not_technology,no,,high,False,
 CW67780,DCSS - Information Technology Equipment and Software - Advanced Network Consulting Inc,ADVANCED NETWORK CONSULTING,,20000000.0,2,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
 CW67904,DCSS - MOBIS - Limbic Systems Inc.,LIMBIC SYSTEMS INC,,10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
@@ -2755,7 +2755,7 @@ CW67910,"DCSS - Temporary Support Services - Kovais Innovative Solutions, Inc.",
 CW68010,FY19 - CF0 - OYP - Maintenance and Support Employer Online Portal & Training,Career T.E.A.M. LLC,Contracting and Procurement (OCP); Employment Services (DOES),1290000.0,3,Firm Fixed Price,software_services,['920'],software_om_support,no,Employer Online Portal,medium,True,
 CW68042,KwikTag Electronic Content Management System,Avanti Real Estate Services,Public Works (DPW),66540.0,3,Firm Fixed Price,it_goods,['208'],cots_implementation,no,KwikTag Electronic Content Management System,medium,True,
 CW68129,Residential Expenses (Joyful Health Care),Joyful Healthcare Inc,Department on Disability Services (DDS),33950.85,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
-CW68235,FY18 - CF0 - Office of Information Technology - Maintenance and Support for the Grants Management System,"Jungle Lasers, LLC",Employment Services (DOES); Deputy Mayor for Greater Economic Opportunity (DMGEO); Contracting and Procurement (OCP),100000.0,1,Firm Fixed Price,software_services,['920'],software_om_support,no,Grants Management System,high,True,1.0
+CW68235,FY18 - CF0 - Office of Information Technology - Maintenance and Support for the Grants Management System,"Jungle Lasers, LLC",Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),100000.0,1,Firm Fixed Price,software_services,['920'],software_om_support,no,Grants Management System,high,True,
 CW68297,"DCSS- MOBIS- Quixotec, LLC",Quixotec LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW68303,FY19 DCSS TEMPORARY SUPPORT SERVICES,Capital Consulting LLC dba Tharseo IT,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW68314,"FY-19 DCSS MARKETING, MEDIA AND PUBLIC INFORMATION",Chad O'L Public Relations & Events LLC,Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
@@ -2777,7 +2777,7 @@ CW68911,PSH2 - Pathways to Housing,"PATHWAYS TO HOUSING DC, INC.",Human Services
 CW68982,"DCSS-Office Supplies-OSG20198-Dupont Computers, Inc",Dupont Computers,,950000.0,1,Indefinite Delivery Indefinite Quantity,other,['615'],not_technology,no,,high,False,
 CW69027,DCSS - Marketing Media an Public Information - Marketing Me Consulting,Market Me Consulting,,2700000.0,3,Firm Fixed Price,other,['961'],ordering_vehicle,no,,medium,True,
 CW69325,"DCSS-Audit20197-V-Tech Solutions, Inc.",V-TECH SOLUTIONS INC,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['946'],ordering_vehicle,no,,medium,True,
-CW69351,DCHR Criminal Background Checks and Searches,Fieldprint Inc.,Human Resources (DCHR),2600000.0,3,Indefinite Delivery Indefinite Quantity,other,"['715', '918', '956']",not_technology,no,,medium,False,1.0
+CW69351,DCHR Criminal Background Checks and Searches,Fieldprint Inc.,Human Resources (DCHR),2600000.0,3,Indefinite Delivery Indefinite Quantity,other,['715'],not_technology,no,,medium,False,
 CW69360,DCSS Application for Mindfinders,MINDFINDERS INC,Contracting and Procurement (OCP),1900000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],ordering_vehicle,no,,medium,True,
 CW69397,Short Term Family Housing  Site 2,CORE DC,Human Services (DHS),5288059.92,2,Letter Contract,other,['952'],not_technology,no,,low,False,
 CW69398,"DCSS - MOBIS - dBase Technologies, LLC",dBase Technologies,Contracting and Procurement (OCP),20000000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
@@ -2792,7 +2792,7 @@ CW69868,Canon Copiers,CANON FINANCIAL SERVICES,Health Care Finance (DHCF),250566
 CW69924,Electronic Visit Verification (EVV),"Public Consulting Group, Inc.",Health Care Finance (DHCF),3804274.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW69931,FY19 - CF0 - OYP - MBSYEP Work Readiness and Growth Industry Sector 14-17 - Do the Write Thing,Do The Write Thing Foundation of DC,Contracting and Procurement (OCP); Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW69967,DBH Generator Maintenance and Repair Services,"Capital Builders and Associates, Inc.",Behavioral Health (DBH),301398.0,1,Time And Materials,other,['928'],not_technology,no,,medium,False,
-CW70008,FY 2019 DYRS Medical Supplies                                                                                                                                                                                               ,American Business Supplies LLC,Youth Rehabilitation Services (DYRS),8581.3,1,Firm Fixed Price,other,['257'],not_technology,no,,high,False,1.0
+CW70008,FY 2019 DYRS Medical Supplies,American Business Supplies LLC,Youth Rehabilitation Services (DYRS),8581.3,1,Firm Fixed Price,other,['257'],not_technology,no,,high,False,
 CW70065,FY19 - CF0 - OYP - MBSYEP Work Readiness and Growth Industry Sector 14-17 - KBEC Group Inc.,KBEC Group,Contracting and Procurement (OCP); Employment Services (DOES),300000.02999999997,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70081,FY19-CFO-GENERAL COUNSEL-PROCESS SERVER,One Source Process,Employment Services (DOES),245000.0,2,Firm Fixed Price,other,['961'],not_technology,no,,low,False,
 CW70088,"Vocational Services (Verigreen, Inc.)",Verigreen Inc,Department on Disability Services (DDS),100000.0,2,Indefinite Delivery Indefinite Quantity,other,['952'],not_technology,no,,high,False,
@@ -2800,19 +2800,19 @@ CW70098,FY19 - CF0 - OYP - MBSYEP Work Readiness and Growth Industry Sector 14-1
 CW70139,"DCSS - Moving & Logistics Services - RHG Group, Inc.","RHG Group, Inc.",Contracting and Procurement (OCP),1000000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,high,False,
 CW70171,DCSS-2006-R-920-00-Tyson Project Management LLC,Tyson Project Management Group,,950000.0,1,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,low,True,
 CW70206,FY19 - CF0 - OYP - MBSYEP Workforce Readiness and Professional Development 22-24 YO - Solutions by SF,Solutions By SF,Contracting and Procurement (OCP); Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW70208,FY19 - CF0 - OYP - MBSYEP Work Readiness and Job Placement 22-24 YO - ADC Management Solutions,"Aspen of DC, Inc. d/b/a ADC Management Solutions",Employment Services (DOES); Contracting and Procurement (OCP),150000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,1.0
+CW70208,FY19 - CF0 - OYP - MBSYEP Work Readiness and Job Placement 22-24 YO - ADC Management Solutions,"Aspen of DC, Inc. d/b/a ADC Management Solutions",Contracting and Procurement (OCP); Employment Services (DOES),150000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70210,FY19 - CF0 - OYP - MBSYEP Workforce Readiness and Professional Development 22-24 YO - ADC Management Solutions,"Aspen of DC, Inc. d/b/a ADC Management Solutions",Contracting and Procurement (OCP); Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70212,Residential Expenses (St. John's Community Services),ST. JOHN'S COMMUNITY SERVICES,Department on Disability Services (DDS),7685644.89,3,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,
 CW70317,FY19 - CF0 - OYP - MBSYEP Workforce Readiness and Professional Development 22-24 YO - MegaMind Media Youth,MegaMind Media-Youth LLC,Contracting and Procurement (OCP); Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70339,FY19 - CF0 - OYP - MBSYEP Work Readiness and Growth Industry Sector 14-17 - Toni Thomas Associates,TONI THOMAS ASSOCIATES INC,Contracting and Procurement (OCP); Employment Services (DOES),200000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70378,"Residential Expenses (My Own Place, Inc.)",MY OWN PLACE INC,Department on Disability Services (DDS),3898449.0,3,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
-CW70394,  DCSS APPLICATION - Agiliian LLC,Agilian LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,1.0
+CW70394,DCSS APPLICATION - Agiliian LLC,Agilian LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW70402,FY19 - CF0 - OYP - MBSYEP Work Readiness and Growth Industry Sector 14-17 - The Arts Group,The Arts Group Inc,Contracting and Procurement (OCP); Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70417,DCSS APPLICATION - EIGHTY2DEGREES LLC. MMPI201923,EIGHTY2DEGREES LLC,Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],ordering_vehicle,no,,high,True,
 CW70425,DBH Community of Practice (CoP),GEORGE WASHINGTON UNIVERSITY,Behavioral Health (DBH),2167158.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70428,FY19 - CF0 - OYP - MBSYEP Work Readiness and Job Placement 22-24 YO - Pendergrast Alston Consulting,"Pendergrast Alston Consulting Services, Inc",Contracting and Procurement (OCP); Employment Services (DOES),450000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
-CW70441,PLAN REVIEW SERVICES- Institute for Building Technology,Institute for Building Technology and Safety,Licensing & Consumer Protection (DLCP); Department Of Buildings (DOB),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,1.0
-CW70446,PLAN REVIEW SERVICES- SAFEbuilt,"SAFEbuilt, LLC",Licensing & Consumer Protection (DLCP); Department Of Buildings (DOB),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,medium,False,1.0
+CW70441,PLAN REVIEW SERVICES- Institute for Building Technology,Institute for Building Technology and Safety,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,
+CW70446,PLAN REVIEW SERVICES- SAFEbuilt,"SAFEbuilt, LLC",Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,
 CW70542,FY19 - CF0 - OYP - MBSYEP Work Readiness and Growth Industry Sector 14-17 - YOUR Community Center,YOUTH ORG UNITED TO RISE,Contracting and Procurement (OCP); Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW70575,Vocational Services (Innovative Day),Innovative Day,Department on Disability Services (DDS),264000.0,3,Requirements,other,['952'],not_technology,no,,high,False,
 CW70675,Iboss Content Filtering Software Maintenance and Support Services,"Fortnet Security, Inc",Chief Technology Officer (OCTO),211416.66,1,Firm Fixed Price,other,['956'],software_om_support,no,iboss content filtering,high,True,
@@ -2825,7 +2825,7 @@ CW71034,Psychiatric Residential Crisis Stabilization Beds,WOODLEY HOUSE INC,Beha
 CW71073,"DCSS-2006-R-96130-00-Temporary Support Services-V-Tech Solutions, Inc.",V-TECH SOLUTIONS INC,,30000000.0,3,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW71144,FY19 - CF0 - OYP - MBSYEP Work Readiness and Growth Industry Sector 14-17 - Healthy Babies Project Inc,"HEALTHY BABIES PROJECT, INC.",Contracting and Procurement (OCP); Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW71177,Art Handling,ELYinc,Commission on Arts and Humanities (CAH),100500.0,3,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,low,False,
-CW71191,Service Now ,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),296098.12,1,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,medium,True,1.0
+CW71191,Service Now,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),296098.12,1,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,ServiceNow,medium,True,
 CW71202,Cisco Flex EA and Active Host WebEx,THE PRESIDIO CORPORATION,Chief Technology Officer (OCTO),1065061.4,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,high,True,
 CW71270,FY19-OSSE- I-SIght Case Management System,CUSTOMER EXPRESSIONS CORP,State Superintendent of Education (OSSE),335740.0,3,Firm Fixed Price,it_adjacent,['918'],cots_implementation,no,I-SIght Case Management System,medium,True,
 CW71329,Evidence Based Supported Employment-Hillcrest,HILLCREST CHILDREN'S CENTER,Department on Disability Services (DDS),90000.0,1,Requirements,other,['952'],not_technology,no,,high,False,
@@ -2851,7 +2851,7 @@ CW72246,DHCF Medical Records Retrieval,"North Capitol Partners,Inc",Health Care 
 CW72248,Residential Expenses -NCC,National Children's Center,Department on Disability Services (DDS),7018761.0,3,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,
 CW72252,FY19 - CF0 - License Seats for Developer Database (Labor Market Analytics),"ECONOMIC MODELING, LLC",Employment Services (DOES),21500.0,1,Firm Fixed Price,other,['963'],hardware_or_license_resale,no,,medium,True,
 CW72426,"DCSS- Moving & Logistics -962-00 Proven Management, LLC.",PROVEN Management LLC,Contracting and Procurement (OCP),2000000.0,4,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,
-CW72428,FY20_GDO_DAR_DLM Science Alternate Assessment_KUCR,UNIVERSITY OF KANSAS C.R.INC.,State Superintendent of Education (OSSE),788360.0,4,Indefinite Delivery Indefinite Quantity,other,"['785', '924']",not_technology,no,,low,False,1.0
+CW72428,FY20_GDO_DAR_DLM Science Alternate Assessment_KUCR,UNIVERSITY OF KANSAS C.R.INC.,State Superintendent of Education (OSSE),788360.0,4,Indefinite Delivery Indefinite Quantity,other,['785'],not_technology,no,,low,False,
 CW72527,DBH Social Marketing Campaign and Advertisement Services,ENGAGE Strategies,Behavioral Health (DBH),888000.0,2,Firm Fixed Price,other,['915'],not_technology,no,,high,False,
 CW72643,DCSS-Marketing Media and Public Information- Campbell & Company DC,Campbell & Company DC,,1800000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,low,False,
 CW72645,DCSS Medical Supplies,District Supply Inc.,,2000000.0,4,Indefinite Delivery Indefinite Quantity,other,['475'],not_technology,no,,high,False,
@@ -2876,20 +2876,20 @@ CW73403,OCTO ITFM CAPABILITY MATURITY ASSESSMENT,ADVANCED NETWORK CONSULTING,Chi
 CW73416,"DCSS - MOBIS - Techflairs, Inc.",Techflairs inc,Contracting and Procurement (OCP),3800000.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW73590,FY19-CFO-SMARTSHEET LICENSES-OIT FOR AGENCY,Public Performance Management,Employment Services (DOES),36443.52,1,Firm Fixed Price,it_goods,['208'],hardware_or_license_resale,no,,medium,True,
 CW73615,Residential Treatment Services for Sequel of New Jersey dba Capital Academy,"Capital Academy, Sequel of NJ",Youth Rehabilitation Services (DYRS),995000.0,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
-CW73711,DCRA Payment Services for Inspection Program- CODICE,Codice LLC,Licensing & Consumer Protection (DLCP); Department Of Buildings (DOB),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['946'],not_technology,no,,low,False,1.0
+CW73711,DCRA Payment Services for Inspection Program- CODICE,Codice LLC,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['946'],not_technology,no,,low,False,
 CW73733,Salesforce Licenses - DSLBD - Carahsoft,Carahsoft Technology Corporation,Small and Local Business Development (DSLBD),404870.76,2,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,high,True,
 CW73827,Industrial Services-IS201917-Pro-Air Inc.,"Pro-Air, Inc.",,950000.0,1,Indefinite Delivery Indefinite Quantity,other,['934'],not_technology,no,,low,False,
 CW73941,DCKT 2019 - Universal Nestable Carts,"TOTER,LLC",Public Works (DPW),100000.0,1,Firm Fixed Price,other,['450'],not_technology,no,,high,False,
-CW73972,Plan Review Services- Bureau Veritas North America,"Bureau Veritas North America, Inc.",Licensing & Consumer Protection (DLCP); Department Of Buildings (DOB),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,1.0
+CW73972,Plan Review Services- Bureau Veritas North America,"Bureau Veritas North America, Inc.",Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,
 CW73975,Residential Treatment Services for Summit Academy,THE SUMMIT ACADEMY,Youth Rehabilitation Services (DYRS),946003.86,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW73979,Residential Treatment Services for Detroit Behavior Institute,DETROIT BEHAVORIAL INSTITUTE,Youth Rehabilitation Services (DYRS),753320.0,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
-CW73998,DPW Leaf Composting & Other Vegetative Debris Recycling Services,Acme Biomass Reduction Inc.,Public Works (DPW),618000.0,1,Requirements,other,"['926', '968']",not_technology,no,,high,False,1.0
+CW73998,DPW Leaf Composting & Other Vegetative Debris Recycling Services,Acme Biomass Reduction Inc.,Public Works (DPW),618000.0,1,Requirements,other,['926'],not_technology,no,,high,False,
 CW74046,LSHH Database CRISP,"Chesapeake Regional Information System for our Patients, Inc. dba CRISP",Energy and Environment (DOEE),40000.0,1,Firm Fixed Price,it_goods,['208'],software_om_support,no,LSHH Database (CRISP),medium,True,
 CW74163,FY19 - CF0 - OAIT - Pre-Apprentice Training,COMMUNITY SERVICES AGENCY,Employment Services (DOES),600000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
 CW74364,Vocational Services - Project ReDirect Inc,"PROJECT REDIRECT, INC.",Department on Disability Services (DDS),240000.0,3,Requirements,other,['952'],not_technology,no,,high,False,
 CW74497,Criminal Background Checks,Fieldprint Inc.,Health (DOH),950000.0,1,Requirements,other,['990'],not_technology,no,,low,False,
-CW74512,CF0 - FY19 - OAIT - Pre-Apprenticeship Training,"Building And Construction Trades Department, AFL-CIO",Employment Services (DOES); Contracting and Procurement (OCP),250000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,1.0
-CW74562,Customer Relationship Management ,Bayne LLC,Licensing & Consumer Protection (DLCP),432409.6,1,Firm Fixed Price,software_services,['920'],custom_software_build,no,,low,True,1.0
+CW74512,CF0 - FY19 - OAIT - Pre-Apprenticeship Training,"Building And Construction Trades Department, AFL-CIO",Contracting and Procurement (OCP); Employment Services (DOES),250000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
+CW74562,Customer Relationship Management,Bayne LLC,Licensing & Consumer Protection (DLCP),432409.6,1,Firm Fixed Price,software_services,['920'],custom_software_build,no,,low,True,
 CW74576,Vocational Services - America Works of Washington DC,America Works of Washington D.C.,Department on Disability Services (DDS),675960.0,4,Requirements,other,['952'],not_technology,no,,high,False,
 CW74625,Residential Expenses - Associated Community Services,"ASSOCIATED COMMUNITY SERVICES, INC.",Department on Disability Services (DDS),3000000.0,4,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW74704,FY19 DCSS MOBIS JADD Solutions LLC,JADD SOLUTIONS LLC,,1900000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
@@ -2908,20 +2908,20 @@ CW75423,Riverbed Equipment Maintenance,"ICI Systems, Inc.",Chief Technology Offi
 CW75471,Data Management and Visualization Software,EXECUTIVE INFORMATION SYS LLC,Licensing & Consumer Protection (DLCP),892463.98,2,Firm Fixed Price,it_goods,['208'],cots_implementation,no,,low,True,
 CW75482,Web Based Case Management System,"Libera, Inc.",Department on Disability Services (DDS),584542.5,2,Requirements,software_services,['920'],custom_software_build,no,,medium,True,
 CW75546,CF0-FY20- DUTAS-OUC,Northrop Grumman Systems Corp,Employment Services (DOES),999750.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW75580,  Telephonic Interpretation Services and Language  Proficiency Testing Services,LANGUAGE LINE SERVICE INC,Chief Technology Officer (OCTO),777792.0,1,Firm Fixed Price,other,['961'],not_technology,no,,high,False,1.0
+CW75580,Telephonic Interpretation Services and Language  Proficiency Testing Services,LANGUAGE LINE SERVICE INC,Chief Technology Officer (OCTO),777792.0,1,Firm Fixed Price,other,['961'],not_technology,no,,high,False,
 CW75582,"Residential Expenses - L'Arche, Inc.","L'Arche, Inc.",Department on Disability Services (DDS),287660.88,2,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,
-CW75644,United Planning Organization ,A Taste of UPO,Human Services (DHS),303272.8,1,Firm Fixed Price,other,"['948', '952']",not_technology,no,,low,False,1.0
+CW75644,United Planning Organization,A Taste of UPO,Human Services (DHS),303272.8,1,Firm Fixed Price,other,['948'],not_technology,no,,low,False,
 CW75661,Records Management services,The Robert Bobb Group LLC,Health Care Finance (DHCF),2440000.0,3,Firm Fixed Price,it_adjacent,['958'],not_technology,no,,low,False,
 CW75686,DCSS-MOBIS-Keisler Social and Behavioral Research,Keisler Social & Behavioral Research,Contracting and Procurement (OCP),1900000.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,low,False,
 CW75765,FY20-DOES-Unemployment Tax Insurance System (UTIS),Sagitec Solutions,Employment Services (DOES),1831104.0299999998,2,Firm Fixed Price,it_goods,['204'],not_technology,no,,medium,False,
 CW75866,OPTION YEAR FOUR Industrial Revenue Bond Funded Projects Regulatory Compliance Monitoring Services,Nesmith Design Group,Deputy Mayor for Planning and Economic Development (DMPED),399812.4,3,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,low,False,
 CW75879,"DCKT 2020 - Maintenance, testing and repair of Aboveground and Underground Storage Tank","Apex Companies, LLC",Public Works (DPW),240000.0,1,Firm Fixed Price,other,['929'],not_technology,no,,high,False,
 CW75880,HAHSTA - Academic Public Helath Partnership Services,GEORGE WASHINGTON UNIVERSITY,Health (DOH),2888668.0,4,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
-CW75972,Medicaid Information Technology Architecture (MITA) 3.0 State Self-Assessment (SS-A),"Cambria Solutions, Inc.",Health Care Finance (DHCF),3901304.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,"['918', '924', '948']",it_consulting_advisory,no,,medium,True,1.0
+CW75972,Medicaid Information Technology Architecture (MITA) 3.0 State Self-Assessment (SS-A),"Cambria Solutions, Inc.",Health Care Finance (DHCF),3901304.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],it_consulting_advisory,no,,medium,True,
 CW76081,"DCSS  - Information Technology Equipment and Software  - JLee Associates, Inc.","JLee Associates, Inc.",,2850000.0,3,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
 CW76162,"DCSS - Information Technology Equipment an Software - TallyCode, LLC",Tallycode LLC,Contracting and Procurement (OCP),20950000.0,3,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
 CW76205,Legal and Consulting Services,Best Best & Krieger LLP,"Cable Television, Film, Music and Entertainment (OFTE)",125000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
-CW76223,PFLBAS - DOES - Geographic Solutions,GEOGRAPHIC SOLUTIONS INC,Employment Services (DOES),3000600.0,3,Firm Fixed Price,software_services,"['920', '956']",cots_implementation,no,,low,True,1.0
+CW76223,PFLBAS - DOES - Geographic Solutions,GEOGRAPHIC SOLUTIONS INC,Employment Services (DOES),3000600.0,3,Firm Fixed Price,software_services,['920'],it_consulting_advisory,no,,low,True,
 CW76284,FY20-DOH HAHSTA Clinical Radiology Services,Metropolitan Radiology Mgmt,Health (DOH),120000.0,1,Firm Fixed Price,other,['898'],not_technology,no,,high,False,
 CW76289,OPTION YEAR FOUR - DC Business Portal Expansion  - Department of Consumer and Regulatory Affairs (DCRA),LIMBIC SYSTEMS INC,Deputy Mayor for Planning and Economic Development (DMPED); Licensing & Consumer Protection (DLCP),2040727.0,4,Firm Fixed Price,other,['962'],custom_software_build,no,DC Business Portal,medium,True,
 CW76342,Vocational Services - Time for Change,Time For Change,Department on Disability Services (DDS),359154.0,4,Requirements,other,['952'],not_technology,no,,high,False,
@@ -2938,12 +2938,12 @@ CW76603,MT&G Enterprises,"MT&G ENTERPRISE, INC.",Department on Disability Servic
 CW76605,DBH-RFQ- Trauma Informed Care (TIC),"NASMHPD Research Institute, Inc.",Behavioral Health (DBH),231090.72,2,Firm Fixed Price,other,['924'],not_technology,no,,low,False,
 CW76635,"OPTION YEAR FOUR - IRB Funded Projects Regulatory Compliance Monitoring Services Bello, Bello & Associates LLC","BELLO, BELLO & ASSOCIATES",Deputy Mayor for Planning and Economic Development (DMPED),3025400.2,4,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,low,False,
 CW76639,Industrial Revenue Bond Program ? Multi-Media Representation and Documentation Services-Imagine Photography,"Imagine Photography, Inc.",Deputy Mayor for Planning and Economic Development (DMPED),50000.0,1,Requirements,other,['961'],not_technology,no,,high,False,
-CW76695,CareFirst BC BS - Healthcare Insurance Benefits for District of Columbia Government Employees,CareFirst BlueChoice Inc,Human Resources (DCHR),549314839.97,5,Indefinite Delivery Indefinite Quantity,other,"['953', '958']",not_technology,no,,high,False,1.0
-CW76697,UHC - Healthcare Insurance Benefits for District of Columbia Government Employees,United Healthcare Insurance Company,Human Resources (DCHR),521545730.57,5,Indefinite Delivery Indefinite Quantity,other,"['953', '958']",not_technology,no,,high,False,1.0
-CW76699,Aetna - Healthcare Insurance Benefits for District of Columbia Government Employees,AETNA LIFE INSURANCE COMPANY,Human Resources (DCHR),1176267486.12,5,Indefinite Delivery Indefinite Quantity,other,"['953', '958']",not_technology,no,,high,False,1.0
+CW76695,CareFirst BC BS - Healthcare Insurance Benefits for District of Columbia Government Employees,CareFirst BlueChoice Inc,Human Resources (DCHR),549314839.97,5,Indefinite Delivery Indefinite Quantity,other,['953'],not_technology,no,,high,False,
+CW76697,UHC - Healthcare Insurance Benefits for District of Columbia Government Employees,United Healthcare Insurance Company,Human Resources (DCHR),521545730.57,5,Indefinite Delivery Indefinite Quantity,other,['953'],not_technology,no,,high,False,
+CW76699,Aetna - Healthcare Insurance Benefits for District of Columbia Government Employees,AETNA LIFE INSURANCE COMPANY,Human Resources (DCHR),1176267486.12,5,Indefinite Delivery Indefinite Quantity,other,['953'],not_technology,no,,high,False,
 CW76700,"Parts and Services to Rebuild Hydraulic Pumps, Cylinders and PTO units",PRECISION MACHINE HYDRAULIC &,Public Works (DPW),100000.0,1,Requirements,other,['929'],not_technology,no,,high,False,
 CW76702,FY20 - DHS - On-Site Document Shredding Services - Briar Patch Shredding & Recycling,"Briar Patch Shredding & Recycling, LLC",Human Services (DHS),36960.0,1,Firm Fixed Price,other,['962'],not_technology,no,,high,False,
-CW76721,Kaiser - Healthcare Insurance Benefits  for District of Columbia Government Employees,Kaiser Permanente,Human Resources (DCHR),600709876.44,5,Indefinite Delivery Indefinite Quantity,other,"['953', '958']",not_technology,no,,high,False,1.0
+CW76721,Kaiser - Healthcare Insurance Benefits  for District of Columbia Government Employees,Kaiser Permanente,Human Resources (DCHR),600709876.44,5,Indefinite Delivery Indefinite Quantity,other,['953'],not_technology,no,,high,False,
 CW76754,"DCSS- Advertising, Novelties, Souvenirs, Promotional and Specialty Products -  Benji Holdings",Benji Holdings,Contracting and Procurement (OCP),800000.0,2,Indefinite Delivery Indefinite Quantity,other,['037'],not_technology,no,,high,False,
 CW76789,Vocational Services - Outstanding Possibilities Revealed,Outstanding Possibilities Revealed,Department on Disability Services (DDS),100000.0,4,Requirements,other,['952'],not_technology,no,,high,False,
 CW76827,Office Supplies (Bluebay Office Inc.),bluebay office inc,Health (DOH),400000.0,4,Indefinite Delivery Indefinite Quantity,other,['615'],not_technology,no,,high,False,
@@ -2964,13 +2964,13 @@ CW77255,GRID System MPD Arrest Data Feed Enhancement,Mindcubed,Contracting and P
 CW77282,DCAS - Temporary Personnel - ZC Solutions,ZC Solutions,Health Care Finance (DHCF),2097608.3200000003,3,Labor Hour,other,['961'],staff_augmentation,yes,DCAS,high,True,
 CW77341,"OSSE-DOT_Alternative_Student_Transportation_Services (ALC Schools, LLC)","ALC Schools, LLC",Special Education Transportation (SET),3048750.0,3,Firm Fixed Price,other,['959'],not_technology,no,,high,False,
 CW77381,Avaya Software Maintenance,"Avaya, Inc.",Chief Technology Officer (OCTO),717253.68,1,Firm Fixed Price,software_services,['920'],software_om_support,no,,high,True,
-CW77434,Training for Certified Addiction Counseling Eligibility ,ANCHOR MENTAL HEALTH ASSN. INC,Behavioral Health (DBH),121275.0,1,Firm Fixed Price,it_adjacent,"['475', '918', '924']",not_technology,no,,high,False,1.0
+CW77434,Training for Certified Addiction Counseling Eligibility,ANCHOR MENTAL HEALTH ASSN. INC,Behavioral Health (DBH),121275.0,1,Firm Fixed Price,other,['475'],not_technology,no,,high,False,
 CW77447,McAfee Annual Maintenance and Support Renewal for Endpoint Security & IPS Platforms,vTech Solution Inc.,Chief Technology Officer (OCTO),746013.11,1,Firm Fixed Price,software_services,['920'],software_om_support,no,McAfee Endpoint Security & IPS,high,True,
 CW77455,FY20_GDO_DAR_MSAA for ELA & Math Administration_Arizona-Cognia,Cognia Inc.,State Superintendent of Education (OSSE),321066.78,4,Firm Fixed Price,other,['785'],not_technology,no,,low,False,
 CW77467,"Residential Expenses - Alight Support, Inc.","Alight Supports, Inc",Department on Disability Services (DDS),200000.0,4,Requirements,other,['952'],not_technology,no,,low,False,
 CW77480,HAHSTA - Capacity Building Logistics Program,REINGOLD INC,Health (DOH),1047432.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW77571,OSSE-DOT_GPS_Navigation_Routing_and_Scheduling,Seon Systems Sales Inc.,Special Education Transportation (SET),2763473.0,3,Firm Fixed Price,other,"['055', '920']",not_technology,no,,low,False,1.0
-CW77577,Silo Hardware Maintenance ,"MVS, Inc.",Chief Technology Officer (OCTO),128049.01,1,Firm Fixed Price,software_services,['920'],software_om_support,no,,medium,True,1.0
+CW77571,OSSE-DOT_GPS_Navigation_Routing_and_Scheduling,Seon Systems Sales Inc.,Special Education Transportation (SET),2763473.0,3,Firm Fixed Price,other,['055'],cots_implementation,no,"GPS Navigation, Routing and Scheduling",medium,True,
+CW77577,Silo Hardware Maintenance,"MVS, Inc.",Chief Technology Officer (OCTO),128049.01,1,Firm Fixed Price,software_services,['920'],software_om_support,no,,low,True,
 CW77601,FY20 - CF0 - OYP - MBSYEP Comprehensive Independent Evaluation,Georgetown Technologies LLC,Contracting and Procurement (OCP); Employment Services (DOES),115500.0,3,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
 CW77616,FY2020 - DBH CRF SR HCA - A&G Associates,"A&G Associates, Inc.",Behavioral Health (DBH),3184955.88,4,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
 CW77620,Human Care Agreement for Nursing Services - DigiDoc Inc,DIGI DOCS INC DOCUMENT MGERS,Special Education Transportation (SET),7711000.0,4,Labor Hour,other,['948'],not_technology,no,,high,False,
@@ -3006,7 +3006,7 @@ CW77923,Offender Management System,"AVID SYSTEMS, LLC",Corrections (DC),2864531.
 CW77960,"DCSS- IT Equipment & Software - TPW Consultants, LLC","TPW Consultants, LLC",Contracting and Procurement (OCP),1900000.0,2,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
 CW78024,DCKT FY20  -  BPA-1 Moving and Hauling Services,CAPITOL SVCS MGMT INC,Public Works (DPW),100000.0,1,Firm Fixed Price,other,['962'],not_technology,no,,high,False,
 CW78026,DCKT FY20 - BPA-2 - Moving and Hauling Services,PMGLLLC,Public Works (DPW),100000.0,1,Firm Fixed Price,other,['962'],not_technology,no,,high,False,
-CW78046,FY21-CFO-Records Storage and Retrieval Services for Labor Standards Bureau,Iron Mountain Information Management LLC.,Employment Services (DOES),249560.58,1,Firm Fixed Price,other,"['615', '962']",not_technology,no,,medium,False,1.0
+CW78046,FY21-CFO-Records Storage and Retrieval Services for Labor Standards Bureau,Iron Mountain Information Management LLC.,Employment Services (DOES),249560.58,1,Firm Fixed Price,other,['615'],not_technology,no,,medium,False,
 CW78166,DCSS--Training Services--MMI Consulting Group,"MMI Consulting Group, LLC.",Contracting and Procurement (OCP),1000000.0,2,Indefinite Delivery Indefinite Quantity,other,['924'],ordering_vehicle,no,,medium,True,
 CW78226,Project Management Services for DC e-WIC,"Electronic Services, Delivery & Support, Inc.",Health (DOH),240000.0,1,Labor Hour,it_goods,['209'],not_technology,no,,low,False,
 CW78340,SAS Viya Licenses,EXECUTIVE INFORMATION SYS LLC,Licensing & Consumer Protection (DLCP),104236.0,2,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,high,True,
@@ -3019,7 +3019,7 @@ CW78626,"Residential Expenses - 1Axium, LLC","1axium,LLC",Department on Disabili
 CW78664,Short Term Family Housing - Friendship Place Site 7,Friendship Place,Human Services (DHS),3400000.0,4,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW78686,FY20 - DACL - APS Psychological Assessments,WASHINGTON PSYCHOLOGICAL CNTR.,Office on Aging (OA),77750.0,1,Indefinite Delivery Indefinite Quantity,other,['952'],not_technology,no,,high,False,
 CW78770,Vocational Services - I AM,I AM,Department on Disability Services (DDS),5000.0,2,Labor Hour,other,['952'],not_technology,no,,high,False,
-CW78873,FY20 - OCTO - Software AG ,Software AG,Chief Technology Officer (OCTO),288368.48,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,low,True,1.0
+CW78873,FY20 - OCTO - Software AG,Software AG,Chief Technology Officer (OCTO),288368.48,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,low,True,
 CW78950,"Residential Expenses - Ward & Ward Mental Health Services, Inc.","Ward and Ward Mental Health Services, Inc.",Department on Disability Services (DDS),5638938.0,4,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,
 CW79116,DCKT FY2020 - #1 - Maintenance and Repair of HVAC Equipment,Protec Construction Inc.,Public Works (DPW),350000.0,1,Firm Fixed Price,other,['928'],not_technology,no,,high,False,
 CW79118,DCKT FY2020 - #2 - Maintenance and Repair of HVAC Equipment,AL'S TWIN AIR LLC,Public Works (DPW),350000.0,1,Firm Fixed Price,other,['928'],not_technology,no,,high,False,
@@ -3036,11 +3036,11 @@ CW79430,FY'20 - DBH - Kitchen Equipment Maintenance and Repair Services,"HOLDER 
 CW79500,Deaf Acess Solutions,"Deaf Access Solutions, Inc.",Department on Disability Services (DDS),200000.0,4,Requirements,other,['924'],not_technology,no,,low,False,
 CW79588,FY20-Octo-Oracle SOA Suite Software License (DCAS),Capital Consulting LLC dba Tharseo IT,Chief Technology Officer (OCTO),292846.51,2,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,DCAS,high,True,
 CW79647,Sign Language Interpreter,Andean Consulting Solutions International LLC,Department on Disability Services (DDS),200000.0,4,Requirements,other,['961'],not_technology,no,,high,False,
-CW79726,DCKA FY20 District One Call ,"ONE CALL CONCEPTS, INC.",Transportation (DDOT),92820.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],telecom_or_network,no,,low,True,1.0
+CW79726,DCKA FY20 District One Call,"ONE CALL CONCEPTS, INC.",Transportation (DDOT),92820.0,1,Indefinite Delivery Indefinite Quantity,other,['915'],not_technology,no,,low,False,
 CW79786,Xerox Machine Units and Supplies,XEROX CORPORATION,Parks and Recreation (DPR),263313.36,3,Firm Fixed Price,other,['985'],not_technology,no,,high,False,
 CW79878,DCSS - Administrative Support for DHCF,MIDTOWN PERSONNEL INC,Health Care Finance (DHCF),202568.88,2,Labor Hour,other,['961'],not_technology,no,,low,False,
 CW79885,"Assistive Technology Assessment, Training and Devices - TCS Associates",TCS Associates LLC,Department on Disability Services (DDS),100000.0,4,Requirements,other,['470'],not_technology,no,,medium,False,
-CW79929,FY20-Octo-Dell SAN Storage Reengineering Solution ,"Dell Marketing, L.P",Chief Technology Officer (OCTO),290000.0,1,Firm Fixed Price,it_goods,['208'],hardware_or_license_resale,no,,medium,True,1.0
+CW79929,FY20-Octo-Dell SAN Storage Reengineering Solution,"Dell Marketing, L.P",Chief Technology Officer (OCTO),290000.0,1,Firm Fixed Price,it_goods,['208'],hardware_or_license_resale,no,,medium,True,
 CW80026,ALM Annual Maintenance,"The Pittman Group, Inc DBA VANTIX",Chief Technology Officer (OCTO),242551.15,2,Firm Fixed Price,software_services,['920'],software_om_support,no,,medium,True,
 CW80064,FY-20 - OSSE -DEL HCA -Coastal Healthcare Services - ES,"Coastal Healthcare Services, I",State Superintendent of Education (OSSE),1980000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW80066,FY20 ? OSSE ? DEL ? HCA ? Kids in Motion - ES,Kids in Motion,State Superintendent of Education (OSSE),1980000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
@@ -3091,7 +3091,7 @@ CW81559,DBH Opioid Strategic Planning Consultant Services,"The Clearing, Inc",Be
 CW81564,Data Center Migration Project- F5 Application Delivery Platform,ADVANCED NETWORK CONSULTING,Chief Technology Officer (OCTO),340156.0,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,medium,True,
 CW81647,CF0-FY20 - APPRENTICESHIP WORK UNIFORMS,MORGANS INC,Employment Services (DOES),850000.0,4,Firm Fixed Price,other,['200'],not_technology,no,,high,False,
 CW81663,FY 20 -Records Management for the Dept. of Consumer and Regulatory Affairs(DCRA),DIGI DOCS INC DOCUMENT MGERS,Licensing & Consumer Protection (DLCP),36792.0,1,Firm Fixed Price,it_adjacent,['958'],not_technology,no,,low,False,
-CW81676,FY20 - DCRA - System Support Services (DCSS Only),LIMBIC SYSTEMS INC,Licensing & Consumer Protection (DLCP),1290360.0,2,Firm Fixed Price,it_adjacent,"['918', '920']",software_om_support,no,,medium,True,1.0
+CW81676,FY20 - DCRA - System Support Services (DCSS Only),LIMBIC SYSTEMS INC,Licensing & Consumer Protection (DLCP),1290360.0,2,Firm Fixed Price,it_adjacent,['918'],software_om_support,no,,medium,True,
 CW81768,DCSS-Security Equipment & Services-The Hamilton Group,The Hamilton Group,Contracting and Procurement (OCP),850000.0,1,Indefinite Delivery Indefinite Quantity,other,['990'],ordering_vehicle,no,,medium,True,
 CW81817,Third Party Liability Verification,"ZANE NETWORKS, LLC",Health Care Finance (DHCF),3402000.0,3,Requirements,it_adjacent,['918'],not_technology,no,,low,False,
 CW81833,DCHR Drug and Alcohol Testing,Fieldprint Inc.,Human Resources (DCHR),1546000.0,3,Requirements,other,['952'],not_technology,no,,medium,False,
@@ -3104,7 +3104,7 @@ CW82081,Wellness Health services,Wellness Healthcare Clinic LLC,Behavioral Healt
 CW82124,"Toyota Vehicle Maintenance, Repairs and Parts",Kline Imports Arlington Inc,Public Works (DPW),300000.0,3,Requirements,other,['060'],not_technology,no,,high,False,
 CW82146,CF0-FY20 - Legal Research,RELX Inc,Employment Services (DOES),2296478.0,4,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,medium,False,
 CW82151,CF0-FY20 - Healthcare Provider Licenses,"ProviderTrust, LLC",Employment Services (DOES),135480.0,2,Firm Fixed Price,other,['956'],not_technology,no,,high,False,
-CW82180,Breast and cervical cancer screening and patient navigation services ,FAMILY MEDICAL COUNSELING,Health (DOH),150000.0,1,Firm Fixed Price,other,['948'],not_technology,no,,high,False,1.0
+CW82180,Breast and cervical cancer screening and patient navigation services,FAMILY MEDICAL COUNSELING,Health (DOH),150000.0,1,Firm Fixed Price,other,['948'],not_technology,no,,high,False,
 CW82329,FY20 DCSS Tech Analysis,"Tech Analysis, Inc.",,3800000.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],it_consulting_advisory,no,,low,True,
 CW82347,FY20 Park Drive Gully Restoration,"BIOHABITATS, INC.",Energy and Environment (DOEE),92732.65,2,Firm Fixed Price,other,['910'],not_technology,no,,low,False,
 CW82364,MLS201918-Moving and Logistics Services-Griffd Enterprise LLC,GriffD Enterprises LLC,,1000000.0,2,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,
@@ -3127,23 +3127,23 @@ CW82675,Residential Expenses - Humanity in Transition,Humanity In Transition,Dep
 CW82733,1115 Waiver Evaluation,"IMPAQ International, LLC",Health Care Finance (DHCF),927545.77,4,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW82738,FY20-OCTO-Oracle Storage Tek SL4000 IPS Backup,Alliance Technology Group LLC,Chief Technology Officer (OCTO),110588.0,2,Firm Fixed Price,telecom,['838'],hardware_or_license_resale,no,,medium,True,
 CW82765,FY2020-CFO-DOES-OIT UI-QAS LICENSES,"SUPRETECH, INC.",Employment Services (DOES),167709.16999999998,4,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,medium,True,
-CW82774,DC Prescription Drug Monitoring Program (PDMP). ,"KEBROS & ASSOCIATES, LLC",Health (DOH),135000.0,1,Labor Hour,it_adjacent,['918'],not_technology,no,,low,False,1.0
+CW82774,DC Prescription Drug Monitoring Program (PDMP).,"KEBROS & ASSOCIATES, LLC",Health (DOH),135000.0,1,Labor Hour,it_adjacent,['918'],not_technology,no,,low,False,
 CW82990,FY20 MBSYEP Work Readiness - Professional Development,Bay Atlantic University (BAU LLC),Employment Services (DOES),200000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
 CW82994,DOH Fleet of Leased Copiers,"Canon Solutions America, Inc.",Health (DOH),162103.88,4,Firm Fixed Price,other,['600'],not_technology,no,,high,False,
-CW83073,6-wheel Snow Dump Trucks for DDOT and DPW,"Johnson Truck Center, LLC",Transportation (DDOT); Public Works (DPW),13596120.0,1,Firm Fixed Price,other,['065'],not_technology,no,,high,False,1.0
+CW83073,6-wheel Snow Dump Trucks for DDOT and DPW,"Johnson Truck Center, LLC",Public Works (DPW); Transportation (DDOT),13596120.0,1,Firm Fixed Price,other,['065'],not_technology,no,,high,False,
 CW83144,"Managed Care Organization (MCO) - AmeriHealth Caritas District of Columbia, Inc.",AmeriHealth Caritas District of Columbia,Health Care Finance (DHCF),2021028138.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['958'],not_technology,no,,high,False,
 CW83146,"Managed Care Organization (MCO) - Trusted Health Plan (District of Columbia, Inc., DBA CareFirst BlueCross BlueShield Community Health Plan","Trusted Health Plan (District of Columbia), Inc. DBA CareFirst BlueCross BlueShield Community Health Plan",Health Care Finance (DHCF),2021028138.0,2,Indefinite Delivery Indefinite Quantity,it_adjacent,['958'],not_technology,no,,high,False,
 CW83148,Managed Care Organization (MCO) - MedStar Family Choice,MedStar Family Choice,Health Care Finance (DHCF),1010514069.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['958'],not_technology,no,,high,False,
 CW83171,Kingman Island Design Build,"MCN Build, Inc.",Energy and Environment (DOEE),5428852.31,1,Firm Fixed Price,other,['906'],not_technology,no,,low,False,
 CW83178,DCSS-Mission Oriented Business Integrated Services (MOBIS) Tecknomic LLC,TECKNOMIC LLC,,40000000.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW83215,FY20 MBSYEP Work Readiness - Placement,"Center for Innovation, Research, and Transformation in Education",Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW83219,FY20 MBSYEP Work Readiness-Placement,The Fresh Food Factory Market,Employment Services (DOES),100000.0,1,Firm Fixed Price,it_adjacent,"['918', '952']",not_technology,no,,high,False,1.0
+CW83219,FY20 MBSYEP Work Readiness-Placement,The Fresh Food Factory Market,Employment Services (DOES),100000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
 CW83347,FY20 MBSYEP Work Readiness - Growth Industry Sector,"Center for Innovation, Research, and Transformation in Education",Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW83349,FY20 MBSYEP Work Readiness- Growth Industry Sector,DOLLS AND DREAMS INC,Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW83351,FY20 MBSYEP Work Readiness -Growth Industry Sector,"Empowerment Enterprise Group, LLC",Employment Services (DOES),400000.0,4,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW83353,FY20-MBSYEP Work Readiness - Growth Industry Sector,Life Success Center for Childr,Employment Services (DOES),400000.0,4,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW83355,FY20-MBSYEP Work Readiness- Growth Industry Sector,On-Ramps to Careers_1,Employment Services (DOES),200000.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW83364,DOT Employee Uniforms & Uniform Accessories Purchase and Lease (CINTAS Cooperative Agreement #R-BB-19002),CINTAS CORPORATION #2,Special Education Transportation (SET),975000.0,5,Indefinite Delivery Indefinite Quantity,other,"['200', '983']",not_technology,no,,high,False,1.0
+CW83364,DOT Employee Uniforms & Uniform Accessories Purchase and Lease (CINTAS Cooperative Agreement #R-BB-19002),CINTAS CORPORATION #2,Special Education Transportation (SET),975000.0,5,Indefinite Delivery Indefinite Quantity,other,['200'],not_technology,no,,high,False,
 CW83411,DCSS-Advertising & Novelties-Formost Advanced Creations,Formost Advanced Creations,Contracting and Procurement (OCP),1600000.0,4,Indefinite Delivery Indefinite Quantity,other,['915'],not_technology,no,,high,False,
 CW83457,"AUDIT202042-Anglin Consulting Group, Inc",Anglin Consulting Group,,1000000.0,2,Indefinite Delivery Indefinite Quantity,other,['946'],it_consulting_advisory,no,,low,True,
 CW83476,Diona Mobility Solutions - Mobile APP,"Diona US, Inc.",Health Care Finance (DHCF),410117.0,1,Firm Fixed Price,other,['956'],not_technology,no,,low,False,
@@ -3152,7 +3152,7 @@ CW83488,Electric Vehicle Charging Station,"PowerFlex Systems, Inc.",Public Works
 CW83502,"FY20 DCSS Formost Advanced Creations, LLC",Formost Advanced Creations,,2250000.0,3,Indefinite Delivery Indefinite Quantity,other,['966'],ordering_vehicle,no,,medium,True,
 CW83541,"Vocational Services- Work Opportunities Unlimited Contracts, Inc.",Work Opportunities Unlimited,Department on Disability Services (DDS),480500.0,2,Requirements,other,['952'],not_technology,no,,high,False,
 CW83605,"DCSS - Temporary Support Services - MB Staffing Services, LLC",MB STAFFING SERVICES LLC,Contracting and Procurement (OCP),40000000.0,4,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
-CW83633,Staff Augmentation - Medical Staff - OFPL,DIGI DOCS INC DOCUMENT MGERS,Employment Services (DOES),1441312.0,4,Firm Fixed Price,it_adjacent,"['918', '948', '961']",staff_augmentation,yes,,high,True,1.0
+CW83633,Staff Augmentation - Medical Staff - OFPL,DIGI DOCS INC DOCUMENT MGERS,Employment Services (DOES),1441312.0,4,Firm Fixed Price,it_adjacent,['918'],staff_augmentation,yes,,high,True,
 CW83657,DCSS-TSS202033-Temporary Support Services-RizeUp Technology Training,"RizeUp Technology Training, LLC",,1900000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW83668,Contract Workspace (Procurement)-ROSS PROFESSIONAL SERVICES,Ross Professional Services,Contracting and Procurement (OCP),3800000.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],staff_augmentation,yes,,low,True,
 CW83797,CF0-FY20 - VOS MAINTENANCE & SUPPORT,GEOGRAPHIC SOLUTIONS INC,Employment Services (DOES),3993084.0,4,Firm Fixed Price,software_services,['920'],software_om_support,no,VOS,medium,True,
@@ -3168,7 +3168,7 @@ CW84067,"DCJM-2020-H-0004-02 Community Connection, Inc",COMMUNITY CONNECTIONS,De
 CW84133,"Residential Expenses - Total Quality Residential Services, Inc.",Total Quality Residential Serv,Department on Disability Services (DDS),150000.0,3,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,
 CW84153,"Temporary Support Services-Techflairs, Inc.",Techflairs inc,,3800000.0,4,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW84159,"DCSS - Temporary Support Services - EX Consultants, LLC","EX Consultants, LLC",Contracting and Procurement (OCP),20000000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
-CW84168,DCKA Sign Fabrication & Installation,GELBERG SIGNS,Transportation (DDOT),1495594.5,1,Indefinite Delivery Indefinite Quantity,other,"['801', '929', '968']",not_technology,no,,high,False,1.0
+CW84168,DCKA Sign Fabrication & Installation,GELBERG SIGNS,Transportation (DDOT),1495594.5,1,Indefinite Delivery Indefinite Quantity,other,['801'],not_technology,no,,high,False,
 CW84181,"HVAC ELECTRICAL SYSTEM MAINTENANCE AND REPAIR (Calvert Controls, Inc.)","Calvert Controls, Inc.",Health (DOH),634766.0,2,Firm Fixed Price,other,['967'],not_technology,no,,high,False,
 CW84190,"Laboratory Service (BlackFly Investments, LLC dba Molecular Testing Labs",Blackfly Investments LLC dba Molecular Testing Labs,Health (DOH),950000.0,1,Firm Fixed Price,other,['948'],not_technology,no,,high,False,
 CW84195,Payment Methodology Consultant,MIDTOWN PERSONNEL INC,Contracting and Procurement (OCP); Health Care Finance (DHCF),2186718.0,5,Firm Fixed Price,other,['961'],it_consulting_advisory,no,,medium,True,
@@ -3179,8 +3179,8 @@ CW84316,"Specialized Residential Services - Crystal Springs, Inc.",CRYSTAL SPRIN
 CW84327,DCSS - Temporary Support Services - Advance Employee Intelligence,Advance Employee Intelligence,Contracting and Procurement (OCP),20000000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW84333,Psychiatry Training Educator and Training Supervisor-Board Certified Psychiatrist-Senior Psychodynamic,Theodore Fallon MD LLC,Behavioral Health (DBH),396800.0,4,Labor Hour,other,['715'],not_technology,no,,high,False,
 CW84362,Vocational Services - St. John's Community Services,ST. JOHN'S COMMUNITY SERVICES,Department on Disability Services (DDS),169200.0,2,Requirements,other,['952'],not_technology,no,,high,False,
-CW84401,FY-20 DCSS-IT STOCKBRIDGE CONSULTING LLC,Stockbridge Consulting LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,software_services,"['055', '920']",ordering_vehicle,no,,medium,True,1.0
-CW84443,FY20 Designs for Ft Dupont,"BIOHABITATS, INC.",Energy and Environment (DOEE),437394.65,3,Firm Fixed Price,other,"['906', '926']",not_technology,no,,low,False,1.0
+CW84401,FY-20 DCSS-IT STOCKBRIDGE CONSULTING LLC,Stockbridge Consulting LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,other,['055'],ordering_vehicle,no,,medium,True,
+CW84443,FY20 Designs for Ft Dupont,"BIOHABITATS, INC.",Energy and Environment (DOEE),437394.65,3,Firm Fixed Price,other,['906'],not_technology,no,,low,False,
 CW84471,Salesforce Licensing (Carahsoft Technology Corporation),Carahsoft Technology Corporation,Health (DOH),3204000.0,2,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,high,True,
 CW84491,Contract Workspace (Procurement) - 1013 ENTERPRISE,1013 Enterprise,Contracting and Procurement (OCP),950000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW84502,Jail Diversion and Recovery Housing Services,"N STREET VILLAGE, INC.",Behavioral Health (DBH),642874.5,3,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
@@ -3201,7 +3201,7 @@ CW84986,Document Shredding Services,Proshred Security,Behavioral Health (DBH),34
 CW84998,Integrated Care Technical Assistance,Health Management Associates,Health Care Finance (DHCF),5887820.0,4,Labor Hour,it_adjacent,['918'],not_technology,no,,medium,False,
 CW85032,FY21_GDO_PostSec_SAT and Advance Placement Testing services,THE COLLEGE BOARD,State Superintendent of Education (OSSE),499929.5,1,Firm Fixed Price,other,['924'],not_technology,no,,high,False,
 CW85065,DOC522492 Ombudsman Insurance Consultant,Mercer Health & Benefits LLC,Health Care Finance (DHCF),1908692.0,4,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
-CW85084,FY18-CFO-DOES PROGRAM EVALUATIONS (THE COLES GROUP),The Coles Group LLC,Employment Services (DOES); Deputy Mayor for Greater Economic Opportunity (DMGEO); Contracting and Procurement (OCP),250000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,medium,False,1.0
+CW85084,FY18-CFO-DOES PROGRAM EVALUATIONS (THE COLES GROUP),The Coles Group LLC,Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO),250000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,low,False,
 CW85152,"DCSS -Security Equipment, Security Services, and Emergency Preparedness- Preeminent Protective Services, Inc.",PREEMINENT PROTECTIVE SERVICES,Youth Rehabilitation Services (DYRS),850000.0,1,Firm Fixed Price,other,['990'],not_technology,no,,high,False,
 CW85188,"DCSS- Marketing, Media and Public Information- MMPI20201 - Scott Circle Communications",Scott Circle,,900000.0,1,Firm Fixed Price,other,['961'],not_technology,no,,low,False,
 CW85219,Splunk Enterprise Licensing (Carahsoft Technology Corporation),Carahsoft Technology Corporation,Health (DOH),32145.16,1,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,high,True,
@@ -3219,13 +3219,13 @@ CW85781,TSS202018-Temporary Support Services-CSI Corporation of DC,CSI Corporati
 CW85784,HAHSTA - PEP Consultation Hotline,"MedStar Health Research Institute, Inc.",Health (DOH),400000.0,4,Firm Fixed Price,other,['948'],not_technology,no,,low,False,
 CW85833,"Ford Vehicle Maintenance, Repairs and Automotive Parts",Ted Britt Ford,Public Works (DPW),150000.0,3,Time And Materials,other,['060'],not_technology,no,,high,False,
 CW85835,Caterpillar Wheel Loader,Carter Machinery Co. Inc.,Public Works (DPW),5706914.0,1,Indefinite Delivery Indefinite Quantity,other,['760'],not_technology,no,,high,False,
-CW85843,Provider Data Management System & Services,"Maximus US Services, Inc",Health Care Finance (DHCF),6058977.64,2,Firm Fixed Price,it_adjacent,"['918', '953']",not_technology,no,,low,False,1.0
-CW85861,FY 21  Election management software and support maintenance ,Election Mgmt Consulting Svc,Board of Elections (DCBOE),448802.0,1,Firm Fixed Price,other,['600'],software_om_support,no,,medium,True,1.0
+CW85843,Provider Data Management System & Services,"Maximus US Services, Inc",Health Care Finance (DHCF),6058977.64,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
+CW85861,FY 21  Election management software and support maintenance,Election Mgmt Consulting Svc,Board of Elections (DCBOE),448802.0,1,Firm Fixed Price,other,['600'],software_om_support,no,,medium,True,
 CW85887,CF0-FY20 -LCP TRACKER,Stockbridge Consulting LLC,Employment Services (DOES),291400.0,4,Firm Fixed Price,it_adjacent,['918'],custom_software_build,no,LCP TRACKER,low,True,
-CW85909,FY21-CFO-DOES-OIT-Xerox Copier Leasing ,XEROX CORPORATION,Employment Services (DOES),390143.42,1,Firm Fixed Price,other,['985'],not_technology,no,,high,False,1.0
+CW85909,FY21-CFO-DOES-OIT-Xerox Copier Leasing,XEROX CORPORATION,Employment Services (DOES),390143.42,1,Firm Fixed Price,other,['985'],not_technology,no,,high,False,
 CW85924,FY21 - DHS Copier Enterprise System,XEROX CORPORATION,Human Services (DHS),114924.3,1,Firm Fixed Price,other,['985'],hardware_or_license_resale,no,,medium,True,
 CW85944,DC Health - Master Data Management (MDM) Subscription,"Systems Integration, LLC",Health (DOH),418955.0,1,Firm Fixed Price,other,['924'],cots_implementation,no,,medium,True,
-CW85955,DCAS IBM Curam Software and Support,International Business Machine,Health Care Finance (DHCF),11662800.0,2,Firm Fixed Price,it_goods,"['208', '838', '956']",software_om_support,no,DCAS (IBM Curam),high,True,1.0
+CW85955,DCAS IBM Curam Software and Support,International Business Machine,Health Care Finance (DHCF),11662800.0,2,Firm Fixed Price,it_goods,['208'],software_om_support,no,DCAS,high,True,
 CW86130,DCRA Nuisance Abatement Services- PMGL LLC,PMGLLLC,Department Of Buildings (DOB); Licensing & Consumer Protection (DLCP),1200000.0,2,Indefinite Delivery Indefinite Quantity,other,['909'],not_technology,no,,high,False,
 CW86141,Staffing Resources for R1 R2 system fixes,Trillian Technologies,Health Care Finance (DHCF),9600.0,1,Firm Fixed Price,it_adjacent,['918'],staff_augmentation,yes,R1 R2,medium,True,
 CW86212,FY20 - OCTO - DC Eligible Households ISP - Comcast,COMCAST CABLE COMMUNICATIONS,Chief Technology Officer (OCTO),950000.0,1,Firm Fixed Price,telecom,['838'],telecom_or_network,no,,medium,True,
@@ -3245,7 +3245,7 @@ CW86386,Forensic Psychiatric and Psychological Assessment Services Dr. Michael G
 CW86388,Forensic Psychiatric and Psychological Assessment Services Dr. Susan Thuet,"Susan K. Theut, M.D.",Behavioral Health (DBH),655000.0,4,Requirements,other,['948'],not_technology,no,,high,False,
 CW86390,HAHSTA Health Policy Support,GEORGE WASHINGTON UNIVERSITY,Health (DOH),982724.0,5,Firm Fixed Price,other,['915'],not_technology,no,,low,False,
 CW86482,DCHR Executive Recruitment Services,"POLIHIRE STRATEGY, LLC",Human Resources (DCHR),1200000.0,4,Requirements,it_adjacent,['918'],not_technology,no,,high,False,
-CW86532,"DCSS - MOBIS -  Development Innovation System C (DISC), L.L.C ","Development Innovation System C, LLC",,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,1.0
+CW86532,"DCSS - MOBIS -  Development Innovation System C (DISC), L.L.C","Development Innovation System C, LLC",,950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW86546,Residential Expenses-Arc of Tampa Bay,"The Arc Tampa Bay, Inc.",Department on Disability Services (DDS),854716.25,5,Cost Plus Fixed Fee,other,['952'],not_technology,no,,high,False,
 CW86561,to provide One-Stop Operator (OSO) services for the District Columbia workforce,America Works of Washington D.C.,Mayor (EOM),1467344.02,4,Firm Fixed Price,software_services,['920'],not_technology,no,,high,False,
 CW86571,FY21-Federal Budget Application,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),547650.0,3,Firm Fixed Price,it_goods,['209'],cots_implementation,no,,medium,True,
@@ -3265,7 +3265,7 @@ CW86884,IBM Curam Software License for DCAS,"MVS, Inc.",Health Care Finance (DHC
 CW86905,Non-Emergency Transportation (Yellow Cab Co of DC Inc),"YELLOW CAB CO. OF DC, INC.",Health (DOH),30000.0,1,Requirements,other,['070'],not_technology,no,,high,False,
 CW86906,PLAN REVIEW SERVICES-Core Engineers Consulting Group -New,CORE Engineers Consulting Group,Licensing & Consumer Protection (DLCP),950000.0,1,Labor Hour,other,['962'],not_technology,no,,low,False,
 CW86922,FY2021-CFO-DOES-OCCUPATIONAL SKILLED TRAINING ITA-WIOA,Constituent Services Worldwide Public Benefit Corporation,Employment Services (DOES),1200000.0,4,Firm Fixed Price,other,['924'],not_technology,no,,low,False,
-CW86957,Acquia Drupal Platform Licenses,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),318174.54,1,Firm Fixed Price,software_services,"['206', '920']",hardware_or_license_resale,no,,high,True,1.0
+CW86957,Acquia Drupal Platform Licenses,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),318174.54,1,Firm Fixed Price,it_goods,['206'],hardware_or_license_resale,no,,high,True,
 CW87071,FY21 - Interpreter Services,MULTICULTURAL COMMUNITY SERVIC,Employment Services (DOES),20000.0,1,Firm Fixed Price,other,['961'],not_technology,no,,high,False,
 CW87083,FY21 FEMS Risk Management Wellness Training O2x,O2X,Fire and Emergency Services Department (FEMS),500000.0,1,Firm Fixed Price,other,['924'],not_technology,no,,high,False,
 CW87107,FY2021-CFO-DOES-OCCUPATIONAL SKILLED TRAINING ITA-WIOA,TONI THOMAS ASSOCIATES INC,Employment Services (DOES),1000000.0,4,Firm Fixed Price,other,['924'],not_technology,no,,low,False,
@@ -3277,12 +3277,12 @@ CW87285,D.C. Employees Life and Disability Benefits,STANDARD INSURANCE COMPANY,H
 CW87310,"Electrical Maintenance and Repair Services (DC General Construction, Inc)",DC General Construction Inc,Health (DOH),140000.0,2,Firm Fixed Price,other,['910'],not_technology,no,,high,False,
 CW87331,DCAS Application Development Team,CDE Systems,Health Care Finance (DHCF),31649600.0,5,Labor Hour,it_adjacent,['918'],staff_augmentation,yes,DCAS,high,True,
 CW87352,DCKT FY21 - Industrial Supplies for Leaf Season,"Omega Supply Services, Inc",Public Works (DPW),300000.0,2,Firm Fixed Price,other,['936'],not_technology,no,,high,False,
-CW87376,FY20-DCCD-CW70389 TCAM for loan services,Tax Credit Asset Management,Housing and Community Development (DHCD),864370.0,1,Requirements,it_adjacent,"['918', '946']",not_technology,no,,low,False,1.0
+CW87376,FY20-DCCD-CW70389 TCAM for loan services,Tax Credit Asset Management,Housing and Community Development (DHCD),864370.0,1,Requirements,it_adjacent,['918'],not_technology,no,,low,False,
 CW87467,PFL_UI Call Center,Codice LLC,Employment Services (DOES),994924.08,1,Labor Hour,other,['915'],not_technology,no,,low,False,
 CW87471,DCAS Temporary Resources,"AVID SYSTEMS, LLC",Health Care Finance (DHCF),1811600.0,1,Labor Hour,other,['962'],staff_augmentation,yes,DCAS,high,True,
 CW87484,"Residential Expenses A W Holdings, LLC dba Benchmark Human Services","A.W. Holdings, LLC dba Benchmark Human Services",Department on Disability Services (DDS),214000.0,2,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW87501,TYMCO Model 435 Regenerative Air Sweepers,Tymco Inc,Public Works (DPW),978750.0,1,Firm Fixed Price,other,['765'],not_technology,no,,high,False,
-CW87523,FY21 DCSS- INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE ,NSight365 LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,1.0
+CW87523,FY21 DCSS- INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,NSight365 LLC,Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
 CW87531,FY2021 - BN0 - Esri ArcGIS Platform,ESRI-MID ATLANTIC USER GROUP,Homeland Security and Emergency Management Agency (HSEMA),279620.0,1,Requirements,it_adjacent,['918'],hardware_or_license_resale,no,ArcGIS Platform,medium,True,
 CW87561,Program Analyst-Health Reform (1 Position),"Changing Technologies, Inc.",Health Care Finance (DHCF),123552.0,1,Firm Fixed Price,other,['962'],not_technology,no,,low,False,
 CW87646,DCSS-Office Supplies-NBA Office Products Inc.,NBA Office Products Inc,Contracting and Procurement (OCP),4750000.0,5,Indefinite Delivery Indefinite Quantity,other,['615'],not_technology,no,,high,False,
@@ -3294,16 +3294,16 @@ CW87727,FY21 - DISB - Public Financial Navigators Program -  United Planning Org
 CW87736,"Contract Workspace (Procurement)- PC NET, INC.","PC NET, INC.",Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,low,True,
 CW87765,FY21 - FA0 - MPD - Dell Laptops (DCSS ONLY),ABC TECHNICAL SOLUTIONS INC,Metropolitan Police Department (MPD),158193.44,1,Firm Fixed Price,it_goods,['204'],hardware_or_license_resale,no,,high,True,
 CW87771,"Evidence Based Supported Employment - Psychiatric Center Chartered, Inc.",PSYCHIATRIC CENTER CHARTED,Department on Disability Services (DDS),199345.33,1,Requirements,other,['952'],not_technology,no,,high,False,
-CW87780,"DCSS - Moving & Logistic Services - 962 - Capital Services & Supplies, Inc. ",Capital Services and Supplies,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,1.0
+CW87780,"DCSS - Moving & Logistic Services - 962 - Capital Services & Supplies, Inc.",Capital Services and Supplies,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,high,False,
 CW87801,DCHR E-Learning System,SKILLSOFT CORPORATION,Human Resources (DCHR),1112599.6,5,Indefinite Delivery Indefinite Quantity,other,['924'],cots_implementation,no,DCHR E-Learning System,medium,True,
 CW87861,"DCSS-FFM20211-MDM Office Systems, Inc.",MDM Office Systems DBA Standard Office Supply,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['425'],ordering_vehicle,no,,high,True,
-CW87865,Annual Subscription for End Point Protection  ,"The Pittman Group, Inc DBA VANTIX",Chief Technology Officer (OCTO),134731.0,1,Firm Fixed Price,it_goods,['208'],hardware_or_license_resale,no,,high,True,1.0
+CW87865,Annual Subscription for End Point Protection,"The Pittman Group, Inc DBA VANTIX",Chief Technology Officer (OCTO),134731.0,1,Firm Fixed Price,it_goods,['208'],hardware_or_license_resale,no,,high,True,
 CW87867,FY21- DIGITAL ADVERTISING-GOOGLE PFL,LINK Strategic Partners,Employment Services (DOES),115000.0,1,Firm Fixed Price,other,['915'],not_technology,no,,low,False,
 CW87870,DCSS Emerald Cut dba Elleven 22 PR,Emerald Cut Public Relations LLC,,2700000.0,3,Firm Fixed Price,other,['961'],not_technology,no,,low,False,
-CW87952,FY2021-CFO-DOES-CAREER PRO (CSW),Constituent Services Worldwide Public Benefit Corporation,Employment Services (DOES),903540.3999999999,5,Firm Fixed Price,other,"['715', '924']",not_technology,no,,low,False,1.0
+CW87952,FY2021-CFO-DOES-CAREER PRO (CSW),Constituent Services Worldwide Public Benefit Corporation,Employment Services (DOES),903540.3999999999,5,Firm Fixed Price,other,['715'],not_technology,no,,low,False,
 CW87957,FY21 - CF0 - Salesforce Licenses - GSA SCHEDULE 70,Bayne LLC,Employment Services (DOES),77160.0,1,Firm Fixed Price,it_goods,['208'],hardware_or_license_resale,no,Salesforce,high,True,
 CW87968,FY21-CFO-Customer Survey Service,"Innovation Horizons, Inc.",Employment Services (DOES),46237.78,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW87983,Case Management System -  OSSE,Creative Information Technology Inc.,State Superintendent of Education (OSSE),3484562.87,2,Firm Fixed Price,software_services,"['920', '956']",custom_software_build,no,Case Management System (OSSE),medium,True,1.0
+CW87983,Case Management System -  OSSE,Creative Information Technology Inc.,State Superintendent of Education (OSSE),3484562.87,2,Firm Fixed Price,software_services,['920'],custom_software_build,no,Case Management System,medium,True,
 CW87987,CF0_FY20_Personnel Recruitment,"POLIHIRE STRATEGY, LLC",Employment Services (DOES),100000.0,1,Requirements,it_adjacent,['918'],not_technology,no,,low,False,
 CW88003,DCKT FY21 - Portable Generators,WASHINGTON AIR COMPRESSOR,Public Works (DPW),115672.0,1,Firm Fixed Price,other,['055'],not_technology,no,,high,False,
 CW88011,DBH Transition Aged Youth (TAY) Provider Services,"MBI HEALTH SERVICES, LLC",Behavioral Health (DBH),1468214.54,4,Requirements,other,['952'],not_technology,no,,high,False,
@@ -3314,14 +3314,14 @@ CW88106,IDIQ - Roll-off Trucks,"K Neal International Trucks, Inc. DBA K Neal Tru
 CW88112,Fy21 DCSS SOS Human Capital Solutions,SOS Human Capital Solutions,,3600000.0,4,Indefinite Delivery Indefinite Quantity,other,['925'],ordering_vehicle,no,,medium,True,
 CW88133,FY21-DHCD-CW88133 Area Probe _Scope Writing Services,"Area Probe, LLC",Housing and Community Development (DHCD),203550.0,1,Firm Fixed Price,other,['961'],it_consulting_advisory,yes,,low,True,
 CW88137,Genetec Clearance SAAS,"The Pittman Group, Inc DBA VANTIX",Metropolitan Police Department (MPD),539600.0,4,Firm Fixed Price,other,['956'],cots_implementation,no,,medium,True,
-CW88141,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,ADVANCED NETWORK CONSULTING,Contracting and Procurement (OCP); Chief Technology Officer (OCTO),123373.8,1,Firm Fixed Price,it_goods,['208'],software_om_support,no,,high,True,1.0
+CW88141,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,ADVANCED NETWORK CONSULTING,Chief Technology Officer (OCTO); Contracting and Procurement (OCP),123373.8,1,Firm Fixed Price,it_goods,['208'],software_om_support,no,,high,True,
 CW88159,Construction of 16th Street NW Bus Lanes from H Street NW to Arkansas Avenue NW,METRO PAVING COMPANY,Transportation (DDOT),7757409.4,1,Firm Fixed Price,other,['913'],not_technology,no,,high,False,
-CW88166,FY21-DHCD-HEP Constructions -General Contractor IDIQ,HEP Construction,Housing and Community Development (DHCD),75000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,"['918', '929', '958']",not_technology,no,,high,False,1.0
-CW88168,FY21-DHCD-General Services -General Contractor IDIQ2,"General Services, Inc.",Housing and Community Development (DHCD),75000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,"['918', '929', '958']",not_technology,no,,low,False,1.0
+CW88166,FY21-DHCD-HEP Constructions -General Contractor IDIQ,HEP Construction,Housing and Community Development (DHCD),75000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,high,False,
+CW88168,FY21-DHCD-General Services -General Contractor IDIQ2,"General Services, Inc.",Housing and Community Development (DHCD),75000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,low,False,
 CW88172,FY21-DHCD-PMGL LLC -Facility Management Services,PMGLLLC,Housing and Community Development (DHCD),671671.44,1,Labor Hour,it_adjacent,['958'],not_technology,no,,high,False,
 CW88174,FY21-DHCD-AMAR Group -Architectual Design Dev-HOLD UPt,AMAR GROUP LLC,Housing and Community Development (DHCD),46718.4,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW88182,"DCSS - Marketing, Media and Public Information - SOS Human Capitol Solutions",SOS Human Capital Solutions,,900000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],ordering_vehicle,no,,medium,True,
-CW88195,DHS_Compliance Specialist    ,MINDFINDERS INC,Human Services (DHS),99673.6,1,Firm Fixed Price,other,['962'],not_technology,yes,,low,False,1.0
+CW88195,DHS_Compliance Specialist,MINDFINDERS INC,Human Services (DHS),99673.6,1,Firm Fixed Price,other,['962'],not_technology,no,,low,False,
 CW88221,Seeker and InSight Software,SkillSmart Inc.,Employment Services (DOES); Parks and Recreation (DPR),246000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW88223,CF0-FY21 MTX Chatbot,Carahsoft Technology Corporation,Employment Services (DOES),897722.13,1,Firm Fixed Price,other,['956'],cots_implementation,no,,medium,True,
 CW88304,MLS2020-Hefty Haulers,Hefty Haulers LLC,,500000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],not_technology,no,,low,False,
@@ -3346,13 +3346,13 @@ CW88532,"DCSS - Temporary Support Services - E7 Strategies, Inc.",E7STRATEGIES I
 CW88546,Isilon Data Storage,ADVANCED NETWORK CONSULTING,Metropolitan Police Department (MPD),564303.76,2,Firm Fixed Price,it_goods,['209'],hardware_or_license_resale,no,,medium,True,
 CW88548,Accela Civic Platform,"ACCELA, INC.",Alcohol Beverage Regulation Administration (ABRA),702597.88,5,Firm Fixed Price,software_services,['920'],cots_implementation,no,Accela Civic Platform,medium,True,
 CW88554,MHRS,"All Walks of Life, LLC",Behavioral Health (DBH),300000.0,3,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
-CW88600,FY2021 - DBH Nurses Temporary Staffing with Digi Docs,DIGI DOCS INC DOCUMENT MGERS,Behavioral Health (DBH),400000.0,1,Labor Hour,it_adjacent,"['948', '958']",not_technology,yes,,high,False,1.0
+CW88600,FY2021 - DBH Nurses Temporary Staffing with Digi Docs,DIGI DOCS INC DOCUMENT MGERS,Behavioral Health (DBH),400000.0,1,Labor Hour,other,['948'],not_technology,no,,high,False,
 CW88638,"DCSS -Industrial Supplies & Apparel - ADSWAILES, LLC dba A&A Premium Paint Distributors, LLC","ADSWAILES, LLC",Contracting and Procurement (OCP),1800000.0,2,Indefinite Delivery Indefinite Quantity,other,['485'],not_technology,no,,high,False,
 CW88647,"DCKT FY21 - Furnish industrial oxygen, compressed gases, propane amd cylinder rentals","Prospectus Enterprises, Inc.",Public Works (DPW),100000.0,1,Firm Fixed Price,other,['928'],not_technology,no,,high,False,
 CW88650,FY2021-CFO-DOES-WORKFORCE INTERMEDIARY IT,Constituent Services Worldwide Public Benefit Corporation,Employment Services (DOES),1000000.0,4,Firm Fixed Price,other,['924'],not_technology,no,,low,False,
 CW88662,DCHR Pre-Employment Evaluations,"Medical Advisory Services, LLC",Human Resources (DCHR),215000.0,3,Firm Fixed Price,other,['961'],not_technology,no,,high,False,
 CW88670,"Maintenance, Repair and Parts for Tow Trucks","WEST END SERVICES, INC.",Public Works (DPW),213185.5,2,Time And Materials,other,['928'],not_technology,no,,high,False,
-CW88674,Enterprise Near-Me Marketplace Software Subscription ,"MVS, Inc.",Licensing & Consumer Protection (DLCP),767841.3,3,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,1.0
+CW88674,Enterprise Near-Me Marketplace Software Subscription,"MVS, Inc.",Licensing & Consumer Protection (DLCP),767841.3,3,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,medium,True,
 CW88678,"School Bus Fleet Towing Services - IDIQ Contract (Metro Motor Towing, Inc.)","Metro Motor Towing, inc",Special Education Transportation (SET),850500.0,5,Indefinite Delivery Indefinite Quantity,other,['968'],not_technology,no,,high,False,
 CW88699,Solid Waste Management Analyses Studies,"Resource Recycling Systems, Incorporated",Public Works (DPW),45000.0,1,Firm Fixed Price,other,['906'],not_technology,no,,low,False,
 CW88741,"Clinical Quality Improvement (Health Management Associates, Inc.)",Health Management Associates,Health (DOH),432258.0,1,Labor Hour,other,['924'],not_technology,no,,low,False,
@@ -3371,16 +3371,16 @@ CW89027,"DCSS-IT Equipment & Software-Tecknomic, LLC",TECKNOMIC LLC,Contracting 
 CW89046,CAH-Strategic Plan Development,"Election Systems & Software, LLC",Commission on Arts and Humanities (CAH),96000.0,1,Firm Fixed Price,other,['962'],it_consulting_advisory,no,,low,True,
 CW89064,DCKT FY21 - New 2022 International LT625 Tractor,"K Neal International Trucks, Inc. DBA K Neal Truck & Bus Center",Public Works (DPW),127842.04,1,Firm Fixed Price,other,['072'],not_technology,no,,high,False,
 CW89106,FY21 FEMS Logistics Household and Office Supplies,General Merchandise Supplies,Fire and Emergency Services Department (FEMS),330585.7,1,Firm Fixed Price,other,['615'],not_technology,no,,high,False,
-CW89117,DCKT FY21 - New 2021 Freightliner M2106 ,"Johnson Truck Center, LLC",Public Works (DPW),222643.0,1,Firm Fixed Price,other,['072'],not_technology,no,,high,False,1.0
+CW89117,DCKT FY21 - New 2021 Freightliner M2106,"Johnson Truck Center, LLC",Public Works (DPW),222643.0,1,Firm Fixed Price,other,['072'],not_technology,no,,high,False,
 CW89121,FY21-OCTO-FileNet License Renewal and Maintenance Support,DOCUMENT SYSTEMS INC,Chief Technology Officer (OCTO),434114.5,1,Firm Fixed Price,software_services,['920'],software_om_support,no,FileNet,high,True,
 CW89124,FY21 - OCTO - CheckPoint Firewall Annual Support,"AVID SYSTEMS, LLC",Chief Technology Officer (OCTO),1919463.44,2,Firm Fixed Price,software_services,['920'],software_om_support,no,Check Point Firewall,high,True,
 CW89131,Cisco Ironport AntiSpam Software,"DISYS SOLUTIONS, INC.",Chief Technology Officer (OCTO),135252.16,1,Firm Fixed Price,other,['990'],hardware_or_license_resale,no,,medium,True,
-CW89194,Microsoft Premier Support Services ,MICROSOFT CORPORATION,Health Care Finance (DHCF),22215500.0,1,Firm Fixed Price,it_adjacent,['918'],hardware_or_license_resale,no,,medium,True,1.0
+CW89194,Microsoft Premier Support Services,MICROSOFT CORPORATION,Health Care Finance (DHCF),22215500.0,1,Firm Fixed Price,it_adjacent,['918'],hardware_or_license_resale,no,,medium,True,
 CW89198,DCPCA Electronic Health Records System,DC PRIMARY CARE ASSOCIATION,Health (DOH),130790.0,1,Firm Fixed Price,other,['948'],not_technology,no,,low,False,
 CW89208,TSS20217-Temporay Support Services-Cradle Systems,Cradle Systems,,50000000.0,5,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW89210,Actuarial Consulting Services Emergency Procurement,Mercer Health & Benefits LLC,Health Care Finance (DHCF),990000.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,
 CW89216,FY21-Evidence on Q Application,"FILEONQ, INC.",Metropolitan Police Department (MPD),244614.0,1,Firm Fixed Price,software_services,['920'],it_consulting_advisory,no,,low,True,
-CW89240,OPLD Professional Examination Services ,PSI SERVICES LLC,Licensing & Consumer Protection (DLCP),237136.0,1,Firm Fixed Price,other,['924'],not_technology,no,,high,False,1.0
+CW89240,OPLD Professional Examination Services,PSI SERVICES LLC,Licensing & Consumer Protection (DLCP),237136.0,1,Firm Fixed Price,other,['924'],not_technology,no,,high,False,
 CW89349,Moving Services (Ink Systems LLC),Ink Systems LLC,Health (DOH),50000.0,1,Labor Hour,other,['962'],not_technology,no,,high,False,
 CW89358,EJs Emergency Pest Control Services,IJS Limited LLC,Human Services (DHS),300000.0,1,Requirements,other,['910'],not_technology,no,,high,False,
 CW89363,FY21-OCTO- Dell Storage Disk and Drives,ADVANCED NETWORK CONSULTING,Chief Technology Officer (OCTO),1146263.04,1,Firm Fixed Price,other,['967'],hardware_or_license_resale,no,,medium,True,
@@ -3397,21 +3397,21 @@ CW89612,Short Term Family Housing-Core DC Site 8,CORE DC,Human Services (DHS),12
 CW89622,FY21_GDO_DAR_SOW Writer for District's Statewide Summative Assessments,Assessment Solutions Group,State Superintendent of Education (OSSE),79250.0,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW89673,DHS-Temporary Staffing Support Services-Midtown Personnel,MIDTOWN PERSONNEL INC,Human Services (DHS),100000.0,1,Labor Hour,other,['962'],staff_augmentation,yes,,high,True,
 CW89681,Enterprise Secure Edge Services Gateways,Carahsoft Technology Corporation,Chief Technology Officer (OCTO),991207.89,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,medium,True,
-CW89683,FY2021 - DBH CPEP Emergency Ambulance Services with Butler Medical,"Butler Medical Transport, LLC",Behavioral Health (DBH),97000.0,1,Requirements,other,"['070', '071', '072', '470', '948']",not_technology,no,,high,False,1.0
+CW89683,FY2021 - DBH CPEP Emergency Ambulance Services with Butler Medical,"Butler Medical Transport, LLC",Behavioral Health (DBH),97000.0,1,Requirements,other,['070'],not_technology,no,,high,False,
 CW89689,Electrical and Battery Parts for Automotive Equipment,The Best Battery Co Inc,Public Works (DPW),300000.0,3,Requirements,other,['060'],not_technology,no,,high,False,
 CW89723,OPTION YEAR FOUR DMPED - Senior Level Acquisition Services,Reid Sr. Procurement Services LLC,Deputy Mayor for Planning and Economic Development (DMPED),1045186.24,5,Labor Hour,other,['962'],not_technology,no,,low,False,
 CW89727,FY21 - OCTO - Contact-Center-As-A-Service (CCaaS),"AVID SYSTEMS, LLC",Chief Technology Officer (OCTO),657063.0700000001,2,Firm Fixed Price,it_adjacent,['918'],cots_implementation,no,Contact-Center-As-A-Service (CCaaS),medium,True,
 CW89736,Untitled Contract Workspace (Procurement),MATHEMATICA POLICY RESEARCH IN,Human Services (DHS),307710.0,2,Labor Hour,it_adjacent,['918'],not_technology,no,,low,False,
-CW89747,"C Street, NE Implementation ",ANCHOR CONSTRUCTION CORPORATION,Transportation (DDOT),15995763.5,1,Firm Fixed Price,other,['913'],not_technology,no,,high,False,1.0
+CW89747,"C Street, NE Implementation",ANCHOR CONSTRUCTION CORPORATION,Transportation (DDOT),15995763.5,1,Firm Fixed Price,other,['913'],not_technology,no,,high,False,
 CW89782,FY21 - DELL VDI VXRail Infrastructure,Dell,Employment Services (DOES),349825.0,1,Firm Fixed Price,other,['956'],telecom_or_network,no,,medium,True,
-CW89823,DCKT FY21 - One (1) 2022 International MV607 Chassis ,"K Neal International Trucks, Inc. DBA K Neal Truck & Bus Center",Public Works (DPW),151900.99,1,Firm Fixed Price,other,['072'],not_technology,no,,high,False,1.0
+CW89823,DCKT FY21 - One (1) 2022 International MV607 Chassis,"K Neal International Trucks, Inc. DBA K Neal Truck & Bus Center",Public Works (DPW),151900.99,1,Firm Fixed Price,other,['072'],not_technology,no,,high,False,
 CW89855,Next Generation 9-1-1,AT&T,Unified Communications (OUC),9000000.0,3,Requirements,it_adjacent,['958'],telecom_or_network,no,Next Generation 9-1-1 (NG9-1-1),medium,True,
 CW89864,Short Term Rental Application,LodgingRevs,Licensing & Consumer Protection (DLCP),398000.0,1,Firm Fixed Price,it_goods,['206'],not_technology,no,,low,False,
 CW89886,Emergency CM Services for Benning Road Refuse Station,"Delon Hampton & Associates, Chartered",Public Works (DPW),20328.53,1,Firm Fixed Price,it_adjacent,['958'],not_technology,no,,low,False,
 CW89903,"DCSS - Temporary Support Services - ZC Solution, LLC",ZC Solutions,Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW89908,Vocational Services - Total Care Services,"TOTAL CARE SERVICES, INC.",Department on Disability Services (DDS),25000.0,1,Requirements,other,['924'],not_technology,no,,high,False,
-CW89916,FY21 - OCTO - Infoblox Appliances Hardware ,"Sun Management, Inc.",Chief Technology Officer (OCTO),467600.57,1,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,high,True,1.0
-CW89922,Cisco Equipment (WAPs),n2grate,Chief Technology Officer (OCTO),1080203.42,1,Firm Fixed Price,telecom,"['838', '915']",telecom_or_network,no,,high,True,1.0
+CW89916,FY21 - OCTO - Infoblox Appliances Hardware,"Sun Management, Inc.",Chief Technology Officer (OCTO),467600.57,1,Firm Fixed Price,other,['956'],hardware_or_license_resale,no,,high,True,
+CW89922,Cisco Equipment (WAPs),n2grate,Chief Technology Officer (OCTO),1080203.42,1,Firm Fixed Price,telecom,['838'],telecom_or_network,no,,high,True,
 CW89934,DBH Language Interpreting Services,Ad Astra Inc.,Behavioral Health (DBH),604093.75,5,Requirements,other,['961'],not_technology,no,,high,False,
 CW89938,FY21 FEMS Chemical Protective Equipment,SAFEWARE INC,Fire and Emergency Services Department (FEMS),172096.72,1,Firm Fixed Price,other,['257'],not_technology,no,,high,False,
 CW89945,WebEOC 2021-Informatics qualified technical experts,Greater Good Consulting LLC,Health (DOH),141000.0,1,Firm Fixed Price,it_adjacent,['918'],staff_augmentation,yes,WebEOC,medium,True,
@@ -3427,14 +3427,14 @@ CW90108,Actuarial Consulting Services,Mercer Health & Benefits LLC,Health Care F
 CW90126,FY21-DMV-Registration Stickers,PROFORMA DOCUCOM SERVICES LLC,Motor Vehicles (DMV),209082.0,1,Firm Fixed Price,other,['966'],not_technology,no,,low,False,
 CW90129,DCKT FY21 - 272D3 Skid Steer Loader,Carter Machinery Co. Inc.,Public Works (DPW),290368.0,1,Firm Fixed Price,other,['760'],not_technology,no,,high,False,
 CW90258,FY21-OCTO-Data Security Solution Software,"AVID SYSTEMS, LLC",Chief Technology Officer (OCTO),108000.0,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,low,True,
-CW90277,"FY2021 - DBH OUTFRONT MEDIA GROUP, LLC",Outfront Media,Behavioral Health (DBH),372000.0,1,Firm Fixed Price,it_adjacent,"['037', '557', '559', '700', '801', '911', '915', '918']",not_technology,no,,low,False,1.0
+CW90277,"FY2021 - DBH OUTFRONT MEDIA GROUP, LLC",Outfront Media,Behavioral Health (DBH),372000.0,1,Firm Fixed Price,other,['037'],not_technology,no,,low,False,
 CW90295,DC Power Equipment (DCPS),Stockbridge Consulting LLC,Chief Technology Officer (OCTO),131222.05,1,Firm Fixed Price,other,['287'],telecom_or_network,no,,low,True,
 CW90401,"DCSS-Security Equipment Security Services and Emergency Preparedness -HealthBest, Inc.","HealthBest Services, Inc.",Contracting and Procurement (OCP),4250000.0,5,Indefinite Delivery Indefinite Quantity,other,['990'],not_technology,no,,low,False,
-CW90412,Red Gate Software,"MVS, Inc.",Employment Services (DOES),27508.62,1,Firm Fixed Price,it_adjacent,"['918', '956']",hardware_or_license_resale,no,,medium,True,1.0
-CW90445,SoundThinking- Gunshot Detection System Support ,Sound Thinking LLC,Metropolitan Police Department (MPD),517756.0,1,Firm Fixed Price,other,['680'],software_om_support,no,SoundThinking Gunshot Detection System,medium,True,1.0
+CW90412,Red Gate Software,"MVS, Inc.",Employment Services (DOES),27508.62,1,Firm Fixed Price,it_adjacent,['918'],hardware_or_license_resale,no,,medium,True,
+CW90445,SoundThinking- Gunshot Detection System Support,Sound Thinking LLC,Metropolitan Police Department (MPD),517756.0,1,Firm Fixed Price,other,['680'],software_om_support,no,SoundThinking Gunshot Detection System,high,True,
 CW90454,DYRS-Our House-Group Home Services,"OUR HOUSE, INC.",Youth Rehabilitation Services (DYRS),451161.9,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW90469,DCRA Customer Services and Professional Licensing Operations,L.S. CALDWELL & ASSOCIATES,Licensing & Consumer Protection (DLCP),877524.8,1,Labor Hour,software_services,['920'],not_technology,no,,low,False,
-CW90472,FY21 - DHS - CEPL Training Continuation (SNAP Reinvestment) - Vogt Consulting Inc.,Vogt Consulting Inc,Human Services (DHS),44900.0,1,Firm Fixed Price,software_services,"['918', '920']",not_technology,no,,low,False,1.0
+CW90472,FY21 - DHS - CEPL Training Continuation (SNAP Reinvestment) - Vogt Consulting Inc.,Vogt Consulting Inc,Human Services (DHS),44900.0,1,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,yes,,low,True,
 CW90477,"Vocational Services (School Talk, Inc.)",SCHOOLTALK INC,Department on Disability Services (DDS),540974.0,1,Requirements,other,['952'],not_technology,no,,high,False,
 CW90505,"DCSS-Marketing, Media & Public Information-Dakota 3 Consulting Firm","Dakota 3 Consulting Firm, Inc.",Contracting and Procurement (OCP),1800000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],not_technology,no,,low,False,
 CW90523,"Contract Workspace (Procurement)-ATMOST SOLUTIONS, INC.","Atmos Solutions, Inc.",Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['962'],ordering_vehicle,no,,low,True,
@@ -3442,21 +3442,21 @@ CW90552,DCRA - Agency Laptops and Accessories,"MVS, Inc.",Licensing & Consumer P
 CW90561,DMPED-OPTION YEAR FOUR - DC Chamber Business Development,DC CHAMBER OF COMMERCE,Deputy Mayor for Planning and Economic Development (DMPED),2168900.0,5,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW90566,"DCSS - Temporary Support Services - Tandem Conglomerate, LLC","TANDEM CONGLOMERATE, LLC",Contracting and Procurement (OCP),50000000.0,5,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
 CW90568,DCSS - Temporary Support Services - Advanced Network Consulting,ADVANCED NETWORK CONSULTING,Contracting and Procurement (OCP),10950000.0,2,Indefinite Delivery Indefinite Quantity,other,['961'],staff_augmentation,yes,,high,True,
-CW90574,FY21- PFL Website Maintenance ,Collaborative Communications,Employment Services (DOES),78727.86,1,Firm Fixed Price,it_adjacent,['918'],software_om_support,no,PFL Website,medium,True,1.0
+CW90574,FY21- PFL Website Maintenance,Collaborative Communications,Employment Services (DOES),78727.86,1,Firm Fixed Price,it_adjacent,['918'],software_om_support,no,PFL Website,medium,True,
 CW90603,Pondera Fraud Detection Software,"MVS, Inc.",Employment Services (DOES),662350.69,1,Firm Fixed Price,other,['956'],cots_implementation,no,,medium,True,
 CW90605,FY21 - ASSLA STUDY - OWH,Bayne LLC,Employment Services (DOES),70460.0,1,Firm Fixed Price,other,['946'],it_consulting_advisory,no,,low,True,
-CW90607,Business Engagement ,Zuri Prodctions,Deputy Mayor for Education (DME),70000.0,1,Labor Hour,other,['961'],not_technology,no,,low,False,1.0
+CW90607,Business Engagement,Zuri Prodctions,Deputy Mayor for Education (DME),70000.0,1,Labor Hour,other,['961'],not_technology,no,,low,False,
 CW90610,MSDC - Outreach Services,LINK Strategic Partners,State Superintendent of Education (OSSE),3756676.2199999997,5,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],not_technology,no,,low,False,
 CW90644,Light Plow Crew Cab Snow Trucks for DDOT,"Pacifico Ford, Inc",Transportation (DDOT),2308352.0,1,Firm Fixed Price,other,['765'],not_technology,no,,high,False,
 CW90661,Pest Control Management Services,PEST SERVICES CO.,Behavioral Health (DBH),50300.0,1,Firm Fixed Price,other,['910'],not_technology,no,,high,False,
 CW90707,FEMS Tools & Appliances,SAFEWARE INC,Fire and Emergency Services Department (FEMS),300000.0,1,Requirements,other,['340'],hardware_or_license_resale,no,,medium,True,
 CW90718,Contract Workspace (Procurement),"Dakota 3 Consulting Firm, Inc.",Contracting and Procurement (OCP),950000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,low,True,
-CW90729,UIBS DOES,GEOGRAPHIC SOLUTIONS INC,Employment Services (DOES),13581691.0,3,Firm Fixed Price,it_goods,"['209', '920']",cots_implementation,no,UIBS,medium,True,1.0
+CW90729,UIBS DOES,GEOGRAPHIC SOLUTIONS INC,Employment Services (DOES),13581691.0,3,Firm Fixed Price,it_goods,['209'],cots_implementation,no,UIBS,medium,True,
 CW90741,Software Licensing and Support Maintenance Services,NETSMART NEW YORK INC.,Behavioral Health (DBH),6814495.38,5,Firm Fixed Price,it_adjacent,['918'],hardware_or_license_resale,no,,medium,True,
 CW90761,DYRS-Rite of Passage-Group Homes,"Rite of Passage, Inc DBA: ROP",Youth Rehabilitation Services (DYRS),956316.4,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW90763,"FY21 DCSS Tandem Conglomerate, LLC","TANDEM CONGLOMERATE, LLC",,40000000.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW90767,Human Care Agreement Direct Services-Early Intervention Services (Milestone Therapeutic Services),MILESTONE THERAPEUTIC SERVICES,State Superintendent of Education (OSSE),990000.0,1,Indefinite Delivery Indefinite Quantity,other,['952'],not_technology,no,,high,False,
-CW90800,"DCSS - Engineering & Logistics - 925 - North Arrow, Inc. ","North Arrow, Inc.",Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['925'],ordering_vehicle,no,,medium,True,1.0
+CW90800,"DCSS - Engineering & Logistics - 925 - North Arrow, Inc.","North Arrow, Inc.",Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['925'],ordering_vehicle,no,,medium,True,
 CW90804,FY21 - DELL VDI VXRail Infrastructure,"MVS, Inc.",Employment Services (DOES),753100.02,2,Firm Fixed Price,other,['956'],telecom_or_network,no,,medium,True,
 CW90831,DPR - FY21 MISC SPORTS SUPPLIES,Flaunt Group Corp,Parks and Recreation (DPR),143598.04,1,Firm Fixed Price,other,['805'],not_technology,no,,high,False,
 CW90833,DPR - FY21 - GENERAL CAMP-AT-HOME SUPPLIES,"MVS, Inc.",Parks and Recreation (DPR),118742.55,1,Firm Fixed Price,other,['805'],not_technology,no,,low,False,
@@ -3466,7 +3466,7 @@ CW90925,IDIQ 2021 Toyota Corolla hybrid sedans,Kline Imports Arlington Inc,Motor
 CW90928,Unemployment Insurance Claimant Portal,"Catalis Regulatory & Compliance, LLC",Employment Services (DOES),2083400.0,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,medium,True,
 CW90935,Gas Powered 20-foot Vans,"K Neal International Trucks, Inc. DBA K Neal Truck & Bus Center",Contracting and Procurement (OCP),110550.0,1,Firm Fixed Price,other,['065'],not_technology,no,,high,False,
 CW90941,DC DOC Inmate Food Mangement Service,ARAMARK CORRECTIONAL SERVICES,Corrections (DC),17699940.0,3,Requirements,other,['977'],not_technology,no,,high,False,
-CW90951,Behavior Health Advisor,"ACCURATE CONCEPTIONS, LLC",Health Care Finance (DHCF),1464316.5,5,Labor Hour,it_adjacent,"['918', '962']",not_technology,no,,low,False,1.0
+CW90951,Behavior Health Advisor,"ACCURATE CONCEPTIONS, LLC",Health Care Finance (DHCF),1464316.5,5,Labor Hour,it_adjacent,['918'],not_technology,no,,low,False,
 CW90981,Contract Workspace (Procurement)-THE HAMILTON GROUP,The Hamilton Group,Contracting and Procurement (OCP),750000.0,1,Indefinite Delivery Indefinite Quantity,other,['966'],it_consulting_advisory,no,,low,True,
 CW91017,Technical Assistance Consulting WIC,WorkED Consulting LLC,Deputy Mayor for Planning and Economic Development (DMPED),37250.0,1,Firm Fixed Price,software_services,['920'],it_consulting_advisory,no,,low,True,
 CW91021,Four (4) 16-ft box trucks for DCPL,"Johnson Truck Center, LLC",Public Library (DCPL),305168.0,1,Firm Fixed Price,other,['070'],not_technology,no,,high,False,
@@ -3477,7 +3477,7 @@ CW91066,Various Supplies for the Roving Leader Division,EMERGENCY 911 SECURITY,P
 CW91068,OSSE_TAL_Effective Virtual and Hybrid Instruction Professional Development,"EdConnective, Inc.",State Superintendent of Education (OSSE),117000.0,1,Firm Fixed Price,other,['715'],not_technology,no,,low,False,
 CW91081,DCSS - MOBIS - SOS Human Capital Solutions,SOS Human Capital Solutions,,4750000.0,5,Firm Fixed Price,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW91124,FY21 - Dell Computer Laptops (FSA),"MVS, Inc.",Human Services (DHS),92238.3,1,Firm Fixed Price,it_goods,['204'],hardware_or_license_resale,no,,high,True,
-CW91150,FY21 - FX0 - CMS Phase Two Upgrade ,"Vertiq Software, LLC",Chief Medical Examiner (OCME),146100.0,1,Firm Fixed Price,it_adjacent,['918'],custom_software_build,no,,low,True,1.0
+CW91150,FY21 - FX0 - CMS Phase Two Upgrade,"Vertiq Software, LLC",Chief Medical Examiner (OCME),146100.0,1,Firm Fixed Price,it_adjacent,['918'],custom_software_build,no,CMS Phase Two (FX0),medium,True,
 CW91159,WALTER REED (WRAMC) - BUILDING DEMOLITION SERVICES AND ASBESTOS ABATEMENT,"General Services, Inc.",Deputy Mayor for Planning and Economic Development (DMPED),239318.88,1,Firm Fixed Price,other,['912'],not_technology,no,,high,False,
 CW91172,2021 Toyota Corolla,Kline Imports Arlington Inc,Youth Rehabilitation Services (DYRS),83600.0,1,Indefinite Delivery Indefinite Quantity,other,['070'],not_technology,no,,high,False,
 CW91187,"DCSS - MOBIS - Synergetic Information Systems, Inc.",Synergetic Information Systems,,50000000.0,5,Firm Fixed Price,it_adjacent,['918'],ordering_vehicle,no,,high,True,
@@ -3494,7 +3494,7 @@ CW91324,FY21-CFO-MBSYEP Work Readiness-Growth Industry Sector CalvinWoodland,Cal
 CW91326,FY21-CFO-MBSYEP Work Readiness-Growth Industry Sector CLT,"Children's Legacy Theatre, Inc.",Employment Services (DOES),400000.0,4,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW91328,FY21-CFO-MBSYEP Work Readiness-Growth Industry Sector IBG,IBG Consulting Group LLC,Employment Services (DOES),400000.0,4,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW91330,FY21-CFO-MBSYEP Work Readiness-Growth Industry Sector Musicianship,The MusicianShip_2,Employment Services (DOES),300000.0,3,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW91332,FY21-CFO-MBSYEP Work Readiness-Growth Industry Sector RedSprinkle,Red Sprinkle,Employment Services (DOES),400000.0,4,Firm Fixed Price,other,"['715', '918']",not_technology,no,,low,False,1.0
+CW91332,FY21-CFO-MBSYEP Work Readiness-Growth Industry Sector RedSprinkle,Red Sprinkle,Employment Services (DOES),400000.0,4,Firm Fixed Price,other,['715'],not_technology,no,,low,False,
 CW91338,FY21- FA0 - AWS Cloud Implementation,Carahsoft Technology Corporation,Metropolitan Police Department (MPD),325000.0,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,medium,True,
 CW91343,"DCSS -  Industrial Supplies & Apparel - Star Services, LLC",Star Services LLC,Contracting and Procurement (OCP),1800000.0,2,Indefinite Delivery Indefinite Quantity,other,['485'],not_technology,no,,high,False,
 CW91346,"DCSS - Industrial Supplies & Apparel - Prospectus Enterprises, Inc.","Prospectus Enterprises, Inc.",Contracting and Procurement (OCP),900000.0,1,Indefinite Delivery Indefinite Quantity,other,['485'],not_technology,no,,high,False,
@@ -3510,13 +3510,13 @@ CW91444,"FY21 - DISB - Older American Month Celebration Items  - Echelon Economi
 CW91446,FY21 - DOH COVID Testing Courier Service,PMGLLLC,Health (DOH),218250.0,1,Requirements,other,['962'],not_technology,no,,high,False,
 CW91448,DCSS - Engineering & Logistics Services - Rett Consulting Group,RETT Consulting Group LLC,,1800000.0,2,Firm Fixed Price,other,['925'],ordering_vehicle,no,,low,True,
 CW91461,"DCSS-IT Equipment & Software- Datapillars, Inc.",DataPillars Inc.,Contracting and Procurement (OCP),2850000.0,3,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
-CW91484,Government of the District of Columbia Disparity Study ,BBC-Pantera-Tiber LLC,Deputy Mayor for Planning and Economic Development (DMPED),771310.0,1,Firm Fixed Price,it_adjacent,"['918', '962']",not_technology,no,,medium,False,1.0
+CW91484,Government of the District of Columbia Disparity Study,BBC-Pantera-Tiber LLC,Deputy Mayor for Planning and Economic Development (DMPED),771310.0,1,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,,low,True,
 CW91489,DHS-Temporary Staffing Support Services,MIDTOWN PERSONNEL INC,Human Services (DHS),1213198.56,3,Indefinite Delivery Indefinite Quantity,other,['962'],staff_augmentation,yes,,high,True,
-CW91494,DCKT FY21 - Light Tower ,WASHINGTON AIR COMPRESSOR,Public Works (DPW),110427.38,1,Firm Fixed Price,other,['285'],telecom_or_network,no,,low,True,1.0
-CW91496,FY2021 - DBH Forensic Mental Health Services with MBI Health,"MBI HEALTH SERVICES, LLC",Behavioral Health (DBH),759288.0,4,Firm Fixed Price,other,"['952', '961']",not_technology,no,,high,False,1.0
+CW91494,DCKT FY21 - Light Tower,WASHINGTON AIR COMPRESSOR,Public Works (DPW),110427.38,1,Firm Fixed Price,other,['285'],telecom_or_network,no,,low,True,
+CW91496,FY2021 - DBH Forensic Mental Health Services with MBI Health,"MBI HEALTH SERVICES, LLC",Behavioral Health (DBH),759288.0,4,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW91513,FY21 - Managed Trusted Internet Protocol Services MTIPS,"Lumen Technologies Government Solutions, Inc. (""Lumen"")",Chief Technology Officer (OCTO),1077256.64,3,Firm Fixed Price,other,['906'],telecom_or_network,no,MTIPS,high,True,
-CW91532,FY2021 - DBH SEH Licensed Board Psychiatrist - FAIRFAX PSY HEALTH,Fairfax Psychiatry & Behaviora,Behavioral Health (DBH),400000.0,4,Labor Hour,it_adjacent,"['918', '952', '958']",not_technology,no,,high,False,1.0
-CW91537,FY2023 - DBH Publc Reporitng of MHRS Providers Performance with AURRERA HEALTH GROUP,Aurrera Health Group,Behavioral Health (DBH),198000.0,2,Firm Fixed Price,other,"['915', '918', '952', '956', '958', '961', '968']",not_technology,no,,low,False,1.0
+CW91532,FY2021 - DBH SEH Licensed Board Psychiatrist - FAIRFAX PSY HEALTH,Fairfax Psychiatry & Behaviora,Behavioral Health (DBH),400000.0,4,Labor Hour,it_adjacent,['918'],not_technology,no,,high,False,
+CW91537,FY2023 - DBH Publc Reporitng of MHRS Providers Performance with AURRERA HEALTH GROUP,Aurrera Health Group,Behavioral Health (DBH),198000.0,2,Firm Fixed Price,other,['915'],not_technology,no,,low,False,
 CW91546,"DCSS DataPillars, Inc.",DataPillars Inc.,,4750000.0,5,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,low,True,
 CW91554,DCSS - Office Supplies - Daily Office Solutions,Daily Office Solutions LLC,Contracting and Procurement (OCP),7850000.0,4,Indefinite Delivery Indefinite Quantity,other,['615'],not_technology,no,,high,False,
 CW91556,DCKT FY21 - Global EV Street Sweepers,ELLIOTT & FRANTZ  INC,Public Works (DPW),1750231.0,1,Firm Fixed Price,other,['929'],not_technology,no,,high,False,
@@ -3526,8 +3526,8 @@ CW91567,Industrial Supplies and Apparel-Ideal Electric Supply Corporation-ISA202
 CW91583,Cisco Equipment (Data Center DC1),"DISYS SOLUTIONS, INC.",Chief Technology Officer (OCTO),401713.1,1,Firm Fixed Price,it_goods,['206'],hardware_or_license_resale,no,Data Center DC1,high,True,
 CW91625,DCSS FY21 Anadria Consulting,Anadria Consulting,,4750000.0,5,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,medium,True,
 CW91646,HealthOffice Anywhere Suites (Frontline),Healthmaster Holdings LLC,Health (DOH),281145.0,1,Firm Fixed Price,it_goods,['208'],not_technology,no,,low,False,
-CW91650,FY2021 - DBH CPEP - BUTLER MED TRANSPORT (2) 2021 Emergency Ambulance Services,"Butler Medical Transport, LLC",Behavioral Health (DBH),97000.0,1,Indefinite Delivery Indefinite Quantity,other,"['070', '071', '072', '470', '948']",not_technology,no,,high,False,1.0
-CW91672,  Behavioral Health Rate Study and Development DOC559943,"Public Consulting Group, Inc.",Health Care Finance (DHCF),235200.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,high,False,1.0
+CW91650,FY2021 - DBH CPEP - BUTLER MED TRANSPORT (2) 2021 Emergency Ambulance Services,"Butler Medical Transport, LLC",Behavioral Health (DBH),97000.0,1,Indefinite Delivery Indefinite Quantity,other,['070'],not_technology,no,,high,False,
+CW91672,Behavioral Health Rate Study and Development DOC559943,"Public Consulting Group, Inc.",Health Care Finance (DHCF),235200.0,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW91684,INFORMATION TECHNOLOGY STAFF AUGMENTATION SERVICES,"COMPUTER AID, INC.",Chief Technology Officer (OCTO),65000000.0,1,Labor Hour,other,['962'],staff_augmentation,yes,,high,True,
 CW91689,QuickBase FY22-FY26,"Quickbase, Inc",Chief Technology Officer (OCTO),2174985.0,1,Firm Fixed Price,software_services,['920'],cots_implementation,no,,medium,True,
 CW91704,Chevrolet Bolt,"CRISWELL CHEVEROLET, INC.",Transportation (DDOT),451009.0,1,Indefinite Delivery Indefinite Quantity,other,['070'],not_technology,no,,high,False,
@@ -3591,14 +3591,14 @@ CW92805,DPR - PARK MAINTENANCE STUDY,"The Impact Group, LLC",Parks and Recreatio
 CW92858,Task Order - DCPS & Charter School Contact Tracing Services,MAXIM HEALTHCARE SVCS,State Superintendent of Education (OSSE),1200000.0,1,Requirements,other,['962'],not_technology,no,,high,False,
 CW92877,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,"AVID SYSTEMS, LLC",Contracting and Procurement (OCP),30000000.0,3,Indefinite Delivery Indefinite Quantity,software_services,['920'],ordering_vehicle,no,,high,True,
 CW92942,"DCSS - MOBIS - Hayat Brown, LLC",Hayat Brown LLC,,3800000.0,4,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,high,True,
-CW92950,DCKT FY21 - Graffiti Removal Services,smajic llc,Public Works (DPW),100000.0,1,Firm Fixed Price,other,"['635', '968']",not_technology,no,,high,False,1.0
+CW92950,DCKT FY21 - Graffiti Removal Services,smajic llc,Public Works (DPW),100000.0,1,Firm Fixed Price,other,['635'],not_technology,no,,high,False,
 CW92963,DHS -FY21-Rapid Re-Housing for Individuals - The Institute for Emotional Regulations,The Institute for Emotional Regulation LLC.,Human Services (DHS),2824060.0,3,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW92965,DHS-FY21- Rapid Re-Housing for Individual- CORE DC LLC,CORE DC,Human Services (DHS),835061.4,1,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW92968,DHS - FY21- Rapid Re-Housing for Individuals - Wheeler Creek,Wheeler Creek Estates CDC,Human Services (DHS),4620384.0,5,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW92970,"DHS - FY21- Rapid Re-Housing for Individuals - Echelon Community Service, Inc",ECHELON COMMUNITY SVCS INC,Human Services (DHS),1982182.7999999998,2,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW92972,DHS -FY21- Rapid Re-Housing for Individuals - Washington City Ophan Asylum,HILLCREST CHILDREN'S CENTER,Human Services (DHS),4751801.67,5,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
 CW92974,"DHS - FY21- Rapid Re-Housing for Individuals - Metropolitan Educational Solution, LLC.",Metropolitan Educational Solutions,Human Services (DHS),849920.8,2,Firm Fixed Price,other,['952'],not_technology,no,,low,False,
-CW92982,Residential Expenses - Kahak ,"KAHAK, INC.",Department on Disability Services (DDS),50000.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,1.0
+CW92982,Residential Expenses - Kahak,"KAHAK, INC.",Department on Disability Services (DDS),50000.0,1,Cost Plus Fixed Fee,other,['952'],not_technology,no,,low,False,
 CW92984,Enrollment Broker Services Emergency Procurement,"Maximus US Services, Inc",Health Care Finance (DHCF),488944.69,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW92993,Cisco Switches and End of Life Network Hardware (DC1),n2grate,Chief Technology Officer (OCTO),10119389.89,1,Firm Fixed Price,it_goods,['206'],hardware_or_license_resale,no,,high,True,
 CW92996,Extension for Emergency District of Columbia Mental Health Access in Pediatrics (DCMAP,CHILDREN'S HOSPITAL MEDICAL CT,Behavioral Health (DBH),225941.64,1,Labor Hour,other,['952'],not_technology,no,,low,False,
@@ -3608,15 +3608,15 @@ CW93012,"FY22_GDO_PostSec_LACES Hosting, maintenance and modification",LITERACY 
 CW93023,"GD0_EGMS_Hosting, Maintenance, Technical Assistance and Enhancements","MTW Solutions, LLC",State Superintendent of Education (OSSE),2061458.92,5,Firm Fixed Price,it_goods,['208'],software_om_support,no,EGMS,medium,True,
 CW93034,Alternative Transportation Services,"ALC Schools, LLC",For-Hire Vehicles (DFHV),3669600.0,1,Firm Fixed Price,other,['962'],not_technology,no,,high,False,
 CW93039,FY22_GDO_PostSec_SAT & AP Testing,THE COLLEGE BOARD,State Superintendent of Education (OSSE),494238.0,1,Firm Fixed Price,other,['924'],not_technology,no,,low,False,
-CW93066,Chestnut Street Sidewal Improvement ,ANCHOR CONSTRUCTION CORPORATION,Transportation (DDOT),1014353.5,1,Firm Fixed Price,other,['913'],not_technology,no,,high,False,1.0
-CW93083,FY21-DHCD-CW62484 Document Systems OY3,DOCUMENT SYSTEMS INC,Housing and Community Development (DHCD),239987.0,1,Firm Fixed Price,software_services,"['204', '205', '920']",not_technology,no,,low,False,1.0
+CW93066,Chestnut Street Sidewal Improvement,ANCHOR CONSTRUCTION CORPORATION,Transportation (DDOT),1014353.5,1,Firm Fixed Price,other,['913'],not_technology,no,,high,False,
+CW93083,FY21-DHCD-CW62484 Document Systems OY3,DOCUMENT SYSTEMS INC,Housing and Community Development (DHCD),239987.0,1,Firm Fixed Price,it_goods,['204'],not_technology,no,,low,False,
 CW93125,Two 938M Front End Wheel Loaders,Carter Machinery Co. Inc.,Transportation (DDOT),619768.0,1,Firm Fixed Price,other,['760'],not_technology,no,,high,False,
 CW93144,"CW93144-B&B Floor Services, LLC t&a B & B Solutions, US, LLC","B&B Solutions US, LLC",Contracting and Procurement (OCP),4750000.0,5,Indefinite Delivery Indefinite Quantity,other,['425'],not_technology,no,,low,False,
 CW93158,DCKT FY21 - New 2022 International LT625 6x4 Chassis,"K Neal International Trucks, Inc. DBA K Neal Truck & Bus Center",Public Works (DPW),228374.84,1,Firm Fixed Price,other,['072'],not_technology,no,,high,False,
-CW93164,FY21-DHCD-CW70389 Tax Credit Asset Management,Tax Credit Asset Management,Housing and Community Development (DHCD),1743189.82,1,Requirements,it_adjacent,"['918', '946']",not_technology,no,,low,False,1.0
+CW93164,FY21-DHCD-CW70389 Tax Credit Asset Management,Tax Credit Asset Management,Housing and Community Development (DHCD),1743189.82,1,Requirements,it_adjacent,['918'],not_technology,no,,low,False,
 CW93173,Contract Workspace (Procurement) -,"ALIGNED DEV. STRATEGIES, INC.",Contracting and Procurement (OCP),10000000.0,1,Indefinite Delivery Indefinite Quantity,it_adjacent,['918'],ordering_vehicle,no,,low,True,
-CW93183,FY2021 - DBH CPEP Adult Services TAY Social Media Marketers Platform,"Market Me Consulting, LLC",Behavioral Health (DBH),100000.0,1,Firm Fixed Price,it_adjacent,"['915', '918', '958', '961']",not_technology,no,,low,False,1.0
-CW93241,TASS BPR Modeling and Requirements ,Georgetown Technologies LLC,Motor Vehicles (DMV),107275.0,1,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,,low,True,1.0
+CW93183,FY2021 - DBH CPEP Adult Services TAY Social Media Marketers Platform,"Market Me Consulting, LLC",Behavioral Health (DBH),100000.0,1,Firm Fixed Price,other,['915'],not_technology,no,,low,False,
+CW93241,TASS BPR Modeling and Requirements,Georgetown Technologies LLC,Motor Vehicles (DMV),107275.0,1,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,,low,True,
 CW93290,Trakster System Support & Data Management Analysis,PUBLIC WORKS SOLUTIONS LLC,Public Works (DPW),600000.0,2,Firm Fixed Price,it_adjacent,['918'],it_consulting_advisory,no,Trakster,medium,True,
 CW93294,"Medical Record Reviews & Consultative Examinations (IMA Professional Services of DC, PC)",IMA PROFESSIONAL SERVICES,Department on Disability Services (DDS),15230235.0,5,Indefinite Delivery Indefinite Quantity,other,['948'],not_technology,no,,high,False,
 CW93311,DOT School Bus Fleet GPS-based Automated Vehicle Locator System (AVL) System,NAVMAN WIRELESS NORTH AMERICA,Special Education Transportation (SET),706272.0,3,Firm Fixed Price,software_services,['920'],cots_implementation,no,GPS-based Automated Vehicle Locator (AVL) System,medium,True,
@@ -3627,11 +3627,11 @@ CW93388,FEMS FY21 Logistics Structural Firefighting and Proximity Firefighting P
 CW93405,Mobile Movie Fleet for DPR,Insane Impact LLC,Parks and Recreation (DPR),162066.0,1,Firm Fixed Price,other,['072'],not_technology,no,,low,False,
 CW93408,ROP Road Service Trucks for DDOT,Lindsay Ford LLC,Transportation (DDOT),2323156.8,1,Firm Fixed Price,other,['072'],not_technology,no,,high,False,
 CW93417,"OSSE - OPS - Frontline Medicaid and Transportation, electronic healthcare claim file and tracking system",Frontline Technologies Group LLC,State Superintendent of Education (OSSE),4420056.31,5,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
-CW93428,"Florida Ave and 9th St. From T St. to Barry Pl., NW Reconstruction ","Capitol Paving of D.C., Inc.",Transportation (DDOT),8449177.5,1,Firm Fixed Price,other,['913'],not_technology,no,,high,False,1.0
+CW93428,"Florida Ave and 9th St. From T St. to Barry Pl., NW Reconstruction","Capitol Paving of D.C., Inc.",Transportation (DDOT),8449177.5,1,Firm Fixed Price,other,['913'],not_technology,no,,high,False,
 CW93432,HRLA - Uniform Rental,CINTAS CORPORATION #2,Health (DOH),3800000.0,4,Requirements,other,['983'],not_technology,no,,high,False,
 CW93441,"Data Vault Hosting, Maintenance and Modification","PAIRIN, Inc.",Deputy Mayor for Planning and Economic Development (DMPED),1557516.0,4,Firm Fixed Price,software_services,['920'],software_om_support,no,,medium,True,
-CW93472,FY2021 - DBH SEH Schneider Electric Door Sounder Alarms,SCHNEIDER ELECTRIC BUILDINGS,Behavioral Health (DBH),122433.0,1,Firm Fixed Price,other,"['150', '557']",hardware_or_license_resale,no,,medium,True,1.0
-CW93508,FY21-CFO-OYP Annual Evaluation Report,Barrow Consulting,Employment Services (DOES); Contracting and Procurement (OCP),31415.39,1,Firm Fixed Price,it_adjacent,"['918', '952']",it_consulting_advisory,yes,,low,True,1.0
+CW93472,FY2021 - DBH SEH Schneider Electric Door Sounder Alarms,SCHNEIDER ELECTRIC BUILDINGS,Behavioral Health (DBH),122433.0,1,Firm Fixed Price,other,['150'],hardware_or_license_resale,no,,medium,True,
+CW93508,FY21-CFO-OYP Annual Evaluation Report,Barrow Consulting,Contracting and Procurement (OCP); Employment Services (DOES),31415.39,1,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW93564,BlueZone Terminal Emulator Software,"ROCKET SOFTWARE, INC.",Chief Technology Officer (OCTO),127260.0,2,Firm Fixed Price,it_goods,['206'],hardware_or_license_resale,no,,medium,True,
 CW93582,OSSE_K12SS_IDEA Compliance Web-Based Database Software_DC CATS,"AnLar, LLC",State Superintendent of Education (OSSE),410914.80000000005,5,Firm Fixed Price,software_services,['920'],cots_implementation,no,K12SS IDEA Compliance Web-Based Database,medium,True,
 CW93584,DCAS Tier 1 Customer Service Center,Cerida Investment Corp,Health Care Finance (DHCF),988000.0,1,Labor Hour,other,['915'],not_technology,no,,low,False,
@@ -3653,7 +3653,7 @@ CW93741,"Residential Expenses- Symbral Foundation for Community Services, Inc.",
 CW93749,FY21-COVID-T3 Testing in Schools,UNIV. OF ILLINOIS AT CHAMPAIGN,State Superintendent of Education (OSSE),24000000.0,1,Requirements,other,['948'],not_technology,no,,low,False,
 CW93752,fy'21 - DBH - Temporary Staffing Services - Aggregate Group 3,SOS Human Capital Solutions,Behavioral Health (DBH),1232200.0,5,Firm Fixed Price,other,['961'],staff_augmentation,yes,,high,True,
 CW93767,Pre and Post Transitional Care Homes,Sasha Bruce Youthwork,Youth Rehabilitation Services (DYRS),4796976.0,2,Firm Fixed Price,other,['952'],not_technology,no,,high,False,
-CW93773,DCHR Gender Identity Study,Bayne LLC,Human Resources (DCHR),126185.82,2,Firm Fixed Price,it_adjacent,"['918', '924', '952']",not_technology,no,,high,False,1.0
+CW93773,DCHR Gender Identity Study,Bayne LLC,Human Resources (DCHR),126185.82,2,Firm Fixed Price,it_adjacent,['918'],not_technology,no,,low,False,
 CW93784,FY-First Alert License Subscription,Dataminr Inc,Chief Technology Officer (OCTO),200000.0,1,Firm Fixed Price,software_services,['920'],hardware_or_license_resale,no,,high,True,
 CW93806,FY2021-CFO-DOES-OIT-LEARNING PLATFORM,DLT SOLUTIONS INC,Employment Services (DOES),35885.8,1,Firm Fixed Price,other,['956'],cots_implementation,no,,medium,True,
 CW93824,Permit Wizard Expansion,LIMBIC SYSTEMS INC,Licensing & Consumer Protection (DLCP),388000.0,1,Firm Fixed Price,software_services,['920'],custom_software_build,no,Permit Wizard,medium,True,
@@ -4025,7 +4025,7 @@ DCKA-2019-C-0088,Massachusetts Avenue NW Rehabilitation from 20th Street to Wate
 DCKA-2019-Q-0021,Federal-Aid Citywide Pavement Restoration STBG Contract,"KCI Technologies, Inc.",DDOT,1130000.0,1,,it_adjacent,['958'],not_technology,no,,high,False,
 DCKA-2020-C-0013,Guardrail and Impact Attenuator Upgrade and Replacement,Fort Myer Construction Company,DDOT,16364878.26,2,,other,"['913', '948']",not_technology,no,,high,False,
 DCKA-2020-C-0036,Construction Management and Inspection Services in accordance with the scope of Work,"Sheladia Associates, Inc",DDOT,650000.0,1,,it_adjacent,['958'],not_technology,no,,high,False,
-DCKA-2020-C-0056,"C Street, NE Implementation ",Anchor Construction Corporation,Transportation (DDOT),15995763.5,1,,other,['913'],not_technology,no,,high,False,1.0
+DCKA-2020-C-0056,"C Street, NE Implementation",Anchor Construction Corporation,Transportation (DDOT),15995763.5,1,,other,['913'],not_technology,no,,high,False,
 DCKA-2021-C-0002,Horizontal Sidewalk Cutting.,"Precision Safe Sidewalk, LLC",DDOT,999989.5,1,,other,['913'],not_technology,no,,high,False,
 DCKA-2021-C-0020,Federal Aid Pavement Restoration National Highway Performance  Program (NHPP) Streets,Fort Myer Construction Company,DDOT,73227890.29,1,,other,['913'],not_technology,no,,high,False,
 DCKA-2021-C-0024,"Rehabilitation of 16th Street, NW Bridge over Piney Branch Parkway",Kiewit Infrastructure Co.,Transportation (DDOT),7182635.25,1,,other,['913'],not_technology,no,,high,False,
@@ -4049,7 +4049,7 @@ DCRL-201/-H1-0010,Psychiatric Residential Treatment Services,"Keystone Newport N
 DCRL-2016-K-0112,Shuttle Transportation Services,"RHG Group, Inc.",Child and Family Services Agency (CFSA),130726.08,1,,other,['962'],not_technology,no,,high,False,
 DCRL-2017-D-0024,Physician Services (Psychiatric Residential Treatment Facility),Devereux Florida,Child and Family Services Agency (CFSA),832473.0,1,,other,['948'],not_technology,no,,high,False,
 DCRL-2017-F-0083,Managed Print Services/ Copiers and Maintenance for the Agency,"Ricoh, USA, Inc.",Child and Family Services Agency (CFSA),427424.68,1,,other,['985'],not_technology,no,,medium,False,
-DCRL-2017-H-0091,Developmentally Disabled Services,"Innovative Life Solutions, Inc. ",Child and Family Services Agency (CFSA),1014602.69,1,,other,['952'],not_technology,no,,high,False,1.0
+DCRL-2017-H-0091,Developmentally Disabled Services,"Innovative Life Solutions, Inc.",Child and Family Services Agency (CFSA),1014602.69,1,,other,['952'],not_technology,no,,low,False,
 DCRL-2017-R-0049,Unaccompanied Refugee Minor Program,Lutheran Social Services of the National Capital Area,Child and Family Services Agency (CFSA),1823722.56,1,,other,['952'],not_technology,no,,high,False,
 DCRL-2018-C-0024,Pregnant and Parenting Youth (PPY)  Independent Living Program,"The Mary Elizabeth House, Inc.",Child and Family Services Agency (CFSA),1503734.36,1,,other,['948'],not_technology,no,,high,False,
 DCRL-2018-H-0007,Family Based Foster Care Services-Traditional,Latin American Youth Center,Child and Family Services Agency (CFSA),1431528.32,2,,other,['948'],not_technology,no,,high,False,
@@ -4070,7 +4070,7 @@ DCRL-2021-C-0048,FACES Maintenance and Operations,Deloitte Consulting LLP,Child 
 DCRL-2021-C-0053,Sign Language Interpretation Services for CFSA Employees and Clients,"Context Global, Inc.",Child and Family Services Agency (CFSA),369950.0,1,,other,['961'],not_technology,no,,high,False,
 DCRL-2021-C-0068,Residential Treatment and Educational Services for Autistic Youth,"Community Services for Autistic Adult and Children, Inc.",Child and Family Services Agency (CFSA),1090517.12,2,,other,['952'],not_technology,no,,high,False,1.0
 DCRL-2021-C-0078,Residential Therapeutic Treatment Center Services,Community Alternatives VA DBA Kids in Focus,Child and Family Services Agency (CFSA),250000.0,1,,other,['952'],not_technology,no,,high,False,
-DCRL-2021-C-0082,Developmentally Disabled Services,"Innovative Life Solutions, Inc. ",Child and Family Services Agency (CFSA),540133.38,1,,other,['952'],not_technology,no,,high,False,1.0
+DCRL-2021-C-0082,Developmentally Disabled Services,"Innovative Life Solutions, Inc.",Child and Family Services Agency (CFSA),540133.38,1,,other,['952'],not_technology,no,,low,False,
 DCRL-2021-H-0041,Residential Treatment Center (RTC) Services,"Associated Catholic Charities, Inc d/b/a St. Vincents Villa",Child and Family Services Agency (CFSA),2741879.92,3,,other,['952'],not_technology,no,,high,False,
 DCRL-2021-R-0025,Pre and Post Permeancy Services,Another Choice For Black Children,Child and Family Services Agency (CFSA),148590.0,1,,other,['952'],not_technology,no,,high,False,
 DCRL-2021-R-0029,Capacity Building Services,Foster and Adoptive Parent Advocacy Center (FAPAC),CFSA,100000.0,1,,it_adjacent,['918'],not_technology,no,,low,False,

@@ -545,6 +545,8 @@ def main() -> int:
                         help=f"documents to download (default {DOWNLOAD_CAP})")
     parser.add_argument("--no-download", action="store_true",
                         help="counts and the conditioned comparison only")
+    parser.add_argument("--report", action="store_true",
+                        help="read every eligible document already cached; no network")
     parser.add_argument("--check-duplicates", action="store_true",
                         help="download six attachments and hash them")
     args = parser.parse_args()
@@ -607,7 +609,17 @@ def main() -> int:
     if args.no_download:
         return 0
 
-    targets = sample_documents(frame, documents, args.limit)
+    if args.report:
+        # The cache is the sample. A fresh draw shuffles the whole pool with a
+        # fixed seed, so each week's new modifications reorder all of it and
+        # the weekly run downloaded a different 400: the share exercising an
+        # option moved 145 to 138 with nothing about the District changing.
+        from dcprocure.documents import _text_path
+
+        pool = sample_documents(frame, documents, limit=len(documents))
+        targets = pool[pool.document_id.map(lambda i: _text_path(i).exists())]
+    else:
+        targets = sample_documents(frame, documents, args.limit)
     eligible = documents[documents.contract_number.isin(
         frame[(frame.option_periods >= 2) & (frame.modifications > 0)].contract_number
     )]

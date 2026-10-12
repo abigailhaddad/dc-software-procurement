@@ -42,7 +42,7 @@ before work starts" is being replaced. See `docs/CLASSIFIER_ACCURACY.md`.
 **The work_type findings are usable with an error bar.** 95% on the
 technology/not binary, 90% on the sub-label, from a 40-contract random sample.
 Both binary errors inflated the technology count and none deflated it, so
-"1,383 technology contracts" is probably slightly high rather than uncertain in
+"1,401 technology contracts" is probably slightly high rather than uncertain in
 both directions.
 
 **Portal arithmetic is solid.** Corpus counts, the payments arithmetic, the
@@ -75,7 +75,7 @@ the prose spells out at the start of a sentence cannot be.
 compiled into Python: the five spellings of sole source, the D&F header phrases,
 the statute table with what each section means. Parsing mechanics stayed in
 code. The file is deliberately outside the classifier cache fingerprint, so
-editing it cannot invalidate the 4,013 cached labels.
+editing it cannot invalidate the 4,109 cached labels.
 
 **Figures corrected during this work, because the pattern matters more than the
 numbers:** the competition finding was 51 contracts and $45.5M read from the
@@ -189,3 +189,16 @@ The 2026-08-24 raw snapshot the briefing was computed from cannot be re-fetched
 `abigailhaddad/dc-procurement-raw`, public, alongside the September pull and the
 source documents. Only raw source material is published there; nothing the model
 or the OCR produced. `docs/SCHEDULING.md` has the command to pull it back.
+
+## Open: documents re-filed under new ids
+
+The portal sometimes gives a document a new id when it re-files it -- seven
+D&Fs on four listed contracts came back between September and October 2026
+with new ids, the same names and byte-identical text. Every text cache here
+(`data/pdftext*`) is keyed by document id, so a re-filed document reads as
+never opened and its finding quietly drops out: that is how CW123727 lost its
+software lock-in citation in the 12 October run. Those seven were re-downloaded
+under their new ids, and their text matched the old copies exactly. Nothing yet
+catches the next one. A fallback that looks for a cached copy under the same
+contract and file name, and confirms it by re-downloading, would.
+
