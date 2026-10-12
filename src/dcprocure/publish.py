@@ -46,7 +46,6 @@ GROWS_ONLY = frozenset(
     {
         "contracts_by_commodity.json",
         "contract_details.json",
-        "contract_details_older_periods.json",
         "purchase_by_commodity.json",
         "payments.json",
     }
@@ -120,21 +119,28 @@ def publish(raw_dir: Path = RAW_DIR, repo_id: str = REPO_ID) -> str:
         raise SystemExit(f"missing from {raw_dir}: {missing}; not publishing")
 
     api = HfApi(token=token)
-    # These files only ever grow. A smaller local copy means the run started
-    # without the archive, and publishing it would throw the archive away.
-    cumulative = [n for n in FILES if n in GROWS_ONLY]
-    published = {
-        info.path: info.size
-        for info in api.get_paths_info(
-            repo_id, [f"archive/{n}" for n in cumulative], repo_type="dataset"
+    # These files only ever gain rows. Fewer rows than the published archive
+    # means the run started without it, and publishing would throw it away.
+    # Rows, not bytes: a restore that replaced rebuilt rows with the shorter
+    # real ones made two files smaller while every row was still there.
+    try:
+        published = json.loads(
+            Path(
+                hf_hub_download(repo_id, "archive/manifest.json", repo_type="dataset", token=token)
+            ).read_text(encoding="utf-8")
         )
-    }
-    shrunk = [
-        n for n in cumulative
-        if (raw_dir / n).stat().st_size < published.get(f"archive/{n}", 0)
-    ]
+    except Exception:  # noqa: BLE001 - no archive yet, nothing to protect
+        published = {"snapshots": []}
+    published_rows = {e["name"]: e["rows"] for e in published.get("snapshots", [])}
+    shrunk = []
+    for name in GROWS_ONLY:
+        stem = name.removesuffix(".json")
+        if stem in published_rows:
+            rows = len(json.loads((raw_dir / name).read_text(encoding="utf-8")))
+            if rows < published_rows[stem]:
+                shrunk.append(f"{stem}: {rows:,} rows < {published_rows[stem]:,} published")
     if shrunk:
-        raise SystemExit(f"not publishing: smaller than the published archive: {shrunk}")
+        raise SystemExit(f"not publishing: fewer rows than the published archive: {shrunk}")
     current = Path(hf_hub_download(repo_id, "README.md", repo_type="dataset", token=token)).read_text(
         encoding="utf-8"
     )
