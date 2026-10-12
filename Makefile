@@ -3,13 +3,14 @@
 # run costs nothing.
 
 .PHONY: help install pull classify verify test report site readme rates ocr h1b \
-        h1b-dol calc solicitations dcas pull-payments drift dashboard derived competition reseller part-numbers \
+        h1b-dol calc solicitations dcas pull-payments publish hydrate prune drift dashboard derived competition reseller part-numbers \
         modifications trends vehicles buyers cycle-time all
 
 help:
 	@echo "make install    install dependencies"
 	@echo "make pull       fetch the portal snapshot into data/raw (~10 min, ~360MB)"
 	@echo "make pull-payments  refresh only the payments table (~300MB, one request)"
+	@echo "make publish    upload data/raw to the Hugging Face archive (needs HF_TOKEN)"
 	@echo "make classify   sort contracts by what they buy, and read delivery structure"
 	@echo "make verify     recompute every published figure and fail on drift"
 	@echo "make drift      recompute every published figure and report what moved"
@@ -45,6 +46,19 @@ pull:
 # whole table or nothing. Refreshing it alone avoids re-pulling everything else.
 pull-payments:
 	uv run dcprocure -v pull-payments
+
+# The portal drops contracts as they age out; data/raw keeps them, and this puts
+# that copy somewhere other than one laptop.
+publish:
+	uv run dcprocure -v publish
+
+# data/raw only needs to exist during a run: hydrate brings it back from the
+# archive, prune deletes it once every file is published byte for byte.
+hydrate:
+	uv run dcprocure -v hydrate
+
+prune:
+	uv run dcprocure -v prune
 
 classify:
 	uv run python analysis/classify_contracts.py

@@ -1,17 +1,26 @@
-"""Command line entry point: ``dcprocure pull``, ``dcprocure pull-payments``
-and ``dcprocure report``."""
+"""Command line entry point: ``dcprocure pull``, ``dcprocure pull-payments``,
+``dcprocure recover-delisted``, ``dcprocure publish`` and ``dcprocure report``."""
 
 from __future__ import annotations
 
 import argparse
+import io
+import json
 import logging
+import subprocess
 import sys
+from collections import Counter
+from pathlib import Path
 
 import pandas as pd
 
 from . import analysis, parse
+from .archive import recover_delisted, restore_from_snapshot
 from .client import DCProcurementClient
-from .pull import DATA_DIR, pull_all, pull_payments, update_manifest_entry
+from .pull import DATA_DIR, RAW_DIR, pull_all, pull_payments, update_manifest_entry
+
+# Last commit before the portal dropped FY2021-era contracts on 1 October 2026.
+RECOVERY_BASELINE = "248abc1"
 
 
 def _configure_logging(verbose: bool) -> None:
@@ -67,6 +76,21 @@ def main(argv: list[str] | None = None) -> int:
         "pull-payments",
         help="re-fetch only the payments table (~280 MB in one response, several minutes)",
     )
+    recover = sub.add_parser(
+        "recover-delisted",
+        help="put back contracts and periods the portal dropped on 1 October 2026",
+    )
+    recover.add_argument(
+        "--from-snapshot",
+        type=Path,
+        help="an earlier data/raw (e.g. raw/ from the Hugging Face dataset) to restore "
+        "from exactly, after re-fetching by id",
+    )
+    sub.add_parser("publish", help="upload the raw snapshot to the Hugging Face dataset")
+    sub.add_parser("hydrate", help="download any missing data/raw file from the Hugging Face archive")
+    sub.add_parser(
+        "prune", help="delete data/raw files, only if each matches the Hugging Face archive"
+    )
     sub.add_parser("report", help="print headline figures from the local snapshot")
 
     args = parser.parse_args(argv)
@@ -83,6 +107,39 @@ def main(argv: list[str] | None = None) -> int:
             snapshot = pull_payments(client)
         update_manifest_entry(snapshot)
         print(f"{snapshot.name}: {snapshot.rows:,} rows")
+    elif args.command == "recover-delisted":
+        # What the analysis had before the portal's 1 October 2026 drop: the
+        # classifications as committed in the last commit before it, which
+        # record each contract's period count and summed ceiling. Pinned, so
+        # committing a later classification table does not move the target.
+        committed = subprocess.run(
+            ["git", "show", f"{RECOVERY_BASELINE}:data/contract_classifications.csv"],
+            capture_output=True, text=True, check=True, cwd=DATA_DIR.parent,
+        ).stdout
+        labels = pd.read_csv(io.StringIO(committed), dtype={"contract_number": str})
+        expected = {
+            row.contract_number: (int(row.option_periods), float(row.ceiling))
+            for row in labels.itertuples()
+        }
+        details = json.loads((RAW_DIR / "contract_details.json").read_text(encoding="utf-8"))
+        periods_on_disk = Counter(d["contractNumber"] for d in details)
+        # Every contract holding fewer periods than it did: whole contracts
+        # dropped (zero on disk), and listed ones whose oldest periods were.
+        numbers = {n for n, (k, _) in expected.items() if periods_on_disk[n] < k}
+        with DCProcurementClient() as client:
+            result = recover_delisted(client, numbers, RAW_DIR, expected)
+        print(json.dumps(result, indent=1))
+        if args.from_snapshot:
+            print(json.dumps(restore_from_snapshot(RAW_DIR, args.from_snapshot), indent=1))
+    elif args.command == "publish":
+        from .publish import publish
+
+        print(publish())
+    elif args.command in ("hydrate", "prune"):
+        from . import publish as hf
+
+        done = getattr(hf, args.command)()
+        print(f"{args.command}: {', '.join(done) or 'nothing to do'}")
     else:
         _report()
     return 0
