@@ -259,3 +259,11 @@ def test_unlisted_payment_numbers_split_text_from_numbers():
     assert s["text_entries"] == len(set(text) - listed)
     assert s["unlisted_numbers"] == len(numbers)
     assert s["unlisted_entries"] == s["unlisted_numbers"] + s["text_entries"]
+
+
+def test_every_exported_file_is_published():
+    # A table the export writes but publish leaves out works locally and 404s on the site.
+    from dcprocure.publish import FILES
+
+    written = {f"parquet/{p.name}" for p in PARQUET.iterdir() if p.suffix in (".parquet", ".json")}
+    assert written <= set(FILES), sorted(written - set(FILES))

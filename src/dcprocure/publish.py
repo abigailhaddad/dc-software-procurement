@@ -48,6 +48,7 @@ FILES = (
     "parquet/nigp_classes.parquet",
     "parquet/contract_payments.parquet",
     "parquet/contract_orders.parquet",
+    "parquet/solicitations.parquet",
     "parquet/columns.json",
     "parquet/summary.json",
 )
