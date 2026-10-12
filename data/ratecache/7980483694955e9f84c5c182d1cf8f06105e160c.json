@@ -1,0 +1,74 @@
+[
+ {
+  "labor_category": "Junior Acquisition Analyst / Contract Specialist",
+  "level": "Mid-Level",
+  "hourly_rate": 87.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-Level Acquisition Analyst / Contract Specialist",
+  "level": "Senior",
+  "hourly_rate": 113.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Acquisition Analyst / Contract Specialist",
+  "level": "Lead",
+  "hourly_rate": 123.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Lead Acquisition Analyst / Contract Specialist",
+  "level": "",
+  "hourly_rate": 113.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Junior Auditor",
+  "level": "",
+  "hourly_rate": 87.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Mid-Level Auditor",
+  "level": "",
+  "hourly_rate": 100.74,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Audit Team Lead",
+  "level": "",
+  "hourly_rate": 113.49,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Source Selection Facilitator",
+  "level": "",
+  "hourly_rate": 87.7,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Technical Support Lead",
+  "level": "",
+  "hourly_rate": 123.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Senior Program Control / Data Analyst",
+  "level": "",
+  "hourly_rate": 123.79,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Data Analyst",
+  "level": "",
+  "hourly_rate": 119.57,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Principal Acquisition Consultant Engineering",
+  "level": "",
+  "hourly_rate": 123.79,
+  "unit": "hour"
+ }
+]

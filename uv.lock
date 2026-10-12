@@ -640,6 +640,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },
+    { name = "huggingface-hub" },
     { name = "jupyter" },
     { name = "litellm" },
     { name = "nbconvert" },
@@ -655,6 +656,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "httpx", specifier = ">=0.27" },
+    { name = "huggingface-hub", specifier = ">=1.28.0" },
     { name = "jupyter", specifier = ">=1.0" },
     { name = "litellm", specifier = ">=1.50" },
     { name = "nbconvert", specifier = ">=7.0" },

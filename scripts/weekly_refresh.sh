@@ -42,7 +42,17 @@ step() {
 log "weekly refresh starting in $REPO"
 failed=0
 
+# The pull merges into the previous files, which prune removed last week.
+# If this fails the pull would start from nothing and publish would replace the
+# archive with one week's rows, so the run stops here instead.
+if ! step "restore raw archive" make hydrate; then
+  log "stopping: could not restore data/raw from the archive; see $LOG"
+  exit 1
+fi
 step "pull portal snapshot" make pull      || failed=1
+# Straight after the pull, before anything downstream can fail: the archive is
+# the one copy of contracts the portal has stopped listing.
+step "publish raw archive" make publish    || failed=1
 step "classify new contracts" make classify || failed=1
 
 # The derived tables are computed from the snapshot, so they have to be rebuilt
@@ -68,6 +78,11 @@ step "drift report" make drift || failed=1
 # until a human restates it, and the drift panel explains the gap.
 step "rebuild dashboard" make dashboard || failed=1
 
+# Free the disk only on a clean run, and prune itself deletes nothing unless
+# every file matches what was published.
+if [ "$failed" -eq 0 ]; then
+  step "delete local raw copy" make prune || failed=1
+fi
 # Keep the last 12 runs. Weekly, so about a quarter of history.
 ls -1t "$LOG_DIR"/run-*.log 2>/dev/null | tail -n +13 | xargs -r rm --
 

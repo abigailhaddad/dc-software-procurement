@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from collections.abc import Iterable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
@@ -16,6 +17,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .archive import retain_by_group, retain_by_key
 from .client import DCProcurementClient, Filter, PortalError
 from .commodities import IT_ALL
 
@@ -84,14 +86,37 @@ def pull_by_commodity(
             existing = seen.setdefault(key, {**row, "matched_classes": []})
             existing["matched_classes"].append(class_code)
 
-    records = list(seen.values())
-    _write(out_dir / f"{module}_by_commodity.json", records)
+    path = out_dir / f"{module}_by_commodity.json"
+    if module == "purchase":
+        # A revised order comes back under a new number (PO736374-V4 becomes
+        # -V5) and the old one stops appearing: 458 of the 460 orders that left
+        # between September and October did so. Keyed on the full number, the
+        # superseded version would be kept beside its replacement and counted
+        # twice, so all versions of an order are one group.
+        records, retained = retain_by_group(
+            path, list(seen.values()), lambda r: _po_base(r["poNumber"])
+        )
+    else:
+        records, retained = retain_by_key(
+            path, list(seen.values()), lambda r: _row_key(module, r)
+        )
+    _write(path, records)
     return Snapshot(
         name=f"{module}_by_commodity",
         pulled_at=_now(),
         rows=len(records),
-        detail={"classes": per_class, "rows_before_dedupe": sum(per_class.values())},
+        detail={
+            "classes": per_class,
+            "rows_before_dedupe": sum(per_class.values()),
+            "listed": len(seen),
+            "retained_delisted": retained,
+        },
     )
+
+
+def _po_base(po_number: str) -> str:
+    """The order a purchase-order number belongs to, without its -Vn revision."""
+    return re.sub(r"-V\d+$", "", po_number)
 
 
 def _row_key(module: str, row: dict[str, Any]) -> str:
@@ -120,6 +145,9 @@ def pull_contract_details(
     arrangement -- and for the list of attached PDFs. One request per id, so
     this is the slow step, and it resumes: ids already on disk are kept and only
     the new ones are fetched. Pass ``refresh=True`` to re-pull everything.
+
+    ``contract_ids`` comes from the cumulative search file, so it includes
+    delisted contracts; their details stay on disk and are not re-fetched.
     """
     path = out_dir / "contract_details.json"
     existing: dict[str, dict[str, Any]] = {}
@@ -268,16 +296,20 @@ def pull_payments(client: DCProcurementClient, out_dir: Path = RAW_DIR) -> Snaps
                 "the response shape changed and parse.load_payments would read nulls."
             )
 
-    _write(out_dir / "payments.json", rows)
+    path = out_dir / "payments.json"
+    merged, retained = retain_by_group(path, rows, lambda r: r["id"])
+    _write(path, merged)
     return Snapshot(
         name="payments",
         pulled_at=_now(),
-        rows=len(rows),
+        rows=len(merged),
         detail={
             "filter_sent": {PAYMENTS_FILTER.name: PAYMENTS_FILTER.value},
             "filter_applied_server_side": False,
             "min_expected_rows": PAYMENTS_MIN_ROWS,
-            "with_contract_number": sum(1 for r in rows if r.get("contractNumber")),
+            "listed": len(rows),
+            "retained_delisted": retained,
+            "with_contract_number": sum(1 for r in merged if r.get("contractNumber")),
         },
     )
 

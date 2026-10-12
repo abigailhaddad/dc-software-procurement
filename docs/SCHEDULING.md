@@ -28,7 +28,13 @@ Logs go to `data/drift/logs/run-<timestamp>.log`, last 12 runs kept.
 
 ## What the weekly run does
 
-1. `make pull` -- refresh the portal snapshot into `data/raw/`.
+0. `make hydrate` -- download any `data/raw` file that is missing from the
+   Hugging Face archive. The run stops if this fails: the pull merges into the
+   previous files, and starting from nothing would publish one week's rows over
+   the archive.
+1. `make pull` -- refresh the portal snapshot into `data/raw/`, keeping every
+   row the portal has stopped returning (see "The portal forgets" below).
+   Then `make publish` uploads it to `archive/` in the dataset.
 2. `make classify` -- label anything new.
 3. `make rates`, `make solicitations`, `make dcas` -- rebuild the derived tables.
 4. `make derived` -- rebuild everything else `verify_claims` reads:
@@ -37,6 +43,9 @@ Logs go to `data/drift/logs/run-<timestamp>.log`, last 12 runs kept.
 5. `make drift` -- recompute every published figure and report what moved.
 6. `make dashboard` -- rebuild `site/dashboard.html`'s data from the new
    snapshot and the drift report.
+
+After a clean run, `make prune` deletes the `data/raw` files to free ~350MB,
+and deletes nothing unless every one matches the published copy byte for byte.
 
 Steps 3 and 4 exist because those tables are computed from the snapshot.
 Without them the report mixes "the portal changed" with "we never re-ran the
@@ -90,6 +99,18 @@ that are new. Raising `LLM_SAMPLES` does the same thing, for the same reason: a
 one-draw label and a majority-of-three label are different measurements and are
 not mixed in one table. The ceiling is deliberately not part of the key -- see
 `KEY_FIELDS` in `src/dcprocure/classify.py`.
+
+**The portal forgets.** It is a rolling window: on 1 October 2026, when
+FY2027 began, the search stopped returning 1,297 of the 7,165 option periods in
+the September pull -- every period of 647 contracts and the oldest periods of
+635 still listed. Two published checks failed on it the next week. So the pull
+merges rather than replaces: a row the portal drops stays, marked
+`listed: False`. Contracts merge on their period id. Payments and purchase
+orders merge on groups, because a revised payment comes back changed under the
+same id and a revised order under a new `-Vn` number; keeping the old row beside
+the new one would count it twice. The rows lost in October were put back with
+`dcprocure recover-delisted --from-snapshot <raw/ from the dataset>` and match
+the September pull field for field. `src/dcprocure/archive.py` has the detail.
 
 **The payments pull rewrites ~300MB every run.** There is no incremental path:
 the module ignores every filter and returns the whole table or nothing. Budget
