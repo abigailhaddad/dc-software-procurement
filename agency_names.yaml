@@ -14,7 +14,7 @@
 #   - Never map by abbreviation alone. "OPC" on the portal is two agencies:
 #     "Police Complaints (OPC)" and "People's Counsel (OPC)".
 
-PORTAL_LIST: &portal "The portal's own agency list (data/raw/agencies.json, from https://contracts.ocp.dc.gov/api/contracts/agencies), which pairs each abbreviation with this name"
+PORTAL_LIST: &portal "DC's site's own agency list (data/raw/agencies.json, from https://contracts.ocp.dc.gov/api/contracts/agencies), which pairs each abbreviation with this name"
 OCFO_FY2025_GDS: &ocfo_gds "DC OCFO, Fiscal Year 2025 Operating Budget Chapters, Governmental Direction and Support: https://cfo.dc.gov/node/1712356"
 
 names:
