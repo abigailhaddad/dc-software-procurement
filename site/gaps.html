@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What DC's Portal Leaves Out</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/style.css">
+<style>
+  /* Only for this page; everything else comes from shared/style.css. */
+  .gap-list{margin:6px 0 0; padding-left:20px; color:var(--soft)}
+  .gap-list li{margin:2px 0}
+  .note-card .covers{font-size:.82rem; color:var(--muted); margin:0 0 8px; flex:0}
+  section.block > p{max-width:80ch; color:var(--soft)}
+  details.more{margin:8px 0}
+  details.more summary{cursor:pointer; color:var(--accent); font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <h1>DC procurement data</h1>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
+  <nav class="pages">
+    <a href="index.html">Contracts</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
+    <a href="gaps.html" aria-current="page">What DC's site leaves out</a>
+    <a href="about.html">About this data</a>
+  </nav>
+</header>
+
+<section class="about-hero">
+  <h2>What DC's portal leaves out</h2>
+  <p>DC's <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> is the public record of what the
+  District buys. This page lists what a reader can't learn from it, or can't learn reliably, with a number for each and a link to the
+  records behind it. Each is a description of the published records, not a finding about how any contract was handled.</p>
+  <p>Every number is computed in your browser from the same tables the rest of this site uses, except where a card says it comes from a
+  hand-checked sample.</p>
+  <p class="meta" id="asof"></p>
+  <ul class="gap-list">
+    <li><a href="#agencies">Agencies outside OCP's authority</a></li>
+    <li><a href="#payments">Payments that point to no listed contract</a></li>
+    <li><a href="#orders">Purchase orders without a description or contract</a></li>
+    <li><a href="#amounts">Option-period amounts</a></li>
+    <li><a href="#dropped">Records the search stops returning</a></li>
+    <li><a href="#blanks">Contract fields left blank</a></li>
+    <li><a href="#market">Market type and sole-source awards</a></li>
+    <li><a href="#names">Names and ids that don't line up</a></li>
+  </ul>
+</section>
+<div id="status">Loading the data into your browser…</div>
+
+<section class="block" id="agencies">
+  <h2>Agencies outside OCP's authority</h2>
+  <p>DC's site has a page of <a href="https://contracts.ocp.dc.gov/agencies">"Non OCP Agencies"</a>: agencies that buy under their own
+  authority instead of the Chief Procurement Officer's, which the site links out to. Their contracts are mostly not on the
+  contract list, though many of their purchase orders and payments are.</p>
+  <div class="notes" id="agency-cards"></div>
+  <div class="tablewrap" style="max-height:none; margin-top:12px"><table class="plain" id="agency-table"></table></div>
+  <p class="muted" id="agency-note"></p>
+  <details class="more"><summary>Other agencies with orders or payments but no contract</summary>
+    <p class="muted" id="other-note"></p>
+    <div class="tablewrap" style="max-height:none"><table class="plain" id="other-table"></table></div>
+  </details>
+</section>
+
+<section class="block" id="payments">
+  <h2>Payments that point to no listed contract</h2>
+  <p>Each payment line has a contract number field. Most lines leave it empty, type something other than a number into it, or give a
+  number the contract list doesn't have. Those payments can't be tied to a contract's terms, ceiling or documents.</p>
+  <div class="notes" id="payment-cards"></div>
+</section>
+
+<section class="block" id="orders">
+  <h2>Purchase orders without a description or contract</h2>
+  <div class="notes" id="order-cards"></div>
+</section>
+
+<section class="block" id="amounts">
+  <h2>Option-period amounts</h2>
+  <div class="notes" id="amount-cards"></div>
+</section>
+
+<section class="block" id="dropped">
+  <h2>Records the search stops returning</h2>
+  <div class="notes" id="dropped-cards"></div>
+</section>
+
+<section class="block" id="blanks">
+  <h2>Contract fields left blank</h2>
+  <p>Counted over every option period on the contract list, including periods its search no longer returns. "Contracts" counts a
+  contract when the field is blank on every one of its periods.</p>
+  <div class="notes" id="blank-cards"></div>
+  <div class="tablewrap" style="max-height:none; margin-top:12px"><table class="plain" id="blank-table"></table></div>
+  <p class="muted" id="blank-note"></p>
+</section>
+
+<section class="block" id="market">
+  <h2>Market type and sole-source awards</h2>
+  <div class="notes" id="market-cards"></div>
+</section>
+
+<section class="block" id="names">
+  <h2>Names and ids that don't line up</h2>
+  <div class="notes" id="name-cards"></div>
+</section>
+
+<footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB.</footer>
+</div>
+<script type="module">
+import {boot, q, manifest, BASE, PARQUET_DIR, LOCAL} from "./shared/db.js";
+import {n, money, esc} from "./shared/explorer.js";
+
+const data = new URLSearchParams(location.search).get("data");
+const keep = (href) => data ? href + (href.includes("?") ? "&" : "?") + "data=" + encodeURIComponent(data) : href;
+const pct = (a, b) => `${Math.round(100 * a / b)}%`;
+const GITHUB = "https://github.com/abigailhaddad/dc-software-procurement/blob/main/";
+
+// The status codes DC's Independent Agencies page shows for its three
+// checkboxes (read from that page's own code, 12 October 2026).
+const STATUS = {
+  1: "Subject to the PPRA, independent from the CPO's authority",
+  2: "Exempt from the PPRA and the CPO's authority",
+  4: "Limited applicability of the PPRA, exempt from the CPO's authority",
+};
+
+// The hand-checked sample in amount_checks.yaml (checked 12 October 2026).
+// It is a fixed sample, so these do not move with the data.
+const AMOUNT_SAMPLE = {checked: "12 October 2026", drawn: 60, withPaperwork: 48, differs: 14, low: "18%", high: "43%",
+  baseWithPaperwork: 48, baseDiffers: 5, baseLow: "5%", baseHigh: "22%", optionNoPaperwork: 11};
+
+async function json(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`could not load ${url}: ${response.status}`);
+  return response.json();
+}
+
+function card(x) {
+  return `<article class="note-card"><div class="note-big">${x.big}</div><div class="note-label">${esc(x.label)}</div>
+    <p>${x.text}</p><p class="covers">${x.covers}</p>
+    ${x.link ? `<a href="${x.link[1].startsWith("http") ? x.link[1] : keep(x.link[1])}">${esc(x.link[0])} →</a>` : ""}</article>`;
+}
+
+function cards(id, list) {
+  document.getElementById(id).innerHTML = list.map(card).join("");
+}
+
+// ---------- agencies ----------
+async function agencies(asof) {
+  const clusters = await json(new URL(BASE + "agencies.json", location.href).href);
+  const independent = [];
+  for (const cluster of clusters) {
+    for (const a of cluster.agencies) {
+      if (a.status === null || a.status === 0) continue;
+      if (!STATUS[a.status]) throw new Error(`agencies.json: unexpected status ${a.status} for ${a.displayName}`);
+      independent.push(a);
+    }
+  }
+  const rows = await q(`SELECT agency, CAST(sum(k) AS INTEGER) AS contracts, CAST(sum(po) AS INTEGER) AS orders, sum(po_amt) AS order_amt,
+      CAST(sum(p) AS INTEGER) AS lines, sum(p_amt) AS paid FROM (
+      SELECT a AS agency, count(DISTINCT contract_number) AS k, 0 AS po, 0.0 AS po_amt, 0 AS p, 0.0 AS p_amt
+        FROM (SELECT contract_number, unnest(string_split(agency, '; ')) AS a FROM contracts) GROUP BY a
+      UNION ALL SELECT agency, 0, count(*), sum(po_total), 0, 0.0 FROM purchase_orders GROUP BY agency
+      UNION ALL SELECT agency, 0, 0, 0.0, count(*), sum(voucher_amount) FROM payments GROUP BY agency)
+    WHERE agency IS NOT NULL GROUP BY agency`);
+  const [span] = await q(`SELECT CAST((SELECT min(start_date) FROM contracts) AS VARCHAR) AS first_period,
+      (SELECT min(fiscal_year) FROM purchase_orders) AS first_po_fy,
+      CAST((SELECT min(payment_date) FROM payments) AS VARCHAR) AS first_payment,
+      (SELECT count(*) FROM (SELECT contract_number FROM contracts GROUP BY contract_number HAVING bool_and(coalesce(trim(agency), '') = ''))) AS blank_agency`);
+  const byName = {};
+  for (const r of rows) byName[r.agency] = r;
+  const zero = {contracts: 0, orders: 0, order_amt: 0, lines: 0, paid: 0};
+  const table = independent.map((a) => ({...a, ...(byName[a.displayName] || zero)}));
+  table.sort((x, y) => (x.contracts > 0) - (y.contracts > 0) || y.paid - x.paid);
+
+  const noContracts = table.filter((a) => a.contracts === 0 && (a.orders > 0 || a.lines > 0));
+  const nothing = table.filter((a) => a.contracts === 0 && a.orders === 0 && a.lines === 0);
+  const some = table.filter((a) => a.contracts > 0);
+  const sumOf = (list, k) => list.reduce((t, a) => t + a[k], 0);
+  const top = noContracts.slice(0, 2);
+
+  cards("agency-cards", [
+    {big: `${noContracts.length} of ${table.length}`, label: "agencies on that list have orders or payments here but no contract",
+     text: `Together they placed ${n(sumOf(noContracts, "orders"))} purchase orders worth ${money(sumOf(noContracts, "order_amt"))} and
+       received ${n(sumOf(noContracts, "lines"))} payment lines totalling ${money(sumOf(noContracts, "paid"))}, yet no contract on the
+       list names them. ${top.map((a) => `${esc(a.displayName)}: ${money(a.paid)} paid`).join("; ")}. Totals by contract leave these
+       agencies out entirely.`,
+     covers: `As of ${asof}. Agencies are matched by the name DC's site gives them. The spans differ: contract periods here start from
+       ${esc(span.first_period)}, orders from fiscal year ${esc(span.first_po_fy)}, payments from ${esc(span.first_payment)}.`},
+    {big: `${nothing.length}`, label: "appear in no section at all",
+     text: `${nothing.map((a) => esc(a.displayName)).join(", ")}. DC's site links each to its own procurement page; their records are not
+       in the three sections copied here.`,
+     covers: `As of ${asof}. Checked by name against contracts, orders and payments.`},
+    {big: `${some.length}`, label: "have some contracts listed",
+     text: `${some.map((a) => `${esc(a.displayName)} (${n(a.contracts)})`).join(", ")}. A count here can be a small part of what
+       the agency buys under its own authority.`,
+     covers: `As of ${asof}. Distinct contract numbers naming the agency.`},
+  ]);
+
+  const link = (page, name, label) => `<a href="${keep(page + "?agency=" + encodeURIComponent(name))}">${label}</a>`;
+  document.getElementById("agency-table").innerHTML = `<thead><tr><th>Agency</th><th>Status on DC's site</th><th class="num">Contracts</th>
+      <th class="num">Purchase orders</th><th class="num">Order totals</th><th class="num">Payment lines</th><th class="num">Paid</th></tr></thead><tbody>` +
+    table.map((a) => `<tr><td>${a.siteLink ? `<a href="${esc(a.siteLink)}" target="_blank" rel="noopener" title="This agency's procurement page, as DC's site links it">${esc(a.displayName)}&nbsp;↗</a>` : esc(a.displayName)}</td>
+      <td>${esc(STATUS[a.status])}</td>
+      <td class="num">${a.contracts ? link("index.html", a.displayName, n(a.contracts)) : "0"}</td>
+      <td class="num">${a.orders ? link("purchase-orders.html", a.displayName, n(a.orders)) : "0"}</td>
+      <td class="num">${money(a.order_amt)}</td>
+      <td class="num">${a.lines ? link("payments.html", a.displayName, n(a.lines)) : "0"}</td>
+      <td class="num">${money(a.paid)}</td></tr>`).join("") + "</tbody>";
+
+  document.getElementById("agency-note").innerHTML = `The list is DC's site's own agency list
+    (<a href="${new URL(BASE + "agencies.json", location.href).href}">agencies.json</a>), where ${n(table.length)} agencies carry one of the three
+    statuses its Independent Agencies page filters on. That page itself, checked on 12 October 2026, lists 28 entries: these
+    ${n(table.length)} plus five with no agency code (D.C. Courts, the D.C. Housing Authority, the Public Defender Service, the
+    Not-for-profit Hospital Association and the Office of Public Partnerships), none of which appeared under those names in any section on that date.
+    ${n(span.blank_agency)} contracts name no agency at all (see <a href="#blanks">blank fields</a>), so a few of
+    those could belong to agencies counted as having none.`;
+
+  // Every other agency with orders or payments and no contract, by name.
+  const independentNames = new Set(independent.map((a) => a.displayName));
+  const others = rows.filter((r) => !independentNames.has(r.agency) && r.contracts === 0 && (r.orders > 0 || r.lines > 0))
+    .sort((x, y) => y.paid - x.paid);
+  document.getElementById("other-note").textContent = `${others.length} agency names not on the independent list also have orders or
+    payments but no contract. Some are budget lines rather than agencies (Settlements and Judgments, Non-Public Tuition). Small agencies
+    may buy through other agencies' contracts or below the size that needs a contract, so a zero here does not by itself mean records are missing.`;
+  document.getElementById("other-table").innerHTML = `<thead><tr><th>Agency, as named on DC's site</th><th class="num">Purchase orders</th>
+      <th class="num">Order totals</th><th class="num">Payment lines</th><th class="num">Paid</th></tr></thead><tbody>` +
+    others.map((a) => `<tr><td>${esc(a.agency)}</td><td class="num">${a.orders ? link("purchase-orders.html", a.agency, n(a.orders)) : "0"}</td>
+      <td class="num">${money(a.order_amt)}</td><td class="num">${a.lines ? link("payments.html", a.agency, n(a.lines)) : "0"}</td>
+      <td class="num">${money(a.paid)}</td></tr>`).join("") + "</tbody>";
+}
+
+// ---------- payments ----------
+async function payments(s, asof) {
+  const [p] = await q(`SELECT count(*) AS lines, sum(voucher_amount) AS paid,
+      count(*) FILTER (WHERE contract_number IS NULL) AS none_lines,
+      sum(voucher_amount) FILTER (WHERE contract_number IS NULL) AS none_paid,
+      count(*) FILTER (WHERE NOT regexp_matches(contract_number, '[0-9]')) AS text_lines,
+      sum(voucher_amount) FILTER (WHERE NOT regexp_matches(contract_number, '[0-9]')) AS text_paid,
+      count(DISTINCT contract_number) FILTER (WHERE NOT regexp_matches(contract_number, '[0-9]')) AS text_values,
+      count(*) FILTER (WHERE contract_number = 'N/A') AS na_lines,
+      count(*) FILTER (WHERE regexp_matches(contract_number, '[0-9]') AND contract_number NOT IN (SELECT contract_number FROM contracts)) AS unl_lines,
+      sum(voucher_amount) FILTER (WHERE regexp_matches(contract_number, '[0-9]') AND contract_number NOT IN (SELECT contract_number FROM contracts)) AS unl_paid,
+      count(DISTINCT contract_number) FILTER (WHERE regexp_matches(contract_number, '[0-9]') AND contract_number NOT IN (SELECT contract_number FROM contracts)) AS unl_values,
+      count(*) FILTER (WHERE contract_number IN (SELECT contract_number FROM contracts)) AS listed_lines,
+      sum(voucher_amount) FILTER (WHERE contract_number IN (SELECT contract_number FROM contracts)) AS listed_paid,
+      CAST(min(payment_date) AS VARCHAR) AS first, CAST(max(payment_date) AS VARCHAR) AS last
+    FROM payments`);
+  // The four groups split every line exactly once; stop rather than show figures that don't add up.
+  if (p.none_lines + p.text_lines + p.unl_lines + p.listed_lines !== p.lines) throw new Error("payment groups do not add up to all lines");
+  if (p.lines !== s.payments.lines) throw new Error(`payments table has ${p.lines} lines, summary.json says ${s.payments.lines}`);
+  const span = `Payments dated ${p.first} to ${p.last}, as of ${asof}. Out of ${n(p.lines)} payment lines and ${money(p.paid)} paid (summing each line's own amount).`;
+  cards("payment-cards", [
+    {big: pct(p.listed_paid, p.paid), label: "of dollars paid are on lines carrying a listed contract's number",
+     text: `${money(p.listed_paid)} of ${money(p.paid)}, on ${n(p.listed_lines)} lines. Everything else paid can't be tied to a contract
+       on DC's site from the payment record alone.`,
+     covers: span, link: ["See the payments", "payments.html?contract_link=A+listed+contract"]},
+    {big: pct(p.none_lines, p.lines), label: "of payment lines leave the contract number empty",
+     text: `${n(p.none_lines)} lines, ${money(p.none_paid)}. Some of these are payments that need no contract, such as grants, benefits or
+       small purchases; DC's site doesn't say which.`,
+     covers: span, link: ["See them", "payments.html?contract_link=None"]},
+    {big: n(p.text_lines), label: "payment lines have words, not a number, in the contract number field",
+     text: `${money(p.text_paid)} across ${n(p.text_values)} different entries with no digit in them, such as "N/A" (${n(p.na_lines)} lines),
+       "n/a", "PO", "TBD", "small purchase" and "See P.O.". The field is typed in, so these count as "not a listed contract" on the
+       payments page.`,
+     covers: span + " Counted as any entry with no digit; every number on the contract list has one.",
+     link: ["See the \"N/A\" lines", "payments.html?contract_number=N%2FA"]},
+    {big: n(p.unl_values), label: "contract numbers on payments that the contract list doesn't have",
+     text: `${n(p.unl_lines)} lines carrying them were paid ${money(p.unl_paid)}. Many look like real contract numbers (CW numbers and
+       DCAM-, DCKA- and CFOPD- solicitation numbers): contracts that ended before our first pull, contracts outside OCP's list, or numbers
+       typed differently.`,
+     covers: span + " Entries with at least one digit that match no contract number exactly.",
+     link: ["See them", "payments.html?contract_link=Not+a+listed+contract"]},
+  ]);
+}
+
+// ---------- purchase orders ----------
+async function orders(asof) {
+  const [o] = await q(`SELECT count(*) AS orders, sum(po_total) AS total,
+      count(*) FILTER (WHERE regexp_replace(po_number, '-V[0-9]+$', '') IN
+        (SELECT regexp_replace(po_number, '-V[0-9]+$', '') FROM contract_orders)) AS linked
+    FROM purchase_orders`);
+  cards("order-cards", [
+    {big: n(o.orders - o.linked), label: `of ${n(o.orders)} purchase orders can't be linked to a listed contract`,
+     text: `A purchase order on DC's site has seven fields: number, agency, supplier, commodity code, total, fiscal year and order date.
+       There is no description of what was bought and no contract number. The only route to a contract is through payments: ${n(o.linked)}
+       orders were paid on lines that carry a listed contract's number.`,
+     covers: `As of ${asof}. Orders total ${money(o.total)}. One row per order, latest revision.`,
+     link: ["See the purchase orders", "purchase-orders.html"]},
+  ]);
+}
+
+// ---------- amounts (hand-checked sample) ----------
+function amounts() {
+  const a = AMOUNT_SAMPLE;
+  cards("amount-cards", [
+    {big: `${a.differs} of ${a.withPaperwork}`, label: "sampled option periods whose amount disagreed with the District's own paperwork",
+     text: `About three in ten. With a sample this size the true share is somewhere between roughly ${a.low} and ${a.high}. Most often the
+       option period just repeats the base year's amount. For ${a.optionNoPaperwork} more of the ${a.drawn} sampled periods, nothing posted
+       states the amount at all. The same check found ${a.baseDiffers} of ${a.baseWithPaperwork} base periods off (roughly ${a.baseLow}
+       to ${a.baseHigh}). This site shows base-period amounts only for that reason.`,
+     covers: `A random sample of ${a.drawn} option periods with CW numbers, checked by hand on ${a.checked}. A sample, not a count of every period.`,
+     link: ["Each sampled period, with its document", GITHUB + "amount_checks.yaml"]},
+  ]);
+}
+
+// ---------- dropped from search ----------
+async function dropped(s, asof) {
+  const [d] = await q(`WITH k AS (SELECT contract_number, bool_or(listed) AS any_listed FROM contracts GROUP BY contract_number)
+    SELECT (SELECT count(*) FROM k WHERE NOT any_listed) AS gone,
+           (SELECT count(*) FROM k) AS contracts,
+           (SELECT CAST(max(end_date) AS VARCHAR) FROM contracts WHERE NOT listed) AS last_end`);
+  cards("dropped-cards", [
+    {big: n(s.delisted.periods), label: "option periods DC's site search no longer returns",
+     text: `On ${n(s.delisted.contracts)} contracts; for ${n(d.gone)} of them the search returns no period at all. Every one of these
+       periods had ended (the latest on ${esc(d.last_end)}), but many other ended periods are still returned, so the rule the search
+       follows isn't stated anywhere. Their pages on DC's site can still open by direct link, which is how they were recovered here. Also
+       dropped: ${n(s.delisted.orders)} purchase orders and ${n(s.delisted.payments)} payment lines.`,
+     covers: `As of ${asof}, out of ${n(s.contracts.periods)} option periods on ${n(d.contracts)} contracts. Records the search had dropped
+       before our first pull in August 2026 are not here and can't be counted.`,
+     link: ["See them", "index.html?listed=Not+in+DC+site+search"]},
+  ]);
+}
+
+// ---------- blank fields ----------
+async function blanks(asof) {
+  const blank = (col) => `coalesce(trim(${col}), '') = ''`;
+  const fields = [
+    ["Agency", blank("agency")],
+    ["Contract type", blank("contract_type")],
+    ["Market type", blank("market_type")],
+    ["Contracting officer", blank("contracting_officer")],
+    ["Award date", "award_date IS NULL"],
+    ["Commodity (NIGP) code", "(nigp_codes IS NULL OR len(nigp_codes) = 0)"],
+    ["Documents (none attached)", "coalesce(documents, 0) = 0"],
+  ];
+  // Periods whose detail page our pull has no copy of come through with every
+  // detail-page field empty. Those blanks are ours, not DC's, so they are left out
+  // and counted.
+  const noDetail = `${blank("contract_type")} AND ${blank("market_type")} AND ${blank("contracting_officer")}`;
+  const sql = `WITH c AS (SELECT * FROM contracts WHERE NOT (${noDetail})),
+      k AS (SELECT contract_number,
+        ${fields.map((f, i) => `bool_and(${f[1]}) AS b${i}`).join(", ")},
+        bool_and(regexp_matches(upper(title), 'DCSS|SUPPLY SCHEDULE')) AS dcss
+      FROM c GROUP BY contract_number)
+    SELECT (SELECT count(*) FROM c) AS periods, (SELECT count(*) FROM k) AS contracts,
+      (SELECT count(*) FROM contracts WHERE ${noDetail}) AS skipped,
+      (SELECT string_agg(contract_number, ', ' ORDER BY contract_number) FROM contracts WHERE ${noDetail}) AS skipped_list,
+      ${fields.map((f, i) => `(SELECT count(*) FROM c WHERE ${f[1]}) AS p${i}, (SELECT count(*) FROM k WHERE b${i}) AS k${i}`).join(", ")},
+      (SELECT count(*) FROM k WHERE b0 AND dcss) AS agency_dcss`;
+  const [r] = await q(sql);
+  document.getElementById("blank-table").innerHTML = `<thead><tr><th>Field</th><th class="num">Option periods blank</th>
+      <th class="num">Share</th><th class="num">Contracts blank on every period</th></tr></thead><tbody>` +
+    fields.map((f, i) => `<tr><td>${esc(f[0])}</td><td class="num">${n(r["p" + i])}</td><td class="num">${pct(r["p" + i], r.periods)}</td>
+      <td class="num">${n(r["k" + i])}</td></tr>`).join("") + "</tbody>";
+  const covers = `As of ${asof}, out of ${n(r.periods)} option periods on ${n(r.contracts)} contracts, leaving out ${n(r.skipped)} (see the table note).`;
+  document.getElementById("blank-note").textContent = `Left out of every count here: ${n(r.skipped)} option period${r.skipped === 1 ? "" : "s"}
+    (${r.skipped_list || "none"}) whose detail page our pull did not save, so every field from that page is empty in our copy even though DC's
+    site may fill it in. The contracts explorer still lists them, so its "(blank)" counts can be slightly higher.`;
+  const others = [["award date", r.p4], ["commodity code", r.p5], ["market type", r.p2], ["contracting officer", r.p3]];
+  const otherText = others.every((x) => x[1] === 0)
+    ? "Award date, commodity code, market type and contracting officer are filled in on every period."
+    : "Also blank: " + others.map((x) => `${x[0]} on ${n(x[1])} periods`).join(", ") + ".";
+  cards("blank-cards", [
+    {big: n(r.k0), label: "contracts name no agency",
+     text: `${n(r.p0)} option periods. ${n(r.agency_dcss)} of these contracts are DC Supply Schedule (DCSS) contracts by their titles,
+       which any agency can order from, so a blank there may be deliberate. Even so, the contract list can't show which agencies use them.`,
+     covers: covers + " DCSS counted by the title containing DCSS or Supply Schedule."},
+    {big: n(r.k6), label: "contracts with no document attached to any period",
+     text: `${n(r.p6)} option periods (${pct(r.p6, r.periods)}) list no attachment. For a period with none, a reader can't check the amount,
+       dates or award method against signed paperwork.`,
+     covers: covers + " Option periods often carry no documents of their own, so the contract count is the stricter one."},
+    {big: n(r.k1), label: "contracts with no contract type",
+     text: `${n(r.p1)} option periods leave contract type (fixed price, cost-plus and so on) blank.  ${otherText}`,
+     covers: covers, link: ["See them", "index.html?contract_type=(blank)"]},
+  ]);
+}
+
+// ---------- market type vs sole source ----------
+async function market(s, asof) {
+  const rows = await q(`SELECT mts, count(*) AS k FROM (
+      SELECT contract_number, string_agg(DISTINCT coalesce(market_type, '(blank)'), ' / ' ORDER BY coalesce(market_type, '(blank)')) AS mts
+      FROM contracts WHERE list_contains(string_split(of_interest, '; '), 'Sole source') GROUP BY contract_number)
+    GROUP BY mts ORDER BY k DESC`);
+  const [v] = await q(`SELECT count(DISTINCT contract_number) AS k FROM contracts
+    WHERE market_type ILIKE '%sole%' OR market_type ILIKE '%single available%'`);
+  const total = rows.reduce((t, r) => t + r.k, 0);
+  const saysSole = rows.filter((r) => /sole|single available/i.test(r.mts)).reduce((t, r) => t + r.k, 0);
+  cards("market-cards", [
+    {big: `${saysSole} of ${total}`, label: "contracts whose paperwork shows a sole-source award have a sole-source market type",
+     text: `For the other ${total - saysSole}, market type reads ${rows.filter((r) => !/sole|single available/i.test(r.mts))
+       .map((r) => `"${esc(r.mts)}" (${n(r.k)})`).join(" and ")}. The field does have sole-source values: ${n(v.k)} other contracts use
+       "Sole Source", "SOLE SOURCE", "Single Available Source" or similar. So the field can't be used to find or count awards made
+       without competition. A sole-source award to a local small business can be a set-aside too, so "Set Aside" is not necessarily wrong.`,
+     covers: `The ${total} contracts recorded as sole source in of_interest.yaml, read by hand as of ${asof}. That list covers only contracts
+       our checks nominated, so this is not a rate across all contracts.`,
+     link: ["See them", "index.html?of_interest=Sole+source"]},
+  ]);
+}
+
+// ---------- names and ids ----------
+async function names(s, asof) {
+  const [p] = await q(`SELECT count(*) AS lines,
+      count(*) FILTER (WHERE length(vendor) = 30) AS at30,
+      count(*) FILTER (WHERE length(vendor) > 30) AS over30,
+      CAST(min(payment_date) FILTER (WHERE length(vendor) > 30) AS VARCHAR) AS first_long,
+      count(*) FILTER (WHERE payment_date < (SELECT min(payment_date) FROM payments WHERE length(vendor) > 30)) AS before_long
+    FROM payments`);
+  cards("name-cards", [
+    {big: n(p.at30), label: "payment lines with a vendor name exactly 30 characters long",
+     text: `Payment vendor names stop at 30 characters, often mid-word ("SCIENCE APPLICATIONS INTERNATI"). None of the ${n(p.before_long)}
+       lines paid before ${esc(p.first_long)} has a longer name; since then ${n(p.over30)} do. A cut-off name can match more than one
+       company, and won't match the same company's name on its contract.`,
+     covers: `As of ${asof}, out of ${n(p.lines)} payment lines. Some names are exactly 30 characters and complete.`,
+     link: ["See the payments", "payments.html"]},
+    {big: n(s.contracts.vendors), label: "vendor names on contracts, as typed",
+     text: `DC's site has no vendor id on any contract, order or payment, only a typed name, so one company can appear under several
+       spellings. Market type is typed too: ${n(s.contracts.market_types)} different values, including "Set Aside" and "Set-Aside".`,
+     covers: `As of ${asof}, across ${n(s.contracts.contracts)} contracts.`},
+    {big: n(s.payments.lines - s.payments.ids), label: "more payment lines than payment ids",
+     text: `${n(s.payments.lines)} lines share ${n(s.payments.ids)} ids, so an id doesn't identify one payment. Payments also come with no
+       fiscal year (this site works one out from the date) and with the payment number masked.`,
+     covers: `As of ${asof}.`},
+  ]);
+}
+
+async function main() {
+  const [s, m] = await Promise.all([json(new URL(PARQUET_DIR + "summary.json", location.href).href), manifest()]);
+  const stamps = m.snapshots.map((x) => (x.pulled_at || "").slice(0, 10)).filter(Boolean).sort();
+  const asof = stamps.at(-1);
+  document.getElementById("asof").textContent = `Latest pull: ${asof}${LOCAL ? " · reading the local build" : ""}`;
+  await boot(["contracts", "payments", "purchase_orders", "contract_orders"]);
+  await agencies(asof);
+  await payments(s, asof);
+  await orders(asof);
+  amounts();
+  await dropped(s, asof);
+  await blanks(asof);
+  await market(s, asof);
+  await names(s, asof);
+  document.getElementById("status").textContent = "";
+}
+main().catch((err) => {
+  document.getElementById("status").innerHTML = `<span class="error">${esc(err.message || err)}</span>`;
+  throw err;
+});
+</script>
+</body>
+</html>
