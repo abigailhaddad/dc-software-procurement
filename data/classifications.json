@@ -31801,5 +31801,3160 @@
    "scope_fixed_in_advance": 1.0,
    "confidence": 1.0
   }
+ },
+ "1071aa737a1ed29958cde2746952fd7767236d84": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates a study for deploying autonomous vehicles, which is advisory/analysis rather than building or operating a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9b0baf2342e2d7ae7860b08b6d9e3ce68a725791": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The vendor (Genuine Parts) and DPW context with a terse title (DCKT-FY25-NAPA) indicate vehicle/parts procurement rather than any technology build, implementation, support, or consulting.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "894cc011498852cec06006385997155ccf8922ba": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for Evidence-Based Supported Employment services through a disability services agency, which is a social service/benefit support rather than a technology deliverable or IT work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5faffc01a48b1ac64437c0f12525f8d34e19ce78": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for printing and mailing services, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "401c234b5c6abdca29ac78231b7cd57efa28a099": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates \u201cEngineering & Logistics Services\u201d under the DCSS pool rather than a specific technology system, software build, or IT support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "49d6d2973a7752f31c3e08db76df69b851753697": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a DOES youth employment/benefits program for ages 14 and 17, which is a social service rather than a technology deliverable or IT work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e21ad0f78712da25fd0e069487ef748eb335b109": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for wayfinding signage design, fabrication, and installation, which is a physical facility/communications deliverable rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d85ab84a39cef1f11dc70426f289f880f6e8f1e5": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The DCSS category is for industrial supplies/apparel and the title indicates emergency 911 security supplies rather than any technology build, software, or network service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e0c47518db96d6f4acb2fbdd9de7cd3efd0e2832": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for pavement restoration/road work under the NHPP Streets program, which is construction infrastructure rather than any technology deliverable or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9b169bd903a50273fe64e76b40db5aa86c362d3c": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for door replacement services at a hospital, which is a facility/maintenance task rather than any technology deliverable or labor-by-the-person technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ea2def0ec099099e50ca66812e034a1cf6fdb71f": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a PMO/energy master plan and battery energy storage system planning effort rather than a specific software build, deployment, or O&M deliverable, so it is best classified as technology-adjacent consulting/advisory work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1bcd9263001faa6a0135c038c60ede369d779748": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) contract, which is an ordering vehicle that authorizes future task orders rather than purchasing a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "12bad8fda771630cf52dd651850682ebad47cbd7": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "F.3.3 The following chart contains the complete list of deliverables, in order as they are identified under each task in section C.5.",
+  "confidence": "high",
+  "rationale": "The excerpt lists a complete, ordered set of named deliverables with specific due dates/review periods under tasks, indicating a sequential deliverables-and-acceptance delivery structure rather than capacity-based or iterative sprint delivery.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e21ba384a3e29d269b4c2bb7dddd97ab7202e60c": {
+  "delivery_structure": "structure_not_stated",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "During the term of the Letter Contract, the Contractor is authorized to perform only those deliverables scheduled to occur within the Letter Contract period.",
+  "confidence": "low",
+  "rationale": "The excerpt references a Statement of Work and attachments for the price and deliverables, but it does not show the actual deliverables schedule or price schedule details needed to determine whether delivery is sequential, incremental capacity, or milestone-based.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "83ebbd0012d4d78e729f8c666cfeb4f232ff185f": {
+  "work_type": "cots_implementation",
+  "buys_people_not_deliverables": "no",
+  "system_name": "Telestaff Workforce (Kronos/UKG)",
+  "confidence": "medium",
+  "rationale": "The title indicates a Telestaff Workforce solution from UKG/Kronos, which is a vendor-owned product being implemented for FEMS rather than custom software or staff labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "323c1f6c6bc1ceed8bca6813daf0da7c023558e8": {
+  "work_type": "telecom_or_network",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a high-power rapid deployment charging solution (EV charging infrastructure), which is an infrastructure/installation-type technology purchase rather than software or staff time.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fb6958c2e7fa9859158232bb0dfce516624486b9": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for rental space at Catholic University of America, which is a facilities/real-estate service rather than any technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "449a94d46268838e62a3d69152e4bea4e01d2823": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for an Out-of-School Youth program (ages 18\u201324) under DOES, which is a workforce/social services program rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "dd18ff21bc2b273a3c59f93508abdde2bc7f28e7": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates building maintenance and repair services, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "60192eeb52cc5ac8174e9f6d51cf454592749e8c": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates building maintenance and repair services, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "308f50880ed627bf7a854d4cc932fb000da19dc3": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for emergency recycling services, which is a non-technology service unrelated to building, maintaining, or deploying software or IT systems.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "69212ff17c1c534345c346514a263678b145916d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a public health data exchange platform for blood lead level lab reporting, which is a health program service rather than a clearly identified technology build, deployment, or support contract.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e7f53776c18496c79b5114ef39e7e1a984ef8459": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a generic \u201cContract Workspace (Procurement)\u201d with no named software deliverable or system, suggesting advisory/consulting support for procurement rather than building or operating a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "37279251e2a34c50ef91b85fd9097a7a8653cad9": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates licensing examination services (testing/exam administration), which is not a technology deliverable or technology support work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1e3fb913f0c291cec837441c67aa6c6db2a2c231": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for a call center supporting Summer EBT/Sun Bucks benefits, which is a social benefit service rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "0652cccd0b077f4a1a45b6ce6d6030b93e58b0c2": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a DCSS training services purchase rather than building, operating, or licensing a specific technology system, so it is best classified as technology advisory/training delivered as a service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d4ba6d034c3d02fbc4cd3c0882e1534d48dd8c0f": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a health application/platform for DC Health rather than a clearly identified technology build, deployment, or maintenance deliverable for a specific IT system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4723dd0bac1b4b102b56c90c1bad306cf5511194": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for industrial services/A&E construction under the DC Supply Schedule, indicating construction/industrial work rather than technology deliverables or software/IT services.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "0e7983851a31635a92f59bbe5a6c1d310959bfc1": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "DOCIIS",
+  "confidence": "medium",
+  "rationale": "The contract title specifies the District of Columbia Immunization Information System (DOCIIS), and with a health agency award it is most consistent with operating/maintaining or supporting an existing immunization information system rather than building new software or buying licenses.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "f116cfd6acafd77738c445af452757bae1be726e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a mobile stage/showmobile for Public Works, which is a physical event/production asset rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5401498b1000eb7c729605c05db64278187dc9a2": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing an excavator (heavy equipment) for SWMA, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "869de3c46a540d2d0a48b77643374c28503d73f7": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing Ford Transit vans (vehicles) for Public Works, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "0a06e6f5a72c938645c466d3d19b929234507270": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates purchase of Ford Maverick Hybrid vehicles, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fef13515b406ac2221a10cfb0c660035cf88a869": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title and vendor indicate purchase of John Deere gators (equipment) for Public Works, not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d668ee17ceb469c8ba59a30855f8cd5aadfbc006": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for fleet vehicle autobody repair and refinishing services, which is non-technology maintenance work rather than software, IT services, or network/hardware procurement.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "b87e6ca734ae77eec03d9ca15e1ef81be4261ea6": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for repairing and replacing vehicle glass for automotive/heavy-duty vehicles, which is a non-technology maintenance service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "15dc85539dd323f341479a4fb612ade8c5e980e4": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates purchase of vehicles (HX620 tractor and TK80HST trailer) for Public Works, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4212a53aa0061d1f8e3452c5680166b54515273d": {
+  "delivery_structure": "structure_not_stated",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "no",
+  "deliverables_quote": "The work shall be accomplished in the manner and within the scope and time specified in an individual task Order (TO) for services or Delivery Order (DO) for supplies or equipment.",
+  "confidence": "medium",
+  "rationale": "This is a DCSS ID/IQ multiple-award contract where the actual work scope, timing, and deliverables are defined in individual Task/Delivery Orders, so the excerpt does not describe a specific delivery sequence or iterative delivery method for the overall contract.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c0a429b03992e830191b218bd9eec25f213e3d4f": {
+  "delivery_structure": "recurring_operations",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "\u201cto maintain its existing Immunization Information System (IIS) software system and provide associated services\u2026 ongoing maintenance.\u201d",
+  "confidence": "medium",
+  "rationale": "The excerpt describes maintaining an existing immunization information system over a one-year period (with options) and does not show a sequential design/build deliverables chain, indicating recurring operations/support rather than gated delivery.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "2da953f576d75d6ed0b5c9b9c479707144d8d2f5": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for professional development leadership training for the Office of Paid Family Leave, which is a non-technology service focused on training rather than building, implementing, or maintaining a system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "2e20178591d349452ea9361b5dd4222f5dbfae18": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates payment for residential expenses under a disability services program rather than purchase of technology goods or services.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "95eca9627f688e3bb10b6e5e958614e64b001ec0": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing fire ladder trucks for the Fire and Emergency Services Department, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "80b7afb21d7700aa84fa1955e1593fe565d24c2a": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates purchase of fire pumper apparatus (firefighting vehicles/equipment), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "426471b2976333de902901b3e67a692987a8177c": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title and vendor indicate purchase of emergency vehicle \u201cbuggies\u201d for the Fire and Emergency Services Department, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "709c496eef20ca4ba6d74cbd0bbf2da8077f110d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title and vendor indicate purchase of emergency vehicle pickups for the Fire and Emergency Services Department, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "26369e17dfdd03ed7d23f3c2f587919e03f4bb3c": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates purchase of EMS command vehicles (Tahoes) for the Fire and Emergency Services Department, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d5c069a6b38b4a185609dc9e0bdea0fff5654db3": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates K9 units for arson investigation (equipment/animals and related support) rather than any technology deliverable or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "8b06edbdf1297956d8ce85eb6f9e8e566dbfe54f": {
+  "work_type": "telecom_or_network",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "A \u201cMobile Command Unit\u201d for the Fire and Emergency Services Department indicates purchase of a mobile communications/command platform rather than software development or staff labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a3ef99d989251efd98f265d844a19a297c7eba64": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title \u201cFY24 FA0-MPD-For PIUs\u201d provides no indication of a specific technology deliverable, software, network, or IT system, and the recorded NIGP class is not sufficient to infer a technology purchase.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "287691c40222008b78f64b9b80a216ad940af986": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates maintenance of MPD fleet vehicles rather than any technology deliverable or software/hardware service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "40ae47e4c89b103b7fdf82ac48052d9f7f65354a": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates fleet automotive shop support/operations for vehicle maintenance rather than any technology deliverable or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ad928d7c914cbb9d95eb1e133a7e9805af928b8c": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for renting and servicing uniforms and cleaning supplies (mats, mops, towels), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "651f9a77371296b8e64388ad0cee5e770fa319a1": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for occupational skills training (workforce education services) rather than buying or supporting a technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "21b6a8d116b37ad5009abe6dc0fd4a507edb873b": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates residential expense support under the Department on Disability Services, which is a non-technology service/benefit rather than software, IT services, or infrastructure.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "805b03a877f7a9839d479cb2cf7b72d79295cc1a": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates purchase of advertising novelties, souvenirs, promotional and specialty products under the DCSS supply schedule, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "44cbf66810302f4070c4aa96dd13b33dbd78a1fc": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title and vendor indicate waste/recycling services for DPW, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "93dbd3cb34f8c426b6cedccca8e91af30c6be3f9": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for vocational services provided by a vendor under the Department on Disability Services, which is a non-technology service rather than software, IT support, or infrastructure.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d78445048a6804b70215a8da568ef25984e2586a": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "yes",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title is generic ('Acquisition Support Services') and does not indicate a specific software system or deliverable, so it most likely involves advisory/acquisition support performed by personnel rather than building or operating a defined technology product.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "f36f1e13a2f86a2ce39191ed0ed011c61d936632": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for vehicle procurement (Ford Explorers and Nissan Altimas) for MPD, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9693440af813d007643a3ef8e0dbec79a9e7aedc": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for emergency group home services for DYRS youth, which is a social/rehabilitation service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5cec990a77def16e183c5b0fb4db7cbf98145d20": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates emergency mechanical systems replacement (building/HVAC/mechanical equipment), which is not a technology deliverable or software/IT service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "06fdb5ea0c20fbcf60c82bda2cf3054b67c227e6": {
+  "work_type": "cots_implementation",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The District of Buildings is purchasing the International Code Council\u2019s ICC Code Cycle Platform, which indicates deployment/implementation of a vendor-owned platform rather than custom software development or staff labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "cddd2822fe75c443a2e16c83104faedc42b44f23": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title begins with \u201cDCSS,\u201d which is the DC Supply Schedule ordering vehicle that authorizes future task orders rather than purchasing a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "3d76cac3f27e66e1b31c61036d5bcf34b913637e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates stormwater canopy design and construction management, which is a physical infrastructure/engineering service rather than a technology build, deployment, or software support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4927827bc69ba58323ccd414faef81602e3086c5": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title begins with \u201cDCSS,\u201d which indicates the DC Supply Schedule ordering vehicle that authorizes future task orders rather than purchasing a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4a725e1ec85870511f9c87aaf4fa90603874aefe": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates purchase of physical equipment (10\u201312 ton ramps) from an equipment vendor, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d8ac7acc6c89b7ae9c7aeffd81de7f0f121cf231": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates HVAC work for the 350 McMillan project, which is building mechanical maintenance/construction rather than any technology deliverable or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d276d35e509380a814c9920abcb087e6abc76214": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates call center support services for the Department of Employment Services rather than a specific technology system build, deployment, or maintenance deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1a495066e50930e299f538c9b29d05b79857627e": {
+  "delivery_structure": "incremental_capacity",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "not_stated",
+  "deliverables_quote": "This is a task order with fixed unit prices for the labor and quantities listed in Section B.5 for the services identified in the scope of work.",
+  "confidence": "medium",
+  "rationale": "The excerpt shows a fixed-unit-price task order priced by labor categories/hours (and open-market items) rather than a sequential, gate-based deliverables chain, indicating capacity-style procurement rather than a defined step-by-step delivery process.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ae0ad39743167e469aa6c3b89a5694a9f5832772": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\u201cDeliverables are grouped into logical categories for clarity\u2026 Due Date\u2026 At Go-Live\u2026 Prior to UAT\u2026 Immediately after project kickoff\u201d",
+  "confidence": "medium",
+  "rationale": "The price schedule is labor-hour based but the deliverables section specifies a fixed set of implementation/configuration items with phase-based due dates (e.g., prior to UAT, at go-live), indicating a sequential, gate-style delivery chain rather than reprioritizable capacity.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "984e949452509d67414166c267aaa1cde11ad1a2": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The contract title is a generic DDOT procurement identifier with no indication of software, IT services, or a specific system, so it is most likely non-technology based on the limited information provided.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "713064954df481b0646dad46e81de092c0077b62": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for vocational services provided by Broad Futures, Inc. under the Department on Disability Services, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a00f424e87551409ef06b755870310790a5a0038": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates DCSS marketing media and public information rather than any specific technology product, software build, or IT support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "006e91b5345ce282d62e9e947db60190a2181032": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for FIU pick-up vehicles for the Fire and Emergency Services Department, which is a vehicle purchase rather than any technology service or deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fa20e4fc8e61ff28e43af5c361ca152d70441273": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates procurement of a transit bike van/vehicle for FEMS, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d039e5155a215aeb45acb3c0a21c9a788b39d309": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates purchase of logistics response box trucks for Fire and Emergency Services, which is vehicle procurement rather than any technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d622a808e95a5ecfefef22495044aaa11158ff96": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The vendor name and title indicate a real estate/industrial services arrangement under the DCSS schedule rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "298b1ee51a87c6353d6dc45cf312343417ec0ddf": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for an agency office supplies blanket purchase agreement (BPA), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "bd143717ed8351be069eb65c26dc93deb6ab6010": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a contract workspace/procurement arrangement for ARTEX rather than a specific technology deliverable, so it most likely authorizes future procurement/task orders under an ordering mechanism.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "b8a4e90505380c44b23740fec96678b3ab11b303": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for linen rental and laundry services for Behavioral Health facilities, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "8a3f58c09dc9fd8e1fe36959afc56a32a1a4e2dd": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for ExpressVote3 ballot marking devices, which are election hardware being purchased/resold rather than technology services or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "535988d84a51ee078745a8ba2d51be581175d821": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "ExpressVote3",
+  "confidence": "high",
+  "rationale": "The contract is for ExpressVote3 ballot marking devices supplied by Election Systems & Software, which is a hardware purchase rather than technology services or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "701a23f98e7044e7d2ca3ae9876fa634259114ba": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing a tow truck vehicle (Kenworth T480 flatbed), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5f00c9914aa070977b26078b3aa661f197478f9b": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates purchase of a physical trailer/leaf equipment (Bonnell Olympian Leaf Pro Plus Trailer) rather than any technology service or software deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a86b3a6c21e94e8dae8425b83573115be6a669b6": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates purchase of vehicles (2027 Chevrolet Bolts) rather than any technology service or deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "52d3ebad3cc8db198a8f8aac2ed58f64323a991f": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates employment tax services for DCHR, which is a non-technology professional service rather than building, deploying, or supporting a specific IT system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "797074ddbbbe0d21d1c04a4c12d463279320b163": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a physical roadway safety upgrade (guardrails and impact attenuators), which is construction/transportation infrastructure rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6c4c0b40244e672c40538fe5a8a943e451d1f258": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for traditional congregate care services for children/families, which is a social service/benefit delivery rather than any technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fe4753a6e0bb8c4c8d8bca859a2cd7aff5d4d561": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates an option year with Xerox Corporation but provides no indication of software, IT services, or system support\u2014most likely a non-technology Xerox-related service or equipment arrangement.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ee07cb3b25c6128d2504bac66ca4b8bfde496319": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates support for communication activities for OSSE (education communications), and there is no indication of a specific technology system, software, network, or deliverable technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c0f0c2cbd5a4588c046af095c36b1c8bc9535de1": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates purchase of educational curriculum/materials (Teaching Strategies GOLD/Creative Curriculum) funded by OSSE, not a technology product, software build, or IT service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "dcf14a71c38212a5c4269697cc25513a92bf19f8": {
+  "work_type": "cots_implementation",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The District is purchasing an online subscription to Teaching Strategies\u2019 QUORUM product for educational use, which is a vendor-owned software subscription rather than custom development or staff labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e61e8ae9e0b1fcb90d2d0af84ee4aac4bc120d95": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a subscription to \u201cRiverside Insights\u201d for a battle development inventory, which is a program/assessment subscription rather than a District-built or maintained technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "67f91a1a6b081bd3afc675d28e747e3b38140a16": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates inspection, analysis, and design for repairing fish market piers, which is construction/engineering design work rather than a technology deliverable or software/IT service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "41f6047b622d41db78f105f97315cf914f45bd8f": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The District is purchasing an online subscription membership to Teaching Strategies\u2019 QUORUM content platform, which is a software/license subscription rather than technology services or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "0f515b4b18813ebfe1b5af2e54a193f540146d63": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for industrial revenue bond counsel legal services, which is a legal/professional service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c823385be5ff95ad52a5b7e114b2060ca30f2bfd": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for industrial revenue bond counsel legal services, which is legal/financial advisory rather than any technology deliverable or system work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "7c288f550ebb8df1ec137a132f7d43a8207c5b97": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates regulatory compliance monitoring for funded projects under an IRB, which is not clearly a technology deliverable or system support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "986596ca4787cac5217f3f08b3c62208121c42e3": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for industrial revenue bond counsel legal services, which is a legal/professional service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "3f8c55d3fd669efd0f66cbd0db4a7c633ee48892": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for industrial revenue bond counsel legal services, which is non-technology professional services rather than software, IT, or network work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "b7ff0dab2c6d26f173c275dc38dd11680f4d54bf": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a workforce/rehabilitation program (\u201cAmerica Works\u201d) funded by the Department on Disability Services, with no indication of a specific technology system, software, hardware, or IT service being purchased.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e971f6af288d65d8524880621626745f3d7db2a1": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates community engagement services for NCI (not software, hardware, network, or IT support), so it is best classified as non-technology services rather than a technology deliverable or staff augmentation.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9c209933a34ba16f3b4a50aa8b698610e3ed4169": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for industrial revenue bond counsel legal services, which is a non-technology legal/financial service rather than software, IT, or network work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "19f995de5ece49350e22abf073136282b29be366": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates an Industrial Revenue Bond (IRB) option year service for a specific project (Bello Bello & Associates), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "97be4fdea69f6165652312561cfb9db60c60aaef": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates real estate and financial advisory services, which are not a technology deliverable or software/IT support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "b5047f0abfaba2b9d51126308025b2071e6e825f": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for real estate and financial advisory services, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "dfe9d62e93f927cc1b807d240abee62cbaf30045": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates an urban planning option year services engagement by Gensler, which is not clearly a technology build, implementation, support, or IT labor-by-person contract.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a64eaf2f570cb1bb783fafdd8edd7e186bc49900": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates urban planning/design/land use services (MKSK) rather than building, deploying, or supporting a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "985e9034a5ae5f359627cf3ed2361f2e2ed2ba0e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for urban planning, design, land use, and architecture services, which are not technology deliverables or software work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6c38c34d1bca1e6b569784e48ed9b7ddb291afc2": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for urban planning/architectural services (BBB Architects) rather than any technology build, software, network, or IT support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "aea9ef25c013feeeee5cd9fa29ffad7da4763661": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates Urban Planning/Design/Land Use AECOM services, which are planning and professional services rather than a specific technology build, deployment, support, or IT deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5b521261983862242e23733fcca21588a3da7148": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates urban planning/design/land use services for Perkins Eastman DC rather than any technology build, software support, or IT deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "376d907bc66bbb34d0a95974876002e9c2b04d63": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for urban planning/design and land use services by an architecture firm, not for any technology product, software, or IT labor deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "17c12d8d689afa158df8f46b0b00378667bb5299": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates urban planning design and land use services (Rhodeside & Harwell), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "85da580fb08813128aa553893dd05a2dcb7d2b02": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates urban planning design and land use services, which are not technology work or software/system delivery.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4048f7e34f8f83c25709ddcaa1ada7bf91b62933": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing four passenger vans (Ford Transit 350) for DPR, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fca500c2d618ac07e18dd3e59065ad11f16c1433": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for legal services related to federal owned or impacted land (including RFK Campus), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "23f854678d6eef0c7c1366fbc8638160875e0544": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates DYRS is buying an electronic health records capability for a youth services program, which is treated here as a non-technology service/benefit rather than a DC-built or maintained IT system deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "2065f9f33fb8a906964d9c1c285a0a504b15e466": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for fabrication of precast walls for planters, which is construction/material work rather than any technology service or deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d94ff0419f78f05aaa2418df34e475eb737ff961": {
+  "work_type": "telecom_or_network",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "\u201cFire Alarm Services\u201d indicates installation/maintenance of fire alarm and related alarm infrastructure rather than technology software deliverables or staff augmentation.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "2b56b88328979940fe54f0f12684203f03ed5284": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title \u201cLeaf Vacs\u201d indicates purchase/provision of leaf vacuum equipment or related services for street/yard cleanup, not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "643131855e7bfd3cc1df0b793e0cd754ae6d43fd": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing international flusher-deicer trucks (vehicle equipment) for Public Works, not for any technology service or deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5ff2a2f53e3ac1174e8706f5994e0ccbc77d6d8f": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates an asset verification service for DHCF rather than a clearly specified technology build, deployment, or software support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "89ea0d0f6fe23aaa65569728c2f3281bb656e80a": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "This is a cooperative purchasing agreement with a university entity and provides no indication of a specific technology product, software build, or IT service being purchased.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "f282374ffe7de64cf83703b2a8be8b2a30d4e294": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for construction project manager services for DPW, which is not a technology good or service and is focused on managing construction work rather than building or supporting an IT system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "49db650b0ff95a6431aeeb11a025570aaaaeaf66": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "\u201cEmployment Tax Services\u201d for DCHR indicates tax/compliance services rather than buying or supporting a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "84a0f0776b95479e30307f544897583117f8d94e": {
+  "work_type": "telecom_or_network",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for Verizon telecommunication services, which indicates purchasing network/telecom connectivity rather than software or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "050fd0e44574adad872c1cd711a6513909fd6036": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title starts with \u201cDCSS,\u201d indicating the DC Supply Schedule ordering vehicle for future IT equipment/software task orders rather than a specific technology deliverable being procured under this contract itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "cc74864ab16a9bdde1652953c40fabe85fd8e6b2": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates business process redesign/consulting rather than building or operating a specific technology system, so it is best classified as IT advisory work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9db0611ec63b8e367fa80e078998a9849e1603a3": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) ordering vehicle for MOBIS, which authorizes future task orders rather than purchasing a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c9ac10ae97f4692fc2ee2a6f9f8af01a444047ee": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "\u201cMS Premier\u201d with Microsoft as the vendor indicates purchase of Microsoft enterprise software licenses/subscription access rather than technology services or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "15a64dc9ee6ec339e1d550a6ea24919e990b9428": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title begins with \u201cDCSS,\u201d indicating the DC Supply Schedule ordering vehicle that authorizes future task orders rather than purchasing a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e3143c73090d79d5a0b538622a7c61d07ec3cb7a": {
+  "work_type": "custom_software_build",
+  "buys_people_not_deliverables": "no",
+  "system_name": "PDIS (Professional Development Information System)",
+  "confidence": "low",
+  "rationale": "The title indicates OSSE is procuring professional development information system (PDIS) work, suggesting development/build activity rather than a license resale or pure support, but the short title and lack of detail keep confidence low.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "2ac187105f475f41a768a81ca0fe2a69777e25c7": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a DCSS ordering for training services rather than building, deploying, maintaining, or licensing a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "78437952a8c66596036cb804b9f8ea3bf7d545f0": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title begins with \u201cDCSS,\u201d indicating the DC Supply Schedule ordering vehicle that authorizes future task orders rather than purchasing a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "360574c578f4bd216cf1d5987d2f2986d74dffc9": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates Oracle Exadata software/hardware licensing plus maintenance, which is a resale/licensing purchase rather than custom development or staff labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "95b5060fb54d3fe38443a89f25eb172573b24898": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The contract is for the Pathways for Young Adults Program (PYAP), a workforce/young adult services program rather than a technology deliverable or technology support activity.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "52ec5db4ff2422c0981a4c85b19450848841d61a": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title describes a Pathways for Young Adults Program (PYAP) CC Prep delivered by a community college prep organization, which is a workforce/education service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "250666b94d98436a1d0154116131ea01c4f34725": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for Davis-Bacon monitoring services, which is compliance/oversight for labor wage requirements rather than buying technology deliverables or IT services.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ed56ed3fe373e75a34fd05d7c3afd1f1f2288dc8": {
+  "work_type": "cots_implementation",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates an enterprise communications solution (GovDelivery) being procured through a reseller (Carahsoft), which is typically configuring/deploying a vendor-owned product rather than paying for staff time or building custom software.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "3b7aa61dae418fc3f2ec5c1166e38db0a000a84a": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) IT equipment and software ordering vehicle, which authorizes future task orders rather than directly delivering a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "42f013f2b8ce481d80dbd0be69c903d9de7d27af": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for shuttle/transportation services for the DC Infrastructure Academy, not for any technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1b2e4d1428afac9b77fedfbcca373e1a08f21347": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates residential expenses for the Center on Deafness, which is a non-technology social service/expense reimbursement rather than any software, IT, or network work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "8279f3ac081415f5981cd553accf43799393e72b": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates purchase of the Qualys Vulnerability Platform, which is a vendor-owned security software product/licensing rather than a services labor or custom build.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "68258076b4d49d5795ba79f9b0781ad607e644d9": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates training services for DCIA (DMV) rather than building, deploying, maintaining, or licensing a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4add7d2e6338e3057be44a10e0e3034981d82c44": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates vocational services/support rather than any technology deliverable, software, licenses, or IT implementation/maintenance.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "8d54a9cd80cb90a8564c1f6b50cf698b964e54d2": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for IBM Z13 hardware maintenance, which is maintaining/supporting an existing vendor-owned hardware asset rather than building software or buying staff time.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "086400e5ec28f3a5caeb9238a1e335f8101e26f1": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates call center services for ORM rather than a technology deliverable, software build, or IT support activity.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "603f57228f1d1a0e455d5f9fe6fd7bc8dbcc7ac2": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for janitorial and housekeeping supplies for DBH facilities, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4afbc31823dd3ff8e5e117b3ea32262bcf6b5472": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) IT equipment and software ordering vehicle, which authorizes future task orders rather than buying a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "01bbfd09621be53a0ce7472cc975b898d0ccc3b6": {
+  "work_type": "staff_augmentation",
+  "buys_people_not_deliverables": "yes",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title explicitly says \u201cDCSS - Temporary support Services\u201d and \u201cCorporate Systems Resources,\u201d indicating the District is buying temporary staff/resources rather than a specific technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fc4f5a8d96b6254ac1aa258fd26c08e59c274ee3": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The contract is for consortium membership (Science DLM Consortium), which is not clearly a technology deliverable, software license, or IT service based on the title and vendor/agency context.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fdc68ecda3ea2438559af5fb85f59540fe75ad07": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates payment for residential expenses/healthcare services rather than a technology deliverable, software, licenses, or IT support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "52ed43b001cb01c154907150c6491e8a5ddaf3f3": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "\u201cPalo Alto Support Renewal\u201d indicates renewal of vendor support/maintenance for Palo Alto security products, which is ongoing software/hardware support rather than building new technology or supplying labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d8550c29cd4abbc945e61316a1a6487292e8a640": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for real estate appraisal and related services, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a38078bbb836083be85d02a9ec678c22c4374016": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a PFL tax collection system for Employment Services, but with only a short title and no explicit software build/maintenance language, it is more likely a tax collection/benefit administration service than a clearly defined technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "943802c038077ad3eff8fff50992a0558df7fe9e": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "Grants Management System",
+  "confidence": "high",
+  "rationale": "The title explicitly states maintenance and support for the Grants Management System, indicating ongoing operations/support of an existing software system rather than building new functionality or supplying staff.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "dc3dcd8c31745a2db038ce043ee355d32c194095": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for DYRS medical supplies, which is a non-technology procurement of goods rather than software, IT services, or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "13649a703c95c62681e821e1cdf050cb23936431": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a youth work readiness and job placement program (MBSYEP) managed by the vendor, which is a social/employment services deliverable rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fc817b4591cd4a411980f6fff344ac9857cdb54a": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) application order, which is an ordering vehicle that authorizes future task orders rather than directly buying a specific technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "b0d293a974726d521a9d9afa95b354ec7714d548": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for plan review services for building/permit processes, which is a non-technology service rather than software, IT support, or technology implementation.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5c846d0907e8e29fdd7181983f5a2d5c42b1ba23": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The contract is for plan review services for SAFEbuilt under DLCP/DOB licensing/building processes, which is not a technology deliverable or software work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "7e92f6b47df3a4205e15c2210b97b71ec362e596": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "Carahsoft is a reseller and the title indicates ServiceNow licensing rather than a custom build or staff augmentation, so the District is purchasing a software product/license.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "889f11a6e8c5c7062a5b671b0253f4ac7c1ee6b4": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates payment services for the inspection program (CODICE) rather than building, deploying, maintaining, or licensing a specific technology system for the District.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "73077ae4f5219dd1e2554d60fd342a2db2ed4077": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for plan review services for building/licensing purposes (Bureau Veritas), which is not a technology deliverable or software/hardware work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "161705adcf17ab09d5e2b5581fae2fc5de188758": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for leaf composting and vegetative debris recycling services, which is a waste management service rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "bd81a0f781a1a3b9465a5e270d6be91781133fef": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for pre-apprenticeship training services for construction trades, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c506eec4e04243c4307e9c43b076ff557aed43ef": {
+  "work_type": "custom_software_build",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a CRM system is being procured, which most likely involves building or tailoring a software solution rather than buying licenses or only providing advice, but the lack of detail prevents higher confidence.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "cf8fb01a989abf348f5940b7013cae64c056b297": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for telephonic interpretation and language proficiency testing services, which are not technology deliverables or IT work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "86c87af1350e98d7345d1a9263e27763649e3d40": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title \u201cUnited Planning Organization\u201d indicates a human services/organizational program rather than a specific technology system, software build, or IT service deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4ea5823396be939bc3fb2c071968bb719c768065": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for training related to addiction counseling eligibility, which is a behavioral health service rather than a technology deliverable or IT work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5140e8c0a262bbc595ba42a4a4f310d3086f15eb": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates maintenance of existing silo hardware, which is an operations/maintenance type service rather than building new software or buying staff.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "dacfa1636d3828414e7370012898bb8ff80392f9": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The contract is for records storage and retrieval services (offsite records management), which is not a technology build, deployment, support, or license resale.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "404687cad158c8f81f30d2655227a0cef687bd19": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a Software AG purchase (likely software licensing/entitlements) rather than building or maintaining a specific DC system, so it is classified as resale of software licenses.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "3ec33cafea79cd364667e56e09f46a4175615597": {
+  "work_type": "telecom_or_network",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "\u201cDistrict One Call\u201d suggests a utility locate/notification service tied to underground infrastructure coordination, which is treated here as network/communications infrastructure rather than software development or staff labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "10d330fad330ae16e55fb96395d5f81e8718f84a": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates a Dell SAN storage reengineering solution, which is primarily the purchase of storage hardware (and related vendor-provided components) rather than technology labor or ongoing software support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d5d4907dd33531147ba20acd9c7610f60b638ecb": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract funds breast/cervical cancer screening and patient navigation services, which are healthcare service delivery rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a4baa89cb3b92856aa7bc851b052e9fab936ffec": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a Prescription Drug Monitoring Program (PDMP) under DOH, which is a health/public safety program rather than a clearly specified technology build, deployment, or support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ce6f5d8834dfa7d20c0f75dc0bf3a6c0b821f2db": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The District is purchasing 6-wheel snow dump trucks for DDOT and DPW, which is vehicle procurement rather than any technology service or deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "caffd9608a136ff56d9d76555161e396c9be6ba2": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a work readiness and placement program (MBSYEP) rather than any technology deliverable, software, or IT service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ee26f5343000e73fcdc753b7e0417a61428679d7": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates sign fabrication and installation, which is a physical construction/installation service rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a1fc25bee4b6af8116787e684d9a321c6ac3628b": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) IT ordering vehicle, which authorizes future task orders rather than directly buying a specific technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1c829b4e68c306e1c44dfe0533b8ef9f5a513a1b": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates program evaluations for the CFO/DOES program rather than buying or supporting any specific technology system or software deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "0a2052f1f05768f044367d899509a4e159bde461": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates election management software with support/maintenance, which is ongoing operation/support of an existing software system rather than building new software or supplying staff.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e9f0a73310a6dc05e11c1733e76bbe94d440d35e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The District is leasing Xerox copiers/printers, which is office equipment leasing rather than technology services or software work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d04503f6266cd164c9247437bfb1fb535b7a6d26": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) ordering vehicle for IT equipment/software, which authorizes future task orders rather than directly buying a specific technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "862948faef896c1db64beb67521e3cc2ce1472d5": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for Acquia Drupal platform licenses sold via a reseller (Carahsoft), which is a software license resale rather than technology services or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "82e7ae3b0cacef2bf90235a9b11631d7497507bd": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates TCAM for loan services, which is a loan/asset management service rather than a technology build, deployment, support, or network/labor engagement.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ade02e4250fe678d064c8c13165a0114ffddabfe": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a DCSS (DC Supply Schedule) for IT equipment and software, which is an ordering vehicle that authorizes future task orders rather than directly purchasing a specific technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "df6864a5f1bdc31437d97c7a772e51c08d7b478b": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for moving and logistic services under the DC Supply Schedule (DCSS), which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "54ecc7d2e47237ba07e5f5cab411639a65126eb9": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "An annual subscription for endpoint protection purchased by OCTO indicates the District is buying security software/licensing (not labor or custom development).",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5f2d24fb6d1ab5cf0cac511af63529129ea618b5": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates Red Hat Enterprise Linux extended lifecycle support, which is ongoing maintenance/support for an existing software product rather than building new software or supplying labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "7baba139d341bfddc1a6aa31ae28cd52c0a611d9": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is a DHCD Housing/Community Development general contractor IDIQ for construction work, not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fb5d21ec0241c8e2560189148d86cb6091511aca": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a DHCD General Contractor IDIQ for general services rather than a specific technology deliverable, software, network, or IT support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "21f1a1495eb5b4001acaad7146ffd4138257195b": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "yes",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a DHS compliance specialist role (labor for compliance work) rather than a technology deliverable or system build/support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "f75e353022c169fe0ba46391f665e8b6c4a03e17": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "yes",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates temporary staffing of DBH nurses (labor to provide staffing), not a technology deliverable or system build/support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e09cb10334f67500ef9fff1212d3ef75273d260c": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The contract is for an enterprise \u201csoftware subscription\u201d to a near-me marketplace product, indicating purchase of software licensing rather than building, support, or staff labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "95b67ae491483b2e9685f65971bd033a18f1147b": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing a new Freightliner truck (vehicle) from a dealer, not for any technology service or deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "df45f7c74aa38d215d8dc6974eeecaa3427a548d": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The contract is for Microsoft Premier Support Services, which indicates purchasing Microsoft support/entitlements for Microsoft products rather than building or staffing a custom DC system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "944a9e9f5f1fe93d0ff1c7eccade481974e2530e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for professional examination services for licensing, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "7063ee18958690a6e1536605e815f16d1d4fc6cb": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The District is purchasing emergency ambulance transport services for DBH CPEP, which is a health/transport service rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "96faccd6c4a1e45a8ac09753a7357d5ac2570bed": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a physical location/roadway implementation project on C Street, NE by a construction contractor, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1df4867d809350e44ccb3c5a6e41973c60a28c56": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing a vehicle chassis (International MV607) from a truck dealer, not for any technology deliverable or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "fb66fc3972c2099a93646591ff9dc46f01f88b62": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates purchase of Infoblox appliance hardware, which is a resale of network hardware rather than technology labor or software development.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9760e9bed08a20e2e9a19e271611ed4346b4dd10": {
+  "work_type": "telecom_or_network",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for Cisco wireless access points (WAPs), which are network infrastructure equipment rather than software or labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ad0ee14141f90cf60400292ff7e40cae45e75129": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a media group purchase (Outfront Media) for DBH, which is not clearly a technology deliverable or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "33473f69bee320212552942ec3eb271363c8b4f5": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates purchase of Red Gate Software (a vendor-owned software product), which is treated as a software license resale rather than custom development or support labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "cea230a2da33c9e24dc938d8ce6179156a8fd486": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "SoundThinking Gunshot Detection System",
+  "confidence": "medium",
+  "rationale": "The title indicates support for SoundThinking\u2019s gunshot detection system, which is ongoing operations/maintenance rather than building new software or supplying labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1f0521441868d783d3841cc4fcf478838e828041": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates training continuation for CEPL (SNAP reinvestment) rather than buying a specific technology product, software build, or IT support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "635254955872ceaf2a2bd634cd62b758c98ed202": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "PFL Website",
+  "confidence": "medium",
+  "rationale": "The contract title indicates maintenance of the PFL website, which is ongoing support/operations of an existing web system rather than building new software or buying staff.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "0c0f980599f30859863c407cec2a633116b55f0d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title \u201cBusiness Engagement\u201d with no named software/system or technology deliverable indicates a non-technology engagement/service rather than building, deploying, or supporting IT.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e599c46fe1d94446bd5e90c34ebf8f4ebf9b5829": {
+  "work_type": "ordering_vehicle",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title begins with \u201cDCSS,\u201d indicating the DC Supply Schedule ordering vehicle that authorizes future task orders rather than purchasing a specific technology deliverable itself.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "88f2c39c89bebf13f1b4ce0ad95288417ef1a5ab": {
+  "work_type": "custom_software_build",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a CMS Phase Two upgrade, which most likely means building/upgrading a specific software system for the Chief Medical Examiner rather than buying licenses, telecom, or general staff support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "da1b44e96c6221c8abdcda433fb16c1129b9a8d4": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "A \u201cDisparity Study\u201d is a policy/economic research deliverable rather than technology work, so it is not a software, hardware, network, or IT services engagement.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6bdcb611ff3276b8eeeeb474884e8fa80af59619": {
+  "work_type": "telecom_or_network",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The contract title indicates a light tower purchase/installation (equipment for lighting), which is not software and is best treated as an infrastructure/equipment procurement rather than technology labor or software delivery.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "68b34cfe0751e5ac4730ab6dddf80027a7dd05c1": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract funds emergency ambulance/medical transport services for DBH CPEP, which is a health service rather than technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "47c8c42095e5940e8951986cc81d6d272ee52571": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "A behavioral health rate study and development is a pricing/financial analysis deliverable for Medicaid/behavioral health reimbursement, not a technology build, deployment, support, or IT service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9141ff2c0a280b7254a8a6e903e13bd8c579d4d8": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for graffiti removal services under DPW, which is a non-technology service rather than software, hardware, or IT support.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5a2172961640cad6f794f1659035128db1ae8687": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates residential expenses for Kahak (a disability services provider), which is not a technology good or service being purchased.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "8aeb8de302a2876fc172e688386304d9ca7b189e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates sidewalk improvement/construction work on Chestnut Street, which is a transportation infrastructure service rather than technology.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "85114c0dce4689ad8cbe5cadaf94f78b9df8a8f3": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates \u201cDocument Systems\u201d and \u201cOY3\u201d (likely an operating year/period for document-related services) but provides no specific software/system deliverable or technology scope to classify as software, support, or implementation.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "54dc366551f9f3571e6d0b28fdd59bd025741b60": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a tax credit asset management service for DHCD rather than a specific technology build, deployment, or software support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a553b15879a51bcfa858ea2744264af0c02fca40": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a social media marketing platform for DBH CPEP adult services TAY, which is marketing/communications support rather than a technology build, deployment, or software maintenance deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "f7099919a4c216fb26146d6330d25036fb195eac": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates business process modeling and requirements work (TASS BPR), which is advisory/analysis rather than building or operating a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "97c5c8b2ef95aa484c051f759e6444284343eb98": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for roadway/street reconstruction (Florida Ave and 9th St.), which is construction infrastructure work rather than any technology service or deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6903f6c31417f4670d8ea40e5c13489e9e7ab19c": {
+  "work_type": "hardware_or_license_resale",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates purchase of Schneider Electric door sounder alarms for DBH facilities, which is a hardware procurement rather than technology services or software work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "b77865bceae5d0166d5b41cdcc3c174fbf6c30fb": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "yes",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates an annual evaluation report and the vendor is likely providing advisory/reporting services rather than delivering or operating a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d6ed534f2d4de6f6bd15c3fb16de4a40e7329f0e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title indicates a physical infrastructure project (\u201cC Street, NE Implementation\u201d) awarded by DDOT, which is not a technology build, support, or licensing activity.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1783aeb162781bd87dc40688b9b2ce23a02944f3": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract title indicates Developmentally Disabled Services, which is a social/health service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "aefc23fe980f5aa5441bce57553e5ef212604b18": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for residential treatment and educational services for autistic youth, which is a health/social service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "46c2b1e28f97a51380cb5f6c2f80d47afe3f84b8": {
+  "delivery_structure": "sequential_gated_deliverables",
+  "agile_mention_kind": "no_agile_language",
+  "uses_agile_vocabulary": "no",
+  "agile_quote": "",
+  "scope_fixed_in_advance": "yes",
+  "deliverables_quote": "\u201cThe Contractor shall perform the activities required to requirements and submit each deliverable\u2026 in accordance with the following: \u2026 Fully migrated application\u2026 Within 90 days of award \u2026 Requirements Traceability Matrix\u2026 Within 10 business days after completing UAT \u2026 System Development Testing Sign-off document\u2026 Within 2 business days after completing system development testing \u2026 Release Note\u2026 Within 2-5 business days after each end user testing is completed\u201d",
+  "confidence": "medium",
+  "rationale": "The price is firm-fixed and the deliverables are explicitly sequenced by dependencies on completing UAT/system development testing and end-user testing, with acceptance/submission tied to those ordered gates.",
+  "field_agreement": {
+   "delivery_structure": 1.0,
+   "agile_mention_kind": 1.0,
+   "uses_agile_vocabulary": 1.0,
+   "scope_fixed_in_advance": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "22bbb825118c91709bc86e8b74b6f1df577c116a": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for long-term care support services funded by DHCF, which is a health/social services function rather than a technology deliverable or IT work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "6c3bf988c978eb0f12af99b35c647186c1934833": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "A \u201cQuality Improvement Organization\u201d contract with a health finance agency indicates delivery of healthcare quality improvement services/benefit-related program work rather than buying technology deliverables or IT labor.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "94c79880c8822c9937291e601475af5f178f102f": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates the contract is for FY18 LIHEAP software supporting a federal energy assistance benefit program rather than a clearly identified District technology system build, deployment, or maintenance deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "1ac3e4b6e7e6b403d90d16c32cc7f06c1d870d32": {
+  "work_type": "staff_augmentation",
+  "buys_people_not_deliverables": "yes",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title explicitly calls for temporary personnel resources, indicating DHCF is buying labor (staffing) rather than a specific technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c916c0c5cc514d91ca14bb8fbfcce8f3fe70830d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The contract is for criminal background checks and searches for DCHR hiring/HR purposes, which is a non-technology service rather than building, deploying, or maintaining a specific IT system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "829ae1f208d6d51fee5b4f39b7e135315c5b867d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates an alternate assessment for science (education testing) rather than a technology build, deployment, support, or IT service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d2a6676655b0001721d1e86b1a6627f15311ec0a": {
+  "work_type": "it_consulting_advisory",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates a MITA 3.0 state self-assessment, which is an architecture/assessment activity rather than building or operating a specific Medicaid IT system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "d7b1415112fd6c62e0ec05ff881bc6db89fd04c2": {
+  "work_type": "cots_implementation",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a geographic solutions implementation for DOES (PFLBAS), suggesting deployment/integration of an existing geographic solution rather than custom software build or staff augmentation, but the short title limits certainty.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "7e47dcb4b7897f215a63d1a30545a577d87e6eab": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The District is purchasing employee health insurance benefits through CareFirst for DC government employees, which is a non-technology social/health benefit rather than software, IT services, or infrastructure.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "f51ed9cf31a256d7e2a1ecd588e2f28464e7b383": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for providing healthcare insurance benefits to District employees through UnitedHealthcare, which is a social/health benefit service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "406458c84654417daa2ec02e8cf6a302a56b436d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The District is purchasing employee healthcare insurance benefits from Aetna, which is a non-technology social/health benefit rather than software, IT services, or infrastructure.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "536ccb8e91f922ee9fd99b501d0a0cbbc095035c": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The District is purchasing employee healthcare insurance benefits from Kaiser Permanente, which is a health/social benefit service rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e4c5e39fccd546b53a4035a955ade083e032e4f2": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates GPS navigation/routing/scheduling for special education transportation operations, which is being purchased as a transportation service rather than as a technology build, deployment, or software maintenance deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "9872dc39a0430fcca57cf17c295934e72213d642": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "medium",
+  "rationale": "The title indicates \u201cSystem Support Services\u201d limited to \u201cDCSS Only,\u201d which suggests ongoing support/maintenance of an existing DCRA system rather than building new software or buying licenses.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "51f72f916be7349b4103d6fc39158b63802fffcc": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for purchasing and leasing employee uniforms and accessories, which is not a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "a21c6abf739951cdecc755cc4cb120693116aaa6": {
+  "work_type": "staff_augmentation",
+  "buys_people_not_deliverables": "yes",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The title explicitly states \u201cStaff Augmentation\u201d for \u201cMedical Staff,\u201d indicating the District is paying for temporary personnel rather than a specific technology deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ccb90b65472ff20ce178670fd60168173c5709d5": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates design work for Fort Dupont (a physical site/project) rather than buying or supporting a specific technology system.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "4b667d28b3be723030b08d1adb4d28b67ffcce3e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a provider data management system and services in a health finance context, but with no clear indication of whether DC is building, deploying, or maintaining software versus administering provider-related program data, so it is classified as non-technology based on the awarding agency and ambiguous scope.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c7d2c4dfad051dc21537ed6a971f5e6cc9ee1335": {
+  "work_type": "software_om_support",
+  "buys_people_not_deliverables": "no",
+  "system_name": "DCAS (IBM Curam)",
+  "confidence": "high",
+  "rationale": "The title indicates IBM Curam software support for DCAS, which is operating/maintaining an existing system rather than building new software or supplying staff.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "218a2e5cd9925d73bc89d4b22a1bf04013e3574d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a career/professional program (\u201cCAREER PRO\u201d) administered by a public benefit corporation under DOES, which is a workforce/benefit service rather than a technology deliverable or IT work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "5f092bccb180276caedc9dcf9b3f6084e35bbebc": {
+  "work_type": "custom_software_build",
+  "buys_people_not_deliverables": "no",
+  "system_name": "Case Management System (OSSE)",
+  "confidence": "medium",
+  "rationale": "The title indicates OSSE is procuring a case management system for its use, which most likely involves building or tailoring a dedicated software system rather than reselling licenses or providing O&M.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ccabe3e0fa02f08fda0ec019f734a6098343a34f": {
+  "work_type": "cots_implementation",
+  "buys_people_not_deliverables": "no",
+  "system_name": "UIBS",
+  "confidence": "medium",
+  "rationale": "The contract title references UIBS (UI Benefits System) and is awarded by DOES, indicating the District is implementing/configuring a packaged benefits system rather than buying staff time.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "7c44617402a77553078ad4fec5537dee54efa432": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a behavior health advisory/service rather than a specific technology deliverable, and the awarding agency is a health care finance unit, so this is classified as non-technology work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "b7e9d2376f6f7e8a094e1fe8ca8e8ee84bf2ceba": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates a workforce/employment \u201cWork Readiness\u201d and \u201cGrowth Industry Sector\u201d program rather than a specific technology build, deployment, or support activity.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "398d55bbe91900d647654a57e919b5deb43fcf9a": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for DBH forensic mental health services, which is a health/social service rather than a technology deliverable or technology support work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "c562c578cbf0b7a6fe624e08a7b3d33630acbe18": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for licensed board psychiatrist services for DBH SEH (behavioral health care), which is a health staffing/clinical service rather than a technology deliverable or system work.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "e397ddfcdf64701d06eb74144bc4a74c3ff8378e": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "low",
+  "rationale": "The title indicates DBH public reporting of MHRS providers\u2019 performance using Aurrera Health Group, which is a behavioral health reporting/administrative service rather than a technology build, deployment, or support deliverable.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "ff72132d7033a69f9862d61473939a6be09b1d9d": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for a DCHR gender identity study, which is a research/HR activity rather than buying technology deliverables or services.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
+ },
+ "0429ed06449d0d5f11ddb6967f8b100464cabcff": {
+  "work_type": "not_technology",
+  "buys_people_not_deliverables": "no",
+  "system_name": "",
+  "confidence": "high",
+  "rationale": "The contract is for traditional congregate care services for children/families, which is a social service/benefit delivery rather than a technology good or service.",
+  "field_agreement": {
+   "work_type": 1.0,
+   "buys_people_not_deliverables": 1.0,
+   "confidence": 1.0
+  }
  }
 }

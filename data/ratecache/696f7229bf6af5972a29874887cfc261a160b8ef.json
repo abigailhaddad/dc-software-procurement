@@ -1,0 +1,50 @@
+[
+ {
+  "labor_category": "cdpACCESS Implementation Fee",
+  "level": "",
+  "hourly_rate": 75.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "cdpACCESS Implementation Fee",
+  "level": "",
+  "hourly_rate": 80.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "cdpACCESS Implementation Fee",
+  "level": "",
+  "hourly_rate": 65.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "cdpACCESS Implementation Fee",
+  "level": "",
+  "hourly_rate": 95.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "cdpACCESS Implementation Fee",
+  "level": "",
+  "hourly_rate": 60.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "cdpACCESS Implementation Fee",
+  "level": "",
+  "hourly_rate": 55.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "cdpACCESS Implementation Fee",
+  "level": "",
+  "hourly_rate": 65.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Training & Knowledge Transfer",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ }
+]

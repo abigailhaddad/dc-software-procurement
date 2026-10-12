@@ -93,18 +93,18 @@ CW50327,COTS Saas  Solution,Health Care Finance (DHCF),3/3/2017,1.0,1.0,1.0,Doc3
 CW51270,DPI Case Tracking System,Contracting and Procurement (OCP),4/12/2017,1.0,1.0,1.0,Doc292696,DPI Case Tracking System,FY2017,1/10/2017,False
 CW57103,MMIS IV&V,Health Care Finance (DHCF),12/6/2018,1.0,1.0,1.0,Doc299326,MMIS IV & V 2017,FY2017,2/10/2017,True
 CW60126,FY18_Board of Elections_Audiovisual Equipment,Board of Elections (DCBOE),4/10/2018,1.0,1.0,1.0,Doc369706,FY18_Board of Elections - Audiovisual Equipment Services,FY2018,3/23/2018,False
-CW60423,Qualys Vulnerability Platform,Chief Technology Officer (OCTO),4/23/2018,1.0,1.0,1.0,Doc369613,Qualys Vulnerability Platform,FY2018,3/29/2018,True
+CW60423,Qualys Vulnerability Platform	,Chief Technology Officer (OCTO),4/23/2018,1.0,1.0,1.0,Doc369613,Qualys Vulnerability Platform,FY2018,3/29/2018,True
 CW60526,SecureAuth IDP Platform Subscription Renewal,Chief Technology Officer (OCTO),4/30/2018,1.0,1.0,1.0,Doc370048,SecureAuth IDP Platform Subscription Renewal,FY2018,4/9/2018,True
 CW61144,NetBrain Software License,Chief Technology Officer (OCTO),5/29/2018,1.0,1.0,1.0,Doc377403,NetBrain Software License,FY2018,5/4/2018,True
-CW61603,IBM Z13 Hardware Maintenance,Chief Technology Officer (OCTO),6/14/2018,1.0,1.0,1.0,Doc378910,IBM Z13 Hardware Maintenance,FY2018,5/23/2018,True
+CW61603,IBM Z13 Hardware Maintenance ,Chief Technology Officer (OCTO),6/14/2018,1.0,1.0,1.0,Doc378910,IBM Z13 Hardware Maintenance,FY2018,5/23/2018,True
 CW64065,MicroStrategy Business Software,Chief Technology Officer (OCTO),9/20/2018,1.0,1.0,1.0,Doc398197,MicroStrategy Business Software,FY2018,9/13/2018,True
 CW64225,Solarwinds Licenses,Chief Technology Officer (OCTO),9/21/2018,1.0,1.0,1.0,Doc396666,Solarwinds Licenses,FY2018,9/11/2018,True
-CW66765,Palo Alto Support Renewal,Chief Technology Officer (OCTO),12/17/2018,1.0,1.0,1.0,Doc415480,Palo Alto Support Renewal,FY2019,12/10/2018,True
+CW66765,Palo Alto Support Renewal ,Chief Technology Officer (OCTO),12/17/2018,1.0,1.0,1.0,Doc415480,Palo Alto Support Renewal,FY2019,12/10/2018,True
 CW66770,DCRA Temporary Support Services,Licensing & Consumer Protection (DLCP),12/22/2018,1.0,1.0,1.0,Doc291199,FY'17-(DCRA) Temporary Support Services-DCSS SUPPLIERS PREFERRED,FY2017,12/16/2016,True
 CW69868,Canon Copiers,Health Care Finance (DHCF),1/30/2019,1.0,1.0,1.0,Doc394057,FY2018 - Canon Copiers - ( DCSS Preferred ),FY2018,8/21/2018,False
 CW70675,Iboss Content Filtering Software Maintenance and Support Services,Chief Technology Officer (OCTO),5/6/2019,1.0,1.0,1.0,Doc425663,IBoss Content Filtering Software Maintenance and Support Services,FY2019,1/22/2019,True
 CW75471,Data Management and Visualization Software,Licensing & Consumer Protection (DLCP),9/26/2019,1.0,1.0,1.0,Doc466194,Data Management and Visualization Software,FY2019,9/19/2019,True
-CW77577,Silo Hardware Maintenance,Chief Technology Officer (OCTO),12/20/2019,1.0,1.0,1.0,Doc411200,Silo Hardware Maintenance,FY2019,11/27/2018,True
+CW77577,Silo Hardware Maintenance ,Chief Technology Officer (OCTO),12/20/2019,1.0,1.0,1.0,Doc411200,Silo Hardware Maintenance,FY2019,11/27/2018,True
 CW77876,Identity Access Management Solution,Licensing & Consumer Protection (DLCP),12/4/2019,1.0,1.0,1.0,Doc459132,Identity and Access Management Solution,FY2019,9/6/2019,True
 CW78340,SAS Viya Licenses,Licensing & Consumer Protection (DLCP),12/18/2019,1.0,1.0,1.0,Doc482710,SAS Viya Licenses,FY2020,12/6/2019,True
 CW80790,FY20 - OCTO - Arbor Pravail Data Center,Chief Technology Officer (OCTO),3/24/2020,1.0,1.0,1.0,Doc490747,FY20 - OCTO - Arbor Pravail Data Center,FY2020,2/18/2020,True
@@ -123,7 +123,7 @@ CW87765,FY21 - FA0 - MPD - Dell Laptops (DCSS ONLY),Metropolitan Police Departme
 CW87983,Case Management System -  OSSE,State Superintendent of Education (OSSE),3/11/2021,1.0,1.0,1.0,Doc430326,Case Management System - OSSE,FY2020,2/28/2020,True
 CW88056,FY21-OCTO-Fiber trunk cables and fiber patch cords,Chief Technology Officer (OCTO),12/8/2020,1.0,1.0,1.0,Doc541485,FY21-OCTO-Fiber trunk cables and fiber patch cords,FY2021,11/23/2020,True
 CW88137,Genetec Clearance SAAS,Metropolitan Police Department (MPD),12/28/2020,1.0,1.0,1.0,Doc536530,Genetec Clearance SAAS,FY2021,12/7/2020,True
-CW88141,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,Chief Technology Officer (OCTO); Contracting and Procurement (OCP),12/16/2020,1.0,1.0,1.0,Doc540624,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,FY2021,11/17/2020,False
+CW88141,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,Contracting and Procurement (OCP); Chief Technology Officer (OCTO),12/16/2020,1.0,1.0,1.0,Doc540624,FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support,FY2021,11/17/2020,False
 CW88474,FY21 - DOCEBO CLOUD 700 E-LEARNING PLATFORM,Employment Services (DOES),12/22/2020,1.0,1.0,1.0,Doc545982,FY21 - DOCEBO CLOUD 700 E-LEARNING PLATFORM,FY2021,12/22/2020,True
 CW88546,Isilon Data Storage,Metropolitan Police Department (MPD),1/5/2021,1.0,1.0,1.0,Doc545315,Isilon Data Storage - DCSS Only,FY2021,12/23/2020,True
 CW88923,CAD Integration Platform,Metropolitan Police Department (MPD),1/15/2021,1.0,1.0,1.0,Doc544424,CAD Integration Platform,FY2021,1/12/2021,True
@@ -131,7 +131,7 @@ CW89046,CAH-Strategic Plan Development,Commission on Arts and Humanities (CAH),1
 CW89121,FY21-OCTO-FileNet License Renewal and Maintenance Support,Chief Technology Officer (OCTO),1/29/2021,1.0,1.0,1.0,Doc546202,FY21-OCTO-FileNet License Renewal and Maintenance Support,FY2021,1/11/2021,True
 CW89124,FY21 - OCTO - CheckPoint Firewall Annual Support,Chief Technology Officer (OCTO),3/2/2021,1.0,1.0,1.0,Doc546794,FY21 - OCTO - CheckPoint Firewall Annual Support,FY2021,2/5/2021,True
 CW89131,Cisco Ironport AntiSpam Software,Chief Technology Officer (OCTO),2/3/2021,1.0,1.0,1.0,Doc563757,Cisco IronPort AntiSpam Software,FY2021,1/27/2021,True
-CW89194,Microsoft Premier Support Services,Health Care Finance (DHCF),1/29/2021,1.0,1.0,1.0,Doc295757,Microsoft Premier Support Services,FY2017,1/5/2017,False
+CW89194,Microsoft Premier Support Services ,Health Care Finance (DHCF),1/29/2021,1.0,1.0,1.0,Doc295757,Microsoft Premier Support Services,FY2017,1/5/2017,False
 CW89363,FY21-OCTO- Dell Storage Disk and Drives,Chief Technology Officer (OCTO),2/5/2021,1.0,1.0,1.0,Doc548094,FY21-OCTO-Dell Storage Disk Drives,FY2021,1/19/2021,True
 CW89407,DCAS FY21 Infrastructure and Security,Health Care Finance (DHCF),3/16/2021,1.0,1.0,1.0,Doc549388,DCAS FY21 Infrastructure and Security,FY2021,1/27/2021,True
 CW89498,Proofpoint Data Extraction,Chief Technology Officer (OCTO),4/22/2021,1.0,1.0,1.0,Doc546741,Proofpoint Data Extraction,FY2021,2/9/2021,True
@@ -143,8 +143,8 @@ CW89980,FY21 FEMS CBRNE Detection Meter Maintenance,Fire and Emergency Services 
 CW90258,FY21-OCTO-Data Security Solution Software,Chief Technology Officer (OCTO),3/19/2021,1.0,1.0,1.0,Doc548142,FY21-OCTO-Data Security Solution Software,FY2021,2/2/2021,True
 CW90295,DC Power Equipment (DCPS),Chief Technology Officer (OCTO),3/22/2021,1.0,1.0,1.0,Doc384173,DC Power Equipment (DCPS),FY2018,6/14/2018,True
 CW90804,FY21 - DELL VDI VXRail Infrastructure,Employment Services (DOES),4/1/2021,1.0,1.0,1.0,Doc554532,FY21 - DELL VDI VXRail Infrastructure,FY2021,3/16/2021,True
-CW91484,Government of the District of Columbia Disparity Study,Deputy Mayor for Planning and Economic Development (DMPED),4/21/2021,1.0,1.0,1.0,DCEB-2021-R-0001,Government of the District of Columbia Disparity Study,FY2021,1/27/2021,True
 CW92433,KONY Software License and Cloud Subscription,Chief Technology Officer (OCTO),7/1/2021,1.0,1.0,1.0,Doc566275,FY21 - KONY Software License and Cloud Subscription,FY2021,6/24/2021,True
+CW93508,FY21-CFO-OYP Annual Evaluation Report,Employment Services (DOES); Contracting and Procurement (OCP),8/12/2021,1.0,1.0,1.0,Doc571806,FY21-CFO-OYP Annual Evaluation Report,FY2021,7/28/2021,False
 CW93564,BlueZone Terminal Emulator Software,Chief Technology Officer (OCTO),9/17/2021,1.0,1.0,1.0,Doc570398,Invitation for Bid - BlueZone Terminal Emulator Software,FY2021,8/11/2021,True
 CW93695,FY'21 - DBH - Temporary Staffing Services,Behavioral Health (DBH),8/22/2021,1.0,1.0,1.0,Doc568591,FY'21 - DBH - Temporary Staffing Services,FY2021,7/14/2021,True
 CW94285,"FY21-The Department of Insurance, Securities and Banking Insurance Code Modernization Project","Insurance, Securities and Banking (DISB)",9/24/2021,1.0,1.0,1.0,Doc573361,"FY21-The Department of Insurance, Securities and Banking Insurance Code Modernization Project",FY2021,9/1/2021,True
@@ -183,7 +183,7 @@ CW49149,Red Hat Licenses and Support (OCTO),Chief Technology Officer (OCTO),1/10
 CW127338,FY25 OPFL Staff Augmentation - Medical Staff,Employment Services (DOES),7/15/2025,0.912,1.0,0.824,Doc514813,Invitation for Bid - Staff Augmentation Medical - OPFL,FY2020,6/12/2020,True
 CW108871,FY23 Temporary Staffing Services FOR DBH,Behavioral Health (DBH),9/18/2023,0.909,1.0,0.818,Doc568591,FY'21 - DBH - Temporary Staffing Services,FY2021,7/14/2021,True
 CW108902,FY23 Temporary Staffing for DBH,Behavioral Health (DBH),7/28/2023,0.909,1.0,0.818,Doc568591,FY'21 - DBH - Temporary Staffing Services,FY2021,7/14/2021,True
-CW50363,FY17- OSSE - DEL - Professional Development Information System -(PDIS),State Superintendent of Education (OSSE),3/22/2017,0.906,0.857,0.954,Doc292621,FY17 - OSSE - DEL - Professional Development Information System,FY2017,2/28/2017,True
+CW50363,FY17- OSSE - DEL - Professional Development Information System -(PDIS) ,State Superintendent of Education (OSSE),3/22/2017,0.906,0.857,0.954,Doc292621,FY17 - OSSE - DEL - Professional Development Information System,FY2017,2/28/2017,True
 CW114644,Salesforce Professionals and Information Technology Resources,Health (DOH),2/8/2024,0.904,0.833,0.974,Doc693445,Salesforce Professionals and Information Technology (IT) Resources,FY2024,12/22/2023,True
 CW81475,Parking Control Beat Design Analysis Consultant,Public Works (DPW),10/5/2020,0.903,0.857,0.949,Doc496296,DCKT-2020-Parking Control Beat Design Analysis Consultant,FY2020,2/27/2020,True
 CW71202,Cisco Flex EA and Active Host WebEx,Chief Technology Officer (OCTO),5/22/2019,0.898,0.857,0.939,Doc440657,FY19-TO0-Cisco Flex EA and Active Host WebEx,FY2019,5/6/2019,True
@@ -224,7 +224,7 @@ CW91513,FY21 - Managed Trusted Internet Protocol Services MTIPS,Chief Technology
 CW60896,AT&T Wireless Services and Related Equipment,Chief Technology Officer (OCTO),10/1/2018,0.853,0.8,0.906,Doc283376,RFTOB - AT&T Wireless Services and Related Equipment,FY2017,11/21/2016,True
 CW64329,FY18 - CF0 - Office of Information Technology - Canon Copiers (DCIA and PFL),Employment Services (DOES),9/26/2018,0.853,0.875,0.83,Doc400195,FY18 - CF0 - Office of Information Technology - DCIA and PFL Copiers,FY2018,9/25/2018,True
 CW122785,ROFTOP - Clinical Case Management System,Health Care Finance (DHCF),2/1/2026,0.849,0.8,0.899,Doc686658,Clinical Case Management System,FY2024,12/22/2023,True
-CW88674,Enterprise Near-Me Marketplace Software Subscription,Licensing & Consumer Protection (DLCP),1/7/2021,0.845,0.833,0.857,Doc546184,Enterprise Near-Me Marketplace Software,FY2021,1/6/2021,True
+CW88674,Enterprise Near-Me Marketplace Software Subscription ,Licensing & Consumer Protection (DLCP),1/7/2021,0.845,0.833,0.857,Doc546184,Enterprise Near-Me Marketplace Software,FY2021,1/6/2021,True
 CW91017,Technical Assistance Consulting WIC,Deputy Mayor for Planning and Economic Development (DMPED),5/4/2021,0.845,0.75,0.939,Doc556551,Technical Assistance Consulting,FY2021,4/9/2021,True
 CW93784,FY-First Alert License Subscription,Chief Technology Officer (OCTO),8/17/2021,0.844,0.8,0.889,Doc560641,FY21- First Alert License Subscription Renewal,FY2021,5/7/2021,True
 CW77381,Avaya Software Maintenance,Chief Technology Officer (OCTO),11/18/2019,0.839,0.75,0.929,Doc480807,Avaya Software Maintenance - GSA,FY2020,11/18/2019,True
@@ -259,9 +259,10 @@ CW92165,DCRA Temporary Support Services(CCCB),Licensing & Consumer Protection (D
 CW129647,Temporary Staffing Support Services (CyGnA),Health (DOH),9/19/2025,0.823,0.75,0.897,Doc542650,Temporary Staffing Support Services,FY2021,12/9/2020,True
 CW95218,Internet Service Provider (ISP) Zayo,Chief Technology Officer (OCTO),10/1/2021,0.822,0.75,0.894,Doc570641,FY21 - Internet Service Provider (ISP),FY2021,8/3/2021,True
 CW98327,Dell Laptops & Warranty (DISB),"Insurance, Securities and Banking (DISB)",3/29/2022,0.822,0.75,0.894,Doc604809,FY22 Dell Laptops & Warranty,FY2022,3/10/2022,True
+CW118402,Safe And Efficient Deployment of Autonomous Vehicles Study,Contracting and Procurement (OCP),6/17/2024,0.821,0.857,0.785,DCKA-2024-R-0042,Autonomous Vehicles Program: Safe And Efficient Deployment of Autonomous Vehicles Study,FY2024,2/26/2024,True
 CW125490,Third Party Assessment and Penetration Testing,Health Care Finance (DHCF),5/13/2025,0.816,0.667,0.965,Doc754128,Thirty Party Assessment and Penetration Testing,FY2025,2/28/2025,True
 CW129653,Temporary Staffing Support Services (RizeUp),Health (DOH),9/19/2025,0.816,0.75,0.881,Doc542650,Temporary Staffing Support Services,FY2021,12/9/2020,True
-CW74562,Customer Relationship Management,Licensing & Consumer Protection (DLCP),9/5/2019,0.813,0.75,0.877,Doc456936,Customer Relationship Management Licenses,FY2019,8/9/2019,True
+CW74562,Customer Relationship Management ,Licensing & Consumer Protection (DLCP),9/5/2019,0.813,0.75,0.877,Doc456936,Customer Relationship Management Licenses,FY2019,8/9/2019,True
 CW96101,FY22 OCP Temporary Support Services,Contracting and Procurement (OCP),12/8/2021,0.812,0.75,0.875,Doc542870,FY'21-RFTOP-OCP-TEMPORARY SUPPORT SERVICES-DCSS SUPPLIERS ONLY,FY2021,11/27/2020,True
 CW121488,FY25 - DCAS - Operations Maintenance Services,Health Care Finance (DHCF),1/20/2025,0.81,0.75,0.871,Doc526404,DCAS Operations and Maintenance (O&M) Support Services,FY2021,11/23/2020,True
 CW105614,Technology Refresh DELL Computer Equipment,Metropolitan Police Department (MPD),2/2/2023,0.809,0.714,0.903,Doc622710,FY22 MPD - Technology Refresh - DELL Computer Equipment - TASB,FY2022,8/9/2022,True
@@ -275,7 +276,7 @@ CW129591,CCTV Equipment and Services for MPD Group C,Metropolitan Police Departm
 CW48560,FY17-OCTO-cGOV360 Maintenance and Support,Licensing & Consumer Protection (DLCP),12/22/2016,0.804,0.75,0.857,Doc288865,FY17-OCTO-MAINTENANCE SUPPORT,FY2017,11/21/2016,False
 CW80214,CF0-FY20- Paid Family Leave Benefits Administration System IV&V,Employment Services (DOES),2/19/2020,0.803,0.7,0.906,Doc484482,CF0-FY20 - Paid Family Leave Benefits Administrative System (PFLBAS) IV&V,FY2020,1/3/2020,True
 CW98981,Strategic and Implement Communications Plan,Campaign Finance (OCF),4/21/2022,0.801,0.75,0.853,Doc122179,Strategic Communications Plan,FY2013,9/17/2013,False
-CW89916,FY21 - OCTO - Infoblox Appliances Hardware,Chief Technology Officer (OCTO),2/25/2021,0.796,0.75,0.842,Doc165344,FY14 OCTO - Infoblox Appliances,FY2014,7/25/2014,True
+CW89916,FY21 - OCTO - Infoblox Appliances Hardware ,Chief Technology Officer (OCTO),2/25/2021,0.796,0.75,0.842,Doc165344,FY14 OCTO - Infoblox Appliances,FY2014,7/25/2014,True
 CW102288,ABRA- IT Equipment and Software Subscription,Alcohol Beverage Regulation Administration (ABRA),9/16/2022,0.795,0.714,0.876,Doc626429,FY22-ABRA- Request for Task Order Proposal- IT Equipment & Software Subscription,FY2022,9/14/2022,True
 CW109355,FY23 - FS0 - Court Consulting Services and Feasibility Study,Administrative Hearings (OAH),7/14/2023,0.794,0.667,0.921,Doc659438,FY23 OAH Court Consulting Services and Feasibility Study,FY2023,3/31/2023,True
 CW109125,FY23 DCSS  TEMPORARY SUPPORT SERVICES,Contracting and Procurement (OCP),8/18/2023,0.793,0.667,0.919,Doc573851,FY21 - OA- RFQ - Temporary Support Services - (CBE & SBE Preferred),FY2021,8/6/2021,False
@@ -309,7 +310,7 @@ CW112748,DCSS - Training Services - Tiye Consulting,,11/13/2023,0.775,0.667,0.88
 CW129649,Temporary Staffing Support Services (E7STRATEGIES),Health (DOH),9/19/2025,0.775,0.75,0.8,Doc542650,Temporary Staffing Support Services,FY2021,12/9/2020,True
 CW59207,DCRA Accela Enhancements Services,Licensing & Consumer Protection (DLCP),2/22/2018,0.775,0.667,0.884,Doc365374,Accela Enhancements,FY2018,2/13/2018,True
 CW83797,CF0-FY20 - VOS MAINTENANCE & SUPPORT,Employment Services (DOES),6/26/2020,0.773,0.6,0.945,Doc134818,FY-14 -CF0-DOES-Maintenance and Support,FY2014,11/20/2013,True
-CW87865,Annual Subscription for End Point Protection,Chief Technology Officer (OCTO),12/1/2020,0.77,0.714,0.825,Doc535384,FY21-OCTO-Annual Subscription for End Point Protection (CrowdStrike),FY2021,10/30/2020,True
+CW87865,Annual Subscription for End Point Protection  ,Chief Technology Officer (OCTO),12/1/2020,0.77,0.714,0.825,Doc535384,FY21-OCTO-Annual Subscription for End Point Protection (CrowdStrike),FY2021,10/30/2020,True
 CW94253,DHCF - Temporary Support Personnel I,Health Care Finance (DHCF),1/1/2022,0.769,0.6,0.938,Doc135521,FY'14-DCRA Temporary Support Personnel,FY2014,11/29/2013,False
 CW116096,DCKA-2023-C-0056 - Citywide Traffic Signal Optimization Round 3,Transportation (DDOT),3/14/2024,0.767,0.667,0.867,DCKA-2016-Q-0052,Citywide Traffic Signal Optimization Services,FY2017,3/16/2017,True
 CW116328,Weigh-In-Motion Maintenance Contract,Transportation (DDOT),2/14/2024,0.766,0.714,0.818,DCKA-2014-R-0028,Weigh-In-Motion Stations Repair and Maintenance Contract,FY2018,1/8/2018,True
@@ -339,7 +340,7 @@ CW130190,LTCA - Temp Staffing,Health Care Finance (DHCF),12/9/2025,0.753,0.667,0
 CW131291,"FY26 - OCTO - FileNet Licenses, Maintenance & Support",Chief Technology Officer (OCTO),12/2/2025,0.751,0.667,0.835,Doc800815,FY26 - OCTO - Filenet Kofax Maintenance and Support,FY2026,12/1/2025,True
 CW90603,Pondera Fraud Detection Software,Employment Services (DOES),3/22/2021,0.75,0.6,0.9,Doc554481,FY21 - PUA Fraud Detection Software,FY2021,3/15/2021,True
 CW125387,Procurement of Dell IT Equipment and Accessories,Health (DOH),3/25/2025,0.747,0.667,0.827,Doc763457,FY25 - AMP - SHSP Dell IT Equipment and Accessories,FY2025,3/20/2025,True
-CW79929,FY20-Octo-Dell SAN Storage Reengineering Solution,Chief Technology Officer (OCTO),1/31/2020,0.747,0.667,0.827,Doc232542,Dell SAN Reengineering Solution,FY2016,11/6/2015,True
+CW79929,FY20-Octo-Dell SAN Storage Reengineering Solution ,Chief Technology Officer (OCTO),1/31/2020,0.747,0.667,0.827,Doc232542,Dell SAN Reengineering Solution,FY2016,11/6/2015,True
 CW99519,FY22 Dell Laptops DDOT,Transportation (DDOT),5/4/2022,0.747,0.667,0.828,Doc333384,DELL Laptops,FY2017,9/5/2017,False
 CW94167,DCRA Case Management System,Licensing & Consumer Protection (DLCP),9/20/2021,0.744,0.6,0.889,Doc258051,DCRA Data Management System,FY2016,6/1/2016,True
 CW100947,FY22 Hyperlocal Air Quality Monitoring,Energy and Environment (DOEE),7/13/2022,0.743,0.5,0.985,Doc593911,Hyper-Local Air Quality Monitoring,FY2022,3/21/2022,True
@@ -380,6 +381,7 @@ CW128573,Tableau Subscriptions and Premium Support,Chief Technology Officer (OCT
 CW92289,DCRA Product Specialist Support Temporary Services(CCCB),Licensing & Consumer Protection (DLCP),6/21/2021,0.708,0.714,0.701,Doc567598,FY21-DCRA Product Support Specialist Temporary Personnel Services,FY2021,6/21/2021,True
 CW93861,DCAS Communications Lead,Health Care Finance (DHCF),8/30/2021,0.707,0.6,0.814,Doc575859,Request for Task Order Proposal - DCAS Communications Lead,FY2021,8/20/2021,True
 CW126544,DCSS - Information Technology Equipment and Software - ITPizza LLC,Contracting and Procurement (OCP),6/26/2025,0.704,0.571,0.837,Doc633402,FY23 OCP Information Technology Equipment and Software,FY2023,12/5/2022,True
+CW138480,Fire Alarm Services,Public Works (DPW),8/26/2026,0.704,0.667,0.741,Doc826724,Invitation for Bid - Fire Alarm System,FY2026,7/6/2026,True
 CW102246,DCSS-Temporary Support Services- ANC,Chief Technology Officer (OCTO),9/13/2022,0.702,0.5,0.905,Doc542211,FY21- TEMPORARY SUPPORT SERVICES- OAH,FY2021,12/3/2020,False
 CW98621,FY2022-CFO-DOES-OIT-AV SERVICES AND EQUIPMENT,Employment Services (DOES),4/6/2022,0.702,0.571,0.833,Doc599675,INVITATION FOR BID(IFB)-FY2022-CFO-DOES-OIT-AUDIO VISUAL EQUIPMENT AND SERVICES,FY2022,2/23/2022,True
 CW118651,Operations and Maintenance for the Provider Data Management System,Health Care Finance (DHCF),1/7/2025,0.698,0.667,0.729,Doc190672,Provider Data Management System,FY2015,5/4/2015,True
@@ -476,9 +478,10 @@ CW114527,"DCSS-MMPI20241-Marketing, Media and Public Information-District Consul
 CW51151,"DHS - TANF Redesign 2.0 CATCH - IT Resources - Networking for Future, Inc.",Human Services (DHS),4/11/2017,0.633,0.556,0.711,Doc300536,TANF Redesign 2.0 CATCH - IT Resources -DCSS Holders Only,FY2017,2/1/2017,True
 CW126442,"DCSS - Marketing, Media and Public Information - Ink Systems., LLC",Contracting and Procurement (OCP),7/15/2025,0.632,0.5,0.764,Doc710932,"FY24 ONSE Marketing, Media and Public Information Services- SBE only",FY2024,3/18/2024,True
 CW112165,"DCSS - Information Technology Equipment and Software - Networking for Future, Inc",Contracting and Procurement (OCP),3/12/2024,0.63,0.5,0.759,Doc633402,FY23 OCP Information Technology Equipment and Software,FY2023,12/5/2022,True
+CW138197,FY26-RFK PMO-Energy Master Plan & Battery Energy Storage System,Mayor (EOM),8/11/2026,0.63,0.625,0.634,Doc819384,FY26-RFK PMO Energy Master Plan,FY2026,4/23/2026,True
 CW105091,DCORM ERMS - Maintenance and Support,Office of Risk Management (ORM),1/12/2023,0.629,0.4,0.857,Doc134553,Copier Maintenance and Support,FY2014,11/19/2013,False
 CW116651,DCSS - Information Technology Equipment and Software - Capital Consulting LLC,Contracting and Procurement (OCP),9/17/2024,0.626,0.5,0.752,Doc633402,FY23 OCP Information Technology Equipment and Software,FY2023,12/5/2022,True
-CW87523,FY21 DCSS- INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and Procurement (OCP),11/10/2020,0.626,0.429,0.824,Doc449088,FY19-CFO-BPA-INFORMATION TECHNOLOGY EQUIPMENT-OIT-DCSS ONLY,FY2019,7/1/2019,True
+CW87523,FY21 DCSS- INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE ,Contracting and Procurement (OCP),11/10/2020,0.626,0.429,0.824,Doc449088,FY19-CFO-BPA-INFORMATION TECHNOLOGY EQUIPMENT-OIT-DCSS ONLY,FY2019,7/1/2019,True
 CW91809,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and Procurement (OCP),11/30/2021,0.626,0.429,0.824,Doc449088,FY19-CFO-BPA-INFORMATION TECHNOLOGY EQUIPMENT-OIT-DCSS ONLY,FY2019,7/1/2019,True
 CW92675,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and Procurement (OCP),6/3/2022,0.626,0.429,0.824,Doc449088,FY19-CFO-BPA-INFORMATION TECHNOLOGY EQUIPMENT-OIT-DCSS ONLY,FY2019,7/1/2019,True
 CW92877,FY21 DCSS INFORMATION TECHNOLOGY EQUIPMENT AND SOFTWARE,Contracting and Procurement (OCP),2/28/2022,0.626,0.429,0.824,Doc449088,FY19-CFO-BPA-INFORMATION TECHNOLOGY EQUIPMENT-OIT-DCSS ONLY,FY2019,7/1/2019,True
@@ -544,7 +547,7 @@ CW125457,Freeway I-295 DMS Replacement,Transportation (DDOT),4/2/2025,0.593,0.5,
 CW105827,Comprehensive Statewide Needs Assessment for District of Columbia,Department on Disability Services (DDS),2/6/2023,0.592,0.375,0.808,DCJM-2014-R-0011,Comprehensive State-wide Needs Assessment,FY2014,1/31/2014,True
 CW126921,Audit and Compliance-LCP tracker,Transportation (DDOT),6/10/2025,0.592,0.4,0.784,Doc392940,DCAS Compliance Tracker,FY2018,8/17/2018,False
 CW132447,DC General Construction Inc- DCSS- ELS,,1/21/2026,0.592,0.4,0.784,Doc151950,FY14-GENERAL CONSTRUCTION,FY2014,4/11/2014,False
-CW78873,FY20 - OCTO - Software AG,Chief Technology Officer (OCTO),2/6/2020,0.592,0.5,0.684,Doc454547,FY19-RFQ-OCTO- Cloudera Software-DCSS Only,FY2019,7/23/2019,True
+CW78873,FY20 - OCTO - Software AG ,Chief Technology Officer (OCTO),2/6/2020,0.592,0.5,0.684,Doc454547,FY19-RFQ-OCTO- Cloudera Software-DCSS Only,FY2019,7/23/2019,True
 CW120616,FY25-CF0-DOES-Employer Self Service Portal (ESSP) Maintenance and Support,Employment Services (DOES),10/2/2024,0.591,0.5,0.683,Doc134818,FY-14 -CF0-DOES-Maintenance and Support,FY2014,11/20/2013,True
 CW91625,DCSS FY21 Anadria Consulting,,8/2/2021,0.588,0.333,0.842,DCHT-2014-T-0003,Actuarial Consulting Services,FY2014,9/16/2014,False
 CW97459,Granicus short term rental licensing,Licensing & Consumer Protection (DLCP),1/28/2022,0.588,0.5,0.677,Doc489517,Short Term Rental Application,FY2020,4/20/2020,True
@@ -557,7 +560,7 @@ CW107101,DOES Project Management UIBS,Employment Services (DOES),3/28/2023,0.585
 CW123501,DCSS-Temporary Support Services-The Calpro Group,,1/14/2025,0.585,0.4,0.769,Doc106337,Temporary Support Services - DCRA,FY2013,5/20/2013,False
 CW68042,KwikTag Electronic Content Management System,Public Works (DPW),1/23/2019,0.585,0.429,0.742,DCRL-2014-R-0080,Enterprise Learning Content Management System,FY2014,4/8/2014,False
 CW102877,Medicaid Management Information System (MMIS) Core System and Supporting Services solution.,Health Care Finance (DHCF),10/5/2022,0.584,0.444,0.723,Doc84042,Medicaid Management Information Systems (MMIS),FY2013,11/19/2012,True
-CW68235,FY18 - CF0 - Office of Information Technology - Maintenance and Support for the Grants Management System,Contracting and Procurement (OCP); Deputy Mayor for Greater Economic Opportunity (DMGEO); Employment Services (DOES),6/27/2018,0.584,0.455,0.713,Doc366416,FY18 - CF0 - Office of Information Technology - DCIA Q-Matic System,FY2018,2/28/2018,False
+CW68235,FY18 - CF0 - Office of Information Technology - Maintenance and Support for the Grants Management System,Employment Services (DOES); Deputy Mayor for Greater Economic Opportunity (DMGEO); Contracting and Procurement (OCP),6/27/2018,0.584,0.455,0.713,Doc366416,FY18 - CF0 - Office of Information Technology - DCIA Q-Matic System,FY2018,2/28/2018,False
 CW101206,FY22-CF0-DOES-DSI 1717 H Street IT Equipment,Employment Services (DOES),8/3/2021,0.583,0.5,0.667,Doc262728,cf0-fy16-IT Equipment,FY2016,6/28/2016,True
 CW111835,DLCP - FileNet Migration & Support,Licensing & Consumer Protection (DLCP),10/4/2023,0.583,0.5,0.667,Doc564138,FY21 FileNet Support Services,FY2021,6/24/2021,True
 CW112546,Emergency Staff Augmentation - Migrant,Human Services (DHS),10/1/2023,0.583,0.5,0.667,Doc250595,Staff Augmentation,FY2016,4/11/2016,False
@@ -587,7 +590,7 @@ CW93806,FY2021-CFO-DOES-OIT-LEARNING PLATFORM,Employment Services (DOES),8/30/20
 CW117547,DCSS - Temporary Support Services - Digi Doc Inc,Contracting and Procurement (OCP),9/11/2024,0.571,0.333,0.808,Doc232030,FY15-Temporary Support-DCTC,FY2016,11/13/2015,False
 CW123481,DMPED-OPTION YEAR ONE Real Estate & Financial Advisory Services CSG,Deputy Mayor for Planning and Economic Development (DMPED),1/9/2025,0.571,0.444,0.698,DCEB-2024-Q-1001,Real Estate and Financial Advisory Services,FY2024,8/19/2024,True
 CW132781,DMPED-Grant Reviewer Consultant Services-Captivate Perspective,Deputy Mayor for Planning and Economic Development (DMPED),1/29/2026,0.571,0.5,0.641,DCEB-2020-B-1002,Grant Reviewer Consultant Services,FY2020,3/9/2020,True
-CW41352,Verizon Telecommunication Services,Chief Technology Officer (OCTO),5/31/2016,0.571,0.333,0.809,Doc253827,WITS 3 Telecommunication Services,FY2016,5/13/2016,True
+CW41352,Verizon Telecommunication Services ,Chief Technology Officer (OCTO),5/31/2016,0.571,0.333,0.809,Doc253827,WITS 3 Telecommunication Services,FY2016,5/13/2016,True
 DCRL-2021-C-0048,FACES Maintenance and Operations,Child and Family Services Agency (CFSA),8/16/2021,0.571,0.4,0.743,DCRL-2015-R-0100,"SACWIS Maintenance, Operations And Enhancements",FY2015,9/23/2015,True
 CW120601,DCSS - Information Technology Equipment and Software -  Corporate Systems Resources Inc,,10/29/2024,0.57,0.444,0.695,Doc633402,FY23 OCP Information Technology Equipment and Software,FY2023,12/5/2022,False
 CW122341,DCSS - Information Technology Equipment and Software  - Davis Computer Technologies LLC,Contracting and Procurement (OCP),12/18/2024,0.57,0.444,0.695,Doc633402,FY23 OCP Information Technology Equipment and Software,FY2023,12/5/2022,True
@@ -659,7 +662,7 @@ CW106730,IDIQ - Service vehicle,Fire and Emergency Services Department (FEMS),3/
 CW99343,"DCSS - Temporary Support Services - Avid Systems, LLC",Contracting and Procurement (OCP),2/14/2022,0.542,0.333,0.75,Doc232030,FY15-Temporary Support-DCTC,FY2016,11/13/2015,False
 CW101089,"FY22-CF0-DOES-IT Equipment BPA-MVS, Inc.",Employment Services (DOES),8/3/2022,0.541,0.429,0.653,Doc262728,cf0-fy16-IT Equipment,FY2016,6/28/2016,True
 CW104843,"DCSS-ITE202312-Information Technology Equipment and Software-Daily Office Solutions, LLC",,2/14/2023,0.541,0.4,0.683,Doc633402,FY23 OCP Information Technology Equipment and Software,FY2023,12/5/2022,False
-CW85861,FY 21  Election management software and support maintenance,Board of Elections (DCBOE),10/27/2020,0.541,0.429,0.653,Doc426972,RFQ - SecureAuth Software Support Maintenance Assistance - DCSS ONLY,FY2019,2/6/2019,False
+CW85861,FY 21  Election management software and support maintenance ,Board of Elections (DCBOE),10/27/2020,0.541,0.429,0.653,Doc426972,RFQ - SecureAuth Software Support Maintenance Assistance - DCSS ONLY,FY2019,2/6/2019,False
 CW100159,DBH - Hardware and Accessories,Behavioral Health (DBH); Licensing & Consumer Protection (DLCP),7/21/2022,0.54,0.333,0.746,Doc158665,FY14 -OAPT786 DOC IT HARDWARE ACCESSORIES,FY2014,6/11/2014,False
 CW105012,Dell Laptops Latitude 7430 and Premium Active Pens,Human Services (DHS),1/20/2023,0.54,0.5,0.581,Doc463299,FY2019 -  Dell Latitude 3390 Laptops - ( DCSS Only),FY2019,8/30/2019,False
 CW112585,"Temporary Staffing  Avid Systems, LLC",Human Services (DHS),12/6/2023,0.54,0.4,0.679,RM-16-IFB-054-XXX-BY4-JM,Temporary Staffing Services,FY2016,7/28/2016,False
@@ -684,7 +687,7 @@ CW134448,MPD-26-Digital Evidence Storage Upgrade,Metropolitan Police Department 
 CW107780,External Threat Management Platform,Health Care Finance (DHCF),6/12/2023,0.533,0.4,0.667,Doc369251,Remedyforce Service Management Platform,FY2018,3/22/2018,False
 CW108421,FEMS FY23 IT Printer Software Services and Maintenance,Fire and Emergency Services Department (FEMS),5/30/2023,0.533,0.333,0.733,Doc87289,FY13-TO0-SOFTWARE MAINTENANCE,FY2013,11/7/2012,False
 CW121926,"MVS, Inc. FY25 IT Equipment BPA",Employment Services (DOES),10/30/2024,0.533,0.4,0.667,Doc525843,RFQ - IT Equipment,FY2020,9/2/2020,False
-CW57723,GovDelivery Enterprise Communication Solution,Chief Technology Officer (OCTO),1/2/2018,0.533,0.4,0.667,Doc239877,Digital Communication Solution,FY2016,2/18/2016,True
+CW57723,GovDelivery Enterprise Communication Solution ,Chief Technology Officer (OCTO),1/2/2018,0.533,0.4,0.667,Doc239877,Digital Communication Solution,FY2016,2/18/2016,True
 CW80465,Amazon Web Service (Carahsoft),Health (DOH),2/21/2020,0.533,0.4,0.667,Doc381749,CFSA-RFQ-Amazon Web Services (AWS) DCSS ONLY,FY2018,6/27/2018,False
 CW98745,FY 22 SPIDR TECH SYSTEM - MPD,Metropolitan Police Department (MPD),4/27/2022,0.533,0.4,0.667,Doc342756,Robotic System - MPD,FY2018,12/1/2017,True
 CW110259,"FY23-RFTOB-FEMS-Hardware Supplies-Annie's Hardware, LLC",Fire and Emergency Services Department (FEMS),8/24/2023,0.532,0.5,0.563,Doc668835,FY23-FEMS-RFTOB-Various Hardware Supplies-DCSS Industrial Supplies Vendors,FY2023,7/28/2023,True
@@ -771,6 +774,7 @@ CW79362,CF0-FY20 - Maintenance & Support AHD-CRB E-Filing System,Employment Serv
 CW114812,FY24 - DLCP - Accela Support,Licensing & Consumer Protection (DLCP),2/12/2024,0.502,0.429,0.576,Doc699325,FY24 - DLCP - Accela Support (Federal Supply Schedule MAS Holders),FY2024,1/30/2024,False
 CW125157,DHS_Temporary Staffing for OAH Staffing Contract (Hearing Examiner & Program Support Specialist),Human Services (DHS),3/18/2025,0.502,0.4,0.603,Doc109798,Temporary Staffing - Contract Specialist,FY2013,6/3/2013,False
 CW111581,LRS Mainframe Software Products,Chief Technology Officer (OCTO),9/25/2023,0.5,0.333,0.667,Doc334110,FY18-TO0-IBM Mainframe Software.,FY2017,9/12/2017,True
+CW133197,Acquisition Support Services,Transportation (DDOT),2/18/2026,0.5,0.333,0.667,Doc211252,DCPHIS Support Services,FY2015,7/6/2015,False
 CW81768,DCSS-Security Equipment & Services-The Hamilton Group,Contracting and Procurement (OCP),5/26/2020,0.5,0.4,0.6,Doc171216,Security Networks Equipment,FY2014,9/5/2014,False
 CW82589,"DCSS - Temporary Support Services - Ross Professional Services, LLC",Contracting and Procurement (OCP),2/18/2021,0.5,0.333,0.667,Doc253587,FY16-TEMPORARY SUPPORT SERVICES-OCTFME,FY2016,4/28/2016,False
 CW94768,Acquisition Support Services,Contracting and Procurement (OCP),1/12/2022,0.5,0.333,0.667,Doc211252,DCPHIS Support Services,FY2015,7/6/2015,False
@@ -802,7 +806,6 @@ CW129729,OUC Technology Fire Station Alerting System Maintenance,Unified Communi
 CW76081,"DCSS  - Information Technology Equipment and Software  - JLee Associates, Inc.",,12/4/2019,0.487,0.333,0.641,Doc399441,FY18 - CF0 - Office of Information Technology - Agency Wide IT Equipment and Software,FY2018,9/19/2018,False
 CW102977,FY22-OCTO-Computer Associates (Broadcom),Chief Technology Officer (OCTO),10/1/2022,0.486,0.4,0.571,Doc504692,FY20 - OCTO - Computer Equipment,FY2020,3/16/2020,True
 CW49061,OCTO DCSS - Temporary Personnel - Information Unlimited,Chief Technology Officer (OCTO),12/28/2016,0.486,0.333,0.638,Doc260116,FY16-TO0-Temporary Personnel,FY2016,6/24/2016,True
-CW67661,PFL Tax Collection System,Employment Services (DOES),1/15/2019,0.486,0.333,0.638,Doc248157,CF0-FY 16 U.I. TAX AND BENEFIT SYSTEM,FY2016,3/11/2016,True
 CW84327,DCSS - Temporary Support Services - Advance Employee Intelligence,Contracting and Procurement (OCP),2/4/2021,0.486,0.333,0.638,Doc232030,FY15-Temporary Support-DCTC,FY2016,11/13/2015,False
 CW94427,"FY21 -DCSS - Security Equipment, Security Services & Emergency Preparedness",Contracting and Procurement (OCP),11/29/2021,0.486,0.4,0.571,Doc371520,FY18 Emergency Preparedness Kits,FY2018,3/27/2018,False
 CW128449,DCSS - Temporary Support Services - Rizeup Technology Training,Contracting and Procurement (OCP),8/29/2025,0.485,0.333,0.636,Doc106337,Temporary Support Services - DCRA,FY2013,5/20/2013,False
@@ -839,9 +842,10 @@ CW123468,Re-Platforming of the Centalized Waitlist Management System,State Super
 CW91050,"DCSS - Training Services & Products - Dakota 3 Consulting Firm, Inc - 924-00",Contracting and Procurement (OCP),5/13/2021,0.468,0.333,0.603,DCRL-2014-A-0042,Training and Consulting Services,FY2014,3/18/2014,False
 CW115205,Traffic Signal Control System & Implementation,Transportation (DDOT),1/25/2024,0.467,0.333,0.6,DCKA-2019-B-0072,Traffic Signal Maintenance,FY2020,8/3/2020,True
 CW126303,MPD  Unmanned Aerial Vehicles,Metropolitan Police Department (MPD),6/23/2026,0.467,0.4,0.533,Doc268953,DCFA-FY16-MPD Vehicles,FY2016,8/11/2016,True
-CW58809,"DCSS-IT Equipment & Software-Dupont Computers, Inc.",Contracting and Procurement (OCP),6/11/2018,0.467,0.333,0.6,Doc335624,FY2017 - I.T. Equipment and Software - (DCSS Preferred ),FY2017,9/12/2017,False
+CW58809,"DCSS-IT Equipment & Software-Dupont Computers, Inc. ",Contracting and Procurement (OCP),6/11/2018,0.467,0.333,0.6,Doc335624,FY2017 - I.T. Equipment and Software - (DCSS Preferred ),FY2017,9/12/2017,False
 CW93386,OSSE-OPS-e-SivicRMS Web-Based Software Maintenance and Support,State Superintendent of Education (OSSE),8/9/2021,0.466,0.333,0.598,Doc352878,Imperva Web Maintenance & Support,FY2018,12/8/2017,False
 CW103462,FY23 - DOH VRD Kiosks,Health (DOH),10/21/2022,0.465,0.333,0.596,Doc328051,DOH Vital Records Division Kiosks,FY2017,8/8/2017,True
+CW108099,FY23 -OSSE -DEL -Teaching Strategies (QUORUM) Online Subscription- Federal Funds-,State Superintendent of Education (OSSE),6/29/2023,0.465,0.4,0.529,Doc154730,FY14 - OSSE - DEL - Consulting Services - Federal Funds,FY2014,5/19/2014,True
 CW111005,"FY23-RFTOB-FEMS-Temporary Support Services-Rizeup Technology Training, LLC",Fire and Emergency Services Department (FEMS),9/8/2023,0.465,0.444,0.486,Doc665766,FY23-FEMS-RFTOB-Temporary Legal Support-DCSS Temporary Support Services Only,FY2023,8/3/2023,True
 CW131734,FY26 - OCTO - Microsoft Unified Support Replacement,Chief Technology Officer (OCTO),12/17/2025,0.465,0.333,0.597,Doc295757,Microsoft Premier Support Services,FY2017,1/5/2017,True
 CW119846,Maintenance and Support of Existing Election Equipment,Board of Elections (DCBOE),10/23/2024,0.464,0.333,0.595,Doc370890,FY2018 - Delivery of Election Equipment -  (DCSS Preferred),FY2018,3/22/2018,True
@@ -851,6 +855,7 @@ CW122944,JUSTIS Cloud Migration,Criminal Justice Coordinating Council (CJCC),3/1
 CW129167,JUSTIS Cloud Migration,Criminal Justice Coordinating Council (CJCC),9/3/2025,0.463,0.4,0.526,Doc652286,Cloud Migration Assessment and Solution,FY2023,4/18/2023,True
 CW94184,"FY21 - OCTO DCSS - Temporary Personnel - Information Unlimited, Inc",Chief Technology Officer (OCTO),9/23/2021,0.463,0.3,0.626,Doc195837,RFTO - Temporary personnel resoources - OCTO - FY15 - IT group,FY2015,2/25/2015,False
 CW133523,DHS_Temporary Staffing for OAH Staffing Contract (Supervisory Hearing Examiners),Human Services (DHS),2/25/2026,0.461,0.333,0.589,Doc109798,Temporary Staffing - Contract Specialist,FY2013,6/3/2013,False
+CW137342,CHA - District of Columbia Immunization Information System (DOCIIS),Health (DOH),7/31/2026,0.461,0.333,0.589,Doc289892,FY17 DHS District of Columbia Access System,FY2017,12/6/2016,False
 CW84471,Salesforce Licensing (Carahsoft Technology Corporation),Health (DOH),8/7/2020,0.461,0.333,0.588,RFI-PCSB-01,Salesforce Programing Technology Services,FY2016,10/30/2015,False
 CW92708,Salesforce Licensing (Carahsoft Technology Corporation),Health (DOH),7/8/2021,0.461,0.333,0.588,RFI-PCSB-01,Salesforce Programing Technology Services,FY2016,10/30/2015,False
 CW79159,"DCSS - Security Equipment, Security Services, and Emergency Preparedness - Emergency 911 Security",,2/21/2020,0.46,0.4,0.521,Doc371520,FY18 Emergency Preparedness Kits,FY2018,3/27/2018,False
@@ -867,13 +872,13 @@ CW93729,FY2021-CFO-DOES-OIT for GC-ABACUSNEXT CASE MANAGEMENT,Employment Service
 CW95481,OCTO STaR II,Chief Technology Officer (OCTO),3/7/2022,0.452,0.333,0.571,Doc551341,FY21-OCTO-RFQ-IT TECH SUPPORT II-DCSS SUPPLIERS PREFERRED,FY2021,2/8/2021,False
 CW137006,OCTO FY26- IT Platform Subscription - Capital,Chief Technology Officer (OCTO),6/23/2026,0.45,0.333,0.567,Doc631664,FY'23-RFQ-OCTO-MANAGEENGINE SUBSCRIPTION-AUTHORIZED DCSS SUPPLIERS ONLY,FY2023,10/19/2022,True
 CW126167,"Purchase of Equipment  The Task Order issued under DC supply schedule, Contract Number CW106799",Transportation (DDOT),4/24/2025,0.449,0.357,0.541,Doc465336,RFQ-CFSA Team Equipment Purchase - DC Supply Schedule Vendors Only,FY2019,9/12/2019,False
-CW91494,DCKT FY21 - Light Tower,Public Works (DPW),5/12/2021,0.449,0.333,0.565,Doc190601,FY15-FA0-Portable Solar Light Tower,FY2015,1/26/2015,False
+CW91494,DCKT FY21 - Light Tower ,Public Works (DPW),5/12/2021,0.449,0.333,0.565,Doc190601,FY15-FA0-Portable Solar Light Tower,FY2015,1/26/2015,False
 CW59003,"DCSS- IT Equipment & Software- Networking Unlimited, LLC",Contracting and Procurement (OCP),6/29/2018,0.448,0.333,0.562,Doc335624,FY2017 - I.T. Equipment and Software - (DCSS Preferred ),FY2017,9/12/2017,False
 CW67780,DCSS - Information Technology Equipment and Software - Advanced Network Consulting Inc,,9/23/2019,0.447,0.308,0.586,Doc399441,FY18 - CF0 - Office of Information Technology - Agency Wide IT Equipment and Software,FY2018,9/19/2018,False
 CW89216,FY21-Evidence on Q Application,Metropolitan Police Department (MPD),1/28/2021,0.447,0.333,0.561,Doc122762,FY13-FA0-Evidence on Q peripheral Devices,FY2013,8/20/2013,True
 CW104830,Website Maintenance and Hosting Services (BOE),Board of Elections (DCBOE),2/23/2023,0.445,0.4,0.49,Doc465647,FY19 - BOE- Hosting Server,FY2019,9/16/2019,True
 CW118564,RFK Development Consulting,Deputy Mayor for Planning and Economic Development (DMPED),6/7/2024,0.444,0.333,0.556,Doc662574,Consulting Services,FY2023,6/16/2023,False
-CW47840,Business Process ReDesign (BPR),Human Services (DHS),10/31/2016,0.443,0.333,0.552,Doc255401,FY2016 - New Software and Business Process,FY2016,5/26/2016,False
+CW47840,Business Process ReDesign (BPR) ,Human Services (DHS),10/31/2016,0.443,0.333,0.552,Doc255401,FY2016 - New Software and Business Process,FY2016,5/26/2016,False
 CW52464,Additional Medicaid Data Warehouse Development,Health Care Finance (DHCF),6/12/2017,0.442,0.333,0.551,Doc205643,Parallel Data Warehouse,FY2015,5/26/2015,True
 CW113270,DCAS Cloud Services,Health Care Finance (DHCF),12/5/2023,0.439,0.333,0.545,Doc307417,DCAS Release 3,FY2017,5/18/2017,False
 CW131464,Verizon wireless telecommunication services,Chief Technology Officer (OCTO),3/30/2026,0.439,0.4,0.478,Doc544562,FY21 - OCTO - CellularPCS - Verizon Wireless,FY2021,12/10/2020,True
@@ -886,6 +891,7 @@ CW56542,"DCSS-Security Equipment & Services-Wilson Dependable Services, LLC",Con
 CW82765,FY2020-CFO-DOES-OIT UI-QAS LICENSES,Employment Services (DOES),5/13/2020,0.435,0.364,0.506,Doc507768,FY2020-CFO-OIT-UI-QAS-DCSS-IT EQUIPMENT & SOFTWARE COMMODITY CODE,FY2020,4/22/2020,True
 CW92473,FY2021-CFO-DOES-OIT-IT EQUIPMENT BPA-ABC Technical Solutions,Employment Services (DOES),7/1/2021,0.435,0.357,0.512,Doc569263,FY2021-CFO-DOES-OIT-TECHNOLOGY LEARNING PLATFORM SERVICES-DCSS IT EQUIPMENT AND SOFTWARE SERVICES CATEGORY,FY2021,7/6/2021,True
 CW100542,cGov Corporate Filing Registry System Maintenance & Support,Licensing & Consumer Protection (DLCP),6/24/2022,0.433,0.3,0.566,Doc589905,FY22 - OCF - RFQ - e-Filing System Maintenance For Traditional Systems - (DCSS Preferred),FY2022,11/29/2021,False
+CW112432,FY24 -OSSE -DEL -Teaching Strategies (QUORUM) Online Subscription Membership- Federal Funds-,State Superintendent of Education (OSSE),11/3/2023,0.433,0.333,0.533,Doc591920,FY22 -OSSE -DEL -Education Fellows - Federal Funds,FY2022,12/17/2021,True
 CW60315,FEMS Streetcar Safety Consultation,Fire and Emergency Services Department (FEMS),4/11/2018,0.433,0.333,0.533,Doc88337,FY13-FB0-FEMS Streetcar Program,FY2013,12/10/2012,True
 CW53341,"Incapsulate, LLC - DOT Customer Relationship Management System",Special Education Transportation (SET),8/31/2017,0.431,0.3,0.562,Doc270217,FY16_OSSE_DOT_Asset_Management_System,FY2016,8/22/2016,True
 CW136383,FY26-EOM-Digital Archiving,Mayor (EOM),6/10/2026,0.43,0.333,0.526,Doc655124,FY23-RFTOP EOM- Digital Preservation Sytem,FY2023,1/17/2023,True
@@ -893,7 +899,7 @@ CW111268,DCSS - Mission Oriented Business Integrated Services (MOBIS) -Business 
 CW47099,OCTO DCSS - Temporary Personnel - Synergetic Information Systems,Chief Technology Officer (OCTO),9/23/2016,0.429,0.3,0.558,Doc195837,RFTO - Temporary personnel resoources - OCTO - FY15 - IT group,FY2015,2/25/2015,False
 CW101085,FY22-CF0-DOES-IT Equipment BPA- ABC Technical Solutions Inc.,Employment Services (DOES),8/3/2022,0.428,0.3,0.557,Doc140276,FY14-CF0-DOES-Technical Writing,FY2014,1/24/2014,True
 CW46714,"DCSS-Security Equipment & Services- Prism International, LLC",Contracting and Procurement (OCP),11/14/2016,0.428,0.333,0.522,Doc171216,Security Networks Equipment,FY2014,9/5/2014,False
-CW90445,SoundThinking- Gunshot Detection System Support,Metropolitan Police Department (MPD),3/16/2021,0.428,0.333,0.523,Doc501175,FY20 - DCRA - System Support Services (DCSS Only),FY2020,2/21/2020,False
+CW90445,SoundThinking- Gunshot Detection System Support ,Metropolitan Police Department (MPD),3/16/2021,0.428,0.333,0.523,Doc501175,FY20 - DCRA - System Support Services (DCSS Only),FY2020,2/21/2020,False
 CW118679,HRSD Phase II implementation services,Chief Technology Officer (OCTO),6/24/2024,0.426,0.375,0.477,Doc628288,FY22 Integrated Technology Engine Project Implementation(Phase II),FY2023,10/11/2022,False
 CW95375,DCSS- Audit & Financial Services -Swift Accounting  & Financial Consulting LLC,Contracting and Procurement (OCP),1/21/2022,0.426,0.333,0.519,RFI-PCSB-02,Financial Consulting Services,FY2016,11/18/2015,False
 CW136258,24-7 IT Monitoring Operations Center,Chief Technology Officer (OCTO),5/27/2026,0.425,0.375,0.475,Doc154756,ELSAG Operations Center Software Licenses - OCTO-FY14-IT,FY2014,5/1/2014,False
@@ -901,6 +907,7 @@ CW121290,Guideline Reporting Information Data (GRID) system,District of Columbia
 CW108796,Scanner and high-speed scanner. The Office of Public Records OPR is buildin,Secretary (EOM-OS),8/30/2023,0.415,0.3,0.529,Doc193532,FY15-Office of Public Records-Records Managment,FY2015,2/9/2015,False
 CW100374,FY22 - UI Benefits Modernization Advisory & Assistance,Employment Services (DOES),7/26/2022,0.413,0.333,0.492,Doc236889,CF0-FY16 UI Modernization,FY2016,1/19/2016,True
 CW109045,FY23 - UI Benefits Modernization Advisory & Assistance,Employment Services (DOES),8/1/2023,0.413,0.333,0.492,Doc236889,CF0-FY16 UI Modernization,FY2016,1/19/2016,True
+CW99712,FY22 - UI Benefits Modernization Advisory & Assistance,Employment Services (DOES),5/18/2022,0.413,0.333,0.492,Doc236889,CF0-FY16 UI Modernization,FY2016,1/19/2016,True
 CW133670,FY26 DHS Independent HIPAA Security Rule Risk Analysis and Business Impact Analysis,Human Services (DHS),3/10/2026,0.411,0.364,0.458,Doc251329,Risk Assessment and Impact Analysis for PHI Security,FY2016,5/18/2016,False
 CW102349,DC Health - Building Access Control and Monitoring,Health (DOH),7/29/2022,0.41,0.3,0.521,Doc459316,DC Health - HAHSTA Capacity Building Logistics Program,FY2019,8/28/2019,True
 CW120765,DCSS-TSS202425-Temporary Support Services-Corporate Systems Resources,,1/8/2025,0.41,0.429,0.392,Doc485126,Temporary Resources - Administrative Support,FY2020,1/27/2020,False
@@ -932,7 +939,6 @@ CW90729,UIBS DOES,Employment Services (DOES),6/11/2021,0.348,0.333,0.364,Doc1137
 CW115742,FY24 Zscaler DCPS,Chief Technology Officer (OCTO),2/26/2024,0.315,0.333,0.296,Doc182967,DCPS-FY15 RFQ- BOARDMAKER,FY2015,11/7/2014,False
 CW101352,OPTION YEAR ONE DC Economic Strategy ? Reimagining Downtown,Deputy Mayor for Planning and Economic Development (DMPED),8/2/2022,0.299,0.3,0.298,Doc405528,FY2018 - Psychiatrist Services - ( DCSS Preferred) - One Year BPA with 2 year Option,FY2019,10/19/2018,False
 CW117989,DCSSLP - P3 Advisory Services,Contracting and Procurement (OCP),6/3/2024,0.267,0.333,0.2,Doc265790,P3,FY2016,9/21/2016,False
-CW124619,"DMPED- OPTION YEAR ONE Urban Planning, - GENSLER & ASSOC.",Deputy Mayor for Planning and Economic Development (DMPED),2/24/2025,0.253,0.3,0.207,Doc405528,FY2018 - Psychiatrist Services - ( DCSS Preferred) - One Year BPA with 2 year Option,FY2019,10/19/2018,False
 CW100686,Microsoft Dynamics Customer Relationship (MPD),Metropolitan Police Department (MPD),7/1/2022,0,0,0,,,,,False
 CW100747,"FY22 DCSS Incapsulate, LLC MOBIS",,1/11/2023,0,0,0,,,,,False
 CW100945,"DCSS-TSS20225-Temporary Support Services-Changing Technologies, Inc",,2/3/2023,0,0,0,,,,,False
@@ -1034,6 +1040,7 @@ CW114817,SAS Pro License Maintenance,Health Care Finance (DHCF),2/21/2024,0,0,0,
 CW114830,"DCSS - MOBIS - Change Bridge, LLC - 918-00",Contracting and Procurement (OCP),4/24/2024,0,0,0,,,,,False
 CW114876,FY22 AE Schedule Award Stantec Consulting Services Inc,Transportation (DDOT),10/1/2022,0,0,0,,,,,False
 CW114983,FY22 AE Schedule DCKA-2022-T-0023 Precision Systems Inc.,Transportation (DDOT),11/14/2022,0,0,0,,,,,False
+CW115001,FY24 KT0-FEMS Mobile Command Unit,Fire and Emergency Services Department (FEMS),2/12/2024,0,0,0,,,,,False
 CW115287,"FY24 DCSS MOBIS B. McNamee Consulting, LLC",,4/12/2024,0,0,0,,,,,False
 CW115533,FY22 AE Schedule DCKA-2022-T-0064 SAM Schwartz Consulting,Transportation (DDOT),11/4/2022,0,0,0,,,,,False
 CW115538,FY22 AE Schedule DCKA-2022-T-0057 WBCM,Transportation (DDOT),8/8/2023,0,0,0,,,,,False
@@ -1041,6 +1048,7 @@ CW115545,BOE Runbeck Lexmark Portable printers,Board of Elections (DCBOE),4/25/2
 CW115735,"FY24 DCSS Sterling Product Concepts, LLC - MOBIS",,5/15/2024,0,0,0,,,,,False
 CW115825,DCSS - MOBIS- PB&J Promotions LLC,,3/15/2024,0,0,0,,,,,False
 CW115977,"FY24 DCSS Agilian, LLC  - MOBIS",,5/15/2024,0,0,0,,,,,False
+CW116045,"High-Power, Rapid Deployment Charging Solution",Transportation (DDOT),3/19/2024,0,0,0,,,,,False
 CW116193,"Developing Sub-Sector Strategies for the District of Columbia-McKinsey & Company, Inc. Washington, DC",Deputy Mayor for Planning and Economic Development (DMPED),4/2/2024,0,0,0,,,,,False
 CW116223,Petition Management Signature Validation software solution.,Board of Elections (DCBOE),5/2/2024,0,0,0,,,,,False
 CW116254,"DCSS - Training Services & Products - Capital Business Solutions, LLC - 924-00",Contracting and Procurement (OCP),6/11/2024,0,0,0,,,,,False
@@ -1143,27 +1151,36 @@ CW133093,"DCSS - MOBIS - Majee Tech,Inc.",,2/13/2026,0,0,0,,,,,False
 CW133410,EIS SAS Premium Learning Subscription,Health (DOH),3/10/2026,0,0,0,,,,,False
 CW133531,Enhance and fully integrate the Street Vending,Chief Technology Officer (OCTO),3/3/2026,0,0,0,,,,,False
 CW133612,"E-Logic, Inc DCSS Engineering",,4/20/2026,0,0,0,,,,,False
+CW133801,Contract Workspace (Procurement)-RAGAS CONSULTING,Contracting and Procurement (OCP),3/5/2026,0,0,0,,,,,False
 CW134095,GovTech Advisors - DCSS MOBIS,,4/6/2026,0,0,0,,,,,False
 CW134446,"Georgetown Technologies, LLC - DCSS Audit and Financial",,4/21/2026,0,0,0,,,,,False
 CW134571,Power Plateform SME Services,Chief Technology Officer (OCTO),4/2/2026,0,0,0,,,,,False
 CW134624,DCSS - MOBIS - Georgetown Technologies LLC,,4/2/2026,0,0,0,,,,,False
 CW134647,"Tawiran, LLC DCSS MOBIS",,5/1/2026,0,0,0,,,,,False
 CW135424,"SE Group, Inc. DCSS MOBIS",,5/26/2026,0,0,0,,,,,False
+CW135552,Contract Workspace (Procurement) - ARTEX,Contracting and Procurement (OCP),4/29/2026,0,0,0,,,,,False
 CW135692,State Freight Plan Delivery Micro-Hub Feasibility Study,Transportation (DDOT),4/22/2026,0,0,0,,,,,False
 CW136053,DCSS - Industrial Services - ADSWAILES LLC dba A&A Premium Paint Distributor LLC,,5/21/2026,0,0,0,,,,,False
+CW136055,"DCSS - Training Services - SparkC, LLC",,5/21/2026,0,0,0,,,,,False
+CW136647,DOB - ICC Code Cycle Platform,Department Of Buildings (DOB),6/9/2026,0,0,0,,,,,False
 CW136728,"KavaliConsulting, LLC - DCSS MOBIS",,7/16/2026,0,0,0,,,,,False
+CW136839,DCSS-CW136839- MSG Group Inc,Contracting and Procurement (OCP),8/24/2026,0,0,0,,,,,False
 CW136974,"Tribeca Builds, LLC DCSS Engineering and Logistics",,8/4/2026,0,0,0,,,,,False
 CW137153,"Community Bridge, Inc, - DCSS IS",,8/17/2026,0,0,0,,,,,False
+CW137203,DCSS-ISA20268- Prospectus Enterprise Inc,Contracting and Procurement (OCP),6/30/2026,0,0,0,,,,,False
+CW137380,BOE 450) ExpressVote3 Ballot Marking Devices,Board of Elections (DCBOE),7/8/2026,0,0,0,,,,,False
 CW137541,DOB Public Records Systems (eRecords & SurDocs),Department Of Buildings (DOB),7/14/2026,0,0,0,,,,,False
 CW137673,Socialwise Inc. -  DCSS MOBIS,,8/19/2026,0,0,0,,,,,False
 CW137717,Cool Corridors Multi-Hazard Resilience Study - 2,Transportation (DDOT),7/24/2023,0,0,0,,,,,False
 CW138327,"DCSS-TSS202622-Temporary Support Services-Newland Enterprises, LLC dba Ajani",,8/27/2026,0,0,0,,,,,False
+CW138426,450- ExpressVote3 Ballot Marking Devices,Board of Elections (DCBOE),9/11/2026,0,0,0,,,,,False
+CW138430,DCSS - MIAD Holdings LLC,Contracting and Procurement (OCP),9/11/2026,0,0,0,,,,,False
 CW46136,DCSS-Training Services-The Privacy Advocate LLC,Contracting and Procurement (OCP),11/17/2016,0,0,0,,,,,False
 CW46138,DCSS-MOBIS - The Privacy Advocate LLC,Contracting and Procurement (OCP),11/17/2016,0,0,0,,,,,False
 CW46846,"DCSS-Temporary Support Services-96130-Prism International, LLC.",,10/4/2017,0,0,0,,,,,False
 CW46949,"DCSS-IT Equipment & Software-Prism International, LLC",Contracting and Procurement (OCP),11/14/2016,0,0,0,,,,,False
 CW47090,OSSE_APS_IDEA Compliance Web-Based Database Software_DC CATS,State Superintendent of Education (OSSE),9/22/2016,0,0,0,,,,,False
-CW47269,DCSS - MOBIS- Analytica,Contracting and Procurement (OCP),1/12/2017,0,0,0,,,,,False
+CW47269,DCSS - MOBIS- Analytica ,Contracting and Procurement (OCP),1/12/2017,0,0,0,,,,,False
 CW47272,OSSE-DOT-GPS Vehicle Locator Services,State Superintendent of Education (OSSE),9/27/2016,0,0,0,,,,,False
 CW47414,"DCSS - MOBIS - Crew Solutions, Inc.",Contracting and Procurement (OCP),11/14/2016,0,0,0,,,,,False
 CW48017,"Mission Oriented Business Integrated Services (Mobis)- Hales Creative Solutions, LLC",,11/28/2017,0,0,0,,,,,False
@@ -1171,11 +1188,11 @@ CW48181,"DCSS-2006-R-96130-00-Temporary Support Services-Changing Technologies, 
 CW48262,DCSS- Industrial Services - Spiritedone LLC,Contracting and Procurement (OCP),5/24/2017,0,0,0,,,,,False
 CW48317,"CW48317 - MOBIS - ZC Solution, LLC",Contracting and Procurement (OCP),11/17/2016,0,0,0,,,,,False
 CW48365,"DCSS-MOBIS- Sylver Rain Consulting, LLC",Contracting and Procurement (OCP),12/7/2016,0,0,0,,,,,False
-CW48572,"DCSS - MOBIS - Accurate Conceptions, LLC",,12/20/2016,0,0,0,,,,,False
+CW48572,"DCSS - MOBIS - Accurate Conceptions, LLC ",,12/20/2016,0,0,0,,,,,False
 CW48961,DCSS-MOBIS-VIRE Consulting,Contracting and Procurement (OCP),4/6/2017,0,0,0,,,,,False
 CW49156,"DCSS - IT Services, Equipment and Software - New Light Technologies(NLT)",,1/10/2017,0,0,0,,,,,False
-CW49341,MS Premier,Chief Technology Officer (OCTO),1/13/2017,0,0,0,,,,,False
-CW49408,"DCSS - MOBIS - Alternatives Renewable Solutions, LLC",Contracting and Procurement (OCP),6/12/2017,0,0,0,,,,,False
+CW49341,MS Premier ,Chief Technology Officer (OCTO),1/13/2017,0,0,0,,,,,False
+CW49408,"DCSS - MOBIS - Alternatives Renewable Solutions, LLC ",Contracting and Procurement (OCP),6/12/2017,0,0,0,,,,,False
 CW49776,"FY17_GD0_EGMS Hosting, Maintenenance, Tech Support, and Enhancements",State Superintendent of Education (OSSE),2/2/2017,0,0,0,,,,,False
 CW50063,DCSS - MOBIS - David Bishop Consulting,Contracting and Procurement (OCP),10/12/2017,0,0,0,,,,,False
 CW50911,"DCSS-Training Services- VLi, Inc.",Contracting and Procurement (OCP),4/10/2017,0,0,0,,,,,False
@@ -1186,7 +1203,7 @@ CW52472,"DCSS-Temporary Support Services-Prime Source Technologies, LLC",Contrac
 CW52476,"DCSS-MOBIS-Precision Capital Partners, LLC",Contracting and Procurement (OCP),7/17/2017,0,0,0,,,,,False
 CW52543,DCSS-MOBIS(918)-Georgetown Technologies,,7/7/2017,0,0,0,,,,,False
 CW52868,"DCSS-Information Technology, Equipment and Software-Accurate Conceptions, LLC",,7/25/2017,0,0,0,,,,,False
-CW53568,"DCSS-MOBIS-L.S. Caldwell & Associates, Inc.",Contracting and Procurement (OCP),10/30/2017,0,0,0,,,,,False
+CW53568,"DCSS-MOBIS-L.S. Caldwell & Associates, Inc. ",Contracting and Procurement (OCP),10/30/2017,0,0,0,,,,,False
 CW53865,"DCSS - MOBIS (918) - Savvy Technology Solution, LLC.",,9/27/2017,0,0,0,,,,,False
 CW54223,DCSS-Training Services-Holistic Planners Network,Contracting and Procurement (OCP),9/7/2017,0,0,0,,,,,False
 CW54466,DCSS - MOBIS - KLSL Consulting,Contracting and Procurement (OCP),11/16/2017,0,0,0,,,,,False
@@ -1216,8 +1233,8 @@ CW62027,Next Generation Assessment Reporting Suite (Tembo),State Superintendent 
 CW62328,"DCSS-MOBIS-Abstract Evolutions, LLC",Contracting and Procurement (OCP),7/27/2018,0,0,0,,,,,False
 CW62862,"DCSS - MOBIS - IdeaCrew, Inc",,1/2/2019,0,0,0,,,,,False
 CW63331,Contract Workspace-DCSS-CORPORATE SYSTEMS RESOURCES,Contracting and Procurement (OCP),9/17/2018,0,0,0,,,,,False
-CW63887,"DCSS- IT Equipment & Software - Capital Consulting, LLC dba Tharseo IT",Contracting and Procurement (OCP),5/13/2019,0,0,0,,,,,False
-CW64003,"DCSS -  Temporary support Services (96130)-Coroporate Systems Resources, Inc",,9/14/2018,0,0,0,,,,,False
+CW63887,"DCSS- IT Equipment & Software - Capital Consulting, LLC dba Tharseo IT ",Contracting and Procurement (OCP),5/13/2019,0,0,0,,,,,False
+CW64003,"DCSS -  Temporary support Services (96130)-Coroporate Systems Resources, Inc   ",,9/14/2018,0,0,0,,,,,False
 CW64063,DCSS Application for MOBIS for Health IT 2 Business dba CODICE,Contracting and Procurement (OCP),3/18/2019,0,0,0,,,,,False
 CW64583,"Department of Health Care Finance Office of the Ombudsman and Bill of Rights Temporary Staff support Period of Performance, October 1, 2018 thru September 30, 2019",Health Care Finance (DHCF),10/1/2018,0,0,0,,,,,False
 CW64800,"DCSS- MOBIS- Dranreft, LLC dba Business Transformation Group (BTG)",Contracting and Procurement (OCP),7/16/2019,0,0,0,,,,,False
@@ -1238,10 +1255,10 @@ CW68785,"DCSS - MOBIS - Systems Integration, LLC",Contracting and Procurement (O
 CW69325,"DCSS-Audit20197-V-Tech Solutions, Inc.",,5/13/2019,0,0,0,,,,,False
 CW69360,DCSS Application for Mindfinders,Contracting and Procurement (OCP),9/23/2019,0,0,0,,,,,False
 CW69398,"DCSS - MOBIS - dBase Technologies, LLC",Contracting and Procurement (OCP),11/25/2019,0,0,0,,,,,False
-CW70394,DCSS APPLICATION - Agiliian LLC,Contracting and Procurement (OCP),5/31/2019,0,0,0,,,,,False
+CW70394,  DCSS APPLICATION - Agiliian LLC,Contracting and Procurement (OCP),5/31/2019,0,0,0,,,,,False
 CW70417,DCSS APPLICATION - EIGHTY2DEGREES LLC. MMPI201923,Contracting and Procurement (OCP),11/8/2019,0,0,0,,,,,False
 CW71073,"DCSS-2006-R-96130-00-Temporary Support Services-V-Tech Solutions, Inc.",,11/28/2019,0,0,0,,,,,False
-CW71191,Service Now,Chief Technology Officer (OCTO),5/22/2019,0,0,0,,,,,False
+CW71191,Service Now ,Chief Technology Officer (OCTO),5/22/2019,0,0,0,,,,,False
 CW71779,Contract Workspace (Procurement)-CSZNET INC,Contracting and Procurement (OCP),6/9/2020,0,0,0,,,,,False
 CW71839,DCSS - MOBIS - Maru Solutions Incorporated,Contracting and Procurement (OCP),9/23/2019,0,0,0,,,,,False
 CW72121,Implementation-Technical Assistance to Proprietary Database Upgrades,Deputy Mayor for Planning and Economic Development (DMPED),5/14/2019,0,0,0,,,,,False
@@ -1261,9 +1278,9 @@ CW76289,OPTION YEAR FOUR - DC Business Portal Expansion  - Department of Consume
 CW76421,DFHV Mobile Applications & Digital Platforms,For-Hire Vehicles (DFHV),10/24/2019,0,0,0,,,,,False
 CW76550,Contract Workspace (Procurement)-K-CONSULTING GROUP LLC,Contracting and Procurement (OCP),11/24/2020,0,0,0,,,,,False
 CW76841,DCSS - MOBIS - Developement Institute LLC,,6/29/2020,0,0,0,,,,,False
-CW77571,OSSE-DOT_GPS_Navigation_Routing_and_Scheduling,Special Education Transportation (SET),5/6/2020,0,0,0,,,,,False
 CW77848,DCAS - Temporary Personnel - Sylver Rain Consulting,Contracting and Procurement (OCP),1/9/2018,0,0,0,,,,,False
 CW77914,"DCss - Mission Oriented Business Integrated Services (MOBIS)  - Nean Consulting, LLC",,5/22/2020,0,0,0,,,,,False
+CW79726,DCKA FY20 District One Call ,Transportation (DDOT),4/30/2020,0,0,0,,,,,False
 CW80078,TSS201933-All Pro All Services,,7/1/2020,0,0,0,,,,,False
 CW80597,FY20_GDO_CIO_Qlik Software_SIRC,State Superintendent of Education (OSSE),5/27/2020,0,0,0,,,,,False
 CW82657,DC-NET Metropolitan Area Network Man-Based Telephony,Chief Technology Officer (OCTO),7/27/2020,0,0,0,,,,,False
@@ -1283,7 +1300,7 @@ CW85219,Splunk Enterprise Licensing (Carahsoft Technology Corporation),Health (D
 CW85245,SolarWinds Enterprise Remote License (Carahsoft Technology Corp),Health (DOH),9/1/2020,0,0,0,,,,,False
 CW85514,Contract Workspace (Procurement)-THE COLES GROUP,Contracting and Procurement (OCP),4/28/2021,0,0,0,,,,,False
 CW86141,Staffing Resources for R1 R2 system fixes,Health Care Finance (DHCF),9/30/2020,0,0,0,,,,,False
-CW86532,"DCSS - MOBIS -  Development Innovation System C (DISC), L.L.C",,10/15/2020,0,0,0,,,,,False
+CW86532,"DCSS - MOBIS -  Development Innovation System C (DISC), L.L.C ",,10/15/2020,0,0,0,,,,,False
 CW86671,GeoTab telematic equipment and tracking services,Public Works (DPW),11/25/2020,0,0,0,,,,,False
 CW87531,FY2021 - BN0 - Esri ArcGIS Platform,Homeland Security and Emergency Management Agency (HSEMA),11/10/2020,0,0,0,,,,,False
 CW87736,"Contract Workspace (Procurement)- PC NET, INC.",Contracting and Procurement (OCP),4/30/2021,0,0,0,,,,,False
@@ -1298,18 +1315,17 @@ CW89945,WebEOC 2021-Informatics qualified technical experts,Health (DOH),2/25/20
 CW90022,FY19-CF0- Temporary Support Services - Staff Augmentmentation (DOES-DMGEO-WIC) - Option Year 1 - Rize Up,Employment Services (DOES),11/29/2018,0,0,0,,,,,False
 CW90025,FY21 DCSS IBG Consulting Group,,3/11/2021,0,0,0,,,,,False
 CW90062,"FY21 DCSS Anglin Consulting Group, Inc.",,3/31/2021,0,0,0,,,,,False
-CW90472,FY21 - DHS - CEPL Training Continuation (SNAP Reinvestment) - Vogt Consulting Inc.,Human Services (DHS),4/7/2021,0,0,0,,,,,False
 CW90523,"Contract Workspace (Procurement)-ATMOST SOLUTIONS, INC.",Contracting and Procurement (OCP),7/12/2021,0,0,0,,,,,False
-CW90574,FY21- PFL Website Maintenance,Employment Services (DOES),3/24/2021,0,0,0,,,,,False
+CW90574,FY21- PFL Website Maintenance ,Employment Services (DOES),3/24/2021,0,0,0,,,,,False
 CW90605,FY21 - ASSLA STUDY - OWH,Employment Services (DOES),3/22/2021,0,0,0,,,,,False
 CW90707,FEMS Tools & Appliances,Fire and Emergency Services Department (FEMS),3/29/2021,0,0,0,,,,,False
 CW90718,Contract Workspace (Procurement),Contracting and Procurement (OCP),5/3/2021,0,0,0,,,,,False
 CW90763,"FY21 DCSS Tandem Conglomerate, LLC",,9/15/2021,0,0,0,,,,,False
-CW90800,"DCSS - Engineering & Logistics - 925 - North Arrow, Inc.",Contracting and Procurement (OCP),4/9/2021,0,0,0,,,,,False
+CW90800,"DCSS - Engineering & Logistics - 925 - North Arrow, Inc. ",Contracting and Procurement (OCP),4/9/2021,0,0,0,,,,,False
 CW90928,Unemployment Insurance Claimant Portal,Employment Services (DOES),4/12/2021,0,0,0,,,,,False
 CW90981,Contract Workspace (Procurement)-THE HAMILTON GROUP,Contracting and Procurement (OCP),5/17/2021,0,0,0,,,,,False
 CW91081,DCSS - MOBIS - SOS Human Capital Solutions,,4/13/2021,0,0,0,,,,,False
-CW91150,FY21 - FX0 - CMS Phase Two Upgrade,Chief Medical Examiner (OCME),4/19/2021,0,0,0,,,,,False
+CW91150,FY21 - FX0 - CMS Phase Two Upgrade ,Chief Medical Examiner (OCME),4/19/2021,0,0,0,,,,,False
 CW91187,"DCSS - MOBIS - Synergetic Information Systems, Inc.",,4/21/2021,0,0,0,,,,,False
 CW91212,Purchase of 14 Vertical Mast Lite Towers,Public Works (DPW),4/22/2021,0,0,0,,,,,False
 CW91290,"DMPED Advisory Services, Executive Dashboards and Data Analysis",Deputy Mayor for Planning and Economic Development (DMPED),4/23/2021,0,0,0,,,,,False
@@ -1329,7 +1345,7 @@ CW92942,"DCSS - MOBIS - Hayat Brown, LLC",,7/19/2021,0,0,0,,,,,False
 CW93000,CW93000 Emphasys Software  (Award FY23),Housing and Community Development (DHCD); Office on Aging (OA),9/20/2021,0,0,0,,,,,False
 CW93012,"FY22_GDO_PostSec_LACES Hosting, maintenance and modification",State Superintendent of Education (OSSE),9/30/2021,0,0,0,,,,,False
 CW93173,Contract Workspace (Procurement) -,Contracting and Procurement (OCP),5/5/2022,0,0,0,,,,,False
-CW93241,TASS BPR Modeling and Requirements,Motor Vehicles (DMV),7/30/2021,0,0,0,,,,,False
+CW93241,TASS BPR Modeling and Requirements ,Motor Vehicles (DMV),7/30/2021,0,0,0,,,,,False
 CW93311,DOT School Bus Fleet GPS-based Automated Vehicle Locator System (AVL) System,Special Education Transportation (SET),9/28/2021,0,0,0,,,,,False
 CW93441,"Data Vault Hosting, Maintenance and Modification",Deputy Mayor for Planning and Economic Development (DMPED),10/1/2021,0,0,0,,,,,False
 CW93472,FY2021 - DBH SEH Schneider Electric Door Sounder Alarms,Behavioral Health (DBH),8/27/2021,0,0,0,,,,,False

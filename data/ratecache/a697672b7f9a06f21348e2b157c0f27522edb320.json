@@ -1,0 +1,20 @@
+[
+ {
+  "labor_category": "Premium Support Service",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Premium Support Service",
+  "level": "",
+  "hourly_rate": 75.0,
+  "unit": "hour"
+ },
+ {
+  "labor_category": "Premium Support Service",
+  "level": "",
+  "hourly_rate": 200.0,
+  "unit": "hour"
+ }
+]
