@@ -149,6 +149,26 @@ COLUMNS: dict[str, dict[str, str]] = {
         "payment_number": "paymentNumber, as published (masked by DC's site)",
         "listed": "Whether DC's site returned this row in its search on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
     },
+    "solicitations": {
+        "solicitation_number": "solicitationNumber, as published. Most are an id DC's site gives the posting (Doc123456); some are a "
+                               "procurement number (DCKA-2026-B-0157). Not unique: the same number can appear in two archive years",
+        "title": "title, with leading and trailing spaces removed. Some titles carry a control character (\\x1a) where DC's site lost a "
+                 "dash or apostrophe; it is kept as published",
+        "agency": "agencyNames, joined with '; ' when there are several, with abbreviated and variant names mapped by agency_names.yaml. "
+                  "Empty when DC's site lists none",
+        "agency_as_published": "agencyNames exactly as published, joined with '; '",
+        "market_type": "marketType, as typed by the District (spellings vary; some rows have a commodity code or a category typed here)",
+        "closing_date": "closingDate, parsed from M/D/YYYY",
+        "closing_date_text": "closingDate exactly as published",
+        "closing_time": "closingTime exactly as published",
+        "fiscal_year": "The archive year DC's site filed a closed solicitation under (ArchivedFiscalYear, e.g. FY2025), as a number. "
+                       "Empty for open solicitations",
+        "is_open": "True when DC's site returned the solicitation in its search for open solicitations on the latest pull; "
+                   "false when it came from the archive of closed ones",
+        "specialist": "specialist.name: the contract specialist DC's site names for questions",
+        "specialist_email": "specialist.email",
+        "specialist_phone": "specialist.phone, as published",
+    },
     "nigp_classes": {
         "nigp_class": "Three-digit NIGP class",
         "description": "DC's site's description of the class",
@@ -211,6 +231,7 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
     load("po", raw_dir / "purchase_by_commodity.json")
     load("pay", raw_dir / "payments.json")
     load("classes", raw_dir / "commodities.json")
+    load("sol", raw_dir / "solicitations.json")
     names = agency_map()
     con.register("agency_names_py", __import__("pandas").DataFrame(
         {"raw": list(names), "mapped": list(names.values())}))
@@ -316,6 +337,28 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
                coalesce(listed, 'True') = 'True' AS listed
         FROM pay LEFT JOIN agency_names n ON n.raw = pay.agencyName ORDER BY payment_date, id
     """)
+    # Every row of solicitations.json, none dropped or merged: a number that
+    # appears in two archive years is two postings with different closing dates.
+    con.execute(f"""
+        CREATE TABLE solicitations AS
+        SELECT s.solicitationNumber AS solicitation_number,
+               trim(s.title) AS title,
+               nullif(array_to_string(list_transform(CAST(s.agencyNames AS VARCHAR[]),
+                   a -> coalesce(list_extract(map_extract(names.m, a), 1), a)), '; '), '') AS agency,
+               nullif(array_to_string(CAST(s.agencyNames AS VARCHAR[]), '; '), '') AS agency_as_published,
+               s.marketType AS market_type,
+               {_date('s.closingDate')} AS closing_date,
+               s.closingDate AS closing_date_text,
+               s.closingTime AS closing_time,
+               TRY_CAST(replace(s.archive_fy, 'FY', '') AS INTEGER) AS fiscal_year,
+               s.is_open = 'True' AS is_open,
+               json_extract_string(s.specialist, '$.name') AS specialist,
+               json_extract_string(s.specialist, '$.email') AS specialist_email,
+               json_extract_string(s.specialist, '$.phone') AS specialist_phone
+        FROM sol s
+        CROSS JOIN (SELECT map(list(raw), list(mapped)) AS m FROM agency_names) names
+        ORDER BY is_open DESC, closing_date DESC NULLS FIRST, solicitation_number
+    """)
     con.execute("CREATE TABLE nigp_classes AS SELECT code AS nigp_class, description FROM classes ORDER BY code")
     con.execute("""
         CREATE TABLE contract_payments AS
@@ -383,6 +426,19 @@ def summary(con: duckdb.DuckDBPyConnection) -> dict:
             (SELECT count(*) FROM purchase_orders WHERE NOT listed) AS orders,
             (SELECT count(*) FROM payments WHERE NOT listed) AS payments"""),
         "purchase_orders": one("SELECT count(*) AS orders, count(DISTINCT nigp_class) AS classes FROM purchase_orders"),
+        "solicitations": one("""SELECT count(*) AS solicitations,
+            count(*) FILTER (WHERE is_open) AS open,
+            count(*) FILTER (WHERE NOT is_open) AS closed,
+            min(fiscal_year) AS first_fiscal_year, max(fiscal_year) AS last_fiscal_year,
+            count(DISTINCT solicitation_number) AS numbers,
+            (SELECT count(*) FROM (SELECT solicitation_number FROM solicitations GROUP BY 1 HAVING count(*) > 1)) AS repeated_numbers,
+            count(*) FILTER (WHERE regexp_matches(solicitation_number, '^Doc[0-9]+$')) AS doc_ids,
+            count(*) FILTER (WHERE closing_date IS NULL) AS no_closing_date,
+            count(*) FILTER (WHERE agency IS NULL) AS no_agency,
+            count(*) FILTER (WHERE market_type IS NULL) AS no_market_type,
+            count(DISTINCT market_type) AS market_types,
+            CAST(min(closing_date) AS VARCHAR) AS first_closing, CAST(max(closing_date) AS VARCHAR) AS last_closing
+            FROM solicitations"""),
         "corrections": {
             "amounts": [dict(zip(("contract_number", "option_period", "published", "corrected", "source", "applied"), r))
                         for r in con.execute("""

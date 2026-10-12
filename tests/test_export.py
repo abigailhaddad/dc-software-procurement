@@ -5,10 +5,12 @@ are the checks behind every figure. They compare the export against the raw JSON
 it was built from, through a second code path (``dcprocure.parse``, pandas)
 rather than the SQL that built it.
 
-Needs ``data/raw`` and the export: ``make hydrate export`` first.
+Needs ``data/raw`` and the export: ``make hydrate export`` first. To check an
+export written somewhere else, set ``DCPROCURE_PARQUET`` to its directory.
 """
 
 import json
+import os
 import random
 import re
 from pathlib import Path
@@ -20,7 +22,7 @@ from dcprocure import parse
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw"
-PARQUET = RAW / "parquet"
+PARQUET = Path(os.environ.get("DCPROCURE_PARQUET") or RAW / "parquet")
 
 
 def _q(sql: str):
@@ -42,6 +44,7 @@ def test_row_counts_match_the_raw_files():
         "purchase_orders": len(_raw("purchase_by_commodity.json")),
         "payments": len(_raw("payments.json")),
         "nigp_classes": len(_raw("commodities.json")),
+        "solicitations": len(_raw("solicitations.json")),
         "documents": sum(len(d.get("documents") or []) for d in _raw("contract_details.json")),
     }
     for table, expected in pairs.items():
@@ -183,3 +186,62 @@ def test_totals_count_base_periods_once_with_corrections():
     assert round(total, 2) == round(expected, 2) and stray == 0
     kinds = dict(_q(f"SELECT option_period, any_value(period_kind) FROM '{PARQUET}/contracts.parquet' GROUP BY 1"))
     assert kinds["Base Period"] == "base" and kinds["Option 1"] == "option" and kinds["N/A"] == "unclear"
+
+
+def _mdy(text):
+    """M/D/YYYY -> date, parsed in Python rather than by the export's SQL."""
+    import datetime
+    if text is None:
+        return None
+    m, d, y = (int(x) for x in text.split()[0].split("/"))
+    return datetime.date(y, m, d)
+
+
+def test_every_solicitation_row_matches_the_raw_file():
+    # Every raw row, field by field, matched as a multiset: nothing dropped,
+    # merged or altered except the parsing and agency mapping COLUMNS states.
+    import collections
+    import yaml
+    names = {k: v["name"] for k, v in yaml.safe_load((ROOT / "agency_names.yaml").read_text(encoding="utf-8"))["names"].items()}
+    expected = collections.Counter()
+    for r in _raw("solicitations.json"):
+        agencies = [a for a in r["agencyNames"] if a is not None]
+        sp = r["specialist"] or {}
+        expected[(
+            r["solicitationNumber"], r["title"].strip(" "),
+            "; ".join(names.get(a, a) for a in agencies) or None, "; ".join(agencies) or None,
+            r["marketType"], _mdy(r["closingDate"]), r["closingDate"], r["closingTime"],
+            int(r["archive_fy"][2:]) if r["archive_fy"] else None, r["is_open"],
+            sp.get("name"), sp.get("email"), sp.get("phone"),
+        )] += 1
+    got = collections.Counter(_q(f"""SELECT solicitation_number, title, agency, agency_as_published, market_type,
+        closing_date, closing_date_text, closing_time, fiscal_year, is_open, specialist, specialist_email, specialist_phone
+        FROM '{PARQUET}/solicitations.parquet'"""))
+    assert got == expected
+
+
+def test_solicitation_dates_and_years_are_consistent():
+    raw = _raw("solicitations.json")
+    # The only unparsed closing date is one DC's site leaves blank.
+    blank = sum(1 for r in raw if not r["closingDate"])
+    assert _q(f"SELECT count(*) FROM '{PARQUET}/solicitations.parquet' WHERE closing_date IS NULL")[0][0] == blank
+    # A closed solicitation's archive year is the District fiscal year its closing date falls in.
+    wrong = _q(f"""SELECT count(*) FROM '{PARQUET}/solicitations.parquet' WHERE NOT is_open
+        AND fiscal_year <> year(closing_date) + CASE WHEN month(closing_date) >= 10 THEN 1 ELSE 0 END""")[0][0]
+    assert wrong == 0
+    # Open rows have no archive year; closed rows all do.
+    assert _q(f"SELECT count(*) FROM '{PARQUET}/solicitations.parquet' WHERE is_open <> (fiscal_year IS NULL)")[0][0] == 0
+    assert _q(f"SELECT count(*) FROM '{PARQUET}/solicitations.parquet' WHERE is_open")[0][0] == sum(r["is_open"] for r in raw)
+
+
+def test_solicitation_summary_matches_the_raw_file():
+    import collections
+    raw = _raw("solicitations.json")
+    s = json.loads((PARQUET / "summary.json").read_text(encoding="utf-8"))["solicitations"]
+    numbers = collections.Counter(r["solicitationNumber"] for r in raw)
+    assert s["solicitations"] == len(raw)
+    assert s["numbers"] == len(numbers)
+    assert s["repeated_numbers"] == sum(1 for v in numbers.values() if v > 1)
+    assert s["doc_ids"] == sum(1 for r in raw if re.fullmatch(r"Doc[0-9]+", r["solicitationNumber"]))
+    assert s["no_agency"] == sum(1 for r in raw if not [a for a in r["agencyNames"] if a is not None])
+    assert s["open"] == sum(r["is_open"] for r in raw)

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC Solicitations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="shared/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  /* Only this page uses these; everything else is shared/style.css. */
+  .keywords{display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; margin:4px 0 8px}
+  .keywords a{font-weight:600}
+  .open-list td.when{white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <h1>DC procurement data</h1>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
+  <nav class="pages">
+    <a href="index.html">Contracts</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
+    <a href="solicitations.html" aria-current="page">Solicitations</a>
+    <a href="about.html">About this data</a>
+  </nav>
+</header>
+
+<p class="intro">What DC is about to buy. A <strong>solicitation</strong> is the District's public request for bids, quotes or
+proposals: an RFP (request for proposals), RFQ (request for quotations), IFB (invitation for bids) or RFI (request for information,
+which only asks questions). DC's site lists each one with a title, agency, market type, closing date and the contract specialist to
+contact. It publishes no description, dollar value or commodity code, and it does not say which contract a solicitation led to.
+Every value below is as the District entered it. The full documents are on
+<a href="https://contracts.ocp.dc.gov/solicitations/search">DC's solicitations search</a>.</p>
+
+<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+
+<section class="block">
+  <h2>Open when we pulled</h2>
+  <p class="muted" id="open-note">Loading…</p>
+  <div id="open-list"></div>
+</section>
+
+<section class="block">
+  <h2>Every solicitation, open and closed</h2>
+  <p class="muted">Closed solicitations come from DC's archive, which files each under the District fiscal year
+  (1 October to 30 September) it closed in. Filter by agency, market type, fiscal year, or open or closed with "+ Add filter".</p>
+  <div class="keywords" id="keywords"></div>
+  <div class="toolbar">
+    <button id="add-filter">+ Add filter</button>
+    <button id="clear" hidden>Clear all</button>
+    <button id="copy-link">Copy link</button>
+    <button id="download">Download these rows (CSV)</button>
+    <label class="muted" hidden>Size bars by <select id="size-by"></select></label>
+  </div>
+  <div id="chips"></div>
+  <p class="meta" id="asof"></p>
+  <div id="status"></div>
+
+  <div class="stats" id="stats"></div>
+  <details class="charts-box" id="charts-box" open>
+    <summary><span class="when-closed">Show charts</span><span class="when-open">Hide charts</span></summary>
+    <div id="charts"></div>
+  </details>
+</section>
+
+<section class="block">
+  <h2>Break it down</h2>
+  <p class="muted">Count the filtered solicitations by one or two fields. A solicitation that names several agencies counts once, under
+  their combined name, here and in the agency chart. The agency filter matches each agency it names.</p>
+  <div class="breakdown-bar">
+    <label>Group by<select id="by1"></select></label>
+    <label>then by<select id="by2"></select></label>
+    <button id="breakdown-csv">Download this table (CSV)</button>
+  </div>
+  <div id="breakdown"></div>
+</section>
+
+<section class="block">
+  <h2>Every solicitation</h2>
+  <p class="error" id="rows-error"></p>
+  <div id="rows"></div>
+</section>
+
+<footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you filter is sent anywhere.</footer>
+</div>
+<dialog id="dialog"></dialog>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script type="module">
+import {start, q, esc, n} from "./shared/explorer.js";
+import {manifest} from "./shared/db.js";
+
+// DC's site puts a control character (\x1a) where it lost a dash or an
+// apostrophe. Shown as the replacement mark so it is visible, not hidden.
+const shown = (v) => esc(String(v ?? "").replace(/\x1a/g, "�"));
+const SUB_NOTE = "A � stands for a character DC's site garbled, usually a dash or an apostrophe.";
+
+const m = await manifest();
+const PULLED = m.snapshots.find((s) => s.name === "solicitations").pulled_at.slice(0, 10);
+// The District fiscal year the pull date falls in (it starts 1 October).
+const PULL_FY = Number(PULLED.slice(0, 4)) + (Number(PULLED.slice(5, 7)) >= 10 ? 1 : 0);
+
+const KEYWORDS = ["software", "license", "system", "cloud", "SaaS"];
+
+await start({
+  table: "solicitations",
+  tables: ["solicitations", "nigp_classes"],
+  coverage: {
+    sql: `SELECT max(fiscal_year) AS last_fy, min(fiscal_year) AS first_fy FROM solicitations`,
+    text: (r, s) => {
+      const t = s.solicitations;
+      return `<ul>
+      <li>Every solicitation DC's site returned on ${esc(PULLED)}: ${n(t.open)} open, and ${n(t.closed)} closed ones from its archive for
+        fiscal years ${esc(r.first_fy)} to ${esc(r.last_fy)}. Its archive has a few dozen older records, which were not pulled.</li>
+      ${r.last_fy < PULL_FY ? `<li><strong>Missing:</strong> solicitations that closed in fiscal year ${PULL_FY}, which began 1 October,
+        before the pull. The pull asked DC's archive for fiscal years up to ${esc(r.last_fy)} only.</li>` : ""}
+      <li>One row per listing, as DC's site gives it; none removed or merged. ${n(t.repeated_numbers)} number${t.repeated_numbers === 1 ? " appears" : "s appear"}
+        more than once, in different archive years with different closing dates.</li>
+      <li>${n(t.doc_ids)} of ${n(t.solicitations)} carry an id DC's site gives the posting (Doc123456) instead of a procurement number
+        such as DCKA-2026-B-0157.</li>
+      <li>No posting date, dollar value or commodity code is published, and nothing links a solicitation to the contract it led to,
+        so this page doesn't either. ${n(t.no_agency)} list no agency, ${n(t.no_closing_date)} no closing date, and ${n(t.no_market_type)}
+        no market type, which is typed freely (${n(t.market_types)} spellings).</li>
+      <li>Each pull replaces the last. Unlike contracts, a solicitation DC's site stops listing is not kept here.</li></ul>`;
+    },
+  },
+  rowLabel: "Solicitations",
+  searchLabel: "number, title or agency",
+  // Solicitations carry no dollar figure. The second number in "Break it down"
+  // is distinct numbers, which shows where a number repeats.
+  measure: {expr: "count(DISTINCT solicitation_number)", label: "Distinct numbers", money: false},
+  count: {expr: "count(*)", label: "Solicitations", noun: "solicitations"},
+  sizeDefault: "count",
+  stats: [
+    {label: "Solicitations", expr: "count(*)", what: "Rows matching the filters."},
+    {label: "Open on the pull date", expr: "count(*) FILTER (WHERE is_open)", what: `Listed as open by DC's site on ${PULLED}.`},
+    {label: "Agencies", expr: "len(list_distinct(flatten(list(string_split(agency, '; ')))))",
+      what: "Distinct agencies named. A solicitation can name several."},
+    {label: "Contract specialists", expr: "count(DISTINCT specialist_email)", what: "Distinct specialist email addresses."},
+  ],
+  fields: {
+    agency: {label: "Agency", from: "agencyNames on DC's site; abbreviations filled in from agency_names.yaml.", filter: "multi",
+      expr: "coalesce(agency, '(blank)')", listExpr: "string_split(coalesce(agency, '(blank)'), '; ')",
+      optionExpr: "unnest(string_split(coalesce(agency, '(blank)'), '; '))"},
+    market_type: {label: "Market type", from: "marketType on DC's site, as typed (spellings vary). 'Open' means any business may bid; 'Set Aside' means bidding is limited to small businesses certified by the District.",
+      filter: "multi", expr: "coalesce(market_type, '(blank)')"},
+    status: {label: "Open or closed", from: "Open: listed as open by DC's site on the pull date. Closed: from its archive.", filter: "multi",
+      expr: "CASE WHEN is_open THEN 'Open' ELSE 'Closed' END"},
+    fiscal_year: {label: "Fiscal year", from: "The archive year DC's site files a closed solicitation under: the fiscal year it closed in. Open ones have none yet.",
+      filter: "multi", ordered: true, expr: "coalesce(CAST(fiscal_year AS VARCHAR), 'Open')"},
+    title_contains: {label: "Title contains", from: "A text search on the title as DC typed it, ignoring case. It is not a classification: it finds every title containing the text, whatever the purchase, and misses any that word it differently.",
+      filter: "text", expr: "title"},
+    solicitation_number: {label: "Solicitation number contains", from: "solicitationNumber; garbled characters match a dash.", filter: "text",
+      expr: "replace(solicitation_number, chr(26), '-')"},
+    specialist: {label: "Contract specialist", from: "specialist.name on DC's site.", filter: "multi", expr: "coalesce(specialist, '(blank)')"},
+    closing_date: {label: "Closing date", from: "closingDate.", filter: "date", expr: "closing_date"},
+  },
+  charts: [
+    {id: "year", field: "fiscal_year", title: "By fiscal year closed", byKey: true},
+    {id: "agency", field: "agency", title: "By agency", limit: 15},
+    {id: "market", field: "market_type", title: "By market type"},
+  ],
+  breakdown: ["fiscal_year", "agency", "market_type", "status", "specialist"],
+  breakdownDefault: ["fiscal_year"],
+  search: ["solicitation_number", "title", "agency"],
+  select: ["CAST(closing_date AS VARCHAR) AS closing_date", "closing_time", "solicitation_number", "title", "agency", "market_type",
+    "fiscal_year", "specialist", "specialist_email", "is_open"],
+  defaultOrder: [[0, "desc"]],
+  columns: [
+    {key: "closing_date", label: "Closes", cls: "num", title: "closingDate and closingTime on DC's site.",
+      render: (v, r) => v ? `${esc(v)}<br><span class="muted">${esc(r.closing_time)}</span>` : '<span class="muted">none given</span>'},
+    {key: "solicitation_number", label: "Number", title: "solicitationNumber on DC's site: usually an id for the posting (Doc123456), sometimes a procurement number. " + SUB_NOTE,
+      render: (v) => `<span class="mono">${shown(v)}</span>`},
+    {key: "title", label: "Title", cls: "wide", title: "The title on DC's site. " + SUB_NOTE, render: (v, r) => shown(v) +
+      (r.is_open ? ' <span class="tag interest">open</span>' : "")},
+    {key: "agency", label: "Agency", title: "agencyNames on DC's site; abbreviations filled in from agency_names.yaml.",
+      render: (v) => v && v.length > 300 ? `<span title="${esc(v)}">${esc(v.split("; ").length)} agencies (hover for the list)</span>` : esc(v)},
+    {key: "market_type", label: "Market type", title: "marketType on DC's site, as typed."},
+    {key: "fiscal_year", label: "FY", cls: "num", title: "The archive year: the fiscal year it closed in. Empty for open solicitations."},
+    {key: "specialist", label: "Specialist", title: "The contract specialist DC's site names for questions.",
+      render: (v, r) => r.specialist_email ? `<a href="mailto:${esc(r.specialist_email)}">${esc(v || r.specialist_email)}</a>` : esc(v)},
+  ],
+});
+
+// ---------- open solicitations, soonest closing first ----------
+const openRows = await q(`SELECT CAST(closing_date AS VARCHAR) AS closing_date, closing_time, solicitation_number, title, agency,
+  market_type, specialist, specialist_email FROM solicitations WHERE is_open ORDER BY closing_date NULLS LAST, solicitation_number`);
+const today = new Date().toISOString().slice(0, 10);
+const passed = openRows.filter((r) => r.closing_date && r.closing_date < today).length;
+document.getElementById("open-note").textContent =
+  `${openRows.length} solicitations were open on DC's site on ${PULLED}, soonest closing first.` +
+  (passed ? ` ${passed} of them have closing dates before today, so they have closed since.` : "") +
+  ` Check DC's site before relying on a date: it can extend or cancel a solicitation.`;
+document.getElementById("open-list").innerHTML = `<div class="tablewrap" style="max-height:none"><table class="plain open-list">
+  <thead><tr><th>Closes</th><th>Number</th><th>Title</th><th>Agency</th><th>Market type</th><th>Specialist</th></tr></thead><tbody>` +
+  openRows.map((r) => `<tr>
+    <td class="when">${r.closing_date ? esc(r.closing_date) + "<br><span class=\"muted\">" + esc(r.closing_time) + "</span>" : '<span class="muted">none given</span>'}` +
+      (r.closing_date && r.closing_date < today ? ' <span class="tag">date passed</span>' : "") + `</td>
+    <td class="mono">${shown(r.solicitation_number)}</td>
+    <td>${shown(r.title)}</td>
+    <td>${esc(r.agency)}</td>
+    <td>${esc(r.market_type)}</td>
+    <td>${r.specialist_email ? `<a href="mailto:${esc(r.specialist_email)}">${esc(r.specialist || r.specialist_email)}</a>` : esc(r.specialist)}</td>
+  </tr>`).join("") + "</tbody></table></div>";
+
+// ---------- suggested title searches ----------
+const counts = await q(`SELECT ${KEYWORDS.map((w, i) => `count(*) FILTER (WHERE title ILIKE ?) AS k${i}`).join(", ")} FROM solicitations`,
+  KEYWORDS.map((w) => `%${w}%`));
+document.getElementById("keywords").innerHTML = `<span class="muted">Try a title search:</span>` +
+  KEYWORDS.map((w, i) => `<a href="#" data-word="${esc(w)}">${esc(w)}</a> <span class="muted">(${n(counts[0]["k" + i])})</span>`).join(" ") +
+  `<span class="muted">The numbers are titles containing the word, across all years. This is a text search, not a classification:
+  "license" also finds license plate readers, "system" finds sprinkler systems, and software bought under another name is missed.</span>`;
+// Sets the "Title contains" filter and keeps every other filter in the URL.
+document.getElementById("keywords").addEventListener("click", (e) => {
+  const a = e.target.closest("a[data-word]");
+  if (!a) return;
+  e.preventDefault();
+  const p = new URLSearchParams(location.search);
+  p.set("title_contains", a.dataset.word);
+  location.search = p.toString();
+});
+</script>
+</body>
+</html>
