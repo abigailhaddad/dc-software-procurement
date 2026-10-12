@@ -2,7 +2,7 @@
 # what is already on disk, and classification is cached by content, so a repeat
 # run costs nothing.
 
-.PHONY: help install pull classify verify test report site readme rates ocr h1b \
+.PHONY: help install pull classify verify test report site rates ocr h1b \
         h1b-dol calc solicitations dcas pull-payments publish hydrate prune drift dashboard derived competition reseller part-numbers \
         modifications trends vehicles buyers cycle-time all
 
@@ -16,7 +16,6 @@ help:
 	@echo "make drift      recompute every published figure and report what moved"
 	@echo "make test       check document handling, then score the classifiers"
 	@echo "make report     print the headline figures"
-	@echo "make readme     recompute every figure the README states and re-render it"
 	@echo "make site       rebuild the drill-down data behind site/index.html"
 	@echo "make dashboard  rebuild the data behind site/dashboard.html"
 	@echo "make rates      re-extract hourly rate cards from the cached award texts"
@@ -82,13 +81,6 @@ test:
 
 report:
 	uv run dcprocure report
-
-# README.md is generated from README.md.in. Edit the template, never the
-# rendered file: `make verify` fails if re-rendering would change it. Running
-# this after a pull restates the README's published figures, so it is a human
-# decision like republishing the briefing, and is not in the weekly chain.
-readme:
-	uv run python analysis/build_readme.py
 
 site:
 	uv run python analysis/build_site_data.py

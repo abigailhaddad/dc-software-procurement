@@ -9,7 +9,7 @@ Read `docs/CLASSIFIER_ACCURACY.md` alongside it.
 The pipeline runs weekly on its own, rebuilds every table the checks read, and
 reports how far the published figures have drifted without republishing them.
 The briefing is `site/index.html` and is current with the data: `make verify`
-passes on every published figure. README.md is generated from README.md.in and
+passes on every published figure. README.md states no figures or dates and
 holds no findings -- those live on the site, which is where a reader goes. Two
 classifiers have been measured against blind hand labels: the one behind most of
 the briefing is good, the one behind its former headline was not, and that claim
@@ -63,10 +63,8 @@ evaluation lag after bids close.
 
 ## How the published figures stay honest
 
-**Nothing is stated by hand.** README.md is rendered from README.md.in by
-`analysis/build_readme.py`, and one check asserts that re-rendering reproduces
-it byte for byte -- which covers every figure in it, not the 23 a set of prose
-checks used to reach. site/index.html is hand-written, and its sentences are
+**The README states no figures.** It describes the code, and a check fails if a
+figure or a date appears in it. site/index.html is hand-written, and its sentences are
 string-checked against figures computed from the data, so a number that drifts
 fails rather than sits there. Only numerals can be checked that way; a number
 the prose spells out at the start of a sentence cannot be.

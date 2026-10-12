@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -1269,40 +1270,23 @@ def run_checks() -> list[Result]:
     ]:
         check(f"site: {phrase!r}", phrase in site, True)
 
-    section("the README's own figures")
-    # This section used to be 23 prose checks. Each wrote a computed figure the
-    # way the README wrote it and asserted that string was still in the file.
-    # That covered about a fifth of the numbers in the README, and the part it
-    # covered broke on things that have nothing to do with whether a figure is
-    # right: rewrapping a sentence moved a number onto the next line and the
-    # literal stopped matching, a figure the prose spelled out as a word could
-    # not be produced from data at all, and twice the prose and the asserted
-    # literal disagreed while the check still passed -- because it compared a
-    # computed value against the file, not against the sentence a reader sees.
-    #
-    # The README is generated now. analysis/build_readme.py computes every
-    # figure and renders README.md from README.md.in, so the assertion here is
-    # that re-rendering reproduces the committed file byte for byte. That is
-    # strictly stronger than what it replaced: it covers every figure in the
-    # file rather than a sample of them, and neither line wrapping nor a
-    # spelled-out number can hide a change from it.
-    #
-    # The loaded tables are handed over rather than re-read. build_readme.py
-    # loads its own otherwise, and reading the 870,000-row payments table twice
-    # doubles the cost of `make verify` for nothing.
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
-    import build_readme  # noqa: E402
-
-    rendered = build_readme.render({
-        "contracts": contracts,
-        "payments": payments,
-        "labels": labels,
-        "delivery": delivery,
-    })
-    matches = rendered == (ROOT / "README.md").read_text(encoding="utf-8")
-    check("README.md is what README.md.in renders", matches, True)
-    if not matches:
-        print("         run: uv run python analysis/build_readme.py --check")
+    section("the README states no figures")
+    # The README used to state figures -- first as literals checked one string
+    # at a time, then rendered from a template by a build step. Either way each
+    # figure was one more thing to restate whenever the portal moved, and the
+    # README is about the code, not the findings. It now states none: the
+    # figures live on the site, checked above. This keeps it that way. The
+    # digits it may contain are identifiers, not figures: file names and
+    # commands in code spans and blocks, NIGP class codes, a visa name, and a
+    # contract title quoted verbatim.
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    stripped = re.sub(r"```.*?```", "", readme, flags=re.S)
+    stripped = re.sub(r"`[^`]*`", "", stripped)
+    allowed = ("918", "920", "961/962", "H-1B", "FY25 Nurse")
+    for token in allowed:
+        stripped = stripped.replace(token, "")
+    figures = re.findall(r"\S*\d\S*", stripped)
+    check("README.md states no figures or dates", figures, [])
 
     return list(RESULTS)
 

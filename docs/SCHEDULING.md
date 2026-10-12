@@ -59,11 +59,8 @@ Step 6 is in the chain and `make site` is not. The dashboard reports the current
 snapshot, so it should follow every refresh; the briefing stays on the published
 baseline until a human restates it.
 
-`make readme` is also outside the chain, for the same reason as `make site`.
-README.md is rendered from README.md.in by `analysis/build_readme.py`, and
-`verify_claims` fails when re-rendering would change it. That failure is the
-signal that the data has moved past what the README says, and restating it is a
-decision rather than a step.
+README.md states no figures or dates, so it never needs restating; a check in
+`verify_claims` fails if one creeps back in.
 
 Deliberately not in the weekly run:
 
@@ -83,14 +80,6 @@ named labor category on a rate card. If the portal drops one, that claim reports
 `<row not found: ...>` and every later check still runs. It is reported
 distinctly from a zero on purpose: a contract leaving the portal is a different
 event from a number moving, and worth a look.
-
-**One check verifies the whole README.** README.md is generated: `make readme`
-renders it from `README.md.in`, computing every figure it states, and the check
-is that re-rendering reproduces the committed file byte for byte. Once the data
-moves it reads as `True -> False` in the report, which means the README is
-stale, not that the check is broken. Re-rendering restates published figures,
-so it is a decision someone makes after reading the drift report -- which is why
-`make readme` is not in the weekly chain.
 
 **Editing `classifier_config.yaml` invalidates the entire classification cache.**
 The cache key is (model, config fingerprint, sample count, record fields), so a
