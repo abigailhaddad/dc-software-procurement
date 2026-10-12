@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC Contract Renewals</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="shared/style.css">
+<style>
+  .toolbar label{display:flex; flex-direction:column; font-size:.8rem; color:var(--muted); gap:2px}
+  .toolbar label.check{flex-direction:row; align-items:center; gap:6px; font-size:.9rem; color:var(--ink)}
+  .toolbar{align-items:end}
+  .status-last{background:var(--warn-soft); color:var(--warn)}
+  .status-past{background:var(--warn-soft); color:var(--err)}
+  .status-remain{background:var(--accent-soft); color:var(--accent)}
+  .status-unknown{background:none; color:var(--muted); padding-left:0; margin-left:0}
+  @media (max-width:640px){ .toolbar label{flex:1 1 100%} .toolbar input,.toolbar select{width:100%} .toolbar label.check input{width:auto} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <h1>DC procurement data</h1>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
+  <nav class="pages">
+    <a href="index.html">Contracts</a>
+    <a href="renewals.html" aria-current="page">Renewals</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
+    <a href="about.html">About this data</a>
+  </nav>
+</header>
+
+<p class="intro">Contracts whose current period ends soon. When a period ends, the District has three choices: exercise the next
+<strong>option</strong> (an extra year, usually, that the contract already allows), re-bid the work, or extend the contract
+without bidding. Which of those is possible depends on whether any options are left, and <strong>DC's site doesn't say</strong>:
+it lists each option period only once it has been exercised, and has no field for how many the contract allows.
+So the <em>Options left</em> column is filled in only where someone has read the contract's own paperwork; everywhere else it says
+"Not known".</p>
+
+<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+
+<div class="toolbar">
+  <label>Current period ends<select id="window">
+    <option value="6">within 6 months</option>
+    <option value="12">within 12 months</option>
+    <option value="24">within 24 months</option>
+    <option value="ended">already ended, still on DC's site</option>
+  </select></label>
+  <label>Agency<select id="agency"><option value="">All agencies</option></select></label>
+  <label>Vendor name contains<input id="vendor" type="search" placeholder="e.g. Xerox"></label>
+  <label>Options left<select id="status">
+    <option value="">Any</option>
+    <option>Already past the last option</option>
+    <option>Last option</option>
+    <option>Options remain</option>
+    <option>Not known</option>
+  </select></label>
+  <label class="check" id="tech-label"><input id="tech" type="checkbox"> Technology only</label>
+  <button id="copy-link">Copy link</button>
+  <button id="download">Download these rows (CSV)</button>
+</div>
+<p class="meta" id="asof"></p>
+<div id="status-line"></div>
+
+<div class="stats" id="stats"></div>
+
+<section class="block">
+  <h2>Every window at a glance</h2>
+  <p class="muted" id="bands-note">Contracts by when their current period ends, with the filters above except the window. Each contract is counted once.</p>
+  <div class="tablewrap" id="bands"></div>
+</section>
+
+<section class="block">
+  <h2 id="rows-title">Contracts</h2>
+  <p class="muted">Sorted by when the current period ends. The base-period amount is what the contract's first period authorises, a ceiling,
+  not what was spent, and it is not the value of the renewal (<a href="about.html#amounts">why only base periods</a>).</p>
+  <div id="rows"></div>
+</section>
+
+<footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you filter is sent anywhere.</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script type="module">
+// Renewal calendar: one row per contract that DC's site still lists, keyed on
+// its current period (the listed period with the latest end date).
+//
+// "Options left" comes from three places only, in this order:
+//   1. of_interest "Sole-source extension past the last option" (hand-read, of_interest.yaml);
+//   2. renewals-options.json, award documents read by hand, applied only while
+//      DC's site still shows the period that was current when it was read;
+//   3. otherwise "Not known". DC's site has no field for it.
+import {boot, q, downloadCsv, manifest} from "./shared/db.js";
+import {n, money, esc} from "./shared/explorer.js";
+import {PARQUET_DIR} from "./shared/db.js";
+
+// What the "Technology only" box keeps: any commodity code in these NIGP
+// classes (first three digits), or any of these exact codes. 9563575 is
+// "Subscriptions, software licensing, cloud based", which sits in class 956
+// (library services), so the class list misses it; the rest of 956 is not tech.
+// The lead may swap both for the site's canonical list; nothing else reads them.
+const TECH_NIGP_CLASSES = ["204", "206", "207", "208", "209", "920", "939", "984"];
+const TECH_NIGP_CODES = ["9563575"];
+
+const PAST_LAST = "Sole-source extension past the last option";
+const params = new URLSearchParams(location.search);
+const data = params.get("data");
+const keep = data ? `data=${encodeURIComponent(data)}` : "";
+const contractPage = (v) => `contract.html?n=${encodeURIComponent(v)}${keep ? "&" + keep : ""}`;
+
+// Built once after boot. ? is the pull date, bound as a string.
+const BUILD = `CREATE TEMP TABLE renewals AS
+WITH cur_end AS (
+  SELECT contract_number, max(end_date) AS end_date FROM contracts WHERE listed GROUP BY 1
+), cur AS (
+  SELECT c.contract_number,
+         string_agg(DISTINCT c.option_period, ' / ' ORDER BY c.option_period) AS period_label,
+         count(DISTINCT c.option_period) AS period_labels,
+         min(c.start_date) AS start_date, any_value(c.end_date) AS end_date,
+         arg_max(c.title, c.start_date) AS title, arg_max(c.vendor, c.start_date) AS vendor,
+         arg_max(c.agency, c.start_date) AS agency, min(c.portal_url) AS portal_url
+  FROM contracts c JOIN cur_end e ON c.contract_number = e.contract_number AND c.end_date = e.end_date
+  WHERE c.listed
+  GROUP BY 1
+), whole AS (
+  SELECT contract_number, max(of_interest) AS of_interest, max(same_award_as) AS same_award_as,
+         count(*) FILTER (WHERE NOT listed) AS dropped_periods,
+         list_distinct(flatten(list(nigp_classes))) AS classes,
+         list_distinct(flatten(list(nigp_codes))) AS codes
+  FROM contracts GROUP BY 1
+), base AS (
+  -- A base period listed twice under two labels with the same dates is counted once.
+  SELECT contract_number, sum(amt) AS base_amount, bool_or(corrected) AS corrected
+  FROM (SELECT contract_number, start_date, end_date, max(coalesce(corrected_amount, amount)) AS amt,
+               bool_or(corrected_amount IS NOT NULL) AS corrected
+        FROM contracts WHERE period_kind = 'base' GROUP BY 1, 2, 3)
+  GROUP BY 1
+)
+SELECT cur.*, whole.of_interest, whole.same_award_as, whole.dropped_periods, whole.classes, whole.codes,
+       base.base_amount, coalesce(base.corrected, false) AS corrected,
+       date_diff('day', CAST(? AS DATE), cur.end_date) AS days_left,
+       CASE WHEN cur.end_date < CAST(? AS DATE) THEN 'ended'
+            WHEN cur.end_date <= CAST(? AS DATE) + INTERVAL 6 MONTH THEN '0-6'
+            WHEN cur.end_date <= CAST(? AS DATE) + INTERVAL 12 MONTH THEN '6-12'
+            WHEN cur.end_date <= CAST(? AS DATE) + INTERVAL 24 MONTH THEN '12-24'
+            ELSE 'later' END AS band
+FROM cur JOIN whole USING (contract_number) LEFT JOIN base USING (contract_number)`;
+
+const STATUS_EXPR = `CASE WHEN contains(coalesce(r.of_interest, ''), '${PAST_LAST}') THEN 'Already past the last option'
+  WHEN h.status = 'last_option' THEN 'Last option'
+  WHEN h.status = 'options_remain' THEN 'Options remain'
+  ELSE 'Not known' END`;
+
+// The hand-read entries count only while DC's site still shows the period they were read against.
+const FROM = `FROM renewals r LEFT JOIN hand h
+  ON h.contract_number = r.contract_number AND h.period = r.period_label AND CAST(h.end_date AS DATE) = r.end_date`;
+
+const ROWS_SELECT = `SELECT r.contract_number, r.title, r.vendor, r.agency, r.period_label, r.period_labels,
+  CAST(r.start_date AS VARCHAR) AS start_date, CAST(r.end_date AS VARCHAR) AS end_date, r.days_left,
+  round(r.days_left / 30.4375, 1) AS months_left, r.base_amount, r.corrected, r.same_award_as,
+  ${STATUS_EXPR} AS options_left, h.options_allowed, h.quote, h.document, h.page, h.url AS document_url,
+  r.of_interest, r.dropped_periods, array_to_string(r.classes, '; ') AS nigp_classes, r.portal_url`;
+
+function readForm() {
+  return {
+    window: document.getElementById("window").value,
+    agency: document.getElementById("agency").value,
+    vendor: document.getElementById("vendor").value.trim(),
+    status: document.getElementById("status").value,
+    tech: document.getElementById("tech").checked,
+  };
+}
+
+// WHERE for the filters; withWindow=false leaves the window out (for the bands table).
+function where(f, withWindow) {
+  const parts = [];
+  const binds = [];
+  if (withWindow) {
+    if (f.window === "ended") parts.push("r.band = 'ended'");
+    if (f.window === "6") parts.push("r.band = '0-6'");
+    if (f.window === "12") parts.push("r.band IN ('0-6', '6-12')");
+    if (f.window === "24") parts.push("r.band IN ('0-6', '6-12', '12-24')");
+  }
+  if (f.agency) { parts.push("list_contains(string_split(r.agency, '; '), ?)"); binds.push(f.agency); }
+  if (f.vendor) { parts.push("r.vendor ILIKE ?"); binds.push(`%${f.vendor}%`); }
+  if (f.status) { parts.push(`(${STATUS_EXPR}) = ?`); binds.push(f.status); }
+  if (f.tech) {
+    parts.push(`(list_has_any(r.classes, [${TECH_NIGP_CLASSES.map((c) => `'${c}'`).join(", ")}])` +
+      ` OR list_has_any(r.codes, [${TECH_NIGP_CODES.map((c) => `'${c}'`).join(", ")}]))`);
+  }
+  return {sql: parts.length ? "WHERE " + parts.join(" AND ") : "", binds};
+}
+
+function writeUrl(f) {
+  const p = new URLSearchParams();
+  if (data) p.set("data", data);
+  if (f.window !== "12") p.set("window", f.window);
+  if (f.agency) p.set("agency", f.agency);
+  if (f.vendor) p.set("vendor", f.vendor);
+  if (f.status) p.set("status", f.status);
+  if (f.tech) p.set("tech", "1");
+  const qs = p.toString();
+  history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+}
+
+const WINDOW_TEXT = {
+  "6": "ends within 6 months",
+  "12": "ends within 12 months",
+  "24": "ends within 24 months",
+  "ended": "has already ended",
+};
+
+let CATEGORIES = {};
+let PULLED = "";
+
+function statusCell(r) {
+  if (r.options_left === "Already past the last option") {
+    return `<span class="tag hint status-past" title="${esc(CATEGORIES[PAST_LAST] || PAST_LAST)} Read by hand from the paperwork; see the contract page.">Already past the last option</span>`;
+  }
+  if (r.options_left === "Last option" || r.options_left === "Options remain") {
+    const left = r.options_left === "Last option" ? "Last option" : "Options remain";
+    const cls = r.options_left === "Last option" ? "status-last" : "status-remain";
+    const tip = `The award allows ${r.options_allowed} option periods; DC's site shows ${r.period_label} as current. "${r.quote}" (${r.document}, p.${r.page}). Read by hand on 2026-10-12.`;
+    return `<span class="tag hint ${cls}" title="${esc(tip)}">${left}</span><br><a href="${esc(r.document_url)}" target="_blank" rel="noopener" title="The award document on DC's site">award, p.${esc(r.page)}&nbsp;↗</a>`;
+  }
+  return `<span class="tag hint status-unknown" title="DC's site doesn't say how many option periods this contract allows, and lists an option only after it is exercised. The award document, linked from the contract page, usually says.">Not known</span>`;
+}
+
+function interestBadges(v) {
+  if (!v) return "";
+  return v.split("; ").map((c) => `<span class="tag interest" title="${esc(CATEGORIES[c] || c)}">${esc(c)}</span>`).join(" ");
+}
+
+function periodCell(r) {
+  let out = esc(r.period_label);
+  if (r.period_labels > 1) out += ` <span class="tag hint" title="DC's site lists ${r.period_labels} periods with these same dates under different labels.">${r.period_labels} labels</span>`;
+  return out;
+}
+
+function amountCell(r) {
+  if (r.base_amount === null) return '<span class="muted" title="No period of this contract in the data is labelled as the base period.">–</span>';
+  let out = money(r.base_amount);
+  if (r.corrected) out += ' <span class="tag hint" title="DC\'s figure contradicts the District\'s own paperwork, so the paperwork\'s is shown. Open the contract for the document.">corrected</span>';
+  if (r.same_award_as) out += ` <span class="tag hint" title="DC's site lists this same award under two numbers; the other is ${esc(r.same_award_as)}.">listed twice</span>`;
+  return out;
+}
+
+async function render() {
+  const f = readForm();
+  writeUrl(f);
+  const w = where(f, true);
+  const rows = await q(`${ROWS_SELECT} ${FROM} ${w.sql} ORDER BY r.end_date, r.contract_number`, w.binds);
+
+  const count = (s) => rows.filter((r) => r.options_left === s).length;
+  const stats = [
+    ["Contracts", n(rows.length), `Listed on DC's site, current period ${WINDOW_TEXT[f.window]} (from ${PULLED}).`],
+    ["Already past the last option", n(count("Already past the last option")), "Already running on a no-bid extension after the last option, per paperwork read by hand."],
+    ["Last option", n(count("Last option")), "The award document allows no more options after this period. Read by hand."],
+    ["Options remain", n(count("Options remain")), "The award document allows more options after this period. Read by hand."],
+    ["Not known", n(count("Not known")), "No one has read the paperwork for these. DC's site doesn't say."],
+  ];
+  document.getElementById("stats").innerHTML = stats.map(([l, v, what]) =>
+    `<div class="stat"><div class="stat-label">${esc(l)}</div><div class="stat-value">${v}</div><div class="stat-what">${esc(what)}</div></div>`).join("");
+
+  const b = where(f, false);
+  const bands = await q(`SELECT r.band, count(*) AS contracts,
+      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Already past the last option') AS past,
+      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Last option') AS last,
+      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Options remain') AS remain,
+      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Not known') AS unknown
+    ${FROM} ${b.sql} GROUP BY 1`, b.binds);
+  const byBand = Object.fromEntries(bands.map((r) => [r.band, r]));
+  const bandRows = [
+    ["ended", "Already ended, still on DC's site"],
+    ["0-6", "Ends within 6 months"],
+    ["6-12", "Ends in 6 to 12 months"],
+    ["12-24", "Ends in 12 to 24 months"],
+    ["later", "Ends more than 24 months out"],
+  ];
+  const cell = (r, k) => `<td class="num">${n(r ? r[k] : 0)}</td>`;
+  document.getElementById("bands").innerHTML = `<table class="plain"><thead><tr><th>Current period</th><th class="num">Contracts</th>
+    <th class="num">Already past the last option</th><th class="num">Last option</th><th class="num">Options remain</th><th class="num">Not known</th></tr></thead><tbody>` +
+    bandRows.map(([k, label]) => `<tr><td>${esc(label)}</td>${cell(byBand[k], "contracts")}${cell(byBand[k], "past")}${cell(byBand[k], "last")}${cell(byBand[k], "remain")}${cell(byBand[k], "unknown")}</tr>`).join("") +
+    `</tbody></table>`;
+
+  document.getElementById("rows-title").textContent = `Contracts whose current period ${WINDOW_TEXT[f.window]}`;
+  const box = document.getElementById("rows");
+  if (!rows.length) {
+    box.innerHTML = '<p class="muted">No contracts match these filters.</p>';
+    return;
+  }
+  box.innerHTML = '<table class="display compact" style="width:100%"></table>';
+  $("#rows table").DataTable({
+    data: rows, pageLength: 50, order: [], scrollX: true, ordering: false,
+    columns: [
+      {data: "contract_number", title: "Contract", render: (v, t, r) =>
+        `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab: every period, payments, orders and documents">${esc(v)}</a>` +
+        ` <a href="${esc(r.portal_url)}" target="_blank" rel="noopener" title="The current period's page on DC's site">DC site&nbsp;↗</a>` +
+        (r.of_interest ? `<br>${interestBadges(r.of_interest)}` : "")},
+      {data: "title", title: "Title", className: "wide", render: (v) => esc(v)},
+      {data: "vendor", title: "Vendor", render: (v) => esc(v)},
+      {data: "agency", title: "Agency", render: (v) => esc(v)},
+      {data: "period_label", title: "Current period", render: (v, t, r) => periodCell(r)},
+      {data: "end_date", title: "Ends", className: "num"},
+      {data: "months_left", title: "Months left", className: "num", render: (v) => v === null ? "–" : Number(v).toFixed(1)},
+      {data: "base_amount", title: "Base-period amount", className: "num", render: (v, t, r) => amountCell(r)},
+      {data: "options_left", title: "Options left", render: (v, t, r) => statusCell(r)},
+    ],
+    headerCallback: (thead) => {
+      const tips = [
+        "The contract number on DC's site. It opens our contract page in a new tab; \"DC site\" opens the current period's page there. Badges mark contracts whose paperwork shows they weren't bid out the usual way; hover one for what it means.",
+        "The contract's title on DC's site.",
+        "The vendor on DC's site, as spelled there.",
+        "The agency on DC's site; abbreviations are filled in from agency_names.yaml.",
+        "How DC's site labels the current period: the listed period with the latest end date. Labels are as typed (\"Option 4\", \"Option Year 4\", \"Base\"); they are not always right.",
+        "When the current period ends, per DC's site.",
+        `Months from ${PULLED}, the day the data was pulled, to the end date (days ÷ 30.4). Negative means it has already ended.`,
+        "What the contract's base period authorises: a ceiling, not spending, and not the value of any renewal. Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork.",
+        "Whether the contract allows more option periods after this one. Filled in only from paperwork read by hand; \"Not known\" everywhere else, because DC's site doesn't say.",
+      ];
+      $(thead).find("th").each((i, th) => { th.title = tips[i]; });
+    },
+  });
+}
+
+async function main() {
+  const status = document.getElementById("status-line");
+  status.textContent = "Loading the data into your browser…";
+  const m = await manifest();
+  PULLED = m.pulled_on;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(PULLED || "")) throw new Error(`the manifest has no pull date (pulled_on: ${PULLED})`);
+
+  const summary = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href);
+  if (!summary.ok) throw new Error(`could not load summary.json: ${summary.status}`);
+  CATEGORIES = (await summary.json()).of_interest_categories || {};
+
+  const handResp = await fetch("renewals-options.json");
+  if (!handResp.ok) throw new Error(`could not load renewals-options.json: ${handResp.status}`);
+  const hand = await handResp.json();
+
+  await boot(["contracts"]);
+  await q(BUILD, [PULLED, PULLED, PULLED, PULLED, PULLED]);
+  await q(`CREATE TEMP TABLE hand (contract_number VARCHAR, period VARCHAR, end_date VARCHAR, status VARCHAR,
+    options_allowed INTEGER, quote VARCHAR, document VARCHAR, page INTEGER, url VARCHAR)`);
+  for (const e of hand.entries) {
+    await q("INSERT INTO hand VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [e.contract_number, e.period, e.end_date, e.status, e.options_allowed, e.quote, e.document, e.page, e.url]);
+  }
+
+  // The coverage note: what is in, what is out, and how many.
+  const [cov] = await q(`SELECT
+      (SELECT count(DISTINCT contract_number) FROM contracts) AS all_contracts,
+      (SELECT count(*) FROM renewals) AS listed_contracts,
+      (SELECT count(*) FROM renewals WHERE dropped_periods > 0) AS partly_dropped,
+      (SELECT count(*) FROM renewals WHERE period_labels > 1) AS tied,
+      (SELECT count(*) FROM renewals WHERE base_amount IS NULL) AS no_base,
+      (SELECT count(*) FROM hand) AS hand_entries,
+      (SELECT count(*) ${FROM} WHERE h.status IS NOT NULL) AS hand_applied,
+      (SELECT count(DISTINCT contract_number) FROM contracts WHERE option_period = 'Option 4') AS reached_4,
+      (SELECT count(DISTINCT contract_number) FROM contracts WHERE option_period IN ('Option 5', 'Option 6')) AS beyond_4`);
+  document.getElementById("coverage").innerHTML = `<ul>
+    <li>Data pulled from DC's site on ${esc(PULLED)}. "Months left" counts from that day, not from today.</li>
+    <li>Only the ${n(cov.listed_contracts)} contracts DC's site still returns in its search. ${n(cov.all_contracts - cov.listed_contracts)} contracts
+      it has stopped returning (kept from earlier pulls) are left out. For ${n(cov.partly_dropped)} listed contracts the site has dropped some older periods;
+      those periods are not used to pick the current period, but they are used for the base-period amount and commodity codes.</li>
+    <li>The current period is the listed period with the latest end date. DC's site gives ${n(cov.tied)} of them two labels for the same dates;
+      both labels are shown. A period that has "already ended" may have been followed by one DC's site hasn't posted yet, or the work may have stopped; the site doesn't say which.</li>
+    <li>DC's site never lists an option before it is exercised (none of its ${n(cov.all_contracts)} contracts has a period starting after ${esc(PULLED)}), and
+      it has no field for how many options a contract allows. For context only: ${n(cov.reached_4)} contracts have a period labelled "Option 4",
+      and ${n(cov.beyond_4)} have one labelled "Option 5" or "Option 6". That is not enough to say any one contract is on its last option.</li>
+    <li>"Last option" and "Options remain" come from ${n(cov.hand_entries)} award documents read by hand (${n(cov.hand_applied)} still match the current period on DC's site);
+      "Already past the last option" from the hand-read <a href="index.html?of_interest=${encodeURIComponent(PAST_LAST)}${keep ? "&" + keep : ""}">contracts of interest</a>.
+      Everything else is "Not known". Even on a last option the District can extend without bidding, as the contracts marked "Already past the last option" show.</li>
+    <li>${n(cov.no_base)} contracts have no period labelled as the base period, so no base-period amount is shown for them.</li>
+    <li>"Technology only" keeps contracts with any commodity code in NIGP classes ${TECH_NIGP_CLASSES.join(", ")} (computer hardware, software,
+      data processing services, computer rental, and equipment repair; class 939 also covers office and radio equipment repair), or the code
+      ${TECH_NIGP_CODES.join(", ")} (software subscriptions and cloud licensing, which DC files under library services). Codes are the District's as its search listing gives them (a contract's own page there
+      sometimes lists more), from any period of the contract.</li>
+  </ul>`;
+
+  const agencies = await q(`SELECT DISTINCT unnest(string_split(agency, '; ')) AS a FROM renewals WHERE agency IS NOT NULL ORDER BY 1`);
+  document.getElementById("agency").insertAdjacentHTML("beforeend", agencies.map((r) => `<option>${esc(r.a)}</option>`).join(""));
+  document.getElementById("tech-label").title = `Commodity codes in NIGP classes ${TECH_NIGP_CLASSES.join(", ")}, or code ${TECH_NIGP_CODES.join(", ")}, on any period of the contract.`;
+
+  // Filters from the URL, once.
+  if (["6", "12", "24", "ended"].includes(params.get("window"))) document.getElementById("window").value = params.get("window");
+  else document.getElementById("window").value = "12";
+  if (params.get("agency")) document.getElementById("agency").value = params.get("agency");
+  if (params.get("vendor")) document.getElementById("vendor").value = params.get("vendor");
+  if (params.get("status")) document.getElementById("status").value = params.get("status");
+  document.getElementById("tech").checked = params.get("tech") === "1";
+
+  for (const id of ["window", "agency", "status", "tech"]) document.getElementById(id).addEventListener("change", render);
+  let timer = null;
+  document.getElementById("vendor").addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(render, 250); });
+  document.getElementById("copy-link").addEventListener("click", async () => {
+    await navigator.clipboard.writeText(location.href);
+    document.getElementById("copy-link").textContent = "Link copied";
+  });
+  document.getElementById("download").addEventListener("click", () => {
+    const f = readForm();
+    const w = where(f, true);
+    downloadCsv(`SELECT r.contract_number, r.title, r.vendor, r.agency, r.period_label AS current_period,
+        CAST(r.start_date AS VARCHAR) AS period_start, CAST(r.end_date AS VARCHAR) AS period_end,
+        round(r.days_left / 30.4375, 1) AS months_left_from_pull, r.days_left AS days_left_from_pull,
+        r.base_amount AS base_period_amount_ceiling, r.corrected AS base_amount_corrected, r.same_award_as,
+        ${STATUS_EXPR} AS options_left, h.options_allowed, h.quote AS options_quote, h.document AS options_document,
+        h.page AS options_page, h.url AS options_document_url, r.of_interest, array_to_string(r.codes, '; ') AS nigp_codes,
+        r.portal_url, '${PULLED}' AS data_pulled_on
+      ${FROM} ${w.sql} ORDER BY r.end_date, r.contract_number`, w.binds, `renewals-${f.window}.csv`);
+  });
+
+  document.getElementById("asof").textContent = `Data pulled from contracts.ocp.dc.gov on ${PULLED}. Hand-read option counts checked ${hand.checked}.`;
+  status.textContent = "";
+  await render();
+}
+
+main().catch((err) => {
+  document.getElementById("status-line").innerHTML = `<span class="error">${esc(err.message || err)}</span>`;
+  throw err;
+});
+</script>
+</body>
+</html>
