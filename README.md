@@ -50,8 +50,7 @@ prune; `.github/workflows/weekly.yml` runs it weekly. `.github/workflows/deploy-
 deploys `site/` to Cloudflare Pages. `docs/SCHEDULING.md` has the details,
 including the secrets each needs and what happens when a step fails.
 
-## Earlier analysis
+## Other code
 
-An earlier version of this project classified contracts with a model and
-published findings built on that. That analysis is still in `analysis/`,
-unpublished; `docs/NEXT_STEPS.md` describes it.
+`analysis/` holds exploratory analysis that is not part of the site or the
+weekly run; `docs/NEXT_STEPS.md` describes it.

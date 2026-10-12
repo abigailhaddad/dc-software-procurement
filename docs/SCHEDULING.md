@@ -91,9 +91,9 @@ Locally, logs go to `data/logs/run-<timestamp>.log`, last 12 runs kept.
 5. `make prune` -- delete `data/raw`, and only if every file matches the
    published copy byte for byte.
 
-The analysis behind the retired briefing -- classification, rate cards,
+The exploratory analysis in `analysis/` -- classification, rate cards,
 competition, modifications, trends -- is not in the run and is not published.
-Its `make` targets still work by hand.
+Its `make` targets work by hand.
 
 ## Things that will bite
 
@@ -121,8 +121,8 @@ match.
 
 ## Baseline
 
-The snapshot the retired briefing was computed from is the 2026-08-24 pull. It
-cannot be re-fetched -- the portal serves current state only -- so it lives at
+The earliest snapshot in the archive is the 2026-08-24 pull. It cannot be
+re-fetched -- the portal serves current state only -- so it lives at
 
     https://huggingface.co/datasets/abigailhaddad/dc-procurement-raw
 

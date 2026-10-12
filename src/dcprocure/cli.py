@@ -34,7 +34,7 @@ def _configure_logging(verbose: bool) -> None:
 def _report() -> None:
     """Print the headline figures from whatever snapshot is on disk.
 
-    Same numbers as the notebook and the briefing, so a discrepancy between
+    Same numbers as the notebook, so a discrepancy between
     them shows up here rather than after publication.
     """
     pd.set_option("display.width", 200)

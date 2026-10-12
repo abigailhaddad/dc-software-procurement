@@ -130,7 +130,7 @@ reseller:
 part-numbers:
 	uv run python analysis/part_number_prices.py
 
-# The analysis tables behind the retired briefing. Not published, and not in
+# Exploratory analysis tables. Not published, and not in
 # the weekly run. None of these calls a model; competition re-reads its
 # document cache rather than downloading.
 derived: modifications competition trends vehicles cycle-time reseller part-numbers

@@ -1,5 +1,5 @@
-> These classifiers belong to the analysis behind the retired briefing. The site no
-> longer publishes anything they produce; this records how they were measured.
+> These classifiers belong to the exploratory analysis in `analysis/`. Nothing they
+> produce is on the site; this records how they were measured.
 
 # What the classifiers actually get right
 
