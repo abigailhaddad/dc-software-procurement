@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC Vendors Across Agencies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="shared/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+/* Page-only styles; nothing here is shared. */
+.controls{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:end; margin:10px 0}
+.controls label{display:flex; flex-direction:column; font-size:.82rem; color:var(--muted); gap:2px}
+.controls label.check{flex-direction:row; align-items:center; gap:6px; font-size:.9rem; color:var(--ink)}
+.controls input[type=search]{min-width:min(280px,80vw)}
+.suggest{display:flex; flex-wrap:wrap; gap:6px; margin:4px 0 8px}
+.suggest button{font-size:.85rem; padding:3px 10px}
+td.details-toggle{cursor:pointer; color:var(--accent); font-weight:700; width:1.2em; user-select:none}
+.detail{padding:6px 4px 10px; font-size:.88rem; max-height:560px; overflow:auto}
+.detail h4{font-family:var(--head); font-size:.95rem; margin:10px 0 2px}
+.detail ul{margin:2px 0 6px; padding-left:20px}
+.detail li{margin:1px 0}
+.agency-list{font-size:.82rem; color:var(--soft); min-width:260px}
+#combined:empty,#product-out:empty{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <h1>DC procurement data</h1>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
+  <nav class="pages">
+    <a href="index.html">Contracts</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
+    <a href="shared-vendors.html" aria-current="page">Vendors across agencies</a>
+    <a href="about.html">About this data</a>
+  </nav>
+</header>
+
+<p class="intro">Which vendors hold contracts or purchase orders with many different agencies, and which products show up in contract
+titles at more than one agency. If several agencies buy the same thing separately, a citywide purchase might cover them. This page only
+counts what DC's site lists; it can't tell you whether a single purchase would have been cheaper or possible.</p>
+
+<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+
+<p class="meta" id="asof"></p>
+<div id="status"></div>
+
+<div class="stats" id="stats"></div>
+
+<section class="block">
+  <h2>Vendors, by how many agencies they sell to</h2>
+  <p class="muted">One row per vendor name <em>exactly as spelled on DC's site</em>. Click ▸ to see each agency's contract titles and orders.
+  Hover a column heading for what it counts.</p>
+  <div class="controls">
+    <label>Name contains<input type="search" id="name-q" placeholder="e.g. carahsoft"></label>
+    <label>At least this many agencies<select id="min-agencies">
+      <option value="1">1 (every vendor)</option><option value="2">2</option><option value="3">3</option>
+      <option value="5">5</option><option value="10">10</option><option value="20">20</option></select></label>
+    <label class="check"><input type="checkbox" id="tech-only"> Technology commodity codes only</label>
+    <button id="copy-link">Copy link</button>
+    <button id="vendors-csv">Download this table (CSV)</button>
+  </div>
+  <p class="muted" id="tech-note"></p>
+  <div class="note" id="combined"></div>
+  <p class="error" id="rows-error"></p>
+  <div id="vendors"></div>
+</section>
+
+<section class="block" id="products">
+  <h2>The same product at several agencies</h2>
+  <p class="muted">Type a product or brand name. You get every contract whose title contains it, grouped by agency. Titles are typed by
+  each agency, so the same product may be spelled differently (try a shorter word), and a word can match a title that isn't about that
+  product: read the titles before counting anything. Purchase orders have no title on DC's site, so they can't be searched by product;
+  the second table matches the text against the <em>supplier name</em> on orders instead, which is a different question.</p>
+  <div class="controls">
+    <label>Title contains<input type="search" id="product-q" placeholder="e.g. Salesforce"></label>
+    <label class="check"><input type="checkbox" id="whole-word" checked> Whole word only</label>
+  </div>
+  <div class="suggest" id="suggest"><span class="muted">Try:</span></div>
+  <div id="product-out"></div>
+</section>
+
+<section class="block" id="names">
+  <h2>Why vendor names aren't merged here</h2>
+  <p class="intro">DC's site doesn't standardise vendor names. The same company can be "CDW GOVERNMENT LLC" on a contract and
+  "CDW GOVERNMENT INC" on an order, and each spelling is its own row above. Contracts and orders also spell names differently
+  from each other: a contract's vendor and an order's supplier are joined only when the two are spelled exactly alike, capitals included.
+  Supplier names on orders stop at 40 characters ("Mary's Center for Maternal and Child Car"), so a long name on an order won't match its contract spelling.</p>
+  <p class="intro">This repository has a file of vendor-name merges, <code>vendor_aliases.yaml</code>. It isn't used here. Its merges come
+  from a mechanical rule (strip punctuation and endings such as INC, LLC and CORP, then group names that come out the same), and the file
+  records them only for one set of technology payments. Unlike the agency-name fixes in <code>agency_names.yaml</code>, where each
+  entry cites the source that ties the two names together, no merge in it cites a source. A rule like that can also join two different
+  companies. So this page shows names as spelled. To group spellings yourself, type part of the name in "Name contains": the box under it
+  then gives totals for every matching spelling together, counting each agency, contract and order once.</p>
+  <p class="intro"><strong>One vendor at many agencies doesn't mean one product.</strong> Some of the vendors with the most agencies are
+  resellers that sell many makers' products. Carahsoft's contract titles, for example, name Salesforce, Dell, Splunk and Microsoft.
+  Expand a row and read the titles before treating a vendor's spread as a single purchase repeated.</p>
+</section>
+
+<footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you search is sent anywhere.</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script type="module">
+// Vendors across agencies. Reads the contracts and purchase_orders tables and
+// counts, for each vendor name exactly as published, the distinct agencies on
+// its contracts and orders. Nothing is merged or classified: names are as
+// spelled, agencies are the agency field (split on '; ', since a contract can
+// list several), and the technology toggle is a fixed list of the District's
+// own NIGP commodity classes.
+
+import {boot, q, downloadCsv, manifest, LOCAL, DATASET_PAGE} from "./shared/db.js";
+import {esc, money, n} from "./shared/explorer.js";
+
+// NIGP commodity classes the "technology only" toggle keeps. These are the
+// District's commodity codes, chosen by whoever entered the record; they are
+// listed by number so anyone can check the choice. A contract counts when any
+// of its codes is in this list; an order when its code is.
+const TECHNOLOGY_NIGP_CLASSES = ["204", "206", "207", "208", "209", "920", "939", "984"];
+
+// Searches suggested under the product box. Each was checked against the
+// 12 October 2026 pull to return contracts at more than one agency whose
+// titles really are about that product (see the commit message for counts).
+const SUGGESTED_PRODUCTS = ["Salesforce", "Dell", "Xerox", "Microsoft", "Oracle", "Splunk", "Esri", "DocuSign"];
+
+const TECH_SQL = "[" + TECHNOLOGY_NIGP_CLASSES.map((c) => `'${c}'`).join(", ") + "]";
+const PARAMS = new URLSearchParams(location.search);
+const DATA = PARAMS.get("data");
+const KEEP = DATA ? "&data=" + encodeURIComponent(DATA) : "";
+const NIGP = {};
+let TABLE = null;
+
+function contractLink(num) {
+  return `<a class="mono" href="contract.html?n=${encodeURIComponent(num)}${KEEP}" target="_blank" rel="noopener" title="Opens in a new tab">${esc(num)}</a>`;
+}
+function nigpLabel(cls) { return NIGP[cls] ? `${cls} ${NIGP[cls]}` : String(cls); }
+
+// The filtered source rows every query starts from. tech is a boolean.
+function sources(tech) {
+  return `c AS (SELECT * FROM contracts ${tech ? `WHERE list_has_any(nigp_classes, ${TECH_SQL})` : ""}),
+p AS (SELECT * FROM purchase_orders ${tech ? `WHERE nigp_class IN (SELECT unnest(${TECH_SQL}))` : ""}),
+ag AS (SELECT vendor, unnest(string_split(agency, '; ')) AS agency FROM c WHERE agency IS NOT NULL
+       UNION SELECT supplier AS vendor, agency FROM p)`;
+}
+
+function vendorSql(tech) {
+  return `WITH ${sources(tech)},
+names AS (SELECT vendor FROM c UNION SELECT supplier FROM p),
+cs AS (SELECT vendor, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base_amount FROM c GROUP BY vendor),
+ps AS (SELECT supplier AS vendor, count(*) AS orders, sum(po_total) AS po_amount FROM p GROUP BY supplier),
+al AS (SELECT vendor, count(*) AS agencies, string_agg(agency, '; ' ORDER BY agency) AS agency_list FROM (SELECT DISTINCT vendor, agency FROM ag) GROUP BY vendor)
+SELECT names.vendor, coalesce(al.agencies, 0) AS agencies, coalesce(cs.contracts, 0) AS contracts, coalesce(ps.orders, 0) AS orders,
+       cs.base_amount, ps.po_amount, al.agency_list
+FROM names LEFT JOIN al USING (vendor) LEFT JOIN cs USING (vendor) LEFT JOIN ps USING (vendor)`;
+}
+
+// ---------- coverage and headline numbers ----------
+async function renderCoverage() {
+  const [c] = await q(`SELECT count(DISTINCT contract_number) AS contracts,
+      count(*) FILTER (WHERE NOT listed) AS dropped_periods,
+      CAST(min(start_date) AS VARCHAR) AS first, CAST(max(end_date) AS VARCHAR) AS last
+    FROM contracts`);
+  const [none] = await q(`SELECT count(*) AS k FROM (SELECT contract_number FROM contracts GROUP BY 1 HAVING bool_and(agency IS NULL))`);
+  const [nobase] = await q(`SELECT count(*) AS k FROM (SELECT contract_number FROM contracts GROUP BY 1 HAVING count(*) FILTER (WHERE base_amount IS NOT NULL) = 0)`);
+  const [twice] = await q(`SELECT count(DISTINCT contract_number) AS k FROM contracts WHERE same_award_as IS NOT NULL`);
+  const [p] = await q(`SELECT count(*) AS orders, min(fiscal_year) AS fy1, max(fiscal_year) AS fy2, count(*) FILTER (WHERE NOT listed) AS dropped FROM purchase_orders`);
+  const about = "about.html" + (DATA ? "?data=" + encodeURIComponent(DATA) : "");
+  document.getElementById("coverage").innerHTML = `<h2>What this covers</h2><ul>
+    <li>All ${n(c.contracts)} contracts and ${n(p.orders)} purchase orders DC's site lists, including ${n(c.dropped_periods)} contract option periods and ${n(p.dropped)}
+      orders its search has stopped returning, kept from earlier pulls. Contract periods run ${esc(c.first)} to ${esc(c.last)}; orders are from fiscal years
+      ${p.fy1} to ${p.fy2}. Payments are not used here.</li>
+    <li>An agency is counted from the agency field as DC's site gives it, with abbreviations filled in from <code>agency_names.yaml</code>. A contract can list
+      several agencies, and each counts. "Police Complaints (OPC)" and "People's Counsel (OPC)" are different agencies and are counted separately.
+      "Contracting and Procurement (OCP)" is counted like any other agency where DC's site lists it, including on contracts it shares with the agency that uses them.</li>
+    <li>${n(none.k)} contracts have no agency on DC's site. They count toward their vendor's contracts and amounts but add no agency.</li>
+    <li>Contract amounts are base periods only, a ceiling and not spending (<a href="${about}#amounts">why</a>). ${n(nobase.k)} contracts have no base-period amount:
+      DC's site lists no base period for them, or they are the same award as another number (${n(twice.k)} such contracts, counted once under the other number).
+      Contracts are counted by contract number, so those ${n(twice.k)} still add one to the contract count. Order amounts are poTotal, a commitment, not a payment.</li>
+    <li>Contracts and orders cover different spans of time, so a vendor's contracts and orders don't line up year for year.</li></ul>
+    <p><a href="${about}">More on what the data does and does not include →</a></p>`;
+}
+
+async function renderStats(tech) {
+  const [s] = await q(`WITH v AS (${vendorSql(tech)})
+    SELECT count(*) AS names, count(*) FILTER (WHERE agencies >= 2) AS two, count(*) FILTER (WHERE agencies >= 5) AS five,
+           count(*) FILTER (WHERE agencies >= 10) AS ten FROM v`);
+  const scope = tech ? " Technology commodity codes only." : "";
+  document.getElementById("stats").innerHTML = [
+    ["Vendor names", s.names, "Distinct names on contracts and orders, as spelled. Spellings of one company count separately." + scope],
+    ["At 2 or more agencies", s.two, "Names with contracts or orders at two or more distinct agencies." + scope],
+    ["At 5 or more", s.five, "Names at five or more distinct agencies." + scope],
+    ["At 10 or more", s.ten, "Names at ten or more distinct agencies." + scope],
+  ].map(([label, value, what]) => `<div class="stat"><div class="stat-label">${esc(label)}</div><div class="stat-value">${n(value)}</div><div class="stat-what">${esc(what)}</div></div>`).join("");
+}
+
+// ---------- the vendor table ----------
+function currentFilters() {
+  return {
+    tech: document.getElementById("tech-only").checked,
+    min: Number(document.getElementById("min-agencies").value),
+    name: document.getElementById("name-q").value.trim(),
+  };
+}
+
+function writeUrl() {
+  const f = currentFilters();
+  const p = new URLSearchParams();
+  if (DATA) p.set("data", DATA);
+  if (f.name) p.set("name", f.name);
+  if (f.min !== 2) p.set("min", String(f.min));
+  if (f.tech) p.set("tech", "1");
+  const product = document.getElementById("product-q").value.trim();
+  if (product) p.set("product", product);
+  if (!document.getElementById("whole-word").checked) p.set("word", "0");
+  const qs = p.toString();
+  history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+}
+
+function tableQuery(f) {
+  const where = ["agencies >= ?"];
+  const binds = [f.min];
+  if (f.name) { where.push("vendor ILIKE ?"); binds.push(`%${f.name}%`); }
+  return {sql: `WITH v AS (${vendorSql(f.tech)}) SELECT * FROM v WHERE ${where.join(" AND ")} ORDER BY agencies DESC, contracts + orders DESC, vendor`, binds};
+}
+
+async function renderVendors() {
+  const f = currentFilters();
+  writeUrl();
+  document.getElementById("tech-note").textContent = f.tech
+    ? `Counting only contracts with a commodity code in NIGP class ${TECHNOLOGY_NIGP_CLASSES.join(", ")}, and orders whose code is in one of them: ` +
+      TECHNOLOGY_NIGP_CLASSES.map(nigpLabel).join("; ") + ". A contract with several codes counts, with its whole base amount, if any one is on the list. " +
+      "Codes are chosen by whoever entered the record, so some technology purchases carry other codes and are left out. For example, " +
+      "code 956-35-75, \"Subscriptions, software licensing, cloud based\", is in class 956 (library services), which isn't on the list."
+    : "";
+  const {sql, binds} = tableQuery(f);
+  const rows = await q(sql, binds);
+  if (TABLE) TABLE.clear().rows.add(rows).draw();
+  else buildTable(rows);
+  document.getElementById("vendors-csv").onclick = () => downloadCsv(sql, binds, "vendors-across-agencies.csv");
+  await Promise.all([renderCombined(f), renderStats(f.tech)]);
+}
+
+// The first few agencies, then a count; hover or expand the row for all of them.
+function agencyListCell(list) {
+  if (!list) return "(no agency listed)";
+  const names = list.split("; ");
+  if (names.length <= 4) return esc(list);
+  return `<span title="${esc(list)}">${esc(names.slice(0, 4).join("; "))}; <strong>+${n(names.length - 4)} more</strong></span>`;
+}
+
+function buildTable(rows) {
+  document.getElementById("vendors").innerHTML = `<table class="display compact" style="width:100%"><thead><tr>
+    <th></th>
+    <th title="The vendor name on contracts (vendor) or orders (supplierName), exactly as spelled on DC's site.">Vendor</th>
+    <th title="Distinct agencies on this name's contracts and orders together." class="num">Agencies</th>
+    <th title="Distinct contract numbers with this vendor name." class="num">Contracts</th>
+    <th title="Purchase orders with this supplier name." class="num">Orders</th>
+    <th title="Sum of the contracts' base-period amounts: what the first period authorises, a ceiling, not spending. Option periods are left out." class="num">Contract base amount</th>
+    <th title="Sum of the orders' poTotal: commitments, not payments." class="num">Order amount</th>
+    <th title="Every distinct agency, from contracts and orders together.">Agencies</th>
+  </tr></thead></table>`;
+  TABLE = $("#vendors table").DataTable({
+    data: rows,
+    deferRender: true,
+    pageLength: 25,
+    order: [[2, "desc"], [3, "desc"]],
+    scrollX: true,
+    autoWidth: false,
+    searching: false,
+    language: {emptyTable: "No vendor names match."},
+    columns: [
+      {data: null, orderable: false, className: "details-toggle", render: () => "▸"},
+      {data: "vendor", render: (v, type) => type === "display" ? esc(v) : v},
+      {data: "agencies", className: "num", render: (v, type) => type === "display" ? n(v) : v},
+      {data: "contracts", className: "num", render: (v, type) => type === "display" ? n(v) : v},
+      {data: "orders", className: "num", render: (v, type) => type === "display" ? n(v) : v},
+      {data: "base_amount", className: "num", render: (v, type) => type === "display" ? money(v) : (v ?? -1)},
+      {data: "po_amount", className: "num", render: (v, type) => type === "display" ? money(v) : (v ?? -1)},
+      {data: "agency_list", orderable: false, className: "agency-list", render: (v, type) => type === "display" ? agencyListCell(v) : v},
+    ],
+  });
+  // One delegated listener on the table body, bound once.
+  $("#vendors table tbody").on("click", "td.details-toggle", async function () {
+    const tr = $(this).closest("tr");
+    const row = TABLE.row(tr);
+    if (row.child.isShown()) { row.child.hide(); this.textContent = "▸"; return; }
+    this.textContent = "▾";
+    row.child('<div class="detail muted">Loading…</div>').show();
+    row.child(await vendorDetail(row.data().vendor, currentFilters().tech)).show();
+  });
+}
+
+// One row per contract number: its titles across option periods, vendor
+// names, base amount and the distinct agencies on any of its periods.
+function contractGroups(table, where) {
+  return `SELECT contract_number, string_agg(DISTINCT title, ' | ') AS titles, string_agg(DISTINCT vendor, '; ') AS vendors,
+       sum(base_amount) AS base_amount,
+       list_distinct(flatten(list(coalesce(string_split(agency, '; '), []::VARCHAR[])))) AS agencies
+FROM ${table} WHERE ${where} GROUP BY contract_number`;
+}
+
+// Everything one vendor name holds, agency by agency.
+async function vendorDetail(vendor, tech) {
+  const contracts = await q(`WITH ${sources(tech)}
+    SELECT coalesce(a, '(no agency listed)') AS agency, contract_number, titles, base_amount, other_agencies FROM (
+      SELECT contract_number, titles, base_amount, len(agencies) - 1 AS other_agencies,
+             unnest(CASE WHEN len(agencies) = 0 THEN [NULL::VARCHAR] ELSE agencies END) AS a
+      FROM (${contractGroups("c", "vendor = ?")}))
+    ORDER BY agency, contract_number`, [vendor]);
+  const orders = await q(`WITH ${sources(tech)}
+    SELECT agency, count(*) AS orders, sum(po_total) AS amount, min(fiscal_year) AS fy1, max(fiscal_year) AS fy2,
+           string_agg(DISTINCT nigp_class, ', ' ORDER BY nigp_class) AS classes
+    FROM p WHERE supplier = ? GROUP BY agency ORDER BY agency`, [vendor]);
+  const agencies = [...new Set([...contracts.map((r) => r.agency), ...orders.map((r) => r.agency)])].sort();
+  const html = agencies.map((agency) => {
+    const cs = contracts.filter((r) => r.agency === agency);
+    const o = orders.find((r) => r.agency === agency);
+    const agencyParam = agency === "(no agency listed)" ? "" : "&agency=" + encodeURIComponent(agency);
+    const cList = cs.length ? `<ul>${cs.map((r) => `<li>${contractLink(r.contract_number)} ${esc(r.titles)} · ${r.base_amount === null ? '<span class="muted">no base amount</span>' : money(r.base_amount)}` +
+      (r.other_agencies > 0 ? ` <span class="tag" title="This contract lists more than one agency on DC's site; it appears under each.">shared with ${n(r.other_agencies)} other agenc${r.other_agencies === 1 ? "y" : "ies"}</span>` : "") + "</li>").join("")}</ul>` : "";
+    const oLine = o ? `<p>${n(o.orders)} order${o.orders === 1 ? "" : "s"}, ${money(o.amount)}, fiscal years ${o.fy1}${o.fy2 !== o.fy1 ? "–" + o.fy2 : ""}. Commodity classes: ` +
+      `${o.classes.split(", ").map((c) => `<span title="${esc(nigpLabel(c))}">${esc(c)}</span>`).join(", ")}. ` +
+      `<a href="purchase-orders.html?supplier=${encodeURIComponent(vendor)}${agencyParam}${KEEP}" target="_blank" rel="noopener">See the orders</a></p>` : "";
+    return `<h4>${esc(agency)}</h4>${cList}${oLine}`;
+  }).join("");
+  const contractsLink = `<a href="index.html?vendor=${encodeURIComponent(vendor)}${KEEP}" target="_blank" rel="noopener">all of this name's contracts</a>`;
+  return `<div class="detail"><p class="muted">Contract titles as typed on DC's site; a contract whose title changed between option periods shows each title, separated by |.
+    Amounts are base periods only. Open ${contractsLink} in the contracts explorer.</p>${html || '<p class="muted">Nothing under the current settings.</p>'}</div>`;
+}
+
+// Totals for every name the "contains" box matches, each agency, contract and
+// order counted once, so spellings of one company can be read together.
+async function renderCombined(f) {
+  const box = document.getElementById("combined");
+  if (!f.name) { box.innerHTML = ""; return; }
+  const like = `%${f.name}%`;
+  const [r] = await q(`WITH ${sources(f.tech)}
+    SELECT (SELECT count(*) FROM (SELECT vendor FROM c WHERE vendor ILIKE ? UNION SELECT supplier FROM p WHERE supplier ILIKE ?)) AS names,
+           (SELECT count(DISTINCT agency) FROM ag WHERE vendor ILIKE ?) AS agencies,
+           (SELECT count(DISTINCT contract_number) FROM c WHERE vendor ILIKE ?) AS contracts,
+           (SELECT sum(base_amount) FROM c WHERE vendor ILIKE ?) AS base_amount,
+           (SELECT count(*) FROM p WHERE supplier ILIKE ?) AS orders,
+           (SELECT sum(po_total) FROM p WHERE supplier ILIKE ?) AS po_amount`, [like, like, like, like, like, like, like]);
+  box.innerHTML = r.names === 0 ? `No vendor name contains "${esc(f.name)}".`
+    : `<strong>${n(r.names)} name${r.names === 1 ? "" : "s"} contain "${esc(f.name)}"</strong>, ignoring capitals. Together: ${n(r.agencies)} distinct agencies,
+      ${n(r.contracts)} contracts (${money(r.base_amount)} in base periods) and ${n(r.orders)} orders (${money(r.po_amount)}).
+      This counts every matching name, whatever the "at least" setting. Check the names in the table: a short search can match companies that aren't the one you mean.`;
+}
+
+// ---------- products named in titles ----------
+function titleMatch(text, wholeWord) {
+  if (!wholeWord) return {sql: "title ILIKE ?", bind: `%${text}%`};
+  const escaped = text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return {sql: "regexp_matches(title, ?)", bind: `(?i)\\b${escaped}\\b`};
+}
+
+async function renderProduct() {
+  writeUrl();
+  const out = document.getElementById("product-out");
+  const text = document.getElementById("product-q").value.trim();
+  if (!text) { out.innerHTML = ""; return; }
+  const wholeWord = document.getElementById("whole-word").checked;
+  const m = titleMatch(text, wholeWord);
+  const rows = await q(`SELECT coalesce(a, '(no agency listed)') AS agency, contract_number, titles, vendors, base_amount FROM (
+      SELECT contract_number, titles, vendors, base_amount,
+             unnest(CASE WHEN len(agencies) = 0 THEN [NULL::VARCHAR] ELSE agencies END) AS a
+      FROM (${contractGroups("contracts", `contract_number IN (SELECT contract_number FROM contracts WHERE ${m.sql})`)}))
+    ORDER BY agency, contract_number`, [m.bind]);
+  const supplierRows = await q(`SELECT agency, count(*) AS orders, sum(po_total) AS amount, string_agg(DISTINCT supplier, '; ') AS suppliers
+    FROM purchase_orders WHERE supplier ILIKE ? GROUP BY agency ORDER BY orders DESC, agency`, [`%${text}%`]);
+  const agencies = [...new Set(rows.map((r) => r.agency))];
+  const named = agencies.filter((a) => a !== "(no agency listed)");
+  const contractCount = new Set(rows.map((r) => r.contract_number)).size;
+  const how = wholeWord ? `the word "${esc(text)}"` : `"${esc(text)}" anywhere`;
+  let html = `<h3>Contract titles containing ${how}</h3>`;
+  if (!rows.length) {
+    html += `<p>No contract title contains ${how}.${wholeWord ? " Try turning off \"Whole word only\"." : ""}</p>`;
+  } else {
+    html += `<p>${n(contractCount)} contract${contractCount === 1 ? "" : "s"} at ${n(named.length)} agenc${named.length === 1 ? "y" : "ies"}` +
+      (agencies.length > named.length ? ", plus some with no agency listed" : "") +
+      `. A contract that lists several agencies appears under each. Matched against every option period's title.</p>` +
+      `<div class="tablewrap"><table class="plain"><thead><tr><th>Agency</th><th>Contract</th><th>Title(s)</th><th>Vendor</th><th class="num">Base amount</th></tr></thead><tbody>` +
+      rows.map((r) => `<tr><td>${esc(r.agency)}</td><td>${contractLink(r.contract_number)}</td><td>${esc(r.titles)}</td><td>${esc(r.vendors)}</td>` +
+        `<td class="num">${r.base_amount === null ? '<span class="muted">–</span>' : money(r.base_amount)}</td></tr>`).join("") +
+      `</tbody></table></div>`;
+  }
+  html += `<h3>Purchase orders whose supplier name contains "${esc(text)}"</h3>`;
+  if (!supplierRows.length) {
+    html += `<p>No supplier name on an order contains "${esc(text)}".</p>`;
+  } else {
+    const total = supplierRows.reduce((t, r) => t + r.orders, 0);
+    html += `<p>${n(total)} orders at ${n(supplierRows.length)} agenc${supplierRows.length === 1 ? "y" : "ies"}. This is the seller's name, not the product:
+      a reseller's orders won't show here, and the maker's own orders may be for anything it sells.</p>` +
+      `<div class="tablewrap"><table class="plain"><thead><tr><th>Agency</th><th>Supplier names</th><th class="num">Orders</th><th class="num">Order amount</th></tr></thead><tbody>` +
+      supplierRows.map((r) => `<tr><td>${esc(r.agency)}</td><td>${esc(r.suppliers)}</td><td class="num">${n(r.orders)}</td><td class="num">${money(r.amount)}</td></tr>`).join("") +
+      `</tbody></table></div>`;
+  }
+  out.innerHTML = html;
+}
+
+// ---------- start ----------
+const status = document.getElementById("status");
+try {
+  status.textContent = "Loading the data into your browser…";
+  await boot(["contracts", "purchase_orders", "nigp_classes"]);
+  for (const r of await q("SELECT nigp_class, description FROM nigp_classes")) NIGP[r.nigp_class] = r.description;
+  const m = await manifest();
+  const stamps = m.snapshots.map((s) => (s.pulled_at || "").slice(0, 10)).filter(Boolean).sort();
+  document.getElementById("asof").innerHTML =
+    `Pulled from contracts.ocp.dc.gov ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}` +
+    ` · <a href="${DATASET_PAGE}">full dataset</a>` + (LOCAL ? " · <strong>reading the local build</strong>" : "");
+
+  document.getElementById("name-q").value = PARAMS.get("name") || "";
+  document.getElementById("min-agencies").value = PARAMS.get("min") || "2";
+  document.getElementById("tech-only").checked = PARAMS.get("tech") === "1";
+  document.getElementById("product-q").value = PARAMS.get("product") || "";
+  document.getElementById("whole-word").checked = PARAMS.get("word") !== "0";
+
+  document.getElementById("suggest").innerHTML += SUGGESTED_PRODUCTS.map((p) => ` <button data-product="${esc(p)}">${esc(p)}</button>`).join("");
+  document.getElementById("suggest").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-product]");
+    if (!b) return;
+    document.getElementById("product-q").value = b.dataset.product;
+    renderProduct();
+  });
+  let nameTimer = null;
+  document.getElementById("name-q").addEventListener("input", () => { clearTimeout(nameTimer); nameTimer = setTimeout(renderVendors, 300); });
+  document.getElementById("min-agencies").addEventListener("change", renderVendors);
+  document.getElementById("tech-only").addEventListener("change", renderVendors);
+  let productTimer = null;
+  document.getElementById("product-q").addEventListener("input", () => { clearTimeout(productTimer); productTimer = setTimeout(renderProduct, 300); });
+  document.getElementById("whole-word").addEventListener("change", renderProduct);
+  document.getElementById("copy-link").addEventListener("click", async () => {
+    await navigator.clipboard.writeText(location.href);
+    document.getElementById("copy-link").textContent = "Copied";
+    setTimeout(() => { document.getElementById("copy-link").textContent = "Copy link"; }, 1500);
+  });
+
+  await renderCoverage();
+  await renderVendors();
+  await renderProduct();
+  status.textContent = "";
+} catch (err) {
+  status.innerHTML = `<span class="error">${esc(err.message || err)}</span>`;
+  throw err;
+}
+</script>
+</body>
+</html>
