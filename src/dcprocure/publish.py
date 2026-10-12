@@ -90,6 +90,11 @@ explorer at https://dc-procurement.pages.dev and for anyone who wants to query
 them directly.
 Amounts and dates are parsed from the portal's text, and each parsed column sits
 beside the text it came from; `columns.json` says where every column comes from.
+A few columns are not the portal's, and `columns.json` marks each one: agency
+names filled in from `agency_names.yaml`, and on contracts `period_kind`,
+`base_amount`, `corrected_amount`, `same_award_as` and `correction`, from
+`corrections.yaml` in https://github.com/abigailhaddad/dc-software-procurement.
+The portal's own values are never overwritten; they sit beside these.
 
 `contract_details_older_periods.json` holds periods the detail endpoint still
 serves but the search had stopped listing before this project's first pull.

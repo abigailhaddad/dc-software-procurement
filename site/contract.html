@@ -34,7 +34,9 @@
 
   <section class="block">
     <h2>Option periods</h2>
-    <p class="muted">Each option period is its own record on DC's site, with its own amount: what that period authorises, not what was paid.</p>
+    <p class="muted">Each option period is its own record on DC's site. Only the base period's amount is shown: what it authorises, not what was paid.
+    Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork (<a href="about.html#amounts">how we know</a>).</p>
+    <div class="note" id="correction" hidden></div>
     <div class="tablewrap" id="periods"></div>
   </section>
 
@@ -92,6 +94,7 @@ function moneyExact(x) {
 }
 
 const PERIODS = `SELECT option_period, CAST(start_date AS VARCHAR) AS start_date, CAST(end_date AS VARCHAR) AS end_date, amount,
+       amount_text, period_kind, corrected_amount, same_award_as, correction, base_amount,
        title, vendor, agency, agency_as_published, contract_type, market_type, array_to_string(nigp_codes, '; ') AS nigp_codes,
        contracting_officer, documents, portal_url, listed
 FROM contracts
@@ -156,11 +159,15 @@ async function main() {
     `<dt>${esc(k)}</dt><dd>${v.length ? v.map(esc).join("<br>") : '<span class="muted">not given</span>'}</dd>`).join("") +
     `<dt>On DC's site</dt><dd>${periods.map((p) => `<a href="${esc(p.portal_url)}" target="_blank" rel="noopener">${esc(p.option_period)}&nbsp;↗</a>`).join(" · ")}</dd>`;
 
-  const authorised = periods.reduce((s, p) => s + (p.amount || 0), 0);
+  const base = periods.filter((p) => p.period_kind === "base");
+  const baseAmount = base.reduce((s, p) => s + (p.corrected_amount ?? p.amount ?? 0), 0);
+  const sameAs = distinct("same_award_as");
   const paid = payments.reduce((s, p) => s + (p.voucher_amount || 0), 0);
   const stats = [
     ["Option periods", n(periods.length), "Records on DC's site for this contract number."],
-    ["Authorised", money(authorised), "Sum of the periods' amounts. A ceiling, not spending."],
+    ["Base-period amount", base.length ? money(baseAmount) : "–", base.length
+      ? `What the base period authorises${base.some((p) => p.corrected_amount !== null) ? ", corrected from DC's figure" : ""}. A ceiling, not spending. Option periods are not counted.`
+      : "No period on DC's site is labelled as the base period."],
     ["Paid", money(paid), `Sum of voucherAmount over ${n(payments.length)} payment lines carrying this contract number.`],
     ["Purchase orders", n(orders.length), "Orders that those payments were paid against."],
     ["Documents", n(docs.length), "Attachments listed on its option periods."],
@@ -170,8 +177,22 @@ async function main() {
 
   document.getElementById("periods").innerHTML = `<table class="plain"><thead><tr><th>Period</th><th class="num">Starts</th><th class="num">Ends</th><th class="num">Amount</th><th>Contract type</th><th class="num">Documents</th><th></th></tr></thead><tbody>` +
     periods.map((p) => `<tr><td>${esc(p.option_period)}${p.listed ? "" : '<span class="tag" title="DC\'s site no longer returns this record in its search. Its page there may still open by direct link; this row comes from an earlier pull.">not in DC site search</span>'}</td><td class="num">${esc(p.start_date)}</td><td class="num">${esc(p.end_date)}</td>` +
-      `<td class="num">${moneyExact(p.amount)}</td><td>${esc(p.contract_type || "")}</td><td class="num">${n(p.documents)}</td>` +
+      `<td class="num">${p.period_kind !== "base" ? '<span class="muted" title="Option-period amounts are not shown.">–</span>'
+        : p.corrected_amount !== null ? `${moneyExact(p.corrected_amount)} <span class="tag" title="DC's site says ${esc(p.amount_text)}">corrected</span>`
+        : moneyExact(p.amount)}</td><td>${esc(p.contract_type || "")}</td><td class="num">${n(p.documents)}</td>` +
       `<td><a href="${esc(p.portal_url)}" target="_blank" rel="noopener">portal&nbsp;↗</a></td></tr>`).join("") + "</tbody></table>";
+
+  const notes = [];
+  for (const p of periods.filter((p) => p.corrected_amount !== null))
+    notes.push(`DC's site gives the ${esc(p.option_period)} amount as ${esc(p.amount_text)}; the District's own paperwork gives ${moneyExact(p.corrected_amount)}.`);
+  if (sameAs.length)
+    notes.push(`This is the same award as ${sameAs.map((x) => `<a class="mono" href="contract.html?n=${encodeURIComponent(x)}${keep ? "&" + keep : ""}">${esc(x)}</a>`).join(", ")}, which totals count instead. DC's site lists it under both numbers.`);
+  const sources = distinct("correction");
+  if (notes.length) {
+    const box = document.getElementById("correction");
+    box.innerHTML = `<strong>Corrected here</strong> (from corrections.yaml): ${notes.join(" ")}<br><span class="muted">Source: ${sources.map(esc).join(" · ")}</span>`;
+    box.hidden = false;
+  }
 
   document.getElementById("payments-note").textContent = payments.length
     ? `Payment lines whose contract number is ${number}. Many payments carry no contract number at all, so this can undercount what was paid on the contract.`

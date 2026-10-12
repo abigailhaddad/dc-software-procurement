@@ -150,3 +150,36 @@ def test_contract_link_tables_hold_what_the_full_tables_give(payments):
         assert len(original) > 1, number
         if count is not None:
             assert len(linked) == count, number
+
+
+def test_corrections_are_sourced_and_change_only_what_they_list():
+    import yaml
+    doc = yaml.safe_load((ROOT / "corrections.yaml").read_text(encoding="utf-8"))
+    fixes = {(a["contract_number"], a["option_period"]): a for a in doc["amounts"]}
+    assert all(a.get("source") for a in fixes.values())
+    # DC's own amount is never overwritten; a correction sits beside it.
+    rows = _q(f"SELECT contract_number, option_period, amount_text, corrected_amount FROM '{PARQUET}/contracts.parquet' "
+              f"WHERE corrected_amount IS NOT NULL")
+    for number, period, text, corrected in rows:
+        a = fixes[(number, period)]
+        assert text == a["published"] and corrected == float(a["amount"])
+    # Every record named in a same-award group exists, and exactly one per group is counted.
+    numbers = {r[0] for r in _q(f"SELECT DISTINCT contract_number FROM '{PARQUET}/contracts.parquet'")}
+    flagged = dict(_q(f"SELECT DISTINCT contract_number, same_award_as FROM '{PARQUET}/contracts.parquet' "
+                      f"WHERE same_award_as IS NOT NULL"))
+    for g in doc["same_award"]:
+        assert set(g["records"]) <= numbers, g["award"]
+        assert g["count"] not in flagged
+        assert all(flagged[r] == g["count"] for r in g["records"] if r != g["count"])
+
+
+def test_totals_count_base_periods_once_with_corrections():
+    # base_amount is the published base-period amount, corrected where listed, with
+    # duplicates left out; option and unlabelled periods carry none.
+    total, expected, stray = _q(f"""SELECT sum(base_amount),
+        sum(coalesce(corrected_amount, amount)) FILTER (WHERE period_kind = 'base' AND same_award_as IS NULL),
+        count(base_amount) FILTER (WHERE period_kind <> 'base' OR same_award_as IS NOT NULL)
+        FROM '{PARQUET}/contracts.parquet'""")[0]
+    assert round(total, 2) == round(expected, 2) and stray == 0
+    kinds = dict(_q(f"SELECT option_period, any_value(period_kind) FROM '{PARQUET}/contracts.parquet' GROUP BY 1"))
+    assert kinds["Base Period"] == "base" and kinds["Option 1"] == "option" and kinds["N/A"] == "unclear"

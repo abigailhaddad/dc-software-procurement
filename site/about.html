@@ -71,6 +71,29 @@
   <div class="notes" id="notes"></div>
 </section>
 
+<section class="block" id="amounts">
+  <h2>Amounts: what is shown, and why</h2>
+  <p>DC's site gives each option period its own amount. We checked those amounts against the District's own paperwork posted beside
+  them: the signed contract, the modification exercising the option, and the price determination. On 12 October 2026 we drew 60 option
+  periods at random and found paperwork stating the period's amount for 48. DC's figure disagreed with it for 14 of those 48, about
+  three in ten (with a sample this size, somewhere between roughly 18% and 43%). Most often the option period simply repeats the base
+  year's amount. The same check on 60 base periods found 5 of 48 that disagreed, about one in ten (roughly 5% to 22%).</p>
+  <p>So this site shows and totals <strong>base-period amounts only</strong>. Option periods are still listed, with their dates, labels and
+  documents, but not their amounts. Base-period amounts are DC's entries and about one in ten may be wrong; read the signed award before
+  relying on one. Each sampled period, with the document it was checked against, is in
+  <a href="https://github.com/abigailhaddad/dc-software-procurement/blob/main/amount_checks.yaml">amount_checks.yaml</a>.</p>
+  <div class="notes" id="amount-notes"></div>
+  <h3>Records corrected by hand</h3>
+  <p class="muted">Where the District's own paperwork contradicts DC's figure, the paperwork's figure is used, and DC's is kept beside it as
+  <code>amount</code> and <code>amount_text</code>. Each correction names its document in
+  <a href="https://github.com/abigailhaddad/dc-software-procurement/blob/main/corrections.yaml">corrections.yaml</a>.</p>
+  <div class="tablewrap" style="max-height:none"><table class="plain" id="fixed-amounts"></table></div>
+  <h3>One award listed under more than one number</h3>
+  <p class="muted">Most are DDOT contracts listed once under the number on the contract itself (with the payments) and once under a CW
+  number (with the documents). Totals count one record per award.</p>
+  <div class="tablewrap" style="max-height:none"><table class="plain" id="same-award"></table></div>
+</section>
+
 <section class="block">
   <h2>Agency names filled in</h2>
   <p class="muted">The value as published is kept beside the name shown in every table, as <code>agency_as_published</code>.
@@ -117,8 +140,9 @@ function notes(s) {
        only on the payments page.`,
      link: ["See them", "payments.html?contract_link=None"]},
     {big: n(s.contracts.periods), label: `option periods for ${n(s.contracts.contracts)} contracts`,
-     text: `DC's site lists each option period as its own record with its own amount. That amount is what the period authorises, a
-       ceiling. Adding a contract's periods gives the most it could be paid over its life, not what it was paid.`,
+     text: `DC's site lists each option period as its own record with its own amount, a ceiling on what that period authorises. Only
+       base-period amounts are shown and totalled here, because option-period amounts too often disagree with the District's paperwork
+       (<a href="#amounts">see below</a>).`,
      link: ["See the contracts", "index.html"]},
     {big: n(s.delisted.periods), label: `option periods no longer returned by DC's site search`,
      text: `DC's site does not keep returning everything it once did in its search. These periods, on ${n(s.delisted.contracts)} contracts, plus
@@ -166,6 +190,25 @@ async function main() {
     s.agency_names.map((a) => `<tr><td class="mono">${esc(a.published)}</td><td>${esc(a.shown)}</td>
       <td class="num">${n(a.contracts)}</td><td class="num">${n(a.orders)}</td><td class="num">${n(a.payments)}</td>
       <td>${sourceLink(a.source)}</td></tr>`).join("") + "</tbody>";
+
+  const c = s.corrections, per = c.periods;
+  document.getElementById("amount-notes").innerHTML = [
+    {big: money(per.base_amount), label: `in base-period amounts, counted`,
+     text: `Across ${n(per.base)} base periods, corrected where listed below and counting each award once.`},
+    {big: money(per.option_amount_as_published), label: `in option-period amounts, not counted`,
+     text: `What DC's site lists for ${n(per.option)} option periods. Still in the downloadable tables as <code>amount</code>.`},
+    {big: n(per.unclear), label: "periods with no clear label, not counted",
+     text: `Labelled only "2", "N/A" and the like, so it can't be told whether they are a base or an option period: ${money(per.unclear_amount_as_published)} as published.`},
+  ].map((x) => `<article class="note-card"><div class="note-big">${x.big}</div><div class="note-label">${esc(x.label)}</div><p>${x.text}</p></article>`).join("");
+  const page = (x) => `<a class="mono" href="${keep("contract.html?n=" + encodeURIComponent(x))}">${esc(x)}</a>`;
+  document.getElementById("fixed-amounts").innerHTML = `<thead><tr><th>Contract</th><th>Period</th><th class="num">DC's site</th>
+      <th class="num">Paperwork</th><th>Source</th></tr></thead><tbody>` +
+    c.amounts.map((a) => `<tr><td>${page(a.contract_number)}</td><td>${esc(a.option_period)}</td><td class="num">${esc(a.published)}</td>
+      <td class="num">${a.applied ? money(a.corrected) : `${money(a.corrected)} <span class="tag" title="DC's figure has changed since this was checked, so the correction is not applied.">not applied</span>`}</td>
+      <td>${esc(a.source)}</td></tr>`).join("") + "</tbody>";
+  document.getElementById("same-award").innerHTML = `<thead><tr><th>Award</th><th>Listed as</th><th>Counted</th><th>Source</th></tr></thead><tbody>` +
+    c.groups.map((g) => `<tr><td class="mono">${esc(g.award)}</td><td>${g.records.map(page).join("<br>")}</td><td>${page(g.count)}</td>
+      <td>${esc(g.source)}</td></tr>`).join("") + "</tbody>";
 
   const tables = Object.keys(cols);
   const tabs = document.getElementById("col-tabs");

@@ -26,7 +26,9 @@
 </header>
 
 <p class="intro">One row per contract <strong>option period</strong>: a contract with a base period and two option years is three rows.
-Each row's amount is what that period authorises the District to spend, not what was paid. Every field below is the District's, as published:
+Amounts are shown and totalled for base periods only: what the first period authorises the District to spend, not what was paid.
+Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork
+(<a href="about.html#amounts">how we know</a>). Every other field below is the District's, as published:
 agency, vendor, contract type, market type and commodity code are what was entered on DC's site, not categories added here.</p>
 
 <aside class="coverage" id="coverage" aria-label="What this covers"></aside>
@@ -92,6 +94,9 @@ start({
         search had stopped returning before our first pull, in August 2026, are not here.</li>
       <li>${n(r.dropped)} option periods its search has since stopped returning are kept from earlier pulls, marked "not in DC site search".
         Their pages on DC's site may still open by direct link.</li>
+      <li>Totals count base periods only, ${money(s.corrections.periods.base_amount)}. They leave out ${money(s.corrections.periods.option_amount_as_published)}
+        that DC's site lists for ${n(s.corrections.periods.option)} option periods, and ${n(s.corrections.same_award.contracts)} records that are the same award as
+        another contract number. A few amounts DC's own paperwork contradicts are corrected; see the <a href="about.html#amounts">About page</a>.</li>
       <li>Amounts are ceilings, not spending. Of ${money(s.payments.paid)} in payments, only ${money(s.payments.listed_contract_paid)}
         (${pct(s.payments.listed_contract_paid, s.payments.paid)}) is on lines carrying the number of a contract listed here. The rest carry
         no contract number, or one of ${n(s.payments.unlisted_numbers)} numbers not on DC's published contract list. Those payments are only
@@ -99,7 +104,7 @@ start({
   },
   rowLabel: "Option periods",
   searchLabel: "contract number, title or vendor",
-  measure: {expr: "sum(amount)", label: "Amount authorised"},
+  measure: {expr: "sum(base_amount)", label: "Base-period amount"},
   distinct: {expr: "count(DISTINCT contract_number)", label: "Contracts"},
   count: {expr: "count(DISTINCT contract_number)", label: "Number of contracts", noun: "contracts"},
   // A few very large Medicaid contracts dominate the dollars, so bars start sized by count.
@@ -108,7 +113,7 @@ start({
     {label: "Option periods", expr: "count(*)", what: "Rows matching the filters."},
     {label: "Contracts", expr: "count(DISTINCT contract_number)", what: "Distinct contract numbers among them."},
     {label: "Vendors", expr: "count(DISTINCT vendor)", what: "Distinct vendor names, as spelled on DC's site."},
-    {label: "Amount authorised", expr: "sum(amount)", money: true, what: "Sum of each period's contractAmount. A ceiling, not spending."},
+    {label: "Base-period amount", expr: "sum(base_amount)", money: true, what: "Sum of base periods' amounts, corrected where DC's paperwork contradicts DC's figure, counting each award once. A ceiling, not spending. Option periods are not counted."},
   ],
   fields: {
     agency: {label: "Agency", from: "agencyNames on DC's site.", filter: "multi", expr: "agency",
@@ -126,7 +131,7 @@ start({
     contract_number: {label: "Contract number", from: "contractNumber.", filter: "text", exact: true, expr: "contract_number"},
     title: {label: "Title", from: "title.", filter: "text", expr: "title"},
     start_date: {label: "Period start date", from: "startDate.", filter: "date", expr: "start_date"},
-    amount: {label: "Amount", from: "contractAmount, in dollars.", filter: "number", expr: "amount"},
+    amount: {label: "Base-period amount", from: "contractAmount for base periods, in dollars, corrected where corrections.yaml records an error. Option periods have none.", filter: "number", expr: "base_amount"},
   },
   charts: [
     {id: "year", field: "start_fiscal_year", title: "By the fiscal year each option period starts", byKey: true},
@@ -140,7 +145,8 @@ start({
   breakdownDefault: ["contract_type"],
   search: ["contract_number", "title", "vendor"],
   select: ["contract_number", "title", "vendor", "agency", "contract_type", "market_type", "option_period",
-    "CAST(start_date AS VARCHAR) AS start_date", "CAST(end_date AS VARCHAR) AS end_date", "amount",
+    "CAST(start_date AS VARCHAR) AS start_date", "CAST(end_date AS VARCHAR) AS end_date",
+    "CASE WHEN period_kind = 'base' THEN coalesce(corrected_amount, amount) END AS amount", "period_kind", "corrected_amount IS NOT NULL AS corrected", "same_award_as",
     "array_to_string(nigp_codes, '; ') AS nigp_codes", "portal_url", "listed"],
   defaultOrder: [[9, "desc"]],
   columns: [
@@ -153,7 +159,10 @@ start({
     {key: "option_period", label: "Period"},
     {key: "start_date", label: "Starts", cls: "num"},
     {key: "end_date", label: "Ends", cls: "num"},
-    {key: "amount", label: "Amount", cls: "num", render: (v) => money(v)},
+    {key: "amount", label: "Base amount", cls: "num", render: (v, r) => r.period_kind === "base"
+      ? `${money(v)}${r.corrected ? ' <span class="tag" title="Corrected: DC\'s figure contradicts the District\'s own paperwork. See the contract page.">corrected</span>' : ""}` +
+        (r.same_award_as ? ` <span class="tag" title="The same award as ${esc(r.same_award_as)}, which totals count instead.">same as ${esc(r.same_award_as)}</span>` : "")
+      : `<span class="muted" title="Option-period amounts are not shown: about three in ten we checked disagreed with the District's own paperwork.">–</span>`},
     {key: "nigp_codes", label: "NIGP code", render: (v) => `<span class="mono">${esc(v)}</span>`},
   ],
 });

@@ -1,0 +1,264 @@
+# Errors in DC's records, found by reading the District's own paperwork.
+#
+# Each entry is a place where DC's site (contracts.ocp.dc.gov) says one thing
+# and the signed contract, modification or D&F posted beside it says another.
+# Every entry names the document and page it rests on, so it can be checked
+# rather than trusted. Entries were read by hand; "read_from_image" means the
+# PDF had no usable text layer and the page was read as an image.
+#
+# Rules:
+#   - Record only what a posted document contradicts. "Looks too big" is a
+#     lead (analysis/review_leads.py), not a correction.
+#   - `published` is the value exactly as DC's site shows it. If DC changes the
+#     record, the entry no longer matches and should be re-checked.
+#   - A modification raising an amount that DC's site never updated is NOT
+#     recorded here: the site appears to show each period's amount as first
+#     entered, so that is how the field works rather than a typo. Applying a
+#     handful of those would make those contracts inconsistent with the rest.
+#   - Never infer a correction from a vendor or title alone.
+
+checked: 2026-10-12
+
+# One award listed under more than one contract number. Most are DDOT: the
+# record under the DCKA number the contract itself carries has the payments and
+# no documents; the CW record has the documents and no payments. Their amounts
+# and dates often disagree. `count` is the record whose amounts a total should
+# use; the other records are the same money and should be left out of totals.
+same_award:
+  - award: DCKA-2024-C-0008
+    records: [CW117063, DCKA-2024-C-0008]
+    count: CW117063
+    vendor: Capitol Paving of D.C., Inc.
+    source: >-
+      CW117063-Base Period-Contract Award-DCKA-2024-C-0008 - Citywide
+      Thermoplastic Pavement Markings_Redacted.pdf, p.1 ("The Contract entitled
+      DCKA-2024-C-0008 is entered into ...")
+  - award: DCKA-2022-C-0072
+    records: [CW114944, CW121027, DCKA-2022-C-0072]
+    count: CW121027
+    vendor: The Temple Group, Inc.
+    source: >-
+      Award document filed under both CW numbers is contract DCKA-2022-C-0072
+      (CW114944-Base Period-Contract Award-DCKA-2022-C-0072_Temple Group_Final
+      (008).pdf, p.1; CW121027-Base Period-Contract Award-Executed
+      Signed_22-C-0072.pdf, p.1, read_from_image). Construction management
+      services, FY21 Federal Aid Pavement Restoration, awarded 10/27/2023.
+    note: >-
+      The three records show $25,000,000 (CW114944, one year), $1,200,000 a
+      year (CW121027) and $2,000,000 over five years (DCKA). The contract sets
+      $2,000,000 a year; see amounts below.
+  - award: DCKA-2026-C-0093
+    records: [CW137662, DCKA-2026-C-0093]
+    count: CW137662
+    vendor: Fort Myer Construction Corporation
+    source: >-
+      CW137662-Base Period-Contract Award-Conforming_Contract_DCKA-2026-C-0093_NHS
+      NHPP_Streets - SIGNED.pdf, pp.1-2 (read_from_image)
+  - award: DCKA-2024-C-0044
+    records: [CW124047, DCKA-2024-C-0044]
+    count: CW124047
+    vendor: Fort Myer Construction Corporation
+    source: >-
+      CW124047-Base Period-Contract Award-fully executed
+      Contract_2024-C-0044_FMCC. pdf REDACTED.pdf, p.1 ("AMOUNT: $37,855,249.48")
+  - award: DCKA-2023-C-0075
+    records: [CW116781, DCKA-2023-C-0075]
+    count: CW116781
+    vendor: EBA Engineering
+    source: >-
+      CW116781-Base Period-Contract Award-DCKA-2023-C-0075-Thermoplastic
+      Pavement Markings Fully Signed.pdf, p.3 ("maximum amount of
+      $10,000,000.00 per Contract period")
+    note: >-
+      The DCKA record's $696,736.82 is Task Order 1 (CW116781-Base
+      Period-Task Orders-DCKA-2023-C-0075- TO 1 ..., p.2), not the contract.
+  - award: DCKA-2023-C-0040
+    records: [CW119165, DCKA-2023-C-0040]
+    count: CW119165
+    vendor: Dewberry Engineers Inc.
+    source: >-
+      CW119165-Base Period-Contract Award-DCKA-2023-C-0040 Contract for CM
+      Local Paving Restoration Signed.pdf, p.2 ("maximum not-to-exceed (NTE)
+      amount of $10,000,000.00 per Contract period")
+    note: The DCKA record's $2,500,000 is Task Order 1 (TO 1, p.1).
+  - award: DCKA-2024-C-0001
+    records: [CW121642, DCKA-2024-C-0001]
+    count: CW121642
+    vendor: Sheladia Associates, Inc.
+    source: >-
+      CW121642-Base Period-Contract Award-6. DCKA-2024-C-0001-Contract for CM
+      for Local Side Walk Restoration- Signed.pdf, p.2 ("maximum not-to-exceed
+      (NTE) amount of $10,000,000.00 per Contract period")
+    note: >-
+      The DCKA record's $2,706,213.89 is Task Order 1. CW121642's
+      $3,642,251.27 matches nothing in the five posted documents.
+  - award: DCKA-2019-C-0088
+    records: [CW86237, DCKA-2019-C-0088]
+    count: CW86237
+    vendor: Milani Construction, LLC
+    source: >-
+      CW86237-Base Period-Contract Award-Conforming Signed Contract for Mass
+      Avenue Executed.pdf, p.1 (read_from_image)
+  - award: DCKA-2021-C-0024
+    records: [CW103524, DCKA-2021-C-0024]
+    count: CW103524
+    vendor: Kiewit Infrastructure Co.
+    source: CW103524-Base Period-Contract Award-21-C-0024 Executed.pdf, p.1
+  - award: DCKA-2025-C-0056
+    records: [CW130536, DCKA-2025-C-0056]
+    count: CW130536
+    vendor: Capitol Paving of D.C., Inc.
+    source: >-
+      CW130536-Base Period-Contract Award-CW130536-0-CON-DCKA-2025-C-0056
+      Executed Contract.pdf, p.46
+  - award: DCKA-2025-C-0110
+    records: [CW137521, DCKA-2025-C-0110]
+    count: CW137521
+    vendor: Fort Myer Construction Corporation
+    source: >-
+      CW137521-Base Period-Contract Award-DCKA-2025-C-0110 Feeder 15171
+      Construction contract.pdf, pp.1, 10 (read_from_image)
+  - award: DCKA-2025-C-0051
+    records: [CW128550, DCKA-2025-C-0051]
+    count: CW128550
+    vendor: Fort Myer Construction Corporation
+    source: >-
+      CW128550-Base Period-Contract Award-DCKA-2025-C-0051 Taft Bridge
+      Contract.pdf, pp.1, 5
+  - award: DCKA-2024-C-0011
+    records: [CW119746, DCKA-2024-C-0011]
+    count: CW119746
+    vendor: Fort Myer Construction Corporation
+    source: >-
+      CW119746-Base Period-Contract Award-CW119746-CON-0-Fully Executed
+      Contract.pdf, p.1 ("AMOUNT: $23,328,930.01"; CW119746 shows $23,328,930.00)
+  - award: DCKA-2024-C-0080
+    records: [CW125365, DCKA-2024-C-0080]
+    count: CW125365
+    vendor: Capitol Paving of D.C., Inc.
+    source: >-
+      CW125365-Base Period-Contract Award-CW125365-CON-0-Fully Executed
+      Contract.pdf, p.34
+    note: >-
+      CW125365's title names the solicitation, DCKA-2024-B-0080, which also
+      produced DCKA-2024-C-0116 (Fort Myer). Match on the award's own number.
+  - award: DCKA-2024-C-0116
+    records: [CW125368, DCKA-2024-C-0116]
+    count: CW125368
+    vendor: Fort Myer Construction Corporation
+    source: >-
+      CW125368-Base Period-Contract Award-CW125368-CON-0-Fully Executed
+      Contract.pdf, p.34
+  - award: DCKA-2020-C-0056
+    records: [CW89747, DCKA-2020-C-0056]
+    count: CW89747
+    vendor: Anchor Construction
+    source: >-
+      CW89747-Base Period-Contract Award-Contract Conforming Redacted
+      DCKA-2021-C-0056 Executed.pdf, p.1 ("CONTRACT NO: DCKA-2020-C-0056";
+      the filename's "2021" is wrong)
+  - award: DCEB-2025-C-0003
+    records: [CW131368, CW131701]
+    count: CW131368
+    vendor: Brailsford & Dunlavey (DC), LLC
+    source: >-
+      The same three files (byte-identical) are posted under both numbers:
+      DCEB-2025-C-0003-Executed121525.pdf, p.1, and both D&Fs. The contract
+      names "Brailsford & Dunlavey (DC), LLC"; CW131701 says "Brailsford &
+      Dunlavey, Inc."
+
+# A period's amount that the paperwork contradicts.
+amounts:
+  - contract_number: DCKA-2024-C-0008
+    option_period: Base
+    published: "$2,950,000,000.00"
+    amount: 8614726.00
+    source: >-
+      CW117063-Base Period-D&Fs-DF for Price Reasonableness Signed_Redacted.pdf
+      ("The base period contract ceiling is Not-To-Exceed $8,614,726.") and DF
+      for Contractor Responsibility Signed.pdf. The award caps the two-year
+      base at $10,000,000 and the whole contract at $25,000,000.
+    note: Confirmed on DC's live site 2026-10-12.
+  - contract_number: CW129862
+    option_period: Base Period
+    published: "$2,000,000,000.00"
+    amount: 2000000.00
+    source: >-
+      Tab 6- Signed Task Order Cintas CW129862hp.pdf, p.1, block 26 "Total
+      Award" (read_from_image); Tab A D&F for Use of a Cooperative Agreement,
+      p.1 ("The estimated amount is NTE $2,000,000.00")
+  - contract_number: CW132675
+    option_period: Base Period
+    published: "$1,000,000.00"
+    amount: 336808.80
+    source: >-
+      CW132675 Emergency Contract - Homelife1 Final 1.0 Executed.pdf, p.1
+      ($190,858.32 for 90 days, D.C. Code 2-354.05); Executed MOD 001 Homelife
+      04 22 2026 - signed.pdf, p.1 ("overall total contract amount of
+      $336,808.80", extending to 120 days ending June 9, 2026)
+    note: DC's site also runs the period to 2027-01-31; the paperwork ends it June 9, 2026.
+  - contract_number: CW121027
+    option_period: Base Period
+    published: "$1,200,000.00"
+    amount: 2000000.00
+    source: &temple_nte >-
+      Contract DCKA-2022-C-0072 (filed under CW114944), section G.10.1: "Base
+      Period – 1 Year $2,000,000 / Option Period 1 – 1 Year $2,000,000 /
+      Option Period 2 – 1 Year $2,000,000 ..."; also the award block 20 "NTE
+      Amount $2,000,000" and the price D&F ("not-to-exceed (NTE) $2,000,000")
+  - contract_number: CW121027
+    option_period: Option 1
+    published: "$1,200,000.00"
+    amount: 2000000.00
+    source: *temple_nte
+  - contract_number: CW121027
+    option_period: Option 2
+    published: "$1,200,000.00"
+    amount: 2000000.00
+    source: *temple_nte
+
+# Recorded, not applied: errors that don't change an amount, or that a posted
+# document contradicts but where a missing document could explain it.
+other:
+  - contract_number: CW137380
+    kind: payment carries the wrong contract number
+    detail: >-
+      PO744617 ($2,531,500.00, ordered 2026-09-11) is filed under CW137380
+      ($348,529.25) but matches CW138426, "450- ExpressVote3 Ballot Marking
+      Devices", $2,531,500.00 from 2026-09-11.
+    source: purchase_orders and payments tables
+  - contract_number: CW95405
+    kind: document filed on the wrong contract
+    detail: >-
+      A modification exercising option period four of the earlier Cigna dental
+      contract CW56050 is posted under CW95405.
+    source: CW95405-Base Period-Modifications-M0009 OY4 Cigna CW56050 (executed).pdf, p.1
+  - contract_number: CW128868
+    kind: document filed on the wrong contract
+    detail: >-
+      Five modifications posted under CW128868's base period belong to the
+      predecessor LCP Tracker contract CW85587/CW85887; their own pages name it.
+      They may have been attached as history.
+    source: CW128868-Base Period-Modifications-ModM0005OY4- Stockbridge Consulting - signed.pdf, p.1 (read_from_image), and four others
+  - contract_number: CW109066
+    kind: vendor name differs from the agreement
+    detail: >-
+      DC's site says "Newman's Body Shop Personal Training Inc."; the executed
+      human care agreement is with "Newman Contracting Services, Inc." Could be
+      a trade name.
+    source: HCA No. CW109066 - Newman Contracting Service (executed)
+  - contract_number: CW122852
+    kind: title differs from the contract
+    detail: >-
+      Titled "Industrial Revenue Bond Counsel Legal Services"; the contract and
+      D&F describe PACE and 501(c)(3) housing-bond assessment work.
+    source: >-
+      CW122852-Base Period-Contract Award-Crest Mgmt, Contract No.
+      DCEB-2024-C-2006,ex 12-9-24 .pdf, p.5, C.1 ("perform an assessment,
+      review and creation of Property Assessed Clean Energy (PACE) projects")
+  - contract_number: DCKA-2025-C-0024
+    kind: probably listed twice (not confirmed)
+    detail: >-
+      Same vendor, title, amount ($17,847,643.40) and dates as CW131946.
+      Neither number has any documents, so the paperwork can't confirm it.
+    source: contracts table

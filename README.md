@@ -34,9 +34,17 @@ make serve       # serve the site locally, reading the local tables
 - **The tables keep the source's fields.** Each column is a field as published,
   or parsed from one by a stated rule beside the original text.
   `src/dcprocure/export.py` documents every column.
-- **One thing is filled in:** agency names published only as an abbreviation,
-  code or variant spelling, from `agency_names.yaml`, where every entry cites a
-  source. The published value is kept beside the filled-in one.
+- **Two things are filled in, each from a file where every entry cites a
+  source, with the published value kept beside it:** agency names published
+  only as an abbreviation, code or variant spelling (`agency_names.yaml`), and
+  records the District's own paperwork contradicts, including awards listed
+  under two numbers (`corrections.yaml`).
+- **Only base-period amounts are shown and totalled.** Option-period amounts
+  too often disagree with the paperwork; `amount_checks.yaml` holds the samples
+  that showed it, and the About page states the result.
+- **`of_interest.yaml`** lists contracts whose paperwork shows they were
+  awarded without competition, by emergency or letter contract, or extended
+  past their last option, by category, each with a quote and its document.
 - **`make verify` checks the tables against the raw files** through a separate
   code path, and the pre-push hook runs it.
 - **The site** (`site/`) is static. It loads the tables from the Hugging Face

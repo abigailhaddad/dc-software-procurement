@@ -27,6 +27,7 @@ from .pull import RAW_DIR
 
 PORTAL = "https://contracts.ocp.dc.gov"
 AGENCY_NAMES = Path(__file__).resolve().parents[2] / "agency_names.yaml"
+CORRECTIONS = Path(__file__).resolve().parents[2] / "corrections.yaml"
 
 
 def agency_map() -> dict[str, str]:
@@ -36,6 +37,27 @@ def agency_map() -> dict[str, str]:
         if not entry.get("name") or not entry.get("source"):
             raise ValueError(f"agency_names.yaml: {raw!r} needs both a name and a source")
     return {raw: entry["name"] for raw, entry in entries.items()}
+
+def corrections() -> tuple[list[dict], dict[str, str]]:
+    """Hand-checked errors in DC's records. See corrections.yaml.
+
+    Returns the amount corrections and a map from each duplicate record to the
+    record of the same award that totals should count.
+    """
+    doc = yaml.safe_load(CORRECTIONS.read_text(encoding="utf-8"))
+    amounts = doc.get("amounts") or []
+    for a in amounts:
+        if not all(a.get(k) is not None for k in ("contract_number", "option_period", "published", "amount", "source")):
+            raise ValueError(f"corrections.yaml: amount entry {a!r} needs contract_number, option_period, published, amount and source")
+    same = {}
+    for g in doc.get("same_award") or []:
+        if not g.get("source") or g.get("count") not in (g.get("records") or []):
+            raise ValueError(f"corrections.yaml: same_award {g.get('award')!r} needs a source and a count among its records")
+        for r in g["records"]:
+            if r != g["count"]:
+                same[r] = g["count"]
+    return amounts, same
+
 
 # Column, then where it comes from. The site prints this as its data dictionary.
 COLUMNS: dict[str, dict[str, str]] = {
@@ -64,6 +86,11 @@ COLUMNS: dict[str, dict[str, str]] = {
         "first_listed": "First pull that returned it (tracked from October 2026)",
         "last_listed": "Last pull that returned it",
         "recovered_on": "Set when the row was put back after DC's site stopped returning it in its search",
+        "period_kind": "Not from DC's site. 'base' when option_period starts with 'Base' and does not mention an option; 'option' when it mentions an option and does not start with 'Base'; 'unclear' otherwise (labels such as '2' or 'N/A')",
+        "base_amount": "Not from DC's site. The amount totals use: for a base period, corrected_amount where there is one and amount otherwise; empty for option and unclear periods, and for rows that same_award_as says are counted under another number. Option-period amounts are left out because a random sample found about three in ten disagreed with the District's own paperwork (see the About page)",
+        "corrected_amount": "Not from DC's site. The amount the District's own paperwork gives for this period, where corrections.yaml records that DC's figure contradicts it; empty otherwise. Applied only while amount_text still reads as it did when checked",
+        "same_award_as": "Not from DC's site. Set when corrections.yaml records that this row is the same award as another contract number, which totals count instead; empty otherwise",
+        "correction": "Not from DC's site. The document corrections.yaml cites for corrected_amount or same_award_as",
     },
     "documents": {
         "contract_number": "contractNumber of the option period the document is filed under",
@@ -169,6 +196,18 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
     con.register("agency_names_py", __import__("pandas").DataFrame(
         {"raw": list(names), "mapped": list(names.values())}))
     con.execute("CREATE TABLE agency_names AS SELECT * FROM agency_names_py")
+    fixes, same = corrections()
+    pd = __import__("pandas")
+    con.register("fix_amounts_py", pd.DataFrame(
+        [(a["contract_number"], a["option_period"], a["published"], float(a["amount"]), " ".join(a["source"].split()))
+         for a in fixes],
+        columns=["contract_number", "option_period", "published", "amount", "source"]))
+    con.execute("CREATE TABLE fix_amounts AS SELECT * FROM fix_amounts_py")
+    groups = yaml.safe_load(CORRECTIONS.read_text(encoding="utf-8")).get("same_award") or []
+    con.register("same_award_py", pd.DataFrame(
+        [(r, keep, " ".join(next(g for g in groups if r in g["records"])["source"].split())) for r, keep in same.items()],
+        columns=["contract_number", "same_award_as", "source"]))
+    con.execute("CREATE TABLE same_award AS SELECT * FROM same_award_py")
 
     con.execute(f"""
         CREATE TABLE contracts AS
@@ -196,9 +235,21 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
                coalesce(s.listed, 'True') = 'True' AS listed,
                TRY_CAST(s.first_listed AS DATE) AS first_listed,
                TRY_CAST(s.last_listed AS DATE) AS last_listed,
-               TRY_CAST(s.recovered_on AS DATE) AS recovered_on
+               TRY_CAST(s.recovered_on AS DATE) AS recovered_on,
+               CASE WHEN lower(trim(s.currentOptionPeriod)) LIKE 'base%' AND lower(s.currentOptionPeriod) NOT LIKE '%option%' THEN 'base'
+                    WHEN lower(s.currentOptionPeriod) LIKE '%option%' AND lower(trim(s.currentOptionPeriod)) NOT LIKE 'base%' THEN 'option'
+                    ELSE 'unclear' END AS period_kind,
+               CASE WHEN lower(trim(s.currentOptionPeriod)) LIKE 'base%' AND lower(s.currentOptionPeriod) NOT LIKE '%option%'
+                         AND sa.same_award_as IS NULL
+                    THEN coalesce(f.amount, {_money('s.contractAmount')}) END AS base_amount,
+               f.amount AS corrected_amount,
+               sa.same_award_as,
+               nullif(concat_ws(' | ', f.source, sa.source), '') AS correction
         FROM search s LEFT JOIN details d USING (id)
         CROSS JOIN (SELECT map(list(raw), list(mapped)) AS m FROM agency_names) names
+        LEFT JOIN fix_amounts f ON f.contract_number = s.contractNumber
+             AND f.option_period = s.currentOptionPeriod AND f.published = s.contractAmount
+        LEFT JOIN same_award sa ON sa.contract_number = s.contractNumber
         ORDER BY contract_number, start_date
     """)
     con.execute(f"""
@@ -308,6 +359,24 @@ def summary(con: duckdb.DuckDBPyConnection) -> dict:
             (SELECT count(*) FROM purchase_orders WHERE NOT listed) AS orders,
             (SELECT count(*) FROM payments WHERE NOT listed) AS payments"""),
         "purchase_orders": one("SELECT count(*) AS orders, count(DISTINCT nigp_class) AS classes FROM purchase_orders"),
+        "corrections": {
+            "amounts": [dict(zip(("contract_number", "option_period", "published", "corrected", "source", "applied"), r))
+                        for r in con.execute("""
+                SELECT f.contract_number, f.option_period, f.published, f.amount, f.source,
+                       EXISTS (SELECT 1 FROM contracts c WHERE c.contract_number = f.contract_number
+                               AND c.option_period = f.option_period AND c.corrected_amount IS NOT NULL)
+                FROM fix_amounts f ORDER BY 1, 2""").fetchall()],
+            "periods": one("""SELECT count(*) FILTER (WHERE period_kind = 'base') AS base,
+                count(*) FILTER (WHERE period_kind = 'option') AS option,
+                count(*) FILTER (WHERE period_kind = 'unclear') AS unclear,
+                sum(amount) FILTER (WHERE period_kind = 'option') AS option_amount_as_published,
+                sum(amount) FILTER (WHERE period_kind = 'unclear') AS unclear_amount_as_published,
+                sum(base_amount) AS base_amount FROM contracts"""),
+            "groups": [{"award": g["award"], "records": g["records"], "count": g["count"], "source": " ".join(g["source"].split())}
+                       for g in yaml.safe_load(CORRECTIONS.read_text(encoding="utf-8")).get("same_award") or []],
+            "same_award": one("""SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts,
+                sum(coalesce(corrected_amount, amount)) AS amount FROM contracts WHERE same_award_as IS NOT NULL"""),
+        },
         "agency_names": [
             {"published": raw, "shown": shown, "source": names[raw]["source"],
              "contracts": c, "orders": o, "payments": p}

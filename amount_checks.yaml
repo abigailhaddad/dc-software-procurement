@@ -1,0 +1,1509 @@
+# Checks of DC's per-period contract amounts against the District's own paperwork.
+#
+# The site shows and totals base-period amounts only because of these two
+# samples (see the About page). Each row is one sampled period: what DC's site
+# lists, what the posted paperwork says, and where that was read. A verdict of
+# "differs" means the posted paperwork states a different amount for that
+# period; "no_paperwork" means nothing posted states it.
+
+checked: '2026-10-12'
+method: '60 option periods and 60 base periods drawn at random (DuckDB setseed(0.42), order by random(),
+  limit 60) from the contracts table, CW contract numbers only. For each, the paperwork posted on DC''s
+  site that states that period''s amount was found and read: the signed option-exercise modification,
+  else the contract''s price schedule, else the price-reasonableness D&F (for base periods: the signed
+  award, then any modification, then the D&F).'
+summary:
+  option_periods:
+    sampled: 60
+    with_paperwork: 48
+    differs: 14
+    counts:
+      matches: 34
+      differs: 14
+      no_paperwork: 11
+      ceiling_vs_order: 1
+  base_periods:
+    sampled: 60
+    with_paperwork: 48
+    differs: 5
+    counts:
+      differs: 5
+      matches: 43
+      no_paperwork: 12
+option_periods:
+- contract_number: CW49154
+  option_period: Option 4
+  site_amount: 332488.12
+  paperwork_amount: 332488.12
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The contract amount for Option Year Four (4) is $332,488.12.
+  source: 'CW49154 M0007 - OY4 Box Enterprise Licenses and Maintenance executed.pdf, p.2 (also p.1 item
+    14: ''increased by $53,942.14 from $278,545.98 to $332,488.12''); M0008 (pricing schedule replacement)
+    keeps $332,488.12'
+  note: OY3 was $278,545.98 per recap, so OY4 site value is distinct from other periods.
+- contract_number: CW82733
+  option_period: Option 4
+  site_amount: 35622.0
+  paperwork_amount: 35622.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: the District hereby extends the period of performance beginning May 15, 2025 through February
+    14, 2026 in the amount of $35,622.
+  source: CW82733 M0020 Exercise SSE.pdf, p.1 item 14 (27 DCMR 2005.2(b) sole source extension)
+  note: 'Amount matches the paperwork for the dates the site lists, but the site''s label is wrong: 2025-05-15
+    to 2026-02-14 is a sole-source extension (M0020), not Option 4. The real Option 4 (M0017: ''exercises
+    Option Period Four ... May 15, 2024 through May 14, 2025 in the amount of $336,514.41'') does not
+    appear as a period on the site at all (site jumps from Option 3 ending 2024-05-14 to this row).'
+- contract_number: CW73127
+  option_period: Option 3
+  site_amount: 1025887.0
+  paperwork_amount: 1035887.38
+  paperwork: exercise_mod
+  verdict: differs
+  quote: B. The not-to-exceed HCA amount of OY3 is $1,035,887.38.
+  source: 'CW73127 M00003 Modification OY3 RCM-Executed.pdf, p.1; OY3 price D&F (Exhibit D) agrees: ''The
+    estimated fair and reasonable price is $1,035,887.38.'''
+  note: 'Site value differs by $10,000.38 (looks like a 3->2 digit slip plus dropped cents). It does not
+    equal another period''s paperwork amount (OY1 $1,021,327.69, OY2 $1,028,553.35, OY4 $1,043,825.43).
+    Same contract, outside sample: site OY2 ($1,021,327.69) repeats OY1 while M00002 says $1,028,553.35;
+    site OY4 ($1,025,887.00) repeats site OY3 while M00004 says $1,043,825.43.'
+- contract_number: CW95260
+  option_period: Option 2
+  site_amount: 109791.0
+  paperwork_amount: 109791.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: Option Year Two is hereby exercised for the period of performance from October 25, 2023 to October
+    24, 2024 in the not-to-exceed amount of $109,791.
+  source: CW95260 M0004- OY2- CW95260 - Emergency 911.pdf, p.1 item 14; award price schedule p.11 'GRAND
+    TOTAL FOR OPTION YEAR TWO 109,791.00' and OY2 price D&F agree
+- contract_number: CW86561
+  option_period: Option 3
+  site_amount: 172500.0
+  paperwork_amount: 172500.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The Contract value is $ $172,500 for the period of October 27, 2023, through October 26, 2024.
+  source: 'CW86561 M0009- Exercising OY3 10-23-2023 Executed 10-25-2023 OYr3.pdf, p.1-2; OY3 D&F: ''The
+    estimated fair and reasonable price is $172,500.'''
+- contract_number: CW92321
+  option_period: Option 3
+  site_amount: 1694989.3
+  paperwork_amount: 1712906.38
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Base Period
+  quote: B. The not-to-exceed contract amount of OY3 is $1,712,906.38.
+  source: CW92321 'Modification Five OY Three Qlarant-signed by CO.pdf', p.1; contract price schedule
+    (Letter & Definitive PCR Contract - Executed.pdf p.14) 'Grand Total for B.3.4 $ 1,712,906.38' agrees
+  note: 'Site lists $1,694,989.30 for every period (Base through Option 4); that is the base-year amount
+    (award p.12 ''Grand Total for B.3.1 $1,694,989.30''). Paperwork: OY1 $1,632,686.52 (M00003), OY2 $1,672,265.03
+    (M00004), OY4 schedule $1,754,462.97.'
+- contract_number: CW114404
+  option_period: Option 3
+  site_amount: 975000.0
+  paperwork_amount: 975000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The purpose of this modification is to exercise Option Year 3 ... The Option Year 3 Not-to-Exceed
+    ceiling remains unchanged from § B.3 ... NTE Ceiling for Option Year 3 $975,000.00
+  source: CW114404 'KCI_DCKA-2021-C-0057_M005 Signed.pdf', p.1 (image-only PDF)
+  note: Amount is an NTE ceiling, same $975,000 for every year per the award price schedule (award p.2-3),
+    so site repeating it across periods is correct here. M005 p.2 shows OY3 obligation only $251,247.19
+    (funding, not price). Paperwork contract no. DCKA-2021-C-0057.
+  read_from_image: true
+- contract_number: CW100945
+  option_period: Option 2
+  site_amount: 10000000.0
+  paperwork_amount: 10000000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: hereby exercises its option to extend the term of the contract for the period of February 3,
+    2025, through February 2, 2026 (Option Year Two). The maximum contract amount is $10,000,000.
+  source: CW100945 'Proposed Modification-M0004.pdf', p.1 (M0004, CO signature dated 1-31-25 despite the
+    'Proposed' file name)
+  note: DCSS schedule; $10M is the annual maximum ceiling (award sec. 3.4 'The maximum contract ceiling
+    for each year for this schedule is NTE $10,000,000'), minimum $10. Same ceiling every year, so equal
+    across periods by design.
+- contract_number: CW94322
+  option_period: Option 1
+  site_amount: 144000.0
+  paperwork_amount: 144000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The total estimated amount of Option Year One, shall not exceed $144,000.
+  source: CW94322 '1-fully executed-Mod 1-CW47683-Seat-Opt 1-9-25-2022.pdf' (M0001; the document itself
+    names CW94322 despite the file name), p.1 item 14
+  note: Award schedule sets $144,000 maximum for every year (B.3.6), so equal across periods by design.
+- contract_number: CW80356
+  option_period: Option 3
+  site_amount: 100000.0
+  paperwork_amount: 125000.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Option 2 (and the original OY3 exercise amount before increases)
+  quote: 'Mod 6: ''Option Year Three (OY3) is Exercised ... for a not to exceed amount of ... ($100,000.00)'';
+    M0007: ''increase the not-to-exceed amount for option year three by $5,000 from $100,000 to $105,000'';
+    M0008: ''increase the not-to-exceed amount for option year three by $20,000 from $105,000 to $125,000.'''
+  source: CW80356 'SLS Mod 6 OY3 Signed .pdf' p.1; 'M0007 Springleaf Solutions .pdf' p.1; 'M0008 Springleaf
+    Solutions CO Signed.pdf' p.1
+  note: 'Site shows the original OY3 exercise NTE ($100,000) but two later signed mods raised OY3 to $125,000.
+    Site value also equals OY2 ($100,000 per Mod 5) and site OY4. Softer kind of difference: the site
+    value was right at exercise, stale after.'
+- contract_number: CW88347
+  option_period: Option 2
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: hereby exercises its option to extend the term of the contract for the period of March 11, 2023
+    through March 10, 2024 (Option Year 2). The maximum contract amount is 950,000.00
+  source: CW88347 'Modification No. M0004 - Option Year Two.pdf', p.1 item 14
+  note: DCSS/MOBIS schedule annual ceiling ($950,000 each year per award sec. 3.4). Signature date not
+    legible in text layer (not checked on image).
+- contract_number: CW88488
+  option_period: Option 3
+  site_amount: 1045085.0
+  paperwork_amount: 1045085.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: the Contracting Officer hereby exercises Option Period Three, for the period of performance from
+    January 1, 2024, through December 31, 2024, in the amount of $1,045,085.
+  source: CW88488 'M0006 - Option Period Three.pdf', p.1; award B.3.4 'Grand Total for B.3.4 $1,045,085.00'
+    (p.3) and OP3 price D&F agree
+  note: Site per-period amounts here track the award schedule's escalating amounts. M0007 (living wage
+    2024) states no dollar change.
+- contract_number: CW63665
+  option_period: Option 6
+  site_amount: 248000.0
+  paperwork_amount: 60000.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Option 4
+  quote: This sole source modification extends the contract from December 30, 2023, through March 29,
+    2024, in the not -to exceed amount of $60,000.
+  source: 'CW63665 ''Modification 11 Sole Source Modification.pdf'', p.1 item 14; sole-source D&F (''DF
+    For Sole Source 122323.pdf'' p.1-2) agrees: CW63665 12/30/2023-3/29/2024 NTE $60,000'
+  note: 'The site''s ''Option 6'' is not an option but a 90-day sole-source extension (27 DCMR 2005.2(b));
+    the governing document is the extension mod, not an option exercise. Site amount $248,000 equals OY4
+    (Mod 9: ''shall not exceed a maximum of ... ($248,000.00)''). Earlier extension Mod 10 covered 10/1/2023-12/29/2023
+    at NTE $60,000.'
+- contract_number: CW123127
+  option_period: Option 1
+  site_amount: 109950.0
+  paperwork_amount: 99750.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Base Period
+  quote: exercises Option Year One for the period of January 14, 2026, through January 13, 2027. The contract
+    ceiling shall not exceed $99,750.
+  source: CW123127 'M0001-CW123127 Global Emergency Response-OY1-x.pdf', p.1 item 14; award price schedule
+    p.2 CLIN 1001 'HC Standard SaaS Annual $99,750' agrees
+  note: 'Site $109,950 is the base-year total (award p.2 ''Total $109,950'': $95,000 SaaS + $2,500 training
+    + $12,450 integrations).'
+- contract_number: CW105121
+  option_period: Option 1
+  site_amount: 350000.0
+  paperwork_amount: 350000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: Option Year One is hereby exercised for the period of performance from February 1, 2024 to January
+    31, 2025 in the not-to-exceed amount of $350,000.
+  source: CW105121 'Exhibit B - M0001- Pathway - OY1.pdf', p.1 item 14
+  note: 'Same contract, outside sample: site OY2 and OY3 show $350,000 (repeating OY1) but M0002 and M0003
+    exercise OY2 and OY3 at NTE $500,000 each.'
+- contract_number: CW78353
+  option_period: Option 2
+  site_amount: 56955.81
+  paperwork_amount: 56955.81
+  paperwork: price_schedule
+  verdict: matches
+  quote: Total OY2 Not to Exceed Amount for individuals Including Fixed Fee and Specialized Home Care
+    $56,955.81
+  source: CW78353 'CW78353 Amazing Grace (executed).pdf' (HCA award) p.6, B.9.2
+  note: OY2 exercise mod (M00002, CO signed 12/6/2021) states no dollar amount. The award schedule gives
+    the same $56,955.81 NTE for base and every option year, so site repeating it is consistent with the
+    schedule. But the OY2 price-reasonableness D&F says 'The estimated fair and reasonable price is $18,848.00.'
+    (p.1) - an estimate, not the NTE.
+- contract_number: CW58941
+  option_period: Option 4
+  site_amount: 500000.0
+  paperwork_amount: 500000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: hereby exercises its option to extend the term of the contract for the period of May 25, 2022
+    through May 24, 2023 (Option Year 4). The maximum contract amount is $500,000.00
+  source: CW58941 'Modification No. M0008 - Option Year Four.pdf', p.1 item 14
+  note: DCSS schedule annual maximum. Award PDF is image-only (not read).
+- contract_number: CW92675
+  option_period: Option 1
+  site_amount: 950000.0
+  paperwork_amount: 10000000.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Option 2 (also Options 3-4)
+  quote: 'M0003: ''exercises its option to extend the term of the contract for the period of June 3, 2023
+    through June 2, 2024 (Option Year One) with a not to exceed contract amount of $10,000,00.'' M0006
+    (signed 06/03/2024): ''The contract amount is hereby decreased from $10,000,000.00 to $950,000.00
+    for Option Year Two.'''
+  source: CW92675 'M0003 Proposed Modification - CW92675.pdf' p.1 item 14; 'M0006 Decreasing the Ceiling.pdf'
+    p.1 (image-only); award p.1 'Max. $10,000,000' (image)
+  note: 'The OY1 exercise mod''s figure is mistyped ''$10,000,00'' in the document; read with the award
+    (Max $10,000,000) and M0006 (''decreased from $10,000,000.00''), the OY1 ceiling was $10,000,000.
+    The cut to $950,000 applies from OY2. Site''s OY1 $950,000 equals the OY2+ ceiling. Caveat: the mistyped
+    figure in M0003 makes the paper amount an inference, though a strong one.'
+  read_from_image: true
+- contract_number: CW87646
+  option_period: Option 2
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: The maximum contract ceiling for each year of the contract is $950,000.00.
+  source: CW87646 'Contract-Executed.pdf' (DCSS award) p.3
+  note: No OY2 exercise mod is posted (only Mod 1 = OY1 exercise and Mod 2 living wage). The site's 'Option
+    2' row has the same dates as its 'Option 1' row (2022-01-07 to 2023-01-06), which are the OY1 dates
+    per Mod 1; the dates look wrong, but the amount equals the per-year DCSS ceiling stated in the award,
+    so the amount itself is consistent.
+- contract_number: CW116113
+  option_period: Option 1
+  site_amount: 797750.0
+  paperwork_amount: 797750.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: B.3.2 OPTION YEAR 1 ... Grand Total ... $30,700.00 $797,750.00
+  source: CW116113 'DCKA-2024-C-0051-Emergency Tree Removal Services- Fully executed. .pdf' p.4 (B.3.2;
+    minimum total $30,700, maximum total $797,750)
+  note: No option exercise mod is posted at all (only the award and two base-period D&Fs). Schedule maximum
+    for OY1 equals base ($797,750), so the site value is consistent with the schedule; whether OY1 was
+    exercised is not documented on the site.
+- contract_number: CW72870
+  option_period: Option 1
+  site_amount: 10000000.0
+  paperwork_amount: 10000000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: 'Award p.1: ''Minimum $10.00 Maximum $10,000,000.00''; p.3 sec 1.6(d): ''The maximum contract
+    ceiling for each year of the contract is $10,000,000.00'' (leading digit partly obscured on scan)'
+  source: CW72870 'Award - Contract.pdf' p.1 and p.3 (image-only scan)
+  note: OY1 exercise mod (M0002) states no dollar amount, so the governing figure is the award's per-year
+    DCSS ceiling. Same ceiling every year by design.
+  read_from_image: true
+- contract_number: CW125764
+  option_period: Option 1
+  site_amount: 700000.0
+  paperwork_amount: 913039.36
+  paperwork: price_schedule
+  verdict: differs
+  site_equals: Base Period (site's own base value, $700,000; the paperwork base is $610,907.32 / $619,907.32)
+  quote: B.2.2 OPTION YEAR ONE - Firm Fixed ... Option Year One - Firm Fixed - Total $884,984.66 ... Option
+    Year One Grad total NTE $913,039.36
+  source: CW125764 'CW125764 - DC.gov Web Design... EXECUTE.pdf' (task order under GSA GS-35F-152GA) p.11,
+    Section B.2.2-B.2.3 (image-only PDF; located with OCR, confirmed on page image)
+  note: 'No OY1 exercise mod posted. Site lists $700,000 for both base and OY1; $700,000 appears in none
+    of the posted documents read. Award block 26 total is $610,907.32 while the B.2.1 schedule says $619,907.32
+    (internal discrepancy in the award). Price D&F: ''not to exceed $610,907.32''.'
+  read_from_image: true
+- contract_number: CW34843
+  option_period: Option 1
+  site_amount: 41486175.0
+  paperwork_amount: 9419750.0
+  paperwork: exercise_mod
+  verdict: differs
+  quote: 'M10: ''exercises a partial Option Period 1 ... from January 1, 2021 thru January 31, 2021 in
+    the estimated amount of $784,979.16 ... 1/12 of the estimated amount for the period of January 1,
+    2021 through December 31, 2021''; M10 p.3 ''B.3.2.1 FIRST OPTION PERIOD (January 1, 2021 - December
+    31, 2021) ... Total - Estimated Annual Price $9,419,750.00''; M11: ''exercises the remainder of partial
+    Option Year One ... February 1, 2021 thru December 31, 2021 in the estimated amount of $8,634,770.84'''
+  source: 'CW34843 ''M10 - Partial Option Year 1 - CW34843.pdf'' p.1 and p.3 (image-only); ''Mod #M11-Covanta
+    - rev.pdf'' p.1'
+  note: M10 + M11 = $784,979.16 + $8,634,770.84 = $9,419,750.00, matching the OY1 schedule. Site's $41,486,175
+    is about 4.4x that and matches no period I could find (base years per M10 schedule ran $7.13M-$7.57M;
+    sum of 5 base years $36,722,265). M12 later raised the unit rate to $37.68/ton without restating a
+    total. Award PDF is image-only and was not read.
+  read_from_image: true
+- contract_number: CW91343
+  option_period: Option 1
+  site_amount: 900000.0
+  paperwork_amount: 900000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: exercises its option to extend the term of the contract for the period of July 09, 2022 through
+    July 08, 2023 (Option Year 1). The maximum contract amount is $900,000.
+  source: CW91343 'M0002 - Exercise Option Year 1.pdf', p.1 item 14
+  note: DCSS annual ceiling ($900,000 each year per award p.3).
+- contract_number: CW104724
+  option_period: Option 3
+  site_amount: 307431.15
+  paperwork_amount: 307431.15
+  paperwork: exercise_mod
+  verdict: matches
+  quote: hereby exercises Option Year Three of the contract for the Period of Performance of February
+    08, 2026, through February 07, 2027, at Total Minimum Price of $4,729.71 and Maximum Price of $307,431.15
+  source: CW104724 'M006 Exercise OY3 - Executed.pdf', p.1 item 14 (CO signed 02/04/2026)
+  note: Site shows the maximum; M006 also corrected the M004 OY3 schedule downward to this figure.
+- contract_number: CW47374
+  option_period: Option 4
+  site_amount: 1887002.0
+  paperwork_amount: 2711186.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Option 3
+  quote: 'M0021: ''hereby exercises the Option Period Four (4) the term of this agreement is from October
+    1, 2020 thru September 30, 2021, in the Not-to-Exceed (NTE) amount $2,711,186.00.'''
+  source: 'CW47374 ''Modification 0021-OY4 .pdf'' p.1 (image-only; read on page image, CO signed 09/28/2020).
+    OY3: ''Modification 0013-OY3 CP.pdf'' p.1 (OCR) ''exercises the Option Period Three (3) ... October
+    1, 2019 thru September 31, 2020, in the Not-to-Exceed (NTE) amount $1,887,002.00'''
+  note: Site OY4 equals the OY3 NTE. Later deobligation mod M0025 (OCR) says 'Option Period Four and Task
+    Order No. T008 not-to-exceed amount is hereby decreased from $2,284,256.00 by $89,573.32 to $2,194,682.68'
+    and M0027 cuts T008 to $2,150,524.89 - these mix the task order with the option NTE, but none of them
+    is $1,887,002. OY3 figure read via OCR, not visually confirmed.
+  read_from_image: true
+- contract_number: CW99963
+  option_period: Option 1
+  site_amount: 100000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: Base Period
+  quote: 'Award cover p.1: ''Not-To-Exceed (NTE) $100,000.00''; B.2.4 Option Year One gives only unit
+    prices ($650.00 / $750.00 per participant)'
+  source: CW99963 'CW99963-Captivate Perspectives-HCA Fully Executed.pdf' p.1, p.3
+  note: Only document posted is the base HCA. No OY1 exercise mod or OY1 D&F posted. Price schedule for
+    OY1 has unit rates only, no period total. The award's $100,000 NTE is on the cover for the agreement
+    (base); the site repeats it for OY1 and OY2. Nothing posted states an OY1 amount.
+- contract_number: CW71569
+  option_period: Option 3
+  site_amount: 750000.0
+  paperwork_amount: 750000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: The maximum contract ceiling for each year of the contract is $750,000.00
+  source: 'CW71569 ''Award Contract.pdf'' p.3 sec 1.6 (image-only; OCR); OY2 exercise M0003: ''The maximum
+    contract amount is $750,000.00'''
+  note: No OY3 exercise mod posted (only OY1 M0001, living wage M0002, OY2 M0003). Amount equals the DCSS
+    per-year ceiling in the award. Award figure read via OCR of the page image, not visually checked.
+  read_from_image: true
+- contract_number: CW83890
+  option_period: Option 3
+  site_amount: 621369.2
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW83890; contracts table documents=0 for all three periods'
+  note: No documents posted for this contract at all. Site amounts differ by period (OY1 $553,688.80,
+    OY2 $598,246.40, OY3 $621,369.20), so no repeat pattern.
+- contract_number: CW118692
+  option_period: Option 1
+  site_amount: 250000.0
+  paperwork_amount: null
+  paperwork: price_schedule
+  verdict: ceiling_vs_order
+  site_equals: Base Period
+  quote: 'B.3 ''...the supplies of services or services pecified in Section B.4 PRICE SCHEDULE up to and
+    including the maximum Total Price $250,000.00. The District will order at least the minimum.''; B.4.2
+    Option Year One ... ''Grand Total: $22,258.00'' (minimum-quantity total)'
+  source: CW118692 'update CW118692 CONTRACT.pdf' p.1 ('Total Amount of Contract Shall Not Exceed NTE
+    $250,000.00') and p.2-3 Section B (image-only; p.2 read on image, p.3 via OCR)
+  note: Indefinite-quantity contract. The award's $250,000 maximum is not stated per year (reads as contract-level);
+    the OY1 schedule gives only unit prices and a minimum-quantity 'Grand Total' of $22,258. Site repeats
+    $250,000 for base and OY1. No OY1 exercise mod posted (OY1 nominally began 2026-09-04). Can't say
+    the site is wrong, but nothing posted sets $250,000 specifically for OY1.
+  read_from_image: true
+- contract_number: CW105123
+  option_period: Option 3
+  site_amount: 120000.0
+  paperwork_amount: 200000.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Option 1 (site Option 2 also repeats it)
+  quote: District hereby exercises Option year three (OY3) for the period of performance from February
+    01, 2026, through January 31, 2027, in the not-to-exceed amount of $200,000
+  source: 'CW105123 ''Exhibit A Modification No. M0004.pdf'', p.1 item 14; OY3 price D&F (''Exhibit D
+    DF for Price - CW105123- PSI - OY3.pdf'') agrees: ''not-to-exceed $200,000'''
+  note: OY1 exercise (M0001) was NTE $120,000; site carries that forward to OY2 and OY3. OY2 (M0003) is
+    also NTE $200,000. Same pattern as CW105121 (same DBH MHRS HCA family).
+- contract_number: CW115588
+  option_period: Option 1
+  site_amount: 150000.0
+  paperwork_amount: 206000.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Base Period
+  quote: The pricing shall be in accordance with Section B.3.2 - Option Year One. The total estimated
+    amount for Option Year One shall be $206,000.00.
+  source: 'CW115588 ''Mod M0002-Third Sector New England-OY1 Renewal.pdf'' p.1 item 14 (text layer garbled;
+    read on page image; CO signed 3/4/2025). OY1 price D&F agrees: ''firm fixed price of $206,000.00 for
+    a duration of twelve months.'''
+  note: Site $150,000 equals the base (9-month) amount; OY1 D&F lists 'FY2024-CW115588 ... $150,000.00
+    (9 months)'. D&F also lists OY2-OY4 at $212,000/$218,000/$224,000.
+  read_from_image: true
+- contract_number: CW49641
+  option_period: Option 4
+  site_amount: 100000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW49641'
+  note: No documents posted. Only one period row on the site (Option 4, listed=false).
+- contract_number: CW92744
+  option_period: Option 1
+  site_amount: 10000000.0
+  paperwork_amount: 10000000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: exercises its option to extend the term of the contract for the period of February 15, 2023 through
+    February 14, 2024 (Option Year 1). The maximum contract amount is $10,000,000.00 per order.
+  source: CW92744 'Modification No. M0002 - Option Year One.pdf', p.1 item 14
+  note: DCSS schedule ceiling (mod says 'per order', likely loose wording for the annual ceiling).
+- contract_number: CW86293
+  option_period: Option 3
+  site_amount: 243000.0
+  paperwork_amount: 243000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: B.3.4 Total Not to Exceed Estimated Option Period Three $243,000.00
+  source: CW86293 award 'CW86293 Contract Forensic Psychiatric and Psychologist Assessment Services-Dr
+    King.pdf' p.4
+  note: 'No option exercise mods posted at all. Site OY3 runs 2023-10-20 to 2024-08-19 (10 months), while
+    the schedule figure is for a full option year; a partial exercise might have a different amount, but
+    none is posted. Outside sample: site OY2 shows $243,000 but schedule B.3.3 says $236,250 (site OY2
+    repeats OY3/OY4 schedule value).'
+- contract_number: CW93417
+  option_period: Option 1
+  site_amount: 848704.71
+  paperwork_amount: 848704.71
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The total estimated amount for Option Year One (1) shall not exceed $848,704.71.
+  source: CW93417 'CW93417_Exercise of OY1_Mod0002_FY23_Signed.pdf', p.1 item 14
+  note: 'Side observation outside sample: site OY3 shows $917,959.00 while Mod0005 says $917,959.01 (one
+    cent).'
+- contract_number: CW95260
+  option_period: Option 1
+  site_amount: 99200.0
+  paperwork_amount: 141791.0
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Base Period
+  quote: 'OY1 exercise (M#02/M0001): ''Exercise option year one (OY1) ... from October 25, 2022 through
+    October 24, 2023. for the not-to-exceed amount of $101,791.'' Later M0002: ''The Option Year One not-to-exceed
+    amount is increased by $40,000 from $101,791 to $141,791.'''
+  source: CW95260 'M0001 - OY1.pdf' p.1 (text layer garbled; read on page image; form shows contract no.
+    CW70299, corrected to CW95260 by M0003); 'M0002 Replace CCTV 8-3-23 CO signed.pdf' p.1; award schedule
+    p.8 'GRAND TOTAL FOR OPTION YEAR ONE 101,791.00'
+  note: Site $99,200 equals the base year (award p.5 'GRAND TOTAL FOR BASE YEAR 99,200.50'; site base
+    $99,200). Paperwork OY1 is $101,791 at exercise and $141,791 after M0002; site matches neither.
+  read_from_image: true
+- contract_number: CW66646
+  option_period: Option 4
+  site_amount: 189345.69
+  paperwork_amount: 189345.69
+  paperwork: exercise_mod
+  verdict: matches
+  quote: 'the District hereby exercise Option Year Four, to extend the term of the contract for the Period
+    of Performance: October 1, 2022 through September 30, 2023 through in the amount of $189,345.69.'
+  source: CW66646 'CW66646 M0007 - OY4 Gigamon Associates executed.pdf', p.2 item 9 and recap
+- contract_number: CW72246
+  option_period: Option 4
+  site_amount: 78000.0
+  paperwork_amount: 78000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: hereby exercises its option to extend the term of the contract for the period October 1, 2022
+    through September 30, 2023 for Option Period Four in the amount of $78,000.00.
+  source: CW72246 'Executed MOD M0014.pdf', p.1; M0012 Option Period Four price schedule 'Total $78,000.00'
+    and OY4 price D&F agree
+  note: Later mods M0015 (CO change) and M0016 (living wage 2023) state no dollar change.
+- contract_number: CW77858
+  option_period: Option 1
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: the District hereby exercises Option Year One (OY1) from December 1, 2020 through November 30,
+    2021. The dollar amount for OY1 is Not-To-Exceed $950,000.00.
+  source: 'CW77858 ''MOD #001 - P&B Rest Haven CW77858 (OY1).pdf'', p.1 item 14 (CO signed 11/24/2020)'
+- contract_number: CW70783
+  option_period: Option 2
+  site_amount: 150000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW70783'
+  note: No documents posted for any period.
+- contract_number: CW88396
+  option_period: Option 2
+  site_amount: 90000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: Base Period (site shows $90,000 for all periods)
+  quote: 'M00002: ''Exercise option year two (OY2) pursuant to Section F.3 ... The OY2 period of performance
+    is 1/1/2023 through 12/31/2023.'' (no dollar amount); award B.6.5 OPTION YEAR TWO lists hourly rates
+    only'
+  source: CW88396 'M00002 (OY2 Sec I.8 revision) - Promesa Consulting Group (executed).pdf' p.1; award
+    'CW88396 - Clinical Consultants for People with IDD (Promesa) executed.pdf' p.1-3 (cover 'GRAND TOTAL
+    $' left blank)
+  note: HCA priced by hourly rates; neither the OY2 exercise mod nor the award states a dollar total for
+    OY2 (award cover grand total is blank). No OY2 price D&F posted. Source of the site's $90,000 not
+    found in posted documents.
+- contract_number: CW91428
+  option_period: Option 3
+  site_amount: 10000000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: Base Period (same $10M every period)
+  quote: 'Award cover: ''Total Amount of Contract: Minimum: $10.00 Maximum: $10,000,000.''; OY1 exercise
+    M0004: ''with a not-to-exceed contract amount of $10,000,000 for Option Year One.'''
+  source: CW91428 'Award contract CW91428 MOBIS Cradle Systems.pdf' p.1 (image-only, OCR); 'M0004 ...
+    Exercise Option One.pdf' p.1
+  note: No OY2 or OY3 exercise mod posted; the posted 16-page award (OCR'd) has no 'per year' ceiling
+    clause, only the cover maximum. Very likely the usual DCSS $10M annual ceiling (as OY1 mod shows),
+    so the site figure is probably right, but nothing posted states the OY3 amount.
+  read_from_image: true
+- contract_number: CW119861
+  option_period: Option 1
+  site_amount: 150411.0
+  paperwork_amount: 196342.0
+  paperwork: price_schedule
+  verdict: differs
+  site_equals: Base Period (site); the figure is a losing bidder's base-period price
+  quote: Award B.3.2 OPTION YEAR 1 ... Grand Total $166.00 [minimum] $196,342.00 [maximum]
+  source: CW119861 'CW119861-Contract- Smart bins- -signed.pdfbs.pdf' p.3; price D&F 'DF for Price Reasonableness-CW119861.pdf'
+    p.2 Figure 1 bid table
+  note: 'No OY1 exercise mod posted. The site''s $150,411 (shown for base and OY1) appears in the price
+    D&F''s ''Evaluation of Bids'' table as Genesys Impact LLC''s base-period bid - not the awardee''s.
+    Awardee Trusted Solutions Group''s prices per the same table and award: base $118,602, OY1 $196,342.
+    Probable data-entry error picking the wrong column.'
+- contract_number: CW99762
+  option_period: Option 4
+  site_amount: 500000.0
+  paperwork_amount: 500000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: B. 4.5.3. Grand Total Option Year Four (4) Minimum Value $1,016.73 Maximum NTE Value $500,000.00
+  source: CW99762 'Fully Executed CW99762 - DCRA Nuisance Abatement (KonstructureLLC).pdf' p.10
+  note: No option exercise mods posted at all (award + one D&F only). Schedule max is $500,000 every year,
+    so site matches the schedule; exercise of OY4 is not documented on the site.
+- contract_number: CW116346
+  option_period: Option 1
+  site_amount: 900000.0
+  paperwork_amount: 900000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: maximum contract ceiling for each year of the contract is $900,000.
+  source: 'CW116346 ''Award Contract signed.pdf'' p.3 (also p.1 ''MAX: $900,000'')'
+  note: No OY1 exercise mod posted. DCSS per-year ceiling.
+- contract_number: CW80508
+  option_period: Option 2
+  site_amount: 18000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW80508'
+  note: No documents posted for any period.
+- contract_number: CW67070
+  option_period: Option 2
+  site_amount: 152041.2
+  paperwork_amount: 365014.3
+  paperwork: exercise_mod
+  verdict: differs
+  site_equals: Option 1 (original OY1 amount before Mod 4 increase)
+  quote: 'Mod 5 (OY2 exercise): ''The estimated Contract value is $254,888.34 for the period of January
+    9, 2021 through January 8, 2022.'' Mod 6: ''The Contract has increased for Option Year One from $250,888.34
+    by $114,125.96 to $365,014.30 ... Insert: Section 3.3 OPTION YEAR TWO - IDIQ CONTRACT'' with ''Grand
+    Total OY2 ... $365,014.30'''
+  source: CW67070 'sign Mod 5 CW67070_.pdf' p.1; 'Executed-WaltonGreen-Mod6- CW67070-10-20-21.pdf' p.1
+    (image, OCR) and p.2 (text layer)
+  note: 'OY2 was exercised at $254,888.34 and raised by Mod 6 (Oct 2021, during OY2) to $365,014.30. Mod
+    6 mislabels it ''Option Year One'' and starts ''from $250,888.34'' (vs $254,888.34 in Mod 5), but
+    it replaces Section 3.3 Option Year Two. Site $152,041.20 equals the original OY1 figure (Mod 4: ''increased
+    for Option Year One from $152,041.20 by $103,483.59 to $255,524.79''). Mod 6 p.1 read via OCR.'
+  read_from_image: true
+- contract_number: CW118453
+  option_period: Option 1
+  site_amount: 3150143.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: Base Period (site shows $3,150,143 for both)
+  quote: 'Award cover: ''GRAND TOTAL (BASE PERIOD): NTE $3,147,062''; B.3.11 reimbursable ceilings ''Base
+    Year $1,050,000 Option Year 1 $1,050,000 ...'''
+  source: CW118453 'AWDC Executed Proposed HCA CW118453.pdf' p.1, p.4; TO0001 p.1-2 (base task order $3,147,062.00)
+  note: 'Only base-period documents posted; no OY1 exercise mod, OY1 D&F, or OY1 total. Award states only
+    the OY1 cost-reimbursement component ceiling ($1,050,000). Side finding outside sample: the site''s
+    base amount $3,150,143 also doesn''t match the award/TO/D&F base NTE of $3,147,062 (off by $3,081).'
+- contract_number: CW54792
+  option_period: Option 4
+  site_amount: 191950.0
+  paperwork_amount: 191950.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: hereby exercises Option Year Four (4), to extend the term of the contract to October 1, 2021
+    through September 30, 2022 in the amount of $191,950.00
+  source: CW54792 'CW54792 M0004 Option Year 4 executed.pdf', p.1 item 14 and recap
+  note: Same price every year per the mod's recap (55,000 licenses x $3.49), so repeated value is genuine.
+- contract_number: CW109927
+  option_period: Option 2
+  site_amount: 4023554.0
+  paperwork_amount: 4023554.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The not-to-exceed amount for OP2 is $4,023,554.00.
+  source: CW109927 'CW109927-MOD-2-VSP M0006 OP2 FE.pdf', p.1 item 14; OP2 price D&F agrees
+- contract_number: CW76635
+  option_period: Option 4
+  site_amount: 445437.44
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW76635'
+  note: No documents posted for any period. Site amounts vary by period (no repeat).
+- contract_number: CW98149
+  option_period: Option 3
+  site_amount: 221167.7
+  paperwork_amount: 221167.7
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The total amount for Option Year Three shall not exceed $221,167.70.
+  source: CW98149 'CW98149-Modification M0004_OY3 - Fully Executed.pdf' p.1 item 14B (amount missing from
+    text layer; read on page image; CO signed 06/30/2025)
+  note: 'Outside sample: site OY2 shows $204,949.70 (= OY1) but M0004 recap gives OY2 (M0003) $212,905.70.'
+  read_from_image: true
+- contract_number: CW86859
+  option_period: Option 3
+  site_amount: 44460.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: Option 2 (site)
+  source: 'documents table: 0 documents for CW86859'
+  note: No documents posted. Site's Option 3 (2023-12-17 to 2024-12-16) starts two years after its Option
+    2 ends (2021-12-16); same $44,460 on both.
+- contract_number: CW92209
+  option_period: Option 3
+  site_amount: 61652.64
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: Base Period (site)
+  quote: 'Award B.2: ''The contract ceiling shall not exceed $548,870.40 annually.'' B.3.4 Option Year
+    Three: ''Case Manager $65.97'' (hourly rate only). OY1 exercise M0001: ''not-to-exceed (NTE) amount
+    of $130,750.00 for the period of October 1, 2021 through September 30, 2022.'''
+  source: CW92209 'CW92209-EXECUTED-Temporary Staffing _Rider_OPRMI_Contract.pdf' p.2-3; 'CW92209-Executed
+    M0001 Exercises OP1.pdf' p.1
+  note: No OY2 or OY3 exercise mod posted; schedule gives hourly rates and an annual ceiling ($548,870.40)
+    that the OY1 exercise ($130,750) shows is not the per-period amount. Site's $61,652.64 (same as site
+    base) appears in no posted document. The posted price D&F is for a different contract (CW95931, $243,000).
+- contract_number: CW108321
+  option_period: Option 1
+  site_amount: 10000000.0
+  paperwork_amount: 10000000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: The maximum contract ceiling for each year of the contract is $10,000,000.
+  source: CW108321 'Awarded Contract- CW108321.pdf' p.3
+  note: Only the award is posted (no exercise mods). DCSS per-year ceiling. Site also has an 'Option 3'
+    row with the same dates as 'Option 1' (2025-04-08 to 2026-04-07) - a dates/label issue, not an amount
+    one.
+- contract_number: CW113881
+  option_period: Option 1
+  site_amount: 10000000.0
+  paperwork_amount: 10000000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: The maximum contract ceiling for each year of the contract is $10,000,000.
+  source: CW113881 'Awarded Contract-Executed.pdf' p.3
+  note: No OY1 exercise mod posted. DCSS per-year ceiling.
+- contract_number: CW87801
+  option_period: Option 2
+  site_amount: 187710.0
+  paperwork_amount: 187710.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: The maximum contract amount for option period two is NTE $187,710.00.
+  source: CW87801 'CW87801-MOD-2-Skillsoft M0003 OP2 FE.pdf', p.1 item 14B
+  note: 'Same as base by design (award: ''Not-to-exceed $187,710.00''). The later increase in M0006 applies
+    to option period three ($249,493.00), which the site reflects for OP3.'
+- contract_number: CW91461
+  option_period: Option 4
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: price_schedule
+  verdict: matches
+  quote: The maximum contract ceiling for each year of the contract is $950,000.00.
+  source: CW91461 'Contract-Executed.pdf' p.3
+  note: No option exercise mods posted at all. DCSS per-year ceiling.
+- contract_number: CW116949
+  option_period: Option 1
+  site_amount: 10000000.0
+  paperwork_amount: 10000000.0
+  paperwork: exercise_mod
+  verdict: matches
+  quote: exercises its option to extend the term of the contract for the period of September 4, 2025,
+    through September 3, 2026, with a not-to-exceed contract amount of $10,000,000 for Option Year One.
+  source: CW116949 'Modification No. M0002 - Option Year One_.pdf', p.1 item 14
+  note: DCSS ceiling. Award file is named 'Contract No. CW116449' (digit transposition in the file name;
+    not checked further).
+base_periods:
+- contract_number: CW101973
+  option_period: Base Period
+  site_amount: 1294653.75
+  paperwork_amount: 1265086.0
+  paperwork: award
+  verdict: differs
+  quote: 'GRAND TOTAL (NTE) $1,265,086 (cover, block 9); B.9.1: ''Total estimated amount for BY for 44
+    individuals Including Fixed Fee and Specialized ... $1,265,086.00'''
+  source: 'CW101973-Base Period-Contract Award-... Executed .pdf, p.1 (cover, read from image) and Section
+    B.9.1 (text layer); BY price D&F (Exhibit D) agrees: ''The estimated fair and reasonable price is
+    $1,265,086.'''
+  note: Site shows $1,294,653.75 for Base and every option (OY1-OY3). Differs by $29,567.75. The figure
+    $1,294,653.75 appears in none of the contract's posted documents (grep of all fetched text). Award
+    OY1 $1,273,611.02; M00002 OY1 NTE $1,273,611.02; M07 OY3 NTE $1,250,641.94. M00001 (definitization)
+    does not change the base amount.
+  read_from_image: true
+- contract_number: CW106468
+  option_period: Base Period
+  site_amount: 900000.0
+  paperwork_amount: 900000.0
+  paperwork: award
+  verdict: matches
+  quote: 'Total Amount of Contract MIN: $10.00 MAX: $900,000 ... The maximum contract ceiling for each
+    year of the contract is $900,000.'
+  source: 'CW106468-Base Period-Contract Award-Contract w-Pricing.pdf, p.1 (cover) and Section B; D&F
+    agrees: ''The estimated fair and reasonable price is NTE $900,000.'''
+  note: 'DCSS schedule contract: site shows the annual maximum ceiling; guaranteed minimum is $10. Same
+    $900,000 shown for every option year, consistent with per-year ceiling.'
+- contract_number: CW128089
+  option_period: Base Period
+  site_amount: 250000.0
+  paperwork_amount: 250000.0
+  paperwork: award
+  verdict: matches
+  quote: 17. Amount NTE $250,000
+  source: CW128089-Base Period-Contract Award-Executed Contract CW128089_R.pdf, p.1 block 17 (read from
+    image; no text layer). Award date 07/28/2025.
+  note: Section B price schedule (p.2) is hourly unit rates only (e.g. Bricklayers $64.00/HR), no base-year
+    total; the NTE on the award form is the only dollar total. Multiple-award IFB (up to five contractors).
+  read_from_image: true
+- contract_number: CW117919
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract Min Contract Amount $10 ... $950,000. ... The maximum contract ceiling
+    for each year of the contract is $950,000.
+  source: CW117919-Base Period-Contract Award-CW117919 fully executed Federal Management Systems Inc MOBIS.pdf,
+    p.1 (cover) and Section B (text layer)
+  note: DCSS (MOBIS) schedule contract; site shows the annual maximum ceiling; guaranteed minimum $10.
+- contract_number: CW85781
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: award
+  verdict: matches
+  quote: The maximum contract ceiling for each year of the contract is NTE $950,000.00
+  source: 'CW85781-Base Period-Contract Award-CW85781-CSI-Award Contract.pdf, Section B (text layer);
+    D&F agrees: ''The estimated fair and reasonable price is NTE $950,000.00'''
+  note: DCSS Temporary Support Services schedule; annual ceiling, $10 guaranteed minimum. Contract row
+    is listed=False in the table (no longer in DC's site search).
+- contract_number: CW120797
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: award
+  verdict: matches
+  quote: 0001 Enterprise wireless voice, texting and data service plans ... Min $10,000- Max $950,000.00
+    ... 26. TOTAL AWARD ... Min $10,000.00 Max 950,000.00
+  source: CW120797-Option 1-Contract Award-CW120797 - Enterprise wireless - Executed.pdf, p.1 (award form,
+    text layer); M0002 price schedule B.4.1 BASE YEAR CLIN 0001 $10,000 / $950,000
+  note: No documents are filed under the Base Period on DC's site; the award is filed under Option 1.
+    Same $950,000 max for every year. M0002 refers to an unposted M0001 base-year extension 'at no additional
+    cost', so no base amount change.
+- contract_number: CW125325
+  option_period: Base Period
+  site_amount: 142167.5
+  paperwork_amount: 142167.5
+  paperwork: award
+  verdict: matches
+  quote: See Section B ... NTE $142,167.50 / GRAND TOTAL NTE $142,167.50
+  source: CW125325-Base Period-Contract Award-HCA CW125325 Union.pdf, p.1 block 9 (text layer)
+  note: 'Site equals the signed HCA cover page, but the award is internally inconsistent: Section B.6
+    price schedule says ''Base Year Total Price (NTE) $170,601.00'' (Residence Per Diem $77.90 x 365 x
+    6), and the price-reasonableness D&F says ''not-to-exceed $170,601''. $142,167.50 = $77.90 x 365 x
+    5 (one fewer person). If Section B/D&F were taken as governing this would be ''differs''. D&F also
+    states period April 1, 2025 - March 31, 2026, while site shows 2025-06-13 to 2026-06-12.'
+- contract_number: CW110323
+  option_period: Base Period
+  site_amount: 15840000.0
+  paperwork_amount: 15840000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract NTE $15,840,000 ... Total Not-to-exceed Amount for B.3.1 $15,840,000
+  source: 'CW110323-Base Period-Contract Award-CW110323_Tag B_Definitized Contract_Executed 11-27-2023.pdf,
+    p.1 and Section B.3.1 (text layer); Mod 2 (definitization): ''The not-to-exceed amount for this contract
+    ... is $15,840,000.'''
+  note: 'Began as a letter contract (Mod 1: letter contract NTE $990,000, 6.25% of definitized NTE); definitized
+    at $15,840,000, which the site shows. Site OY1 $16,869,600 and OY2 $17,788,320 also equal Section
+    B.3.2/B.3.3. Price D&F has no text layer (not needed).'
+- contract_number: CW90044
+  option_period: Base Period
+  site_amount: 20960.0
+  paperwork_amount: 20960.0
+  paperwork: award
+  verdict: matches
+  quote: 26. TOTAL AWARD $20,960.00 (task/delivery order cover); 2.1 Base Year ... Grand Total $20,960
+  source: CW90044-Base Period-Contract Award-Signedtransperfectrev2 (002).pdf, p.1 block 26 (read from
+    image) and p.2 price schedule (text layer)
+  note: Task order under contract CW58755; price is estimated word quantities (16,000 words/language)
+    x unit prices. Option Year 1 schedule also totals $20,960. Row listed=False in table.
+  read_from_image: true
+- contract_number: CW126544
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW126544 (contracts table documents=0 for both periods); no
+    document names elsewhere mention CW126544 or ITPizza/ITP LLC'
+  note: Nothing posted. $950,000 is the standard DCSS IT Equipment & Software annual ceiling seen on other
+    DCSS contracts, so amount_type is presumed ceiling (not confirmed from this contract's paperwork).
+- contract_number: CW122785
+  option_period: Base Period
+  site_amount: 7917104.0
+  paperwork_amount: 7917104.0
+  paperwork: award
+  verdict: matches
+  quote: 0001 Clinical Case Management System $7,917,104.00 ... 26. TOTAL AWARD ... $7,917,104.00; B.3.1
+    BASE YEAR ... Grand Total for B.3.1 $7,917,104.00
+  source: 'CW122785-Base Period-Contract Award-CW122785 Task Order - Carahsoft.pdf, p.1 and Section B.3.1
+    (text layer); DF Price agrees: ''The fair and reasonable price to provide the required services $7,917,104.'''
+  note: Task order (cooperative agreement); base year is DDI implementation, priced by deliverable milestones.
+    M0001 is a living-wage notice only, no amount change. Treated as fixed price per deliverable; type
+    not stated in lines read.
+- contract_number: CW120601
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract Min-$10 Max- $950,000.00 ... ceiling for each year of the contract is
+    $950,000.00.
+  source: 'CW120601-Base Period-Contract Award-Revised Awarded Contract 10 28 24.pdf, p.1 and Section
+    B (text layer); D&F (filename says CW120661, body says CONTRACT NO.: CW120601): ''The estimated fair
+    and reasonable price is NTE $950,000.'''
+  note: DCSS IT Equipment & Software schedule; annual ceiling, $10 minimum.
+- contract_number: CW136842
+  option_period: Base Period
+  site_amount: 1000000.0
+  paperwork_amount: 900000.0
+  paperwork: award
+  verdict: differs
+  site_equals: Equals the responsibility D&F's 'estimated fair and reasonable price is NTE $1,000,000',
+    which contradicts the signed award
+  quote: 'Total Amount of Contract MIN: $10.00 MAX: $900,000 ... The maximum contract ceiling for each
+    year of the contract is $900,000.'
+  source: 'CW136842-Base Period-Contract Award-CW136842-Bayne LLC- Executed Award Contract for signature.pdf,
+    p.1 (cover, signed by both parties 7/21/2026; confirmed on page image) and Section B/3.6 (text layer);
+    CW136842-Base Period-D&Fs-D&F-CW136842.pdf, p.1: ''The estimated fair and reasonable price is NTE
+    $1,000,000.'''
+  note: DCSS Marketing, Media and Public Information schedule (the comparable DCSS marketing contract
+    CW106468 has a $900,000 ceiling). Signed award says $900,000 ceiling three times; site's $1,000,000
+    matches only the contractor-responsibility D&F. No mod posted.
+  read_from_image: true
+- contract_number: CW128084
+  option_period: Base Period
+  site_amount: 50000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW128084 (contracts.documents=0); no document name elsewhere
+    mentions CW128084'
+  note: 'Nothing posted. Same multiple-award IFB (Building Maintenance and Repair Services #2 of up to
+    five); sibling awards on DC''s site show $250,000 (CW128089 #4, whose signed award says NTE $250,000;
+    CW128091 #5; CW128731; CW128733). The $50,000 may be a genuine smaller NTE or an error; cannot tell
+    without the award. amount_type presumed NTE by analogy with CW128089.'
+- contract_number: CW123998
+  option_period: Base Period
+  site_amount: 18352520.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW123998 (contracts.documents=0); contract_orders: none'
+  note: Nothing posted. Site lists a multi-year base (2025-11-19 to 2028-07-09), contract_type 'Indefinite
+    Delivery Indefinite Quantity', award_date 2025-02-04. Whether $18,352,520 is a ceiling or a fixed
+    price for trucks cannot be determined. A different Johnson Truck Center contract (CW120948) has a
+    cooperative-procurement D&F, not checked as it is a different contract number.
+- contract_number: CW118763
+  option_period: Base Period
+  site_amount: 500000.0
+  paperwork_amount: 500000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract NTE $500,000.00 Base Year
+  source: CW118763-Option 1-Contract Award-Final Contract2.pdf, p.1 (Award/Contract cover, signed 7/23/2024)
+  note: DCSS IDIQ; obligation is minimum order per DCSS T&Cs. No documents filed under Base Period on
+    the site; the award was found filed under Option 1. M0002 sets OY1 at NTE $500,000.00 too, so site
+    base value also equals OY1.
+  read_from_image: true
+- contract_number: CW88347
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract ) $950,000.00
+  source: 'CW88347-Base Period-Contract Award-Contract No. CW88347 - MOBIS (1).pdf, p.1 (signed 3.11.2021);
+    base D&F: ''The estimated price fair and reasonable price is NTE $950,000.00.'''
+  note: DCSS MOBIS IDIQ; District obligation is the Minimum Order. Mods M0001-M0008 are living wage /
+    option exercises (by name); none named as changing the base amount. Site base row has listed=False
+    in the table (no longer in current listing). Site lists $950,000 for every period.
+- contract_number: CW133365
+  option_period: Base Period
+  site_amount: 100000.0
+  paperwork_amount: 100000.0
+  paperwork: df
+  verdict: matches
+  quote: 'D&F: ''The estimated fair and reasonable price is Not to Exceed $100,000.00.'' BPA p.7: ''No
+    purchase shall exceed $100,000, unless specifically authorized by the Contracting Officer in writing.'''
+  source: CW133365-Base Period-D&Fs-CW133365-DF Contractor Responsibility..pdf, p.1 item 3; BPA = CW133365-Base
+    Period-Contract Award-...Office Supplies BPA...Signed..pdf, p.7 (Limitation of this Agreement)
+  note: Both PDFs have mojibake text layers; read via OCR of rendered pages. The signed BPA (CO signed
+    03/02/2026) states no total value, only a $100,000 per-purchase cap and unit prices; the D&F gives
+    NTE $100,000. Classed as match against the D&F; the award itself does not state a base total. Single
+    base period through 9/30/2026.
+  read_from_image: true
+- contract_number: CW114646
+  option_period: Base Period
+  site_amount: 1205085.68
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW114646; contracts table documents=0'
+  note: No documents posted on DC's site for this contract. Site lists contract_type IDIQ. contract_orders
+    shows one order PO710310 (2024-07-11) for $973,253.50, which does not equal the site amount. Amount
+    type unknown (vehicle purchase; possibly fixed price).
+- contract_number: CW112789
+  option_period: Base Period
+  site_amount: 500000.0
+  paperwork_amount: 500000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract NTE $500,000.00 Base Year
+  source: 'CW112789-Base Period-Contract Award-CW112789 executed Award Contract Smile Therapy Services
+    Training Services.pdf, p.1 (CO signed 6.6.24); D&F: ''The estimated price fair and reasonable price
+    is $500,000.00.'''
+  note: DCSS IDIQ; District obligation is the Minimum Order. Only a base period is listed; no mods posted.
+  read_from_image: true
+- contract_number: CW86671
+  option_period: Base Period
+  site_amount: 249760.0
+  paperwork_amount: 249760.0
+  paperwork: award
+  verdict: matches
+  quote: Base Year - Total Estimated Amount $249,760.00
+  source: CW86671-Base Period-Contract Award-Contract executed on 11-25-20.pdf, p.2 (B.3.1 Base Year price
+    schedule); p.1 cover also shows $249,760.00
+  note: Award PDF has no text layer; read by OCR of rendered pages. M002 (signed 10-04-21) raised 'the
+    total estimated amount for the four (4) option years from $249,760.00 to $500,270.00' - option years
+    only, base unchanged. Base row is listed=False in the table.
+  read_from_image: true
+- contract_number: CW138480
+  option_period: Base Period
+  site_amount: 215140.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW138480'
+  note: No documents posted. Site contract_type 'Requirements'. contract_orders shows PO744012 (2026-08-27)
+    $30,000, not equal to the site amount. Amount type unknown.
+- contract_number: CW107662
+  option_period: Base Period
+  site_amount: 262720.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW107662'
+  note: No documents posted; no contract_orders rows. Site contract_type 'Requirements'. Amount type unknown.
+- contract_number: CW100479
+  option_period: Base Period
+  site_amount: 148433.0
+  paperwork_amount: 143781.0
+  paperwork: award
+  verdict: differs
+  site_equals: Equals the losing bid of MVS Inc. ($148,433.00 extended price) in the D&F bid tabulation;
+    awardee SupreTech's price was $143,781.00
+  quote: 'Task order p.1: ''Dell XPS Tower Computers (See Pricing Schedule - Attachment A) 1 Lot $143,781.00''
+    and ''26. TOTAL AWARD ... $143,781.00''. D&F: ''The estimated fair and reasonable price is $143,781.00''
+    with bid tab ''MVS Inc. ... $148,433.00 SupreTech Inc. ... $143,781.00'''
+  source: CW100479-Base Period-Contract Award-CW100479 - Contract Dell XPS Tower Desktop Computers. executed.pdf,
+    p.1 (task order under DCSS CW64233, CO signed 2022-06-30); CW100479-Base Period-D&Fs-CW100479 - D&F
+    for Price.executed.pdf, p.1
+  note: Award PDF has no text layer; read from page image. D&F text layer is readable. contract_orders
+    also has PO666728 (2022-06-30) for $143,781.00, agreeing with the paperwork. Site value is $4,652
+    higher and matches a different bidder's price.
+  read_from_image: true
+- contract_number: CW107581
+  option_period: Base Period
+  site_amount: 179269.6
+  paperwork_amount: 182719.6
+  paperwork: award
+  verdict: differs
+  site_equals: 'No match found: not the award''s OY1 ($183,690.20) or the D&F figures ($130,600); site
+    repeats $179,269.60 for Base, OY1 and OY2'
+  quote: B.9.1 BASE YEAR TOTAL PRICES ... Total estimated amount for BY for 8 individuals Including Fixed
+    Fee and Specialized Services Expense $182,719.60
+  source: CW107581-Option 2-Contract Award-CW107581 - Community Support System LLC (for CW) executed.pdf,
+    p.3 (Human Care Agreement, award date 6/1/2023); CLINs 0001-0009 sum to $182,719.60
+  note: Human care agreement (estimated amount; ordering via TOs). All documents are filed under Option
+    2; none under Base Period. Site is $3,450.00 lower than the award's BY total. M00001 (effective April
+    1, 2024, inside the site's base period; issued under the wrong number CW107662, corrected by M00002)
+    reduced 'CLIN 0008, Fixed Fee ... by 50% from $3,045.. to $1,522.5' but states no new base total,
+    so it does not produce $179,269.60 in any evident way (halving CLIN 0008's $24,360 would give $170,539.60).
+    Also site base start 2023-05-01 vs award date 6/1/2023.
+- contract_number: CW128091
+  option_period: Base Period
+  site_amount: 250000.0
+  paperwork_amount: 250000.0
+  paperwork: award
+  verdict: matches
+  quote: 17. Amount NTE $250,000
+  source: CW128091-Base Period-Contract Award-IIU Consulting Executed Contract CW128091_R.pdf, p.1 (Solicitation,
+    Offer and Award, award date 07/28/2025)
+  note: Text layer also has 'NTE $250,000'; confirmed on page image. Award block does not say whether
+    the NTE is per year or for the base; the bid schedule's 'estimated total maximum for base year' is
+    only the sum of one-hour unit rates ($1,566.00), not a dollar ceiling. M01 exercises OY1 and adjusts
+    living wage; no change to base amount. Multiple-award building maintenance contract (#5 of a set).
+- contract_number: CW98351
+  option_period: Base Period
+  site_amount: 250000.0
+  paperwork_amount: 250000.0
+  paperwork: award
+  verdict: matches
+  quote: B.3.1 BASE YEAR ... BOLO module implementation into Starlight system $ 250,000.00 Total Price
+    $ 250,000.00
+  source: 'CW98351-Base Period-Contract Award-Executed-CW98351 - Bolo Integration.pdf, p.2 (B.3 Price
+    Schedule - Firm Fixed Price); price D&F: ''The estimated contract total price is $250,000.00.'''
+  note: 'Text layer is OCR-quality but legible. Outside the sample: the same award prices Option Year
+    One at $25,000.00 (''Bolo Maintenance and Support (Up to 100 hours annually) $25,000.00''), while
+    the site lists Option 1 at $250,000.00 - the site''s OY1 appears to repeat the base amount (no OY1
+    exercise mod is posted to check).'
+- contract_number: CW92584
+  option_period: Base Period
+  site_amount: 94935.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: Equals contract_orders PO645011 (2021-07-08) po_total $94,935.00 (a table, not paperwork)
+  source: 'documents table: 0 documents for CW92584'
+  note: No documents posted. Site contract_type 'Firm Fixed Price' (amount_type taken from that field,
+    not paperwork). Base row listed=False in the table.
+- contract_number: CW107303
+  option_period: Base Period
+  site_amount: 10000000.0
+  paperwork_amount: 10000000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract Minimum $10.00 Maximum $10,000,000
+  source: 'CW107303-Base Period-Contract Award-Contract w-Pricing.pdf, p.1 (Award/Contract, CO signed
+    09/06/2023); D&F: ''The estimated fair and reasonable price is NTE $10,000,000.'''
+  note: DCSS Temporary Support Services IDIQ; site shows the maximum (not the $10 minimum). No mods posted.
+    Site repeats $10,000,000 for OY1 and OY2.
+  read_from_image: true
+- contract_number: CW114169
+  option_period: Base Period
+  site_amount: 97240.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW114169; no documents under parent CW73416 named T01/Techflairs/task'
+  note: No documents posted; no contract_orders rows. Title says it is task order T01 under CW73416. Site
+    contract_type 'Requirements'. Amount type unknown.
+- contract_number: CW114553
+  option_period: Base Period
+  site_amount: 289379.29
+  paperwork_amount: 289379.29
+  paperwork: award
+  verdict: matches
+  quote: 'Block 19 award amount: $289,379.29; Section B.3 Price Schedule: ''TOTAL $289,379.29''; B.2.1
+    ''This is a firm-fixed-price contract pursuant to 27 DCMR § 2402.'''
+  source: CW114553-Base Period-Contract Award-fully executed DCKA-2023-C-0016 Georgetown Access Study
+    Design _ M&H - CW.pdf, p.1 (cover, block 19) and p.2 (B.3)
+  note: No text layer; read from page images. Single-period contract (DCKA-2023-C-0016). The two D&Fs
+    filed under this base period name a different contractor (Kimley-Horn, DCKA-2022-T-0018), not Mead
+    & Hunt; not used.
+  read_from_image: true
+- contract_number: CW123464
+  option_period: Base Period
+  site_amount: 919173.4
+  paperwork_amount: 919173.4
+  paperwork: award
+  verdict: matches
+  quote: '''Total Amount of Contract: $919,173.40''; ''B.3.1 BASE YEAR -January 22, 2025 through January
+    21, 2026 ... Grand Total B.3.1 919,173.40'''
+  source: CW123464-Base Period-Contract Award-Blackwood Associate, Inc - Executed .pdf, p.1 and p.2; price
+    D&F p.1 agrees ('not to exceed $919,173.40')
+  note: 'B.2: ''Firm Fixed Contract''. Outside sample: site lists Option 1 at $919,173.40 but award B.3.2
+    (OY1) total is $948,153.65.'
+- contract_number: CW101580
+  option_period: Base Period
+  site_amount: 2000000.0
+  paperwork_amount: 2000000.0
+  paperwork: award
+  verdict: matches
+  quote: '''B.3 HUMAN CARE AGREEMENT NOT-TO-EXCEED DOLLAR AMOUNT The anticipated maximum dollar amount
+    of the definitized HCA is not-to-exceed (NTE) $2,000,000.''; cover ''GRAND TOTAL $2,000,000'''
+  source: CW101580-Base Period-Contract Award-Contract No. CW101580 - Clean & Sober HCA Executed.pdf,
+    p.1 and p.3; Mod One (filed under Option 2, CO signed 09-28-23) restates 'The maximum not-to-exceed
+    value of the Base Year is $2,000,000'
+  note: 'Award B.5.2 originally said $2,000,000 was the NTE for base plus all option years; Mod One rewrote
+    it to $2M for the base year and $1.5M per option year, so the base-year figure is $2M either way.
+    Letter-contract D&F covered only Oct 1 2022-Jan 29 2023 at NTE $650,000 (interim, superseded by the
+    definitized HCA). No mod changed the base amount (Mods 2, 3 are administrative; Mod 4 and M0005 exercise
+    OY2/OY3). Outside sample: site OY2 $2,000,000 vs Mod 4 $1,500,000; site OY3 $200,000 vs M0005 $1,500,000.'
+- contract_number: CW94883
+  option_period: Base Period
+  site_amount: 15950000.0
+  paperwork_amount: 15950000.0
+  paperwork: mod
+  verdict: matches
+  quote: 'M0001: ''1. Increase CLIN 0001 by $950,000.000 from $15,000,000 to $15,950,000.'' Recap: ''Base
+    Year: January 1, 2021 through November 30, 2022 $15,000,000 / Modification M0001 increased contract
+    950,000 / CUMULATIVE CONTRACT TOTAL $15,950,000'''
+  source: 'CW94883-Base Period-Modifications-Executed-CW94883-M0001.pdf, p.1 item 14 and p.2 recap (signed
+    10/12/2022); award: CW94883-Base Period-Contract Award-CW94883 Microsoft EA CDW-G Executed.pdf p.1
+    ''Min:$1,000 Max:$15,000,000'', p.9 B.3.1'
+  note: Award base-year maximum was $15,000,000 (min $1,000); M0001 (image-only, scanned upside down;
+    read from page image) raised it to $15,950,000, which the site shows. Site Option 1 $15,000,000 =
+    award OY1 max.
+  read_from_image: true
+- contract_number: CW108785
+  option_period: Base Period
+  site_amount: 111011.83
+  paperwork_amount: 111011.83
+  paperwork: award
+  verdict: matches
+  quote: 'Block 26 ''TOTAL AWARD $111,011.83'' (items: van $184,956.00; credit chassis ($74,944.17); HGAC
+    fee $1,000.00)'
+  source: 'CW108785-Base Period-Contract Award-Delivery Order CW108785 executed on 06-27-23.pdf, p.1 (signed
+    6/27/2023); D&Fs (responsibility p.1; cooperative agreement p.1) agree: $111,011.83'
+  note: Delivery order under H-GACBuy cooperative agreement AM10-20; no text layer on the order, read
+    from page image. One-time purchase; only a base period on site.
+  read_from_image: true
+- contract_number: CW121945
+  option_period: Base Period
+  site_amount: 1000000.0
+  paperwork_amount: 1000000.0
+  paperwork: award
+  verdict: matches
+  quote: '''Total Price Minimum NTE Maximum NTE / B.4.1 Base $1,000.00 $1,000,000.00'''
+  source: CW121945-Base Period-Contract Award-Fully Executed -CORE - CW121945 - DOB -Plan Review- CORE
+    Engineers Consulting Group Inc..pdf, p.3; price D&F p.1 'Exceed (NTE) $1,000,000.00'
+  note: 'B.2: ''Fixed Labor Hour Indefinite Delivery/Indefinite Quantity contract''. Site equals base
+    maximum NTE (CLIN maximum totals sum to more, but B.4.1 caps the base at $1M).'
+- contract_number: CW125569
+  option_period: Base Period
+  site_amount: 2588619.41
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 documents for CW125569; contracts row documents=0'
+  note: 'Nothing posted on DC''s site for this contract (Requirements contract, MPD Uniforms, Galls).
+    Only related record: contract_orders PO724789 dated 2025-04-15, po_total $950,000.00 (an order, not
+    the base amount); it does not match site $2,588,619.41.'
+- contract_number: CW101302
+  option_period: Base Period
+  site_amount: 124277.12
+  paperwork_amount: 124277.12
+  paperwork: award
+  verdict: matches
+  quote: '''Base Period (From August 1, 2022, through September 30, 2022) $124,277.12'' ... ''26. TOTAL
+    AWARD $124,277.12'''
+  source: CW101302-Base Period-Contract Award-Fully Executed Contract No. CW101302 - ASH LL- ASI. - Contract
+    Specialists II.pdf, p.1; responsibility D&F p.1 'The estimated fair and reasonable price to provide
+    the services is $124,277.12'
+  note: Labor-hour task order under CW94770 with hourly rate ceilings (sec. 7); amount_type judged ceiling/NTE.
+- contract_number: CW87765
+  option_period: Base Period
+  site_amount: 158193.44
+  paperwork_amount: 159593.64
+  paperwork: award
+  verdict: differs
+  quote: Block 26 'TOTAL AWARD $159,593.64'; Section B.3.1 'Grand Total for B.3.1 $159,593.64'
+  source: CW87765-Base Period-Contract Award-CW87765 Executed Task Order.pdf, p.1 (image, block 26) and
+    p.15 (B.3.1, text layer); price D&F p.1 'The estimated fair and reasonable price is $159,593.64.'
+  note: 'Site is $1,400.20 lower than the signed task order (firm fixed price, under DCSS CW59406; signed
+    12/04/2020). purchase_orders table has PO636555 (ABC Technical, ordered 2020-12-04) at $159,593.64,
+    agreeing with the paperwork. $158,193.44 does not appear in any downloaded text and equals no bid
+    in the price D&F (others: $158,875.28, $161,504.71, $163,229.89, $166,268.33, $208,205.8; the D&F
+    also cites $155,457.14). No mods posted. Contract not currently listed on site (listed=False). Responsibility
+    D&F filed here is titled CW87531.'
+  read_from_image: true
+- contract_number: CW111181
+  option_period: Base Period
+  site_amount: 692877.9
+  paperwork_amount: 692877.9
+  paperwork: award
+  verdict: matches
+  quote: '''TOTAL AMOUNT $692,877.90'' (CLINs 0001-0004); ''B.2 The District awards a sole source, firm
+    fixed-price contract'''
+  source: CW111181-Base Period-Contract Award-Contract CW111181 executed on 10-17-23.pdf, p.2; both D&Fs
+    p.1 state $692,877.90
+  note: Sole-source; only base period on site.
+- contract_number: CW131734
+  option_period: Base Period
+  site_amount: 141198.0
+  paperwork_amount: 141198.0
+  paperwork: award
+  verdict: matches
+  quote: '''Base Total $141,198.00'' (Implementation $3,948; Premier Support $53,820; Designated Support
+    $83,430); cover $141,198.00'
+  source: CW131734-Base Period-Contract Award-CW131734.Microsoft Unified Services Support 1.06.25-Executed.pdf,
+    p.1 and p.13
+  note: B.2 firm fixed. Option total in award is $137,250.00.
+- contract_number: CW106048
+  option_period: Base Period
+  site_amount: 522935.41
+  paperwork_amount: 522935.41
+  paperwork: df
+  verdict: matches
+  quote: '''The base year period of performance is from March 1, 2023 through February 29, 2024. ... The
+    estimated fair and reasonable price is $522,935.41.'''
+  source: CW106048-Option 2-D&Fs-D&F Cost and Price Reasonableness BY (CO signed).pdf, p.1
+  note: No documents are filed under the Base Period; all are filed under Option 2. The signed HCA (cover
+    read from page image) leaves GRAND TOTAL blank ('See Individual Task Orders'; unit prices only), so
+    the base-year price D&F is the only paper stating a base amount. M00001 definitization changes no
+    amount; M00003 halves CLIN 1008 (an OY1 CLIN). Site repeats $522,935.41 for OY1 and OY2 (not checked).
+- contract_number: CW123477
+  option_period: Base Period
+  site_amount: 850000.0
+  paperwork_amount: 850000.0
+  paperwork: award
+  verdict: matches
+  quote: 'Cover: ''Total Amount of Contract Min. $10.00 Max. $850,000.00''; D&F: ''The estimated fair
+    and reasonable price is NTE $850,000.'''
+  source: CW123477-Base Period-Contract Award-Signed executed Contract-CW123477-U Streert Parking, Inc.pdf,
+    p.1; CW123477-Base Period-D&Fs-Signed D&F-Cw123477.pdf, p.1
+  note: 'DCSS schedule contract (IDIQ), ''Term: 365 days from the date of award''. No text layer; read
+    from page images.'
+  read_from_image: true
+- contract_number: CW133531
+  option_period: Base Period
+  site_amount: 250000.0
+  paperwork_amount: 250000.0
+  paperwork: award
+  verdict: matches
+  quote: 'Cover: ''Total Amount of Contract: $250,000.00''; ''B.2 The District is awarding a fixed-price
+    contract type in accordance with 27 DCMR Chapter 24.'''
+  source: CW133531-Base Period-Contract Award-CW133531 Vending Machine Upgrade Executed.pdf, p.1 and p.2
+  note: No text layer; read from page images. Exempt-from-competition award (D.C. Code 2-354.13). Did
+    not read the price schedule pages beyond p.2.
+  read_from_image: true
+- contract_number: CW94127
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: award
+  verdict: matches
+  quote: '''Total Amount of Contract ) Min- $10.00 Max- $950,000.00''; ''The maximum contract ceiling
+    for each year of the contract is $950,000.00.'''
+  source: CW94127-Base Period-Contract Award-Executed-Contract.pdf, p.1 and p.3 (also 3.4, p.16); D&F
+    p.1 'NTE $950,000.00'
+  note: 'DCSS IT schedule ceiling. Outside sample: site''s Option 1 row repeats the base dates (2021-11-12
+    to 2022-11-11).'
+- contract_number: CW96276
+  option_period: Base Period
+  site_amount: 382801.36
+  paperwork_amount: 382801.36
+  paperwork: award
+  verdict: matches
+  quote: 26. TOTAL AWARD (FOR GOVT. USE ONLY) ... $382,801.36
+  source: CW96276-Base Period-Contract Award-Task Order CW96276 Xerox Copier Leasing signed.pdf, p.1 block
+    26 (term Oct 1, 2021 - Sept 30, 2022, p.2)
+  note: GSA FSS task order for copier leases; item 0001 '1 Lot $30,566.78 [unit] $382,801.36'. No base-period
+    modifications posted.
+- contract_number: CW100261
+  option_period: Base Period
+  site_amount: 780356.01
+  paperwork_amount: 780356.01
+  paperwork: award
+  verdict: matches
+  quote: 26. TOTAL AWARD (FOR GOVT. USE ONLY) ... $780,356.01
+  source: CW100261-Base Period-Contract Award-CW100261 - Salesforce Licenses.pdf, p.1 block 26 and p.12
+    base-year price table 'Total Price $780,356.01'; DF for Price Reasonableness p.1 'The Contract total
+    price is $780,356.01.'
+  note: 'Outside sample: site lists Option 1 also at $780,356.01, but the award''s p.12 option-year-1
+    table totals $834,979.55 (not checked against any OY1 mod).'
+- contract_number: CW101603
+  option_period: Base Period
+  site_amount: 651018.0
+  paperwork_amount: 651018.0
+  paperwork: award
+  verdict: matches
+  quote: 26. TOTAL AWARD (FOR GOVT. USE ONLY) $651,018
+  source: CW101603-Base Period-Contract Award-Delivery Order CW101603 executed on 09-13-22.pdf, p.1 block
+    26
+  note: 'No text layer; read from page image. Lines: command vehicle $650,018 + HGAC order processing
+    charge $1,000 = $651,018. One-time purchase (HGACBuy cooperative).'
+  read_from_image: true
+- contract_number: CW111272
+  option_period: Base Period
+  site_amount: 73000.0
+  paperwork_amount: 73000.0
+  paperwork: award
+  verdict: matches
+  quote: Total Amount of Contract $73,000.00
+  source: CW111272-Base Period-Contract Award-CWW111272 - Remote Sensing Study Contract executed..pdf,
+    p.1 (signed Nov 7, 2023); p.2 B.2 'firm fixed price', B.3.1 Base Period; DF Price p.1 'The estimated
+    contract total price is $73,000.00.'
+  note: Award PDF has no text layer; read pp.1-2 from page images. D&F (text) agrees. No base-period mods
+    posted.
+  read_from_image: true
+- contract_number: CW118849
+  option_period: Base Period
+  site_amount: 312000.0
+  paperwork_amount: 312000.0
+  paperwork: award
+  verdict: matches
+  quote: B.3.1 Base Year $312,000
+  source: CW118849-Base Period-Contract Award-CW118849- Senior Home Health Study Advisor (SME) TMG Signed.pdf,
+    p.1 'Total Amount of Contract $312,000' and p.4 summary table; price D&F p.1 agrees
+  note: Labor-hour estimate (1 SME x $150/hr x 2080 hrs). Every year priced at $312,000 so the site's
+    identical OY amounts are consistent. Base-period M0001 is a living-wage administrative mod with no
+    price change. The two D&Fs are captioned with another number, 'CW114695', in their file names.
+- contract_number: CW128697
+  option_period: Base Period
+  site_amount: 250000.0
+  paperwork_amount: 250000.0
+  paperwork: award
+  verdict: matches
+  quote: Not-To-Exceed (NTE) $250,000.00
+  source: CW128697-Base Period-Contract Award-CW128697CNI, LLC-DCIA HCE ECU executed.pdf, p.1; price reasonableness
+    D&F p.1 'Not to Exceed $250,000.00'
+  note: Human care agreement. The p.3 price schedule's base-year CLIN total is $341,745.00, above the
+    $250,000 NTE; site uses the NTE, which is what the cover page and D&Fs state.
+- contract_number: CW134924
+  option_period: Base Period
+  site_amount: 100000.0
+  paperwork_amount: 100000.0
+  paperwork: award
+  verdict: matches
+  quote: Not-To-Exceed (NTE) $100,000.00
+  source: CW134924-Base Period-Contract Award-CW134924 Children?s Legacy Theatre - executed.pdf, p.1 (signed
+    04/30/2026, term one year); DF for Responsibility & Price Reasonableness p.1 'not-to-exceed $100,000.00'
+  note: Award has no text layer; cover page read from image. D&Fs (text) agree. Human care agreement.
+  read_from_image: true
+- contract_number: CW108830
+  option_period: Base Period
+  site_amount: 50000.0
+  paperwork_amount: 50000.0
+  paperwork: award
+  verdict: matches
+  quote: NTE Grand Total for B.5.2 $50,000
+  source: CW108830-Base Period-Contract Award-Contract CW108830 - MBI- HCA SUD Lvl 1-2_ signed.pdf, p.2
+    (base-year table B.5.2); D&F Price p.1 'not-to-exceed $50,000'
+  note: Human care agreement; every year priced at NTE $50,000. The DF for use of HCA states $8,100,000,
+    an umbrella figure across the HCA program, not this award.
+- contract_number: CW113432
+  option_period: Base Period
+  site_amount: 192545.82
+  paperwork_amount: 192545.82
+  paperwork: award
+  verdict: matches
+  quote: 26. TOTAL AWARD (FOR GOVT. USE ONLY) $192,545.82
+  source: CW113432-Base Period-Contract Award-Fully Executed CW113432 MDC DGS and DCHD .pdf, p.1 block
+    26; p.2 CLIN table 'Total $192,545.82'
+  note: Task order for mobile data computers. The same PDF (p.13) includes the parent task order agreement
+    page showing 'Project Total To Date ... NTE $10,988,543.44'; site correctly uses the task order amount,
+    not that figure. Only document posted.
+- contract_number: CW124839
+  option_period: Base Period
+  site_amount: 97440.0
+  paperwork_amount: 97440.0
+  paperwork: award
+  verdict: matches
+  quote: Grand Total for Base Year (B.5.1) $97,440.00
+  source: CW124839-Base Period-Contract Award-Redacted Executed DCKA-2025-C-0039 TARAS2_2025.03.07_.pdf,
+    PDF p.4 (Section B p.2 of 46); base price D&F p.1 'Base Year $ 97,440.00'
+  note: 'Award has no text layer; Section B read from page image. Firm fixed price ($74,265) plus NTE
+    on-demand services ($23,175). Cover block 20 ''Amount'' is blank. Base-filed M001 exercises OY1 and
+    M002 extends OY1 by 30 days with zero funding; neither changes the base amount. Outside sample: site
+    lists Option 1 at $97,440.00, but the OY1 D&F says ''The estimated fair and reasonable price for Option
+    Year 1 is $102,312.00'' (M001 not read: no text layer).'
+  read_from_image: true
+- contract_number: CW122093
+  option_period: Base Period
+  site_amount: 800000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  source: 'documents table: 0 rows for CW122093; contracts table documents=0, contract_type ''Requirements'''
+  note: No documents posted for this contract on DC's site, so the $800,000 base amount cannot be checked.
+    Contract type on site is Requirements, so the figure is probably a ceiling (unverified).
+- contract_number: CW126001
+  option_period: Base Period
+  site_amount: 950000.0
+  paperwork_amount: 950000.0
+  paperwork: award
+  verdict: matches
+  quote: The District guarantees the minimum order for each contract in the amount of $10 for the base
+    year and each of the four (4) option years, if exercised. The maximum contract ceiling for each year
+    of the contract is $950,000.
+  source: CW126001-Base Period-Contract Award-CW126001 Development Innovation Systems C MOBIS fully executed
+    (002).pdf, p.4 (also p.9); D&F p.1 'The estimated fair and reasonable price is NTE $950,000.'
+  note: 'DCSS schedule slot: site shows the per-year ceiling, not the $10 guaranteed minimum.'
+- contract_number: CW127946
+  option_period: Base Period
+  site_amount: 250000.0
+  paperwork_amount: 250000.0
+  paperwork: award
+  verdict: matches
+  quote: 26. TOTAL AWARD (FOR GOVT. USE ONLY) ... Not-to-exceed $250,000
+  source: CW127946-Base Period-Contract Award-Exhibit A - Task Order Agreement CW127946 (July 2025).pdf,
+    p.1 block 26; p.8 'Base Year Total NTE Amount $250,000'; DF for Price p.1 'not-to-exceed $250,000'
+  note: 'Task order agreement: requirements CLINs NTE $200,000 plus cost-reimbursement NTE $50,000.'
+- contract_number: CW84512
+  option_period: Base Period
+  site_amount: 10000.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  site_equals: 'Not checkable against the posted paperwork: the site''s base row is a different award.
+    It is titled ''FY21 DCHR Court Reporting Services'', vendor NEAL R GROSS & CO INC, 0 documents. The
+    same vendor''s FY22 DCHR court reporting contract CW100833 also lists $10,000 for its base.'
+  quote: '(KPMG paperwork, for reference) ''Total Amount of Contract Shall Not Exceed $175,000.00''; M0001:
+    ''Increase the Not-To-Exceed amount of the contract for the Base Period from $175,000 by $167,000.00
+    to$342,000.00.'''
+  source: contracts table CW84512 Base Period row (listed=False, recovered_on 2026-10-12, award_date 2021-07-02,
+    documents 0); KPMG award 'CW84512-Option 4-Contract Award-Contract No. CW84512 KPMG Employment Tax
+    Services (executed)_Redacted.pdf' p.1 (signed 4/14/21), p.2 B.2 (image), p.10 F.1 'from date of award
+    through one year' (image); 'CW84512-Option 4-Modifications-M0001 BY KPMG (executed).pdf' p.1 (signed
+    6/17/21)
+  note: 'CW84512 is listed under two different awards. The Base Period row (2021-07-02 to 2022-07-01,
+    $10,000) is Neal R Gross court reporting and is no longer in DC''s site search (recovered record).
+    Options 1-4 are KPMG employment tax services, and every posted document is KPMG''s, filed under the
+    options. KPMG''s own base year (4/14/2021-4/13/2022, implied by award date and F.1) is not on the
+    site as a base period. Its paperwork amount was NTE $175,000, raised by M0001 to $342,000. Counted
+    as no_paperwork because nothing posted covers the Neal R Gross row. If the reviewer instead treats
+    the base row as KPMG''s base, it is ''differs'': site $10,000 vs paper $342,000 (award $175,000).
+    Probable site error either way: two awards under one contract number.'
+  read_from_image: true
+- contract_number: CW86852
+  option_period: Base Period
+  site_amount: 2501.0
+  paperwork_amount: null
+  paperwork: null
+  verdict: no_paperwork
+  quote: GRAND TOTAL $ [blank]; 'The Human Care Agreement is not a commitment to purchase any quantity
+    of a particular service' (B.4)
+  source: CW86852-Base Period-Contract Award-DCJM-2020-H-0002-06 Art and Soul Solutions, Inc HCA Signed
+    (executed) CW.pdf, p.1 block 9 (grand total blank, 'See Individual Task Orders'), pp.2-3 Section B
+    (rates by 29 DCMR 119.9(a), no dollar total); M00001-M00003 contain no dollar amounts
+  note: 'Rate-based DDS/RSA vocational-services HCA with no stated total or NTE, so nothing posted states
+    a base amount. $2,501 looks like a placeholder; the same value repeats for all four periods. Base
+    row is listed=False (recovered). Side note: base-filed M00002''s text names ''Human Care Agreement
+    (HCA) No. CW90005'', not CW86852, so it may be another provider''s mod filed here (not verified).'

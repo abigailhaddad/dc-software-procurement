@@ -1,0 +1,934 @@
+# Contracts worth a reviewer's attention for how they were awarded, read from
+# the District's own paperwork.
+#
+# These are not errors and not findings of wrongdoing. Each entry says what the
+# posted documents show about how the award (or its current period) was made,
+# quotes them, and names the document and page. DC's `market_type` field says
+# "Open" or "Set Aside" for nearly all of these, so it can't be used to find them
+# (see analysis/competition.py).
+#
+# How the list was built: analysis/review_leads.py nominated current contracts
+# whose document filenames mention sole source, emergency, letter contract or an
+# extension, or whose record looked odd; each was then read by hand. Contracts
+# not nominated were not read, so this is not a complete list of non-competitive
+# awards. Most nominated contracts turned out ordinary and are not listed.
+#
+# A contract can sit in more than one category. "read_from_image" means the PDF
+# had no usable text layer and the page was read as an image.
+
+checked: '2026-10-12'
+categories:
+  sole_source:
+    label: Sole source
+    means: >-
+      Awarded without competition to one vendor, citing D.C. Code § 2-354.04 unless the entry
+      says the citation could not be seen.
+  sole_source_past_final_option:
+    label: Sole-source extension past the last option
+    means: >-
+      The current period is not an option the contract provided for: it extends the contract
+      past its final option, sole source, citing § 2-354.04 and 27 DCMR 2005.2(b).
+  exempt_from_competition:
+    label: Exempt from competition
+    means: >-
+      Awarded without competition under D.C. Code § 2-354.13 (for example (8), maintenance
+      of existing software, or (2), a court order).
+  emergency:
+    label: Emergency procurement
+    means: Awarded under D.C. Code § 2-354.05.
+  letter_contract:
+    label: Letter contract
+    means: >-
+      Work began under an undefinitized letter contract (27 DCMR 2425) before the contract
+      was signed.
+  special_pilot:
+    label: Special pilot procurement
+    means: Awarded under D.C. Code § 2-354.08.
+  rider_or_cooperative:
+    label: Rider or cooperative purchase
+    means: >-
+      Bought through a cooperative agreement (D.C. Code § 2-354.11) or a rider clause on an
+      existing contract, rather than a new competition.
+  grew_after_award:
+    label: Grew or slipped after award
+    means: A large increase or a long delay after a non-competitive award.
+contracts:
+- contract_number: CW106514
+  categories:
+  - sole_source
+  summary: >-
+    DOEE's EMSL lab-testing contract (lead and asbestos samples) was awarded as a sole source
+    in 2023 after a solicitation drew no responses; EMSL could not bid because of problems
+    with its PASS vendor profile. Current Option 3 is an ordinary option.
+  quote: >-
+    Memo: "The intent to award a sole source was posted on www.ocp.gov for 10 days from January
+    9, 2023, to January 19, 2023, with no responses." CO email: "We advertised this procurement
+    but received no responses. The only lab with the necessary accreditation and the ability
+    to process the samples is EMSL. EMSL was unable to submit a bid in PASS during the solicitation
+    period due to problems with their vendor profile."
+  source: >-
+    CW106514-Option 1-D&Fs-DF Sole Source for Laboratory Services - Memo to File.pdf, pp.4-5
+    (pdftotext page breaks); CW106514-Option 3-Modifications-CW106514 M0004 - OY3 Lab Services
+    and Supplies - Executed.pdf, p.1
+  read_from_image: false
+  note: >-
+    The signed sole-source D&F itself is not posted, only the memo and email chain, so the
+    statutory citation can't be quoted (presumably 2-354.04, not confirmed). The memo misnumbers
+    the contract as 'CW06514'. The site's Base Period has no documents attached; all documents
+    are filed under the option periods.
+- contract_number: CW109527
+  categories:
+  - sole_source
+  summary: >-
+    DBH buys Cepheid COVID/flu/RSV PCR test kits for St. Elizabeths by sole source under 2-354.04
+    because Cepheid is the sole maker of the cartridges for DBH's existing GeneXpert systems;
+    current Option 2 is an ordinary option at $149,756.
+  quote: >-
+    D&F p.1: "D.C. Official Code §2-354.04, 27 DCMR 1304, 1700, 1701"; "Cepheid is currently
+    the sole manufacturer and distributor of Xpert® reagents and GeneXpert® systems, instruments,
+    and test kits."
+  source: >-
+    CW109527-Base Period-D&Fs-DF for Sole Source-Cepheid Covid-19 Test Kits-signed.pdf, pp.1-2;
+    CW109527-Option 2-Modifications-Exhibit A - MOD #0002 - Cepheid OY2 CW109527.pdf, p.1
+  read_from_image: false
+  note: >-
+    The D&F header names 'CONTRACT NO: CW108843', not CW109527. CW108843 is not in the contracts
+    table; probably an earlier number for the same procurement (not confirmed). The award's
+    B.2.1 cites 'Procurement Practices Reform Act § 2-354.05' (the emergency section), which
+    looks like a drafting error, since the D&F is a 2-354.04 sole source. The site's award_date
+    of 2023-07-19 precedes the D&F determination (8/4/2023); the award was signed by the CO
+    03/04/2024.
+- contract_number: CW110569
+  categories:
+  - sole_source
+  summary: >-
+    DMPED's Wharf Fish Market piers contract with Moffatt & Nichol (DCEB-2023-C-2005) was
+    awarded as a sole source under D.C. Code 2-354.04 in August 2023 for $235,831.
+  quote: >-
+    D&F p.1-2: 'The proposed contractor has the unique skills and abilities to perform this
+    technical and specialized service to DMPED.' ... 'this proposed contractor provided DMPED
+    with an inspection and structural analysis reports in 2010 and 2022 on these same Fish
+    Market Piers'. Determination (06-30-2023): 'the District is justified in using the sole
+    source method of procurement.'
+  source: >-
+    CW110569-Base Period-D&Fs-Signed DF for Sole Source -Piers _Moffatt .pdf pp.1-2 (page
+    images); CW110569-Base Period-Contract Award-Executed Contract-Wharf Insp-Repair-signed.pdf
+    p.1
+  read_from_image: true
+  note: >-
+    Sole-source D&F is a scan with no text layer; read from page images. It covers the original
+    base year (award to 9/30/2024) only; no D&F or modification for the later option years
+    is posted, so whether OY2/OY3 were justified separately could not be determined. The $0.00
+    for Option 2 (starts 2026-10-01) could not be explained from posted documents; no option-exercise
+    modification is posted. Also filed on this contract: an emergency D&F (D.C. Code 2-354.05,
+    signed March 14, 2024, $152,588, 90 days from 3/14/2024) for an 'Emergency Wharf Fish
+    Market Piers - Replacement Design Schematic Draft'; it cites the same contract no. DCEB-2023-C-2005,
+    and its $152,588 matches a separate DC listing, CW118092 (Moffatt & Nichol, 'Emergency
+    Replacement Design for the East Fish Market Pier at the Wharf', 2024-06-05 to 2024-06-30,
+    $152,588). The emergency D&F says 'West Pier'; the CW118092 title says 'East'. Not resolved.
+- contract_number: CW114593
+  categories:
+  - sole_source
+  summary: >-
+    DOEE's TMDL contract with LimnoTech was a sole source award under D.C. Code 2-354.04,
+    because LimnoTech built and runs the stormwater modeling tool. The flagged 'Extension
+    of Base' mods are three no-cost extensions that pushed the base period about seven weeks
+    past its end (Mar 19 to May 8, 2025).
+  quote: >-
+    D&F: "With ten years of experience with the IPMT ... LimnoTech is the only organization
+    not requiring an initial setup period." "The Notice of Intent to Award Sole Source Contracts
+    was posted on the OCP transparency portal from December 26, 2023, to January 5, 2024.
+    There was no response to the notice during the posting period." M0003: "Extend the base
+    period April 19, 2025, through May 8, 2025, in the amount of $0."
+  source: >-
+    CW114593-Base Period-D&Fs-Determination and Findings TMDL-ACPO signed 3-6-24.pdf pp.1-3;
+    CW114593-Option 1-Modifications-M0001/M0002/M0003 Extension of Base p.1
+  read_from_image: false
+  note: >-
+    The filename flag ('extension') missed that the whole award is a sole source. The D&F
+    says LimnoTech won the predecessor contracts competitively in 2012 and 2018, and was the
+    only respondent in 2018. The base pricing came from that prior contract, CW66809.
+- contract_number: CW115545
+  categories:
+  - sole_source
+  summary: >-
+    A Board of Elections sole-source D&F covers a one-time $732,500 purchase of 100 Runbeck/Lexmark
+    Sentio printers for the 2024 election cycle. The cited authority is D.C. Code 2-354.13(8),
+    the competition-exemption section, not 2-354.04. The contract also carries four license/support
+    option years.
+  quote: >-
+    "Runbeck is the sole provider of the current set of Lexmark Sentio Printers to include
+    firmware, patented software, scanners, associated components and other consumables." Minimum
+    need: "100 portable Lexmark Sentio printers with firmware only available form Runbeck
+    Election Services, Inc."
+  source: >-
+    CW115545-Base Period-D&Fs-Update RK 271617   DF  Sole Source - signed.pdf pp.1-2 (rendered)
+  read_from_image: true
+  note: >-
+    The D&F is headed 'Sole Source Procurement' and the determination refers to the sole source
+    method, but the authority it cites is 2-354.13(8). The D&F says nothing about the option
+    years. The model's concern about an 'election services company selling printers' is answered
+    by the contract: the printers are part of Runbeck's Ballot-on-Demand system (B.1).
+- contract_number: CW120818
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed sole source (D.C. Code § 2-354.04) for 75 parking spaces in the garage under
+    DOB's leased headquarters. The vendor name difference is explained by the D&F (SP Plus,
+    'formerly Central Parking').
+  quote: >-
+    D&F 4.C: "SP Plus Parking (formerly Central Parking) is the only parking garage in close
+    proximity to DOB's headquarters that has the space to accommodate seventy-five (75) vehicles."
+  source: >-
+    CW120818-Base Period-D&Fs-Fully Executed -DF Sole Source  DOB SP Parking Services - PE
+    102424.pdf pp.1-3 (rendered)
+  read_from_image: true
+  note: >-
+    The vendor name is not an error: the D&F itself ties SP Plus to Central Parking. The D&F's
+    $240,640.96 differs from the award by $10 (a typo in one of the two).
+- contract_number: CW122725
+  categories:
+  - sole_source
+  summary: >-
+    DOH awarded the ImageTrend licensure system as a sole source under D.C. Code 2-354.04;
+    the D&F estimated the price at $104,850, but the base year was awarded at $265,000.
+  quote: >-
+    D&F p.1: "D.C. Official Code §2-354.04, 27 DCMR§§ 1304, 1700, 1701"; "The estimated fair
+    and reasonable price shall not exceed $104,850." p.1-2: "ImageTrend™ is the only system
+    capable of providing an immediate off-the-shelf solution..."; "ImageTrend does not distribute
+    its source code and is the sole licensed manufacturer and the exclusive authorized seller
+    and reseller of these products."
+  source: >-
+    CW122725-Base Period-D&Fs-D&F Sole Source - ImageTrend-x.pdf, pp.1-2 (signed by CO 01-02-2025);
+    CW122725-Base Period-Contract Award-...ImageTrend Licensure Management System-x.pdf, p.2
+    (B.3.1); CW122725-Base Period-D&Fs-D&F Price Reasonableness - ImageTrend CW122725-x.pdf,
+    p.1
+  read_from_image: true
+  note: >-
+    Sole source applies to the original award (Jan 2025 D&F; award Sept 2025). The current
+    Option 1 is an option under that sole-source contract; no OY1 exercise modification is
+    posted. The gap between the D&F's $104,850 estimate and the $265,000 base price is not
+    explained in any posted document.
+- contract_number: CW122852
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed sole-source follow-on (D.C. Code § 2-354.04) to Crest Management for DMPED's
+    IRB program, justified by continuity since 2019. The D&F's estimated price was $200,000,
+    but the signed contract allows up to about $610k–$653k per year.
+  quote: >-
+    D&F 4.A: "Crest Management Solutions LLC, a CBE firm, has successfully provided these
+    services for DMPED since early 2019"; 4.C: "Should DMPED issue a competitive solicitation,
+    a new Contractor is unlikely to possess the knowledge necessary to provide continuity
+    of services"
+  source: >-
+    CW122852-Base Period-D&Fs-D&F for Sole Source - DCEB-2024-C-2006, approved 7-15-24.pdf
+    pp.1-2; CW122852-Base Period-Contract Award-Crest Mgmt, Contract No. DCEB-2024-C-2006,ex
+    12-9-24 .pdf p.1 and B.3 (pp.2-4)
+  read_from_image: false
+  note: >-
+    The site amounts are IDIQ maximums (ceilings), not obligations. The site's base of $609,569
+    is $1 over the contract's $609,568.00, a trivial difference. The predecessor contract
+    is CW76411 (Crest, IRB–PACE, listed Options 1-4 from 2020-10-01 to 2023-10-01). The D&F
+    does not say whether its $200,000 is annual or a total. No payments are recorded.
+- contract_number: CW122854
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed sole-source follow-on (D.C. Code § 2-354.04) to Bello, Bello & Associates for
+    IRB regulatory-compliance monitoring. The amounts match the contract's IDIQ maximums.
+    The D&F estimated $200,000 and contains stale text about 'FY20'.
+  quote: >-
+    D&F 4.A: "has successfully provided these services for DMPED since early 2019"; 4.B: "Howard
+    University (HU) which will be applying for another bond issuance in FY20 for a large power
+    plant project."
+  source: >-
+    CW122854-Base Period-D&Fs-D&F for-Sole Source Procurement, approved 7-15-24.pdf pp.1-2;
+    CW122854-Base Period-Contract Award-Bello Bello Assoc, DCEB-2024-C-2007, ex 12-10-24.pdf
+    p.1 and B.3
+  read_from_image: false
+  note: >-
+    A 2024 D&F that refers to an upcoming FY20 bond issuance suggests the text was reused
+    from the 2019 justification; that is my inference from the text. The predecessor is CW76635
+    (Bello, 2020–2024). Its Option 1 is listed on DC's site at $2,000,000 against $254k–$445k
+    for the other years. That contract is outside this batch and I did not check it. The amounts
+    here are ceilings; no payments are recorded.
+- contract_number: CW124839
+  categories:
+  - sole_source
+  summary: >-
+    The TARAS2 crash-analysis software contract was awarded as a sole source (cover: 'Sole
+    Source – CBE status'), and Option Year 1 has been extended in 30-day, zero-funding increments
+    rather than exercised for a full year.
+  quote: >-
+    M001: "The District hereby exercises Option Year One, extending the contract period of
+    performance by 30 days from March 10, 2026, through April 9, 2026." M002: "Extends the
+    contract period of performance by 30 days from April 9, 2026, through May 9, 2026 in Option
+    Year 1."
+  source: >-
+    Contract Award PDF p.2 (cover, image); CW124839-Base Period-Modifications-Executed M001
+    Exercise OY1_TARAS_2026.03.06_.pdf, p.1 (image); CW124839-Base Period-Modifications-Executed
+    M002 POP Extension_TARAS_2026.04.06.pdf, p.1
+  read_from_image: true
+  note: >-
+    No sole-source D&F is posted, so the statutory authority and justification can't be quoted;
+    the sole-source status comes from the cover page only. The 30-day extensions are within
+    the option period, not beyond the contract term, so they are not a bridge in the usual
+    sense. The OY1 PR D&F's footer reads 'D&F for Price Reasonableness for DCKA-2024-C-0003',
+    a different number from this contract (DCKA-2025-C-0039), probably template carry-over.
+- contract_number: CW125770
+  categories:
+  - sole_source
+  summary: >-
+    DDOT's Miss Utility contract (DCKA-2025-C-0045) is a sole-source award under 2-354.04,
+    justified in a D&F titled 'Sole Source Extension Modification' of predecessor CW79726
+    as a gap-filler, yet it was signed as a new base-plus-four-option contract worth $856,440.
+  quote: >-
+    D&F p.1: "DETERMINATION AND FINDINGS FOR A SOLE SOURCE EXTENSION MODIFICATION"; "Contract
+    No.: CW79726"; "D.C. Official Code § 2-354.04, 27 DCMR §§ 1304, 1700, 1701 and 2005.2(b)."
+    p.2: "...during a missing time gap between the expiration of the existing contract and
+    the execution of the new contract."
+  source: >-
+    CW125770-Base Period-D&Fs-Executed DF Sole Source Extension_2025.04.28.pdf, pp.1-2 (CPO
+    determination 4/28/2025); CW125770-Base Period-Contract Award-Redacted Executed DCKA-2025-C-0045...pdf,
+    p.1 (cover, image) and pp.3-4 (B.5.2, B.5.6)
+  read_from_image: true
+  note: >-
+    The D&F describes a bridge/extension of CW79726, but the paperwork filed under CW125770
+    is a new contract with four option years, and the current period is Option 1 of it. Whether
+    a separate competitive successor was ever awarded could not be determined. The D&F is
+    filed under the correct new contract but names the old contract number. CW79726 is listed
+    separately on DC's site (Option 1, 2021). Amount matches.
+- contract_number: CW125787
+  categories:
+  - sole_source
+  summary: >-
+    DOH's Credentia contract is a sole-source award under 2-354.04 for nurse-aide (CNA/HHA/MA-C)
+    certification exams and registry, justified because NCSBN designates Credentia as the
+    only approved NNAAP exam administrator.
+  quote: >-
+    "D.C. Official Code§ 2-354.04, 27 DCMR§§ 1304, 1700 and 1701"; "NCSBN has designated Credentia
+    Nurse Aide LLC as the sole entity approved to administer the NNAAP Exam, associated testing,
+    and administration services to candidates seeking licensure as CNAs and HHAs"
+  source: >-
+    CW125787-Base Period-D&Fs-DF Sole Source_Credentia Nurse Aide - signed.pdf, pp.1-2; CW125787-Base
+    Period-Contract Award-CW125787 - Credentia.pdf, p.2
+  read_from_image: false
+  note: >-
+    Resolves the vague title: it is the credentialing exam and registry service for Certified
+    Nurse Aide, Home Health Aide and Medication Aide-Certified. Amount matches.
+- contract_number: CW128007
+  categories:
+  - sole_source
+  summary: >-
+    DBH's psychosocial rehabilitation clubhouse human care agreement with Capital Clubhouse
+    was awarded as a sole source (2-354.04) because it is the only DBH-certified clubhouse
+    provider; Option 1 was exercised 9/2/2026 at the same $100,000 NTE.
+  quote: >-
+    D&F: "D.C. Official Code § 2-354.04, 27 DCMR §§ 1304, 1700 and 1701"; "Capital Clubhouse,
+    Inc., is currently the only Clubhouse specialty providers certified by DBH to provide
+    Psychosocial Rehabilitation Clubhouse services."
+  source: >-
+    CW128007-Base Period-D&Fs-Exhibit A1. DF for Sole Source-Clubhouse-signed.pdf, pp.1-2;
+    CW128007-Option 1-Modifications-Exhibit M. Modification M0001-Exercising OY1.pdf, p.1;
+    Contract Award (Exhibit J) p.1
+  read_from_image: false
+  note: Amounts and dates match.
+- contract_number: CW130113
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed sole source (D.C. Code § 2-354.04) to Catholic Charities' NAADAC-approved counselor-education
+    program to train up to 40 Certified Addiction Counselors I. The amount matches.
+  quote: >-
+    D&F 4.G: "The PCEP operated by Catholic Charities is therefore the only program in the
+    District with the required accreditation, NAADAC-approved educational programs with additional
+    rigorous didactic sessions to supplement the required learning and internship that can
+    provide the needed CAC I Certification training services in the District."
+  source: >-
+    CW130113-Base Period-D&Fs-Exhibit A3. Catholic Charities Sole Source DF -signed.pdf pp.1-3
+    (rendered); CW130113-Base Period-Contract Award-Exhibit K. CW130113 Sole source contract
+    - CAC I SIGNED.pdf p.1, B.3
+  read_from_image: true
+  note: >-
+    The D&F admits other NAADAC-approved providers exist in the DC area but says they offer
+    only partial training without internships (4.E–F). Notice of intent posted Feb 9, 2026,
+    with no response.
+- contract_number: CW131355
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed sole source (D.C. Code § 2-354.04) to ZICLA, a Barcelona firm, for proprietary
+    modular bus-boarding platforms (patented Vectorial system). The site's $645,810 matches
+    the signed base year.
+  quote: >-
+    D&F: "ZICLA is the sole manufacturer of the Vectorial® modular bus boarding platform system.
+    The products are protected by international patents, registered industrial designs, and
+    U.S. copyright registrations, and no third party is authorized to manufacture or replicate
+    them."
+  source: >-
+    CW131355-Base Period-D&Fs-Executed DF Sole Source FY26 ZICLA Bus Module_2026.03.10.pdf
+    pp.1-4; CW131355-Base Period-Contract Award-Redacted Executed DCKA-2026-C-0044 Bus Module
+    Platforms_V4_2026.07.30_.pdf p.1 (Type of Solicitation: Sole Source), Section B p.19 'B.8.6
+    Summary of Price Schedule' (PDF page 20)
+  read_from_image: true
+  note: >-
+    The contract PDF is image-only. I read the price summary from a rendered page and OCR'd
+    pages 3-22. 'Bus Module Platforms' means modular plastic bus-stop boarding platforms and
+    replacement parts for DDOT's 45 existing platforms. Earlier ZICLA work appears as CW116804
+    (DCKA-2021-C-0017, 2021, $500,000). Installation is bought separately (CW126754, First
+    Choice Construction, 'ZICLA Modular Bus Boarding Platforms Installations').
+- contract_number: CW132091
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed sole source under D.C. Code § 2-354.04. FESCO is described as the only authorized
+    Horton ambulance dealer for repair and maintenance. The base amount matches, and nearly
+    the whole $800,000 base NTE was paid within six months.
+  quote: >-
+    D&F 4.C: "Laake Enterprises Inc. dba FESCO is recognized as the sole exclusive authorized
+    dealer for the sale, service, parts, and warranty support of Horton ambulances in the
+    District of Columbia, Maryland, Virginia..."; CPO determination (Jan 12, 2026): "the District
+    is justified in using the sole source extension of contract as a method of procurement."
+  source: >-
+    CW132091-Base Period-D&Fs-Executed-D&F for Sole Source.pdf pp.1-3; CW132091-Base Period-Contract
+    Award-Executed-Contract CW132091 with Laake Enterprises dba FESCO.pdf p.1 and B.3 (pp.2-4);
+    contract_payments (PO739502 $324,949.78, PO740127 $469,324.54; 2026-05-06 to 2026-10-11)
+  read_from_image: false
+  note: >-
+    The D&F justifies one year, but the contract has four $800,000 option years, up to $4M
+    over five years. The D&F cites a $184/hour labor rate, while the contract's base labor
+    rate is $194/hour. The D&F calls the method a 'sole source extension of contract' even
+    though this is a new contract number. I did not check whether there was a predecessor
+    contract. Payments of $794,274.32 by 2026-10-11 leave about $5,725 under the base NTE
+    with six months left in the base period. I did not check whether any modification increased
+    the NTE (only 4 documents are posted).
+- contract_number: CW132340
+  categories:
+  - sole_source
+  - grew_after_award
+  summary: >-
+    DOH's blood-lead data exchange contract with CRISP DC was a sole source (2-354.04) at
+    $84,725, then expanded by $523,250 three months after award through a modification adding
+    new 'CEND notification' work for 137 conditions.
+  quote: >-
+    D&F p.1: "D.C. Official Code §2-354.04, 27 DCMR Sections 1304, 1700, 1701"; p.2: "Currently,
+    CRISP DC is the only system of its kind with clinical record lookup, event notifications,
+    family reunification, access to claims and clinical data at point of care..." M0001: "The
+    contractor shall develop PH Reporting CEND notifications to notify DC Health when CRISP
+    DC receives an ADT message with a diagnosis code associated with one of 137 conditions."
+  source: >-
+    CW132340-Base Period-D&Fs-Sole Source Determination and Findings - CRISP.r1 - signed.pdf,
+    pp.1-2 (p.2 image); CW132340-Base Period-Contract Award-CW132340 - CRISP DC-x.pdf, p.2
+    (decoded text); CW132340-Base Period-Modifications-M0001 - CW132340 CRISP-x.pdf, pp.1-2
+  read_from_image: true
+  note: >-
+    No separate sole-source D&F or price-reasonableness D&F is posted for the $523,250 add-on,
+    so whether one exists could not be determined. The new work (general public-health reportable-condition
+    alerts) goes beyond the blood-lead scope in the caption. No motive is implied.
+- contract_number: CW132794
+  categories:
+  - sole_source
+  summary: >-
+    DOH awarded MedStar Health Research Institute a $100,000 sole-source contract (2-354.04)
+    to run an after-hours HIV post-exposure prophylaxis (PEP) consultation hotline, on the
+    ground that MedStar runs the only dedicated PEP hotline in the DMV.
+  quote: >-
+    D&F p.1: "D.C. Official Code §2-354.04, 27 DCMR 1304, 1700, 1701"; p.2: "MedStar Health
+    is the only organization currently operating a dedicated PEP Hotline in the District of
+    Columbia, Maryland, and Virginia (DMV) region."
+  source: >-
+    CW132794-Base Period-D&Fs-DF for Sole Source - Medstar Health Research (PEP) Contract-x.pdf,
+    pp.1-3; CW132794-Base Period-Contract Award-CW132794 - Medstar Health - PEP Hotline Contract-x.pdf,
+    p.2
+  read_from_image: true
+  note: >-
+    The amount matches. The agency-head certification calls it a 'proposed sole source contract
+    extension', and the CO's signature is dated '2-4-2025' while the agency head's is 2/4/2026;
+    probably a year typo. Both are noted for completeness. The title is resolved: the hotline
+    gives evening and weekend consultations for people seeking HIV PEP.
+- contract_number: CW133944
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed sole source (D.C. Code § 2-354.04) to KCI for DDOT permit-review oversight of
+    DC Water's Clean Rivers tunnels. The signed contract widens the scope to 'DCCR and Mega
+    Projects' and prices the base above the D&F estimate.
+  quote: >-
+    D&F 4: "Recompeting the Requirement for the remaining phases of the DCCR project is not
+    feasible, as the successor contractor would not be in a position to accept responsibility
+    for KCI's historical and in-process work"; "For the above-stated reasons, the District
+    did not conduct a market survey." Contract C: "Other services related to DCCR and mega
+    projects as requested."
+  source: >-
+    CW133944-Base Period-D&Fs-KCI_DCKA-2025-C-0094_Sole Source DF SK SIGNED_TO CCO.pdf pp.1-3;
+    CW133944-Base Period-Contract Award-DC Clean Rivers_DCKA-2025-C-0094 Contract fully executed.pdf
+    p.1 (caption) and B (p.2), C
+  read_from_image: false
+  note: >-
+    The amount matches the contract. The D&F justifies only continuity on DCCR, and the 'Mega
+    Projects' scope has no separate justification in the D&F. The CPO determination is dated
+    December 4, 2025. The agency director's signature date is blank in the text layer. 'DCCR'
+    = DC Clean Rivers (DC Water's combined-sewer-overflow tunnel program).
+- contract_number: CW135692
+  categories:
+  - sole_source
+  summary: >-
+    DDOT awarded Nelson/Nygaard a $143,660.52 sole-source contract (2-354.04) to finish a
+    delivery micro-hub pilot it began under a prior contract that expired before the pilot
+    launched; the D&F estimated NTE $120,000.
+  quote: >-
+    D&F p.1: "D.C. Official Code § 2-354.04, 27 DCMR 1304, 1700 and 1701"; p.2: "due to unforeseen
+    external factors, including updates in District regulations to be enacted, the launch
+    of the micro-hub pilot was delayed. The work could not be completed before the contract
+    expired, and thus, a new contract is needed"; "Nelson Nygaard is the only vendor that
+    can perform the Requirement"
+  source: >-
+    CW135692-Base Period-D&Fs-Micro-Hub Study_Sole Source D&F - APPROVED.pdf, pp.1-4; CW135692-Base
+    Period-Contract Award-DCKA-2026-C-0088 - Microhub Feasibility Contract FULLY EXECUTED.pdf,
+    pp.1-2
+  read_from_image: true
+  note: >-
+    The site amount matches the award ceiling. The award is about $23,660 above the D&F estimate,
+    and no posted document explains the gap. The D&F does not identify the predecessor contract;
+    the only other Nelson/Nygaard record in the table is CW114679, an A/E IDIQ, but there
+    is no evidence linking the two. The CBE search found 80 firms in the NIGP code.
+- contract_number: CW136397
+  categories:
+  - sole_source
+  summary: >-
+    DDOT awarded Pennoni a $1,083,484.65 sole-source design contract (DCKA-2026-C-0028) for
+    the Anacostia Avenue Extension / Mayfair Community Access Road; DC's site lists it under
+    the placeholder title 'Untitled Contract Workspace (Procurement)'.
+  quote: >-
+    Sole source D&F p.1: 'The current contract expires on August 31, 2025, and transitioning
+    to a new vendor at this stage would result in the failure to complete the project scope
+    ... awarding a sole source contract to Pennoni is required to ensure successful project
+    completion.' p.2: 'The proposed contractor is the only vendor capable of completing this
+    project without shifting associated liabilities to the District'. Award p.2 B.1.1: 'to
+    provide Design for Anacostia Avenue Extension, Mayfair Community Access Road ... With
+    total amount of $1,083,484.65.'
+  source: >-
+    CW136397-Base Period-D&Fs-D&F signed Sole source.pdf pp.1-2 (CO cert dated July 30, 2025;
+    CPO determination 1/23/2026); CW136397-Base Period-Contract Award-Mayfair Extension Contract_fully
+    excuted.pdf pp.1-2, 12 (F.1); CW136397-Base Period-D&Fs-DF Price Reasonableness- Pennoni
+    Associates Inc.pdf p.1
+  read_from_image: true
+  note: >-
+    D&F p.2 read from page image (text layer only has the date). Site amount and dates match
+    the award (730 days from 6/2/2026). The sole-source D&F's estimated price ($884,558.83)
+    is about $199K lower than the award; the price-reasonableness D&F (5/15/2026) separately
+    finds $1,083,484.65 reasonable, so this is a difference between estimate and award, not
+    a site error. The work continues scope begun under task order DCKA-2017-T-0079 (MOD 4
+    and MOD 6). Placeholder title on DC's site is a data-quality gap, not a wrong value.
+- contract_number: CW97001
+  categories:
+  - sole_source
+  summary: >-
+    Confirmed 2021 sole source (D.C. Code § 2-354.04) to the incumbent since 2015 for FSA
+    and commuter-benefit administration. The current Option 4 is the last option, exercised
+    normally at $450,000. The annual NTE was raised from $240,750 to $450,000 by modification.
+  quote: >-
+    D&F: "they are currently the only one of two vendors, we found that provide both services,
+    FSA and CBP, and the only vendor that can continue to provide all the requirements seamlessly";
+    market survey: "Only one vendor provided both FSA and CBP administration"
+  source: >-
+    CW97001-Base Period-D&Fs-D&F Sole Source signed.pdf pp.1-3; Contract award p.1 & B.2;
+    CW97001-Option 4-Modifications-CW97001-MOD-0-BRI M0003 NTE.pdf p.1; ...MOD-4-BRI M13 OP4
+    FE.pdf p.1
+  read_from_image: false
+  note: >-
+    The site amounts match M0003, M0005, M0007, M0010 and M13. The D&F contradicts itself:
+    'one of two vendors' vs. 'only one vendor provided both'. The contract's original option
+    periods are calendar years (Jan–Dec), but the option exercises use Mar 3 – Mar 2, and
+    the site follows the exercises. I did not look for a D&F covering the 87% NTE increase
+    in M0003. Paid to date: $416,573.50.
+- contract_number: CW97894
+  categories:
+  - sole_source
+  summary: >-
+    DHCF's Pharmacy Benefit Manager contract was awarded sole source to the incumbent Magellan
+    (now Prime Therapeutics) under D.C. Code 2-354.04, justified as a stopgap 'while the District
+    prepares a solicitation for competition', yet all four option years have been exercised,
+    running it to July 19, 2027.
+  quote: >-
+    D&F 4.E: 'Due to time constraints, it is not feasible to conduct a competitive procurement,
+    award a contract, and conduct the five-month transition to a new Contractor prior to the
+    expiration date. The sole source award ensures continuation of service while the District
+    prepares a solicitation for competition and award upon Council approval.' D&F 4.B: 'Magellan
+    is the only contractor that can provide the required software'.
+  source: >-
+    CW97894-Base Period-D&Fs-DF for Sole Source (CW97894).pdf Signed.pdf pp.1-3; CW97894-Option
+    2-D&Fs-Determination and Finding for Letter Contract-signed.pdf; CW97894-Base Period-Contract
+    Award-Definitized Pharmacy Benefit Manager System.pdf p.1, F.1-F.2; CW97894-Option 3-Modifications-CW97894-M0007-
+    Name Change.pdf; CW97894-Option 3-Modifications-CW97894-M0014-Option Excerise.pdf
+  read_from_image: false
+  note: >-
+    The options were priced in the sole-source definitized contract, so their exercise is
+    under that same award; no new sole-source D&F for option years is posted, and none would
+    ordinarily be required. Whether a competitive solicitation was ever issued was not checked.
+    Vendor name on site matches the name-change mod.
+- contract_number: CW88488
+  categories:
+  - sole_source_past_final_option
+  summary: >-
+    The current period (Jan 1 to Oct 31, 2026) is a sole source extension beyond the contract's
+    last option, under D.C. Code 2-354.04 and 27 DCMR 2005.2(b). It keeps the Medicaid preferred-drug-list
+    and supplemental-rebate program running while DHCF finishes a new competitive solicitation.
+  quote: >-
+    D&F: "This contract is currently in option period four and is set to expire on December
+    31, 2025 with no additional option periods available to extend the contract. However,
+    the District is in the process of finalizing the new PDL & SR requirements for the competitive
+    solicitation." "No other contractor is approved by CMS to provide PDL & SR services thus
+    no market research was conducted." M0013: "Pursuant to D.C. Official Code §2-354.04 Sole
+    Source Procurements and 27 DCMR 2005.2(b) ... exercises the sole source extension for
+    the period of performance from January 1, 2026, through October 31, 2026, in the amount
+    of $923,942.60."
+  source: >-
+    CW88488-Option 4-D&Fs-DF Sole Source Extension CW88488-signed OP5.pdf pp.1-3; CW88488-Option
+    4-Modifications-M0013 - Exercise SSE.pdf p.1
+  read_from_image: false
+  note: >-
+    The site rounds the amount ($923,943 vs $923,942.60). The extension ends Oct 31, 2026,
+    19 days after today (2026-10-12); I didn't check whether a successor contract exists.
+    The site files the OP5 documents under 'Option 4'. The D&F text calls the contract 'CW88448'
+    and 'CW8848' in places (typos for CW88488). The contractor was Magellan Medicaid Administration
+    until a name-change mod (M0010).
+- contract_number: CW93695
+  categories:
+  - sole_source_past_final_option
+  summary: >-
+    The current period ('Option 5') is not an option. It is a sole-source extension (D.C.
+    Code § 2-354.04; 27 DCMR 2005.2(b)) past the contract's total term, to keep 988 crisis-line
+    access counselors working until a SAMHSA grant is spent.
+  quote: >-
+    D&F 4.B: "DBH is requesting this extension due to federal restrictions on drawing down
+    funds under the current 988 grant. SAMHSA has advised DBH to pursue an extension of their
+    current contract to ensure all allocated funds are spent." Mod 0010: "the District hereby
+    extends the term of the contract beyond the total term specified in the contract to maintain
+    uninterrupted essential 988 Access Counselor services"
+  source: >-
+    CW93695-Option 5-D&Fs-DF Sole Source SOS Human 9.9.26_signed.pdf pp.1-2 (rendered); CW93695-Option
+    5-Modifications-Modification 0010 - CW93695 -TO Extension.pdf p.1; Option 5-D&Fs-DF for
+    Contractor Responsiblity Sole Source.pdf p.1
+  read_from_image: true
+  note: >-
+    The amount matches. The end dates disagree: the sole-source D&F says Feb 15, 2027, while
+    Mod 0010, the responsibility D&F and DC's site say Mar 31, 2027. Notice of intent posted
+    Aug 27, 2026, with no response. DC's site labels the period 'Option 5' even though it
+    is a sole-source extension. The base contract (2021, temporary staffing, Aggregate Group
+    1) was not reviewed for how it was originally competed.
+- contract_number: CW101660
+  categories:
+  - exempt_from_competition
+  summary: >-
+    DBH awarded this Human Care Agreement to Mentor ABI (Neurorestorative) as exempt from
+    competition under D.C. Code 2-354.13(2), because a court ordered three Saint Elizabeths
+    patients treated at its facility. The flagged 'partial extension' mods are ordinary piecewise
+    exercises of OY1.
+  quote: >-
+    D&F: "This purchase is exempt from competition because the District has been court ordered
+    to provide inpatient treatment for the three District residents at the current facility
+    where they reside." "PPRA Section 413 (2) Competition Exemption for 'commodities or contractual
+    services if federal or District law prescribes with whom the District must contract.'"
+  source: >-
+    CW101660-Base Period-D&Fs-DF Exempt - 11-10-22.pdf pp.1-2; CW101660-Base Period-Contract
+    Award-CW101660 HCA for Mentor ABI - CO signed.pdf p.1; CW101660-Option 2-Modifications-M0005
+    / SIGNED M0004 p.1
+  read_from_image: false
+  note: >-
+    The D&F covers Nov 10, 2022 to Nov 9, 2023 (the base year). The same D&F is re-posted
+    under Option 2, and no new exemption D&F is posted for later years. No OY3 exercise mod
+    is posted, so I couldn't confirm the current period. The site's $991,500 matches the original
+    OY3 schedule. The site's Set Aside market_type conflicts with the exempt-from-competition
+    basis (known mismatch type).
+- contract_number: CW117729
+  categories:
+  - exempt_from_competition
+  - letter_contract
+  summary: >-
+    FEMS bought five years of firefighter turnout gear from Globe ($16,081,334.95) without
+    competition, citing the D.C. Code 2-354.13 exemption for 'copyrighted or patented materials',
+    and started it with a letter contract on Aug 2, 2024; only the letter contract, not a
+    definitized contract, is posted.
+  quote: >-
+    Letter contract para 4: 'The duration of the definitized contract shall be from August
+    2, 2024, through August 1, 2029. The District shall pay the Contractor ... a not-to-exceed
+    amount of $16,081,334.95.' Exemption D&F item 4 (checked): 'Copyrighted or patented materials
+    ... provided, that the materials are purchased directly from the owner of the copyright
+    or patent.' Determination: 'it is in the best interest of the DCPS to fulfill the existing
+    contracting need in accordance with DC Code § 2-354.13'.
+  source: >-
+    CW117729-Base Period-Contract Award-Ex_4.1 Globe letter contract CW117729.pdf pp.1-2 and
+    price schedule B.4; CW117729-Base Period-D&Fs-Ex_12 D&F Competition Exemption CW117729pdf.pdf
+    pp.1-2 (checkbox and signatures confirmed from page images)
+  read_from_image: true
+  note: >-
+    Site amount equals the five-year NTE, so it is the whole-contract ceiling shown as one
+    'Base Period', consistent with the paperwork (multi-year D&F also posted, not read). The
+    exemption D&F's determination names 'DCPS' rather than FEMS (apparent template carryover)
+    and is dated 08.08.24, six days after the letter contract was signed (Aug 2, 2024); the
+    contract specialist certification is dated 07/02/2024 and says supplies are 'available
+    from existing requirements contract', which does not match the box checked. No definitized
+    contract or modification is posted, but payments in contract_payments total $1,906,009.70
+    (17 vouchers, May-Oct 2025, PO721371 ordered 2025-01-23 for $1,928,408.60), above the
+    letter-contract NTE of $989,758.40, which suggests definitization or an extension happened
+    but isn't posted. Whether 'patented materials' properly fits turnout gear is a legal judgment,
+    not made here.
+- contract_number: CW118651
+  categories:
+  - exempt_from_competition
+  - letter_contract
+  summary: >-
+    DHCF's Maximus contract to run the Provider Data Management System was awarded without
+    competition under the D.C. Code 2-354.13(8) exemption (maintenance of existing proprietary
+    software), following a prior sole-source contract, and started on a letter contract while
+    Council approval was sought.
+  quote: >-
+    Exemption D&F 4.B: 'Maximus is the only Contractor that can provide the current services
+    due to having proprietary ownership of the District's PDMS. ... No other vendor has the
+    right to operate, alter, or maintain the Maximus PDMS code.' Letter-contract D&F 4: 'The
+    current sole source contract for the operations and maintenance of the Provider Data Management
+    System is set to expire on January 6, 2024.'
+  source: >-
+    CW118651-Base Period-D&Fs-D&F for Exempt from Competition - CW118651 - O&M PDMS.pdf pp.1-2;
+    CW118651-Base Period-D&Fs-D&F for Letter Contract - CW118651 - O&M PDMS.pdf pp.1-2; CW118651-Base
+    Period-Contract Award-CW118651 - Fully Executed Definitized Contract.pdf B.3, F.1-F.2
+  read_from_image: false
+  note: >-
+    The letter-contract D&F says the prior contract expires 'January 6, 2024', which looks
+    like a typo for 2025, since the new base starts January 7, 2025. The current period (Option
+    1) is an ordinary option exercise under the same exempt award. The DCMR cite (1703) and
+    exemption (8) were read from the D&F text; whether the exemption properly applies is a
+    legal judgment not made here.
+- contract_number: CW128868
+  categories:
+  - exempt_from_competition
+  summary: >-
+    DOES's FY26 LCP Tracker contract with Stockbridge Consulting was awarded without competition
+    under the PPRA section 413(8) exemption (maintenance and support of existing software);
+    it follows Stockbridge's five-year predecessor CW85587/CW85887.
+  quote: >-
+    D&F p.1: "District of Columbia Procurement Practices Reform Act, Section 413 (8) Maintenance
+    and support of existing software and technology to the extent that the creator of the
+    intellectual property is still protected and is the only source of the maintenance and
+    support of the existing software and technology."
+  source: >-
+    CW128868-Base Period-D&Fs-CW128868-D&F Exempt From Competition.pdf-Signed..pdf, pp.1-2;
+    CW128868-Base Period-Contract Award-CW128868-Audit and Compliance-LCP Tracker (Executed).pdf,
+    pp.1-3
+  read_from_image: true
+  note: >-
+    The D&F calls the contractor 'Stockbridge, Inc'; the award and mods say 'Stockbridge Consulting
+    LLC'. The D&F does not say whether Stockbridge is the creator of the LCP Tracker software
+    or a reseller. The 413(8) exemption assumes the source is the IP holder, and that could
+    not be verified. The predecessor's posted mods show $72,850 per year; the new contract
+    is $109,575 per year with a different CLIN structure.
+- contract_number: CW131688
+  categories:
+  - exempt_from_competition
+  summary: >-
+    The 'extension/bridge' flag is a false hit on the vendor name BridgeHead. The actual paperwork
+    is a D&F exempting this from competition under D.C. Code § 2-354.13(8), for archiving
+    and migrating United Medical Center's Meditech records after UMC closed.
+  quote: >-
+    D&F 4.d: "BridgeHead is the only entity that can provide the network connectivity between
+    MEDITECH and BridgeHead systems with test environment." 4.b: "With UMC closing on April
+    15, 2025, and transitioning its services to Cedar Hill Regional Medical Center, the District
+    had to migrate the patient data from the Meditech Magic Cloud base environment to the
+    Office of the Chief Technology Officer (OCTO) data center."
+  source: >-
+    CW131688-Base Period-D&Fs-DF Exempt from Competition.pdf pp.1-3; CW131688-Base Period-Contract
+    Award-BridgeHead Task Order.pdf p.1 and price schedule 4.1.1-4.1.5
+  read_from_image: false
+  note: >-
+    The amount matches. The D&F's 'minimum need' paragraph describes a different system ("O&M
+    of the ASO system, a claims and payment management system"), which looks like carried-over
+    text. Its determination cites the 1985 Act (§ 2-303.03) rather than the 2010 PPRA.
+- contract_number: CW132675
+  categories:
+  - emergency
+  summary: >-
+    DYRS awarded Homelife One an emergency contract for pre- and post-adjudication transitional
+    care homes for youth, citing D.C. Code 2-354.05: 90 days and NTE $190,858.32, later extended
+    to 120 days and $336,808.80.
+  quote: >-
+    B.1: "is contracting through this CW132675 emergency contract with Homelife One, LLC ...
+    pursuant to Human Care Agreement Amendment Act of 2000, effective (D.C. Law 13-155, D.C.
+    Code, §§ 2-354.05); 27 DCMR 1702." D.1.1: "The term of this Human Care Agreement shall
+    be for a period of 90 days from December 10, 2025." MOD 001: "To extend the contract term
+    from ninety days (90) to one hundred twenty days (120) (February 9, 2026 through June
+    9, 2026)."
+  source: >-
+    CW132675-Base Period-Contract Award-CW132675 Emergency Contract - Homelife1 Final 1.0
+    Executed.pdf pp.1-2 and Section D.1; CW132675-Base Period-Modifications-Executed MOD 001
+    Homelife 04 22 2026 - signed.pdf p.1
+  read_from_image: false
+  note: >-
+    No emergency D&F is posted, so the stated emergency justification couldn't be checked.
+    The documents disagree internally on dates: the 90-day term runs 'from December 10, 2025',
+    the award was signed 2/8/2026, and the mod says Feb 9 to Jun 9, 2026. The paperwork labels
+    the deal both a Human Care Agreement and an emergency contract, and cites 2-354.05, the
+    emergency procurement section, rather than 2-354.06, the HCA section. MOD 001's arithmetic
+    is off: $190,858.32 + $145,950.00 = $336,808.32, not $336,808.80.
+- contract_number: CW117942
+  categories:
+  - letter_contract
+  summary: >-
+    The Hillcrest supported-employment human care agreement began as a letter contract (June
+    1, 2024), was extended once to Sept 30, 2024, and was definitized Sept 30, 2024; the current
+    Option 2 is an ordinary option of the definitized HCA.
+  quote: >-
+    Letter Contract D&F: "27 DCMR Sections 1205.1 and 1205.2"; "the letter contract is necessary
+    for services to begin before the Office of Contracting and Procurement is able to receive
+    approval of all applicable compliance documents to finalize the contract file." M00001:
+    "Extend the period of performance for 61 days, from 8/1/2024 through 9/30/2024." M00002:
+    "The Letter Contract, dated May 30, 2024, is superseded by the definitive contract"
+  source: >-
+    CW117942-Base Period-D&Fs-D&F Letter Contract CO Signed.pdf, p.1-2; CW117942-Base Period-Modifications-M00001
+    Hillcrest to extend LC-Executed.pdf, p.1; CW117942-Base Period-Modifications-M00002 (Definitization)
+    - Hillcrest Children Ctr (executed).pdf, p.1; Contract Award PDF pp.1-3
+  read_from_image: false
+  note: >-
+    The HCA itself was set up under the human care agreement method (D&F for use of HCA cites
+    D.C. Code 2-354.06, 27 DCMR 1905.1), a pre-qualification method, not open competition.
+    The model's worry about a 'children's center' doing adult supported employment does not
+    hold up: the HCA says Hillcrest is a DBH-approved evidence-based supported employment
+    provider. Amount $182,000 matches the ceiling in the letter contract and the qualification
+    D&F. No option-exercise mods are posted for Option 1 or 2.
+- contract_number: CW125066
+  categories:
+  - letter_contract
+  summary: >-
+    The current (base) period began as a letter contract on Nov 26, 2025 under 27 DCMR 2425
+    while Council approval was pending. It is a task order under Tyler's Sourcewell cooperative
+    contract and was definitized Feb 3, 2026.
+  quote: >-
+    "This is a Letter Contract ... District is a member of Sourcewell under member number
+    71875. This is a task order contract using a cooperative agreement between Tyler and Sourcewell,
+    Contract# 060624-TTI." "the Contracting Officer may authorize an extension in accordance
+    with 27 DCMR § 2425.8"
+  source: >-
+    CW125066-Base Period-Contract Award-Letter Contract_Student Transportation GPS System_Tyler
+    Tech_executed 11.26.25.pdf, p.1
+  read_from_image: false
+  note: >-
+    Not a sole source. This is a cooperative-agreement order. The site lists no letter-contract
+    D&F for this contract, only Responsibility and Price Reasonableness D&Fs, so the stated
+    reason for using a letter contract couldn't be checked. It is now definitized, so the
+    letter contract is history.
+- contract_number: CW138197
+  categories:
+  - letter_contract
+  summary: >-
+    The current (and only) period is an undefinitized 45-day letter contract signed Aug 14,
+    2026, for an RFK campus energy master plan. The procurement was competitive. DC's site
+    shows the full $423,652 price, while the letter itself authorizes payment of only $211,826
+    until definitization.
+  quote: >-
+    Letter ¶4: "The District agrees to pay the Contractor an amount not to exceed $211,826.00";
+    ¶6: "The duration of this contract shall not exceed forty-five (45) days from the effective
+    date of this letter contract"; Price D&F: "determined fair and reasonable based on competition
+    and a comparison of the proposed prices and/or rates submitted from all of the offerors"
+  source: >-
+    CW138197-Base Period-Contract Award-SETTY _Associates Letter Contract_RFK PMO CW138197
+    08122026 Final - FE.pdf pp.1-4, Attachment B; CW138197 DF for Competitive Sealed Proposals
+    FE.pdf pp.1-2; DF for Price Reasonableness - Setty - FE 08142026.pdf p.1
+  read_from_image: false
+  note: >-
+    Not a site error: $423,652 is the full fixed price in Attachment B. The letter contract
+    does not state why a letter contract was used. The competitive-sealed-proposal D&F is
+    dated 8/20/2026, six days after the letter contract was signed, and its determination
+    says 'two-step bid'. The 45-day term (from Aug 14, 2026) ran out around Sep 28, 2026,
+    and no definitized contract or extension is posted. I could not determine whether it was
+    extended or definitized. The Contract Administrator named is from DOB, although the agency
+    is EOM/RFK PMO.
+- contract_number: CW95405
+  categories:
+  - letter_contract
+  - rider_or_cooperative
+  summary: >-
+    DCHR's Cigna dental contract began in January 2022 as a $999,000 letter contract under
+    27 DCMR 2425, extended twice to Sept 30, 2022 while awaiting Council approval, and the
+    award itself piggybacks on a City of Frederick, MD contract (No. 20-N); the current Option
+    4 is an ordinary option within the original 4-option term.
+  quote: >-
+    D&F 5.E: 'While the procurement team awaits DC City Council approval for the final contract,
+    a letter contract will be awarded'. D&F 5.A: 'This procurement utilizing the cooperative
+    procurement method per DC Official Code § 2-354.11'. M1: 'the term of the agreement is
+    extended for 60 days through May 31, 2022.' M2: 'the term of the agreement is extended
+    through September 30, 2022.'
+  source: >-
+    CW95405-Base Period-D&Fs-DF for Letter Contract - DCHR Cigna v2- FE.pdf pp.1-3 (CO 12/3/21,
+    DCPO 12/9/21); CW95405 M1 (signed 1/25/22), M2 (5/11/22), M3 (5/18/22), M4 (5/25/22);
+    CW95405-Base Period-Contract Award-Contract No. CW95405 Cigna Dental Without Attachments
+    (executed)_Redacted.pdf pp.1-3
+  read_from_image: false
+  note: >-
+    The 'extension' filename hits are the 2022 letter-contract extensions, not the current
+    period. Letter contract + extensions covered the base period only. Cooperative (piggyback)
+    award, not a sole source; D&F says Cigna 'has provided these services ... for more than
+    10 years'. Minor date/amount inconsistencies, not called errors: site base period is 2022-01-01
+    to 2022-12-31 at $16,000,000, while the definitized award says term from January 11, 2022
+    for one year with base NTE $16,562,066 (the letter contract's price schedule uses Jan
+    1-Dec 31, 2022). Site therefore has a gap 2023-01-01 to 2023-01-10 between base and Option
+    1. Option 1-4 amounts not checked against option modifications.
+- contract_number: CW99178
+  categories:
+  - letter_contract
+  - rider_or_cooperative
+  summary: >-
+    After DBH's competitive Narcan IFB was cancelled (one responsive bid at 100% above the
+    government estimate), DBH bought Narcan kits from Truax as a task order riding DOH's contract
+    CW58412 via the MWCOG rider clause, starting with a $980,100 letter contract in May 2022;
+    the current Option 4 ($4,995,000 NTE) matches the signed option exercise.
+  quote: >-
+    D&F 4: 'the contracting officer determined that it is in the District's best interest
+    to cancel the solicitation and procure these goods through Metropolitan Washington Council
+    of Governments Rider Clause, using the Department of Health (DOH) current Contract (CW58412)
+    award to Truax Patient Services'. M0009: 'exercises Option Year Four (OY4) in the not-to-exceed
+    amount of $4,995,000 for the period of performance from May 2, 2026, through May 1, 2027.'
+  source: >-
+    CW99178-Base Period-D&Fs-Exhibit A D&F-Truax Letter Contract .pdf pp.1-2; CW99178-Base
+    Period-Modifications-MOD-0001 Letter Contract Price-Truax-Narcan .pdf; CW99178-Option
+    4-Modifications-Contract Modification M0009-TO-OY4.pdf; CW99178-Option 4-Modifications-MOD-00010-TO
+    CW99178  .pdf p.1 and MOD-0011.pdf p.1 (both scans, read from page images)
+  read_from_image: true
+  note: >-
+    Site amount for the current period matches paperwork; not a site error. The letter contract
+    covered only the 2022 start. The letter-contract D&F has template carryovers: its determination
+    says 'General Services, Inc. and RSC Electrical & Mechanical Co. are responsible' (not
+    Truax) and cites 27 DCMR 2200.4 rather than 2425. The base task order PDF has no usable
+    text layer and was not read. Site base period shows $4,994,990 vs $4,995,000 for options
+    (a $10 difference; MOD-0002 'Revised Price' not read).
+- contract_number: CW104923
+  categories:
+  - special_pilot
+  - grew_after_award
+  summary: >-
+    OSSE bought 10 electric school buses from Phoenix ($3,681,490) without competition under
+    the special pilot procurement authority (D.C. Code 2-354.08), justified by the EPA rebate
+    deadline; the 24-month contract has since been extended twice, to Dec 5, 2026, with bus
+    delivery pushed from Oct 2024 to Oct 31, 2026.
+  quote: >-
+    Special pilot D&F 4(b): 'the District cannot reasonably acquire these buses through a
+    competitive solicitation. The potential damages to the District for using the competitive
+    procurement method would cause the District to miss the EPA's delivery deadline and thereby
+    lose federal funding.' M0002/M0004: 'This modification is required to provide the contractor
+    with more time for manufacturing and vehicle delivery due to the original subcontracted
+    company ceasing operations.'
+  source: >-
+    CW104923-Base Period-D&Fs-DF for a Special Pilot Procurement-Electric School Bus_executed
+    2-14-2023.pdf pp.1-2; CW104923-Base Period-Contract Award-CW104923 - Phoenix Electric
+    Sales, Inc_E-School Buses-FULLYEXECUTED.pdf Section B.1, B.3.1, F.1-F.2; ...Mod 2 - Extend
+    POP and Revise Schedule...pdf block 14 item 4; ...Modification-M0004_Fully Executed.pdf
+    block 14 item 4
+  read_from_image: false
+  note: >-
+    Site end date (2026-12-05) matches M0004, and the amount matches the award; no site error.
+    The extensions are no-cost time extensions of a contract with no options, now 42 months
+    against the original 24. The award's own F.3 deliverables table says 15 buses due Sept/Oct
+    2024 while the price schedule is for 10; the mods use 10. Whether the EPA rebate funding
+    survived the delays was not checked. Also note the D&F's stated rationale (EPA deadline)
+    versus delivery now two years late.
+
