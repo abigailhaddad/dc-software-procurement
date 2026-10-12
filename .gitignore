@@ -40,3 +40,6 @@ data/drift/
 data/logs/
 .wrangler/
 data/review_leads/leads.csv
+
+# Agent worktrees.
+.claude/worktrees/

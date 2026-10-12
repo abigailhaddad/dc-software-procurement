@@ -415,8 +415,14 @@ def summary(con: duckdb.DuckDBPyConnection) -> dict:
             sum(voucher_amount) FILTER (WHERE contract_number IS NULL) AS no_contract_paid,
             CAST(min(payment_date) AS VARCHAR) AS first_date, CAST(max(payment_date) AS VARCHAR) AS last_date,
             sum(voucher_amount) FILTER (WHERE contract_number IN (SELECT contract_number FROM contracts)) AS listed_contract_paid,
-            count(DISTINCT contract_number) FILTER (WHERE contract_number NOT IN (SELECT contract_number FROM contracts)) AS unlisted_numbers,
-            sum(voucher_amount) FILTER (WHERE contract_number NOT IN (SELECT contract_number FROM contracts)) AS unlisted_paid
+            count(DISTINCT contract_number) FILTER (WHERE contract_number NOT IN (SELECT contract_number FROM contracts)) AS unlisted_entries,
+            sum(voucher_amount) FILTER (WHERE contract_number NOT IN (SELECT contract_number FROM contracts)) AS unlisted_paid,
+            -- Entries with no digit ("N/A", "TBD", "small purchase") are typed text, not contract numbers.
+            count(DISTINCT contract_number) FILTER (WHERE contract_number NOT IN (SELECT contract_number FROM contracts)
+                AND regexp_matches(contract_number, '[0-9]')) AS unlisted_numbers,
+            count(DISTINCT contract_number) FILTER (WHERE NOT regexp_matches(contract_number, '[0-9]')) AS text_entries,
+            count(*) FILTER (WHERE NOT regexp_matches(contract_number, '[0-9]')) AS text_lines,
+            sum(voucher_amount) FILTER (WHERE NOT regexp_matches(contract_number, '[0-9]')) AS text_paid
             FROM payments"""),
         "contracts": one("""SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts,
             count(DISTINCT vendor) AS vendors, count(DISTINCT agency) AS agencies,

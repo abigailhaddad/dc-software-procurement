@@ -26,9 +26,15 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
+    <a href="start.html">Start here</a>
     <a href="index.html">Contracts</a>
     <a href="payments.html">Payments</a>
     <a href="purchase-orders.html">Purchase orders</a>
+    <a href="solicitations.html">Solicitations</a>
+    <a href="technology.html">Technology</a>
+    <a href="renewals.html">Renewals</a>
+    <a href="shared-vendors.html">Vendors across agencies</a>
+    <a href="how-dc-buys.html">How DC buys</a>
     <a href="gaps.html" aria-current="page">What DC's site leaves out</a>
     <a href="about.html">About this data</a>
   </nav>
@@ -194,7 +200,7 @@ async function agencies(asof) {
        ${esc(span.first_period)}, orders from fiscal year ${esc(span.first_po_fy)}, payments from ${esc(span.first_payment)}.`},
     {big: `${nothing.length}`, label: "appear in no section at all",
      text: `${nothing.map((a) => esc(a.displayName)).join(", ")}. DC's site links each to its own procurement page; their records are not
-       in the three sections copied here.`,
+       in the contracts, orders or payments copied here.`,
      covers: `As of ${asof}. Checked by name against contracts, orders and payments.`},
     {big: `${some.length}`, label: "have some contracts listed",
      text: `${some.map((a) => `${esc(a.displayName)} (${n(a.contracts)})`).join(", ")}. A count here can be a small part of what
@@ -296,7 +302,7 @@ async function orders(asof) {
 }
 
 // ---------- amounts (hand-checked sample) ----------
-function amounts() {
+function amounts(asof) {
   const a = AMOUNT_SAMPLE;
   cards("amount-cards", [
     {big: `${a.differs} of ${a.withPaperwork}`, label: "sampled option periods whose amount disagreed with the District's own paperwork",
@@ -306,6 +312,13 @@ function amounts() {
        to ${a.baseHigh}). This site shows base-period amounts only for that reason.`,
      covers: `A random sample of ${a.drawn} option periods with CW numbers, checked by hand on ${a.checked}. A sample, not a count of every period.`,
      link: ["Each sampled period, with its document", GITHUB + "amount_checks.yaml"]},
+    {big: "No field", label: "says how many option years a contract allows",
+     text: `DC's site lists an option period only once it has been exercised, and no field gives the number of options a contract has. So
+       from the site alone nobody can tell whether a contract ending soon can be renewed or must be re-bid or extended without bidding.
+       The renewals page fills this in only where we read the award paperwork by hand.`,
+     covers: `As of ${asof}. No option period on DC's site started after the pull date, and asking its site for the next period of 20
+       contracts returned nothing for any of them.`,
+     link: ["See the renewals page", "renewals.html"]},
   ]);
 }
 
@@ -438,7 +451,7 @@ async function main() {
   await agencies(asof);
   await payments(s, asof);
   await orders(asof);
-  amounts();
+  amounts(asof);
   await dropped(s, asof);
   await blanks(asof);
   await market(s, asof);

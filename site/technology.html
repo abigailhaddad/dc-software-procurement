@@ -33,10 +33,16 @@ h3.subhead{font-family:var(--head); font-size:1.02rem; margin:14px 0 4px}
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
+    <a href="start.html">Start here</a>
     <a href="index.html">Contracts</a>
     <a href="payments.html">Payments</a>
     <a href="purchase-orders.html">Purchase orders</a>
+    <a href="solicitations.html">Solicitations</a>
     <a href="technology.html" aria-current="page">Technology</a>
+    <a href="renewals.html">Renewals</a>
+    <a href="shared-vendors.html">Vendors across agencies</a>
+    <a href="how-dc-buys.html">How DC buys</a>
+    <a href="gaps.html">What DC's site leaves out</a>
     <a href="about.html">About this data</a>
   </nav>
 </header>
@@ -57,6 +63,10 @@ and the two would then count the same purchase twice.</p>
     under consulting (918) and library and subscription services (956); copier service turns up under computer maintenance (939); one
     contract for IBM software licences is coded as a professional licence renewal. How much this matters is measured
     <a href="#how-well">below</a>.</p>
+    <p>This is a known problem. In April 2019 the District's Inspector General found that OCTO had not reviewed about $152 million in
+    technology requisitions, partly because agencies could pick non-technology commodity codes and so skip its review
+    (<a href="https://oig.dc.gov/sites/default/files/Reports/OIG%20Final%20Report%20No.%2018-1-19TO%20--%20OCTO%20Oversight%20of%20Information%20Technolo..._0.pdf" target="_blank" rel="noopener">OIG report 18-1-19TO</a>;
+    see <a href="how-dc-buys.html#it">How DC buys</a>).</p>
     <p><strong>Each record is counted once.</strong> A contract can carry several codes. This page, like the rest of the site, uses the
     codes DC's search listing shows for each option period. An option period is in the set if any of its codes is in a ticked group, and
     it counts once. <span id="multi-note"></span> A purchase order has one code. A contract counts once in the totals however many option
@@ -167,47 +177,8 @@ and the two would then count the same purchase twice.</p>
 <script type="module">
 import {boot, q, manifest, LOCAL, DATASET_PAGE} from "./shared/db.js";
 import {esc, money, n} from "./shared/explorer.js";
+import {GROUPS} from "./shared/technology.js";
 
-// The code set. A group lists either whole three-digit classes (`classes`)
-// or single seven-digit item codes (`items`, with the description DC's
-// contract pages give). The page filters on these and nothing else.
-const GROUPS = [
-  {id: "software", label: "Software", on: true, classes: ["208", "209"],
-    what: "Packaged software and licences."},
-  {id: "services", label: "IT services", on: true, classes: ["920"],
-    what: "Programming, data processing, hosting, system support. The largest group, and the loosest: it also holds data and consulting work that only touches a computer."},
-  {id: "hardware", label: "Computer hardware", on: true, classes: ["204", "206", "207"],
-    what: "Computers, servers, peripherals, accessories. 207 also holds some office supplies."},
-  {id: "network", label: "Telecom and network equipment", on: true, classes: ["838", "839"],
-    what: "Network switches, wireless access points, phones; on DC's site also some internet and wireless service."},
-  {id: "upkeep", label: "Maintenance, repair and leasing", on: true, classes: ["939", "984"],
-    what: "Repair and leasing of computers. 939 also covers office, photographic and radio/TV equipment, so it includes copier service and camera systems."},
-  {id: "cloud", label: "Cloud software subscriptions", on: true, items: [
-      ["9563575", "SUBSCRIPTIONS, SOFTWARE LICENSING, CLOUD BASED"]],
-    what: "One item code in class 956, library and subscription services. Salesforce licences (through Carahsoft) and other cloud software are coded here."},
-  {id: "other_items", label: "Other computer, software and web items", on: true, items: [
-      ["8405670", "SOFTWARE, TELECONFERENCING SYSTEMS, AUDIO/VIDEO"],
-      ["8833200", "Computer Telephony Integration (CTI) Systems"],
-      ["9155133", "DEVELOPMENT SERVICES, INTERNET APPLICATION"],
-      ["9155143", "HOSTING SERVICES, WEB SITE"],
-      ["9159600", "Web Page Design and/or Management Services"],
-      ["9159630", "DESIGN AND MANAGEMENT SERVICES, WEB PAGE"],
-      ["9159634", "DEVELOPMENT SERVICES, WEB PAGE"],
-      ["9159640", "MAINTENANCE SERVICES, WEBSITE"],
-      ["9564022", "COMPUTER RELATED"],
-      ["9564912", "COMPUTER RELATED"],
-      ["9672700", "Computer Hardware Manufacturing Services"],
-      ["9672800", "Computer Software Manufacturing Services"],
-      ["9857400", "Software, Computer, Rental or Lease"]],
-    what: "Item codes in TV equipment, communications, library, production and leasing classes. The largest by dollars is software rental or lease, mostly orders from INTRALOT INC."},
-  {id: "consulting", label: "Computer consulting (class 918 items)", on: false, items: [
-      ["9182800", "Computer Hardware Consulting"],
-      ["9182810", "CONSULTANT SERVICES, COMPUTER SYSTEMS/NETWORKING"],
-      ["9182900", "Computer Software Consulting"],
-      ["9182930", "CONSULTING SERVICES RELATED TO THE IMPLEMENTATION OF SOFTWARE"],
-      ["9183000", "Computer Network Consulting"]],
-    what: "Unticked to start, because it is large and mixed. These codes carry the District's IT consulting and staffing orders (Computer Aid Inc. is the largest supplier), but some orders under them come from suppliers such as MAXIM HEALTHCARE SVCS and MIDTOWN PERSONNEL whose names suggest other work."},
-];
 // Looked at and left out, with why. Shown so readers can see the edge.
 const LEFT_OUT = [
   {code: "918", why: "Consulting of every kind. Its computer-consulting item codes are the group above."},

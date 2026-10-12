@@ -245,3 +245,17 @@ def test_solicitation_summary_matches_the_raw_file():
     assert s["doc_ids"] == sum(1 for r in raw if re.fullmatch(r"Doc[0-9]+", r["solicitationNumber"]))
     assert s["no_agency"] == sum(1 for r in raw if not [a for a in r["agencyNames"] if a is not None])
     assert s["open"] == sum(r["is_open"] for r in raw)
+
+
+def test_unlisted_payment_numbers_split_text_from_numbers():
+    # Recomputed from the raw JSON: an entry with no digit is typed text ("N/A"), not a number.
+    listed = {c["contractNumber"] for c in _raw("contracts_by_commodity.json")}
+    entries = [(p.get("contractNumber") or "").strip() for p in _raw("payments.json")]
+    entries = [e for e in entries if e]
+    text = [e for e in entries if not re.search(r"[0-9]", e)]
+    numbers = {e for e in entries if re.search(r"[0-9]", e) and e not in listed}
+    s = json.loads((PARQUET / "summary.json").read_text(encoding="utf-8"))["payments"]
+    assert s["text_lines"] == len(text)
+    assert s["text_entries"] == len(set(text) - listed)
+    assert s["unlisted_numbers"] == len(numbers)
+    assert s["unlisted_entries"] == s["unlisted_numbers"] + s["text_entries"]

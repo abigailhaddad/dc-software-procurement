@@ -28,10 +28,16 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
+    <a href="start.html">Start here</a>
     <a href="index.html">Contracts</a>
-    <a href="renewals.html" aria-current="page">Renewals</a>
     <a href="payments.html">Payments</a>
     <a href="purchase-orders.html">Purchase orders</a>
+    <a href="solicitations.html">Solicitations</a>
+    <a href="technology.html">Technology</a>
+    <a href="renewals.html" aria-current="page">Renewals</a>
+    <a href="shared-vendors.html">Vendors across agencies</a>
+    <a href="how-dc-buys.html">How DC buys</a>
+    <a href="gaps.html">What DC's site leaves out</a>
     <a href="about.html">About this data</a>
   </nav>
 </header>
@@ -100,14 +106,12 @@ So the <em>Options left</em> column is filled in only where someone has read the
 import {boot, q, downloadCsv, manifest} from "./shared/db.js";
 import {n, money, esc} from "./shared/explorer.js";
 import {PARQUET_DIR} from "./shared/db.js";
+import {TECH_CLASSES, TECH_CODES} from "./shared/technology.js";
 
-// What the "Technology only" box keeps: any commodity code in these NIGP
-// classes (first three digits), or any of these exact codes. 9563575 is
-// "Subscriptions, software licensing, cloud based", which sits in class 956
-// (library services), so the class list misses it; the rest of 956 is not tech.
-// The lead may swap both for the site's canonical list; nothing else reads them.
-const TECH_NIGP_CLASSES = ["204", "206", "207", "208", "209", "920", "939", "984"];
-const TECH_NIGP_CODES = ["9563575"];
+// What the "Technology only" box keeps: the technology page's default code
+// set (shared/technology.js), any code in those classes or any exact item code.
+const TECH_NIGP_CLASSES = TECH_CLASSES;
+const TECH_NIGP_CODES = TECH_CODES;
 
 const PAST_LAST = "Sole-source extension past the last option";
 const params = new URLSearchParams(location.search);
@@ -379,10 +383,9 @@ async function main() {
       "Already past the last option" from the hand-read <a href="index.html?of_interest=${encodeURIComponent(PAST_LAST)}${keep ? "&" + keep : ""}">contracts of interest</a>.
       Everything else is "Not known". Even on a last option the District can extend without bidding, as the contracts marked "Already past the last option" show.</li>
     <li>${n(cov.no_base)} contracts have no period labelled as the base period, so no base-period amount is shown for them.</li>
-    <li>"Technology only" keeps contracts with any commodity code in NIGP classes ${TECH_NIGP_CLASSES.join(", ")} (computer hardware, software,
-      data processing services, computer rental, and equipment repair; class 939 also covers office and radio equipment repair), or the code
-      ${TECH_NIGP_CODES.join(", ")} (software subscriptions and cloud licensing, which DC files under library services). Codes are the District's as its search listing gives them (a contract's own page there
-      sometimes lists more), from any period of the contract.</li>
+    <li>"Technology only" keeps contracts with any commodity code in NIGP classes ${TECH_NIGP_CLASSES.join(", ")}, or any of the item codes
+      ${TECH_NIGP_CODES.join(", ")}: the default set on the <a href="technology.html${keep ? "?" + keep : ""}">technology page</a>, which says what each code is and why it's in.
+      Codes are the District's as its search listing gives them (a contract's own page there sometimes lists more), from any period of the contract.</li>
   </ul>`;
 
   const agencies = await q(`SELECT DISTINCT unnest(string_split(agency, '; ')) AS a FROM renewals WHERE agency IS NOT NULL ORDER BY 1`);

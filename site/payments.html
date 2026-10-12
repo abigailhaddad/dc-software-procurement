@@ -18,9 +18,16 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
+    <a href="start.html">Start here</a>
     <a href="index.html">Contracts</a>
     <a href="payments.html" aria-current="page">Payments</a>
     <a href="purchase-orders.html">Purchase orders</a>
+    <a href="solicitations.html">Solicitations</a>
+    <a href="technology.html">Technology</a>
+    <a href="renewals.html">Renewals</a>
+    <a href="shared-vendors.html">Vendors across agencies</a>
+    <a href="how-dc-buys.html">How DC buys</a>
+    <a href="gaps.html">What DC's site leaves out</a>
     <a href="about.html">About this data</a>
   </nav>
 </header>
@@ -90,7 +97,8 @@ start({
       <li>Only the payment lines DC's site lists, dated ${esc(r.first)} to ${esc(r.last)}. The first and last fiscal years are partial.</li>
       <li>Only ${money(s.payments.listed_contract_paid)} of ${money(s.payments.paid)} (${pct(s.payments.listed_contract_paid, s.payments.paid)})
         is on lines carrying the number of a contract DC's site lists. ${pct(s.payments.no_contract, s.payments.lines)} of lines carry no
-        contract number, and others carry one of ${n(s.payments.unlisted_numbers)} numbers not on its contract list.</li>
+        contract number, ${n(s.payments.text_lines)} carry text such as "N/A" in its place, and others carry one of
+        ${n(s.payments.unlisted_numbers)} numbers not on its contract list.</li>
       <li>Nothing here can be checked against the District's own accounts; this is what DC's site shows.</li></ul>`,
   },
   tables: ["payments", "contracts", "nigp_classes"],

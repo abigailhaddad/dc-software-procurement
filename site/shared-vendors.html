@@ -34,10 +34,16 @@ td.details-toggle{cursor:pointer; color:var(--accent); font-weight:700; width:1.
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
+    <a href="start.html">Start here</a>
     <a href="index.html">Contracts</a>
     <a href="payments.html">Payments</a>
     <a href="purchase-orders.html">Purchase orders</a>
+    <a href="solicitations.html">Solicitations</a>
+    <a href="technology.html">Technology</a>
+    <a href="renewals.html">Renewals</a>
     <a href="shared-vendors.html" aria-current="page">Vendors across agencies</a>
+    <a href="how-dc-buys.html">How DC buys</a>
+    <a href="gaps.html">What DC's site leaves out</a>
     <a href="about.html">About this data</a>
   </nav>
 </header>
@@ -118,12 +124,13 @@ counts what DC's site lists; it can't tell you whether a single purchase would h
 
 import {boot, q, downloadCsv, manifest, LOCAL, DATASET_PAGE} from "./shared/db.js";
 import {esc, money, n} from "./shared/explorer.js";
+import {TECH_CLASSES, TECH_CODES} from "./shared/technology.js";
 
-// NIGP commodity classes the "technology only" toggle keeps. These are the
-// District's commodity codes, chosen by whoever entered the record; they are
-// listed by number so anyone can check the choice. A contract counts when any
-// of its codes is in this list; an order when its code is.
-const TECHNOLOGY_NIGP_CLASSES = ["204", "206", "207", "208", "209", "920", "939", "984"];
+// What the "technology only" toggle keeps: the technology page's default code
+// set (shared/technology.js). A contract counts when any of its codes is in a
+// listed class or is a listed item code; an order when its code is.
+const TECHNOLOGY_NIGP_CLASSES = TECH_CLASSES;
+const TECHNOLOGY_NIGP_CODES = TECH_CODES;
 
 // Searches suggested under the product box. Each was checked against the
 // 12 October 2026 pull to return contracts at more than one agency whose
@@ -131,6 +138,7 @@ const TECHNOLOGY_NIGP_CLASSES = ["204", "206", "207", "208", "209", "920", "939"
 const SUGGESTED_PRODUCTS = ["Salesforce", "Dell", "Xerox", "Microsoft", "Oracle", "Splunk", "Esri", "DocuSign"];
 
 const TECH_SQL = "[" + TECHNOLOGY_NIGP_CLASSES.map((c) => `'${c}'`).join(", ") + "]";
+const TECH_CODES_SQL = "[" + TECHNOLOGY_NIGP_CODES.map((c) => `'${c}'`).join(", ") + "]";
 const PARAMS = new URLSearchParams(location.search);
 const DATA = PARAMS.get("data");
 const KEEP = DATA ? "&data=" + encodeURIComponent(DATA) : "";
@@ -144,8 +152,8 @@ function nigpLabel(cls) { return NIGP[cls] ? `${cls} ${NIGP[cls]}` : String(cls)
 
 // The filtered source rows every query starts from. tech is a boolean.
 function sources(tech) {
-  return `c AS (SELECT * FROM contracts ${tech ? `WHERE list_has_any(nigp_classes, ${TECH_SQL})` : ""}),
-p AS (SELECT * FROM purchase_orders ${tech ? `WHERE nigp_class IN (SELECT unnest(${TECH_SQL}))` : ""}),
+  return `c AS (SELECT * FROM contracts ${tech ? `WHERE list_has_any(nigp_classes, ${TECH_SQL}) OR list_has_any(nigp_codes, ${TECH_CODES_SQL})` : ""}),
+p AS (SELECT * FROM purchase_orders ${tech ? `WHERE nigp_class IN (SELECT unnest(${TECH_SQL})) OR nigp_code IN (SELECT unnest(${TECH_CODES_SQL}))` : ""}),
 ag AS (SELECT vendor, unnest(string_split(agency, '; ')) AS agency FROM c WHERE agency IS NOT NULL
        UNION SELECT supplier AS vendor, agency FROM p)`;
 }
@@ -234,10 +242,10 @@ async function renderVendors() {
   const f = currentFilters();
   writeUrl();
   document.getElementById("tech-note").textContent = f.tech
-    ? `Counting only contracts with a commodity code in NIGP class ${TECHNOLOGY_NIGP_CLASSES.join(", ")}, and orders whose code is in one of them: ` +
-      TECHNOLOGY_NIGP_CLASSES.map(nigpLabel).join("; ") + ". A contract with several codes counts, with its whole base amount, if any one is on the list. " +
-      "Codes are chosen by whoever entered the record, so some technology purchases carry other codes and are left out. For example, " +
-      "code 956-35-75, \"Subscriptions, software licensing, cloud based\", is in class 956 (library services), which isn't on the list."
+    ? `Counting only contracts with a commodity code in NIGP class ${TECHNOLOGY_NIGP_CLASSES.join(", ")} or item code ${TECHNOLOGY_NIGP_CODES.join(", ")}, ` +
+      "and orders whose code is: the default set on the technology page, which says what each code is. " +
+      "A contract with several codes counts, with its whole base amount, if any one is on the list. " +
+      "Codes are chosen by whoever entered the record, so some technology purchases carry other codes and are left out."
     : "";
   const {sql, binds} = tableQuery(f);
   const rows = await q(sql, binds);

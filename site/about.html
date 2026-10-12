@@ -17,9 +17,16 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
+    <a href="start.html">Start here</a>
     <a href="index.html">Contracts</a>
     <a href="payments.html">Payments</a>
     <a href="purchase-orders.html">Purchase orders</a>
+    <a href="solicitations.html">Solicitations</a>
+    <a href="technology.html">Technology</a>
+    <a href="renewals.html">Renewals</a>
+    <a href="shared-vendors.html">Vendors across agencies</a>
+    <a href="how-dc-buys.html">How DC buys</a>
+    <a href="gaps.html">What DC's site leaves out</a>
     <a href="about.html" aria-current="page">About this data</a>
   </nav>
 </header>
@@ -47,16 +54,16 @@
   <p class="intro">The <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> (contracts.ocp.dc.gov)
   is the District's public site for its contracting records. In its own words, it "was created by the Office of Contracting and
   Procurement (OCP) … as a public clearinghouse for all information related to the District Government's contracting and procurement
-  efforts." Anyone can search it; this site keeps a copy of three of its sections so they can be filtered, totalled and kept after the
-  site drops them.</p>
+  efforts." Anyone can search it; this site keeps a copy of four of its sections so they can be filtered and totalled, and, for contracts,
+  orders and payments, kept after the site drops them.</p>
   <div class="tablewrap" style="max-height:none"><table class="plain">
     <thead><tr><th>Section of contracts.ocp.dc.gov</th><th>Here?</th></tr></thead>
     <tbody>
       <tr><td><a href="https://contracts.ocp.dc.gov/contracts/search">Contracts</a></td><td>Yes: the <a href="index.html">contracts</a> page, with each contract's attached documents</td></tr>
       <tr><td><a href="https://contracts.ocp.dc.gov/purchase/search">Purchase Orders</a></td><td>Yes: the <a href="purchase-orders.html">purchase orders</a> page</td></tr>
       <tr><td><a href="https://contracts.ocp.dc.gov/payments/search">Payments</a></td><td>Yes: the <a href="payments.html">payments</a> page</td></tr>
-      <tr><td><a href="https://contracts.ocp.dc.gov/solicitations/search">Solicitations</a></td><td>No. They are archived with the rest of the data but not shown here.</td></tr>
-      <tr><td><a href="https://contracts.ocp.dc.gov/forecast/search">Forecast</a></td><td>No</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/solicitations/search">Solicitations</a></td><td>Yes: the <a href="solicitations.html">solicitations page</a>. Open solicitations and the yearly archive from fiscal year 2013. Each pull replaces the last, so one DC's site drops is not kept.</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/forecast/search">Forecast</a></td><td>No. It is not pulled.</td></tr>
       <tr><td><a href="https://contracts.ocp.dc.gov/agencies">Independent Agencies</a></td><td>No. This is its list of
         "Non OCP Agencies": ones "Subject to the Procurement Practices Reform Act of 2010 (PPRA) and Independent from the CPO's Authority",
         "Exempt from the PPRA and CPO's Authority", or with "Limited Applicability of the PPRA". The CPO is the Chief Procurement
@@ -212,7 +219,7 @@ async function main() {
 
   const tables = Object.keys(cols);
   const tabs = document.getElementById("col-tabs");
-  const TAB_LABELS = {contracts: "Contracts", documents: "Documents", purchase_orders: "Purchase orders", payments: "Payments", nigp_classes: "NIGP classes"};
+  const TAB_LABELS = {contracts: "Contracts", documents: "Documents", purchase_orders: "Purchase orders", payments: "Payments", nigp_classes: "NIGP classes", solicitations: "Solicitations"};
   tabs.innerHTML = tables.map((t, i) => `<button role="tab" data-t="${t}" aria-selected="${i === 0}">${esc(TAB_LABELS[t] || t)}</button>`).join("");
   const showCols = (t) => {
     for (const b of tabs.querySelectorAll("button")) b.setAttribute("aria-selected", b.dataset.t === t);

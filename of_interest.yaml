@@ -37,8 +37,9 @@ categories:
     label: Exempt from competition
     means: >-
       The District didn't have to ask others to bid because the law exempts this kind of
-      purchase, for example support for software it already owns, patented equipment, or a
-      service a court ordered.
+      purchase, for example support for software it already owns from the only company that
+      can provide it, patented items bought from the patent owner, or a purchase where law
+      says whom the District must contract with (in one entry here, a court order).
     law: D.C. Code § 2-354.13
   emergency:
     label: Emergency procurement
@@ -55,8 +56,8 @@ categories:
   special_pilot:
     label: Special pilot procurement
     means: >-
-      Bought without the usual bidding under a rule that lets the District try out something
-      new on a small scale.
+      Bought without the usual bidding under a law for unusual or unique situations, such as
+      meeting a new District need or obtaining a new technology.
     law: D.C. Code § 2-354.08
   rider_or_cooperative:
     label: Rider or cooperative purchase

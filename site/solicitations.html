@@ -24,10 +24,16 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
+    <a href="start.html">Start here</a>
     <a href="index.html">Contracts</a>
     <a href="payments.html">Payments</a>
     <a href="purchase-orders.html">Purchase orders</a>
     <a href="solicitations.html" aria-current="page">Solicitations</a>
+    <a href="technology.html">Technology</a>
+    <a href="renewals.html">Renewals</a>
+    <a href="shared-vendors.html">Vendors across agencies</a>
+    <a href="how-dc-buys.html">How DC buys</a>
+    <a href="gaps.html">What DC's site leaves out</a>
     <a href="about.html">About this data</a>
   </nav>
 </header>
@@ -151,7 +157,7 @@ await start({
     agency: {label: "Agency", from: "agencyNames on DC's site; abbreviations filled in from agency_names.yaml.", filter: "multi",
       expr: "coalesce(agency, '(blank)')", listExpr: "string_split(coalesce(agency, '(blank)'), '; ')",
       optionExpr: "unnest(string_split(coalesce(agency, '(blank)'), '; '))"},
-    market_type: {label: "Market type", from: "marketType on DC's site, as typed (spellings vary). 'Open' means any business may bid; 'Set Aside' means bidding is limited to small businesses certified by the District.",
+    market_type: {label: "Market type", from: "marketType on DC's site, as typed (spellings vary). 'Open' means any business may bid; 'Set Aside' means bidding is limited to District-certified businesses, usually small business enterprises (D.C. Code § 2-218.44; see How DC buys).",
       filter: "multi", expr: "coalesce(market_type, '(blank)')"},
     status: {label: "Open or closed", from: "Open: listed as open by DC's site on the pull date. Closed: from its archive.", filter: "multi",
       expr: "CASE WHEN is_open THEN 'Open' ELSE 'Closed' END"},
