@@ -178,17 +178,27 @@ def hydrate(raw_dir: Path = RAW_DIR, repo_id: str = REPO_ID) -> list[str]:
     """
     from huggingface_hub import hf_hub_download
 
+    import shutil
+    from tempfile import TemporaryDirectory
+
     _load_dotenv()
     fetched = []
-    for name in FILES:
-        if (raw_dir / name).exists():
-            continue
-        cached = hf_hub_download(
-            repo_id, f"archive/{name}", repo_type="dataset", token=os.environ.get("HF_TOKEN")
-        )
-        raw_dir.mkdir(parents=True, exist_ok=True)
-        (raw_dir / name).write_bytes(Path(cached).read_bytes())
-        fetched.append(name)
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    # Downloaded into a local directory, not the hub cache: a cached copy would
+    # keep the ~350MB that prune exists to free.
+    with TemporaryDirectory(dir=raw_dir.parent) as tmp:
+        for name in FILES:
+            if (raw_dir / name).exists():
+                continue
+            path = hf_hub_download(
+                repo_id,
+                f"archive/{name}",
+                repo_type="dataset",
+                token=os.environ.get("HF_TOKEN"),
+                local_dir=tmp,
+            )
+            shutil.move(path, raw_dir / name)
+            fetched.append(name)
     return fetched
 
 
