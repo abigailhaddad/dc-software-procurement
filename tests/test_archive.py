@@ -102,3 +102,13 @@ def test_purchase_order_revisions_are_one_order():
     from dcprocure.pull import _po_base
 
     assert _po_base("PO736374-V4") == _po_base("PO736374-V5") == _po_base("PO736374") == "PO736374"
+
+
+def test_solicitation_years_run_through_the_current_fiscal_year():
+    from datetime import date
+
+    from dcprocure.pull import solicitation_years
+
+    assert solicitation_years(date(2026, 9, 30))[-1] == "FY2026"
+    assert solicitation_years(date(2026, 10, 1))[-1] == "FY2027"
+    assert solicitation_years(date(2026, 10, 1))[0] == "FY2013"

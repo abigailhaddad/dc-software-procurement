@@ -314,6 +314,13 @@ def pull_payments(client: DCProcurementClient, out_dir: Path = RAW_DIR) -> Snaps
     )
 
 
+def solicitation_years(today: date | None = None) -> list[str]:
+    """FY2013 through the current fiscal year, which starts on 1 October."""
+    today = today or date.today()
+    current = today.year + 1 if today.month >= 10 else today.year
+    return [f"FY{y}" for y in range(2013, current + 1)]
+
+
 def write_manifest(snapshots: list[Snapshot], out_dir: Path = RAW_DIR) -> None:
     """Record what was pulled, when, so an analysis can cite its snapshot."""
     _write(
@@ -391,7 +398,7 @@ def pull_all(out_dir: Path = RAW_DIR, all_classes: bool = False) -> list[Snapsho
         # before that. Those earlier years are the portal starting to keep
         # records, not the District pausing, so FY2013 is where the usable
         # history starts and there is no reason to stop at FY2016.
-        years = [f"FY{y}" for y in range(2013, 2027)]
+        years = solicitation_years()
         snapshots.append(pull_solicitations(client, years, out_dir))
 
         snapshots.append(pull_payments(client, out_dir))
