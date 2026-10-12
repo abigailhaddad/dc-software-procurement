@@ -76,6 +76,7 @@ drift:
 
 test:
 	uv run python tests/test_documents.py
+	uv run --with pytest python -m pytest -q tests/test_archive.py
 	uv run python tests/eval_labels.py
 	uv run python tests/eval_delivery.py
 
@@ -104,10 +105,12 @@ rates:
 ocr:
 	uv run python analysis/ocr_awards.py
 
-# Caps itself at 400 downloads and caches their text, so a repeat run is free.
-# --check-duplicates redoes the byte-hash test behind the deduplication.
+# --report reads every eligible modification already cached and fetches nothing,
+# so the sample does not move between weekly runs. Without it the script draws
+# and downloads up to 400. --check-duplicates redoes the byte-hash test behind
+# the deduplication.
 modifications:
-	uv run python analysis/modifications.py
+	uv run python analysis/modifications.py --report
 
 h1b:
 	uv run python analysis/pull_h1b.py

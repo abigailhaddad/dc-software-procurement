@@ -102,6 +102,10 @@ OUT = ROOT / "data" / "reseller_layer"
 #: of the DC fiscal year, so a full-year FY2026 reads as a collapse.
 WINDOW_MONTHS = tuple(m for m in range(1, 13) if m != 9)
 
+# The same pinned decade as analysis/trends.py, for the same reason: a pull made
+# after 1 October carries a stub of the new fiscal year.
+FIRST_FY, LAST_FY = 2017, 2026
+
 #: Companies whose DC technology work is selling other companies' products.
 #: The value is the evidence: products named in this vendor's own DC contract
 #: titles, or the firm's line of business where it is a national distributor.
@@ -250,6 +254,7 @@ def tagged_payments() -> pd.DataFrame:
     frame["month"] = pd.to_datetime(frame.payment_date).dt.month
     frame["in_window"] = frame.month.isin(WINDOW_MONTHS)
     frame["fy"] = frame.fiscal_year.astype("Int64")
+    frame = frame[frame.fy.between(FIRST_FY, LAST_FY)].copy()
     frame["vendor_key"] = frame.po_vendor.map(parse.normalize_vendor)
     return frame
 

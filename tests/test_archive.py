@@ -93,7 +93,7 @@ def test_restore_from_snapshot_adds_only_missing_periods(tmp_path):
     search = json.loads((raw / "contracts_by_commodity.json").read_text())
     assert result["periods_restored"] == 1
     assert [d["id"] for d in details] == ["A", "B"] and details[1]["listed"] is False
-    assert search[1]["matched_classes"] == ["208"]
+    assert search[1]["matched_classes"] == ["208"]  # the snapshot row, whole
     # Restored, so no longer set aside.
     assert json.loads((raw / "contract_details_older_periods.json").read_text()) == []
 

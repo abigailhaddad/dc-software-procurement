@@ -1260,7 +1260,16 @@ def main() -> None:
               dict(Counter(d["tier"] for d in select_for_download(all_docs, args.limit))))
         return
 
-    selected = select_for_download(all_docs, args.limit)
+    if args.report:
+        # Report on what has been read, not on a fresh draw. The draw shuffles
+        # the sorted contract list with a fixed seed, so one new contract
+        # reorders all of it: re-drawing each week pushed documents already
+        # read out of the 400 in favour of ones never downloaded, and "D&F
+        # documents read" fell from 294 to 226 across five weekly runs with
+        # nothing lost. The cache is the sample.
+        selected = [d for d in all_docs if cached_text(d["document_id"]) is not None]
+    else:
+        selected = select_for_download(all_docs, args.limit)
     doc_rows = read_documents(selected, download=not args.report, limit=args.limit,
                               ocr=not args.no_ocr, ocr_limit=args.ocr_limit)
     contract_rows = contract_records(doc_rows, all_docs, contracts, details, attachment_counts)

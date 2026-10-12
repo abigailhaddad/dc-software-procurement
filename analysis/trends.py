@@ -72,6 +72,14 @@ OUT = ROOT / "data" / "trends"
 # everywhere is the only way to compare the ten years to each other.
 WINDOW_MONTHS = tuple(m for m in range(1, 13) if m != 9)
 
+# The decade every figure here describes. Pinned, not read off the data: a pull
+# made after 1 October carries a few days of the new fiscal year, and letting
+# that in turned "ten years" into eleven. The 12 October 2026 pull held 12 days
+# of FY2027, which made a stub year the most concentrated "year" since FY2018
+# (74.7%) and left 3 of the 9 lock-in vendors "still being paid". Move it when
+# a whole new year is in hand, and restate.
+FIRST_FY, LAST_FY = 2017, 2026
+
 
 def tagged_payments() -> pd.DataFrame:
     """Payments with a commodity class attached, plus the comparability flags.
@@ -86,6 +94,7 @@ def tagged_payments() -> pd.DataFrame:
     frame["in_window"] = frame.month.isin(WINDOW_MONTHS)
     frame["it_core"] = frame.nigp_class.isin(IT_CORE)
     frame["fy"] = frame.fiscal_year.astype("Int64")
+    frame = frame[frame.fy.between(FIRST_FY, LAST_FY)].copy()
     frame["vendor_key"] = frame.vendor.map(parse.normalize_vendor)
     return frame
 

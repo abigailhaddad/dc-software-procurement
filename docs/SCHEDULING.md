@@ -94,7 +94,7 @@ so it is a decision someone makes after reading the drift report -- which is why
 
 **Editing `classifier_config.yaml` invalidates the entire classification cache.**
 The cache key is (model, config fingerprint, sample count, record fields), so a
-one-word prompt edit re-classifies all 4,013 contracts rather than the handful
+one-word prompt edit re-classifies all 4,109 contracts rather than the handful
 that are new. Raising `LLM_SAMPLES` does the same thing, for the same reason: a
 one-draw label and a majority-of-three label are different measurements and are
 not mixed in one table. The ceiling is deliberately not part of the key -- see

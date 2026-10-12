@@ -187,6 +187,29 @@ def split_to_corpus(
     return corpus, older
 
 
+def _recount_manifest(raw_dir: Path, today: str) -> None:
+    """Make the manifest's row counts describe the files after a restore.
+
+    verify_claims checks the manifest against the files on disk. A restore adds
+    rows after the pull wrote the manifest, so the counts are updated here; the
+    pull dates are left alone, because the pull is still when those were taken.
+    """
+    path = raw_dir / "manifest.json"
+    if not path.exists():
+        return
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    for entry in manifest.get("snapshots", []):
+        file = raw_dir / f"{entry.get('name')}.json"
+        if entry.get("name") in (
+            "contracts_by_commodity", "contract_details", "purchase_by_commodity", "payments"
+        ) and file.exists():
+            rows = _load(file)
+            entry["rows"] = len(rows)
+            entry["recovered"] = sum(1 for r in rows if r.get("recovered_on"))
+    manifest["recovered_on"] = today
+    path.write_text(json.dumps(manifest, indent=1), encoding="utf-8")
+
+
 def recover_delisted(
     client: DCProcurementClient,
     numbers: Iterable[str],
@@ -247,9 +270,12 @@ def recover_delisted(
         if r["id"] in search_ids:
             continue
         row = {k: r.get(k) for k in SEARCH_FIELDS}
-        # The search records which NIGP classes returned a row; a recovered
-        # row was never returned, so the classes are its own codes' prefixes.
-        # Nothing downstream reads matched_classes.
+        # Rebuilt from the detail record, which is not the search's format:
+        # commodityCodes here lists every code with its description, where
+        # the search often lists only some, so the NIGP classes the analysis
+        # reads can come out wider. restore_from_snapshot replaces these rows
+        # wherever an earlier pull has the real one. matched_classes is the
+        # codes' own prefixes, since the search never returned this row.
         row["matched_classes"] = sorted({c[:3] for c in r.get("commodityCodes") or []})
         search.append({**row, **stamp})
 
@@ -259,6 +285,7 @@ def recover_delisted(
         (older_path, older_rows),
     ):
         path.write_text(json.dumps(rows, indent=1), encoding="utf-8")
+    _recount_manifest(raw_dir, today)
 
     found_numbers = {r["contractNumber"] for r in found}
     return {
@@ -279,8 +306,8 @@ def restore_from_snapshot(raw_dir: Path, snapshot_dir: Path) -> dict[str, Any]:
     has to guess at period names: it restored 1,287 of the periods lost on
     1 October 2026, identical field for field to the September copy, and could
     not reach the 10 whose periods were named in free text ("Base year + Option
-    Year 4", "3"). The snapshot's search rows also carry the real
-    ``matched_classes``, which replace the ones rebuilt from commodity codes.
+    Year 4", "3"). The snapshot's search rows also replace the ones
+    :func:`recover_delisted` rebuilt from detail records, which differ.
     """
     today = date.today().isoformat()
     details_path = raw_dir / "contract_details.json"
@@ -295,11 +322,35 @@ def restore_from_snapshot(raw_dir: Path, snapshot_dir: Path) -> dict[str, Any]:
     added = [old_details[i] for i in old_details if i not in have]
     details += [{**r, **stamp} for r in added]
 
+    # Equal field for field is not enough. The detail endpoint lists a
+    # period's documents in no fixed order (363 of the 1,297 recovered periods
+    # came back reordered), and the award picker breaks ties between
+    # same-named copies by position, so CW48317 picked a copy whose OCR text was
+    # never cached and lost 210 rates. The picker also takes a contract's first
+    # record in file order, which the portal gives newest period first, and
+    # recover_delisted appended oldest first. So recovered records are replaced
+    # whole by the snapshot's and placed in the snapshot's order, after every
+    # record the portal still lists.
+    position = {i: n for n, i in enumerate(old_details)}
+    recovered = [
+        {**old_details[r["id"]], "listed": False, "recovered_on": r["recovered_on"]}
+        if r["id"] in old_details else r
+        for r in details if r.get("recovered_on")
+    ]
+    recovered.sort(key=lambda r: position.get(r["id"], len(position)))
+    details = [r for r in details if not r.get("recovered_on")] + recovered
+
     search_by_id = {r["id"]: r for r in search}
+    # A search row rebuilt from a detail record is not what the search returned:
+    # the detail lists every commodity code with its description, the search
+    # often only some of them, bare (12% of listed rows differ). The analysis
+    # reads NIGP classes off the search row, so a rebuilt row moved CW90472 from
+    # class 918 to 918 and 920 and the classifier relabelled it. Wherever the
+    # snapshot has the real row, it replaces the rebuilt one whole.
     corrected = 0
-    for r in search:
+    for i, r in enumerate(search):
         if r.get("recovered_on") and r["id"] in old_search:
-            r["matched_classes"] = old_search[r["id"]]["matched_classes"]
+            search[i] = {**old_search[r["id"]], "listed": False, "recovered_on": r["recovered_on"]}
             corrected += 1
     for r in added:
         if r["id"] not in search_by_id and r["id"] in old_search:
@@ -311,10 +362,34 @@ def restore_from_snapshot(raw_dir: Path, snapshot_dir: Path) -> dict[str, Any]:
 
     for path, rows in ((details_path, details), (search_path, search), (older_path, older)):
         path.write_text(json.dumps(rows, indent=1), encoding="utf-8")
+
+    # Payments and orders the snapshot holds and the portal no longer returns
+    # at all, by the same groups the weekly merge uses. Between September and
+    # October 2026 that was one order, PO678534, and its four $25,000 payments
+    # (Criminal Code Reform Commission to the Justice Policy Institute, 2023),
+    # plus PO740499: removed, not aged out, and not re-filed under new ids.
+    from .pull import _po_base
+
+    other = {}
+    for name, key in (
+        ("payments.json", lambda r: r["id"]),
+        ("purchase_by_commodity.json", lambda r: _po_base(r["poNumber"])),
+    ):
+        if not (snapshot_dir / name).exists() or not (raw_dir / name).exists():
+            continue
+        rows = _load(raw_dir / name)
+        now = {key(r) for r in rows}
+        back = [{**r, **stamp} for r in _load(snapshot_dir / name) if key(r) not in now]
+        if back:
+            (raw_dir / name).write_text(json.dumps(rows + back, indent=1), encoding="utf-8")
+        other[name] = len(back)
+
+    _recount_manifest(raw_dir, today)
     return {
         "periods_restored": len(added),
         "contracts": sorted({r["contractNumber"] for r in added}),
-        "matched_classes_corrected": corrected,
+        "search_rows_replaced": corrected,
+        "rows_restored": other,
     }
 
 
