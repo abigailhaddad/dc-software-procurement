@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC Technology Purchasing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="shared/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+/* Page-only styles; kept here so shared/style.css is untouched. */
+.groups{display:grid; grid-template-columns:minmax(0,1fr); gap:10px; margin:8px 0 6px}
+.group-card{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:10px 14px}
+.group-card label.toggle{display:flex; gap:8px; align-items:baseline; font-family:var(--head); font-weight:600; cursor:pointer}
+.group-card p{margin:2px 0 6px; color:var(--soft); font-size:.92rem}
+.group-card table.plain{font-size:.84rem}
+.links{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 4px}
+.two{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:12px}
+.two>div,.group-card{min-width:0}
+details.sample summary{cursor:pointer; color:var(--accent); font-weight:600}
+td.code{white-space:nowrap}
+#by-year .tablewrap,#by-group .tablewrap{max-height:none}
+h3.subhead{font-family:var(--head); font-size:1.02rem; margin:14px 0 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <h1>DC procurement data</h1>
+  <p class="sub">A copy of the records on <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, the website where DC's
+  Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
+  <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
+  <nav class="pages">
+    <a href="index.html">Contracts</a>
+    <a href="payments.html">Payments</a>
+    <a href="purchase-orders.html">Purchase orders</a>
+    <a href="technology.html" aria-current="page">Technology</a>
+    <a href="about.html">About this data</a>
+  </nav>
+</header>
+
+<p class="intro">What the District buys in technology and software, as far as its own commodity codes show it. Every contract and
+purchase order on DC's site carries a commodity code from the NIGP list, a standard catalogue of goods and services used by state and
+local governments. The first three digits are the class ("208: computer software for microcomputers"); the full seven-digit code
+names the item. This page keeps the records whose codes are listed below, and nothing else: no keyword search, no categories of our
+own. Contracts and purchase orders are counted separately and never added together, because an order can be placed under a contract
+and the two would then count the same purchase twice.</p>
+
+<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+
+<section class="block">
+  <h2>Before you use these numbers</h2>
+  <div class="note">
+    <p><strong>The code is whatever was chosen when the record was entered, and it can be wrong.</strong> Software licences turn up
+    under consulting (918) and library and subscription services (956); copier service turns up under computer maintenance (939); one
+    contract for IBM software licences is coded as a professional licence renewal. How much this matters is measured
+    <a href="#how-well">below</a>.</p>
+    <p><strong>Each record is counted once.</strong> A contract can carry several codes. This page, like the rest of the site, uses the
+    codes DC's search listing shows for each option period. An option period is in the set if any of its codes is in a ticked group, and
+    it counts once. <span id="multi-note"></span> A purchase order has one code. A contract counts once in the totals however many option
+    periods it has, and its dollars are its base-period amount only.</p>
+    <p>The contract's own page on DC's site can list more codes than the search listing does. In the 12 October 2026 pull, 22 contracts
+    carried a code from the class groups below only on their own page (for example CW93000, Emphasys software, listed under consulting).
+    They are counted only if a listing code puts them in a group.</p>
+    <p><strong>The vendor is whoever holds the contract, often a reseller rather than the company that makes the product.</strong>
+    Carahsoft, for example, is the vendor on DC's contracts for Acquia's Drupal licences (CW86957) and Salesforce licences (CW92708).
+    The vendor and supplier tables below show sellers, not software makers.</p>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Which codes count</h2>
+  <p class="muted">Untick a group to leave it out, or tick one that starts unticked; every number on the page follows. Class
+  descriptions are from the District's NIGP class list; item descriptions are as DC's contract pages show them. Counts in these
+  tables cover each code on its own and do not change with the ticks.</p>
+  <h3 class="subhead">Whole classes</h3>
+  <div class="groups" id="groups-class"></div>
+  <h3 class="subhead">Single item codes inside other classes</h3>
+  <p class="muted">These classes are mostly not technology, but a few of their item codes plainly are, so those codes are taken on
+  their own. The explorers can't filter on a single item code, so these groups are not in the explorer links below.</p>
+  <div class="groups" id="groups-item"></div>
+  <details class="sample">
+    <summary>Codes we looked at and left out</summary>
+    <p class="muted">Classes that hold some technology purchases but more of other things, and item codes whose names mention
+    computers, software or the web but describe something else.</p>
+    <div class="tablewrap" style="max-height:none" id="left-out"></div>
+  </details>
+</section>
+
+<div id="status"></div>
+<p class="meta" id="asof"></p>
+
+<div class="stats" id="stats"></div>
+
+<section class="block">
+  <h2>Open this in the full explorer</h2>
+  <p class="muted">These open the same records in the contracts and purchase-order explorers, where you can filter further, chart and
+  download them. The explorers filter on three-digit classes only, so the links cover the whole-class groups you have ticked.</p>
+  <div class="links" id="explorer-links"></div>
+  <p class="muted" id="explorer-note"></p>
+</section>
+
+<section class="block">
+  <h2>By group</h2>
+  <div id="by-group"></div>
+</section>
+
+<section class="block">
+  <h2>By fiscal year</h2>
+  <p class="muted">District fiscal years run 1 October to 30 September: FY2026 ended 30 September 2026. Contracts are placed in the year their
+  base period starts; orders in the fiscal year DC's site gives them. No contract option period on DC's site starts before FY2021, so
+  earlier years show orders only.</p>
+  <div id="by-year"></div>
+</section>
+
+<section class="block">
+  <h2>By agency</h2>
+  <p class="muted">Agency names as on DC's site, with abbreviations filled in (see the <a href="about.html">About page</a>). Some agencies,
+  DC Public Schools and the Chief Financial Officer among them, hold large technology orders but few or no listed contracts.
+  A contract shared by several agencies is listed under the combined name.</p>
+  <div id="by-agency"></div>
+</section>
+
+<section class="block">
+  <h2>By vendor</h2>
+  <p class="muted">Names as spelled on DC's site. Contracts and orders spell the same company differently
+  ("Carahsoft Technology Corporation", "CARAHSOFT TECHNOLOGY CORP"), so they are listed separately.</p>
+  <div class="two">
+    <div><h3 class="muted">Contracts</h3><div id="by-vendor"></div></div>
+    <div><h3 class="muted">Purchase orders</h3><div id="by-supplier"></div></div>
+  </div>
+</section>
+
+<section class="block" id="how-well">
+  <h2>How well do the codes catch technology?</h2>
+  <p>Partly. On 12 October 2026 we read the titles of two random samples of contracts, drawn against the whole-class groups alone. Of 20
+  drawn from those classes, 18 were plainly technology purchases, one was copier and print service, and one (“Document Systems OY4”) we
+  could not tell from the title. Then we drew 20 from the 337 contracts <em>outside</em> those classes whose titles use words such as
+  software, licence, system, platform, network or computer. 14 of those were technology purchases, such as Salesforce, IBM and Esri
+  licences and Dell computers. That is why the item-code groups exist: the cloud-subscription and other-item groups catch 8 of
+  those 14, and the computer-consulting group 3 more. The other 3 (IBM licences coded as a professional licence renewal, a voter
+  registration database, Dell computers coded as publications) no code-based rule would catch. These are samples of 20, read by title only.</p>
+  <details class="sample">
+    <summary>The 40 contracts we read</summary>
+    <div class="tablewrap" style="max-height:none" id="sample-table"></div>
+  </details>
+  <p>Purchase orders from four large technology sellers show the same thing. Share of each one's order dollars that falls in the codes
+  ticked above:</p>
+  <div id="sellers"></div>
+</section>
+
+<section class="block">
+  <h2>Every contract in these codes</h2>
+  <p class="muted">One row per contract. Click a contract number to open its periods, payments, orders and documents.
+  “Base amount” is what the base period authorises: a ceiling, not spending. Option periods are not counted
+  (<a href="about.html#amounts">why</a>).</p>
+  <div id="contracts"></div>
+</section>
+
+<footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you choose is sent anywhere.</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script type="module">
+import {boot, q, manifest, LOCAL, DATASET_PAGE} from "./shared/db.js";
+import {esc, money, n} from "./shared/explorer.js";
+
+// The code set. A group lists either whole three-digit classes (`classes`)
+// or single seven-digit item codes (`items`, with the description DC's
+// contract pages give). The page filters on these and nothing else.
+const GROUPS = [
+  {id: "software", label: "Software", on: true, classes: ["208", "209"],
+    what: "Packaged software and licences."},
+  {id: "services", label: "IT services", on: true, classes: ["920"],
+    what: "Programming, data processing, hosting, system support. The largest group, and the loosest: it also holds data and consulting work that only touches a computer."},
+  {id: "hardware", label: "Computer hardware", on: true, classes: ["204", "206", "207"],
+    what: "Computers, servers, peripherals, accessories. 207 also holds some office supplies."},
+  {id: "network", label: "Telecom and network equipment", on: true, classes: ["838", "839"],
+    what: "Network switches, wireless access points, phones; on DC's site also some internet and wireless service."},
+  {id: "upkeep", label: "Maintenance, repair and leasing", on: true, classes: ["939", "984"],
+    what: "Repair and leasing of computers. 939 also covers office, photographic and radio/TV equipment, so it includes copier service and camera systems."},
+  {id: "cloud", label: "Cloud software subscriptions", on: true, items: [
+      ["9563575", "SUBSCRIPTIONS, SOFTWARE LICENSING, CLOUD BASED"]],
+    what: "One item code in class 956, library and subscription services. Salesforce licences (through Carahsoft) and other cloud software are coded here."},
+  {id: "other_items", label: "Other computer, software and web items", on: true, items: [
+      ["8405670", "SOFTWARE, TELECONFERENCING SYSTEMS, AUDIO/VIDEO"],
+      ["8833200", "Computer Telephony Integration (CTI) Systems"],
+      ["9155133", "DEVELOPMENT SERVICES, INTERNET APPLICATION"],
+      ["9155143", "HOSTING SERVICES, WEB SITE"],
+      ["9159600", "Web Page Design and/or Management Services"],
+      ["9159630", "DESIGN AND MANAGEMENT SERVICES, WEB PAGE"],
+      ["9159634", "DEVELOPMENT SERVICES, WEB PAGE"],
+      ["9159640", "MAINTENANCE SERVICES, WEBSITE"],
+      ["9564022", "COMPUTER RELATED"],
+      ["9564912", "COMPUTER RELATED"],
+      ["9672700", "Computer Hardware Manufacturing Services"],
+      ["9672800", "Computer Software Manufacturing Services"],
+      ["9857400", "Software, Computer, Rental or Lease"]],
+    what: "Item codes in TV equipment, communications, library, production and leasing classes. The largest by dollars is software rental or lease, mostly orders from INTRALOT INC."},
+  {id: "consulting", label: "Computer consulting (class 918 items)", on: false, items: [
+      ["9182800", "Computer Hardware Consulting"],
+      ["9182810", "CONSULTANT SERVICES, COMPUTER SYSTEMS/NETWORKING"],
+      ["9182900", "Computer Software Consulting"],
+      ["9182930", "CONSULTING SERVICES RELATED TO THE IMPLEMENTATION OF SOFTWARE"],
+      ["9183000", "Computer Network Consulting"]],
+    what: "Unticked to start, because it is large and mixed. These codes carry the District's IT consulting and staffing orders (Computer Aid Inc. is the largest supplier), but some orders under them come from suppliers such as MAXIM HEALTHCARE SVCS and MIDTOWN PERSONNEL whose names suggest other work."},
+];
+// Looked at and left out, with why. Shown so readers can see the edge.
+const LEFT_OUT = [
+  {code: "918", why: "Consulting of every kind. Its computer-consulting item codes are the group above."},
+  {code: "915", why: "Mostly marketing, advertising and call centres. Its web design and hosting item codes are in the other-items group."},
+  {code: "956", why: "Library, research and subscription services: legal research, temporary staff, auto parts. Its cloud-software and computer item codes are groups above."},
+  {code: "726", why: "Radios and GPS tracking."},
+  {code: "725", why: "Radio and telephone equipment; inactive since 2007 in favour of 726, 838 and 839."},
+  {code: "985", why: "Mostly copier leases. Its software-leasing item code is in the other-items group."},
+  {code: "840", why: "Television and audio-visual equipment. Its teleconferencing-software item code is in the other-items group."},
+  {code: "287", why: "Electronic parts and equipment in general."},
+  {code: "9563500", desc: "Internet Database Subscriptions", why: "Research databases (Equifax, AAMVA), though one Amazon Web Services contract is coded here."},
+  {code: "9563580", desc: "WEB SITE ACCESS", why: "Subscriptions to websites."},
+  {code: "9634580", desc: "SITE LICENSE", why: "A miscellaneous class; the name doesn't say what is licensed."},
+  {code: "9243585", desc: "TRAINING, SOFTWARE SPECIFIC (IN-SERVICE)", why: "Training."},
+  {code: "9244068", desc: "SOFTWARE TRAINING, MICROSOFT OFFICE", why: "Training."},
+  {code: "9247880", desc: "TRAINING, SOFTWARE INSTRUCTOR", why: "Training."},
+  {code: "9982900", desc: "Computers, Parts and Supplies", why: "In class 998, sale of surplus and obsolete items."},
+];
+// The hand-read samples described on the page (12 October 2026). Titles are
+// DC's; "read as" is our reading of the title.
+const SAMPLE = [
+  ["In", "CW100678", "204", "FY22-DHCD-CW62484 Document Systems OY4", "Can't tell"],
+  ["In", "CW103894", "920", "Intranet Quorum (IQ)", "Technology"],
+  ["In", "CW126944", "920", "CW126944-Caledonia Consulting LLC- Information Technology Equipment", "Technology"],
+  ["In", "CW120281", "920", "DOB - Kustomer Enterprise Licenses", "Technology"],
+  ["In", "CW49156", "920", "DCSS - IT Services, Equipment and Software - New Light Technologies(NLT)", "Technology"],
+  ["In", "CW93683", "204", "FY2021-CFO-DOES-AGENCY IT EQUIPMENT-DELL LAPTOPS AND DOCKING STATIONS", "Technology"],
+  ["In", "CW87865", "208", "Annual Subscription for End Point Protection", "Technology"],
+  ["In", "CW88141", "208", "FY21-OCTO-Red Hat Enterprise Linux Extended Lifecycle Support", "Technology"],
+  ["In", "CW114695", "920", "DHCF Governance, Risk and Compliance (GRC) Software", "Technology"],
+  ["In", "CW95440", "920", "FY21-CrowdStrike Software Subscription", "Technology"],
+  ["In", "CW104434", "920", "Data Management Consultant Sole Source", "Technology"],
+  ["In", "CW86583", "204", "FY21 - FA0 - Dell Docking Stations and Monitors", "Technology"],
+  ["In", "CW110345", "920", "State Level Registry-Phase II- Digital Health Provider Incentive Program", "Technology"],
+  ["In", "CW95388", "920", "DCRA E-Plan Review Software", "Technology"],
+  ["In", "CW131447", "939", "FY2026 - DFS IT - RK314716 - Konica Minolta Print Services Upgrade Nov 2025", "Not technology (copier and print service)"],
+  ["In", "CW109381", "920", "Oracle StorageTek SL4000 Hardware Maintenance", "Technology"],
+  ["In", "CW82738", "838", "FY20-OCTO-Oralce Storage Tek SL4000 IPS Backup", "Technology"],
+  ["In", "CW51089", "920", "OAH Annual eCourt License, Maintenance and Support", "Technology"],
+  ["In", "CW62413", "920", "Automic (UC4) Enterprise Automation Engine  Software Maintenance", "Technology"],
+  ["In", "CW121290", "920", "Guideline Reporting Information Data (GRID) system", "Technology"],
+  ["Out", "CW69866", "9183800", "FY19 - CF0 - OYP - MBSYEP Workforce Readiness and Professional Development 22-24 YO - Check It Enterprises", "Not technology"],
+  ["Out", "CW61927", "9183210", "DCSS- MOBIS Networking for Future, Inc", "Can't tell"],
+  ["Out", "CW92708", "9563575", "Salesforce Licensing (Carahsoft Technology Corporation)", "Technology"],
+  ["Out", "CW102977", "9563575", "FY22-OCTO-Computer Associates (Broadcom)", "Technology"],
+  ["Out", "CW93183", "9157109", "FY2021 - DBH CPEP Adult Services TAY Social Media Marketers Platform", "Not technology"],
+  ["Out", "CW120381", "9182930", "FY24 DCSS Davis Computer Technologies, LLC - MOBIS", "Can't tell"],
+  ["Out", "CW128064", "9634575", "IBM licenses IPLA and MLC", "Technology"],
+  ["Out", "CW113011", "9626941", "FY24-DHCD-CW113011 Rize Up Technology Training", "Not technology (training)"],
+  ["Out", "CW133371", "9563575", "Meditech Software Maintenance", "Technology"],
+  ["Out", "CW98216", "5783480", "FY22-Voter Registration and Election Management Database System-Maintenance and Support-BOE", "Technology"],
+  ["Out", "CW131152", "9626941", "FY26-DHCD CW113011 Rize Up Technology", "Not technology (training)"],
+  ["Out", "CW87531", "9182930", "FY2021 - BN0 - Esri ArcGIS Platform", "Technology"],
+  ["Out", "CW131688", "9182900", "Bridgehead Cloud Software as a Saas", "Technology"],
+  ["Out", "CW48355", "9182930", "Dell-DELL SAN (Storage Area Network) SME Reengineering Solution", "Technology"],
+  ["Out", "CW99034", "9155133", "DCRA - Land Management Use Platform", "Technology"],
+  ["Out", "CW93806", "9563575", "FY2021-CFO-DOES-OIT-LEARNING PLATFORM", "Technology"],
+  ["Out", "CW105614", "7158754", "Technology Refresh DELL Computer Equipment", "Technology"],
+  ["Out", "CW104208", "9563575", "FY23 - DOH Copado Salesforce License", "Technology"],
+  ["Out", "CW86884", "9563575", "IBM Curam Software License for DCAS", "Technology"],
+  ["Out", "CW95748", "8405670", "FY2022 - DBH IT - INFOMC Application Maintenance, Licensing, Application Enhancement & Consulting Services - INCEDO?", "Technology"],
+];
+// Supplier names exactly as DC's site spells them on purchase orders.
+const SELLERS = ["MICROSOFT CORPORATION", "CARAHSOFT TECHNOLOGY CORP", "CDW GOVERNMENT LLC", "DELL MARKETING L.P."];
+
+const DATA = new URLSearchParams(location.search).get("data");
+const KEEP = DATA ? "data=" + encodeURIComponent(DATA) : "";
+const NIGP = {};   // class -> DC's description
+let CONTRACT_TABLE = null;
+
+function contractPage(num) {
+  return `contract.html?n=${encodeURIComponent(num)}${KEEP ? "&" + KEEP : ""}`;
+}
+function itemDesc(code) {
+  for (const g of GROUPS) for (const [c, d] of g.items || []) if (c === code) return d;
+  for (const x of LEFT_OUT) if (x.code === code && x.desc) return x.desc;
+  return null;
+}
+function describe(code) {
+  const cls = code.slice(0, 3);
+  const item = code.length > 3 ? itemDesc(code) : null;
+  return (item ? `${code} ${item}; ` : code.length > 3 ? `${code}; ` : "") + `class ${cls} ${NIGP[cls] || ""}`;
+}
+function pct(a, b) {
+  return b ? `${Math.round(100 * a / b)}%` : "–";
+}
+function quoted(list) {
+  return list.map((c) => `'${c}'`).join(", ");
+}
+
+// ---------- which groups are ticked (owned by the checkboxes; the URL mirrors them) ----------
+function tickedGroups() {
+  return GROUPS.filter((g) => document.getElementById("g-" + g.id).checked);
+}
+function writeUrl() {
+  const p = new URLSearchParams();
+  if (DATA) p.set("data", DATA);
+  const ticked = tickedGroups();
+  const isDefault = GROUPS.every((g) => ticked.includes(g) === g.on);
+  if (!isDefault) {
+    for (const g of ticked) p.append("group", g.id);
+    if (ticked.length === 0) p.set("group", "none");
+  }
+  const qs = p.toString();
+  history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+}
+
+// ---------- groups -> SQL ----------
+// The codes are constants from GROUPS above, never user text, so they go
+// into the SQL as literals. Contract codes are compared as digits only,
+// since a few are published with dashes (948-07-05).
+const CONTRACT_DIGITS = "('|' || regexp_replace(array_to_string(nigp_codes, '|'), '[^0-9|]', '', 'g') || '|')";
+function contractMatch(g) {
+  return g.classes
+    ? `list_has_any(nigp_classes, [${quoted(g.classes)}])`
+    : `regexp_matches(${CONTRACT_DIGITS}, '[|](${g.items.map((i) => i[0]).join("|")})[|]')`;
+}
+function orderMatch(g) {
+  return g.classes ? `nigp_class IN (${quoted(g.classes)})` : `nigp_code IN (${quoted(g.items.map((i) => i[0]))})`;
+}
+function contractWhere(groups) {
+  return groups.length ? "(" + groups.map(contractMatch).join(" OR ") + ")" : "false";
+}
+function orderWhere(groups) {
+  return groups.length ? "(" + groups.map(orderMatch).join(" OR ") + ")" : "false";
+}
+// Which group a row belongs to. A row matching two groups gets its own
+// label rather than being split or counted twice.
+function groupCase(groups, match) {
+  if (!groups.length) return "NULL";
+  const hits = groups.map((g) => `CAST(${match(g)} AS INTEGER)`).join(" + ");
+  return `CASE WHEN ${hits} > 1 THEN 'More than one group' ` +
+    groups.map((g) => `WHEN ${match(g)} THEN '${g.label}'`).join(" ") + " END";
+}
+
+// ---------- static parts: the code lists ----------
+async function codeCounts() {
+  const classes = GROUPS.flatMap((g) => g.classes || []).concat(LEFT_OUT.filter((x) => x.code.length === 3).map((x) => x.code));
+  const items = GROUPS.flatMap((g) => (g.items || []).map((i) => i[0])).concat(LEFT_OUT.filter((x) => x.code.length > 3).map((x) => x.code));
+  const out = {};
+  for (const c of classes.concat(items)) out[c] = {contracts: 0, base: 0, orders: 0, ordered: 0};
+  const cClass = await q(`SELECT c AS code, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base
+    FROM (SELECT unnest(nigp_classes) AS c, contract_number, base_amount FROM contracts) WHERE c IN (${quoted(classes)}) GROUP BY c`);
+  // One row per option period and item code; DISTINCT stops a period that
+  // lists the same item twice from counting its amount twice.
+  const cItem = await q(`SELECT code, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base
+    FROM (SELECT DISTINCT id, contract_number, base_amount, regexp_replace(unnest(nigp_codes), '[^0-9]', '', 'g') AS code FROM contracts)
+    WHERE code IN (${quoted(items)}) GROUP BY code`);
+  const pClass = await q(`SELECT nigp_class AS code, count(*) AS orders, sum(po_total) AS ordered FROM purchase_orders
+    WHERE nigp_class IN (${quoted(classes)}) GROUP BY nigp_class`);
+  const pItem = await q(`SELECT nigp_code AS code, count(*) AS orders, sum(po_total) AS ordered FROM purchase_orders
+    WHERE nigp_code IN (${quoted(items)}) GROUP BY nigp_code`);
+  for (const r of cClass.concat(cItem)) { out[r.code].contracts = r.contracts; out[r.code].base = r.base; }
+  for (const r of pClass.concat(pItem)) { out[r.code].orders = r.orders; out[r.code].ordered = r.ordered; }
+  return out;
+}
+
+async function renderCodeTables() {
+  const counts = await codeCounts();
+  const head = `<thead><tr><th>Code</th><th>Description</th><th class="num">Contracts</th><th class="num">Base amount</th>` +
+    `<th class="num">Orders</th><th class="num">Amount ordered</th></tr></thead>`;
+  const line = (code, desc) => `<td class="code mono">${esc(code)}</td><td>${esc(desc)}</td>` +
+    `<td class="num">${n(counts[code].contracts)}</td><td class="num">${money(counts[code].base)}</td>` +
+    `<td class="num">${n(counts[code].orders)}</td><td class="num">${money(counts[code].ordered)}</td>`;
+  const wanted = new URLSearchParams(location.search).getAll("group");
+  const card = (g) => {
+    const checked = wanted.length ? wanted.includes(g.id) : g.on;
+    const lines = g.classes
+      ? g.classes.map((c) => `<tr>${line(c, NIGP[c] || "(no description on DC's list)")}</tr>`)
+      : g.items.map(([c, d]) => `<tr>${line(c, d)}</tr>`);
+    return `<div class="group-card">
+      <label class="toggle"><input type="checkbox" id="g-${g.id}"${checked ? " checked" : ""}> ${esc(g.label)}</label>
+      <p>${esc(g.what)}</p>
+      <div class="tablewrap" style="max-height:none"><table class="plain">${head}<tbody>${lines.join("")}</tbody></table></div>
+    </div>`;
+  };
+  document.getElementById("groups-class").innerHTML = GROUPS.filter((g) => g.classes).map(card).join("");
+  document.getElementById("groups-item").innerHTML = GROUPS.filter((g) => g.items).map(card).join("");
+  document.getElementById("left-out").innerHTML = `<table class="plain"><thead><tr><th>Code</th><th>Description</th>` +
+    `<th class="num">Contracts</th><th class="num">Base amount</th><th class="num">Orders</th><th class="num">Amount ordered</th><th>Why it's left out</th></tr></thead><tbody>` +
+    LEFT_OUT.map((x) => `<tr>${line(x.code, x.desc || NIGP[x.code] || "")}<td>${esc(x.why)}</td></tr>`).join("") + "</tbody></table>";
+  for (const g of GROUPS) document.getElementById("g-" + g.id).addEventListener("change", refresh);
+}
+
+function renderSample() {
+  document.getElementById("sample-table").innerHTML = `<table class="plain"><thead><tr><th>Sample</th><th>Contract</th><th>Code</th>` +
+    `<th>Title on DC's site</th><th>Read as</th></tr></thead><tbody>` +
+    SAMPLE.map(([s, num, code, title, read]) => `<tr><td>${s === "In" ? "In the class groups" : "Outside them"}</td>` +
+      `<td><a class="mono" href="${contractPage(num)}" target="_blank" rel="noopener">${esc(num)}</a></td>` +
+      `<td class="mono" title="${esc(describe(code))}">${esc(code)}</td><td>${esc(title)}</td><td>${esc(read)}</td></tr>`).join("") +
+    "</tbody></table>";
+}
+
+// ---------- everything that follows the ticks ----------
+async function renderCoverage(groups) {
+  const [c] = await q(`SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts,
+      count(DISTINCT contract_number) FILTER (WHERE period_kind = 'base') AS with_base,
+      count(DISTINCT contract_number) FILTER (WHERE same_award_as IS NOT NULL) AS same_award,
+      count(*) FILTER (WHERE NOT listed) AS unlisted,
+      count(*) FILTER (WHERE corrected_amount IS NOT NULL) AS corrected,
+      count(*) FILTER (WHERE ${groupCase(groups, contractMatch)} = 'More than one group') AS multi
+    FROM contracts WHERE ${contractWhere(groups)}`);
+  const [p] = await q(`SELECT count(*) AS orders, count(*) FILTER (WHERE fiscal_year IS NULL) AS no_year,
+      sum(po_total) FILTER (WHERE fiscal_year IS NULL) AS no_year_amount,
+      CAST(min(ordered_date) AS VARCHAR) AS first, CAST(max(ordered_date) AS VARCHAR) AS last,
+      count(*) FILTER (WHERE NOT listed) AS unlisted
+    FROM purchase_orders WHERE ${orderWhere(groups)}`);
+  const noBase = c.contracts - c.with_base;
+  document.getElementById("coverage").innerHTML = `<h2>What this covers</h2><ul>
+    <li>Only what DC's site lists. Contracts its search had stopped returning before our first pull, in August 2026, are not here.
+      ${n(c.unlisted)} contract option periods and ${n(p.unlisted)} orders here are ones its search has since stopped returning, kept from earlier pulls.</li>
+    <li>Contract dollars are base-period amounts only, a ceiling and not spending.
+      ${n(noBase)} of the ${n(c.contracts)} contracts have no base period on DC's site (only option years are listed), so they are counted
+      but add no dollars.${c.same_award ? ` ${n(c.same_award)} are the same award as another contract number and are counted under that one.` : ""}
+      ${c.corrected ? `${n(c.corrected)} amounts are corrected from the District's own paperwork.` : ""}</li>
+    <li>Purchase orders here were placed ${esc(p.first ?? "–")} to ${esc(p.last ?? "–")}; their amounts are commitments, not payments.
+      ${n(p.no_year)} orders (${money(p.no_year_amount ?? 0)}) have no fiscal year on DC's site and are left out of the year table only.
+      FY2027 began on 1 October 2026 and has barely started.</li></ul>`;
+  document.getElementById("multi-note").textContent = c.multi
+    ? `${n(c.multi)} option periods here have codes in more than one ticked group; they are shown as "More than one group" and counted once.`
+    : "None of the option periods here has codes in two ticked groups, so each sits in exactly one.";
+  return {c, p, noBase};
+}
+
+async function renderStats(groups, cov) {
+  const [c] = await q(`SELECT sum(base_amount) AS base FROM contracts WHERE ${contractWhere(groups)}`);
+  const [p] = await q(`SELECT sum(po_total) AS ordered, count(DISTINCT supplier) AS suppliers FROM purchase_orders WHERE ${orderWhere(groups)}`);
+  const stat = (label, value, what) => `<div class="stat"><div class="stat-label">${esc(label)}</div><div class="stat-value">${value}</div><div class="stat-what">${what}</div></div>`;
+  document.getElementById("stats").innerHTML =
+    stat("Contracts", n(cov.c.contracts), `${n(cov.c.periods)} option periods. ${n(cov.noBase)} have no base period listed and add no dollars.`) +
+    stat("Contract base-period amount", money(c.base), "Sum of base periods, a ceiling, not spending. Option periods are not counted.") +
+    stat("Purchase orders", n(cov.p.orders), `From ${n(p.suppliers)} suppliers, as spelled on DC's site.`) +
+    stat("Amount ordered", money(p.ordered), "Sum of order totals: commitments, not payments. Do not add this to the contract figure; orders can fall under contracts.");
+}
+
+async function renderLinks(groups) {
+  const classGroups = groups.filter((g) => g.classes);
+  const itemGroups = groups.filter((g) => g.items);
+  const classes = classGroups.flatMap((g) => g.classes);
+  const params = classes.map((c) => "nigp_class=" + c).join("&") + (KEEP ? "&" + KEEP : "");
+  document.getElementById("explorer-links").innerHTML = classes.length
+    ? `<a class="button" href="index.html?${params}">These contracts in the contracts explorer</a>` +
+      `<a class="button" href="purchase-orders.html?${params}">These orders in the purchase-order explorer</a>`
+    : '<span class="muted">Tick at least one whole-class group.</span>';
+  const [c] = await q(`SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base
+    FROM contracts WHERE ${contractWhere(classGroups)}`);
+  const [p] = await q(`SELECT count(*) AS orders, sum(po_total) AS ordered FROM purchase_orders WHERE ${orderWhere(classGroups)}`);
+  document.getElementById("explorer-note").textContent = !classes.length ? "" :
+    `The explorers should show ${n(c.periods)} option periods, ${n(c.contracts)} contracts and ${money(c.base)}, and ${n(p.orders)} orders and ${money(p.ordered)}.` +
+    (itemGroups.length ? ` That leaves out the item-code groups you have ticked (${itemGroups.map((g) => g.label).join("; ")}), which the explorers can't filter on.` : "");
+}
+
+function plainTable(heads, rows) {
+  return `<div class="tablewrap"><table class="plain"><thead><tr>${heads.map(([h, num]) => `<th${num ? ' class="num"' : ""}>${esc(h)}</th>`).join("")}</tr></thead><tbody>` +
+    rows.join("") + "</tbody></table></div>";
+}
+
+async function renderByGroup(groups) {
+  const cRows = await q(`SELECT ${groupCase(groups, contractMatch)} AS g, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base
+    FROM contracts WHERE ${contractWhere(groups)} GROUP BY g`);
+  const pRows = await q(`SELECT ${groupCase(groups, orderMatch)} AS g, count(*) AS orders, sum(po_total) AS ordered
+    FROM purchase_orders WHERE ${orderWhere(groups)} GROUP BY g`);
+  const labels = groups.map((g) => g.label).concat(["More than one group"]);
+  const rows = [];
+  for (const label of labels) {
+    const c = cRows.find((r) => r.g === label);
+    const p = pRows.find((r) => r.g === label);
+    if (!c && !p) continue;
+    rows.push(`<tr><td>${esc(label)}</td><td class="num">${n(c?.contracts ?? 0)}</td><td class="num">${money(c?.base ?? 0)}</td>` +
+      `<td class="num">${n(p?.orders ?? 0)}</td><td class="num">${money(p?.ordered ?? 0)}</td></tr>`);
+  }
+  document.getElementById("by-group").innerHTML = rows.length
+    ? plainTable([["Group"], ["Contracts", 1], ["Base amount", 1], ["Orders", 1], ["Amount ordered", 1]], rows)
+    : '<p class="muted">No groups ticked.</p>';
+}
+
+async function renderByYear(groups) {
+  const cRows = await q(`SELECT start_fiscal_year AS fy, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base
+    FROM contracts WHERE ${contractWhere(groups)} AND period_kind = 'base' GROUP BY fy`);
+  const pRows = await q(`SELECT fiscal_year AS fy, count(*) AS orders, sum(po_total) AS ordered
+    FROM purchase_orders WHERE ${orderWhere(groups)} AND fiscal_year IS NOT NULL GROUP BY fy`);
+  const years = [...new Set(cRows.map((r) => r.fy).concat(pRows.map((r) => r.fy)))].filter((y) => y !== null).sort();
+  const rows = years.map((y) => {
+    const c = cRows.find((r) => r.fy === y);
+    const p = pRows.find((r) => r.fy === y);
+    return `<tr><td>FY${y}</td><td class="num">${n(c?.contracts ?? 0)}</td><td class="num">${money(c?.base ?? 0)}</td>` +
+      `<td class="num">${n(p?.orders ?? 0)}</td><td class="num">${money(p?.ordered ?? 0)}</td></tr>`;
+  });
+  document.getElementById("by-year").innerHTML = rows.length
+    ? plainTable([["Fiscal year"], ["Contracts whose base period starts", 1], ["Base amount", 1], ["Orders", 1], ["Amount ordered", 1]], rows)
+    : '<p class="muted">No groups ticked.</p>';
+}
+
+async function renderByAgency(groups) {
+  const rows = await q(`WITH c AS (SELECT agency, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base
+        FROM contracts WHERE ${contractWhere(groups)} GROUP BY agency),
+      p AS (SELECT agency, count(*) AS orders, sum(po_total) AS ordered
+        FROM purchase_orders WHERE ${orderWhere(groups)} GROUP BY agency)
+    SELECT coalesce(c.agency, p.agency) AS agency, c.contracts, c.base, p.orders, p.ordered
+    FROM c FULL OUTER JOIN p ON c.agency = p.agency
+    ORDER BY coalesce(p.ordered, 0) + coalesce(c.base, 0) DESC`);
+  document.getElementById("by-agency").innerHTML = rows.length
+    ? plainTable([["Agency"], ["Contracts", 1], ["Base amount", 1], ["Orders", 1], ["Amount ordered", 1]],
+      rows.map((r) => `<tr><td>${esc(r.agency ?? "(blank)")}</td><td class="num">${n(r.contracts ?? 0)}</td><td class="num">${money(r.base ?? 0)}</td>` +
+        `<td class="num">${n(r.orders ?? 0)}</td><td class="num">${money(r.ordered ?? 0)}</td></tr>`)) +
+      `<p class="muted">${n(rows.length)} agency names. Sorted by base amount plus amount ordered, only to put the largest first.</p>`
+    : '<p class="muted">No groups ticked.</p>';
+}
+
+async function renderByVendor(groups) {
+  const vRows = await q(`SELECT vendor, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base
+    FROM contracts WHERE ${contractWhere(groups)} GROUP BY vendor ORDER BY base DESC NULLS LAST, contracts DESC`);
+  const sRows = await q(`SELECT supplier, count(*) AS orders, sum(po_total) AS ordered
+    FROM purchase_orders WHERE ${orderWhere(groups)} GROUP BY supplier ORDER BY ordered DESC NULLS LAST`);
+  document.getElementById("by-vendor").innerHTML = vRows.length
+    ? plainTable([["Vendor"], ["Contracts", 1], ["Base amount", 1]],
+      vRows.map((r) => `<tr><td>${esc(r.vendor ?? "(blank)")}</td><td class="num">${n(r.contracts)}</td><td class="num">${money(r.base ?? 0)}</td></tr>`)) +
+      `<p class="muted">${n(vRows.length)} vendor names.</p>`
+    : '<p class="muted">No contracts.</p>';
+  document.getElementById("by-supplier").innerHTML = sRows.length
+    ? plainTable([["Supplier"], ["Orders", 1], ["Amount ordered", 1]],
+      sRows.map((r) => `<tr><td>${esc(r.supplier ?? "(blank)")}</td><td class="num">${n(r.orders)}</td><td class="num">${money(r.ordered)}</td></tr>`)) +
+      `<p class="muted">${n(sRows.length)} supplier names.</p>`
+    : '<p class="muted">No orders.</p>';
+}
+
+async function renderSellers(groups) {
+  const inSet = orderWhere(groups);
+  const names = SELLERS.map((s) => `'${s.replace(/'/g, "''")}'`).join(", ");
+  const rows = await q(`SELECT supplier, count(*) AS orders, sum(po_total) AS ordered, sum(po_total) FILTER (WHERE ${inSet}) AS in_codes
+    FROM purchase_orders WHERE supplier IN (${names}) GROUP BY supplier ORDER BY ordered DESC`);
+  const other = await q(`SELECT supplier, nigp_code, sum(po_total) AS m FROM purchase_orders
+    WHERE supplier IN (${names}) AND NOT ${inSet}
+    GROUP BY supplier, nigp_code QUALIFY row_number() OVER (PARTITION BY supplier ORDER BY m DESC) <= 2`);
+  document.getElementById("sellers").innerHTML = plainTable(
+    [["Supplier, as spelled on DC's site"], ["All its orders", 1], ["Amount ordered", 1], ["In these codes", 1], ["Its largest other codes"]],
+    rows.map((r) => `<tr><td>${esc(r.supplier)}</td><td class="num">${n(r.orders)}</td><td class="num">${money(r.ordered)}</td>` +
+      `<td class="num">${pct(r.in_codes ?? 0, r.ordered)}</td><td>${other.filter((o) => o.supplier === r.supplier).sort((a, b) => b.m - a.m)
+        .map((o) => `<span title="${esc(describe(o.nigp_code))}"><span class="mono">${esc(o.nigp_code)}</span> ${money(o.m)}</span>`).join(", ")}</td></tr>`)) +
+    `<p class="muted">Only orders under exactly these spellings; other spellings of the same company (such as "CDW LLC") are not included.
+    Hover a code for its class. Some of the largest are codes no technology rule would include: in the 12 October 2026 pull,
+    Microsoft's biggest orders outside these codes were under 961-96-40, which DC's contract pages describe as “Labor, miscellaneous”,
+    and Carahsoft's under 924-41-40, “Professional development”.</p>`;
+}
+
+async function renderContracts(groups) {
+  const rows = groups.length ? await q(`SELECT contract_number,
+      any_value(title ORDER BY period_kind = 'base' DESC, start_date) AS title,
+      string_agg(DISTINCT vendor, '; ') AS vendor,
+      string_agg(DISTINCT agency, '; ') AS agency,
+      string_agg(DISTINCT array_to_string(nigp_codes, ' '), ' ') AS codes,
+      string_agg(DISTINCT ${groupCase(groups, contractMatch)}, '; ') AS grp,
+      count(*) AS periods,
+      max(start_fiscal_year) FILTER (WHERE period_kind = 'base') AS base_fy,
+      sum(base_amount) AS base,
+      bool_or(period_kind = 'base') AS has_base,
+      any_value(portal_url ORDER BY period_kind = 'base' DESC, start_date) AS portal_url
+    FROM contracts WHERE ${contractWhere(groups)} GROUP BY contract_number`) : [];
+  const data = rows.map((r) => [r.contract_number, r.title, r.vendor, r.agency, r.codes, r.grp, r.base_fy, r.base, r.periods, r.has_base, r.portal_url]);
+  if (CONTRACT_TABLE) {
+    CONTRACT_TABLE.clear().rows.add(data).draw();
+    return;
+  }
+  document.getElementById("contracts").innerHTML = `<table class="display compact" style="width:100%"></table>`;
+  CONTRACT_TABLE = $("#contracts table").DataTable({
+    data,
+    pageLength: 25,
+    scrollX: true,
+    autoWidth: false,
+    order: [[7, "desc"]],
+    language: {search: "Search contract number, title, vendor or agency:"},
+    columns: [
+      {title: "Contract", render: (v, type, r) => type !== "display" ? v
+        : `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab">${esc(v)}</a>` +
+          (r[10] ? ` <a href="${esc(r[10])}" target="_blank" rel="noopener" title="Its page on DC's site">DC site&nbsp;↗</a>` : "")},
+      {title: "Title", className: "wide", render: (v) => esc(v)},
+      {title: "Vendor", render: (v) => esc(v)},
+      {title: "Agency", render: (v) => esc(v)},
+      {title: "Codes", render: (v, type) => {
+        if (type !== "display") return v;
+        const codes = [...new Set(String(v).split(" "))];
+        const shown = codes.slice(0, 3).join(" ") + (codes.length > 3 ? ` +${codes.length - 3} more` : "");
+        return `<span class="mono" title="${esc(codes.join(" "))}">${esc(shown)}</span>`;
+      }},
+      {title: "Group", render: (v) => esc(v)},
+      {title: "Base period starts", className: "num", render: (v, type) => type !== "display" ? (v ?? 0) : (v ? "FY" + v : '<span class="muted">–</span>')},
+      {title: "Base amount", className: "num", render: (v, type, r) => type !== "display" ? (v ?? -1)
+        : r[9] ? money(v) : '<span class="muted" title="DC\'s site lists no base period for this contract, only option years, so it adds no dollars.">no base period listed</span>'},
+      {title: "Option periods", className: "num", render: (v) => n(v)},
+    ],
+  });
+}
+
+let refreshing = 0;
+async function refresh() {
+  const ticket = ++refreshing;
+  writeUrl();
+  const groups = tickedGroups();
+  const cov = await renderCoverage(groups);
+  if (ticket !== refreshing) return;
+  await Promise.all([
+    renderStats(groups, cov),
+    renderByGroup(groups),
+    renderByYear(groups),
+    renderByAgency(groups),
+    renderByVendor(groups),
+    renderSellers(groups),
+    renderContracts(groups),
+    renderLinks(groups),
+  ]);
+}
+
+const status = document.getElementById("status");
+try {
+  status.textContent = "Loading the data into your browser…";
+  await boot(["contracts", "purchase_orders", "nigp_classes"]);
+  for (const r of await q("SELECT nigp_class, description FROM nigp_classes")) NIGP[r.nigp_class] = r.description;
+  const m = await manifest();
+  const stamps = m.snapshots.map((s) => (s.pulled_at || "").slice(0, 10)).filter(Boolean).sort();
+  document.getElementById("asof").innerHTML =
+    `Pulled from contracts.ocp.dc.gov ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}` +
+    ` · <a href="${DATASET_PAGE}">full dataset</a>` + (LOCAL ? " · <strong>reading the local build</strong>" : "");
+  await renderCodeTables();
+  renderSample();
+  await refresh();
+  status.textContent = "";
+} catch (err) {
+  status.innerHTML = `<span class="error">${esc(err.message || err)}</span>`;
+  throw err;
+}
+</script>
+</body>
+</html>
