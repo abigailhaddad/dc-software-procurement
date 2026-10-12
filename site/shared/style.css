@@ -128,3 +128,27 @@ dl.glossary dd{color:var(--soft); font-size:.92rem}
 .coverage ul{margin:0 0 6px; padding-left:20px}
 .coverage:empty{display:none}
 [hidden]{display:none !important}
+/* Sortable tables (shared/ui.js): every non-DataTables heading sorts on click. */
+table:not(.dataTable) thead th{cursor:pointer; user-select:none}
+table:not(.dataTable) thead th::after{content:" ↕"; color:var(--muted); font-size:.8em; opacity:.6}
+table:not(.dataTable) thead th[aria-sort="ascending"]::after{content:" ↑"; opacity:1; color:var(--accent)}
+table:not(.dataTable) thead th[aria-sort="descending"]::after{content:" ↓"; opacity:1; color:var(--accent)}
+/* Nav: a few pages, then two drop-down menus. */
+nav.pages{align-items:center}
+nav.pages details.menu{position:relative}
+nav.pages details.menu > summary{list-style:none; cursor:pointer; color:var(--soft); padding-bottom:3px; border-bottom:2px solid transparent}
+nav.pages details.menu > summary::-webkit-details-marker{display:none}
+nav.pages details.menu > summary::after{content:" ▾"; font-size:.8em}
+nav.pages details.menu.current > summary{color:var(--accent); border-bottom-color:var(--accent)}
+nav.pages details.menu > div{position:absolute; z-index:20; top:calc(100% + 6px); left:0; min-width:220px; display:flex; flex-direction:column;
+  background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:6px; box-shadow:0 6px 18px rgb(0 0 0 / .12)}
+nav.pages details.menu > div a{padding:6px 10px; border-radius:5px; border:0}
+nav.pages details.menu > div a:hover{background:var(--accent-soft)}
+nav.pages details.menu > div a[aria-current="page"]{color:var(--accent); background:var(--accent-soft)}
+/* Page pattern: a short lede, the answer, then caveats folded away. */
+.lede{font-size:1.08rem; max-width:70ch; color:var(--soft); margin:0 0 14px}
+details.covers{background:var(--warn-soft); border:1px solid var(--rule); border-radius:8px; padding:8px 14px; margin:0 0 14px; font-size:.93rem}
+details.covers > summary{cursor:pointer; font-weight:600; color:var(--warn)}
+details.covers[open] > summary{margin-bottom:6px}
+details.covers ul{margin:4px 0; padding-left:20px}
+details.covers li{margin:3px 0}

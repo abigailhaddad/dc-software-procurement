@@ -19,6 +19,7 @@
   .status-unknown{background:none; color:var(--muted); padding-left:0; margin-left:0}
   @media (max-width:640px){ .toolbar label{flex:1 1 100%} .toolbar input,.toolbar select{width:100%} .toolbar label.check input{width:auto} }
 </style>
+<script src="shared/ui.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -29,16 +30,20 @@
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="start.html">Start here</a>
-    <a href="index.html">Contracts</a>
-    <a href="payments.html">Payments</a>
-    <a href="purchase-orders.html">Purchase orders</a>
-    <a href="solicitations.html">Solicitations</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html" aria-current="page">Renewals</a>
-    <a href="shared-vendors.html">Vendors across agencies</a>
-    <a href="how-dc-buys.html">How DC buys</a>
-    <a href="gaps.html">What DC's site leaves out</a>
-    <a href="about.html">About this data</a>
+    <a href="shared-vendors.html">Vendors</a>
+    <a href="solicitations.html">Solicitations</a>
+    <details class="menu"><summary>Records</summary><div>
+      <a href="index.html">Contracts</a>
+      <a href="purchase-orders.html">Purchase orders</a>
+      <a href="payments.html">Payments</a>
+    </div></details>
+    <details class="menu"><summary>Background</summary><div>
+      <a href="how-dc-buys.html">How DC buys</a>
+      <a href="gaps.html">What DC's site leaves out</a>
+      <a href="about.html">About this data</a>
+    </div></details>
   </nav>
 </header>
 

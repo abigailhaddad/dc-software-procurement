@@ -17,6 +17,7 @@
   details.more{margin:8px 0}
   details.more summary{cursor:pointer; color:var(--accent); font-weight:600}
 </style>
+<script src="shared/ui.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -27,16 +28,20 @@
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
     <a href="start.html">Start here</a>
-    <a href="index.html">Contracts</a>
-    <a href="payments.html">Payments</a>
-    <a href="purchase-orders.html">Purchase orders</a>
-    <a href="solicitations.html">Solicitations</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html">Renewals</a>
-    <a href="shared-vendors.html">Vendors across agencies</a>
-    <a href="how-dc-buys.html">How DC buys</a>
-    <a href="gaps.html" aria-current="page">What DC's site leaves out</a>
-    <a href="about.html">About this data</a>
+    <a href="shared-vendors.html">Vendors</a>
+    <a href="solicitations.html">Solicitations</a>
+    <details class="menu"><summary>Records</summary><div>
+      <a href="index.html">Contracts</a>
+      <a href="purchase-orders.html">Purchase orders</a>
+      <a href="payments.html">Payments</a>
+    </div></details>
+    <details class="menu current"><summary>Background</summary><div>
+      <a href="how-dc-buys.html">How DC buys</a>
+      <a href="gaps.html" aria-current="page">What DC's site leaves out</a>
+      <a href="about.html">About this data</a>
+    </div></details>
   </nav>
 </header>
 
