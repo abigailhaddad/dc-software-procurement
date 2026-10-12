@@ -67,6 +67,7 @@ th.num,td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:n
 .note{background:var(--warn-soft); border:1px solid var(--rule); border-radius:8px; padding:10px 14px; margin:0 0 12px; font-size:.93rem}
 .interest-note{background:var(--accent-soft)}
 .interest-note p{margin:6px 0}
+.tag.hint{cursor:help}
 .tag.interest{background:var(--accent-soft); color:var(--accent); cursor:help; margin:1px 0}
 th[title]{cursor:help; text-decoration:underline dotted; text-underline-offset:3px}
 .tag{display:inline-block; font-size:.72rem; padding:0 5px; border-radius:3px; background:var(--warn-soft); color:var(--warn); margin-left:4px; white-space:nowrap}

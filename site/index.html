@@ -132,7 +132,7 @@ start({
       expr: "array_to_string(nigp_classes, '; ')", describe: nigpLabel},
     start_fiscal_year: {label: "Fiscal year the period starts", from: "From startDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(start_fiscal_year AS VARCHAR)"},
     option_period: {label: "Option period", from: "currentOptionPeriod on DC's site, as typed.", filter: "multi", expr: "option_period"},
-    of_interest: {label: "Of interest", from: "How the award was made, where its paperwork shows a sole-source, exempt, emergency, letter-contract or pilot award, or an extension past the last option (of_interest.yaml). Only contracts flagged for review were read, so a blank means not read, not ordinary.",
+    of_interest: {label: "Of interest", from: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We only read contracts our checks flagged, so a blank means we didn't read it, not that it's ordinary. Recorded in of_interest.yaml.",
       filter: "multi", expr: "coalesce(of_interest, '(not flagged)')", listExpr: "string_split(coalesce(of_interest, '(not flagged)'), '; ')",
       optionExpr: "unnest(string_split(coalesce(of_interest, '(not flagged)'), '; '))"},
     listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
@@ -155,14 +155,14 @@ start({
   search: ["contract_number", "title", "vendor"],
   select: ["contract_number", "of_interest", "title", "vendor", "agency", "contract_type", "market_type", "option_period",
     "CAST(start_date AS VARCHAR) AS start_date", "CAST(end_date AS VARCHAR) AS end_date",
-    "CASE WHEN period_kind = 'base' THEN coalesce(corrected_amount, amount) END AS amount", "period_kind", "corrected_amount IS NOT NULL AS corrected", "same_award_as",
+    "CASE WHEN period_kind = 'base' THEN coalesce(corrected_amount, amount) END AS amount", "amount_text", "period_kind", "corrected_amount IS NOT NULL AS corrected", "same_award_as",
     "array_to_string(nigp_codes, '; ') AS nigp_codes", "portal_url", "listed"],
   // Contracts of interest first, then the largest base amounts.
   defaultOrder: [[1, "asc"], [10, "desc"]],
   columns: [
-    {key: "contract_number", label: "Contract", title: "The contract number on DC's site. Click it for the contract's periods, payments, orders and documents; \"DC site\" opens this period's page there.", render: (v, r) => `<a class="mono" href="${contractPage(v)}" title="Its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
+    {key: "contract_number", label: "Contract", title: "The contract number on DC's site. Click it to open the contract's periods, payments, orders and documents in a new tab; \"DC site\" opens this period's page there.", render: (v, r) => `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab: its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
     {key: "of_interest", label: "Of interest", render: interestBadges,
-      title: "How the award was made, read from its paperwork: sole source, exempt from competition, emergency, letter contract, pilot, or extended past its last option. Hover a badge for what it means. Only contracts flagged for review were read, so a blank means not read, not ordinary."},
+      title: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We only read contracts our checks flagged, so a blank means we didn't read it, not that it's ordinary."},
     {key: "title", label: "Title", cls: "wide", title: "The contract's title on DC's site."},
     {key: "vendor", label: "Vendor", title: "The vendor on DC's site, as spelled there."},
     {key: "agency", label: "Agency", title: "The agency on DC's site; abbreviations are filled in from agency_names.yaml."},
@@ -172,9 +172,10 @@ start({
     {key: "start_date", label: "Starts", cls: "num", title: "When this period starts, per DC's site."},
     {key: "end_date", label: "Ends", cls: "num", title: "When this period ends, per DC's site."},
     {key: "amount", label: "Base amount", cls: "num", render: (v, r) => r.period_kind === "base"
-      ? `${money(v)}${r.corrected ? ' <span class="tag">corrected</span>' : ""}${r.same_award_as ? ` <span class="tag">dup.</span>` : ""}`
+      ? `${money(v)}${r.corrected ? ` <span class="tag hint" title="DC's site says ${esc(r.amount_text)}. The District's own signed paperwork says ${esc(Number(v).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2}))}, so that is shown. Open the contract for the document.">corrected</span>` : ""}` +
+        (r.same_award_as ? ` <span class="tag hint" title="DC's site lists this same contract twice. Totals count it once, under ${esc(r.same_award_as)}.">listed twice</span>` : "")
       : '<span class="muted">–</span>',
-      title: "What the base period authorises, a ceiling, not spending. Option periods show – because about three in ten we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"dup.\": the same award as another contract number, which totals count instead. Open the contract for details."},
+      title: "What the base period authorises, a ceiling, not spending. Option periods show – because about three in ten we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"listed twice\": DC's site lists the same contract under two numbers; totals count it once. Open the contract for details."},
     {key: "nigp_codes", label: "NIGP code", title: "The commodity code DC's site gives the contract, chosen when it was entered.", render: (v) => `<span class="mono">${esc(v)}</span>`},
   ],
 });

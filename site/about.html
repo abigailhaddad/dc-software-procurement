@@ -200,7 +200,7 @@ async function main() {
     {big: n(per.unclear), label: "periods with no clear label, not counted",
      text: `Labelled only "2", "N/A" and the like, so it can't be told whether they are a base or an option period: ${money(per.unclear_amount_as_published)} as published.`},
   ].map((x) => `<article class="note-card"><div class="note-big">${x.big}</div><div class="note-label">${esc(x.label)}</div><p>${x.text}</p></article>`).join("");
-  const page = (x) => `<a class="mono" href="${keep("contract.html?n=" + encodeURIComponent(x))}">${esc(x)}</a>`;
+  const page = (x) => `<a class="mono" href="${keep("contract.html?n=" + encodeURIComponent(x))}" target="_blank" rel="noopener">${esc(x)}</a>`;
   document.getElementById("fixed-amounts").innerHTML = `<thead><tr><th>Contract</th><th>Period</th><th class="num">DC's site</th>
       <th class="num">Paperwork</th><th>Source</th></tr></thead><tbody>` +
     c.amounts.map((a) => `<tr><td>${page(a.contract_number)}</td><td>${esc(a.option_period)}</td><td class="num">${esc(a.published)}</td>

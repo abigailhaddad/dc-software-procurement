@@ -80,7 +80,7 @@ const keep = data ? "&data=" + encodeURIComponent(data) : "";
 // A payment's contract number links to that contract's page when DC's site
 // lists it; most numbers on payments are not published contracts.
 const contractCell = (v, r) => !v ? '<span class="muted">none</span>'
-  : r.published ? `<a class="mono" href="contract.html?n=${encodeURIComponent(v)}${keep}">${esc(v)}</a>`
+  : r.published ? `<a class="mono" href="contract.html?n=${encodeURIComponent(v)}${keep}" target="_blank" rel="noopener">${esc(v)}</a>`
   : `<span class="mono">${esc(v)}</span> <span class="tag" title="No contract with this number is on DC's published contract list">not a listed contract</span>`;
 start({
   table: "payments",

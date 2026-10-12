@@ -18,40 +18,57 @@
 
 checked: '2026-10-12'
 categories:
+  # `means` is the plain-language hover text on the site; `law` is the
+  # authority the paperwork cites, kept for reference.
   sole_source:
     label: Sole source
     means: >-
-      Awarded without competition to one vendor, citing D.C. Code § 2-354.04 unless the entry
-      says the citation could not be seen.
+      The District picked one company without asking others to bid, saying it was the only
+      one that could do the work.
+    law: D.C. Code § 2-354.04 (unless the entry says the citation could not be seen)
   sole_source_past_final_option:
     label: Sole-source extension past the last option
     means: >-
-      The current period is not an option the contract provided for: it extends the contract
-      past its final option, sole source, citing § 2-354.04 and 27 DCMR 2005.2(b).
+      The contract had used up all the extra years it allowed, and the District extended it
+      anyway, without asking others to bid, usually to keep the work going until a new
+      contract is in place.
+    law: D.C. Code § 2-354.04; 27 DCMR 2005.2(b)
   exempt_from_competition:
     label: Exempt from competition
     means: >-
-      Awarded without competition under D.C. Code § 2-354.13 (for example (8), maintenance
-      of existing software, or (2), a court order).
+      The District didn't have to ask others to bid because the law exempts this kind of
+      purchase, for example support for software it already owns, patented equipment, or a
+      service a court ordered.
+    law: D.C. Code § 2-354.13
   emergency:
     label: Emergency procurement
-    means: Awarded under D.C. Code § 2-354.05.
+    means: >-
+      Bought quickly without the usual bidding because the agency said there was an
+      emergency. Emergency contracts are meant to be short.
+    law: D.C. Code § 2-354.05
   letter_contract:
     label: Letter contract
     means: >-
-      Work began under an undefinitized letter contract (27 DCMR 2425) before the contract
-      was signed.
+      The company started work on a short preliminary agreement before the full contract was
+      signed, usually while waiting for approval.
+    law: 27 DCMR 2425
   special_pilot:
     label: Special pilot procurement
-    means: Awarded under D.C. Code § 2-354.08.
+    means: >-
+      Bought without the usual bidding under a rule that lets the District try out something
+      new on a small scale.
+    law: D.C. Code § 2-354.08
   rider_or_cooperative:
     label: Rider or cooperative purchase
     means: >-
-      Bought through a cooperative agreement (D.C. Code § 2-354.11) or a rider clause on an
-      existing contract, rather than a new competition.
+      Bought off a contract that already existed, often one another government or agency
+      had competed, instead of running a new competition.
+    law: D.C. Code § 2-354.11, or a rider clause in the existing contract
   grew_after_award:
     label: Grew or slipped after award
-    means: A large increase or a long delay after a non-competitive award.
+    means: >-
+      After it was awarded without bidding, the contract got much bigger or its delivery was
+      pushed back a long way.
 contracts:
 - contract_number: CW106514
   categories:

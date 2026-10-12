@@ -78,7 +78,7 @@
 // payments, documents by the option periods they are filed under. Payments
 // and orders come from the export's link tables (contract_payments,
 // contract_orders), cut down to listed contracts, not the full tables.
-import {boot, q, downloadCsv, manifest} from "./shared/db.js";
+import {boot, q, downloadCsv, manifest, PARQUET_DIR} from "./shared/db.js";
 import {n, money, esc} from "./shared/explorer.js";
 
 const params = new URLSearchParams(location.search);
@@ -179,14 +179,17 @@ async function main() {
   document.getElementById("periods").innerHTML = `<table class="plain"><thead><tr><th>Period</th><th class="num">Starts</th><th class="num">Ends</th><th class="num">Amount</th><th>Contract type</th><th class="num">Documents</th><th></th></tr></thead><tbody>` +
     periods.map((p) => `<tr><td>${esc(p.option_period)}${p.listed ? "" : '<span class="tag" title="DC\'s site no longer returns this record in its search. Its page there may still open by direct link; this row comes from an earlier pull.">not in DC site search</span>'}</td><td class="num">${esc(p.start_date)}</td><td class="num">${esc(p.end_date)}</td>` +
       `<td class="num">${p.period_kind !== "base" ? '<span class="muted" title="Option-period amounts are not shown.">–</span>'
-        : p.corrected_amount !== null ? `${moneyExact(p.corrected_amount)} <span class="tag" title="DC's site says ${esc(p.amount_text)}">corrected</span>`
+        : p.corrected_amount !== null ? `${moneyExact(p.corrected_amount)} <span class="tag hint" title="DC's site says ${esc(p.amount_text)}. The District's own signed paperwork says ${esc(moneyExact(p.corrected_amount))}, so that is shown. The note above names the document.">corrected</span>`
         : moneyExact(p.amount)}</td><td>${esc(p.contract_type || "")}</td><td class="num">${n(p.documents)}</td>` +
       `<td><a href="${esc(p.portal_url)}" target="_blank" rel="noopener">portal&nbsp;↗</a></td></tr>`).join("") + "</tbody></table>";
 
   const interest = periods.find((p) => p.of_interest);
   if (interest) {
     const box = document.getElementById("interest");
-    box.innerHTML = `<strong>Of interest:</strong> ${interest.of_interest.split("; ").map((c) => `<span class="tag interest">${esc(c)}</span>`).join(" ")}
+    const cats = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href)
+      .then((r) => r.ok ? r.json() : {}).then((x) => x.of_interest_categories || {}).catch(() => ({}));
+    box.innerHTML = `<strong>Of interest:</strong> ${interest.of_interest.split("; ").map((c) => `<span class="tag interest" title="${esc(cats[c] || c)}">${esc(c)}</span>`).join(" ")}
+      ${interest.of_interest.split("; ").map((c) => cats[c] ? `<p class="muted">${esc(c)}: ${esc(cats[c])}</p>` : "").join("")}
       <p>${esc(interest.of_interest_detail)}</p><span class="muted">Read by hand from the documents below; recorded in of_interest.yaml. Not a finding of wrongdoing.</span>`;
     box.hidden = false;
   }
@@ -195,7 +198,7 @@ async function main() {
   for (const p of periods.filter((p) => p.corrected_amount !== null))
     notes.push(`DC's site gives the ${esc(p.option_period)} amount as ${esc(p.amount_text)}; the District's own paperwork gives ${moneyExact(p.corrected_amount)}.`);
   if (sameAs.length)
-    notes.push(`This is the same award as ${sameAs.map((x) => `<a class="mono" href="contract.html?n=${encodeURIComponent(x)}${keep ? "&" + keep : ""}">${esc(x)}</a>`).join(", ")}, which totals count instead. DC's site lists it under both numbers.`);
+    notes.push(`This is the same award as ${sameAs.map((x) => `<a class="mono" href="contract.html?n=${encodeURIComponent(x)}${keep ? "&" + keep : ""}" target="_blank" rel="noopener">${esc(x)}</a>`).join(", ")}, which totals count instead. DC's site lists it under both numbers.`);
   const sources = distinct("correction");
   if (notes.length) {
     const box = document.getElementById("correction");
