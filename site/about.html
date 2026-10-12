@@ -29,7 +29,7 @@
   <h2>About this data</h2>
   <p><strong>This is a selection, not everything.</strong> It is what the District's
   <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> listed when we pulled it, weekly since
-  August 2026. Records the portal had stopped listing before then are not here, and a record it never published cannot be. Payments
+  August 2026. Records its search had stopped returning before then are not here, and a record it never published cannot be. Payments
   in particular often carry no contract number, or one the portal's contract list does not include, so the contracts here cover only
   part of what was paid. None of it can be checked against the District's own accounts; it is what the portal shows.</p>
   <p>Fields are shown as the District entered them. Nothing is classified or estimated. The one thing filled in is a short list of
@@ -121,11 +121,12 @@ function notes(s) {
      text: `The portal lists each option period as its own record with its own amount. That amount is what the period authorises, a
        ceiling. Adding a contract's periods gives the most it could be paid over its life, not what it was paid.`,
      link: ["See the contracts", "index.html"]},
-    {big: n(s.delisted.periods), label: `option periods no longer on the portal`,
-     text: `The portal does not keep everything it publishes. These periods, on ${n(s.delisted.contracts)} contracts, plus
+    {big: n(s.delisted.periods), label: `option periods no longer in the portal's search`,
+     text: `The portal's search does not keep returning everything it once did. These periods, on ${n(s.delisted.contracts)} contracts, plus
        ${n(s.delisted.orders)} purchase orders and ${n(s.delisted.payments)} payment lines, came from earlier pulls and are marked
-       "no longer listed" wherever they appear.`,
-     link: ["See them", "index.html?listed=No+longer+listed"]},
+       "not in portal search" wherever they appear. A record's detail page on the portal can still open by direct link after its
+       search stops returning it, which is how some of these were recovered.`,
+     link: ["See them", "index.html?listed=Not+in+portal+search"]},
     {big: n(s.contracts.vendors), label: "vendor names on contracts, as spelled",
      text: `Vendor, agency, contract type and market type are typed in, and shown as typed. One company can appear under more than one
        spelling, and market type has ${n(s.contracts.market_types)} distinct values, several of them variants of one another. Check the

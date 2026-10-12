@@ -81,7 +81,7 @@ const portal = (row) => row.portal_url
   ? ` <a href="${esc(row.portal_url)}" target="_blank" rel="noopener" title="The District's page for this option period">portal&nbsp;↗</a>` : "";
 const data = new URLSearchParams(location.search).get("data");
 const contractPage = (v) => `contract.html?n=${encodeURIComponent(v)}${data ? "&data=" + encodeURIComponent(data) : ""}`;
-const dropped = (row) => row.listed === false ? '<span class="tag">no longer listed</span>' : "";
+const dropped = (row) => row.listed === false ? '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>' : "";
 
 start({
   table: "contracts",
@@ -89,9 +89,10 @@ start({
     sql: `SELECT CAST(min(start_date) AS VARCHAR) AS first, CAST(max(end_date) AS VARCHAR) AS last,
                  count(*) FILTER (WHERE NOT listed) AS dropped FROM contracts`,
     text: (r, s) => `<ul>
-      <li>Only contracts the portal lists. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts the portal had
-        stopped listing before our first pull, in August 2026, are not here.</li>
-      <li>${n(r.dropped)} option periods the portal has since stopped listing are kept from earlier pulls, marked "no longer listed".</li>
+      <li>Only contracts the portal's search returns. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts its
+        search had stopped returning before our first pull, in August 2026, are not here.</li>
+      <li>${n(r.dropped)} option periods its search has since stopped returning are kept from earlier pulls, marked "not in portal search".
+        Their detail pages on the portal may still open by direct link.</li>
       <li>Amounts are ceilings, not spending. Of ${money(s.payments.paid)} in payments, only ${money(s.payments.listed_contract_paid)}
         (${pct(s.payments.listed_contract_paid, s.payments.paid)}) is on lines carrying the number of a contract listed here. The rest carry
         no contract number, or one of ${n(s.payments.unlisted_numbers)} numbers not on the portal's contract list. Those payments are only
@@ -121,8 +122,8 @@ start({
       expr: "array_to_string(nigp_classes, '; ')", describe: nigpLabel},
     start_fiscal_year: {label: "Fiscal year the period starts", from: "From startDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(start_fiscal_year AS VARCHAR)"},
     option_period: {label: "Option period", from: "currentOptionPeriod on the portal, as typed.", filter: "multi", expr: "option_period"},
-    listed: {label: "On the portal now", from: "Whether the portal still returned the row on the latest pull.", filter: "multi",
-      expr: "CASE WHEN listed THEN 'Still listed' ELSE 'No longer listed' END"},
+    listed: {label: "In the portal's search now", from: "Whether the portal's search returned the row on the latest pull. Rows it no longer returns come from earlier pulls; their detail pages may still open.", filter: "multi",
+      expr: "CASE WHEN listed THEN 'In portal search' ELSE 'Not in portal search' END"},
     contract_number: {label: "Contract number", from: "contractNumber.", filter: "text", exact: true, expr: "contract_number"},
     title: {label: "Title", from: "title.", filter: "text", expr: "title"},
     start_date: {label: "Period start date", from: "startDate.", filter: "date", expr: "start_date"},

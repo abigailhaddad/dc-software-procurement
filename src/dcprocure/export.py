@@ -60,7 +60,7 @@ COLUMNS: dict[str, dict[str, str]] = {
         "contracting_officer": "contractingOfficerName, from the contract's detail page",
         "documents": "Number of attachments listed on the detail page for this option period",
         "portal_url": "The District's detail page for this option period",
-        "listed": "Whether the portal still returned this row on the latest pull",
+        "listed": "Whether the portal's search returned this row on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
         "first_listed": "First pull that returned it (tracked from October 2026)",
         "last_listed": "Last pull that returned it",
         "recovered_on": "Set when the row was put back after the portal stopped listing it",
@@ -85,7 +85,7 @@ COLUMNS: dict[str, dict[str, str]] = {
         "ordered_date": "orderedDate, parsed from M/D/YYYY",
         "po_total": "poTotal, parsed",
         "po_total_text": "poTotal exactly as published",
-        "listed": "Whether the portal still returned this row on the latest pull",
+        "listed": "Whether the portal's search returned this row on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
     },
     "payments": {
         "id": "Portal id of the payment line. Not unique: several lines can share one",
@@ -101,7 +101,7 @@ COLUMNS: dict[str, dict[str, str]] = {
         "voucher_amount_text": "voucherAmount exactly as published",
         "check_total": "paymentAmount, parsed. NOT this line's amount: the total of the whole check or ACH run, repeated on every line in it. Do not sum",
         "payment_number": "paymentNumber, as published (masked by the portal)",
-        "listed": "Whether the portal still returned this row on the latest pull",
+        "listed": "Whether the portal's search returned this row on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
     },
     "nigp_classes": {
         "nigp_class": "Three-digit NIGP class",

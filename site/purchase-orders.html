@@ -103,8 +103,8 @@ start({
     supplier_contains: {label: "Supplier name contains", from: "supplierName on the portal; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "supplier"},
     nigp_class: {label: "Commodity class (NIGP)", from: "The first three digits of commodityCode.", filter: "multi", expr: "nigp_class", describe: nigpLabel},
     fiscal_year: {label: "Fiscal year", from: "fiscalYear, as the portal publishes it.", filter: "multi", ordered: true, expr: "CAST(fiscal_year AS VARCHAR)"},
-    listed: {label: "On the portal now", from: "Whether the portal still returned the row on the latest pull.", filter: "multi",
-      expr: "CASE WHEN listed THEN 'Still listed' ELSE 'No longer listed' END"},
+    listed: {label: "In the portal's search now", from: "Whether the portal's search returned the row on the latest pull. Rows it no longer returns come from earlier pulls; their detail pages may still open.", filter: "multi",
+      expr: "CASE WHEN listed THEN 'In portal search' ELSE 'Not in portal search' END"},
     po_number: {label: "PO number", from: "poNumber, without any -V revision suffix.", filter: "text", exact: true, expr: "regexp_replace(po_number, '-V[0-9]+$', '')"},
     ordered_date: {label: "Order date", from: "orderedDate.", filter: "date", expr: "ordered_date"},
     po_total: {label: "Order amount", from: "poTotal, in dollars.", filter: "number", expr: "po_total"},
@@ -122,7 +122,7 @@ start({
   defaultOrder: [[1, "desc"]],
   columns: [
     {key: "po_number", label: "PO", render: (v, r) => `<a class="mono" href="payments.html?po_number=${encodeURIComponent(v.replace(/-V[0-9]+$/, ""))}${keep}" title="Payments against it">${esc(v)}</a>` +
-      (r.listed === false ? '<span class="tag">no longer listed</span>' : "")},
+      (r.listed === false ? '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>' : "")},
     {key: "ordered_date", label: "Ordered", cls: "num"},
     {key: "fiscal_year", label: "FY", cls: "num"},
     {key: "agency", label: "Agency"},

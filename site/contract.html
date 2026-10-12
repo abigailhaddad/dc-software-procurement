@@ -170,7 +170,7 @@ async function main() {
     `<div class="stat"><div class="stat-label">${esc(l)}</div><div class="stat-value">${v}</div><div class="stat-what">${esc(w)}</div></div>`).join("");
 
   document.getElementById("periods").innerHTML = `<table class="plain"><thead><tr><th>Period</th><th class="num">Starts</th><th class="num">Ends</th><th class="num">Amount</th><th>Contract type</th><th class="num">Documents</th><th></th></tr></thead><tbody>` +
-    periods.map((p) => `<tr><td>${esc(p.option_period)}${p.listed ? "" : '<span class="tag">no longer listed</span>'}</td><td class="num">${esc(p.start_date)}</td><td class="num">${esc(p.end_date)}</td>` +
+    periods.map((p) => `<tr><td>${esc(p.option_period)}${p.listed ? "" : '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>'}</td><td class="num">${esc(p.start_date)}</td><td class="num">${esc(p.end_date)}</td>` +
       `<td class="num">${moneyExact(p.amount)}</td><td>${esc(p.contract_type || "")}</td><td class="num">${n(p.documents)}</td>` +
       `<td><a href="${esc(p.portal_url)}" target="_blank" rel="noopener">portal&nbsp;↗</a></td></tr>`).join("") + "</tbody></table>";
 
@@ -206,7 +206,7 @@ async function main() {
   $("#orders table").DataTable({
     data: orders, pageLength: 25, order: [[1, "desc"]], scrollX: true,
     columns: [
-      {data: "po_number", title: "PO", render: (v, t, r) => `<span class="mono">${esc(v)}</span>${r.listed ? "" : '<span class="tag">no longer listed</span>'}`},
+      {data: "po_number", title: "PO", render: (v, t, r) => `<span class="mono">${esc(v)}</span>${r.listed ? "" : '<span class="tag" title="The portal\'s search no longer returns this record. Its detail page may still open by direct link; this row comes from an earlier pull.">not in portal search</span>'}`},
       {data: "ordered_date", title: "Ordered", className: "num"},
       {data: "fiscal_year", title: "FY", className: "num"},
       {data: "agency", title: "Agency"},
