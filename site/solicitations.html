@@ -11,9 +11,17 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   /* Only this page uses these; everything else is shared/style.css. */
-  .keywords{display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; margin:4px 0 8px}
+  h2.page-title{font-family:var(--head); font-size:1.5rem; margin:8px 0 4px}
+  .keywords{display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; margin:4px 0 8px; font-size:.93rem}
   .keywords a{font-weight:600}
+  .keywords details{flex-basis:100%}
+  .keywords details summary{cursor:pointer; color:var(--muted); font-size:.88rem}
+  .keywords details p{margin:4px 0 0; color:var(--muted); font-size:.88rem; max-width:80ch}
   .open-list td.when{white-space:nowrap}
+  details.covers p{margin:4px 0 8px; max-width:90ch}
+  /* explorer.js writes its own "What this covers" heading; the summary already says it. */
+  #coverage > h2{display:none}
+  #coverage p, #coverage li{font-size:inherit}
 </style>
 <script src="shared/ui.js" defer></script>
 </head>
@@ -43,16 +51,21 @@
   </nav>
 </header>
 
-<p class="intro">What DC is about to buy. A <strong>solicitation</strong> is the District's public request for bids, quotes or
-proposals: an RFP (request for proposals), RFQ (request for quotations), IFB (invitation for bids) or RFI (request for information,
-which only asks questions). DC's site lists each one with a title, agency, market type, closing date and the contract specialist to
-contact. It publishes no description, dollar value or commodity code, and it does not say which contract a solicitation led to.
-Every value below is as the District entered it. The full documents are on
+<h2 class="page-title">Solicitations</h2>
+<p class="lede">What DC is about to buy. A <strong>solicitation</strong> is the District's public request for bids, quotes or
+proposals. Below are the ones open when we pulled, soonest closing first. The full documents are on
 <a href="https://contracts.ocp.dc.gov/solicitations/search">DC's solicitations search</a>.</p>
 
-<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+<details class="covers">
+  <summary>What this covers</summary>
+  <p>A solicitation is an RFP (request for proposals), RFQ (request for quotations), IFB (invitation for bids) or RFI (request for
+  information, which only asks questions). DC's site lists each one with a title, agency, market type, closing date and the contract
+  specialist to contact. It publishes no description, dollar value or commodity code, and it does not say which contract a
+  solicitation led to. Every value on this page is as the District entered it.</p>
+  <div id="coverage"></div>
+</details>
 
-<section class="block">
+<section class="block" id="open">
   <h2>Open when we pulled</h2>
   <p class="muted" id="open-note">Loading…</p>
   <div id="open-list"></div>
@@ -212,10 +225,11 @@ document.getElementById("open-note").textContent =
   (passed ? ` ${passed} of them have closing dates before today, so they have closed since.` : "") +
   ` Check DC's site before relying on a date: it can extend or cancel a solicitation.`;
 document.getElementById("open-list").innerHTML = `<div class="tablewrap" style="max-height:none"><table class="plain open-list">
-  <thead><tr><th>Closes</th><th>Number</th><th>Title</th><th>Agency</th><th>Market type</th><th>Specialist</th></tr></thead><tbody>` +
+  <thead><tr><th>Closes</th><th>Time</th><th>Number</th><th>Title</th><th>Agency</th><th>Market type</th><th>Specialist</th></tr></thead><tbody>` +
   openRows.map((r) => `<tr>
-    <td class="when">${r.closing_date ? esc(r.closing_date) + "<br><span class=\"muted\">" + esc(r.closing_time) + "</span>" : '<span class="muted">none given</span>'}` +
+    <td class="when">${r.closing_date ? esc(r.closing_date) : '<span class="muted">none given</span>'}` +
       (r.closing_date && r.closing_date < today ? ' <span class="tag">date passed</span>' : "") + `</td>
+    <td class="when muted">${esc(r.closing_time)}</td>
     <td class="mono">${shown(r.solicitation_number)}</td>
     <td>${shown(r.title)}</td>
     <td>${esc(r.agency)}</td>
@@ -227,9 +241,10 @@ document.getElementById("open-list").innerHTML = `<div class="tablewrap" style="
 const counts = await q(`SELECT ${KEYWORDS.map((w, i) => `count(*) FILTER (WHERE title ILIKE ?) AS k${i}`).join(", ")} FROM solicitations`,
   KEYWORDS.map((w) => `%${w}%`));
 document.getElementById("keywords").innerHTML = `<span class="muted">Try a title search:</span>` +
-  KEYWORDS.map((w, i) => `<a href="#" data-word="${esc(w)}">${esc(w)}</a> <span class="muted">(${n(counts[0]["k" + i])})</span>`).join(" ") +
-  `<span class="muted">The numbers are titles containing the word, across all years. This is a text search, not a classification:
-  "license" also finds license plate readers, "system" finds sprinkler systems, and software bought under another name is missed.</span>`;
+  KEYWORDS.map((w, i) => `<span><a href="#" data-word="${esc(w)}">${esc(w)}</a> <span class="muted">(${n(counts[0]["k" + i])})</span></span>`).join("") +
+  `<details><summary>Text search, not a classification</summary><p>The numbers are titles containing the word, across all years.
+  This is a text search, not a classification: "license" also finds license plate readers, "system" finds sprinkler systems, and
+  software bought under another name is missed.</p></details>`;
 // Sets the "Title contains" filter and keeps every other filter in the URL.
 document.getElementById("keywords").addEventListener("click", (e) => {
   const a = e.target.closest("a[data-word]");

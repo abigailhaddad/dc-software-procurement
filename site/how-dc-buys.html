@@ -11,17 +11,34 @@
 <link rel="stylesheet" href="shared/style.css">
 <style>
 /* Only this page. Everything else comes from shared/style.css. */
-.primer{max-width:82ch}
+h2.page-title{font-family:var(--head); font-size:1.5rem; margin:8px 0 4px}
+.legal-note{font-size:.92rem; color:var(--soft); max-width:82ch; margin:0 0 4px}
+.primer{max-width:82ch; min-width:0}
 .primer p,.primer li{color:var(--soft)}
 .primer ul{padding-left:20px}
-.primer li{margin:0 0 6px}
-.toc{columns:2 220px; font-size:.95rem; padding-left:20px}
-blockquote.law{margin:8px 0 12px; padding:6px 12px; border-left:3px solid var(--rule); color:var(--soft); font-size:.92rem; background:var(--surface)}
+.primer li{margin:0 0 8px}
+.primer section.block{margin:28px 0}
+/* Citations in running text: smaller, so the rule itself reads first. */
+.cite{font-size:.84rem; color:var(--muted)}
+.toc{font-size:.95rem; padding-left:20px; columns:2 200px; margin:6px 0 0}
+.toc li{margin:0 0 4px}
+.toc-title{font-family:var(--head); font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin:14px 0 0}
+blockquote.law{margin:6px 0 4px; padding:6px 12px; border-left:3px solid var(--rule); color:var(--soft); font-size:.92rem; background:var(--surface)}
 blockquote.law cite{display:block; font-style:normal; font-size:.82rem; color:var(--muted); margin-top:2px}
+details.exact{margin:0 0 12px}
+details.exact > summary{cursor:pointer; font-size:.88rem; color:var(--muted)}
 .src{font-size:.82rem; color:var(--muted); white-space:nowrap}
 table.plain td .tag.interest{margin-left:0; white-space:normal}
+table.lines td.num{white-space:nowrap; font-variant-numeric:tabular-nums}
 /* On phones the tables scroll sideways inside their box rather than squeezing each column to a word. */
 .primer .tablewrap table.plain{min-width:620px}
+/* Wide screens: the contents list sits beside the text and stays in view. */
+@media (min-width:1000px){
+  .layout{display:grid; grid-template-columns:200px minmax(0,1fr); gap:36px; align-items:start}
+  .layout > nav{position:sticky; top:12px; max-height:calc(100vh - 24px); overflow-y:auto}
+  .layout .toc{columns:auto; padding-left:0; list-style:none; font-size:.9rem}
+  .layout .toc li{margin:0 0 7px}
+}
 </style>
 <script src="shared/ui.js" defer></script>
 </head>
@@ -51,19 +68,20 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
   </nav>
 </header>
 
-<section class="about-hero">
-  <h2>How the District buys things</h2>
-  <p>A short guide to the rules behind the records on this site, written for people new to DC procurement, with software and IT
-  purchases in mind. Each rule links to the law or regulation it comes from, and short quotes are the source's own words.</p>
-  <p><strong>This is a summary, not legal advice.</strong> It leaves out exceptions and detail, and the law changes. Read the linked
-  source, or ask the Office of the Attorney General or agency counsel, before acting on anything here.</p>
-  <p class="meta">Every source was read on 12 October 2026: D.C. Code on <a href="https://code.dccouncil.gov">code.dccouncil.gov</a>,
-  regulations (DCMR) on <a href="https://www.dcregs.dc.gov">dcregs.dc.gov</a>. Each claim, its source and the quoted text are listed in
-  <a href="https://github.com/abigailhaddad/dc-software-procurement/blob/main/docs/how_dc_buys_sources.md">how_dc_buys_sources.md</a>.</p>
-</section>
+<h2 class="page-title">How the District buys things</h2>
+<p class="lede">The rules behind the records on this site, for people new to DC procurement, with software and IT purchases in mind.
+Each rule links to the law or regulation it comes from, and short quotes are the source's own words.</p>
+<p class="legal-note"><strong>This is a summary, not legal advice.</strong> It leaves out exceptions and detail, and the law changes.
+Read the linked source, or ask the Office of the Attorney General or agency counsel, before acting on anything here.</p>
+<p class="meta">Every source was read on 12 October 2026: D.C. Code on <a href="https://code.dccouncil.gov">code.dccouncil.gov</a>,
+regulations (DCMR) on <a href="https://www.dcregs.dc.gov">dcregs.dc.gov</a>. Each claim, its source and the quoted text are listed in
+<a href="https://github.com/abigailhaddad/dc-software-procurement/blob/main/docs/how_dc_buys_sources.md">how_dc_buys_sources.md</a>.</p>
 
+<div class="layout">
 <nav aria-label="On this page">
+<p class="toc-title">On this page</p>
 <ul class="toc">
+  <li><a href="#lines">The dollar lines</a></li>
   <li><a href="#who">Who does the buying</a></li>
   <li><a href="#it">Technology purchases and OCTO</a></li>
   <li><a href="#council">When the Council must approve</a></li>
@@ -79,28 +97,48 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
 
 <div class="primer">
 
+<section class="block" id="lines" style="margin-top:8px">
+  <h2>The dollar lines</h2>
+  <p>The amounts where the rules change, gathered from the sections below. Each links to the section with the source.</p>
+  <div class="tablewrap" style="max-height:none"><table class="plain lines">
+    <thead><tr><th>Amount</th><th>Applies</th><th>What the law requires</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td class="num">$10,000</td><td>or less</td><td>A small purchase needs no quotes.</td><td><a href="#methods">How a contract gets awarded</a></td></tr>
+      <tr><td class="num">$25,000</td><td>over</td><td>IT purchases go to OCTO for review. One OCTO hasn't reviewed "shall be deemed recommended for disapproval to the Chief Procurement Officer".</td><td><a href="#it">Technology purchases and OCTO</a></td></tr>
+      <tr><td class="num">$100,000</td><td>or less</td><td>Small purchase: at least three written quotes above $10,000. A purchase may not be split to stay under $100,000.</td><td><a href="#methods">How a contract gets awarded</a></td></tr>
+      <tr><td class="num">$100,000</td><td>over</td><td>Competitive sealed bidding, unless the CPO issues a determination and findings (D&amp;F) for another method.</td><td><a href="#methods">How a contract gets awarded</a></td></tr>
+      <tr><td class="num">$100,000</td><td>or more</td><td>The contract goes in the portal's contract database, with the executed contract, all D&amp;Fs and all modifications.</td><td><a href="#portal">What the portal has to publish</a></td></tr>
+      <tr><td class="num">$250,000</td><td>or less</td><td>Set aside for small business enterprises (SBEs).</td><td><a href="#cbe">Small and local business rules</a></td></tr>
+      <tr><td class="num">$250,000</td><td>over</td><td>At least 35% of the dollar volume subcontracted to SBEs, unless waived.</td><td><a href="#cbe">Small and local business rules</a></td></tr>
+      <tr><td class="num">$1,000,000</td><td>over, in a 12-month period</td><td>The Council must approve the contract, and each option year over the line goes back to the Council.</td><td><a href="#council">When the Council must approve</a></td></tr>
+    </tbody></table></div>
+</section>
+
+
 <section class="block" id="who">
   <h2>Who does the buying</h2>
   <p>The main law is the Procurement Practices Reform Act of 2010, D.C. Code § 2-351.01 and following. It sets up the
-  <strong>Office of Contracting and Procurement (OCP)</strong>, run by the <strong>Chief Procurement Officer (CPO)</strong>:</p>
+  <strong>Office of Contracting and Procurement (OCP)</strong>, an independent agency run by the <strong>Chief Procurement Officer (CPO)</strong>.
+  Through the CPO, OCP has exclusive authority to administer the law, except where the law provides otherwise.</p>
+  <details class="exact"><summary>Exact wording: D.C. Code § 2-352.01(a)(1)</summary>
   <blockquote class="law">"There is established as an independent agency the Office of Contracting and Procurement, which shall be
   administered by the Chief Procurement Officer. Except as otherwise provided in this chapter, OCP, through the CPO, shall have the
   exclusive authority to administer the provisions of this chapter."
-  <cite><a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">D.C. Code § 2-352.01(a)(1)</a></cite></blockquote>
+  <cite><a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">D.C. Code § 2-352.01(a)(1)</a></cite></blockquote></details>
   <ul>
     <li>The CPO hands contracting authority to individual staff ("The CPO may delegate contracting authority to employees of an
       agency"), and the agency decides what it needs and runs the contract once awarded
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01(a)(4)–(5)</a>).
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01(a)(4)–(5)</a>)</span>.
       OCP describes itself as managing "the purchase of $5.7 billion in goods, services and construction annually, on behalf of over 79
-      District agencies" (<a href="https://ocp.dc.gov/page/about-ocp">About OCP</a>; the page gives no date for that figure).</li>
+      District agencies" <span class="cite">(<a href="https://ocp.dc.gov/page/about-ocp">About OCP</a>; the page gives no date for that figure)</span>.</li>
     <li>Some agencies follow the same law but buy on their own, outside the CPO's authority. The statute names, among others, the Chief
       Financial Officer, the Attorney General, UDC, the Housing Authority, the Public Library, DC Public Schools, the Child and Family
       Services Agency and the Department of General Services
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01(b)</a>). DGS buys construction, facilities
-      maintenance, real estate, utility and security services (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01(d)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01(b)</a>)</span>. DGS buys construction, facilities
+      maintenance, real estate, utility and security services <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01(d)</a>)</span>.</li>
     <li>Some bodies are outside the procurement law altogether, including the courts, the Public Defender Service, DC Water, the Washington Convention and Sports Authority,
-      and grants and loans (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.05">§ 2-351.05(c)</a>). The Council
-      runs its own buying (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.05">§ 2-351.05(b)</a>).</li>
+      and grants and loans <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.05">§ 2-351.05(c)</a>)</span>. The Council
+      runs its own buying <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.05">§ 2-351.05(b)</a>)</span>.</li>
     <li>The portal keeps its own list, <a href="https://contracts.ocp.dc.gov/agencies">Independent Agencies</a>: 28 agencies on
       12 October 2026, 13 "Subject to the PPRA of 2010 and Independent from the CPO's Authority", 13 "Exempt from the PPRA and CPO's
       Authority", and 2 with "Limited Applicability". It doesn't match the statute's lists exactly (it includes Lottery and Charitable
@@ -112,72 +150,77 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
 
 <section class="block" id="it">
   <h2>Technology purchases and OCTO</h2>
-  <p>The <strong>Office of the Chief Technology Officer (OCTO)</strong> has a review role on IT buying. Its statute lists this function:</p>
+  <p>The <strong>Office of the Chief Technology Officer (OCTO)</strong> has a review role on IT buying. Its statute tells it to review and approve all agency proposals, purchase
+  orders and contracts for information technology and telecommunications, and to recommend approval or disapproval to the CPO.</p>
+  <details class="exact"><summary>Exact wording: D.C. Code § 1-1403(2)</summary>
   <blockquote class="law">"Review and approve all agency proposals, purchase orders, and contracts for the acquisition of information
   technology and telecommunications systems, resources, and services, and recommend approval or disapproval to the Chief Procurement Officer"
-  <cite><a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-1403">D.C. Code § 1-1403(2)</a></cite></blockquote>
+  <cite><a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-1403">D.C. Code § 1-1403(2)</a></cite></blockquote></details>
   <ul>
     <li><strong>The $25,000 line.</strong> A regulation applies this to IT purchases "valued over $ 25,000", and anything over that
       amount OCTO hasn't reviewed "shall be deemed recommended for disapproval to the Chief Procurement Officer"
-      (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=1-5602">1 DCMR § 5602</a>). That chapter "applies to
-      all subordinate agencies" (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=1-5600">1 DCMR § 5600</a>).</li>
+      <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=1-5602">1 DCMR § 5602</a>)</span>. That chapter "applies to
+      all subordinate agencies" <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=1-5600">1 DCMR § 5600</a>)</span>.</li>
     <li><strong>What counts as IT</strong> is broad: it includes "all technology services provided by vendors or contractors" and "all
       costs associated with developing, purchasing, licensing or maintaining software"
-      (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=1-5601">1 DCMR § 5601</a>).</li>
+      <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=1-5601">1 DCMR § 5601</a>)</span>.</li>
     <li>OCTO is also to "Issue regulations governing the acquisition, use, and management of information technology" and "Review and
       approve the information technology and telecommunications budgets" of agencies
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-1403">§ 1-1403(1), (3)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-1403">§ 1-1403(1), (3)</a>)</span>.</li>
     <li>OCTO's own policy says IT projects "must be approved by the District Chief Technology Officer (CTO) before money can be spent",
       and that OCP issues purchase orders and contracts "only after the required CTO approval is obtained"
-      (<a href="https://octo.dc.gov/sites/default/files/dc/sites/octo/publication/attachments/i-t_procurement-and-it-project-policy.pdf">IT
-      Procurement and IT Project Policy</a>, approved February 2021, reviewed May 2024).</li>
+      <span class="cite">(<a href="https://octo.dc.gov/sites/default/files/dc/sites/octo/publication/attachments/i-t_procurement-and-it-project-policy.pdf">IT
+      Procurement and IT Project Policy</a>, approved February 2021, reviewed May 2024)</span>.</li>
     <li>DC's Inspector General found in April 2019 that the review depended on the commodity code an agency picked: OCTO's
       automated controls "allowed other District agencies to select non-ITTS commodity codes, which circumvented OCTO’s review. As a
       result, OCTO did not review and approve approximately $152 million in ITTS requisitions"
-      (<a href="https://oig.dc.gov/sites/default/files/Reports/OIG%20Final%20Report%20No.%2018-1-19TO%20--%20OCTO%20Oversight%20of%20Information%20Technolo..._0.pdf">OIG
-      Report No. 18-1-19TO</a>). The commodity codes on this site are also chosen when a record is entered, so a filter on them can
+      <span class="cite">(<a href="https://oig.dc.gov/sites/default/files/Reports/OIG%20Final%20Report%20No.%2018-1-19TO%20--%20OCTO%20Oversight%20of%20Information%20Technolo..._0.pdf">OIG
+      Report No. 18-1-19TO</a>)</span>. The commodity codes on this site are also chosen when a record is entered, so a filter on them can
       miss IT purchases too.</li>
     <li><strong>Software maintenance can skip competition.</strong> The law exempts "Maintenance and support of existing software and
       technology to the extent that the creator of the intellectual property is still protected and is the only source"
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.13">§ 2-354.13(8)</a>), and the regulation says this
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.13">§ 2-354.13(8)</a>)</span>, and the regulation says this
       "applies to renewal of existing software licenses purchased either directly from the creator or from an authorized dealer"
-      (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-1703">27 DCMR § 1703.6</a>).</li>
+      <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-1703">27 DCMR § 1703.6</a>)</span>.</li>
   </ul>
 </section>
 
 <section class="block" id="council">
   <h2>When the Council must approve a contract</h2>
+  <p>Under the Home Rule Act, a contract involving more than $1,000,000 in spending during a 12-month period can't be made unless the
+  Mayor sends it to the Council and the Council approves it.</p>
+  <details class="exact"><summary>Exact wording: D.C. Code § 1-204.51(b)(1)</summary>
   <blockquote class="law">"No contract involving expenditures in excess of $1,000,000 during a 12-month period may be made unless the
   Mayor submits the contract to the Council for its approval and the Council approves the contract"
-  <cite><a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-204.51">D.C. Code § 1-204.51(b)(1)</a> (Home Rule Act)</cite></blockquote>
+  <cite><a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-204.51">D.C. Code § 1-204.51(b)(1)</a> (Home Rule Act)</cite></blockquote></details>
   <ul>
     <li><strong>Over $1 million in any 12 months:</strong> approved automatically if no Councilmember introduces a resolution within 10
       days of the Council receiving it, or if one is introduced and the Council doesn't disapprove within 45 days
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(b)(2)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(b)(2)</a>)</span>.</li>
     <li><strong>Multiyear contracts</strong> (a single contract longer than 12 months paid from annual money) work the other way: the
       Council has to vote yes within 45 days or the contract is "deemed disapproved"
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-204.51">§ 1-204.51(c)(3)</a>). Without approval, a contract
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-204.51">§ 1-204.51(c)(3)</a>)</span>. Without approval, a contract
       "shall not be entered into for periods which extend beyond 12 months"
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.04">§ 2-355.04(a)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.04">§ 2-355.04(a)</a>)</span>.</li>
     <li><strong>Over 5 years</strong> on multi-year money takes a two-thirds Council vote
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-204.51">§ 1-204.51(a)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-204.51">§ 1-204.51(a)</a>)</span>.</li>
     <li><strong>Option years count again.</strong> Approval of the base contract "shall not constitute Council approval of the exercise
       of the option", so each option year over the threshold goes back to the Council
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(b)(3)(B)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(b)(3)(B)</a>)</span>.</li>
     <li>The submission must give the contract type, the source selection method, the amount for the base and each option period, and,
       for a sole-source award, "a detailed explanation of why a competitive procurement is not feasible"
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(c)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(c)</a>)</span>.</li>
     <li>A contractor who knowingly works on a $1 million-plus contract without approval can't be paid more than $1 million, and staff who
-      sign one face discipline (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(f)–(g)</a>).</li>
+      sign one face discipline <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.02">§ 2-352.02(f)–(g)</a>)</span>.</li>
   </ul>
 </section>
 
 <section class="block" id="methods">
   <h2>How a contract gets awarded</h2>
   <p>The law lists the allowed methods
-  (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.01">§ 2-354.01(a)(1)</a>). Sole-source, emergency and special pilot awards need a
+  <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.01">§ 2-354.01(a)(1)</a>)</span>. Sole-source, emergency and special pilot awards need a
   written <strong>determination and findings (D&amp;F)</strong>: "a form of written approval and detailed explanation as a prerequisite to
-  taking certain contract actions" (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(28)</a>).</p>
+  taking certain contract actions" <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(28)</a>)</span>.</p>
   <div class="tablewrap" style="max-height:none"><table class="plain">
     <thead><tr><th>Method</th><th>When it's used</th><th>Key rules</th><th>Source</th></tr></thead>
     <tbody>
@@ -225,7 +268,7 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
     </tbody></table></div>
   <p class="muted">The law also lists reverse auctions and infrastructure methods, not covered here. The CPO must "publish annually on the
   Internet a report on the number of and dollar value of contracts executed under each source selection method"
-  (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.01">§ 2-354.01(a)(2)</a>). The portal's "market type"
+  <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.01">§ 2-354.01(a)(2)</a>)</span>. The portal's "market type"
   field does not record the method reliably; see the column note on the <a href="index.html">contracts page</a>.</p>
 </section>
 
@@ -233,51 +276,51 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
   <h2>Options, extensions and letter contracts</h2>
   <ul>
     <li><strong>Option:</strong> "a unilateral right in a contract under which, for a specified time, the District may elect to extend
-      the term of a contract" (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2099">27 DCMR § 2099</a>).
+      the term of a contract" <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2099">27 DCMR § 2099</a>)</span>.
       On this site each option period is its own row.</li>
     <li><strong>Limits.</strong> The base period "shall not exceed one (1) year" unless paid from multi-year money or a multiyear
       contract, and base plus options "shall not exceed five (5) years" unless the CPO decides otherwise in writing. To go past the
       contract's last option, the CPO must find it in the District's interest and the contracting officer must justify "a sole source
-      modification" (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2005">27 DCMR § 2005.2</a>). An option
+      modification" <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2005">27 DCMR § 2005.2</a>)</span>. An option
       can't be exercised "after the contract term has expired" (§ 2005.1).</li>
     <li><strong>Letter contract:</strong> "a written preliminary contractual instrument that authorizes the contractor to begin
       immediately [...] prior to the execution of a definitive contract"
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(39)</a>). Allowed when work must start now
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(39)</a>)</span>. Allowed when work must start now
       and a full contract can't be signed in time. The full contract must follow within 120 days or before half the work is done,
       whichever is first, and the District's liability is capped at 50% of the price ceiling
-      (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2425">27 DCMR § 2425</a>, as amended effective 15 May 2026).</li>
+      <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2425">27 DCMR § 2425</a>, as amended effective 15 May 2026)</span>.</li>
     <li><strong>Modification</strong> means "any written alteration in the specifications, delivery point, rate of delivery, contract
       period, price, quantity, or other contract provisions"; a <strong>change order</strong> is one the contracting officer can order
-      "without the consent of the contractor" (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(15), (9)</a>).</li>
+      "without the consent of the contractor" <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(15), (9)</a>)</span>.</li>
   </ul>
 </section>
 
 <section class="block" id="cbe">
   <h2>Small and local business rules</h2>
   <p>A <strong>certified business enterprise (CBE)</strong> is a local business certified by the Department of Small and Local Business
-  Development (DSLBD) (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.02">§ 2-218.02</a>). A small business
+  Development (DSLBD) <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.02">§ 2-218.02</a>)</span>. A small business
   enterprise (SBE) must also be a local business enterprise and meet a size test
-  (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.32">§ 2-218.32</a>).</p>
+  <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.32">§ 2-218.32</a>)</span>.</p>
   <ul>
     <li><strong>$250,000 or less: set aside.</strong> "each agency shall set aside contracts or procurements of $250,000 or less for
       qualified small business enterprises." If the agency finds in writing that there aren't at least two qualified SBEs, any CBE can
       fill it. The agency can go to the open market if the set-aside bids are "12% or more above the likely price on the open market"
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.44">§ 2-218.44</a>; the same rule for the DC Supply Schedule is
-      <a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.45">§ 2-218.45</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.44">§ 2-218.44</a>; the same rule for the DC Supply Schedule is
+      <a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.45">§ 2-218.45</a>)</span>.</li>
     <li><strong>Follow-on work stays set aside.</strong> When an SBE or CBE wins a contract, "its follow-on or renewable acquisition shall be
       set aside" unless DSLBD's Director approves a waiver in writing
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.45a">§ 2-218.45a</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.45a">§ 2-218.45a</a>)</span>.</li>
     <li><strong>Over $250,000: subcontract 35%.</strong> Contracts over $250,000 must have "At least 35% of the dollar volume of the contract
       [...] subcontracted to small business enterprises" (or CBEs, if there aren't enough SBEs), unless waived. A CBE that wins as the
       prime must do at least 35% of the work itself
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.46">§ 2-218.46(a), (b)</a>; this section carries temporary
-      amendments that expire 27 March 2027, which don't change these figures). An option or extension on a contract out of compliance
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.46">§ 2-218.46(a), (b)</a>; this section carries temporary
+      amendments that expire 27 March 2027, which don't change these figures)</span>. An option or extension on a contract out of compliance
       "shall be void" (§ 2-218.46(f)).</li>
     <li><strong>Preferences in open competition.</strong> CBEs get extra points on proposals or a price reduction on bids, capped at "12
       points or a reduction in price of more than 12 percent"
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.43">§ 2-218.43</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.43">§ 2-218.43</a>)</span>.</li>
     <li><strong>Agency goal:</strong> 50% of each agency's "expendable budget" to SBEs each year
-      (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.41">§ 2-218.41(a)</a>).</li>
+      <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.41">§ 2-218.41(a)</a>)</span>.</li>
   </ul>
   <p class="muted">"Set Aside" is a value in the portal's market type field, typed by the District. It is shown on the
   <a href="index.html?market_type=Set%20Aside">contracts page</a> as entered and not checked against these rules.</p>
@@ -286,9 +329,9 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
 <section class="block" id="types">
   <h2>Contract types</h2>
   <p>The contract type says how the price works. The law lets the District use "any type of contract which will promote the best
-  interests of the District", within limits (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.03">§ 2-355.03</a>), and
+  interests of the District", within limits <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.03">§ 2-355.03</a>)</span>, and
   bans one outright: "An agency shall not enter into a cost-plus-a-percentage-of-cost contract"
-  (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.01">§ 2-355.01</a>). Definitions below are from
+  <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.01">§ 2-355.01</a>)</span>. Definitions below are from
   <a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2499">27 DCMR § 2499</a> unless another source is
   given. Each name links to the contracts with that value in the portal's contract type field.</p>
   <div class="tablewrap" style="max-height:none"><table class="plain">
@@ -296,7 +339,7 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
     <tbody>
       <tr><td><a data-type="Firm Fixed Price" href="index.html">Firm Fixed Price</a></td>
         <td>A set price "not subject to any adjustment on the basis of the contractor's cost experience". To be used "when the risk involved
-          is minimal" (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2402">§ 2402.2</a>).</td>
+          is minimal" <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2402">§ 2402.2</a>)</span>.</td>
         <td>The contractor: it "places maximum risk and full responsibility for all costs and resulting profit or loss upon the contractor".</td></tr>
       <tr><td><a data-type="Fixed Price with Economic Price Adjustment" href="index.html">Fixed Price with Economic Price Adjustment</a></td>
         <td>A fixed price that moves "upward and downward" on events "specifically defined in the contract", such as published price or labor-cost changes.</td>
@@ -304,35 +347,37 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
       <tr><td><a data-type="Fixed Price Incentive" href="index.html">Fixed Price Incentive</a></td>
         <td>Profit goes up or down by formula as final cost lands under or over a target, up to a price ceiling.</td>
         <td>Shared up to the ceiling; over it, "the contractor will absorb the difference as a loss"
-          (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2408">§ 2408.2</a>).</td></tr>
+          <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2408">§ 2408.2</a>)</span>.</td></tr>
       <tr><td><a data-type="Indefinite Delivery Indefinite Quantity" href="index.html">Indefinite Delivery Indefinite Quantity</a></td>
         <td>Orders placed as needed, between a stated minimum and maximum. The regulation calls it an "indefinite-quantity contract": it
           "requires the District to order and the contractor to furnish at least a stated minimum"
-          (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2416">§ 2416.8–2416.9</a>).</td>
+          <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2416">§ 2416.8–2416.9</a>)</span>.</td>
         <td>This type fixes how much can be bought, not how it is priced. Past the minimum, the amount on the portal is a ceiling, not a commitment to spend it.</td></tr>
       <tr><td><a data-type="Requirements" href="index.html">Requirements</a></td>
         <td>Covers "all actual purchase requirements of designated District agencies" for an item over a period; quantities are estimates
-          and money is obligated order by order (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2416">§ 2416.4, 2416.7</a>).</td>
+          and money is obligated order by order <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2416">§ 2416.4, 2416.7</a>)</span>.</td>
         <td>As for indefinite quantity.</td></tr>
       <tr><td><a data-type="Time And Materials" href="index.html">Time And Materials</a></td>
         <td>Pays "direct labor hours at specified fixed hourly rates" plus materials at cost. Only allowed when costs can't be estimated and
           the contracting officer finds in writing "that no other type of contract is suitable"
-          (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2420">§ 2420.1</a>).</td>
+          <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2420">§ 2420.1</a>)</span>.</td>
         <td>The District pays for every hour worked, up to a ceiling "that the contractor exceeds at its own risk" (§ 2420.2).</td></tr>
       <tr><td><a data-type="Labor Hour" href="index.html">Labor Hour</a></td>
         <td>"a variant of the time-and-materials contract differing only in that materials are not supplied by the contractor."</td>
         <td>As for time and materials.</td></tr>
       <tr><td><a data-type="Cost Plus Fixed Fee" href="index.html">Cost Plus Fixed Fee</a></td>
         <td>A cost-reimbursement contract with "payment of a fixed fee" that "does not vary with actual cost".</td>
-        <td rowspan="3">The District. Cost-reimbursement contracts pay "allowable costs incurred" up to a ceiling, and may be used only
+        <td>The District. Cost-reimbursement contracts pay "allowable costs incurred" up to a ceiling, and may be used only
           when costs can't be estimated well enough for a fixed price
-          (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2405">§ 2405.1</a>), backed by a D&amp;F that
+          <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2405">§ 2405.1</a>)</span>, backed by a D&amp;F that
           it is cheaper or the only practical way
-          (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.02">§ 2-355.02</a>).</td></tr>
+          <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-355.02">§ 2-355.02</a>)</span>.</td></tr>
       <tr><td><a data-type="Cost Plus Incentive Fee" href="index.html">Cost Plus Incentive Fee</a></td>
-        <td>Costs plus a fee "adjusted later by a formula based on the relationship of total allowable costs to total target costs".</td></tr>
+        <td>Costs plus a fee "adjusted later by a formula based on the relationship of total allowable costs to total target costs".</td>
+        <td>The District, as for Cost Plus Fixed Fee.</td></tr>
       <tr><td><a data-type="Cost Plus Award Fee Contract" href="index.html">Cost Plus Award Fee Contract</a></td>
-        <td>Costs plus a base fee and an extra fee awarded on "a judgmental evaluation by the contracting officer".</td></tr>
+        <td>Costs plus a base fee and an extra fee awarded on "a judgmental evaluation by the contracting officer".</td>
+        <td>The District, as for Cost Plus Fixed Fee.</td></tr>
       <tr><td><a data-type="Letter Contract" href="index.html">Letter Contract</a></td>
         <td>A preliminary agreement; see <a href="#options">above</a>.</td>
         <td>The District's liability under the letter contract is capped at 50% of the price ceiling.</td></tr>
@@ -388,7 +433,7 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
 
 <section class="block" id="portal">
   <h2>What the portal has to publish</h2>
-  <p>The CPO must run a public procurement website (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-361.04">§ 2-361.04</a>).
+  <p>The CPO must run a public procurement website <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-361.04">§ 2-361.04</a>)</span>.
   At a minimum it must include:</p>
   <ul>
     <li>The statutes and rules that govern procurement, "including those exempt from the authority of the CPO".</li>
@@ -410,28 +455,29 @@ table.plain td .tag.interest{margin-left:0; white-space:normal}
 <section class="block" id="glossary">
   <h2>Glossary</h2>
   <dl class="glossary" style="border-top:1px solid var(--rule); border-radius:10px">
-    <dt>CBE</dt><dd>Certified business enterprise: a local business certified by DSLBD (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.02">§ 2-218.02</a>). See <a href="#cbe">small and local business rules</a>.</dd>
-    <dt>Change order</dt><dd>A change the contracting officer can order under the contract's changes clause "without the consent of the contractor" (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(9)</a>).</dd>
+    <dt>CBE</dt><dd>Certified business enterprise: a local business certified by DSLBD <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.02">§ 2-218.02</a>)</span>. See <a href="#cbe">small and local business rules</a>.</dd>
+    <dt>Change order</dt><dd>A change the contracting officer can order under the contract's changes clause "without the consent of the contractor" <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.04">§ 2-351.04(9)</a>)</span>.</dd>
     <dt>Contracting officer</dt><dd>"the Mayor, the CPO, or the CPO’s designee vested with the authority to execute contracts on behalf of the District" (§ 2-351.04(16)).</dd>
     <dt>CPO</dt><dd>Chief Procurement Officer, "the director of the Office of Contracting and Procurement" (§ 2-351.04(11)).</dd>
     <dt>D&amp;F</dt><dd>Determination and findings: the written justification required for a sole-source, emergency, pilot or cost-reimbursement award, among others (§ 2-351.04(28)).</dd>
-    <dt>DCMR</dt><dd>District of Columbia Municipal Regulations. Title 27 holds the procurement rules (<a href="https://ocp.dc.gov/page/laws-regulations1">OCP, Laws &amp; Regulations</a>).</dd>
-    <dt>DCSS</dt><dd>District of Columbia Supply Schedule, the District's schedule of contracts with CBEs (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.12">§ 2-354.12</a>).</dd>
+    <dt>DCMR</dt><dd>District of Columbia Municipal Regulations. Title 27 holds the procurement rules <span class="cite">(<a href="https://ocp.dc.gov/page/laws-regulations1">OCP, Laws &amp; Regulations</a>)</span>.</dd>
+    <dt>DCSS</dt><dd>District of Columbia Supply Schedule, the District's schedule of contracts with CBEs <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-354.12">§ 2-354.12</a>)</span>.</dd>
     <dt>Definitive contract</dt><dd>The full contract that replaces a letter contract (§ 2-351.04(22)).</dd>
     <dt>DSLBD</dt><dd>Department of Small and Local Business Development, which certifies CBEs (§ 2-218.02(3)).</dd>
     <dt>IFB</dt><dd>Invitation for Bids: the solicitation for competitive sealed bids (§ 2-351.04(38)).</dd>
-    <dt>Multiyear contract</dt><dd>"a contract for a period longer than twelve (12) months that is funded by annual appropriations" (<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2099">27 DCMR § 2099</a>). Needs Council approval.</dd>
-    <dt>OCP</dt><dd>Office of Contracting and Procurement (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01</a>).</dd>
-    <dt>OCTO</dt><dd>Office of the Chief Technology Officer (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-1401">§ 1-1401</a>). Reviews agencies' IT purchases over $25,000 (1 DCMR § 5602).</dd>
+    <dt>Multiyear contract</dt><dd>"a contract for a period longer than twelve (12) months that is funded by annual appropriations" <span class="cite">(<a href="https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=27-2099">27 DCMR § 2099</a>)</span>. Needs Council approval.</dd>
+    <dt>OCP</dt><dd>Office of Contracting and Procurement <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-352.01">§ 2-352.01</a>)</span>.</dd>
+    <dt>OCTO</dt><dd>Office of the Chief Technology Officer <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/1-1401">§ 1-1401</a>)</span>. Reviews agencies' IT purchases over $25,000 (1 DCMR § 5602).</dd>
     <dt>Option period</dt><dd>An extra period the District may add at its choice under the contract's terms (27 DCMR § 2099). Listed as its own row on this site.</dd>
     <dt>PPRA</dt><dd>Procurement Practices Reform Act of 2010, D.C. Code § 2-351.01 and following.</dd>
     <dt>RFP</dt><dd>Request for Proposals: the solicitation for competitive sealed proposals (§ 2-351.04(52)).</dd>
     <dt>RFQ</dt><dd>Request for Qualifications: asks for vendors' qualifications only (§ 2-351.04(53)).</dd>
-    <dt>SBE</dt><dd>Small business enterprise: a local business enterprise that also meets a size test (<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.32">§ 2-218.32</a>).</dd>
+    <dt>SBE</dt><dd>Small business enterprise: a local business enterprise that also meets a size test <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-218.32">§ 2-218.32</a>)</span>.</dd>
     <dt>Sole source</dt><dd>"a single source in a competitive marketplace can fulfill the specifications of a contract" (§ 2-351.04(59)).</dd>
   </dl>
 </section>
 
+</div>
 </div>
 
 <footer>A summary for orientation, not legal advice. Sources read 12 October 2026; every claim, source and quote is in
