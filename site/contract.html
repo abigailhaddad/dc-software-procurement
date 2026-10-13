@@ -94,7 +94,7 @@ import {boot, q, downloadCsv, manifest, PARQUET_DIR} from "./shared/db.js";
 import {n, money, esc} from "./shared/explorer.js";
 
 const params = new URLSearchParams(location.search);
-const number = (params.get("n") || "").trim();
+let number = (params.get("n") || "").trim();
 const data = params.get("data");
 const keep = data ? `data=${encodeURIComponent(data)}` : "";
 document.getElementById("back").href = "contracts.html" + (keep ? "?" + keep : "");
@@ -143,6 +143,9 @@ async function main() {
   }
   status.textContent = "Loading the data into your browser…";
   await boot(["contracts", "documents", "contract_payments", "contract_orders", "nigp_classes"]);
+  // Match the number whatever its case, as the explorer's search does.
+  const [found] = await q("SELECT contract_number FROM contracts WHERE upper(contract_number) = upper(?) LIMIT 1", [number]);
+  if (found) number = found.contract_number;
   const periods = await run("Option periods", PERIODS, [number]);
   if (!periods.length) {
     status.innerHTML = `No contract numbered <span class="mono">${esc(number)}</span> in the data.`;
@@ -165,7 +168,7 @@ async function main() {
       .map((a) => `(published as: ${a}, named by agency_names.yaml)`))],
     ["Contract type", distinct("contract_type")],
     ["Market type", distinct("market_type")],
-    ["Commodity code (NIGP)", distinct("nigp_codes").map((c) => `${c} · ${classes[c.slice(0, 3)] || ""}`)],
+    ["Commodity code (NIGP)", [...new Set(distinct("nigp_codes").flatMap((v) => v.split("; ")))].map((c) => `${c} · ${classes[c.slice(0, 3)] || ""}`)],
     ["Contracting officer", distinct("contracting_officer")],
   ];
   document.getElementById("facts").innerHTML = facts.map(([k, v]) =>
@@ -173,13 +176,16 @@ async function main() {
     `<dt>On DC's site</dt><dd>${periods.map((p) => `<a href="${esc(p.portal_url)}" target="_blank" rel="noopener">${esc(p.option_period)}&nbsp;↗</a>`).join(" · ")}</dd>`;
 
   const base = periods.filter((p) => p.period_kind === "base");
-  const baseAmount = base.reduce((s, p) => s + (p.corrected_amount ?? p.amount ?? 0), 0);
+  // A base period DC lists twice (same dates) counts once, as in the totals.
+  const baseOnce = base.filter((p, i) => base.findIndex((x) => x.start_date === p.start_date && x.end_date === p.end_date) === i);
+  const baseAmount = baseOnce.reduce((s, p) => s + (p.corrected_amount ?? p.amount ?? 0), 0);
   const sameAs = distinct("same_award_as");
   const paid = payments.reduce((s, p) => s + (p.voucher_amount || 0), 0);
   const stats = [
     ["Option periods", n(periods.length), "Records on DC's site for this contract number."],
     ["Base-period amount", base.length ? money(baseAmount) : "–", base.length
-      ? `What the base period authorises${base.some((p) => p.corrected_amount !== null) ? ", corrected from DC's figure" : ""}. A ceiling, not spending. Option periods are not counted.`
+      ? `What the base period authorises${base.some((p) => p.corrected_amount !== null) ? ", corrected from DC's figure" : ""}. A ceiling, not spending. Option periods are not counted.` +
+        (sameAs.length ? ` Not in the site's totals: this is the same award as ${sameAs.join(", ")}, which they count instead.` : "")
       : "No period on DC's site is labelled as the base period."],
     ["Paid", money(paid), `Sum of voucherAmount over ${n(payments.length)} payment lines carrying this contract number.`],
     ["Purchase orders", n(orders.length), "Orders that those payments were paid against."],
@@ -214,7 +220,8 @@ async function main() {
   const sources = distinct("correction");
   if (notes.length) {
     const box = document.getElementById("correction");
-    box.innerHTML = `<strong>Corrected here</strong> (from corrections.yaml): ${notes.join(" ")}<br><span class="muted">Source: ${sources.map(esc).join(" · ")}</span>`;
+    const corrected = periods.some((p) => p.corrected_amount !== null);
+    box.innerHTML = `<strong>${corrected ? "Corrected here" : "Listed twice"}</strong> (from corrections.yaml): ${notes.join(" ")}<br><span class="muted">Source: ${sources.map(esc).join(" · ")}</span>`;
     box.hidden = false;
   }
 

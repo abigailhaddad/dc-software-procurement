@@ -59,8 +59,10 @@ year 2013</a>, searchable and filterable. The full documents are on
 
 <details class="covers">
   <summary>What this covers</summary>
-  <p>A solicitation is an RFP (request for proposals), RFQ (request for quotations), IFB (invitation for bids) or RFI (request for
-  information, which only asks questions). DC's site lists each one with a title, agency, market type, closing date and the contract
+  <p>A solicitation is an RFP (request for proposals), RFQ, IFB (invitation for bids) or RFI (request for
+  information, which only asks questions). RFQ can mean a request for quotations or a request for qualifications, which asks only for
+  vendors' qualifications. Here it mostly means quotations: titles that spell it out say quotation or quote about three times as often as
+  qualifications. DC's site lists each one with a title, agency, market type, closing date and the contract
   specialist to contact. It publishes no description, posting date, dollar value or commodity code, and doesn't say which
   contract a solicitation led to. Every value here is as the District entered it.</p>
   <div id="coverage"></div>
@@ -223,18 +225,28 @@ await start({
 const openRows = await q(`SELECT CAST(closing_date AS VARCHAR) AS closing_date, closing_time, solicitation_number, title, agency,
   market_type, specialist, specialist_email FROM solicitations WHERE is_open
   ORDER BY closing_date NULLS LAST, try_strptime(closing_time, '%I:%M %p') NULLS LAST, solicitation_number`);
-const today = new Date().toISOString().slice(0, 10);
+// The reader's own date, not UTC (toISOString would roll over to tomorrow in the evening in DC).
+const now = new Date();
+const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+// "2:00 PM" -> "14:00", so the table sorts times in order. Stops on any other format.
+function time24(t) {
+  if (!t) return "";
+  const m = /^(\d{1,2}):(\d{2}) (AM|PM)$/.exec(t);
+  if (!m) throw new Error(`unexpected closing time "${t}"`);
+  const h = (Number(m[1]) % 12) + (m[3] === "PM" ? 12 : 0);
+  return `${String(h).padStart(2, "0")}:${m[2]}`;
+}
 const passed = openRows.filter((r) => r.closing_date && r.closing_date < today).length;
 document.getElementById("open-note").innerHTML =
   `${openRows.length} solicitations were open on DC's site on ${PULLED}, soonest closing first.` +
   (passed ? ` ${passed} ${passed === 1 ? "has a closing date" : "have closing dates"} before today, so ${passed === 1 ? "it has" : "they have"} closed since.` : "") +
-  ` Check DC's site before relying on a date: it can extend or cancel a solicitation. Closed ones are <a href="#every">below</a>.`;
+  ` Check DC's site before relying on a date: it can extend or cancel a solicitation. <a href="#every">The full table below</a> holds every solicitation, open and closed.`;
 document.getElementById("open-list").innerHTML = `<div class="tablewrap" style="max-height:none"><table class="plain open-list">
   <thead><tr><th>Closes</th><th>Time</th><th>Number</th><th>Title</th><th>Agency</th><th>Market type</th><th>Specialist</th></tr></thead><tbody>` +
   openRows.map((r) => `<tr>
-    <td class="when">${r.closing_date ? esc(r.closing_date) : '<span class="muted">none given</span>'}` +
+    <td class="when" data-sort="${r.closing_date ? esc((r.closing_date + " " + time24(r.closing_time)).trim()) : ""}">${r.closing_date ? esc(r.closing_date) : '<span class="muted">none given</span>'}` +
       (r.closing_date && r.closing_date < today ? ' <span class="tag">date passed</span>' : "") + `</td>
-    <td class="when muted">${esc(r.closing_time)}</td>
+    <td class="when muted" data-sort="${r.closing_date ? time24(r.closing_time) : ""}">${esc(r.closing_time)}</td>
     <td class="mono">${shown(r.solicitation_number)}</td>
     <td>${shown(r.title)}</td>
     <td>${esc(r.agency)}</td>
@@ -243,22 +255,16 @@ document.getElementById("open-list").innerHTML = `<div class="tablewrap" style="
   </tr>`).join("") + "</tbody></table></div>";
 
 // ---------- suggested title searches ----------
+// Each link opens the table with only that title search (and data= if set), so it shows the count beside it.
+const dataParam = new URLSearchParams(location.search).get("data");
+const keywordHref = (w) => "?" + new URLSearchParams(dataParam ? {title_contains: w, data: dataParam} : {title_contains: w}).toString() + "#every";
 const counts = await q(`SELECT ${KEYWORDS.map((w, i) => `count(*) FILTER (WHERE title ILIKE ?) AS k${i}`).join(", ")} FROM solicitations`,
   KEYWORDS.map((w) => `%${w}%`));
 document.getElementById("keywords").innerHTML = `<span class="muted">Try a title search:</span>` +
-  KEYWORDS.map((w, i) => `<span><a href="#" data-word="${esc(w)}">${esc(w)}</a> <span class="muted">(${n(counts[0]["k" + i])})</span></span>`).join("") +
+  KEYWORDS.map((w, i) => `<span><a href="${esc(keywordHref(w))}">${esc(w)}</a> <span class="muted">(${n(counts[0]["k" + i])})</span></span>`).join("") +
   `<details><summary>Text search, not a classification</summary><p>The numbers count titles containing the word, across all years.
   "license" also finds license plate readers, "system" finds sprinkler systems, and
   software bought under another name is missed.</p></details>`;
-// Sets the "Title contains" filter and keeps every other filter in the URL.
-document.getElementById("keywords").addEventListener("click", (e) => {
-  const a = e.target.closest("a[data-word]");
-  if (!a) return;
-  e.preventDefault();
-  const p = new URLSearchParams(location.search);
-  p.set("title_contains", a.dataset.word);
-  location.search = p.toString();
-});
 </script>
 </body>
 </html>

@@ -214,7 +214,11 @@ async function renderChart(spec, where) {
   const field = CFG.fields[spec.field];
   const size = sizing();
   const ordered = spec.byKey ? "k" : `s DESC NULLS LAST`;
-  const sql = `SELECT ${field.expr} AS k, ${CFG.count.expr} AS c, ${CFG.measure.expr} AS m, ${size.expr} AS s\nFROM ${CFG.table}\n${where.sql}\nGROUP BY k\nORDER BY ${ordered}`;
+  // A field holding several values per record (agency, of interest) counts the
+  // record under each value, the same way its filter matches.
+  const sql = field.listExpr
+    ? `SELECT _k AS k, ${CFG.count.expr} AS c, ${CFG.measure.expr} AS m, ${size.expr} AS s\nFROM (SELECT *, unnest(${field.listExpr}) AS _k FROM ${CFG.table}\n${where.sql})\nGROUP BY k\nORDER BY ${ordered}`
+    : `SELECT ${field.expr} AS k, ${CFG.count.expr} AS c, ${CFG.measure.expr} AS m, ${size.expr} AS s\nFROM ${CFG.table}\n${where.sql}\nGROUP BY k\nORDER BY ${ordered}`;
   const rows = await q(sql, where.binds);
   const fmt = SIZE_BY === "measure" ? (x) => measureFmt(x) : n;
   // A bar under 1% of the largest is a hairline: it reads as blank, and a run
@@ -231,7 +235,8 @@ async function renderChart(spec, where) {
     ? `${size.label} by ${field.label.toLowerCase()}. Hover for both numbers.`
     : `${shown.length < rows.length ? `Top ${shown.length} of ${n(rows.length)} values` : `All ${n(rows.length)} values`}, ` +
       `by ${size.label.toLowerCase()}. Hover for both numbers. Click a bar to filter to it.` +
-      (left.length ? ` Not shown: ${n(left.length)} more, together ${fmt(leftTotal)}. Every value is in "Break it down" below.` : "");
+      (field.listExpr ? " A record listed under several values counts under each, so bars can add up to more than the total." : "") +
+      (left.length ? ` Not shown: ${n(left.length)} more, together ${fmt(leftTotal)}. Every value is in "Break it down" below${rows.length > 500 ? " and its CSV" : ""}.` : "");
   const labels = shown.map((r) => r.k === null ? "(blank)" : (field.describe ? field.describe(r.k) : String(r.k)));
   if (CHARTS[spec.id]) CHARTS[spec.id].destroy();
   CHARTS[spec.id] = new Chart(box.querySelector("canvas"), {
@@ -262,7 +267,7 @@ async function renderChart(spec, where) {
         }}, grid: {display: false}},
       },
       onClick: (event, elements) => {
-        if (!elements.length || field.filter !== "multi" || field.listExpr) return;
+        if (!elements.length || field.filter !== "multi") return;
         const value = shown[elements[0].index].k;
         if (value === null) return;
         const values = new Set(FILTERS[spec.field]?.values || []);
@@ -281,9 +286,17 @@ async function renderBreakdown(where) {
   const keys = [by1, by2].filter(Boolean);
   const out = document.getElementById("breakdown");
   if (!keys.length) { out.innerHTML = ""; return; }
-  const groups = keys.map((k, i) => `${CFG.fields[k].expr} AS g${i}`);
+  // Fields holding several values per record are unnested one at a time, so a
+  // record counts under each of its values (two such fields give every pair).
+  let from = `(SELECT * FROM ${CFG.table}\n${where.sql})`;
+  const groups = keys.map((k, i) => {
+    const field = CFG.fields[k];
+    if (!field.listExpr) return `${field.expr} AS g${i}`;
+    from = `(SELECT *, unnest(${field.listExpr}) AS _u${i} FROM ${from})`;
+    return `_u${i} AS g${i}`;
+  });
   const extra = CFG.distinct ? `,\n       ${CFG.distinct.expr} AS d` : "";
-  const sql = `SELECT ${groups.join(", ")},\n       count(*) AS n${extra},\n       ${CFG.measure.expr} AS m\nFROM ${CFG.table}\n${where.sql}\n` +
+  const sql = `SELECT ${groups.join(", ")},\n       count(*) AS n${extra},\n       ${CFG.measure.expr} AS m\nFROM ${from}\n` +
     `GROUP BY ${keys.map((_, i) => "g" + i).join(", ")}\nORDER BY ${keys.map((k, i) => CFG.fields[k].ordered ? `g${i}` : null)
       .concat(keys.length > 1 && !CFG.fields[keys[0]].ordered ? ["g0"] : []).filter(Boolean).concat(["m DESC NULLS LAST"]).join(", ")}`;
   const rows = await q(sql + "\nLIMIT 501", where.binds);
@@ -339,10 +352,15 @@ async function tableQuery(request) {
   }
   const whereSql = parts.length ? "WHERE " + parts.join("\n  AND ") : "";
   // A column can name extra sort expressions (orderBy) to break ties, e.g. date then time.
-  const order = (request.order || []).flatMap((o) => (CFG.columns[o.column].orderBy || [CFG.columns[o.column].key])
-    .map((e) => `${e} ${o.dir === "desc" ? "DESC" : "ASC"} NULLS LAST`));
+  // Text columns sort ignoring case; number and date columns (cls "num") sort as they are.
+  const order = (request.order || []).flatMap((o) => {
+    const col = CFG.columns[o.column];
+    const text = !(col.cls || "").includes("num") && !col.orderBy;
+    return (col.orderBy || [col.key]).map((e) => `${text ? `lower(CAST(${e} AS VARCHAR))` : e} ${o.dir === "desc" ? "DESC" : "ASC"} NULLS LAST`);
+  });
   const select = CFG.select.join(", ");
-  const sql = `SELECT ${select}\nFROM ${CFG.table}\n${whereSql}\nORDER BY ${order.join(", ") || CFG.columns[0].key}`;
+  // file_row_number last: rows that tie on the chosen order keep one fixed order across pages.
+  const sql = `SELECT ${select}\nFROM ${CFG.table}\n${whereSql}\nORDER BY ${order.concat(["file_row_number"]).join(", ")}`;
   const [{total}] = await q(`SELECT count(*) AS total FROM ${CFG.table} ${whereSql}`, binds);
   const rows = await q(`${sql}\nLIMIT ${Number(request.length)} OFFSET ${Number(request.start)}`, binds);
   return {draw: request.draw, recordsTotal: total, recordsFiltered: total, data: rows};

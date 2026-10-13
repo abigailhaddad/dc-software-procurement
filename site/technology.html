@@ -520,8 +520,12 @@ async function renderByYear(groups) {
     return `<tr><td>FY${y}</td><td class="num">${n(c?.contracts ?? 0)}</td><td class="num">${money(c?.base ?? 0)}</td>` +
       `<td class="num">${n(p?.orders ?? 0)}</td><td class="num">${money(p?.ordered ?? 0)}</td></tr>`;
   });
+  // Contracts with no base period listed have no start year to place them in.
+  const [nb] = await q(`SELECT count(*) AS k FROM (SELECT contract_number FROM contracts WHERE ${contractWhere(groups)}
+    GROUP BY contract_number HAVING count(*) FILTER (WHERE period_kind = 'base') = 0)`);
   document.getElementById("by-year").innerHTML = rows.length
-    ? plainTable([["Fiscal year"], ["Contracts whose base period starts", 1], ["Base amount", 1], ["Orders", 1], ["Amount ordered", 1]], rows)
+    ? plainTable([["Fiscal year"], ["Contracts whose base period starts", 1], ["Base amount", 1], ["Orders", 1], ["Amount ordered", 1]], rows) +
+      `<p class="muted">${n(nb.k)} contracts have no base period on DC's site, so they have no start year and are not in this table.</p>`
     : '<p class="muted">No groups ticked.</p>';
 }
 
@@ -537,7 +541,9 @@ async function renderByAgency(groups) {
     ? plainTable([["Agency"], ["Contracts", 1], ["Base amount", 1], ["Orders", 1], ["Amount ordered", 1]],
       rows.map((r) => `<tr><td>${esc(r.agency ?? "(blank)")}</td><td class="num">${n(r.contracts ?? 0)}</td><td class="num">${money(r.base ?? 0)}</td>` +
         `<td class="num">${n(r.orders ?? 0)}</td><td class="num">${money(r.ordered ?? 0)}</td></tr>`)) +
-      `<p class="muted">${n(rows.length)} agency names. Sorted by base amount plus amount ordered, only to put the largest first.</p>`
+      `<p class="muted">${n(rows.length)} agency names. Sorted by base amount plus amount ordered, only to put the largest first.</p>` +
+      `<p class="muted">A contract whose option periods list different agencies appears in each of those rows, so the contracts column can add up to more than the total.
+      Dollars are not double-counted: each period's amount sits in one row, so the amount columns add up to the totals above.</p>`
     : '<p class="muted">No groups ticked.</p>';
 }
 
@@ -549,7 +555,8 @@ async function renderByVendor(groups) {
   document.getElementById("by-vendor").innerHTML = vRows.length
     ? plainTable([["Vendor"], ["Contracts", 1], ["Base amount", 1]],
       vRows.map((r) => `<tr><td>${esc(r.vendor ?? "(blank)")}</td><td class="num">${n(r.contracts)}</td><td class="num">${money(r.base ?? 0)}</td></tr>`)) +
-      `<p class="muted">${n(vRows.length)} vendor names.</p>`
+      `<p class="muted">${n(vRows.length)} vendor names. A contract whose option periods spell the vendor differently appears under each spelling,
+      so the contracts column can add up to more than the total. Dollars are not double-counted: each period's amount sits in one row.</p>`
     : '<p class="muted">No contracts.</p>';
   document.getElementById("by-supplier").innerHTML = sRows.length
     ? plainTable([["Supplier"], ["Orders", 1], ["Amount ordered", 1]],
@@ -572,9 +579,10 @@ async function renderSellers(groups) {
       `<td class="num">${pct(r.in_codes ?? 0, r.ordered)}</td><td>${other.filter((o) => o.supplier === r.supplier).sort((a, b) => b.m - a.m)
         .map((o) => `<span title="${esc(describe(o.nigp_code))}"><span class="mono">${esc(o.nigp_code)}</span> ${money(o.m)}</span>`).join(", ")}</td></tr>`)) +
     `<p class="muted">Only orders under exactly these spellings; other spellings of the same company (such as "CDW LLC") are left out.
-    Hover a code for its class. Some of the largest are codes no technology rule would include: in the 12 October 2026 pull,
-    Microsoft's biggest orders outside these codes were under 961-96-40, which DC's contract pages describe as “Labor, miscellaneous”,
-    and Carahsoft's under 924-41-40, “Professional development”.</p>`;
+    Hover a code for its class. Some of the largest are codes no technology rule would include. In the 12 October 2026 pull, with the
+    groups ticked as the page opens, Microsoft's biggest orders outside them were under 9619640, which DC's contract pages describe as
+    “Labor, miscellaneous”, and Carahsoft's second biggest under 9244140, “Professional development”. (Carahsoft's biggest were under
+    9182930, software implementation consulting, which the computer consulting group counts when ticked.)</p>`;
 }
 
 async function renderContracts(groups) {

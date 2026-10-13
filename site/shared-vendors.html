@@ -71,7 +71,7 @@ agency. Where several agencies buy the same thing separately, one citywide purch
 <div class="controls">
   <label>Name contains<input type="search" id="name-q" placeholder="e.g. carahsoft"></label>
   <label>At least this many agencies<select id="min-agencies">
-    <option value="1">1 (every vendor)</option><option value="2">2</option><option value="3">3</option>
+    <option value="0">Any (every vendor, even with no agency)</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
     <option value="5">5</option><option value="10">10</option><option value="20">20</option></select></label>
   <label class="check"><input type="checkbox" id="tech-only"> Technology commodity codes only</label>
   <span class="actions"><button id="copy-link">Copy link</button>
@@ -352,14 +352,17 @@ async function vendorDetail(vendor, tech) {
     const cs = contracts.filter((r) => r.agency === agency);
     const o = orders.find((r) => r.agency === agency);
     const agencyParam = agency === "(no agency listed)" ? "" : "&agency=" + encodeURIComponent(agency);
+    // The explorers can't filter on the technology code list, so with the box
+    // ticked the link opens every order at this agency, whatever its code.
+    const ordersLabel = tech ? "See all of its orders at this agency (any code)" : "See the orders";
     const cList = cs.length ? `<ul>${cs.map((r) => `<li>${contractLink(r.contract_number)} ${esc(r.titles)} · ${r.base_amount === null ? '<span class="muted">no base amount</span>' : money(r.base_amount)}` +
       (r.other_agencies > 0 ? ` <span class="tag" title="This contract lists more than one agency on DC's site; it appears under each.">shared with ${n(r.other_agencies)} other agenc${r.other_agencies === 1 ? "y" : "ies"}</span>` : "") + "</li>").join("")}</ul>` : "";
     const oLine = o ? `<p>${n(o.orders)} order${o.orders === 1 ? "" : "s"}, ${money(o.amount)}, fiscal years ${o.fy1}${o.fy2 !== o.fy1 ? "–" + o.fy2 : ""}. Commodity classes: ` +
       `${o.classes.split(", ").map((c) => `<span title="${esc(nigpLabel(c))}">${esc(c)}</span>`).join(", ")}. ` +
-      `<a href="purchase-orders.html?supplier=${encodeURIComponent(vendor)}${agencyParam}${KEEP}" target="_blank" rel="noopener">See the orders</a></p>` : "";
+      `<a href="purchase-orders.html?supplier=${encodeURIComponent(vendor)}${agencyParam}${KEEP}" target="_blank" rel="noopener">${ordersLabel}</a></p>` : "";
     return `<h4>${esc(agency)}</h4>${cList}${oLine}`;
   }).join("");
-  const contractsLink = `<a href="contracts.html?vendor=${encodeURIComponent(vendor)}${KEEP}" target="_blank" rel="noopener">all of this name's contracts</a>`;
+  const contractsLink = `<a href="contracts.html?vendor=${encodeURIComponent(vendor)}${KEEP}" target="_blank" rel="noopener">all of this name's contracts</a>${tech ? ", whatever their codes," : ""}`;
   return `<div class="detail"><p class="muted">Contract titles as typed on DC's site; a contract whose title changed between option periods shows each title, separated by |.
     Amounts are base periods only. Open ${contractsLink} in the contracts explorer.</p>${html || '<p class="muted">Nothing under the current settings.</p>'}</div>`;
 }
@@ -447,7 +450,10 @@ try {
     ` · <a href="${DATASET_PAGE}">full dataset</a>` + (LOCAL ? " · <strong>reading the local build</strong>" : "");
 
   document.getElementById("name-q").value = PARAMS.get("name") || "";
-  document.getElementById("min-agencies").value = PARAMS.get("min") || "2";
+  // An unsupported ?min= (say 4) falls back to the default instead of leaving the box blank.
+  const minBox = document.getElementById("min-agencies");
+  const minParam = PARAMS.get("min");
+  minBox.value = [...minBox.options].some((o) => o.value === minParam) ? minParam : "2";
   document.getElementById("tech-only").checked = PARAMS.get("tech") === "1";
   document.getElementById("product-q").value = PARAMS.get("product") || "";
   document.getElementById("whole-word").checked = PARAMS.get("word") !== "0";

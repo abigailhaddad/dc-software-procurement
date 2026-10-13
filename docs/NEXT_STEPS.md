@@ -64,6 +64,13 @@ up. Read `README.md` and `docs/SCHEDULING.md` first.
    like `of_interest.yaml`. Each entry applies only while DC's site shows the
    same period label and end date it was read against.
 
+9. **Contract rows carry no `listed`, `first_listed` or `last_listed`.** In
+   `contracts_by_commodity.json` the 6,065 current rows have none of these keys
+   and the 1,297 kept from earlier pulls have only `listed: false`, though
+   `retain_by_key` sets all three. Something rewrote the file without the merge
+   (check `recover` in cli.py). The export treats a missing `listed` as true, so
+   the site is right today, but no first-seen date exists for any contract.
+
 ## The exploratory analysis (not on the site, not in the weekly run)
 
 `analysis/` and the `make` targets under `derived` (modifications, competition,

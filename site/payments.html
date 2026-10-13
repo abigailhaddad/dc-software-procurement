@@ -123,7 +123,7 @@ start({
     vendor: {label: "Vendor", from: "vendorName on DC's site, as spelled (often cut off at a fixed length).", filter: "multi", expr: "coalesce(vendor, '(blank)')"},
     vendor_contains: {label: "Vendor name contains", from: "vendorName on DC's site; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
     fiscal_year: {label: "Fiscal year", from: "From paymentDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(fiscal_year AS VARCHAR)"},
-    contract_link: {label: "Contract number", from: "Whether contractNumber is filled in, and whether DC's site lists a contract with that number. 'Words, not a number' is an entry with no digit, such as N/A or TBD.", filter: "multi",
+    contract_link: {label: "Contract number points to", from: "Whether contractNumber is filled in, and whether DC's site lists a contract with that number. 'Words, not a number' is an entry with no digit, such as N/A or TBD.", filter: "multi",
       expr: "CASE WHEN contract_number IS NULL THEN 'None' WHEN contract_number IN (SELECT contract_number FROM contracts) THEN 'A listed contract' WHEN NOT regexp_matches(contract_number, '[0-9]') THEN 'Words, not a number' ELSE 'Not a listed contract' END"},
     listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
       expr: "CASE WHEN listed THEN 'In DC site search' ELSE 'Not in DC site search' END"},

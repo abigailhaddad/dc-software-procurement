@@ -374,8 +374,9 @@ async function main() {
       (SELECT count(*) FROM renewals WHERE base_amount IS NULL) AS no_base,
       (SELECT count(*) FROM hand) AS hand_entries,
       (SELECT count(*) ${FROM} WHERE h.status IS NOT NULL) AS hand_applied,
-      (SELECT count(DISTINCT contract_number) FROM contracts WHERE option_period = 'Option 4') AS reached_4,
-      (SELECT count(DISTINCT contract_number) FROM contracts WHERE option_period IN ('Option 5', 'Option 6')) AS beyond_4`);
+      (SELECT count(DISTINCT contract_number) FROM contracts WHERE regexp_matches(option_period, '(?i)\\boption\\s+(year\\s+)?(4|four)\\b')) AS reached_4,
+      (SELECT count(DISTINCT contract_number) FROM contracts WHERE regexp_matches(option_period, '(?i)\\boption\\s+(year\\s+)?(5|6|five|six)\\b')) AS beyond_4,
+      (SELECT count(DISTINCT contract_number) FROM contracts WHERE regexp_matches(option_period, '^[0-9]+$')) AS bare_number`);
   document.getElementById("coverage").innerHTML = `<ul>
     <li>Data pulled from DC's site on ${esc(PULLED)}. "Months left" counts from that day, not from today.</li>
     <li>Only the ${n(cov.listed_contracts)} contracts DC's site still returns in its search. ${n(cov.all_contracts - cov.listed_contracts)} contracts
@@ -384,8 +385,10 @@ async function main() {
     <li>The current period is the listed period with the latest end date. DC's site gives ${n(cov.tied)} of them two labels for the same dates;
       both are shown. A period that has "already ended" may have been followed by one DC's site hasn't posted yet, or the work may have stopped; the site doesn't say which.</li>
     <li>DC's site never lists an option before it is exercised (none of its ${n(cov.all_contracts)} contracts has a period starting after ${esc(PULLED)}), and
-      it has no field for how many options a contract allows. For context only: ${n(cov.reached_4)} contracts have a period labelled "Option 4",
-      and ${n(cov.beyond_4)} have one labelled "Option 5" or "Option 6". That is not enough to say any one contract is on its last option.</li>
+      it has no field for how many options a contract allows. For context only: ${n(cov.reached_4)} contracts have a period labelled as a fourth option ("Option 4", "Option Year 4",
+      "Option Year Four", "Partial Exercise of Option Year 4" and similar), and ${n(cov.beyond_4)} have one labelled as a fifth or sixth.
+      ${n(cov.bare_number)} contracts have a period labelled with a bare number ("3", "4"), which isn't counted either way.
+      That is not enough to say any one contract is on its last option.</li>
     <li>"Last option" and "Options remain" come from ${n(cov.hand_entries)} award documents read by hand (${n(cov.hand_applied)} still match the current period on DC's site);
       "Already past the last option" from the hand-read <a href="contracts.html?of_interest=${encodeURIComponent(PAST_LAST)}${keep ? "&" + keep : ""}">contracts of interest</a>.
       Everything else is "Not known". Even on a last option the District can extend without bidding, as the contracts marked "Already past the last option" show.</li>

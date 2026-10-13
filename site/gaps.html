@@ -55,8 +55,8 @@
 
 <h2 class="page-title">What DC's portal leaves out</h2>
 <p class="lede">What a reader can't learn, or can't learn reliably, from DC's
-<a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, with a number for each and a link to the
-records behind it.</p>
+<a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, with a number for each and, where this site
+can filter to them, a link to the records behind it.</p>
 <p class="meta" id="asof"></p>
 <details class="covers"><summary>What this covers</summary><ul>
   <li>Each gap describes the published records. None is a finding about how any contract was handled.</li>
@@ -184,14 +184,19 @@ function drawSummary() {
 }
 
 // A gap's name in the table, or a shared link ending in #agency-cards-1 and so on, opens that gap's explanation.
-function openFromHash() {
-  const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+function openGap(id) {
+  const target = id ? document.getElementById(id) : null;
   if (target && target.matches("details.gap")) {
     target.open = true;
     target.scrollIntoView();
   }
 }
-window.addEventListener("hashchange", openFromHash);
+window.addEventListener("hashchange", () => openGap(location.hash.slice(1)));
+// Clicking the same name again leaves the hash unchanged, so no hashchange fires; open it here too.
+document.getElementById("summary-table").addEventListener("click", (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (a) openGap(a.getAttribute("href").slice(1));
+});
 
 // ---------- agencies ----------
 async function agencies(asof) {
@@ -270,7 +275,9 @@ async function agencies(asof) {
     .sort((x, y) => y.paid - x.paid);
   document.getElementById("other-note").textContent = `${others.length} agency names not on the independent list also have orders or
     payments but no contract. Some are budget lines rather than agencies (Settlements and Judgments, Non-Public Tuition). Small agencies
-    may buy through other agencies' contracts or below the size that needs a contract, so a zero here does not by itself mean records are missing.`;
+    may buy through other agencies' contracts or below the size that needs a contract, so a zero here does not by itself mean records are missing.
+    Agencies are matched by name, and DC's site sometimes names one agency two ways. Victim Services and Justice Grants (OVSJG) has no
+    contract under that name, but contract CW110223 is listed under "Office of Victim Services (FE0)" and its payments are booked to OVSJG.`;
   document.getElementById("other-table").innerHTML = `<thead><tr><th>Agency, as named on DC's site</th><th class="num">Purchase orders</th>
       <th class="num">Order totals</th><th class="num">Payment lines</th><th class="num">Paid</th></tr></thead><tbody>` +
     others.map((a) => `<tr><td>${esc(a.agency)}</td><td class="num">${a.orders ? link("purchase-orders.html", a.agency, n(a.orders)) : "0"}</td>
@@ -312,13 +319,13 @@ async function payments(s, asof) {
        "n/a", "PO", "TBD", "small purchase" and "See P.O.". The field is typed in, so these count as "not a listed contract" on the
        payments page.`,
      covers: span + " Counted as any entry with no digit; every number on the contract list has one.",
-     link: ["See the \"N/A\" lines", "payments.html?contract_number=N%2FA"]},
+     link: [`See the ${n(p.text_lines)} lines`, "payments.html?contract_link=Words%2C+not+a+number"]},
     {gap: "Contract numbers on payments but not on the list", big: n(p.unl_values), label: "contract numbers on payments that the contract list doesn't have",
      text: `${n(p.unl_lines)} lines carrying them were paid ${money(p.unl_paid)}. Many look like real contract numbers (CW numbers and
        DCAM-, DCKA- and CFOPD- solicitation numbers): contracts that ended before our first pull, contracts outside OCP's list, or numbers
        typed differently.`,
      covers: span + " Entries with at least one digit that match no contract number exactly.",
-     link: ["See them", "payments.html?contract_link=Not+a+listed+contract"]},
+     link: [`See the ${n(p.unl_lines)} lines`, "payments.html?contract_link=Not+a+listed+contract"]},
   ]);
 }
 
@@ -334,7 +341,7 @@ async function orders(asof) {
        No field describes what was bought or gives a contract number. The only route to a contract is through payments: ${n(o.linked)}
        orders were paid on lines that carry a listed contract's number.`,
      covers: `As of ${asof}. Orders total ${money(o.total)}. One row per order, latest revision.`,
-     link: ["See the purchase orders", "purchase-orders.html"]},
+     link: [`See the ${n(o.orders - o.linked)} orders`, "purchase-orders.html?contract_link=Not+linked"]},
   ]);
 }
 
@@ -402,7 +409,9 @@ async function blanks(asof) {
       (SELECT count(*) FROM contracts WHERE ${noDetail}) AS skipped,
       (SELECT string_agg(contract_number, ', ' ORDER BY contract_number) FROM contracts WHERE ${noDetail}) AS skipped_list,
       ${fields.map((f, i) => `(SELECT count(*) FROM c WHERE ${f[1]}) AS p${i}, (SELECT count(*) FROM k WHERE b${i}) AS k${i}`).join(", ")},
-      (SELECT count(*) FROM k WHERE b0 AND dcss) AS agency_dcss`;
+      (SELECT count(*) FROM k WHERE b0 AND dcss) AS agency_dcss,
+      (SELECT count(*) FROM contracts WHERE ${fields[1][1]}) AS type_all_periods,
+      (SELECT count(DISTINCT contract_number) FROM contracts WHERE ${fields[1][1]}) AS type_all_contracts`;
   const [r] = await q(sql);
   document.getElementById("blank-table").innerHTML = `<thead><tr><th>Field</th><th class="num">Option periods blank</th>
       <th class="num">Share</th><th class="num">Contracts blank on every period</th></tr></thead><tbody>` +
@@ -427,7 +436,9 @@ async function blanks(asof) {
      covers: covers + " Option periods often carry no documents of their own, so the contract count is the stricter one."},
     {gap: "Contracts with no contract type", big: n(r.k1), label: "contracts with no contract type",
      text: `${n(r.p1)} option periods leave contract type (fixed price, cost-plus and so on) blank. ${otherText}`,
-     covers: covers, link: ["See them", "contracts.html?contract_type=(blank)"]},
+     covers: covers + ` The link below also shows the left-out period${r.skipped === 1 ? "" : "s"} (${r.skipped_list || "none"}), which have
+       no saved detail record in our pull, so it opens ${n(r.type_all_periods)} periods on ${n(r.type_all_contracts)} contracts.`,
+     link: ["See them", "contracts.html?contract_type=(blank)"]},
   ]);
 }
 
@@ -468,7 +479,7 @@ async function names(s, asof) {
        lines paid before ${esc(p.first_long)} has a longer name; since then ${n(p.over30)} do. A cut-off name can match more than one
        company, and won't match the same company's name on its contract.`,
      covers: `As of ${asof}, out of ${n(p.lines)} payment lines. Some names are exactly 30 characters and complete.`,
-     link: ["See the payments", "payments.html"]},
+     link: ["All payments (no filter for name length)", "payments.html"]},
     {gap: "Vendor names typed, with no vendor id", big: n(s.contracts.vendors), label: "vendor names on contracts, as typed",
      text: `DC's site has no vendor id on any contract, order or payment, only a typed name, so one company can appear under several
        spellings. Market type is typed too: ${n(s.contracts.market_types)} different values, including "Set Aside" and "Set-Aside".`,
@@ -496,7 +507,7 @@ async function main() {
   await names(s, asof);
   drawSummary();
   document.getElementById("status").textContent = "";
-  openFromHash();
+  openGap(location.hash.slice(1));
 }
 main().catch((err) => {
   document.getElementById("status").innerHTML = `<span class="error">${esc(err.message || err)}</span>`;

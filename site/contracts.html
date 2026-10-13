@@ -109,7 +109,7 @@ start({
     sql: `SELECT CAST(min(start_date) AS VARCHAR) AS first, CAST(max(end_date) AS VARCHAR) AS last,
                  count(*) FILTER (WHERE NOT listed) AS dropped FROM contracts`,
     text: (r, s) => `<ul>
-      <li>Only contracts that DC's site returns in its search. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts its
+      <li>Only contracts DC's site has returned in its search since our first pull. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts its
         search had dropped before our first pull, in August 2026, are not here.</li>
       <li>${n(r.dropped)} option periods its search has since stopped returning are kept from earlier pulls, marked "not in DC site search".
         Their pages on DC's site may still open by direct link.</li>
@@ -136,8 +136,8 @@ start({
     {label: "Base-period amount", expr: "sum(base_amount)", money: true, what: "Sum of base-period amounts, counting each award once, corrected where DC's paperwork contradicts DC's figure. A ceiling, not spending. Option periods are not counted."},
   ],
   fields: {
-    agency: {label: "Agency", from: "agencyNames on DC's site.", filter: "multi", expr: "agency",
-      listExpr: "string_split(agency, '; ')", optionExpr: "unnest(string_split(agency, '; '))"},
+    agency: {label: "Agency", from: "agencyNames on DC's site. '(blank)' means none is listed.", filter: "multi", expr: "coalesce(agency, '(blank)')",
+      listExpr: "string_split(coalesce(agency, '(blank)'), '; ')", optionExpr: "unnest(string_split(coalesce(agency, '(blank)'), '; '))"},
     vendor: {label: "Vendor", from: "vendor on DC's site, as spelled.", filter: "multi", expr: "vendor"},
     vendor_contains: {label: "Vendor name contains", from: "vendor on DC's site; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
     contract_type: {label: "Contract type", from: "contractType on each contract's page on DC's site.", filter: "multi", expr: "coalesce(contract_type, '(blank)')"},

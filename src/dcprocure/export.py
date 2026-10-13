@@ -100,7 +100,7 @@ COLUMNS: dict[str, dict[str, str]] = {
         "documents": "Number of attachments listed on the detail page for this option period",
         "portal_url": "This option period's page on DC's site",
         "listed": "Whether DC's site returned this row in its search on the latest pull. A row it no longer returns comes from an earlier pull; its detail page may still open",
-        "first_listed": "First pull that returned it (tracked from October 2026)",
+        "first_listed": "First pull that returned it, where recorded. Not yet recorded for contracts (see docs/NEXT_STEPS.md)",
         "last_listed": "Last pull that returned it",
         "recovered_on": "Set when the row was put back after DC's site stopped returning it in its search",
         "period_kind": "Not from DC's site. 'base' when option_period starts with 'Base' and does not mention an option; 'option' when it mentions an option and does not start with 'Base'; 'unclear' otherwise (labels such as '2' or 'N/A')",

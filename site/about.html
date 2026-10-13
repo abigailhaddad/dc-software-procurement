@@ -166,7 +166,7 @@ function notes(s) {
      link: ["See them", "contracts.html?listed=Not+in+DC+site+search"]},
     {big: n(s.contracts.vendors), label: "vendor names on contracts, as spelled",
      text: `Vendor, agency, contract type and market type are typed in, and shown as typed. One company can appear under more than one
-       spelling, and market type has ${n(s.contracts.market_types)} distinct values, several of them variants of one another. Check the
+       spelling, and market type has ${n(s.contracts.market_types)} distinct values (not counting blank), several of them variants of one another. Check the
        spellings before totalling one name.`},
     {big: n(s.payments.ids), label: `distinct ids on ${n(s.payments.lines)} payment lines`,
      text: `Payment ids are not unique: some lines share one, so there are ${n(s.payments.lines - s.payments.ids)} more lines than ids.
@@ -214,11 +214,13 @@ async function main() {
     {big: n(per.unclear), label: "periods with no clear label, not counted",
      text: `Labelled only "2", "N/A" and the like, so we can't tell whether they are base or option periods: ${money(per.unclear_amount_as_published)} as published.`},
   ].map((x) => `<article class="note-card"><div class="note-big">${x.big}</div><div class="note-label">${esc(x.label)}</div><p>${x.text}</p></article>`).join("");
+  // Exact, like DC's figure beside it, so the two can be compared digit for digit.
+  const exact = (x) => Number(x).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2});
   const page = (x) => `<a class="mono" href="${keep("contract.html?n=" + encodeURIComponent(x))}" target="_blank" rel="noopener">${esc(x)}</a>`;
   document.getElementById("fixed-amounts").innerHTML = `<thead><tr><th>Contract</th><th>Period</th><th class="num">DC's site</th>
       <th class="num">Paperwork</th><th>Source</th></tr></thead><tbody>` +
     c.amounts.map((a) => `<tr><td>${page(a.contract_number)}</td><td>${esc(a.option_period)}</td><td class="num">${esc(a.published)}</td>
-      <td class="num">${a.applied ? money(a.corrected) : `${money(a.corrected)} <span class="tag" title="DC's figure has changed since this was checked, so the correction is not applied.">not applied</span>`}</td>
+      <td class="num">${a.applied ? exact(a.corrected) : `${exact(a.corrected)} <span class="tag" title="DC's figure has changed since this was checked, so the correction is not applied.">not applied</span>`}</td>
       <td>${esc(a.source)}</td></tr>`).join("") + "</tbody>";
   document.getElementById("same-award").innerHTML = `<thead><tr><th>Award</th><th>Listed as</th><th>Counted</th><th>Source</th></tr></thead><tbody>` +
     c.groups.map((g) => `<tr><td class="mono">${esc(g.award)}</td><td>${g.records.map(page).join("<br>")}</td><td>${page(g.count)}</td>

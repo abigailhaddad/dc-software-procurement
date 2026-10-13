@@ -41,7 +41,9 @@ export async function boot(tables) {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`could not load ${table}: ${response.status} ${response.statusText}`);
     await database.registerFileBuffer(table + ".parquet", new Uint8Array(await response.arrayBuffer()));
-    await conn.query(`CREATE VIEW ${table} AS SELECT * FROM '${table}.parquet'`);
+    // file_row_number gives every row a fixed position, so paged tables can
+    // break ties on it and never repeat or skip rows between pages.
+    await conn.query(`CREATE VIEW ${table} AS SELECT * FROM read_parquet('${table}.parquet', file_row_number = true)`);
   }
 }
 
