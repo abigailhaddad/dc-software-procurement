@@ -11,10 +11,20 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
 /* Page-only styles; nothing here is shared. */
-.controls{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:end; margin:10px 0}
-.controls label{display:flex; flex-direction:column; font-size:.82rem; color:var(--muted); gap:2px}
-.controls label.check{flex-direction:row; align-items:center; gap:6px; font-size:.9rem; color:var(--ink)}
-.controls input[type=search]{min-width:min(280px,80vw)}
+h2.page-title{font-family:var(--head); font-size:1.45rem; margin:6px 0 4px}
+.controls{display:flex; flex-wrap:wrap; gap:8px 14px; align-items:end; margin:10px 0; background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:8px 12px}
+.controls label{display:flex; flex-direction:column; font-size:.78rem; color:var(--muted); gap:1px}
+.controls label.check{flex-direction:row; align-items:center; gap:6px; font-size:.9rem; color:var(--ink); padding-bottom:6px}
+.controls input[type=search]{min-width:min(260px,70vw)}
+.controls .actions{display:flex; gap:6px; margin-left:auto}
+.controls button{padding:5px 10px; font-size:.85rem}
+.summary{margin:8px 0 4px; font-size:1rem}
+.controls select,.controls input[type=search]{height:34px}
+table.plain th.num,table.plain td.num{text-align:right}
+.summary span[title]{cursor:help; text-decoration:underline dotted; text-underline-offset:3px; text-decoration-color:var(--muted)}
+details.more{margin:22px 0}
+details.more > summary{cursor:pointer; font-family:var(--head); font-weight:600; font-size:1.05rem; color:var(--accent)}
+@media (max-width:640px){ .controls .actions{margin-left:0} .controls label:not(.check){flex:1 1 100%} .controls input[type=search],.controls select{width:100%; min-width:0} }
 .suggest{display:flex; flex-wrap:wrap; gap:6px; margin:4px 0 8px}
 .suggest button{font-size:.85rem; padding:3px 10px}
 td.details-toggle{cursor:pointer; color:var(--accent); font-weight:700; width:1.2em; user-select:none}
@@ -53,52 +63,61 @@ td.details-toggle{cursor:pointer; color:var(--accent); font-weight:700; width:1.
   </nav>
 </header>
 
-<p class="intro">Which vendors hold contracts or purchase orders with many different agencies, and which products show up in contract
-titles at more than one agency. If several agencies buy the same thing separately, a citywide purchase might cover them. This page only
-counts what DC's site lists; it can't tell you whether a single purchase would have been cheaper or possible.</p>
-
-<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
-
+<h2 class="page-title">Vendors that sell to many agencies</h2>
+<p class="lede">Vendors with contracts or purchase orders at many different agencies, and products that show up in contract titles at
+more than one agency. If several agencies buy the same thing separately, a citywide purchase might cover them.</p>
 <p class="meta" id="asof"></p>
-<div id="status"></div>
 
-<div class="stats" id="stats"></div>
+<div class="controls">
+  <label>Name contains<input type="search" id="name-q" placeholder="e.g. carahsoft"></label>
+  <label>At least this many agencies<select id="min-agencies">
+    <option value="1">1 (every vendor)</option><option value="2">2</option><option value="3">3</option>
+    <option value="5">5</option><option value="10">10</option><option value="20">20</option></select></label>
+  <label class="check"><input type="checkbox" id="tech-only"> Technology commodity codes only</label>
+  <span class="actions"><button id="copy-link">Copy link</button>
+  <button id="vendors-csv">Download this table (CSV)</button></span>
+</div>
+<div id="status"></div>
+<p class="summary" id="stats"></p>
+<p class="muted" id="tech-note"></p>
+<div class="note" id="combined"></div>
+
+<details class="covers">
+  <summary>What this covers</summary>
+  <p>This page only counts what DC's site lists; it can't tell you whether a single purchase would have been cheaper or possible.</p>
+  <div id="coverage"></div>
+</details>
 
 <section class="block">
   <h2>Vendors, by how many agencies they sell to</h2>
-  <p class="muted">One row per vendor name <em>exactly as spelled on DC's site</em>. Click ▸ to see each agency's contract titles and orders.
-  Hover a column heading for what it counts.</p>
-  <div class="controls">
-    <label>Name contains<input type="search" id="name-q" placeholder="e.g. carahsoft"></label>
-    <label>At least this many agencies<select id="min-agencies">
-      <option value="1">1 (every vendor)</option><option value="2">2</option><option value="3">3</option>
-      <option value="5">5</option><option value="10">10</option><option value="20">20</option></select></label>
-    <label class="check"><input type="checkbox" id="tech-only"> Technology commodity codes only</label>
-    <button id="copy-link">Copy link</button>
-    <button id="vendors-csv">Download this table (CSV)</button>
-  </div>
-  <p class="muted" id="tech-note"></p>
-  <div class="note" id="combined"></div>
+  <p class="muted">One row per vendor name <em>exactly as spelled on DC's site</em> (<a href="#names" onclick="document.getElementById('names').open = true">why names aren't merged</a>). Click ▸ to see each agency's contract titles and orders.
+  Click a heading to sort; hover it for what it counts.
+  One vendor at many agencies doesn't mean one product: some of the vendors with the most agencies are resellers that sell many makers'
+  products (Carahsoft's contract titles, for example, name Salesforce, Dell, Splunk and Microsoft). Expand a row and read the titles before
+  treating a vendor's spread as a single purchase repeated.</p>
   <p class="error" id="rows-error"></p>
   <div id="vendors"></div>
 </section>
 
 <section class="block" id="products">
   <h2>The same product at several agencies</h2>
-  <p class="muted">Type a product or brand name. You get every contract whose title contains it, grouped by agency. Titles are typed by
-  each agency, so the same product may be spelled differently (try a shorter word), and a word can match a title that isn't about that
-  product: read the titles before counting anything. Purchase orders have no title on DC's site, so they can't be searched by product;
-  the second table matches the text against the <em>supplier name</em> on orders instead, which is a different question.</p>
+  <p class="muted">Type a product or brand name to see every contract whose title contains it, by agency. Read the titles before counting anything.</p>
   <div class="controls">
     <label>Title contains<input type="search" id="product-q" placeholder="e.g. Salesforce"></label>
     <label class="check"><input type="checkbox" id="whole-word" checked> Whole word only</label>
   </div>
   <div class="suggest" id="suggest"><span class="muted">Try:</span></div>
+  <details class="covers">
+    <summary>How the product search works</summary>
+    <p>Titles are typed by each agency, so the same product may be spelled differently (try a shorter word), and a word can match a title
+    that isn't about that product: read the titles before counting anything. Purchase orders have no title on DC's site, so they can't be
+    searched by product; the second table matches the text against the <em>supplier name</em> on orders instead, which is a different question.</p>
+  </details>
   <div id="product-out"></div>
 </section>
 
-<section class="block" id="names">
-  <h2>Why vendor names aren't merged here</h2>
+<details class="more" id="names">
+  <summary>Why vendor names aren't merged here</summary>
   <p class="intro">DC's site doesn't standardise vendor names. The same company can be "CDW GOVERNMENT LLC" on a contract and
   "CDW GOVERNMENT INC" on an order, and each spelling is its own row above. Contracts and orders also spell names differently
   from each other: a contract's vendor and an order's supplier are joined only when the two are spelled exactly alike, capitals included.
@@ -109,10 +128,7 @@ counts what DC's site lists; it can't tell you whether a single purchase would h
   entry cites the source that ties the two names together, no merge in it cites a source. A rule like that can also join two different
   companies. So this page shows names as spelled. To group spellings yourself, type part of the name in "Name contains": the box under it
   then gives totals for every matching spelling together, counting each agency, contract and order once.</p>
-  <p class="intro"><strong>One vendor at many agencies doesn't mean one product.</strong> Some of the vendors with the most agencies are
-  resellers that sell many makers' products. Carahsoft's contract titles, for example, name Salesforce, Dell, Splunk and Microsoft.
-  Expand a row and read the titles before treating a vendor's spread as a single purchase repeated.</p>
-</section>
+</details>
 
 <footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you search is sent anywhere.</footer>
 </div>
@@ -185,7 +201,7 @@ async function renderCoverage() {
   const [twice] = await q(`SELECT count(DISTINCT contract_number) AS k FROM contracts WHERE same_award_as IS NOT NULL`);
   const [p] = await q(`SELECT count(*) AS orders, min(fiscal_year) AS fy1, max(fiscal_year) AS fy2, count(*) FILTER (WHERE NOT listed) AS dropped FROM purchase_orders`);
   const about = "about.html" + (DATA ? "?data=" + encodeURIComponent(DATA) : "");
-  document.getElementById("coverage").innerHTML = `<h2>What this covers</h2><ul>
+  document.getElementById("coverage").innerHTML = `<ul>
     <li>All ${n(c.contracts)} contracts and ${n(p.orders)} purchase orders DC's site lists, including ${n(c.dropped_periods)} contract option periods and ${n(p.dropped)}
       orders its search has stopped returning, kept from earlier pulls. Contract periods run ${esc(c.first)} to ${esc(c.last)}; orders are from fiscal years
       ${p.fy1} to ${p.fy2}. Payments are not used here.</li>
@@ -205,12 +221,13 @@ async function renderStats(tech) {
     SELECT count(*) AS names, count(*) FILTER (WHERE agencies >= 2) AS two, count(*) FILTER (WHERE agencies >= 5) AS five,
            count(*) FILTER (WHERE agencies >= 10) AS ten FROM v`);
   const scope = tech ? " Technology commodity codes only." : "";
-  document.getElementById("stats").innerHTML = [
-    ["Vendor names", s.names, "Distinct names on contracts and orders, as spelled. Spellings of one company count separately." + scope],
-    ["At 2 or more agencies", s.two, "Names with contracts or orders at two or more distinct agencies." + scope],
-    ["At 5 or more", s.five, "Names at five or more distinct agencies." + scope],
-    ["At 10 or more", s.ten, "Names at ten or more distinct agencies." + scope],
-  ].map(([label, value, what]) => `<div class="stat"><div class="stat-label">${esc(label)}</div><div class="stat-value">${n(value)}</div><div class="stat-what">${esc(what)}</div></div>`).join("");
+  const part = (value, label, what) => `<span title="${esc(what + scope)}">${n(value)} ${esc(label)}</span>`;
+  document.getElementById("stats").innerHTML = `<strong>${part(s.names, "vendor names", "Distinct names on contracts and orders, as spelled. Spellings of one company count separately.")}</strong>` +
+    (tech ? " with technology commodity codes" : "") + ": " + [
+      part(s.two, "at 2 or more agencies", "Names with contracts or orders at two or more distinct agencies."),
+      part(s.five, "at 5 or more", "Names at five or more distinct agencies."),
+      part(s.ten, "at 10 or more", "Names at ten or more distinct agencies."),
+    ].join(" · ") + ".";
 }
 
 // ---------- the vendor table ----------
