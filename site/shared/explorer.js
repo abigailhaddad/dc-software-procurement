@@ -338,7 +338,9 @@ async function tableQuery(request) {
     for (const _ of CFG.search) binds.push(`%${search}%`);
   }
   const whereSql = parts.length ? "WHERE " + parts.join("\n  AND ") : "";
-  const order = (request.order || []).map((o) => `${CFG.columns[o.column].key} ${o.dir === "desc" ? "DESC" : "ASC"} NULLS LAST`);
+  // A column can name extra sort expressions (orderBy) to break ties, e.g. date then time.
+  const order = (request.order || []).flatMap((o) => (CFG.columns[o.column].orderBy || [CFG.columns[o.column].key])
+    .map((e) => `${e} ${o.dir === "desc" ? "DESC" : "ASC"} NULLS LAST`));
   const select = CFG.select.join(", ");
   const sql = `SELECT ${select}\nFROM ${CFG.table}\n${whereSql}\nORDER BY ${order.join(", ") || CFG.columns[0].key}`;
   const [{total}] = await q(`SELECT count(*) AS total FROM ${CFG.table} ${whereSql}`, binds);

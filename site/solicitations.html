@@ -53,7 +53,8 @@
 
 <h2 class="page-title">Solicitations</h2>
 <p class="lede">What DC is about to buy. A <strong>solicitation</strong> is the District's public request for bids, quotes or
-proposals. Below are the ones open when we pulled, soonest closing first. The full documents are on
+proposals. First the ones open when we pulled, soonest closing first; then <a href="#every">every solicitation back to fiscal
+year 2013</a>, searchable and filterable. The full documents are on
 <a href="https://contracts.ocp.dc.gov/solicitations/search">DC's solicitations search</a>.</p>
 
 <details class="covers">
@@ -72,7 +73,7 @@ proposals. Below are the ones open when we pulled, soonest closing first. The fu
 </section>
 
 <section class="block">
-  <h2>Every solicitation, open and closed</h2>
+  <h2 id="every">Every solicitation, back to fiscal year 2013</h2>
   <p class="muted">Closed solicitations come from DC's archive, which files each under the District fiscal year
   (1 October to 30 September) it closed in. Filter by agency, market type, fiscal year, or open or closed with "+ Add filter".</p>
   <div class="keywords" id="keywords"></div>
@@ -88,6 +89,15 @@ proposals. Below are the ones open when we pulled, soonest closing first. The fu
   <div id="status"></div>
 
   <div class="stats" id="stats"></div>
+</section>
+
+<section class="block" id="all">
+  <p class="error" id="rows-error"></p>
+  <div id="rows"></div>
+</section>
+
+<section class="block">
+  <h2>Charts</h2>
   <details class="charts-box" id="charts-box" open>
     <summary><span class="when-closed">Show charts</span><span class="when-open">Hide charts</span></summary>
     <div id="charts"></div>
@@ -106,11 +116,6 @@ proposals. Below are the ones open when we pulled, soonest closing first. The fu
   <div id="breakdown"></div>
 </section>
 
-<section class="block">
-  <h2>Every solicitation</h2>
-  <p class="error" id="rows-error"></p>
-  <div id="rows"></div>
-</section>
 
 <footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you filter is sent anywhere.</footer>
 </div>
@@ -199,7 +204,7 @@ await start({
     "fiscal_year", "specialist", "specialist_email", "is_open"],
   defaultOrder: [[0, "desc"]],
   columns: [
-    {key: "closing_date", label: "Closes", cls: "num", title: "closingDate and closingTime on DC's site.",
+    {key: "closing_date", orderBy: ["closing_date", "try_strptime(closing_time, '%I:%M %p')"], label: "Closes", cls: "num", title: "closingDate and closingTime on DC's site.",
       render: (v, r) => v ? `${esc(v)}<br><span class="muted">${esc(r.closing_time)}</span>` : '<span class="muted">none given</span>'},
     {key: "solicitation_number", label: "Number", title: "solicitationNumber on DC's site: usually an id for the posting (Doc123456), sometimes a procurement number. " + SUB_NOTE,
       render: (v) => `<span class="mono">${shown(v)}</span>`},
@@ -216,13 +221,14 @@ await start({
 
 // ---------- open solicitations, soonest closing first ----------
 const openRows = await q(`SELECT CAST(closing_date AS VARCHAR) AS closing_date, closing_time, solicitation_number, title, agency,
-  market_type, specialist, specialist_email FROM solicitations WHERE is_open ORDER BY closing_date NULLS LAST, solicitation_number`);
+  market_type, specialist, specialist_email FROM solicitations WHERE is_open
+  ORDER BY closing_date NULLS LAST, try_strptime(closing_time, '%I:%M %p') NULLS LAST, solicitation_number`);
 const today = new Date().toISOString().slice(0, 10);
 const passed = openRows.filter((r) => r.closing_date && r.closing_date < today).length;
-document.getElementById("open-note").textContent =
+document.getElementById("open-note").innerHTML =
   `${openRows.length} solicitations were open on DC's site on ${PULLED}, soonest closing first.` +
   (passed ? ` ${passed} ${passed === 1 ? "has a closing date" : "have closing dates"} before today, so ${passed === 1 ? "it has" : "they have"} closed since.` : "") +
-  ` Check DC's site before relying on a date: it can extend or cancel a solicitation.`;
+  ` Check DC's site before relying on a date: it can extend or cancel a solicitation. Closed ones are <a href="#every">below</a>.`;
 document.getElementById("open-list").innerHTML = `<div class="tablewrap" style="max-height:none"><table class="plain open-list">
   <thead><tr><th>Closes</th><th>Time</th><th>Number</th><th>Title</th><th>Agency</th><th>Market type</th><th>Specialist</th></tr></thead><tbody>` +
   openRows.map((r) => `<tr>
