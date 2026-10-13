@@ -10,14 +10,21 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="shared/style.css">
 <style>
-  .toolbar label{display:flex; flex-direction:column; font-size:.8rem; color:var(--muted); gap:2px}
-  .toolbar label.check{flex-direction:row; align-items:center; gap:6px; font-size:.9rem; color:var(--ink)}
-  .toolbar{align-items:end}
+  h2.page-title{font-family:var(--head); font-size:1.45rem; margin:6px 0 4px}
+  .toolbar{align-items:end; gap:8px 12px; background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:8px 12px}
+  .toolbar label{display:flex; flex-direction:column; font-size:.78rem; color:var(--muted); gap:1px}
+  .toolbar label.check{flex-direction:row; align-items:center; gap:6px; font-size:.9rem; color:var(--ink); padding-bottom:6px}
+  .toolbar .actions{display:flex; gap:6px; margin-left:auto}
+  .toolbar button{padding:5px 10px; font-size:.85rem}
+  .summary{margin:8px 0 4px; font-size:1rem}
+  .toolbar select,.toolbar input[type=search]{height:34px; max-width:260px}
+  table.plain th.num,table.plain td.num{text-align:right}
+  .summary span[title]{cursor:help; text-decoration:underline dotted; text-underline-offset:3px; text-decoration-color:var(--muted)}
   .status-last{background:var(--warn-soft); color:var(--warn)}
   .status-past{background:var(--warn-soft); color:var(--err)}
   .status-remain{background:var(--accent-soft); color:var(--accent)}
   .status-unknown{background:none; color:var(--muted); padding-left:0; margin-left:0}
-  @media (max-width:640px){ .toolbar label{flex:1 1 100%} .toolbar input,.toolbar select{width:100%} .toolbar label.check input{width:auto} }
+  @media (max-width:640px){ .toolbar label{flex:1 1 40%; min-width:0} .toolbar input,.toolbar select{width:100%} .toolbar label.check input{width:auto} .toolbar .actions{margin-left:0} }
 </style>
 <script src="shared/ui.js" defer></script>
 </head>
@@ -47,14 +54,10 @@
   </nav>
 </header>
 
-<p class="intro">Contracts whose current period ends soon. When a period ends, the District has three choices: exercise the next
-<strong>option</strong> (an extra year, usually, that the contract already allows), re-bid the work, or extend the contract
-without bidding. Which of those is possible depends on whether any options are left, and <strong>DC's site doesn't say</strong>:
-it lists each option period only once it has been exercised, and has no field for how many the contract allows.
-So the <em>Options left</em> column is filled in only where someone has read the contract's own paperwork; everywhere else it says
-"Not known".</p>
-
-<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+<h2 class="page-title">Contracts coming up for renewal</h2>
+<p class="lede">Contracts DC's site lists, by when their current period ends. DC's site doesn't say whether a contract has any
+options left, so for most of them the <em>Options left</em> column says "Not known".</p>
+<p class="meta" id="asof"></p>
 
 <div class="toolbar">
   <label>Current period ends<select id="window">
@@ -73,23 +76,32 @@ So the <em>Options left</em> column is filled in only where someone has read the
     <option>Not known</option>
   </select></label>
   <label class="check" id="tech-label"><input id="tech" type="checkbox"> Technology only</label>
-  <button id="copy-link">Copy link</button>
-  <button id="download">Download these rows (CSV)</button>
+  <span class="actions"><button id="copy-link">Copy link</button>
+  <button id="download">Download these rows (CSV)</button></span>
 </div>
-<p class="meta" id="asof"></p>
 <div id="status-line"></div>
 
-<div class="stats" id="stats"></div>
+<p class="summary" id="stats"></p>
+
+<details class="covers">
+  <summary>What this covers, and why options are "Not known"</summary>
+  <p>When a contract's period ends, the District has three choices: exercise the next <strong>option</strong> (an extra year,
+  usually, that the contract already allows), re-bid the work, or extend the contract without bidding. Which of those is possible
+  depends on whether any options are left, and DC's site doesn't say: it lists each option period only once it has been exercised,
+  and has no field for how many the contract allows. So <em>Options left</em> is filled in only where someone has read the
+  contract's own paperwork; everywhere else it says "Not known".</p>
+  <div id="coverage"></div>
+</details>
 
 <section class="block">
   <h2>Every window at a glance</h2>
-  <p class="muted" id="bands-note">Contracts by when their current period ends, with the filters above except the window. Each contract is counted once.</p>
+  <p class="muted" id="bands-note">Contracts by when their current period ends, with the filters above except the window. Each contract is counted once. Click a heading to sort.</p>
   <div class="tablewrap" id="bands"></div>
 </section>
 
 <section class="block">
   <h2 id="rows-title">Contracts</h2>
-  <p class="muted">Sorted by when the current period ends. The base-period amount is what the contract's first period authorises, a ceiling,
+  <p class="muted">Sorted by when the current period ends; click a heading to sort by it. The base-period amount is what the contract's first period authorises, a ceiling,
   not what was spent, and it is not the value of the renewal (<a href="about.html#amounts">why only base periods</a>).</p>
   <div id="rows"></div>
 </section>
@@ -268,15 +280,15 @@ async function render() {
   const rows = await q(`${ROWS_SELECT} ${FROM} ${w.sql} ORDER BY r.end_date, r.contract_number`, w.binds);
 
   const count = (s) => rows.filter((r) => r.options_left === s).length;
-  const stats = [
-    ["Contracts", n(rows.length), `Listed on DC's site, current period ${WINDOW_TEXT[f.window]} (from ${PULLED}).`],
-    ["Already past the last option", n(count("Already past the last option")), "Already running on a no-bid extension after the last option, per paperwork read by hand."],
-    ["Last option", n(count("Last option")), "The award document allows no more options after this period. Read by hand."],
-    ["Options remain", n(count("Options remain")), "The award document allows more options after this period. Read by hand."],
-    ["Not known", n(count("Not known")), "No one has read the paperwork for these. DC's site doesn't say."],
-  ];
-  document.getElementById("stats").innerHTML = stats.map(([l, v, what]) =>
-    `<div class="stat"><div class="stat-label">${esc(l)}</div><div class="stat-value">${v}</div><div class="stat-what">${esc(what)}</div></div>`).join("");
+  const part = (v, label, what) => `<span title="${esc(what)}">${v} ${esc(label)}</span>`;
+  document.getElementById("stats").innerHTML =
+    `<strong title="${esc(`Listed on DC's site, current period ${WINDOW_TEXT[f.window]} (from ${PULLED}).`)}">${n(rows.length)} contracts</strong> ` +
+    `whose current period ${esc(WINDOW_TEXT[f.window])}. Options left: ` + [
+      part(n(count("Already past the last option")), "already past the last option", "Already running on a no-bid extension after the last option, per paperwork read by hand."),
+      part(n(count("Last option")), "last option", "The award document allows no more options after this period. Read by hand."),
+      part(n(count("Options remain")), "options remain", "The award document allows more options after this period. Read by hand."),
+      part(n(count("Not known")), "not known", "No one has read the paperwork for these. DC's site doesn't say."),
+    ].join(" · ") + ".";
 
   const b = where(f, false);
   const bands = await q(`SELECT r.band, count(*) AS contracts,
@@ -307,20 +319,21 @@ async function render() {
   }
   box.innerHTML = '<table class="display compact" style="width:100%"></table>';
   $("#rows table").DataTable({
-    data: rows, pageLength: 50, order: [], scrollX: true, ordering: false,
+    data: rows, pageLength: 50, order: [], scrollX: true,
+    // Sorting uses the raw value; only the display gets the links and tags.
     columns: [
-      {data: "contract_number", title: "Contract", render: (v, t, r) =>
+      {data: "contract_number", title: "Contract", render: (v, t, r) => t !== "display" ? v :
         `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab: every period, payments, orders and documents">${esc(v)}</a>` +
         ` <a href="${esc(r.portal_url)}" target="_blank" rel="noopener" title="The current period's page on DC's site">DC site&nbsp;↗</a>` +
         (r.of_interest ? `<br>${interestBadges(r.of_interest)}` : "")},
-      {data: "title", title: "Title", className: "wide", render: (v) => esc(v)},
-      {data: "vendor", title: "Vendor", render: (v) => esc(v)},
-      {data: "agency", title: "Agency", render: (v) => esc(v)},
-      {data: "period_label", title: "Current period", render: (v, t, r) => periodCell(r)},
+      {data: "title", title: "Title", className: "wide", render: (v, t) => t !== "display" ? v : esc(v)},
+      {data: "vendor", title: "Vendor", render: (v, t) => t !== "display" ? v : esc(v)},
+      {data: "agency", title: "Agency", render: (v, t) => t !== "display" ? v : esc(v)},
+      {data: "period_label", title: "Current period", render: (v, t, r) => t !== "display" ? v : periodCell(r)},
       {data: "end_date", title: "Ends", className: "num"},
-      {data: "months_left", title: "Months left", className: "num", render: (v) => v === null ? "–" : Number(v).toFixed(1)},
-      {data: "base_amount", title: "Base-period amount", className: "num", render: (v, t, r) => amountCell(r)},
-      {data: "options_left", title: "Options left", render: (v, t, r) => statusCell(r)},
+      {data: "months_left", title: "Months left", className: "num", render: (v, t) => t !== "display" ? (v ?? -9999) : (v === null ? "–" : Number(v).toFixed(1))},
+      {data: "base_amount", title: "Base-period amount", className: "num", render: (v, t, r) => t !== "display" ? (v ?? -1) : amountCell(r)},
+      {data: "options_left", title: "Options left", render: (v, t, r) => t !== "display" ? v : statusCell(r)},
     ],
     headerCallback: (thead) => {
       const tips = [
