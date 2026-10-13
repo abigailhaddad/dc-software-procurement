@@ -46,13 +46,13 @@ h3.subhead{font-family:var(--head); font-size:1.02rem; margin:14px 0 4px}
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
-    <a href="start.html">Start here</a>
+    <a href="index.html">Start here</a>
     <a href="technology.html" aria-current="page">Technology</a>
     <a href="renewals.html">Renewals</a>
     <a href="shared-vendors.html">Vendors</a>
     <a href="solicitations.html">Solicitations</a>
     <details class="menu"><summary>Records</summary><div>
-      <a href="index.html">Contracts</a>
+      <a href="contracts.html">Contracts</a>
       <a href="purchase-orders.html">Purchase orders</a>
       <a href="payments.html">Payments</a>
     </div></details>
@@ -473,7 +473,7 @@ async function renderLinks(groups) {
   const classes = classGroups.flatMap((g) => g.classes);
   const params = classes.map((c) => "nigp_class=" + c).join("&") + (KEEP ? "&" + KEEP : "");
   document.getElementById("explorer-links").innerHTML = classes.length
-    ? `<a class="button" href="index.html?${params}">These contracts in the contracts explorer</a>` +
+    ? `<a class="button" href="contracts.html?${params}">These contracts in the contracts explorer</a>` +
       `<a class="button" href="purchase-orders.html?${params}">These orders in the purchase-order explorer</a>`
     : '<span class="muted">Tick at least one whole-class group.</span>';
   const [c] = await q(`SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts, sum(base_amount) AS base

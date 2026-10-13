@@ -19,13 +19,13 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
-    <a href="start.html">Start here</a>
+    <a href="index.html">Start here</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html">Renewals</a>
     <a href="shared-vendors.html">Vendors</a>
     <a href="solicitations.html">Solicitations</a>
     <details class="menu current"><summary>Records</summary><div>
-      <a href="index.html" aria-current="page">Contracts</a>
+      <a href="contracts.html" aria-current="page">Contracts</a>
       <a href="purchase-orders.html">Purchase orders</a>
       <a href="payments.html">Payments</a>
     </div></details>
@@ -37,7 +37,7 @@
   </nav>
 </header>
 
-<p class="meta"><a href="index.html" id="back">← All contracts</a></p>
+<p class="meta"><a href="contracts.html" id="back">← All contracts</a></p>
 <div id="status"></div>
 <div id="contract" hidden>
   <h2 class="contract-title" id="title"></h2>
@@ -97,7 +97,7 @@ const params = new URLSearchParams(location.search);
 const number = (params.get("n") || "").trim();
 const data = params.get("data");
 const keep = data ? `data=${encodeURIComponent(data)}` : "";
-document.getElementById("back").href = "index.html" + (keep ? "?" + keep : "");
+document.getElementById("back").href = "contracts.html" + (keep ? "?" + keep : "");
 async function run(title, sql, binds) {
   return q(sql, binds);
 }
@@ -138,7 +138,7 @@ ORDER BY category, name`;
 async function main() {
   const status = document.getElementById("status");
   if (!number) {
-    status.innerHTML = `No contract number given. <a href="index.html">Pick one from the contracts table.</a>`;
+    status.innerHTML = `No contract number given. <a href="contracts.html">Pick one from the contracts table.</a>`;
     return;
   }
   status.textContent = "Loading the data into your browser…";

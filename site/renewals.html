@@ -36,13 +36,13 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
-    <a href="start.html">Start here</a>
+    <a href="index.html">Start here</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html" aria-current="page">Renewals</a>
     <a href="shared-vendors.html">Vendors</a>
     <a href="solicitations.html">Solicitations</a>
     <details class="menu"><summary>Records</summary><div>
-      <a href="index.html">Contracts</a>
+      <a href="contracts.html">Contracts</a>
       <a href="purchase-orders.html">Purchase orders</a>
       <a href="payments.html">Payments</a>
     </div></details>
@@ -387,7 +387,7 @@ async function main() {
       it has no field for how many options a contract allows. For context only: ${n(cov.reached_4)} contracts have a period labelled "Option 4",
       and ${n(cov.beyond_4)} have one labelled "Option 5" or "Option 6". That is not enough to say any one contract is on its last option.</li>
     <li>"Last option" and "Options remain" come from ${n(cov.hand_entries)} award documents read by hand (${n(cov.hand_applied)} still match the current period on DC's site);
-      "Already past the last option" from the hand-read <a href="index.html?of_interest=${encodeURIComponent(PAST_LAST)}${keep ? "&" + keep : ""}">contracts of interest</a>.
+      "Already past the last option" from the hand-read <a href="contracts.html?of_interest=${encodeURIComponent(PAST_LAST)}${keep ? "&" + keep : ""}">contracts of interest</a>.
       Everything else is "Not known". Even on a last option the District can extend without bidding, as the contracts marked "Already past the last option" show.</li>
     <li>${n(cov.no_base)} contracts have no period labelled as the base period, so no base-period amount is shown for them.</li>
     <li>"Technology only" keeps contracts with any commodity code in NIGP classes ${TECH_NIGP_CLASSES.join(", ")}, or any of the item codes

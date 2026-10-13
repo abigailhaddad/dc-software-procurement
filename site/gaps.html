@@ -35,13 +35,13 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
-    <a href="start.html">Start here</a>
+    <a href="index.html">Start here</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html">Renewals</a>
     <a href="shared-vendors.html">Vendors</a>
     <a href="solicitations.html">Solicitations</a>
     <details class="menu"><summary>Records</summary><div>
-      <a href="index.html">Contracts</a>
+      <a href="contracts.html">Contracts</a>
       <a href="purchase-orders.html">Purchase orders</a>
       <a href="payments.html">Payments</a>
     </div></details>
@@ -250,7 +250,7 @@ async function agencies(asof) {
       <th class="num">Purchase orders</th><th class="num">Order totals</th><th class="num">Payment lines</th><th class="num">Paid</th></tr></thead><tbody>` +
     table.map((a) => `<tr><td>${a.siteLink ? `<a href="${esc(a.siteLink)}" target="_blank" rel="noopener" title="This agency's procurement page, as DC's site links it">${esc(a.displayName)}&nbsp;↗</a>` : esc(a.displayName)}</td>
       <td>${esc(STATUS[a.status])}</td>
-      <td class="num">${a.contracts ? link("index.html", a.displayName, n(a.contracts)) : "0"}</td>
+      <td class="num">${a.contracts ? link("contracts.html", a.displayName, n(a.contracts)) : "0"}</td>
       <td class="num">${a.orders ? link("purchase-orders.html", a.displayName, n(a.orders)) : "0"}</td>
       <td class="num">${money(a.order_amt)}</td>
       <td class="num">${a.lines ? link("payments.html", a.displayName, n(a.lines)) : "0"}</td>
@@ -373,7 +373,7 @@ async function dropped(s, asof) {
        dropped: ${n(s.delisted.orders)} purchase orders and ${n(s.delisted.payments)} payment lines.`,
      covers: `As of ${asof}, out of ${n(s.contracts.periods)} option periods on ${n(d.contracts)} contracts. Records the search had dropped
        before our first pull in August 2026 are not here and can't be counted.`,
-     link: ["See them", "index.html?listed=Not+in+DC+site+search"]},
+     link: ["See them", "contracts.html?listed=Not+in+DC+site+search"]},
   ]);
 }
 
@@ -427,7 +427,7 @@ async function blanks(asof) {
      covers: covers + " Option periods often carry no documents of their own, so the contract count is the stricter one."},
     {gap: "Contracts with no contract type", big: n(r.k1), label: "contracts with no contract type",
      text: `${n(r.p1)} option periods leave contract type (fixed price, cost-plus and so on) blank. ${otherText}`,
-     covers: covers, link: ["See them", "index.html?contract_type=(blank)"]},
+     covers: covers, link: ["See them", "contracts.html?contract_type=(blank)"]},
   ]);
 }
 
@@ -450,7 +450,7 @@ async function market(s, asof) {
      covers: `The ${total} contracts recorded as sole source in of_interest.yaml, read by hand as of ${asof}. That list covers only current contracts
        whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual,
        so this is not a rate across all contracts.`,
-     link: ["See them", "index.html?of_interest=Sole+source"]},
+     link: ["See them", "contracts.html?of_interest=Sole+source"]},
   ]);
 }
 

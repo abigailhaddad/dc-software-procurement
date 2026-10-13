@@ -3,12 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DC Contracts</title>
+<script>
+// The contracts explorer used to be this page. Old links carry its filters in
+// the query string (e.g. ?of_interest=Sole+source); send those on to it.
+(function () {
+  const params = new URLSearchParams(location.search);
+  params.delete("data");
+  if ([...params.keys()].length) location.replace("contracts.html" + location.search + location.hash);
+})();
+</script>
+<title>Start Here</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="shared/style.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  /* Only for this page; everything else comes from shared/style.css. */
+  .page-title{font-family:var(--head); font-size:1.4rem; margin:6px 0 6px}
+  ul.questions{list-style:none; margin:18px 0 0; padding:0; max-width:80ch}
+  ul.questions li{padding:12px 0; border-top:1px solid var(--rule)}
+  ul.questions li:last-child{border-bottom:1px solid var(--rule)}
+  ul.questions a.q{font-family:var(--head); font-size:1.08rem; font-weight:600; text-decoration:none}
+  ul.questions a.q:hover{text-decoration:underline}
+  ul.questions p{margin:3px 0 0; color:var(--soft); font-size:.95rem}
+  ul.questions p.also{font-size:.9rem}
+</style>
 <script src="shared/ui.js" defer></script>
 </head>
 <body>
@@ -19,13 +38,13 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
-    <a href="start.html">Start here</a>
+    <a href="index.html" aria-current="page">Start here</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html">Renewals</a>
     <a href="shared-vendors.html">Vendors</a>
     <a href="solicitations.html">Solicitations</a>
-    <details class="menu current"><summary>Records</summary><div>
-      <a href="index.html" aria-current="page">Contracts</a>
+    <details class="menu"><summary>Records</summary><div>
+      <a href="contracts.html">Contracts</a>
       <a href="purchase-orders.html">Purchase orders</a>
       <a href="payments.html">Payments</a>
     </div></details>
@@ -37,162 +56,55 @@
   </nav>
 </header>
 
-<p class="intro"><strong>New here?</strong> <a href="start.html">Start with the questions this site can answer</a>, such as what technology DC buys and what comes up for renewal.</p>
-<p class="intro">One row per contract <strong>option period</strong>: a contract with a base period and two option years is three rows.
-Only base-period amounts are shown and totalled. They are what the first period authorises the District to spend, not what was paid.
-Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork
-(<a href="about.html#amounts">how we know</a>). Every other field below is the District's, as published:
-agency, vendor, contract type, market type and commodity code are as entered on DC's site, not categories added here.</p>
+<h2 class="page-title">Start here</h2>
+<p class="lede">What the District buys and how, especially software and other technology, answered from DC's own records. Pick a
+question; each page says what its numbers cover and what they leave out.</p>
+<p class="lede">Before quoting any total, read <a href="gaps.html">what DC's site leaves out</a>: some agencies publish little or nothing
+there, and the amounts are ceilings, not spending.</p>
 
-<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
-
-<div class="toolbar">
-  <button id="add-filter">+ Add filter</button>
-  <button id="clear" hidden>Clear all</button>
-  <button id="copy-link">Copy link</button>
-  <button id="download">Download these rows (CSV)</button>
-  <label class="muted">Size bars by <select id="size-by"></select></label>
-</div>
-<div id="chips"></div>
-<p class="meta" id="asof"></p>
-<div id="status"></div>
-
-<div class="stats" id="stats"></div>
-<details class="charts-box" id="charts-box" open>
-  <summary><span class="when-closed">Show charts</span><span class="when-open">Hide charts</span></summary>
-  <div id="charts"></div>
-</details>
-
-<section class="block">
-  <h2>Break it down</h2>
-  <p class="muted">Group the filtered rows by one or two fields. Every value is as the District entered it.</p>
-  <div class="breakdown-bar">
-    <label>Group by<select id="by1"></select></label>
-    <label>then by<select id="by2"></select></label>
-    <button id="breakdown-csv">Download this table (CSV)</button>
-  </div>
-  <div id="breakdown"></div>
-</section>
-
-<section class="block">
-  <h2>Every option period</h2>
-  <p class="error" id="rows-error"></p>
-  <div id="rows"></div>
-</section>
+<ul class="questions">
+  <li><a class="q" href="technology.html">What technology does DC buy, and from whom?</a>
+    <p>Contracts and purchase orders under DC's computer, software, IT-service and network commodity codes, by agency, vendor and year.
+    The codes miss some software; the page measures how much.</p></li>
+  <li><a class="q" href="renewals.html?window=6">What comes up for renewal or re-bid soon?</a>
+    <p>Contracts whose current period ends in the next 6, 12 or 24 months. DC's site doesn't say how many option years are left, so for
+    most contracts that is marked "Not known".</p>
+    <p class="also"><a href="renewals.html?window=6">Ending within 6 months</a> · <a href="renewals.html?window=12&amp;tech=1">Technology, within 12 months</a></p></li>
+  <li><a class="q" href="solicitations.html">What is DC about to buy?</a>
+    <p>Open solicitations, soonest closing first, and every solicitation back to fiscal year 2013. DC's site doesn't link a solicitation
+    to the contract it became.</p>
+    <p class="also"><a href="solicitations.html?title_contains=software">Titles containing "software"</a></p></li>
+  <li><a class="q" href="shared-vendors.html?tech=1&amp;min=5">Which vendors sell to many agencies?</a>
+    <p>Vendors with contracts or orders at several agencies, and a search for one product across agencies. Names are as DC spells them,
+    and a reseller's name covers many makers' products.</p>
+    <p class="also"><a href="shared-vendors.html?tech=1&amp;min=5">Technology vendors at 5+ agencies</a></p></li>
+  <li><a class="q" href="contracts.html?of_interest=Sole+source">What wasn't competed?</a>
+    <p>Contracts whose paperwork shows a sole-source, emergency, exempt or letter-contract award, or an extension past the last option.
+    We read the paperwork only for current contracts whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual. Others awarded the same way may not be on the list.</p>
+    <p class="also"><a href="contracts.html?of_interest=Sole+source">Sole-source contracts</a> · <a href="how-dc-buys.html#badges">What each label means</a></p></li>
+  <li><a class="q" href="how-dc-buys.html">How is DC supposed to buy?</a>
+    <p>Buying authority, OCTO's review of technology purchases, when the Council must approve a contract, small-business set-asides and
+    contract types, each with its DC Code or DCMR section.</p></li>
+  <li><a class="q" href="gaps.html">What can't this data tell me?</a>
+    <p>Agencies outside OCP's authority, payments with no contract number, option-period amounts that disagree with the paperwork, records
+    the search drops and fields left blank, each with a number.</p></li>
+  <li><a class="q" href="contracts.html">I want the records themselves</a>
+    <p>Every contract option period, purchase order and payment line, with filters, charts and CSV downloads.</p>
+    <p class="also"><a href="contracts.html">Contracts</a> · <a href="purchase-orders.html">Purchase orders</a> · <a href="payments.html">Payments</a></p></li>
+</ul>
 
 <footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you filter is sent anywhere.</footer>
 </div>
-<dialog id="dialog"></dialog>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script type="module">
-import {start, esc, money, n, nigpLabel} from "./shared/explorer.js";
-import {PARQUET_DIR} from "./shared/db.js";
-// What each "of interest" category means, from of_interest.yaml by way of summary.json.
-const CATEGORIES = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href)
-  .then((r) => r.ok ? r.json() : {}).then((s) => s.of_interest_categories || {}).catch(() => ({}));
-const interestBadges = (v) => v ? v.split("; ").map((c) =>
-  `<span class="tag interest" title="${esc(CATEGORIES[c] || c)}">${esc(c)}</span>`).join(" ") : "";
-const pct = (a, b) => `${Math.round(100 * a / b)}%`;
-
-const portal = (row) => row.portal_url
-  ? ` <a href="${esc(row.portal_url)}" target="_blank" rel="noopener" title="This option period's page on DC's site">DC site&nbsp;↗</a>` : "";
+<script>
+// Keep ?data= on internal links, as the other pages do.
 const data = new URLSearchParams(location.search).get("data");
-const contractPage = (v) => `contract.html?n=${encodeURIComponent(v)}${data ? "&data=" + encodeURIComponent(data) : ""}`;
-const dropped = (row) => row.listed === false ? '<span class="tag" title="DC\'s site no longer returns this record in its search. Its page there may still open by direct link; this row comes from an earlier pull.">not in DC site search</span>' : "";
-
-start({
-  table: "contracts",
-  coverage: {
-    sql: `SELECT CAST(min(start_date) AS VARCHAR) AS first, CAST(max(end_date) AS VARCHAR) AS last,
-                 count(*) FILTER (WHERE NOT listed) AS dropped FROM contracts`,
-    text: (r, s) => `<ul>
-      <li>Only contracts that DC's site returns in its search. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts its
-        search had dropped before our first pull, in August 2026, are not here.</li>
-      <li>${n(r.dropped)} option periods its search has since stopped returning are kept from earlier pulls, marked "not in DC site search".
-        Their pages on DC's site may still open by direct link.</li>
-      <li>Totals count base periods only, ${money(s.corrections.periods.base_amount)}. They leave out ${money(s.corrections.periods.option_amount_as_published)}
-        that DC's site lists for ${n(s.corrections.periods.option)} option periods, and ${n(s.corrections.same_award.contracts)} records that are the same award as
-        another contract number. A few amounts DC's own paperwork contradicts are corrected; see the <a href="about.html#amounts">About page</a>.</li>
-      <li>Amounts are ceilings, not spending. Of ${money(s.payments.paid)} in payments, only ${money(s.payments.listed_contract_paid)}
-        (${pct(s.payments.listed_contract_paid, s.payments.paid)}) is on lines carrying the number of a contract listed here. The rest carry
-        no contract number, text such as "N/A" in place of one (${n(s.payments.text_lines)} lines), or one of ${n(s.payments.unlisted_numbers)}
-        numbers not on DC's published contract list. Those payments appear only
-        on the payments page.</li></ul>`,
-  },
-  rowLabel: "Option periods",
-  searchLabel: "contract number, title or vendor",
-  measure: {expr: "sum(base_amount)", label: "Base-period amount"},
-  distinct: {expr: "count(DISTINCT contract_number)", label: "Contracts"},
-  count: {expr: "count(DISTINCT contract_number)", label: "Number of contracts", noun: "contracts"},
-  // A few very large Medicaid contracts dominate the dollars, so bars start sized by count.
-  sizeDefault: "count",
-  stats: [
-    {label: "Option periods", expr: "count(*)", what: "Rows matching the filters."},
-    {label: "Contracts", expr: "count(DISTINCT contract_number)", what: "Distinct contract numbers among them."},
-    {label: "Vendors", expr: "count(DISTINCT vendor)", what: "Distinct vendor names, as spelled on DC's site."},
-    {label: "Base-period amount", expr: "sum(base_amount)", money: true, what: "Sum of base-period amounts, counting each award once, corrected where DC's paperwork contradicts DC's figure. A ceiling, not spending. Option periods are not counted."},
-  ],
-  fields: {
-    agency: {label: "Agency", from: "agencyNames on DC's site.", filter: "multi", expr: "agency",
-      listExpr: "string_split(agency, '; ')", optionExpr: "unnest(string_split(agency, '; '))"},
-    vendor: {label: "Vendor", from: "vendor on DC's site, as spelled.", filter: "multi", expr: "vendor"},
-    vendor_contains: {label: "Vendor name contains", from: "vendor on DC's site; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "vendor"},
-    contract_type: {label: "Contract type", from: "contractType on each contract's page on DC's site.", filter: "multi", expr: "coalesce(contract_type, '(blank)')"},
-    market_type: {label: "Market type", from: "marketType on each contract's page on DC's site, as typed (spellings vary).", filter: "multi", expr: "coalesce(market_type, '(blank)')"},
-    nigp_class: {label: "Commodity class (NIGP)", from: "The first three digits of the commodityCode on DC's site.", filter: "multi",
-      expr: "array_to_string(nigp_classes, '; ')", describe: nigpLabel},
-    start_fiscal_year: {label: "Fiscal year the period starts", from: "From startDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(start_fiscal_year AS VARCHAR)"},
-    option_period: {label: "Option period", from: "currentOptionPeriod on DC's site, as typed.", filter: "multi", expr: "option_period"},
-    of_interest: {label: "Of interest", from: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We read the paperwork only for current contracts whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual, so a blank means we didn't read it, not that it's ordinary. Recorded in of_interest.yaml.",
-      filter: "multi", expr: "coalesce(of_interest, '(not flagged)')", listExpr: "string_split(coalesce(of_interest, '(not flagged)'), '; ')",
-      optionExpr: "unnest(string_split(coalesce(of_interest, '(not flagged)'), '; '))"},
-    listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
-      expr: "CASE WHEN listed THEN 'In DC site search' ELSE 'Not in DC site search' END"},
-    contract_number: {label: "Contract number", from: "contractNumber.", filter: "text", exact: true, expr: "contract_number"},
-    title: {label: "Title", from: "title.", filter: "text", expr: "title"},
-    start_date: {label: "Period start date", from: "startDate.", filter: "date", expr: "start_date"},
-    amount: {label: "Base-period amount", from: "contractAmount for base periods, in dollars, corrected where corrections.yaml records an error. Option periods have none.", filter: "number", expr: "base_amount"},
-  },
-  charts: [
-    {id: "year", field: "start_fiscal_year", title: "By the fiscal year each option period starts", byKey: true},
-    {id: "type", field: "contract_type", title: "By contract type"},
-    {id: "agency", field: "agency", title: "By agency"},
-    {id: "vendor", field: "vendor", title: "By vendor", limit: 15},
-    {id: "class", field: "nigp_class", title: "By commodity class"},
-    {id: "market", field: "market_type", title: "By market type"},
-  ],
-  breakdown: ["of_interest", "vendor", "agency", "contract_type", "market_type", "nigp_class", "start_fiscal_year", "option_period", "listed"],
-  breakdownDefault: ["contract_type"],
-  search: ["contract_number", "title", "vendor"],
-  select: ["contract_number", "of_interest", "title", "vendor", "agency", "contract_type", "market_type", "option_period",
-    "CAST(start_date AS VARCHAR) AS start_date", "CAST(end_date AS VARCHAR) AS end_date",
-    "CASE WHEN period_kind = 'base' THEN coalesce(corrected_amount, amount) END AS amount", "amount_text", "period_kind", "corrected_amount IS NOT NULL AS corrected", "same_award_as",
-    "array_to_string(nigp_codes, '; ') AS nigp_codes", "portal_url", "listed"],
-  // Contracts of interest first, then the largest base amounts.
-  defaultOrder: [[1, "asc"], [10, "desc"]],
-  columns: [
-    {key: "contract_number", label: "Contract", title: "The contract number on DC's site. Click it for the contract's periods, payments, orders and documents, in a new tab. \"DC site\" opens this period's page there.", render: (v, r) => `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab: its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
-    {key: "of_interest", label: "Of interest", render: interestBadges,
-      title: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We read the paperwork only for current contracts whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual, so a blank means we didn't read it, not that it's ordinary."},
-    {key: "title", label: "Title", cls: "wide", title: "The contract's title on DC's site."},
-    {key: "vendor", label: "Vendor", title: "The vendor on DC's site, as spelled there."},
-    {key: "agency", label: "Agency", title: "The agency on DC's site; abbreviations are filled in from agency_names.yaml."},
-    {key: "contract_type", label: "Contract type", title: "contractType on DC's site, as entered."},
-    {key: "market_type", label: "Market type", title: "marketType on DC's site, as entered. It says Open or Set Aside even for most sole-source awards, so it can't show whether an award was competed."},
-    {key: "option_period", label: "Period", title: "Which period of the contract this row is, as DC's site labels it: the base period or an option year."},
-    {key: "start_date", label: "Starts", cls: "num", title: "When this period starts, per DC's site."},
-    {key: "end_date", label: "Ends", cls: "num", title: "When this period ends, per DC's site."},
-    {key: "amount", label: "Base amount", cls: "num", render: (v, r) => r.period_kind === "base"
-      ? `${money(v)}${r.corrected ? ` <span class="tag hint" title="DC's site says ${esc(r.amount_text)}. The District's own signed paperwork says ${esc(Number(v).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2}))}, so that is shown. Open the contract for the document.">corrected</span>` : ""}` +
-        (r.same_award_as ? ` <span class="tag hint" title="DC's site lists this same contract twice. Totals count it once, under ${esc(r.same_award_as)}.">listed twice</span>` : "")
-      : '<span class="muted">–</span>',
-      title: "What the base period authorises: a ceiling, not spending. Option periods show – because about three in ten we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"listed twice\": DC's site lists the same contract under two numbers; totals count it once. Open the contract for details."},
-    {key: "nigp_codes", label: "NIGP code", title: "The commodity code DC's site gives the contract, chosen when it was entered.", render: (v) => `<span class="mono">${esc(v)}</span>`},
-  ],
-});
+if (data) for (const a of document.querySelectorAll("a[href]")) {
+  const href = a.getAttribute("href");
+  if (/^[a-z-]+\.html/.test(href)) {
+    const [path, hash] = href.split("#");
+    a.setAttribute("href", path + (path.includes("?") ? "&" : "?") + "data=" + encodeURIComponent(data) + (hash ? "#" + hash : ""));
+  }
+}
 </script>
 </body>
 </html>

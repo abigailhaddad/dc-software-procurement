@@ -18,13 +18,13 @@
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
-    <a href="start.html">Start here</a>
+    <a href="index.html">Start here</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html">Renewals</a>
     <a href="shared-vendors.html">Vendors</a>
     <a href="solicitations.html">Solicitations</a>
     <details class="menu"><summary>Records</summary><div>
-      <a href="index.html">Contracts</a>
+      <a href="contracts.html">Contracts</a>
       <a href="purchase-orders.html">Purchase orders</a>
       <a href="payments.html">Payments</a>
     </div></details>
@@ -51,7 +51,7 @@
   <div class="hero-links">
     <a class="button primary" id="dataset" href="#">Download the tables</a>
     <a class="button" href="https://contracts.ocp.dc.gov">Go to contracts.ocp.dc.gov</a>
-    <a class="button" href="index.html">Explore contracts</a>
+    <a class="button" href="contracts.html">Explore contracts</a>
   </div>
 </section>
 <div id="status"></div>
@@ -66,7 +66,7 @@
   <div class="tablewrap" style="max-height:none"><table class="plain">
     <thead><tr><th>Section of contracts.ocp.dc.gov</th><th>Here?</th></tr></thead>
     <tbody>
-      <tr><td><a href="https://contracts.ocp.dc.gov/contracts/search">Contracts</a></td><td>Yes: the <a href="index.html">contracts</a> page, with each contract's attached documents</td></tr>
+      <tr><td><a href="https://contracts.ocp.dc.gov/contracts/search">Contracts</a></td><td>Yes: the <a href="contracts.html">contracts</a> page, with each contract's attached documents</td></tr>
       <tr><td><a href="https://contracts.ocp.dc.gov/purchase/search">Purchase Orders</a></td><td>Yes: the <a href="purchase-orders.html">purchase orders</a> page</td></tr>
       <tr><td><a href="https://contracts.ocp.dc.gov/payments/search">Payments</a></td><td>Yes: the <a href="payments.html">payments</a> page</td></tr>
       <tr><td><a href="https://contracts.ocp.dc.gov/solicitations/search">Solicitations</a></td><td>Yes: the <a href="solicitations.html">solicitations page</a>. Open solicitations and the yearly archive from fiscal year 2013. Each pull replaces the last, so one DC's site drops is not kept.</td></tr>
@@ -157,13 +157,13 @@ function notes(s) {
      text: `DC's site lists each option period as its own record with its own amount: a ceiling on what that period authorises. Only
        base-period amounts are shown and totalled here. Option-period amounts too often disagree with the District's paperwork
        (<a href="#amounts">see below</a>).`,
-     link: ["See the contracts", "index.html"]},
+     link: ["See the contracts", "contracts.html"]},
     {big: n(s.delisted.periods), label: `option periods no longer returned by DC's site search`,
      text: `DC's site search drops records over time. These periods, on ${n(s.delisted.contracts)} contracts, plus
        ${n(s.delisted.orders)} purchase orders and ${n(s.delisted.payments)} payment lines, came from earlier pulls and are marked
        "not in DC site search" wherever they appear. A record's page on DC's site can still open by direct link after its
        search stops returning it, which is how some of these were recovered.`,
-     link: ["See them", "index.html?listed=Not+in+DC+site+search"]},
+     link: ["See them", "contracts.html?listed=Not+in+DC+site+search"]},
     {big: n(s.contracts.vendors), label: "vendor names on contracts, as spelled",
      text: `Vendor, agency, contract type and market type are typed in, and shown as typed. One company can appear under more than one
        spelling, and market type has ${n(s.contracts.market_types)} distinct values, several of them variants of one another. Check the

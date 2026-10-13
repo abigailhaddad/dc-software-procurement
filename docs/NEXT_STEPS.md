@@ -7,7 +7,7 @@ up. Read `README.md` and `docs/SCHEDULING.md` first.
 
 - **Site:** https://dc-procurement.pages.dev (Cloudflare Pages project
   `dc-procurement`). Static pages in `site/`: contracts explorer
-  (`index.html`), `payments.html`, `purchase-orders.html`, one page per contract
+  (`contracts.html`; `index.html` is the Start here page), `payments.html`, `purchase-orders.html`, one page per contract
   (`contract.html?n=…`), and `about.html`. Each explorer has charts on top and a
   table below, driven by one set of filters on the District's own fields
   (agency, vendor, contract type, NIGP code, market type, fiscal year). No
@@ -50,6 +50,19 @@ up. Read `README.md` and `docs/SCHEDULING.md` first.
    stay off the site. The classifications would need publishing to HF and
    exporting like the other tables, with the About page explaining the model,
    its config and the measured accuracy.
+
+6. **Three option periods have no detail record** (DCKA-2024-C-0080,
+   DCKA-2024-C-0116, DCRL-2022-C-0028), so their contract type, market type,
+   contracting officer and documents are blank. DC's detail API returns at
+   least the first. `pull_contract_details` logs a failed fetch and moves on;
+   uncached ids are retried each pull, so these have likely failed more than
+   once. The first id's contractNumber has a trailing space on DC's site.
+7. **The forecast is not pulled.** `client.MODULES` lists "forecast", but
+   nothing fetches it.
+8. **The options count lives in `site/renewals-options.json`** (13 award
+   documents read by hand). It would sit better as a root-level YAML exported
+   like `of_interest.yaml`. Each entry applies only while DC's site shows the
+   same period label and end date it was read against.
 
 ## The exploratory analysis (not on the site, not in the weekly run)
 

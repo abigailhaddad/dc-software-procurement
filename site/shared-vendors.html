@@ -45,13 +45,13 @@ td.details-toggle{cursor:pointer; color:var(--accent); font-weight:700; width:1.
   Office of Contracting and Procurement publishes contracts, purchase orders and payments, as we pulled them.
   <a href="about.html#source">About this source</a>. <strong>Not a complete record of District contracting or spending.</strong></p>
   <nav class="pages">
-    <a href="start.html">Start here</a>
+    <a href="index.html">Start here</a>
     <a href="technology.html">Technology</a>
     <a href="renewals.html">Renewals</a>
     <a href="shared-vendors.html" aria-current="page">Vendors</a>
     <a href="solicitations.html">Solicitations</a>
     <details class="menu"><summary>Records</summary><div>
-      <a href="index.html">Contracts</a>
+      <a href="contracts.html">Contracts</a>
       <a href="purchase-orders.html">Purchase orders</a>
       <a href="payments.html">Payments</a>
     </div></details>
@@ -359,7 +359,7 @@ async function vendorDetail(vendor, tech) {
       `<a href="purchase-orders.html?supplier=${encodeURIComponent(vendor)}${agencyParam}${KEEP}" target="_blank" rel="noopener">See the orders</a></p>` : "";
     return `<h4>${esc(agency)}</h4>${cList}${oLine}`;
   }).join("");
-  const contractsLink = `<a href="index.html?vendor=${encodeURIComponent(vendor)}${KEEP}" target="_blank" rel="noopener">all of this name's contracts</a>`;
+  const contractsLink = `<a href="contracts.html?vendor=${encodeURIComponent(vendor)}${KEEP}" target="_blank" rel="noopener">all of this name's contracts</a>`;
   return `<div class="detail"><p class="muted">Contract titles as typed on DC's site; a contract whose title changed between option periods shows each title, separated by |.
     Amounts are base periods only. Open ${contractsLink} in the contracts explorer.</p>${html || '<p class="muted">Nothing under the current settings.</p>'}</div>`;
 }
