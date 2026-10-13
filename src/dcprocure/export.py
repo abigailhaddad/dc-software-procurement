@@ -29,6 +29,7 @@ PORTAL = "https://contracts.ocp.dc.gov"
 AGENCY_NAMES = Path(__file__).resolve().parents[2] / "agency_names.yaml"
 CORRECTIONS = Path(__file__).resolve().parents[2] / "corrections.yaml"
 OF_INTEREST = Path(__file__).resolve().parents[2] / "of_interest.yaml"
+AMOUNT_CHECKS = Path(__file__).resolve().parents[2] / "amount_checks.yaml"
 
 
 def agency_map() -> dict[str, str]:
@@ -396,6 +397,19 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
     return counts
 
 
+def amount_checks() -> dict:
+    """Counts from the hand-checked sample in amount_checks.yaml, from its rows."""
+    doc = yaml.safe_load(AMOUNT_CHECKS.read_text(encoding="utf-8"))
+
+    def counts(rows):
+        verdicts = [r["verdict"] for r in rows]
+        return {"sampled": len(rows), "matches": verdicts.count("matches"), "differs": verdicts.count("differs"),
+                "no_paperwork": verdicts.count("no_paperwork"),
+                "with_paperwork": verdicts.count("matches") + verdicts.count("differs")}
+
+    return {"checked": str(doc["checked"]), "option": counts(doc["option_periods"]), "base": counts(doc["base_periods"])}
+
+
 def summary(con: duckdb.DuckDBPyConnection) -> dict:
     """The figures the About page states, computed from the tables just written.
 
@@ -467,6 +481,7 @@ def summary(con: duckdb.DuckDBPyConnection) -> dict:
             "same_award": one("""SELECT count(*) AS periods, count(DISTINCT contract_number) AS contracts,
                 sum(coalesce(corrected_amount, amount)) AS amount FROM contracts WHERE same_award_as IS NOT NULL"""),
         },
+        "amount_checks": amount_checks(),
         "of_interest_categories": {v["label"]: " ".join(v["means"].split())
                                    for v in yaml.safe_load(OF_INTEREST.read_text(encoding="utf-8"))["categories"].values()},
         "agency_names": [

@@ -277,3 +277,16 @@ def test_a_base_period_listed_twice_counts_once():
                    WHERE period_kind = 'base' GROUP BY 1, 2, 3 HAVING count(*) > 1""")
     assert dupes, "expected the known duplicate base listings (e.g. CW103832)"
     assert all(n <= 1 for *_, n in dupes), dupes
+
+
+def test_amount_sample_counts_match_the_files_own_summary():
+    import yaml
+    doc = yaml.safe_load((ROOT / "amount_checks.yaml").read_text(encoding="utf-8"))
+    s = json.loads((PARQUET / "summary.json").read_text(encoding="utf-8"))["amount_checks"]
+    assert s["checked"] == str(doc["checked"])
+    for key, name in (("option", "option_periods"), ("base", "base_periods")):
+        hand = doc["summary"][name]
+        assert s[key]["sampled"] == hand["sampled"] == len(doc[name])
+        assert s[key]["with_paperwork"] == hand["with_paperwork"]
+        assert s[key]["differs"] == hand["differs"] == hand["counts"]["differs"]
+        assert s[key]["no_paperwork"] == hand["counts"]["no_paperwork"]

@@ -54,9 +54,9 @@
 </header>
 
 <h2 class="page-title">What DC's portal leaves out</h2>
-<p class="lede">What a reader can't learn, or can't learn reliably, from DC's
-<a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a>, with a number for each and, where this site
-can filter to them, a link to the records behind it.</p>
+<p class="lede">What DC's <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> doesn't tell you,
+or gets wrong: contracts some agencies leave off it, payments with no contract number, option-period amounts that don't match the
+paperwork, and more. Each has a count, and many link to the records.</p>
 <p class="meta" id="asof"></p>
 <details class="covers"><summary>What this covers</summary><ul>
   <li>Each gap describes the published records. None is a finding about how any contract was handled.</li>
@@ -141,10 +141,17 @@ const STATUS = {
   4: "Limited applicability of the PPRA, exempt from the CPO's authority",
 };
 
-// The hand-checked sample in amount_checks.yaml (checked 12 October 2026).
-// It is a fixed sample, so these do not move with the data.
-const AMOUNT_SAMPLE = {checked: "12 October 2026", drawn: 60, withPaperwork: 48, differs: 14, low: "18%", high: "43%",
-  baseWithPaperwork: 48, baseDiffers: 5, baseLow: "5%", baseHigh: "22%", optionNoPaperwork: 11};
+// What DC's Independent Agencies page listed when we read it by hand: its
+// entry count, and the entries with no agency code (so not in agencies.json).
+const INDEPENDENT_PAGE = {checked: "12 October 2026", entries: 28, noCode: ["D.C. Courts", "the D.C. Housing Authority",
+  "the Public Defender Service", "the Not-for-profit Hospital Association", "the Office of Public Partnerships"]};
+
+// 95% Wilson interval for k of n, as rounded percentages.
+function wilson(k, n, z = 1.96) {
+  const p = k / n, d = 1 + z * z / n, c = (p + z * z / (2 * n)) / d;
+  const h = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d;
+  return [`${Math.round(100 * (c - h))}%`, `${Math.round(100 * (c + h))}%`];
+}
 
 async function json(url) {
   const response = await fetch(url);
@@ -263,9 +270,12 @@ async function agencies(asof) {
 
   document.getElementById("agency-note").innerHTML = `The list comes from DC's site's own agency list
     (<a href="${new URL(BASE + "agencies.json", location.href).href}">agencies.json</a>): ${n(table.length)} agencies there carry one of the three
-    statuses its Independent Agencies page filters on. That page, checked on 12 October 2026, lists 28 entries: these
-    ${n(table.length)} plus five with no agency code (D.C. Courts, the D.C. Housing Authority, the Public Defender Service, the
-    Not-for-profit Hospital Association and the Office of Public Partnerships), none of which appeared under those names in any section on that date.
+    statuses its Independent Agencies page filters on. ${table.length + INDEPENDENT_PAGE.noCode.length === INDEPENDENT_PAGE.entries
+      ? `That page, read by hand on ${INDEPENDENT_PAGE.checked}, listed ${INDEPENDENT_PAGE.entries} entries: these ${n(table.length)} plus
+        ${INDEPENDENT_PAGE.noCode.length} with no agency code (${INDEPENDENT_PAGE.noCode.slice(0, -1).join(", ")} and ${INDEPENDENT_PAGE.noCode.at(-1)}),
+        none of which appeared under those names in any section on that date.`
+      : `When read by hand on ${INDEPENDENT_PAGE.checked}, that page listed ${INDEPENDENT_PAGE.entries} entries, ${INDEPENDENT_PAGE.noCode.length}
+        of them with no agency code. The count above no longer adds up to that, so the page has changed since.`}
     ${n(span.blank_agency)} contracts name no agency at all (see <a href="#blanks">blank fields</a>), and a few of
     those could belong to agencies counted here as having none.`;
 
@@ -346,22 +356,25 @@ async function orders(asof) {
 }
 
 // ---------- amounts (hand-checked sample) ----------
-function amounts(asof) {
-  const a = AMOUNT_SAMPLE;
+async function amounts(s, asof) {
+  const [f] = await q(`SELECT count(*) AS later FROM contracts WHERE start_date > DATE '${asof}'`);
+  const o = s.amount_checks.option, b = s.amount_checks.base;
+  const [low, high] = wilson(o.differs, o.with_paperwork), [baseLow, baseHigh] = wilson(b.differs, b.with_paperwork);
+  const checked = new Date(s.amount_checks.checked + "T12:00").toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
   cards("amount-cards", [
-    {gap: "Option-period amounts that disagree with paperwork", big: `${a.differs} of ${a.withPaperwork}`, label: "sampled option periods whose amount disagreed with the District's own paperwork",
-     text: `About three in ten; with a sample this size the true share is roughly between ${a.low} and ${a.high}. Most often the
-       option period just repeats the base year's amount. For ${a.optionNoPaperwork} more of the ${a.drawn} sampled periods, nothing posted
-       states the amount. The same check found ${a.baseDiffers} of ${a.baseWithPaperwork} base periods off (roughly ${a.baseLow}
-       to ${a.baseHigh}). This site shows base-period amounts only for that reason.`,
-     covers: `A random sample of ${a.drawn} option periods with CW numbers, checked by hand on ${a.checked}. A sample, not a count of every period.`,
+    {gap: "Option-period amounts that disagree with paperwork", big: `${o.differs} of ${o.with_paperwork}`, label: "sampled option periods whose amount disagreed with the District's own paperwork",
+     text: `${pct(o.differs, o.with_paperwork)} of them; with a sample this size the true share is roughly between ${low} and ${high}. Most often the
+       option period just repeats the base year's amount. For ${o.no_paperwork} more of the ${o.sampled} sampled periods, nothing posted
+       states the amount. The same check found ${b.differs} of ${b.with_paperwork} base periods off (roughly ${baseLow}
+       to ${baseHigh}). This site shows base-period amounts only for that reason.`,
+     covers: `A random sample of ${o.sampled} option periods with CW numbers, checked by hand on ${checked}. A sample, not a count of every period.`,
      link: ["Each sampled period, with its document", GITHUB + "amount_checks.yaml"]},
     {gap: "Number of option years", big: "No field", label: "says how many option years a contract allows",
      text: `DC's site lists an option period only once it has been exercised, and no field gives the number of options a contract has. So
        the site alone can't tell you whether a contract ending soon can be renewed, or must be re-bid or extended without bidding.
        The renewals page fills this in only where we read the award paperwork by hand.`,
-     covers: `As of ${asof}. No option period on DC's site started after the pull date, and asking it for the next period of 20
-       contracts returned nothing for any of them.`,
+     covers: `As of ${asof}, ${f.later ? `${n(f.later)} periods on DC's site start` : "no period on DC's site starts"} after the pull date. On 12 October 2026 we asked DC's site for the
+       next period of 20 contracts, and it returned nothing for any of them.`,
      link: ["See the renewals page", "renewals.html"]},
   ]);
 }
@@ -500,7 +513,7 @@ async function main() {
   await agencies(asof);
   await payments(s, asof);
   await orders(asof);
-  amounts(asof);
+  await amounts(s, asof);
   await dropped(s, asof);
   await blanks(asof);
   await market(s, asof);
