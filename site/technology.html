@@ -11,17 +11,29 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
 /* Page-only styles; kept here so shared/style.css is untouched. */
-.groups{display:grid; grid-template-columns:minmax(0,1fr); gap:10px; margin:8px 0 6px}
-.group-card{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:10px 14px}
-.group-card label.toggle{display:flex; gap:8px; align-items:baseline; font-family:var(--head); font-weight:600; cursor:pointer}
-.group-card p{margin:2px 0 6px; color:var(--soft); font-size:.92rem}
-.group-card table.plain{font-size:.84rem}
+h2.page-title{font-family:var(--head); font-size:1.5rem; margin:6px 0 4px}
+.picks{display:flex; flex-wrap:wrap; gap:4px 18px; align-items:baseline; margin:0 0 4px; font-size:.95rem}
+.picks .picks-label{font-weight:600; color:var(--soft)}
+.picks label{display:inline-flex; gap:6px; align-items:baseline; cursor:pointer; white-space:nowrap}
+.picks-hint{font-size:.88rem; margin:0 0 6px}
+details.fold{margin:0 0 12px}
+details.fold > summary{cursor:pointer; color:var(--accent); font-weight:600; width:max-content; max-width:100%}
+details.fold[open]{background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:8px 14px}
+details.fold p{max-width:85ch}
+.code-group{margin:14px 0}
+.code-group h4{font-family:var(--head); font-size:1rem; margin:0 0 2px}
+.code-group p{margin:0 0 6px; color:var(--soft); font-size:.92rem}
+.code-group table.plain{font-size:.84rem}
+.stats{grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px; margin:10px 0 6px}
+.stats .stat{padding:10px 14px}
 .links{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 4px}
 .two{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:12px}
-.two>div,.group-card{min-width:0}
-details.sample summary{cursor:pointer; color:var(--accent); font-weight:600}
+.two>div{min-width:0}
+.tabpanel{padding-top:10px}
+.tabpanel > p.muted{font-size:.9rem; margin:0 0 6px; max-width:90ch}
 td.code{white-space:nowrap}
-#by-year .tablewrap,#by-group .tablewrap{max-height:none}
+table.plain th.num,table.plain td.num{text-align:right}
+#by-year .tablewrap,#by-group .tablewrap,.code-group .tablewrap{max-height:none}
 h3.subhead{font-family:var(--head); font-size:1.02rem; margin:14px 0 4px}
 </style>
 <script src="shared/ui.js" defer></script>
@@ -52,16 +64,85 @@ h3.subhead{font-family:var(--head); font-size:1.02rem; margin:14px 0 4px}
   </nav>
 </header>
 
-<p class="intro">What the District buys in technology and software, as far as its own commodity codes show it. Every contract and
-purchase order on DC's site carries a commodity code from the NIGP list, a standard catalogue of goods and services used by state and
-local governments. The first three digits are the class ("208: computer software for microcomputers"); the full seven-digit code
-names the item. This page keeps the records whose codes are listed below, and nothing else: no keyword search, no categories of our
-own. Contracts and purchase orders are counted separately and never added together, because an order can be placed under a contract
-and the two would then count the same purchase twice.</p>
+<h2 class="page-title">Technology purchases</h2>
+<p class="lede">What the District buys in technology and software, as far as its own commodity codes show it. Contracts and
+purchase orders are counted separately and never added together.</p>
 
-<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+<div class="picks" id="picks"><span class="picks-label">Code groups:</span></div>
+<p class="picks-hint muted">Untick a group to leave it out, or tick one that starts unticked; every number on the page follows.</p>
+
+<details class="fold" id="codes">
+  <summary>Which codes count</summary>
+  <p>Every contract and purchase order on DC's site carries a commodity code from the NIGP list, a standard catalogue of goods and
+  services used by state and local governments. The first three digits are the class ("208: computer software for microcomputers");
+  the full seven-digit code names the item. This page keeps the records whose codes are listed below, and nothing else: no keyword
+  search, no categories of our own. Contracts and purchase orders are counted separately and never added together, because an order
+  can be placed under a contract and the two would then count the same purchase twice.</p>
+  <p class="muted">Class descriptions are from the District's NIGP class list; item descriptions are as DC's contract pages show them.
+  Counts in these tables cover each code on its own and do not change with the ticks.</p>
+  <h3 class="subhead">Whole classes</h3>
+  <div id="groups-class"></div>
+  <h3 class="subhead">Single item codes inside other classes</h3>
+  <p class="muted">These classes are mostly not technology, but a few of their item codes plainly are, so those codes are taken on
+  their own. The explorers can't filter on a single item code, so these groups are not in the explorer links.</p>
+  <div id="groups-item"></div>
+  <h3 class="subhead">Codes we looked at and left out</h3>
+  <p class="muted">Classes that hold some technology purchases but more of other things, and item codes whose names mention
+  computers, software or the web but describe something else.</p>
+  <div class="tablewrap" style="max-height:none" id="left-out"></div>
+</details>
+
+<div id="status"></div>
+<div class="stats" id="stats"></div>
+<p class="meta" id="asof"></p>
+
+<details class="covers" id="coverage-box">
+  <summary>What this covers</summary>
+  <div id="coverage"></div>
+</details>
 
 <section class="block">
+  <div class="tabs" role="tablist" id="tabs">
+    <button type="button" role="tab" id="tab-group" aria-controls="panel-group" aria-selected="true">By group</button>
+    <button type="button" role="tab" id="tab-agency" aria-controls="panel-agency" aria-selected="false">By agency</button>
+    <button type="button" role="tab" id="tab-vendor" aria-controls="panel-vendor" aria-selected="false">By vendor</button>
+    <button type="button" role="tab" id="tab-year" aria-controls="panel-year" aria-selected="false">By fiscal year</button>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="panel-group" aria-labelledby="tab-group">
+    <div id="by-group"></div>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="panel-agency" aria-labelledby="tab-agency" hidden>
+    <p class="muted">Agency names as on DC's site, with abbreviations filled in (see the <a href="about.html">About page</a>). Some agencies,
+    DC Public Schools and the Chief Financial Officer among them, hold large technology orders but few or no listed contracts.
+    A contract shared by several agencies is listed under the combined name.</p>
+    <div id="by-agency"></div>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="panel-vendor" aria-labelledby="tab-vendor" hidden>
+    <p class="muted">Names as spelled on DC's site. Contracts and orders spell the same company differently
+    ("Carahsoft Technology Corporation", "CARAHSOFT TECHNOLOGY CORP"), so they are listed separately. The vendor is whoever holds
+    the contract, often a reseller rather than the software maker.</p>
+    <div class="two">
+      <div><h3 class="muted">Contracts</h3><div id="by-vendor"></div></div>
+      <div><h3 class="muted">Purchase orders</h3><div id="by-supplier"></div></div>
+    </div>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="panel-year" aria-labelledby="tab-year" hidden>
+    <p class="muted">District fiscal years run 1 October to 30 September: FY2026 ended 30 September 2026. Contracts are placed in the year their
+    base period starts; orders in the fiscal year DC's site gives them. No contract option period on DC's site starts before FY2021, so
+    earlier years show orders only.</p>
+    <div id="by-year"></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Every contract in these codes</h2>
+  <p class="muted">One row per contract. Click a contract number to open its periods, payments, orders and documents.
+  “Base amount” is what the base period authorises: a ceiling, not spending. Option periods are not counted
+  (<a href="about.html#amounts">why</a>).</p>
+  <div id="contracts"></div>
+</section>
+
+<section class="block" id="before-you-use">
   <h2>Before you use these numbers</h2>
   <div class="note">
     <p><strong>The code is whatever was chosen when the record was entered, and it can be wrong.</strong> Software licences turn up
@@ -77,74 +158,11 @@ and the two would then count the same purchase twice.</p>
     it counts once. <span id="multi-note"></span> A purchase order has one code. A contract counts once in the totals however many option
     periods it has, and its dollars are its base-period amount only.</p>
     <p>The contract's own page on DC's site can list more codes than the search listing does. In the 12 October 2026 pull, 22 contracts
-    carried a code from the class groups below only on their own page (for example CW93000, Emphasys software, listed under consulting).
+    carried a code from the class groups only on their own page (for example CW93000, Emphasys software, listed under consulting).
     They are counted only if a listing code puts them in a group.</p>
     <p><strong>The vendor is whoever holds the contract, often a reseller rather than the company that makes the product.</strong>
     Carahsoft, for example, is the vendor on DC's contracts for Acquia's Drupal licences (CW86957) and Salesforce licences (CW92708).
-    The vendor and supplier tables below show sellers, not software makers.</p>
-  </div>
-</section>
-
-<section class="block">
-  <h2>Which codes count</h2>
-  <p class="muted">Untick a group to leave it out, or tick one that starts unticked; every number on the page follows. Class
-  descriptions are from the District's NIGP class list; item descriptions are as DC's contract pages show them. Counts in these
-  tables cover each code on its own and do not change with the ticks.</p>
-  <h3 class="subhead">Whole classes</h3>
-  <div class="groups" id="groups-class"></div>
-  <h3 class="subhead">Single item codes inside other classes</h3>
-  <p class="muted">These classes are mostly not technology, but a few of their item codes plainly are, so those codes are taken on
-  their own. The explorers can't filter on a single item code, so these groups are not in the explorer links below.</p>
-  <div class="groups" id="groups-item"></div>
-  <details class="sample">
-    <summary>Codes we looked at and left out</summary>
-    <p class="muted">Classes that hold some technology purchases but more of other things, and item codes whose names mention
-    computers, software or the web but describe something else.</p>
-    <div class="tablewrap" style="max-height:none" id="left-out"></div>
-  </details>
-</section>
-
-<div id="status"></div>
-<p class="meta" id="asof"></p>
-
-<div class="stats" id="stats"></div>
-
-<section class="block">
-  <h2>Open this in the full explorer</h2>
-  <p class="muted">These open the same records in the contracts and purchase-order explorers, where you can filter further, chart and
-  download them. The explorers filter on three-digit classes only, so the links cover the whole-class groups you have ticked.</p>
-  <div class="links" id="explorer-links"></div>
-  <p class="muted" id="explorer-note"></p>
-</section>
-
-<section class="block">
-  <h2>By group</h2>
-  <div id="by-group"></div>
-</section>
-
-<section class="block">
-  <h2>By fiscal year</h2>
-  <p class="muted">District fiscal years run 1 October to 30 September: FY2026 ended 30 September 2026. Contracts are placed in the year their
-  base period starts; orders in the fiscal year DC's site gives them. No contract option period on DC's site starts before FY2021, so
-  earlier years show orders only.</p>
-  <div id="by-year"></div>
-</section>
-
-<section class="block">
-  <h2>By agency</h2>
-  <p class="muted">Agency names as on DC's site, with abbreviations filled in (see the <a href="about.html">About page</a>). Some agencies,
-  DC Public Schools and the Chief Financial Officer among them, hold large technology orders but few or no listed contracts.
-  A contract shared by several agencies is listed under the combined name.</p>
-  <div id="by-agency"></div>
-</section>
-
-<section class="block">
-  <h2>By vendor</h2>
-  <p class="muted">Names as spelled on DC's site. Contracts and orders spell the same company differently
-  ("Carahsoft Technology Corporation", "CARAHSOFT TECHNOLOGY CORP"), so they are listed separately.</p>
-  <div class="two">
-    <div><h3 class="muted">Contracts</h3><div id="by-vendor"></div></div>
-    <div><h3 class="muted">Purchase orders</h3><div id="by-supplier"></div></div>
+    The vendor and supplier tables show sellers, not software makers.</p>
   </div>
 </section>
 
@@ -157,7 +175,7 @@ and the two would then count the same purchase twice.</p>
   licences and Dell computers. That is why the item-code groups exist: the cloud-subscription and other-item groups catch 8 of
   those 14, and the computer-consulting group 3 more. The other 3 (IBM licences coded as a professional licence renewal, a voter
   registration database, Dell computers coded as publications) no code-based rule would catch. These are samples of 20, read by title only.</p>
-  <details class="sample">
+  <details class="fold">
     <summary>The 40 contracts we read</summary>
     <div class="tablewrap" style="max-height:none" id="sample-table"></div>
   </details>
@@ -167,11 +185,11 @@ and the two would then count the same purchase twice.</p>
 </section>
 
 <section class="block">
-  <h2>Every contract in these codes</h2>
-  <p class="muted">One row per contract. Click a contract number to open its periods, payments, orders and documents.
-  “Base amount” is what the base period authorises: a ceiling, not spending. Option periods are not counted
-  (<a href="about.html#amounts">why</a>).</p>
-  <div id="contracts"></div>
+  <h2>Open this in the full explorer</h2>
+  <p class="muted">These open the same records in the contracts and purchase-order explorers, where you can filter further, chart and
+  download them. The explorers filter on three-digit classes only, so the links cover the whole-class groups you have ticked.</p>
+  <div class="links" id="explorer-links"></div>
+  <p class="muted" id="explorer-note"></p>
 </section>
 
 <footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you choose is sent anywhere.</footer>
@@ -287,8 +305,32 @@ function writeUrl() {
     for (const g of ticked) p.append("group", g.id);
     if (ticked.length === 0) p.set("group", "none");
   }
+  if (currentTab() !== "group") p.set("view", currentTab());
   const qs = p.toString();
   history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+}
+
+// ---------- breakdown tabs (the selected button owns the state; the URL mirrors it as ?view=) ----------
+const TABS = ["group", "agency", "vendor", "year"];
+function currentTab() {
+  return TABS.find((t) => document.getElementById("tab-" + t).getAttribute("aria-selected") === "true");
+}
+function showTab(name) {
+  for (const t of TABS) {
+    document.getElementById("tab-" + t).setAttribute("aria-selected", String(t === name));
+    document.getElementById("panel-" + t).hidden = t !== name;
+  }
+}
+// Bound once, after the checkboxes exist (writeUrl reads them).
+function wireTabs() {
+  const view = new URLSearchParams(location.search).get("view");
+  if (TABS.includes(view)) showTab(view);
+  document.getElementById("tabs").addEventListener("click", (event) => {
+    const button = event.target.closest("button[role=tab]");
+    if (!button) return;
+    showTab(button.id.slice("tab-".length));
+    writeUrl();
+  });
 }
 
 // ---------- groups -> SQL ----------
@@ -349,19 +391,23 @@ async function renderCodeTables() {
     `<td class="num">${n(counts[code].contracts)}</td><td class="num">${money(counts[code].base)}</td>` +
     `<td class="num">${n(counts[code].orders)}</td><td class="num">${money(counts[code].ordered)}</td>`;
   const wanted = new URLSearchParams(location.search).getAll("group");
-  const card = (g) => {
+  const pick = (g) => {
     const checked = wanted.length ? wanted.includes(g.id) : g.on;
+    return `<label title="${esc(g.what)}"><input type="checkbox" id="g-${g.id}"${checked ? " checked" : ""}> ${esc(g.label)}</label>`;
+  };
+  const codeList = (g) => {
     const lines = g.classes
       ? g.classes.map((c) => `<tr>${line(c, NIGP[c] || "(no description on DC's list)")}</tr>`)
       : g.items.map(([c, d]) => `<tr>${line(c, d)}</tr>`);
-    return `<div class="group-card">
-      <label class="toggle"><input type="checkbox" id="g-${g.id}"${checked ? " checked" : ""}> ${esc(g.label)}</label>
+    return `<div class="code-group">
+      <h4>${esc(g.label)}</h4>
       <p>${esc(g.what)}</p>
-      <div class="tablewrap" style="max-height:none"><table class="plain">${head}<tbody>${lines.join("")}</tbody></table></div>
+      <div class="tablewrap"><table class="plain">${head}<tbody>${lines.join("")}</tbody></table></div>
     </div>`;
   };
-  document.getElementById("groups-class").innerHTML = GROUPS.filter((g) => g.classes).map(card).join("");
-  document.getElementById("groups-item").innerHTML = GROUPS.filter((g) => g.items).map(card).join("");
+  document.getElementById("picks").insertAdjacentHTML("beforeend", GROUPS.map(pick).join(""));
+  document.getElementById("groups-class").innerHTML = GROUPS.filter((g) => g.classes).map(codeList).join("");
+  document.getElementById("groups-item").innerHTML = GROUPS.filter((g) => g.items).map(codeList).join("");
   document.getElementById("left-out").innerHTML = `<table class="plain"><thead><tr><th>Code</th><th>Description</th>` +
     `<th class="num">Contracts</th><th class="num">Base amount</th><th class="num">Orders</th><th class="num">Amount ordered</th><th>Why it's left out</th></tr></thead><tbody>` +
     LEFT_OUT.map((x) => `<tr>${line(x.code, x.desc || NIGP[x.code] || "")}<td>${esc(x.why)}</td></tr>`).join("") + "</tbody></table>";
@@ -392,7 +438,7 @@ async function renderCoverage(groups) {
       count(*) FILTER (WHERE NOT listed) AS unlisted
     FROM purchase_orders WHERE ${orderWhere(groups)}`);
   const noBase = c.contracts - c.with_base;
-  document.getElementById("coverage").innerHTML = `<h2>What this covers</h2><ul>
+  document.getElementById("coverage").innerHTML = `<ul>
     <li>Only what DC's site lists. Contracts its search had stopped returning before our first pull, in August 2026, are not here.
       ${n(c.unlisted)} contract option periods and ${n(p.unlisted)} orders here are ones its search has since stopped returning, kept from earlier pulls.</li>
     <li>Contract dollars are base-period amounts only, a ceiling and not spending.
@@ -401,7 +447,9 @@ async function renderCoverage(groups) {
       ${c.corrected ? `${n(c.corrected)} amounts are corrected from the District's own paperwork.` : ""}</li>
     <li>Purchase orders here were placed ${esc(p.first ?? "–")} to ${esc(p.last ?? "–")}; their amounts are commitments, not payments.
       ${n(p.no_year)} orders (${money(p.no_year_amount ?? 0)}) have no fiscal year on DC's site and are left out of the year table only.
-      FY2027 began on 1 October 2026 and has barely started.</li></ul>`;
+      FY2027 began on 1 October 2026 and has barely started.</li>
+    <li>Only what the codes catch. A code can be wrong, and technology bought under other codes is missed: see
+      <a href="#before-you-use">Before you use these numbers</a>, including the Inspector General's finding on this.</li></ul>`;
   document.getElementById("multi-note").textContent = c.multi
     ? `${n(c.multi)} option periods here have codes in more than one ticked group; they are shown as "More than one group" and counted once.`
     : "None of the option periods here has codes in two ticked groups, so each sits in exactly one.";
@@ -607,6 +655,7 @@ try {
     `Pulled from contracts.ocp.dc.gov ${esc(stamps[0])}${stamps.at(-1) !== stamps[0] ? " to " + esc(stamps.at(-1)) : ""}` +
     ` · <a href="${DATASET_PAGE}">full dataset</a>` + (LOCAL ? " · <strong>reading the local build</strong>" : "");
   await renderCodeTables();
+  wireTabs();
   renderSample();
   await refresh();
   status.textContent = "";
