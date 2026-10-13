@@ -60,8 +60,8 @@ proposals. Below are the ones open when we pulled, soonest closing first. The fu
   <summary>What this covers</summary>
   <p>A solicitation is an RFP (request for proposals), RFQ (request for quotations), IFB (invitation for bids) or RFI (request for
   information, which only asks questions). DC's site lists each one with a title, agency, market type, closing date and the contract
-  specialist to contact. It publishes no description, dollar value or commodity code, and it does not say which contract a
-  solicitation led to. Every value on this page is as the District entered it.</p>
+  specialist to contact. It publishes no description, posting date, dollar value or commodity code, and doesn't say which
+  contract a solicitation led to. Every value here is as the District entered it.</p>
   <div id="coverage"></div>
 </details>
 
@@ -144,15 +144,14 @@ await start({
       const t = s.solicitations;
       return `<ul>
       <li>Every solicitation DC's site returned on ${esc(PULLED)}: ${n(t.open)} open, and ${n(t.closed)} closed ones from its archive for
-        fiscal years ${esc(r.first_fy)} to ${esc(r.last_fy)}. Its archive has a few dozen older records, which were not pulled.</li>
+        fiscal years ${esc(r.first_fy)} to ${esc(r.last_fy)}. Its archive also holds a few dozen older records, not pulled.</li>
       ${r.last_fy < PULL_FY ? `<li><strong>Missing:</strong> solicitations that closed in fiscal year ${PULL_FY}, which began 1 October,
         before the pull. The pull asked DC's archive for fiscal years up to ${esc(r.last_fy)} only.</li>` : ""}
       <li>One row per listing, as DC's site gives it; none removed or merged. ${n(t.repeated_numbers)} number${t.repeated_numbers === 1 ? " appears" : "s appear"}
         more than once, in different archive years with different closing dates.</li>
       <li>${n(t.doc_ids)} of ${n(t.solicitations)} carry an id DC's site gives the posting (Doc123456) instead of a procurement number
         such as DCKA-2026-B-0157.</li>
-      <li>No posting date, dollar value or commodity code is published, and nothing links a solicitation to the contract it led to,
-        so this page doesn't either. ${n(t.no_agency)} list no agency, ${n(t.no_closing_date)} no closing date, and ${n(t.no_market_type)}
+      <li>${n(t.no_agency)} list no agency, ${n(t.no_closing_date)} no closing date, and ${n(t.no_market_type)}
         no market type, which is typed freely (${n(t.market_types)} spellings).</li>
       <li>Each pull replaces the last. Unlike contracts, a solicitation DC's site stops listing is not kept here.</li></ul>`;
     },
@@ -181,7 +180,7 @@ await start({
       expr: "CASE WHEN is_open THEN 'Open' ELSE 'Closed' END"},
     fiscal_year: {label: "Fiscal year", from: "The archive year DC's site files a closed solicitation under: the fiscal year it closed in. Open ones have none yet.",
       filter: "multi", ordered: true, expr: "coalesce(CAST(fiscal_year AS VARCHAR), 'Open')"},
-    title_contains: {label: "Title contains", from: "A text search on the title as DC typed it, ignoring case. It is not a classification: it finds every title containing the text, whatever the purchase, and misses any that word it differently.",
+    title_contains: {label: "Title contains", from: "A text search on the title as DC typed it, ignoring case, not a classification: it finds every title containing the text, whatever the purchase, and misses any worded differently.",
       filter: "text", expr: "title"},
     solicitation_number: {label: "Solicitation number contains", from: "solicitationNumber; garbled characters match a dash.", filter: "text",
       expr: "replace(solicitation_number, chr(26), '-')"},
@@ -222,7 +221,7 @@ const today = new Date().toISOString().slice(0, 10);
 const passed = openRows.filter((r) => r.closing_date && r.closing_date < today).length;
 document.getElementById("open-note").textContent =
   `${openRows.length} solicitations were open on DC's site on ${PULLED}, soonest closing first.` +
-  (passed ? ` ${passed} of them have closing dates before today, so they have closed since.` : "") +
+  (passed ? ` ${passed} ${passed === 1 ? "has a closing date" : "have closing dates"} before today, so ${passed === 1 ? "it has" : "they have"} closed since.` : "") +
   ` Check DC's site before relying on a date: it can extend or cancel a solicitation.`;
 document.getElementById("open-list").innerHTML = `<div class="tablewrap" style="max-height:none"><table class="plain open-list">
   <thead><tr><th>Closes</th><th>Time</th><th>Number</th><th>Title</th><th>Agency</th><th>Market type</th><th>Specialist</th></tr></thead><tbody>` +
@@ -242,8 +241,8 @@ const counts = await q(`SELECT ${KEYWORDS.map((w, i) => `count(*) FILTER (WHERE 
   KEYWORDS.map((w) => `%${w}%`));
 document.getElementById("keywords").innerHTML = `<span class="muted">Try a title search:</span>` +
   KEYWORDS.map((w, i) => `<span><a href="#" data-word="${esc(w)}">${esc(w)}</a> <span class="muted">(${n(counts[0]["k" + i])})</span></span>`).join("") +
-  `<details><summary>Text search, not a classification</summary><p>The numbers are titles containing the word, across all years.
-  This is a text search, not a classification: "license" also finds license plate readers, "system" finds sprinkler systems, and
+  `<details><summary>Text search, not a classification</summary><p>The numbers count titles containing the word, across all years.
+  "license" also finds license plate readers, "system" finds sprinkler systems, and
   software bought under another name is missed.</p></details>`;
 // Sets the "Title contains" filter and keeps every other filter in the URL.
 document.getElementById("keywords").addEventListener("click", (e) => {

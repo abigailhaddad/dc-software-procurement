@@ -41,10 +41,12 @@
   <p><strong>This is a selection, not everything.</strong> It is what the District's
   <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> listed when we pulled it, weekly since
   August 2026. Records its search had stopped returning before then are not here, and a record it never published cannot be. Payments
-  in particular often carry no contract number, or one DC's published contract list does not include, so the contracts here cover only
-  part of what was paid. None of it can be checked against the District's own accounts; it is what DC's site shows.</p>
-  <p>Fields are shown as the District entered them. Nothing is classified or estimated. The one thing filled in is a short list of
-  agency names published only as an abbreviation or a budget code, listed below with a source for each.</p>
+  often carry no contract number, or one not on DC's published contract list, so the contracts here cover only part of what was paid. None of it can be checked against the District's own accounts; it is what DC's site shows.</p>
+  <p>Fields are shown as the District entered them. Nothing comes from a model and nothing is estimated. A few things are added by
+  hand, each from a file that cites its source: agency names published only as an abbreviation or a budget code (listed below),
+  amounts the District's own paperwork contradicts (<a href="#amounts">below</a>), how some contracts were awarded (the "of interest"
+  badges), and, on the renewals page, how many options a few contracts allow. The technology page groups DC's commodity codes and lists
+  every code it uses.</p>
   <p class="meta" id="asof"></p>
   <div class="hero-links">
     <a class="button primary" id="dataset" href="#">Download the tables</a>
@@ -59,8 +61,8 @@
   <p class="intro">The <a href="https://contracts.ocp.dc.gov">Contracts and Procurement Transparency Portal</a> (contracts.ocp.dc.gov)
   is the District's public site for its contracting records. In its own words, it "was created by the Office of Contracting and
   Procurement (OCP) … as a public clearinghouse for all information related to the District Government's contracting and procurement
-  efforts." Anyone can search it; this site keeps a copy of four of its sections so they can be filtered and totalled, and, for contracts,
-  orders and payments, kept after the site drops them.</p>
+  efforts." Anyone can search it. This site copies four of its sections so they can be filtered and totalled, and keeps contracts, orders
+  and payments after DC's site drops them.</p>
   <div class="tablewrap" style="max-height:none"><table class="plain">
     <thead><tr><th>Section of contracts.ocp.dc.gov</th><th>Here?</th></tr></thead>
     <tbody>
@@ -88,27 +90,27 @@
   <p>DC's site gives each option period its own amount. We checked those amounts against the District's own paperwork posted beside
   them: the signed contract, the modification exercising the option, and the price determination. On 12 October 2026 we drew 60 option
   periods at random and found paperwork stating the period's amount for 48. DC's figure disagreed with it for 14 of those 48, about
-  three in ten (with a sample this size, somewhere between roughly 18% and 43%). Most often the option period simply repeats the base
+  three in ten (with a sample this size, roughly 18% to 43%). Most often the option period just repeats the base
   year's amount. The same check on 60 base periods found 5 of 48 that disagreed, about one in ten (roughly 5% to 22%).</p>
   <p>So this site shows and totals <strong>base-period amounts only</strong>. Option periods are still listed, with their dates, labels and
   documents, but not their amounts. Base-period amounts are DC's entries and about one in ten may be wrong; read the signed award before
-  relying on one. Each sampled period, with the document it was checked against, is in
+  relying on one. Each sampled period and the document it was checked against are in
   <a href="https://github.com/abigailhaddad/dc-software-procurement/blob/main/amount_checks.yaml">amount_checks.yaml</a>.</p>
   <div class="notes" id="amount-notes"></div>
   <h3>Records corrected by hand</h3>
-  <p class="muted">Where the District's own paperwork contradicts DC's figure, the paperwork's figure is used, and DC's is kept beside it as
+  <p class="muted">Where the District's own paperwork contradicts DC's figure, the paperwork's figure is used. DC's is kept beside it as
   <code>amount</code> and <code>amount_text</code>. Each correction names its document in
   <a href="https://github.com/abigailhaddad/dc-software-procurement/blob/main/corrections.yaml">corrections.yaml</a>.</p>
   <div class="tablewrap" style="max-height:none"><table class="plain" id="fixed-amounts"></table></div>
   <h3>One award listed under more than one number</h3>
-  <p class="muted">Most are DDOT contracts listed once under the number on the contract itself (with the payments) and once under a CW
+  <p class="muted">Most are DDOT contracts listed once under the number on the contract itself (with the payments) and again under a CW
   number (with the documents). Totals count one record per award.</p>
   <div class="tablewrap" style="max-height:none"><table class="plain" id="same-award"></table></div>
 </section>
 
 <section class="block">
   <h2>Agency names filled in</h2>
-  <p class="muted">The value as published is kept beside the name shown in every table, as <code>agency_as_published</code>.
+  <p class="muted">Every table keeps the published value beside the name shown, as <code>agency_as_published</code>.
   Values with no source, such as ELC, are left as published. Abbreviations are never merged on their own: two different agencies publish as OPC.</p>
   <div class="tablewrap" style="max-height:none"><table class="plain" id="agency-names"></table></div>
 </section>
@@ -143,21 +145,21 @@ function notes(s) {
   return [
     {big: money(s.payments.paid), label: "paid, summing each payment line",
      text: `DC's site gives every payment line two amounts. voucherAmount is the line's own amount. paymentAmount is the total of the
-       whole check or ACH run the line was paid in, repeated on every line in that run: summing it gives ${money(s.payments.check_totals)}.
+       whole check or ACH run the line was paid in, repeated on every line of the run. Summing it gives ${money(s.payments.check_totals)}.
        Only voucherAmount is summed here.`,
      link: ["See the payments", "payments.html"]},
     {big: pct(s.payments.no_contract, s.payments.lines), label: "of payment lines carry no contract number",
      text: `${n(s.payments.no_contract)} of ${n(s.payments.lines)} lines, covering ${money(s.payments.no_contract_paid)}. A contract's
-       payments are the lines that carry its number, so a contract page can show less than was paid on it, and these lines appear
+       payments are the lines that carry its number, so a contract page can show less than was paid on it. These lines appear
        only on the payments page.`,
      link: ["See them", "payments.html?contract_link=None"]},
     {big: n(s.contracts.periods), label: `option periods for ${n(s.contracts.contracts)} contracts`,
-     text: `DC's site lists each option period as its own record with its own amount, a ceiling on what that period authorises. Only
-       base-period amounts are shown and totalled here, because option-period amounts too often disagree with the District's paperwork
+     text: `DC's site lists each option period as its own record with its own amount: a ceiling on what that period authorises. Only
+       base-period amounts are shown and totalled here. Option-period amounts too often disagree with the District's paperwork
        (<a href="#amounts">see below</a>).`,
      link: ["See the contracts", "index.html"]},
     {big: n(s.delisted.periods), label: `option periods no longer returned by DC's site search`,
-     text: `DC's site does not keep returning everything it once did in its search. These periods, on ${n(s.delisted.contracts)} contracts, plus
+     text: `DC's site search drops records over time. These periods, on ${n(s.delisted.contracts)} contracts, plus
        ${n(s.delisted.orders)} purchase orders and ${n(s.delisted.payments)} payment lines, came from earlier pulls and are marked
        "not in DC site search" wherever they appear. A record's page on DC's site can still open by direct link after its
        search stops returning it, which is how some of these were recovered.`,
@@ -167,7 +169,7 @@ function notes(s) {
        spelling, and market type has ${n(s.contracts.market_types)} distinct values, several of them variants of one another. Check the
        spellings before totalling one name.`},
     {big: n(s.payments.ids), label: `distinct ids on ${n(s.payments.lines)} payment lines`,
-     text: `A payment id is not unique: some lines share one, so there are ${n(s.payments.lines - s.payments.ids)} more lines than ids.
+     text: `Payment ids are not unique: some lines share one, so there are ${n(s.payments.lines - s.payments.ids)} more lines than ids.
        Removing duplicate ids would drop real payments.`},
     {big: n(s.purchase_orders.classes), label: "commodity classes on purchase orders",
      text: `Each contract and order carries an NIGP commodity code chosen when the record was entered. A class total is only as good as
@@ -175,7 +177,7 @@ function notes(s) {
      link: ["See the purchase orders", "purchase-orders.html"]},
     {big: `${s.payments.first_date.slice(0, 4)}–${s.payments.last_date.slice(0, 4)}`, label: "years of payments",
      text: `Payments run from ${esc(s.payments.first_date)} to ${esc(s.payments.last_date)}. DC's site gives a payment no fiscal year,
-       so the one here comes from its date (1 October to 30 September); the first and last are partial.`},
+       so the one here comes from its date (1 October to 30 September). The first and last are partial.`},
   ];
 }
 
@@ -210,7 +212,7 @@ async function main() {
     {big: money(per.option_amount_as_published), label: `in option-period amounts, not counted`,
      text: `What DC's site lists for ${n(per.option)} option periods. Still in the downloadable tables as <code>amount</code>.`},
     {big: n(per.unclear), label: "periods with no clear label, not counted",
-     text: `Labelled only "2", "N/A" and the like, so it can't be told whether they are a base or an option period: ${money(per.unclear_amount_as_published)} as published.`},
+     text: `Labelled only "2", "N/A" and the like, so we can't tell whether they are base or option periods: ${money(per.unclear_amount_as_published)} as published.`},
   ].map((x) => `<article class="note-card"><div class="note-big">${x.big}</div><div class="note-label">${esc(x.label)}</div><p>${x.text}</p></article>`).join("");
   const page = (x) => `<a class="mono" href="${keep("contract.html?n=" + encodeURIComponent(x))}" target="_blank" rel="noopener">${esc(x)}</a>`;
   document.getElementById("fixed-amounts").innerHTML = `<thead><tr><th>Contract</th><th>Period</th><th class="num">DC's site</th>

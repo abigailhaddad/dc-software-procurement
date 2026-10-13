@@ -39,10 +39,10 @@
 
 <p class="intro"><strong>New here?</strong> <a href="start.html">Start with the questions this site can answer</a>, such as what technology DC buys and what comes up for renewal.</p>
 <p class="intro">One row per contract <strong>option period</strong>: a contract with a base period and two option years is three rows.
-Amounts are shown and totalled for base periods only: what the first period authorises the District to spend, not what was paid.
+Only base-period amounts are shown and totalled. They are what the first period authorises the District to spend, not what was paid.
 Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork
 (<a href="about.html#amounts">how we know</a>). Every other field below is the District's, as published:
-agency, vendor, contract type, market type and commodity code are what was entered on DC's site, not categories added here.</p>
+agency, vendor, contract type, market type and commodity code are as entered on DC's site, not categories added here.</p>
 
 <aside class="coverage" id="coverage" aria-label="What this covers"></aside>
 
@@ -110,7 +110,7 @@ start({
                  count(*) FILTER (WHERE NOT listed) AS dropped FROM contracts`,
     text: (r, s) => `<ul>
       <li>Only contracts that DC's site returns in its search. Their option periods run from ${esc(r.first)} to ${esc(r.last)}. Contracts its
-        search had stopped returning before our first pull, in August 2026, are not here.</li>
+        search had dropped before our first pull, in August 2026, are not here.</li>
       <li>${n(r.dropped)} option periods its search has since stopped returning are kept from earlier pulls, marked "not in DC site search".
         Their pages on DC's site may still open by direct link.</li>
       <li>Totals count base periods only, ${money(s.corrections.periods.base_amount)}. They leave out ${money(s.corrections.periods.option_amount_as_published)}
@@ -119,7 +119,7 @@ start({
       <li>Amounts are ceilings, not spending. Of ${money(s.payments.paid)} in payments, only ${money(s.payments.listed_contract_paid)}
         (${pct(s.payments.listed_contract_paid, s.payments.paid)}) is on lines carrying the number of a contract listed here. The rest carry
         no contract number, text such as "N/A" in place of one (${n(s.payments.text_lines)} lines), or one of ${n(s.payments.unlisted_numbers)}
-        numbers not on DC's published contract list. Those payments are only
+        numbers not on DC's published contract list. Those payments appear only
         on the payments page.</li></ul>`,
   },
   rowLabel: "Option periods",
@@ -133,7 +133,7 @@ start({
     {label: "Option periods", expr: "count(*)", what: "Rows matching the filters."},
     {label: "Contracts", expr: "count(DISTINCT contract_number)", what: "Distinct contract numbers among them."},
     {label: "Vendors", expr: "count(DISTINCT vendor)", what: "Distinct vendor names, as spelled on DC's site."},
-    {label: "Base-period amount", expr: "sum(base_amount)", money: true, what: "Sum of base periods' amounts, corrected where DC's paperwork contradicts DC's figure, counting each award once. A ceiling, not spending. Option periods are not counted."},
+    {label: "Base-period amount", expr: "sum(base_amount)", money: true, what: "Sum of base-period amounts, counting each award once, corrected where DC's paperwork contradicts DC's figure. A ceiling, not spending. Option periods are not counted."},
   ],
   fields: {
     agency: {label: "Agency", from: "agencyNames on DC's site.", filter: "multi", expr: "agency",
@@ -174,22 +174,22 @@ start({
   // Contracts of interest first, then the largest base amounts.
   defaultOrder: [[1, "asc"], [10, "desc"]],
   columns: [
-    {key: "contract_number", label: "Contract", title: "The contract number on DC's site. Click it to open the contract's periods, payments, orders and documents in a new tab; \"DC site\" opens this period's page there.", render: (v, r) => `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab: its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
+    {key: "contract_number", label: "Contract", title: "The contract number on DC's site. Click it for the contract's periods, payments, orders and documents, in a new tab. \"DC site\" opens this period's page there.", render: (v, r) => `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab: its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
     {key: "of_interest", label: "Of interest", render: interestBadges,
       title: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We read the paperwork only for current contracts whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual, so a blank means we didn't read it, not that it's ordinary."},
     {key: "title", label: "Title", cls: "wide", title: "The contract's title on DC's site."},
     {key: "vendor", label: "Vendor", title: "The vendor on DC's site, as spelled there."},
     {key: "agency", label: "Agency", title: "The agency on DC's site; abbreviations are filled in from agency_names.yaml."},
     {key: "contract_type", label: "Contract type", title: "contractType on DC's site, as entered."},
-    {key: "market_type", label: "Market type", title: "marketType on DC's site, as entered. It says Open or Set Aside even for most sole-source awards, so it can't tell you whether an award was competed."},
-    {key: "option_period", label: "Period", title: "Which period of the contract this row is, as DC's site labels it: the base period, or an option year."},
+    {key: "market_type", label: "Market type", title: "marketType on DC's site, as entered. It says Open or Set Aside even for most sole-source awards, so it can't show whether an award was competed."},
+    {key: "option_period", label: "Period", title: "Which period of the contract this row is, as DC's site labels it: the base period or an option year."},
     {key: "start_date", label: "Starts", cls: "num", title: "When this period starts, per DC's site."},
     {key: "end_date", label: "Ends", cls: "num", title: "When this period ends, per DC's site."},
     {key: "amount", label: "Base amount", cls: "num", render: (v, r) => r.period_kind === "base"
       ? `${money(v)}${r.corrected ? ` <span class="tag hint" title="DC's site says ${esc(r.amount_text)}. The District's own signed paperwork says ${esc(Number(v).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2}))}, so that is shown. Open the contract for the document.">corrected</span>` : ""}` +
         (r.same_award_as ? ` <span class="tag hint" title="DC's site lists this same contract twice. Totals count it once, under ${esc(r.same_award_as)}.">listed twice</span>` : "")
       : '<span class="muted">–</span>',
-      title: "What the base period authorises, a ceiling, not spending. Option periods show – because about three in ten we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"listed twice\": DC's site lists the same contract under two numbers; totals count it once. Open the contract for details."},
+      title: "What the base period authorises: a ceiling, not spending. Option periods show – because about three in ten we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"listed twice\": DC's site lists the same contract under two numbers; totals count it once. Open the contract for details."},
     {key: "nigp_codes", label: "NIGP code", title: "The commodity code DC's site gives the contract, chosen when it was entered.", render: (v) => `<span class="mono">${esc(v)}</span>`},
   ],
 });

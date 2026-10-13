@@ -38,7 +38,7 @@
 </header>
 
 <p class="intro">One row per <strong>purchase order</strong>, in every commodity class. An order is a commitment to spend, not a payment, and it
-carries no contract number of its own. A revised order carries a <code>-V</code> suffix (PO123456-V2); DC's site lists one version
+carries no contract number of its own. A revised order carries a <code>-V</code> suffix (PO123456-V2); DC's site lists only one version
 of each order at a time. Agency, supplier, commodity code and fiscal year are as published.</p>
 
 <aside class="coverage" id="coverage" aria-label="What this covers"></aside>
@@ -95,7 +95,7 @@ start({
     sql: `SELECT CAST(min(ordered_date) AS VARCHAR) AS first, CAST(max(ordered_date) AS VARCHAR) AS last, count(DISTINCT nigp_class) AS classes FROM purchase_orders`,
     text: (r) => `<ul>
       <li>Only the purchase orders DC's site lists, in all ${n(r.classes)} commodity classes, ordered ${esc(r.first)} to ${esc(r.last)}.</li>
-      <li>An order is a commitment to spend, not a payment. When an order is revised DC's site shows only the latest version, and so does this.</li></ul>`,
+      <li>An order is a commitment to spend, not a payment. For a revised order, DC's site shows only the latest version, and so does this page.</li></ul>`,
   },
   rowLabel: "Orders",
   searchLabel: "PO number or supplier",

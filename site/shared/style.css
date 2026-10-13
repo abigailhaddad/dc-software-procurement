@@ -152,3 +152,5 @@ details.covers > summary{cursor:pointer; font-weight:600; color:var(--warn)}
 details.covers[open] > summary{margin-bottom:6px}
 details.covers ul{margin:4px 0; padding-left:20px}
 details.covers li{margin:3px 0}
+/* The last menu opens leftward so it stays on screen on phones. */
+nav.pages details.menu:last-of-type > div{left:auto; right:0}

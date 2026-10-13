@@ -63,16 +63,16 @@
 
   <section class="block">
     <h2>Purchase orders</h2>
-    <p class="muted" id="orders-note">An order has no contract number of its own on DC's site. These are the orders that this contract's payments were paid against:
-    a payment line carries both a contract number and an order number. A revised order's <code>-V</code> suffix is ignored in matching, because the
-    payments table leaves it off. Orders placed under this contract but never paid will not appear.</p>
+    <p class="muted" id="orders-note">An order has no contract number of its own on DC's site. These are the orders this contract's payments were paid against,
+    since a payment line carries both a contract number and an order number. A revised order's <code>-V</code> suffix is ignored in matching, because the
+    payments table leaves it off. Orders placed under this contract but never paid are missing.</p>
     <div class="bar" id="orders-bar"><button id="orders-csv">Download these orders (CSV)</button></div>
     <div id="orders"></div>
   </section>
 
   <section class="block">
     <h2>Documents</h2>
-    <p class="muted" id="documents-note">Every attachment DC's site lists on this contract's option periods, linking to the PDF on DC's site. A document filed under several
+    <p class="muted" id="documents-note">Every attachment DC's site lists on this contract's option periods, linked to the PDF there. A document filed under several
     option periods appears once for each.</p>
     <div id="documents"></div>
   </section>
@@ -219,8 +219,8 @@ async function main() {
   }
 
   document.getElementById("payments-note").textContent = payments.length
-    ? `Payment lines whose contract number is ${number}. Many payments carry no contract number at all, so this can undercount what was paid on the contract.`
-    : `No payments found. No payment line carries the contract number ${number}, but many payments carry no contract number, so this does not mean nothing was paid.`;
+    ? `Payment lines whose contract number is ${number}. Many payments carry no contract number, so this can undercount what was paid on the contract.`
+    : `No payments found. No payment line carries the contract number ${number}. Many payments carry no contract number, so this does not mean nothing was paid.`;
   document.getElementById("payments-bar").hidden = !payments.length;
   if (byYear.length) {
     const box = document.getElementById("pay-chart");

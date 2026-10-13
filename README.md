@@ -6,9 +6,10 @@ and a site for exploring them: https://dc-procurement.pages.dev
 
 The site is a copy of what that website lists, as pulled here, not a complete
 record of District contracting or spending. It shows the District's fields as
-entered and totals them; it classifies nothing and states no findings. What the
-data covers, and what is easy to get wrong in it, is on the site's About page,
-which computes it from the data rather than stating it here.
+entered and totals them. It uses no model and states no findings; what it
+adds by hand, each entry with a cited source, is listed below. The
+site's About page says what the data covers and what is easy to get wrong in
+it, computed from the data.
 
 ## Run it
 
@@ -32,7 +33,7 @@ make serve       # serve the site locally, reading the local tables
   `make hydrate` fetches it, and `make prune` deletes the local copy only once
   it matches what was published.
 - **The tables keep the source's fields.** Each column is a field as published,
-  or parsed from one by a stated rule beside the original text.
+  or parsed from one by a stated rule and kept beside the original text.
   `src/dcprocure/export.py` documents every column.
 - **Two things are filled in, each from a file where every entry cites a
   source, with the published value kept beside it:** agency names published
@@ -40,16 +41,21 @@ make serve       # serve the site locally, reading the local tables
   records the District's own paperwork contradicts, including awards listed
   under two numbers (`corrections.yaml`).
 - **Only base-period amounts are shown and totalled.** Option-period amounts
-  too often disagree with the paperwork; `amount_checks.yaml` holds the samples
-  that showed it, and the About page states the result.
+  too often disagree with the paperwork. `amount_checks.yaml` holds the samples
+  that showed it; the About page gives the result.
 - **`of_interest.yaml`** lists contracts whose paperwork shows they were
   awarded without competition, by emergency or letter contract, or extended
   past their last option, by category, each with a quote and its document.
+  Only current contracts that `analysis/review_leads.py` nominated were read.
+- **`site/renewals-options.json`** records how many options a few contracts
+  allow, read by hand from their award documents. DC's site has no such field.
+- **`site/shared/technology.js`** is the list of DC commodity codes the
+  technology pages count, by group.
 - **`make verify` checks the tables against the raw files** through a separate
   code path, and the pre-push hook runs it.
 - **The site** (`site/`) is static. It loads the tables from the Hugging Face
-  dataset and queries them in the browser with DuckDB, so it needs redeploying
-  only when its own code changes.
+  dataset and queries them in the browser with DuckDB, so it only needs
+  redeploying when its own code changes.
 
 ## Schedule and deploys
 

@@ -55,8 +55,8 @@
 </header>
 
 <h2 class="page-title">Contracts coming up for renewal</h2>
-<p class="lede">Contracts DC's site lists, by when their current period ends. DC's site doesn't say whether a contract has any
-options left, so for most of them the <em>Options left</em> column says "Not known".</p>
+<p class="lede">Contracts DC's site lists, by when their current period ends. The site doesn't say whether a contract has
+options left, so for most the <em>Options left</em> column says "Not known".</p>
 <p class="meta" id="asof"></p>
 
 <div class="toolbar">
@@ -86,9 +86,9 @@ options left, so for most of them the <em>Options left</em> column says "Not kno
 <details class="covers">
   <summary>What this covers, and why options are "Not known"</summary>
   <p>When a contract's period ends, the District has three choices: exercise the next <strong>option</strong> (an extra year,
-  usually, that the contract already allows), re-bid the work, or extend the contract without bidding. Which of those is possible
-  depends on whether any options are left, and DC's site doesn't say: it lists each option period only once it has been exercised,
-  and has no field for how many the contract allows. So <em>Options left</em> is filled in only where someone has read the
+  usually, that the contract already allows), re-bid the work, or extend the contract without bidding. Which is possible
+  depends on whether options are left, and DC's site doesn't say: it lists an option period only after it is exercised,
+  and has no field for how many the contract allows. So <em>Options left</em> is filled in only where we have read the
   contract's own paperwork; everywhere else it says "Not known".</p>
   <div id="coverage"></div>
 </details>
@@ -101,8 +101,8 @@ options left, so for most of them the <em>Options left</em> column says "Not kno
 
 <section class="block">
   <h2 id="rows-title">Contracts</h2>
-  <p class="muted">Sorted by when the current period ends; click a heading to sort by it. The base-period amount is what the contract's first period authorises, a ceiling,
-  not what was spent, and it is not the value of the renewal (<a href="about.html#amounts">why only base periods</a>).</p>
+  <p class="muted">Sorted by when the current period ends; click a heading to re-sort. The base-period amount is what the contract's first period authorises:
+  a ceiling, not spending, and not the value of the renewal (<a href="about.html#amounts">why only base periods</a>).</p>
   <div id="rows"></div>
 </section>
 
@@ -251,7 +251,7 @@ function statusCell(r) {
     const tip = `The award allows ${r.options_allowed} option periods; DC's site shows ${r.period_label} as current. "${r.quote}" (${r.document}, p.${r.page}). Read by hand on 2026-10-12.`;
     return `<span class="tag hint ${cls}" title="${esc(tip)}">${left}</span><br><a href="${esc(r.document_url)}" target="_blank" rel="noopener" title="The award document on DC's site">award, p.${esc(r.page)}&nbsp;↗</a>`;
   }
-  return `<span class="tag hint status-unknown" title="DC's site doesn't say how many option periods this contract allows, and lists an option only after it is exercised. The award document, linked from the contract page, usually says.">Not known</span>`;
+  return `<span class="tag hint status-unknown" title="DC's site doesn't say how many option periods this contract allows, and lists an option only once exercised. The award document, linked from the contract page, usually says.">Not known</span>`;
 }
 
 function interestBadges(v) {
@@ -380,9 +380,9 @@ async function main() {
     <li>Data pulled from DC's site on ${esc(PULLED)}. "Months left" counts from that day, not from today.</li>
     <li>Only the ${n(cov.listed_contracts)} contracts DC's site still returns in its search. ${n(cov.all_contracts - cov.listed_contracts)} contracts
       it has stopped returning (kept from earlier pulls) are left out. For ${n(cov.partly_dropped)} listed contracts the site has dropped some older periods;
-      those periods are not used to pick the current period, but they are used for the base-period amount and commodity codes.</li>
+      those are not used to pick the current period, but are used for the base-period amount and commodity codes.</li>
     <li>The current period is the listed period with the latest end date. DC's site gives ${n(cov.tied)} of them two labels for the same dates;
-      both labels are shown. A period that has "already ended" may have been followed by one DC's site hasn't posted yet, or the work may have stopped; the site doesn't say which.</li>
+      both are shown. A period that has "already ended" may have been followed by one DC's site hasn't posted yet, or the work may have stopped; the site doesn't say which.</li>
     <li>DC's site never lists an option before it is exercised (none of its ${n(cov.all_contracts)} contracts has a period starting after ${esc(PULLED)}), and
       it has no field for how many options a contract allows. For context only: ${n(cov.reached_4)} contracts have a period labelled "Option 4",
       and ${n(cov.beyond_4)} have one labelled "Option 5" or "Option 6". That is not enough to say any one contract is on its last option.</li>
@@ -392,7 +392,7 @@ async function main() {
     <li>${n(cov.no_base)} contracts have no period labelled as the base period, so no base-period amount is shown for them.</li>
     <li>"Technology only" keeps contracts with any commodity code in NIGP classes ${TECH_NIGP_CLASSES.join(", ")}, or any of the item codes
       ${TECH_NIGP_CODES.join(", ")}: the default set on the <a href="technology.html${keep ? "?" + keep : ""}">technology page</a>, which says what each code is and why it's in.
-      Codes are the District's as its search listing gives them (a contract's own page there sometimes lists more), from any period of the contract.</li>
+      Codes are as the District's search listing gives them (a contract's own page there sometimes lists more), from any period of the contract.</li>
   </ul>`;
 
   const agencies = await q(`SELECT DISTINCT unnest(string_split(agency, '; ')) AS a FROM renewals WHERE agency IS NOT NULL ORDER BY 1`);

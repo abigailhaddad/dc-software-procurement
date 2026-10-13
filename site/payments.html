@@ -38,7 +38,7 @@
 </header>
 
 <p class="intro">One row per <strong>payment line</strong>, as DC's site lists it, including the lines no contract page can reach: most carry no
-contract number, or one that is not on DC's published contract list. The amount summed is each line's <code>voucherAmount</code>; DC's <code>paymentAmount</code>, shown as <em>check total</em>, is the total of the whole check run, repeated on every line in it,
+contract number, or one not on DC's published contract list. The amount summed is each line's <code>voucherAmount</code>. DC's <code>paymentAmount</code>, shown as <em>check total</em>, is the total of the whole check run, repeated on each of its lines,
 and is never summed. Agency, vendor and contract number are as entered.</p>
 
 <aside class="coverage" id="coverage" aria-label="What this covers"></aside>
@@ -104,7 +104,7 @@ start({
         is on lines carrying the number of a contract DC's site lists. ${pct(s.payments.no_contract, s.payments.lines)} of lines carry no
         contract number, ${n(s.payments.text_lines)} carry text such as "N/A" in its place, and others carry one of
         ${n(s.payments.unlisted_numbers)} numbers not on its contract list.</li>
-      <li>Nothing here can be checked against the District's own accounts; this is what DC's site shows.</li></ul>`,
+      <li>None of this can be checked against the District's own accounts. It is what DC's site shows.</li></ul>`,
   },
   tables: ["payments", "contracts", "nigp_classes"],
   rowLabel: "Payment lines",

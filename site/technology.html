@@ -65,26 +65,26 @@ h3.subhead{font-family:var(--head); font-size:1.02rem; margin:14px 0 4px}
 </header>
 
 <h2 class="page-title">Technology purchases</h2>
-<p class="lede">What the District buys in technology and software, as far as its own commodity codes show it. Contracts and
+<p class="lede">The technology and software the District buys, as far as its own commodity codes show. Contracts and
 purchase orders are counted separately and never added together.</p>
 
 <div class="picks" id="picks"><span class="picks-label">Code groups:</span></div>
-<p class="picks-hint muted">Untick a group to leave it out, or tick one that starts unticked; every number on the page follows.</p>
+<p class="picks-hint muted">Tick or untick a group; every number on the page follows.</p>
 
 <details class="fold" id="codes">
   <summary>Which codes count</summary>
   <p>Every contract and purchase order on DC's site carries a commodity code from the NIGP list, a standard catalogue of goods and
   services used by state and local governments. The first three digits are the class ("208: computer software for microcomputers");
-  the full seven-digit code names the item. This page keeps the records whose codes are listed below, and nothing else: no keyword
-  search, no categories of our own. Contracts and purchase orders are counted separately and never added together, because an order
-  can be placed under a contract and the two would then count the same purchase twice.</p>
+  the full seven-digit code names the item. This page counts only records whose codes are listed below: no keyword
+  search, no categories of our own. Contracts and purchase orders are never added together, because an order
+  can be placed under a contract and would count the same purchase twice.</p>
   <p class="muted">Class descriptions are from the District's NIGP class list; item descriptions are as DC's contract pages show them.
-  Counts in these tables cover each code on its own and do not change with the ticks.</p>
+  Counts here are per code and don't change with the ticks.</p>
   <h3 class="subhead">Whole classes</h3>
   <div id="groups-class"></div>
   <h3 class="subhead">Single item codes inside other classes</h3>
   <p class="muted">These classes are mostly not technology, but a few of their item codes plainly are, so those codes are taken on
-  their own. The explorers can't filter on a single item code, so these groups are not in the explorer links.</p>
+  their own. The explorers can't filter on item codes, so these groups aren't in the explorer links.</p>
   <div id="groups-item"></div>
   <h3 class="subhead">Codes we looked at and left out</h3>
   <p class="muted">Classes that hold some technology purchases but more of other things, and item codes whose names mention
@@ -145,7 +145,7 @@ purchase orders are counted separately and never added together.</p>
 <section class="block" id="before-you-use">
   <h2>Before you use these numbers</h2>
   <div class="note">
-    <p><strong>The code is whatever was chosen when the record was entered, and it can be wrong.</strong> Software licences turn up
+    <p><strong>The code is whatever was entered with the record, and it can be wrong.</strong> Software licences turn up
     under consulting (918) and library and subscription services (956); copier service turns up under computer maintenance (939); one
     contract for IBM software licences is coded as a professional licence renewal. How much this matters is measured
     <a href="#how-well">below</a>.</p>
@@ -153,41 +153,41 @@ purchase orders are counted separately and never added together.</p>
     technology requisitions, partly because agencies could pick non-technology commodity codes and so skip its review
     (<a href="https://oig.dc.gov/sites/default/files/Reports/OIG%20Final%20Report%20No.%2018-1-19TO%20--%20OCTO%20Oversight%20of%20Information%20Technolo..._0.pdf" target="_blank" rel="noopener">OIG report 18-1-19TO</a>;
     see <a href="how-dc-buys.html#it">How DC buys</a>).</p>
-    <p><strong>Each record is counted once.</strong> A contract can carry several codes. This page, like the rest of the site, uses the
-    codes DC's search listing shows for each option period. An option period is in the set if any of its codes is in a ticked group, and
-    it counts once. <span id="multi-note"></span> A purchase order has one code. A contract counts once in the totals however many option
+    <p><strong>Each record is counted once.</strong> A contract can carry several codes. Like the rest of the site, this page uses the
+    codes DC's search listing shows for each option period. An option period is in if any of its codes is in a ticked group.
+    <span id="multi-note"></span> A purchase order has one code. A contract counts once in the totals however many option
     periods it has, and its dollars are its base-period amount only.</p>
     <p>The contract's own page on DC's site can list more codes than the search listing does. In the 12 October 2026 pull, 22 contracts
     carried a code from the class groups only on their own page (for example CW93000, Emphasys software, listed under consulting).
     They are counted only if a listing code puts them in a group.</p>
-    <p><strong>The vendor is whoever holds the contract, often a reseller rather than the company that makes the product.</strong>
-    Carahsoft, for example, is the vendor on DC's contracts for Acquia's Drupal licences (CW86957) and Salesforce licences (CW92708).
-    The vendor and supplier tables show sellers, not software makers.</p>
+    <p><strong>The vendor is whoever holds the contract, often a reseller.</strong> The vendor and supplier tables show sellers,
+    not software makers: Carahsoft, for example, is the vendor on DC's contracts for Acquia's Drupal licences (CW86957) and
+    Salesforce licences (CW92708).</p>
   </div>
 </section>
 
 <section class="block" id="how-well">
   <h2>How well do the codes catch technology?</h2>
-  <p>Partly. On 12 October 2026 we read the titles of two random samples of contracts, drawn against the whole-class groups alone. Of 20
+  <p>Partly. On 12 October 2026 we read the titles of two random samples of contracts, drawn using the whole-class groups alone. Of 20
   drawn from those classes, 18 were plainly technology purchases, one was copier and print service, and one (“Document Systems OY4”) we
   could not tell from the title. Then we drew 20 from the 337 contracts <em>outside</em> those classes whose titles use words such as
   software, licence, system, platform, network or computer. 14 of those were technology purchases, such as Salesforce, IBM and Esri
-  licences and Dell computers. That is why the item-code groups exist: the cloud-subscription and other-item groups catch 8 of
+  licences and Dell computers. Hence the item-code groups: the cloud-subscription and other-item groups catch 8 of
   those 14, and the computer-consulting group 3 more. The other 3 (IBM licences coded as a professional licence renewal, a voter
   registration database, Dell computers coded as publications) no code-based rule would catch. These are samples of 20, read by title only.</p>
   <details class="fold">
     <summary>The 40 contracts we read</summary>
     <div class="tablewrap" style="max-height:none" id="sample-table"></div>
   </details>
-  <p>Purchase orders from four large technology sellers show the same thing. Share of each one's order dollars that falls in the codes
+  <p>Purchase orders from four large technology sellers show the same thing. The share of each one's order dollars in the codes
   ticked above:</p>
   <div id="sellers"></div>
 </section>
 
 <section class="block">
   <h2>Open this in the full explorer</h2>
-  <p class="muted">These open the same records in the contracts and purchase-order explorers, where you can filter further, chart and
-  download them. The explorers filter on three-digit classes only, so the links cover the whole-class groups you have ticked.</p>
+  <p class="muted">The same records in the contracts and purchase-order explorers, to filter further, chart and
+  download. The explorers filter on three-digit classes only, so the links cover only the whole-class groups you have ticked.</p>
   <div class="links" id="explorer-links"></div>
   <p class="muted" id="explorer-note"></p>
 </section>
@@ -440,7 +440,7 @@ async function renderCoverage(groups) {
   const noBase = c.contracts - c.with_base;
   document.getElementById("coverage").innerHTML = `<ul>
     <li>Only what DC's site lists. Contracts its search had stopped returning before our first pull, in August 2026, are not here.
-      ${n(c.unlisted)} contract option periods and ${n(p.unlisted)} orders here are ones its search has since stopped returning, kept from earlier pulls.</li>
+      ${n(c.unlisted)} contract option periods and ${n(p.unlisted)} orders here have since dropped out of its search and are kept from earlier pulls.</li>
     <li>Contract dollars are base-period amounts only, a ceiling and not spending.
       ${n(noBase)} of the ${n(c.contracts)} contracts have no base period on DC's site (only option years are listed), so they are counted
       but add no dollars.${c.same_award ? ` ${n(c.same_award)} are the same award as another contract number and are counted under that one.` : ""}
@@ -571,7 +571,7 @@ async function renderSellers(groups) {
     rows.map((r) => `<tr><td>${esc(r.supplier)}</td><td class="num">${n(r.orders)}</td><td class="num">${money(r.ordered)}</td>` +
       `<td class="num">${pct(r.in_codes ?? 0, r.ordered)}</td><td>${other.filter((o) => o.supplier === r.supplier).sort((a, b) => b.m - a.m)
         .map((o) => `<span title="${esc(describe(o.nigp_code))}"><span class="mono">${esc(o.nigp_code)}</span> ${money(o.m)}</span>`).join(", ")}</td></tr>`)) +
-    `<p class="muted">Only orders under exactly these spellings; other spellings of the same company (such as "CDW LLC") are not included.
+    `<p class="muted">Only orders under exactly these spellings; other spellings of the same company (such as "CDW LLC") are left out.
     Hover a code for its class. Some of the largest are codes no technology rule would include: in the 12 October 2026 pull,
     Microsoft's biggest orders outside these codes were under 961-96-40, which DC's contract pages describe as “Labor, miscellaneous”,
     and Carahsoft's under 924-41-40, “Professional development”.</p>`;

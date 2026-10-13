@@ -59,10 +59,10 @@
 records behind it.</p>
 <p class="meta" id="asof"></p>
 <details class="covers"><summary>What this covers</summary><ul>
-  <li>Each gap is a description of the published records, not a finding about how any contract was handled.</li>
+  <li>Each gap describes the published records. None is a finding about how any contract was handled.</li>
   <li>Every number is computed in your browser from the same tables the rest of this site uses, except where a gap says it comes from a
   hand-checked sample.</li>
-  <li>Click a gap's name for the full explanation, what its number counts and its date. They are also listed below the table.</li>
+  <li>Click a gap's name for its explanation, what its number counts and its date. Each is also listed below the table.</li>
 </ul></details>
 <div id="status">Loading the data into your browser…</div>
 <div class="tablewrap" style="max-height:none"><table class="plain" id="summary-table"></table></div>
@@ -70,7 +70,7 @@ records behind it.</p>
 <section class="block" id="agencies">
   <h2>Agencies outside OCP's authority</h2>
   <p>DC's site has a page of <a href="https://contracts.ocp.dc.gov/agencies">"Non OCP Agencies"</a>: agencies that buy under their own
-  authority instead of the Chief Procurement Officer's, which the site links out to. Their contracts are mostly not on the
+  authority instead of the Chief Procurement Officer's. The site links out to each. Most of their contracts aren't on the
   contract list, though many of their purchase orders and payments are.</p>
   <div id="agency-cards"></div>
   <div class="tablewrap" style="max-height:none; margin-top:12px"><table class="plain" id="agency-table"></table></div>
@@ -256,13 +256,13 @@ async function agencies(asof) {
       <td class="num">${a.lines ? link("payments.html", a.displayName, n(a.lines)) : "0"}</td>
       <td class="num">${money(a.paid)}</td></tr>`).join("") + "</tbody>";
 
-  document.getElementById("agency-note").innerHTML = `The list is DC's site's own agency list
-    (<a href="${new URL(BASE + "agencies.json", location.href).href}">agencies.json</a>), where ${n(table.length)} agencies carry one of the three
-    statuses its Independent Agencies page filters on. That page itself, checked on 12 October 2026, lists 28 entries: these
+  document.getElementById("agency-note").innerHTML = `The list comes from DC's site's own agency list
+    (<a href="${new URL(BASE + "agencies.json", location.href).href}">agencies.json</a>): ${n(table.length)} agencies there carry one of the three
+    statuses its Independent Agencies page filters on. That page, checked on 12 October 2026, lists 28 entries: these
     ${n(table.length)} plus five with no agency code (D.C. Courts, the D.C. Housing Authority, the Public Defender Service, the
     Not-for-profit Hospital Association and the Office of Public Partnerships), none of which appeared under those names in any section on that date.
-    ${n(span.blank_agency)} contracts name no agency at all (see <a href="#blanks">blank fields</a>), so a few of
-    those could belong to agencies counted as having none.`;
+    ${n(span.blank_agency)} contracts name no agency at all (see <a href="#blanks">blank fields</a>), and a few of
+    those could belong to agencies counted here as having none.`;
 
   // Every other agency with orders or payments and no contract, by name.
   const independentNames = new Set(independent.map((a) => a.displayName));
@@ -304,8 +304,8 @@ async function payments(s, asof) {
        on DC's site from the payment record alone.`,
      covers: span, link: ["See the payments", "payments.html?contract_link=A+listed+contract"]},
     {gap: "Payment lines with no contract number", big: pct(p.none_lines, p.lines), label: "of payment lines leave the contract number empty",
-     text: `${n(p.none_lines)} lines, ${money(p.none_paid)}. Some of these are payments that need no contract, such as grants, benefits or
-       small purchases; DC's site doesn't say which.`,
+     text: `${n(p.none_lines)} lines, ${money(p.none_paid)}. Some need no contract, such as grants, benefits or small purchases; DC's site
+       doesn't say which.`,
      covers: span, link: ["See them", "payments.html?contract_link=None"]},
     {gap: "Payment lines with words for a contract number", big: n(p.text_lines), label: "payment lines have words, not a number, in the contract number field",
      text: `${money(p.text_paid)} across ${n(p.text_values)} different entries with no digit in them, such as "N/A" (${n(p.na_lines)} lines),
@@ -331,7 +331,7 @@ async function orders(asof) {
   cards("order-cards", [
     {gap: "Purchase orders with no link to a contract", big: n(o.orders - o.linked), label: `of ${n(o.orders)} purchase orders can't be linked to a listed contract`,
      text: `A purchase order on DC's site has seven fields: number, agency, supplier, commodity code, total, fiscal year and order date.
-       There is no description of what was bought and no contract number. The only route to a contract is through payments: ${n(o.linked)}
+       No field describes what was bought or gives a contract number. The only route to a contract is through payments: ${n(o.linked)}
        orders were paid on lines that carry a listed contract's number.`,
      covers: `As of ${asof}. Orders total ${money(o.total)}. One row per order, latest revision.`,
      link: ["See the purchase orders", "purchase-orders.html"]},
@@ -343,17 +343,17 @@ function amounts(asof) {
   const a = AMOUNT_SAMPLE;
   cards("amount-cards", [
     {gap: "Option-period amounts that disagree with paperwork", big: `${a.differs} of ${a.withPaperwork}`, label: "sampled option periods whose amount disagreed with the District's own paperwork",
-     text: `About three in ten. With a sample this size the true share is somewhere between roughly ${a.low} and ${a.high}. Most often the
+     text: `About three in ten; with a sample this size the true share is roughly between ${a.low} and ${a.high}. Most often the
        option period just repeats the base year's amount. For ${a.optionNoPaperwork} more of the ${a.drawn} sampled periods, nothing posted
-       states the amount at all. The same check found ${a.baseDiffers} of ${a.baseWithPaperwork} base periods off (roughly ${a.baseLow}
+       states the amount. The same check found ${a.baseDiffers} of ${a.baseWithPaperwork} base periods off (roughly ${a.baseLow}
        to ${a.baseHigh}). This site shows base-period amounts only for that reason.`,
      covers: `A random sample of ${a.drawn} option periods with CW numbers, checked by hand on ${a.checked}. A sample, not a count of every period.`,
      link: ["Each sampled period, with its document", GITHUB + "amount_checks.yaml"]},
     {gap: "Number of option years", big: "No field", label: "says how many option years a contract allows",
      text: `DC's site lists an option period only once it has been exercised, and no field gives the number of options a contract has. So
-       from the site alone nobody can tell whether a contract ending soon can be renewed or must be re-bid or extended without bidding.
+       the site alone can't tell you whether a contract ending soon can be renewed, or must be re-bid or extended without bidding.
        The renewals page fills this in only where we read the award paperwork by hand.`,
-     covers: `As of ${asof}. No option period on DC's site started after the pull date, and asking its site for the next period of 20
+     covers: `As of ${asof}. No option period on DC's site started after the pull date, and asking it for the next period of 20
        contracts returned nothing for any of them.`,
      link: ["See the renewals page", "renewals.html"]},
   ]);
@@ -368,8 +368,8 @@ async function dropped(s, asof) {
   cards("dropped-cards", [
     {gap: "Option periods dropped from the search", big: n(s.delisted.periods), label: "option periods DC's site search no longer returns",
      text: `On ${n(s.delisted.contracts)} contracts; for ${n(d.gone)} of them the search returns no period at all. Every one of these
-       periods had ended (the latest on ${esc(d.last_end)}), but many other ended periods are still returned, so the rule the search
-       follows isn't stated anywhere. Their pages on DC's site can still open by direct link, which is how they were recovered here. Also
+       periods had ended (the latest on ${esc(d.last_end)}), but many other ended periods are still returned, and DC's site doesn't
+       state the rule the search follows. Their pages on DC's site can still open by direct link, which is how they were recovered here. Also
        dropped: ${n(s.delisted.orders)} purchase orders and ${n(s.delisted.payments)} payment lines.`,
      covers: `As of ${asof}, out of ${n(s.contracts.periods)} option periods on ${n(d.contracts)} contracts. Records the search had dropped
        before our first pull in August 2026 are not here and can't be counted.`,
@@ -419,14 +419,14 @@ async function blanks(asof) {
   cards("blank-cards", [
     {gap: "Contracts with no agency", big: n(r.k0), label: "contracts name no agency",
      text: `${n(r.p0)} option periods. ${n(r.agency_dcss)} of these contracts are DC Supply Schedule (DCSS) contracts by their titles,
-       which any agency can order from, so a blank there may be deliberate. Even so, the contract list can't show which agencies use them.`,
+       which any agency can order from, so a blank there may be deliberate. Still, the contract list can't show which agencies use them.`,
      covers: covers + " DCSS counted by the title containing DCSS or Supply Schedule."},
     {gap: "Contracts with no documents", big: n(r.k6), label: "contracts with no document attached to any period",
      text: `${n(r.p6)} option periods (${pct(r.p6, r.periods)}) list no attachment. For a period with none, a reader can't check the amount,
        dates or award method against signed paperwork.`,
      covers: covers + " Option periods often carry no documents of their own, so the contract count is the stricter one."},
     {gap: "Contracts with no contract type", big: n(r.k1), label: "contracts with no contract type",
-     text: `${n(r.p1)} option periods leave contract type (fixed price, cost-plus and so on) blank.  ${otherText}`,
+     text: `${n(r.p1)} option periods leave contract type (fixed price, cost-plus and so on) blank. ${otherText}`,
      covers: covers, link: ["See them", "index.html?contract_type=(blank)"]},
   ]);
 }

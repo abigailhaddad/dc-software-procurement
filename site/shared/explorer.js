@@ -373,7 +373,7 @@ async function renderCoverage(cfg) {
   const summary = await response.json();
   const about = "about.html" + (new URLSearchParams(location.search).get("data") ? "?data=" + new URLSearchParams(location.search).get("data") : "");
   document.getElementById("coverage").innerHTML = `<h2>What this covers</h2>${cfg.coverage.text(row, summary)}` +
-    `<p><a href="${about}">More on what the data does and does not include →</a></p>`;
+    `<p><a href="${about}">What the data does and does not include →</a></p>`;
 }
 
 // ---------- start ----------

@@ -64,8 +64,8 @@ td.details-toggle{cursor:pointer; color:var(--accent); font-weight:700; width:1.
 </header>
 
 <h2 class="page-title">Vendors that sell to many agencies</h2>
-<p class="lede">Vendors with contracts or purchase orders at many different agencies, and products that show up in contract titles at
-more than one agency. If several agencies buy the same thing separately, a citywide purchase might cover them.</p>
+<p class="lede">Vendors with contracts or purchase orders at many agencies, and products named in contract titles at more than one
+agency. Where several agencies buy the same thing separately, one citywide purchase might cover them.</p>
 <p class="meta" id="asof"></p>
 
 <div class="controls">
@@ -84,17 +84,17 @@ more than one agency. If several agencies buy the same thing separately, a cityw
 
 <details class="covers">
   <summary>What this covers</summary>
-  <p>This page only counts what DC's site lists; it can't tell you whether a single purchase would have been cheaper or possible.</p>
+  <p>These are counts of what DC's site lists. They can't show whether a single purchase would have been cheaper, or possible.</p>
   <div id="coverage"></div>
 </details>
 
 <section class="block">
   <h2>Vendors, by how many agencies they sell to</h2>
-  <p class="muted">One row per vendor name <em>exactly as spelled on DC's site</em> (<a href="#names" onclick="document.getElementById('names').open = true">why names aren't merged</a>). Click ▸ to see each agency's contract titles and orders.
-  Click a heading to sort; hover it for what it counts.
-  One vendor at many agencies doesn't mean one product: some of the vendors with the most agencies are resellers that sell many makers'
-  products (Carahsoft's contract titles, for example, name Salesforce, Dell, Splunk and Microsoft). Expand a row and read the titles before
-  treating a vendor's spread as a single purchase repeated.</p>
+  <p class="muted">One row per vendor name <em>exactly as spelled on DC's site</em> (<a href="#names" onclick="document.getElementById('names').open = true">why names aren't merged</a>). Click ▸ for each agency's contract titles and orders;
+  click a heading to sort, and hover it for what it counts.
+  One vendor at many agencies doesn't mean one product. Some of the vendors with the most agencies are resellers of many makers'
+  products (Carahsoft's contract titles name Salesforce, Dell, Splunk and Microsoft, among others). Read a row's titles before
+  treating its spread as one purchase repeated.</p>
   <p class="error" id="rows-error"></p>
   <div id="vendors"></div>
 </section>
@@ -109,25 +109,24 @@ more than one agency. If several agencies buy the same thing separately, a cityw
   <div class="suggest" id="suggest"><span class="muted">Try:</span></div>
   <details class="covers">
     <summary>How the product search works</summary>
-    <p>Titles are typed by each agency, so the same product may be spelled differently (try a shorter word), and a word can match a title
-    that isn't about that product: read the titles before counting anything. Purchase orders have no title on DC's site, so they can't be
-    searched by product; the second table matches the text against the <em>supplier name</em> on orders instead, which is a different question.</p>
+    <p>Each agency types its own titles, so a product may be spelled several ways (try a shorter word), and a word can match a title
+    about something else. Purchase orders have no title on DC's site and can't be searched by product; the second table matches the
+    text against the <em>supplier name</em> on orders instead, which answers a different question.</p>
   </details>
   <div id="product-out"></div>
 </section>
 
 <details class="more" id="names">
   <summary>Why vendor names aren't merged here</summary>
-  <p class="intro">DC's site doesn't standardise vendor names. The same company can be "CDW GOVERNMENT LLC" on a contract and
-  "CDW GOVERNMENT INC" on an order, and each spelling is its own row above. Contracts and orders also spell names differently
-  from each other: a contract's vendor and an order's supplier are joined only when the two are spelled exactly alike, capitals included.
+  <p class="intro">DC's site doesn't standardise vendor names. One company can be "CDW GOVERNMENT LLC" on a contract and
+  "CDW GOVERNMENT INC" on an order; each spelling is its own row above. A contract's vendor and an order's supplier are joined only
+  when spelled exactly alike, capitals included.
   Supplier names on orders stop at 40 characters ("Mary's Center for Maternal and Child Car"), so a long name on an order won't match its contract spelling.</p>
-  <p class="intro">This repository has a file of vendor-name merges, <code>vendor_aliases.yaml</code>. It isn't used here. Its merges come
-  from a mechanical rule (strip punctuation and endings such as INC, LLC and CORP, then group names that come out the same), and the file
-  records them only for one set of technology payments. Unlike the agency-name fixes in <code>agency_names.yaml</code>, where each
-  entry cites the source that ties the two names together, no merge in it cites a source. A rule like that can also join two different
-  companies. So this page shows names as spelled. To group spellings yourself, type part of the name in "Name contains": the box under it
-  then gives totals for every matching spelling together, counting each agency, contract and order once.</p>
+  <p class="intro">This repository has a file of vendor-name merges, <code>vendor_aliases.yaml</code>, that isn't used here. Its merges
+  come from a mechanical rule (strip punctuation and endings such as INC, LLC and CORP, then group names that come out the same), are
+  recorded only for one set of technology payments, and cite no source. (Each agency-name fix in <code>agency_names.yaml</code> cites the
+  source that ties the two names together.) A rule like that can join two different companies. To group spellings yourself, type part of
+  a name in "Name contains": the box under it totals every matching spelling, counting each agency, contract and order once.</p>
 </details>
 
 <footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you search is sent anywhere.</footer>
@@ -267,7 +266,7 @@ async function renderVendors() {
     ? `Counting only contracts with a commodity code in NIGP class ${TECHNOLOGY_NIGP_CLASSES.join(", ")} or item code ${TECHNOLOGY_NIGP_CODES.join(", ")}, ` +
       "and orders whose code is: the default set on the technology page, which says what each code is. " +
       "A contract with several codes counts, with its whole base amount, if any one is on the list. " +
-      "Codes are chosen by whoever entered the record, so some technology purchases carry other codes and are left out."
+      "Whoever entered the record chose its codes, so some technology purchases carry other codes and are left out."
     : "";
   const {sql, binds} = tableQuery(f);
   const rows = await q(sql, binds);
@@ -381,7 +380,7 @@ async function renderCombined(f) {
   box.innerHTML = r.names === 0 ? `No vendor name contains "${esc(f.name)}".`
     : `<strong>${n(r.names)} name${r.names === 1 ? "" : "s"} contain "${esc(f.name)}"</strong>, ignoring capitals. Together: ${n(r.agencies)} distinct agencies,
       ${n(r.contracts)} contracts (${money(r.base_amount)} in base periods) and ${n(r.orders)} orders (${money(r.po_amount)}).
-      This counts every matching name, whatever the "at least" setting. Check the names in the table: a short search can match companies that aren't the one you mean.`;
+      Every matching name counts, whatever the "at least" setting. Check the names in the table: a short search can match other companies.`;
 }
 
 // ---------- products named in titles ----------

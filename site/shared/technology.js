@@ -17,7 +17,7 @@ export const GROUPS = [
     what: "Repair and leasing of computers. 939 also covers office, photographic and radio/TV equipment, so it includes copier service and camera systems."},
   {id: "cloud", label: "Cloud software subscriptions", on: true, items: [
       ["9563575", "SUBSCRIPTIONS, SOFTWARE LICENSING, CLOUD BASED"]],
-    what: "One item code in class 956, library and subscription services. Salesforce licences (through Carahsoft) and other cloud software are coded here."},
+    what: "One item code in class 956, library and subscription services. Salesforce licences (through Carahsoft) and other cloud software sit here."},
   {id: "other_items", label: "Other computer, software and web items", on: true, items: [
       ["8405670", "SOFTWARE, TELECONFERENCING SYSTEMS, AUDIO/VIDEO"],
       ["8833200", "Computer Telephony Integration (CTI) Systems"],
@@ -39,7 +39,7 @@ export const GROUPS = [
       ["9182900", "Computer Software Consulting"],
       ["9182930", "CONSULTING SERVICES RELATED TO THE IMPLEMENTATION OF SOFTWARE"],
       ["9183000", "Computer Network Consulting"]],
-    what: "Unticked to start, because it is large and mixed. These codes carry the District's IT consulting and staffing orders (Computer Aid Inc. is the largest supplier), but some orders under them come from suppliers such as MAXIM HEALTHCARE SVCS and MIDTOWN PERSONNEL whose names suggest other work."},
+    what: "Unticked to start because it is large and mixed: the District's IT consulting and staffing orders (Computer Aid Inc. is the largest supplier), but also orders from suppliers such as MAXIM HEALTHCARE SVCS and MIDTOWN PERSONNEL whose names suggest other work."},
 ];
 // The ticked-by-default groups, flattened. The renewals and vendors pages use
 // these for their "technology only" toggle, so all three pages count the same set.
