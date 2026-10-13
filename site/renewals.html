@@ -96,7 +96,7 @@ options left, so for most of them the <em>Options left</em> column says "Not kno
 <section class="block">
   <h2>Every window at a glance</h2>
   <p class="muted" id="bands-note">Contracts by when their current period ends, with the filters above except the window. Each contract is counted once. Click a heading to sort.</p>
-  <div class="tablewrap" id="bands"></div>
+  <div class="tablewrap" id="bands" style="max-width:480px"></div>
 </section>
 
 <section class="block">
@@ -279,23 +279,14 @@ async function render() {
   const w = where(f, true);
   const rows = await q(`${ROWS_SELECT} ${FROM} ${w.sql} ORDER BY r.end_date, r.contract_number`, w.binds);
 
-  const count = (s) => rows.filter((r) => r.options_left === s).length;
-  const part = (v, label, what) => `<span title="${esc(what)}">${v} ${esc(label)}</span>`;
+  const known = rows.filter((r) => r.options_left !== "Not known").length;
   document.getElementById("stats").innerHTML =
     `<strong title="${esc(`Listed on DC's site, current period ${WINDOW_TEXT[f.window]} (from ${PULLED}).`)}">${n(rows.length)} contracts</strong> ` +
-    `whose current period ${esc(WINDOW_TEXT[f.window])}. Options left: ` + [
-      part(n(count("Already past the last option")), "already past the last option", "Already running on a no-bid extension after the last option, per paperwork read by hand."),
-      part(n(count("Last option")), "last option", "The award document allows no more options after this period. Read by hand."),
-      part(n(count("Options remain")), "options remain", "The award document allows more options after this period. Read by hand."),
-      part(n(count("Not known")), "not known", "No one has read the paperwork for these. DC's site doesn't say."),
-    ].join(" · ") + ".";
+    `whose current period ${esc(WINDOW_TEXT[f.window])}. DC's site doesn't say whether options remain; ` +
+    `the <em>Options left</em> column fills that in for the ${n(known)} whose paperwork we read by hand.`;
 
   const b = where(f, false);
-  const bands = await q(`SELECT r.band, count(*) AS contracts,
-      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Already past the last option') AS past,
-      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Last option') AS last,
-      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Options remain') AS remain,
-      count(*) FILTER (WHERE (${STATUS_EXPR}) = 'Not known') AS unknown
+  const bands = await q(`SELECT r.band, count(*) AS contracts
     ${FROM} ${b.sql} GROUP BY 1`, b.binds);
   const byBand = Object.fromEntries(bands.map((r) => [r.band, r]));
   const bandRows = [
@@ -305,10 +296,8 @@ async function render() {
     ["12-24", "Ends in 12 to 24 months"],
     ["later", "Ends more than 24 months out"],
   ];
-  const cell = (r, k) => `<td class="num">${n(r ? r[k] : 0)}</td>`;
-  document.getElementById("bands").innerHTML = `<table class="plain"><thead><tr><th>Current period</th><th class="num">Contracts</th>
-    <th class="num">Already past the last option</th><th class="num">Last option</th><th class="num">Options remain</th><th class="num">Not known</th></tr></thead><tbody>` +
-    bandRows.map(([k, label]) => `<tr><td>${esc(label)}</td>${cell(byBand[k], "contracts")}${cell(byBand[k], "past")}${cell(byBand[k], "last")}${cell(byBand[k], "remain")}${cell(byBand[k], "unknown")}</tr>`).join("") +
+  document.getElementById("bands").innerHTML = `<table class="plain"><thead><tr><th>Current period</th><th class="num">Contracts</th></tr></thead><tbody>` +
+    bandRows.map(([k, label]) => `<tr><td>${esc(label)}</td><td class="num">${n(byBand[k] ? byBand[k].contracts : 0)}</td></tr>`).join("") +
     `</tbody></table>`;
 
   document.getElementById("rows-title").textContent = `Contracts whose current period ${WINDOW_TEXT[f.window]}`;
