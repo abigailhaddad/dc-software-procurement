@@ -78,8 +78,12 @@ export async function downloadCsv(sql, binds, filename) {
   // table first.
   await q("DROP TABLE IF EXISTS _export");
   await q(`CREATE TEMP TABLE _export AS ${sql}`, binds);
-  await conn.query("COPY _export TO 'export.csv' (HEADER, DELIMITER ',')");
-  const buffer = await database.copyFileToBuffer("export.csv");
+  // A fresh file name each time: DuckDB-WASM hands back the first buffer it
+  // wrote under a name, so reusing 'export.csv' repeated the first download.
+  const file = `export-${Date.now()}-${Math.random().toString(36).slice(2)}.csv`;
+  await conn.query(`COPY _export TO '${file}' (HEADER, DELIMITER ',')`);
+  const buffer = await database.copyFileToBuffer(file);
+  await database.dropFile(file);
   await q("DROP TABLE _export");
   const url = URL.createObjectURL(new Blob([buffer], {type: "text/csv"}));
   const a = document.createElement("a");
