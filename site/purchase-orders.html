@@ -91,6 +91,7 @@ const data = new URLSearchParams(location.search).get("data");
 const keep = data ? "&data=" + encodeURIComponent(data) : "";
 start({
   table: "purchase_orders",
+  tables: ["purchase_orders", "nigp_classes", "contract_orders"],
   coverage: {
     sql: `SELECT CAST(min(ordered_date) AS VARCHAR) AS first, CAST(max(ordered_date) AS VARCHAR) AS last, count(DISTINCT nigp_class) AS classes FROM purchase_orders`,
     text: (r) => `<ul>
@@ -114,6 +115,8 @@ start({
     supplier_contains: {label: "Supplier name contains", from: "supplierName on DC's site; matches every spelling that contains the text, ignoring case.", filter: "text", expr: "supplier"},
     nigp_class: {label: "Commodity class (NIGP)", from: "The first three digits of commodityCode.", filter: "multi", expr: "nigp_class", describe: nigpLabel},
     fiscal_year: {label: "Fiscal year", from: "fiscalYear, as DC's site publishes it.", filter: "multi", ordered: true, expr: "CAST(fiscal_year AS VARCHAR)"},
+    contract_link: {label: "Linked to a listed contract", from: "Whether a payment line carrying this order's PO number also carries the number of a contract DC's site lists. Orders have no contract field of their own.", filter: "multi",
+      expr: "CASE WHEN po_number IN (SELECT po_number FROM contract_orders) THEN 'Linked to a listed contract' ELSE 'Not linked' END"},
     listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
       expr: "CASE WHEN listed THEN 'In DC site search' ELSE 'Not in DC site search' END"},
     po_number: {label: "PO number", from: "poNumber, without any -V revision suffix.", filter: "text", exact: true, expr: "regexp_replace(po_number, '-V[0-9]+$', '')"},
@@ -126,7 +129,7 @@ start({
     {id: "supplier", field: "supplier", title: "By supplier", limit: 15},
     {id: "class", field: "nigp_class", title: "By commodity class"},
   ],
-  breakdown: ["agency", "supplier", "nigp_class", "fiscal_year", "listed"],
+  breakdown: ["agency", "supplier", "nigp_class", "fiscal_year", "contract_link", "listed"],
   breakdownDefault: ["agency"],
   search: ["po_number", "supplier"],
   select: ["po_number", "CAST(ordered_date AS VARCHAR) AS ordered_date", "fiscal_year", "agency", "supplier", "nigp_code", "po_total", "listed"],

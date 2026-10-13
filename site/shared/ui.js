@@ -6,9 +6,13 @@
 //    page loads work too, because the click is caught on the document.
 // 2. The nav's drop-down menus close when you click anywhere else.
 
+// A cell can carry data-sort to sort by something other than its text, such
+// as an ISO date-time behind "2:00 PM"; data-sort="" sorts as blank.
 function cellText(row, index) {
   const cell = row.children[index];
-  return cell ? cell.textContent.trim() : "";
+  if (!cell) return "";
+  if (cell.dataset.sort !== undefined) return cell.dataset.sort;
+  return cell.textContent.trim();
 }
 
 // "$1.2M", "3,462", "28%", "-$5" -> a number; anything else -> null.

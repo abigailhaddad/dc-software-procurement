@@ -179,10 +179,12 @@ def test_corrections_are_sourced_and_change_only_what_they_list():
 def test_totals_count_base_periods_once_with_corrections():
     # base_amount is the published base-period amount, corrected where listed, with
     # duplicates left out; option and unlabelled periods carry none.
-    total, expected, stray = _q(f"""SELECT sum(base_amount),
-        sum(coalesce(corrected_amount, amount)) FILTER (WHERE period_kind = 'base' AND same_award_as IS NULL),
-        count(base_amount) FILTER (WHERE period_kind <> 'base' OR same_award_as IS NOT NULL)
-        FROM '{PARQUET}/contracts.parquet'""")[0]
+    # A base period DC lists twice (same contract and dates) counts once.
+    total, expected, stray = _q(f"""SELECT (SELECT sum(base_amount) FROM '{PARQUET}/contracts.parquet'),
+        (SELECT sum(a) FROM (SELECT any_value(coalesce(corrected_amount, amount)) AS a FROM '{PARQUET}/contracts.parquet'
+                             WHERE period_kind = 'base' AND same_award_as IS NULL GROUP BY contract_number, start_date, end_date)),
+        (SELECT count(base_amount) FILTER (WHERE period_kind <> 'base' OR same_award_as IS NOT NULL) FROM '{PARQUET}/contracts.parquet')
+        """)[0]
     assert round(total, 2) == round(expected, 2) and stray == 0
     kinds = dict(_q(f"SELECT option_period, any_value(period_kind) FROM '{PARQUET}/contracts.parquet' GROUP BY 1"))
     assert kinds["Base Period"] == "base" and kinds["Option 1"] == "option" and kinds["N/A"] == "unclear"
@@ -267,3 +269,11 @@ def test_every_exported_file_is_published():
 
     written = {f"parquet/{p.name}" for p in PARQUET.iterdir() if p.suffix in (".parquet", ".json")}
     assert written <= set(FILES), sorted(written - set(FILES))
+
+
+def test_a_base_period_listed_twice_counts_once():
+    # DC's site lists some base periods twice ("Base Period" / "Base period", same dates).
+    dupes = _q(f"""SELECT contract_number, start_date, end_date, count(base_amount) FROM '{PARQUET}/contracts.parquet'
+                   WHERE period_kind = 'base' GROUP BY 1, 2, 3 HAVING count(*) > 1""")
+    assert dupes, "expected the known duplicate base listings (e.g. CW103832)"
+    assert all(n <= 1 for *_, n in dupes), dupes

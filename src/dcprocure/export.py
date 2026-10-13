@@ -104,7 +104,7 @@ COLUMNS: dict[str, dict[str, str]] = {
         "last_listed": "Last pull that returned it",
         "recovered_on": "Set when the row was put back after DC's site stopped returning it in its search",
         "period_kind": "Not from DC's site. 'base' when option_period starts with 'Base' and does not mention an option; 'option' when it mentions an option and does not start with 'Base'; 'unclear' otherwise (labels such as '2' or 'N/A')",
-        "base_amount": "Not from DC's site. The amount totals use: for a base period, corrected_amount where there is one and amount otherwise; empty for option and unclear periods, and for rows that same_award_as says are counted under another number. Option-period amounts are left out because a random sample found about three in ten disagreed with the District's own paperwork (see the About page)",
+        "base_amount": "Not from DC's site. The amount totals use: for a base period, corrected_amount where there is one and amount otherwise; empty for option and unclear periods, for rows that same_award_as says are counted under another number, and for a second listing of the same base period (same dates, label differing only in case). Option-period amounts are left out because a random sample found about three in ten disagreed with the District's own paperwork (see the About page)",
         "of_interest": "Not from DC's site. How the award was made, where of_interest.yaml records that its paperwork shows a sole-source, exempt, emergency, letter-contract or pilot award, or an extension past the last option; categories joined with '; '. Empty for contracts not read, which is most of them",
         "of_interest_detail": "Not from DC's site. What the paperwork shows, the quote and the document, from of_interest.yaml",
         "corrected_amount": "Not from DC's site. The amount the District's own paperwork gives for this period, where corrections.yaml records that DC's figure contradicts it; empty otherwise. Applied only while amount_text still reads as it did when checked",
@@ -283,6 +283,10 @@ def export(raw_dir: Path = RAW_DIR, out_dir: Path | None = None) -> dict[str, in
                     ELSE 'unclear' END AS period_kind,
                CASE WHEN lower(trim(s.currentOptionPeriod)) LIKE 'base%' AND lower(s.currentOptionPeriod) NOT LIKE '%option%'
                          AND sa.same_award_as IS NULL
+                         -- DC's site sometimes lists one base period twice, the labels differing only in case
+                         -- ("Base Period", "Base period"); count it once.
+                         AND row_number() OVER (PARTITION BY s.contractNumber, s.startDate, s.endDate,
+                                                lower(trim(s.currentOptionPeriod)) LIKE 'base%' ORDER BY s.id) = 1
                     THEN coalesce(f.amount, {_money('s.contractAmount')}) END AS base_amount,
                oi.labels AS of_interest,
                oi.detail AS of_interest_detail,
