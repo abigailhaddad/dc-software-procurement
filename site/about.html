@@ -88,12 +88,10 @@
 <section class="block" id="amounts">
   <h2>Amounts: what is shown, and why</h2>
   <p>DC's site gives each option period its own amount. We checked those amounts against the District's own paperwork posted beside
-  them: the signed contract, the modification exercising the option, and the price determination. On 12 October 2026 we drew 60 option
-  periods at random and found paperwork stating the period's amount for 48. DC's figure disagreed with it for 14 of those 48, about
-  three in ten (with a sample this size, roughly 18% to 43%). Most often the option period just repeats the base
-  year's amount. The same check on 60 base periods found 5 of 48 that disagreed, about one in ten (roughly 5% to 22%).</p>
+  them: the signed contract, the modification exercising the option, and the price determination.
+  <span id="amount-sample"></span> Most often the option period just repeats the base year's amount.</p>
   <p>So this site shows and totals <strong>base-period amounts only</strong>. Option periods are still listed, with their dates, labels and
-  documents, but not their amounts. Base-period amounts are DC's entries and about one in ten may be wrong; read the signed award before
+  documents, but not their amounts. Base-period amounts are DC's entries and some may be wrong<span id="base-share"></span>; read the signed award before
   relying on one. Each sampled period and the document it was checked against are in
   <a href="https://github.com/abigailhaddad/dc-software-procurement/blob/main/amount_checks.yaml">amount_checks.yaml</a>.</p>
   <div class="notes" id="amount-notes"></div>
@@ -126,7 +124,7 @@
 </div>
 <script type="module">
 import {manifest, LOCAL, PARQUET_DIR, DATASET_PAGE} from "./shared/db.js";
-import {n, money, esc} from "./shared/explorer.js";
+import {n, money, esc, wilson} from "./shared/explorer.js";
 
 const data = new URLSearchParams(location.search).get("data");
 const keep = (href) => data ? href + (href.includes("?") ? "&" : "?") + "data=" + encodeURIComponent(data) : href;
@@ -194,6 +192,15 @@ async function main() {
   document.getElementById("asof").textContent =
     `Latest pull: ${stamps.at(-1)}${LOCAL ? " · reading the local build" : ""}`;
   document.getElementById("dataset").href = DATASET_PAGE;
+  const o = s.amount_checks.option, b = s.amount_checks.base;
+  const checked = new Date(s.amount_checks.checked + "T12:00").toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
+  const [ol, oh] = wilson(o.differs, o.with_paperwork), [bl, bh] = wilson(b.differs, b.with_paperwork);
+  document.getElementById("amount-sample").textContent = `On ${checked} we drew ${o.sampled} option periods at random and found
+    paperwork stating the period's amount for ${o.with_paperwork}. DC's figure disagreed with it for ${o.differs} of those
+    ${o.with_paperwork}, ${Math.round(100 * o.differs / o.with_paperwork)}% (with a sample this size, roughly ${ol} to ${oh}). The same
+    check on ${b.sampled} base periods found ${b.differs} of ${b.with_paperwork} that disagreed, ${Math.round(100 * b.differs / b.with_paperwork)}%
+    (roughly ${bl} to ${bh}).`;
+  document.getElementById("base-share").textContent = ` (${b.differs} of ${b.with_paperwork} in the sample)`;
 
   document.getElementById("notes").innerHTML = notes(s).map((x) => `<article class="note-card">
       <div class="note-big">${x.big}</div><div class="note-label">${esc(x.label)}</div>

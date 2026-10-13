@@ -40,7 +40,7 @@
 <p class="intro"><strong>New here?</strong> <a href="index.html">Start with the questions this site can answer</a>, such as what technology DC buys and what comes up for renewal.</p>
 <p class="intro">One row per contract <strong>option period</strong>: a contract with a base period and two option years is three rows.
 Only base-period amounts are shown and totalled. They are what the first period authorises the District to spend, not what was paid.
-Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork
+Option-period amounts are left out because <span class="amount-share">some</span> we checked disagreed with the District's own paperwork
 (<a href="about.html#amounts">how we know</a>). Every other field below is the District's, as published:
 agency, vendor, contract type, market type and commodity code are as entered on DC's site, not categories added here.</p>
 
@@ -88,11 +88,13 @@ agency, vendor, contract type, market type and commodity code are as entered on 
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script type="module">
-import {start, esc, money, n, nigpLabel} from "./shared/explorer.js";
+import {start, esc, money, n, nigpLabel, amountShare, fillAmountShare} from "./shared/explorer.js";
 import {PARQUET_DIR} from "./shared/db.js";
 // What each "of interest" category means, from of_interest.yaml by way of summary.json.
-const CATEGORIES = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href)
-  .then((r) => r.ok ? r.json() : {}).then((s) => s.of_interest_categories || {}).catch(() => ({}));
+const SUMMARY = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href)
+  .then((r) => r.ok ? r.json() : {}).catch(() => ({}));
+const CATEGORIES = SUMMARY.of_interest_categories || {};
+fillAmountShare(SUMMARY);
 const interestBadges = (v) => v ? v.split("; ").map((c) =>
   `<span class="tag interest" title="${esc(CATEGORIES[c] || c)}">${esc(c)}</span>`).join(" ") : "";
 const pct = (a, b) => `${Math.round(100 * a / b)}%`;
@@ -189,7 +191,7 @@ start({
       ? `${money(v)}${r.corrected ? ` <span class="tag hint" title="DC's site says ${esc(r.amount_text)}. The District's own signed paperwork says ${esc(Number(v).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2}))}, so that is shown. Open the contract for the document.">corrected</span>` : ""}` +
         (r.same_award_as ? ` <span class="tag hint" title="DC's site lists this same contract twice. Totals count it once, under ${esc(r.same_award_as)}.">listed twice</span>` : "")
       : '<span class="muted">–</span>',
-      title: "What the base period authorises: a ceiling, not spending. Option periods show – because about three in ten we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"listed twice\": DC's site lists the same contract under two numbers; totals count it once. Open the contract for details."},
+      title: "What the base period authorises: a ceiling, not spending. Option periods show – because " + amountShare(SUMMARY) + " we checked disagreed with the District's own paperwork. \"corrected\": DC's figure contradicts the paperwork and the paperwork's is shown. \"listed twice\": DC's site lists the same contract under two numbers; totals count it once. Open the contract for details."},
     {key: "nigp_codes", label: "NIGP code", title: "The commodity code DC's site gives the contract, chosen when it was entered.", render: (v) => `<span class="mono">${esc(v)}</span>`},
   ],
 });

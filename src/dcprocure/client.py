@@ -127,6 +127,14 @@ class DCProcurementClient:
         """Agency clusters, each containing its member agencies."""
         return self.lookup("contracts", "agencies")
 
+    def independent_agencies(self) -> list[dict[str, Any]]:
+        """The portal's Independent Agencies list, every status ticked (1 + 2 + 4).
+
+        Includes entries with no agency code (the courts, for example), which
+        ``agencies()`` doesn't have.
+        """
+        return self._request("GET", "/api/agencies/independent", params={"keywords": "", "status": 7}).json()
+
     # -- search ------------------------------------------------------------
 
     def search(

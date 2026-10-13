@@ -48,7 +48,7 @@
   <section class="block">
     <h2>Option periods</h2>
     <p class="muted">Each option period is its own record on DC's site. Only the base period's amount is shown: what it authorises, not what was paid.
-    Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork (<a href="about.html#amounts">how we know</a>).</p>
+    Option-period amounts are left out because <span class="amount-share">some</span> we checked disagreed with the District's own paperwork (<a href="about.html#amounts">how we know</a>).</p>
     <div class="note" id="correction" hidden></div>
     <div class="tablewrap" id="periods"></div>
   </section>
@@ -91,7 +91,7 @@
 // and orders come from the export's link tables (contract_payments,
 // contract_orders), cut down to listed contracts, not the full tables.
 import {boot, q, downloadCsv, manifest, PARQUET_DIR} from "./shared/db.js";
-import {n, money, esc} from "./shared/explorer.js";
+import {n, money, esc, fillAmountShare} from "./shared/explorer.js";
 
 const params = new URLSearchParams(location.search);
 let number = (params.get("n") || "").trim();
@@ -142,6 +142,7 @@ async function main() {
     return;
   }
   status.textContent = "Loading the data into your browser…";
+  fetch(new URL(PARQUET_DIR + "summary.json", location.href).href).then((r) => r.ok ? r.json() : {}).then(fillAmountShare).catch(() => {});
   await boot(["contracts", "documents", "contract_payments", "contract_orders", "nigp_classes"]);
   // Match the number whatever its case, as the explorer's search does.
   const [found] = await q("SELECT contract_number FROM contracts WHERE upper(contract_number) = upper(?) LIMIT 1", [number]);

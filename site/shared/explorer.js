@@ -18,6 +18,22 @@ const CHARTS = {};     // chart id -> Chart instance
 let NIGP = {};         // class -> description
 
 // ---------- formatting ----------
+// The hand-checked amount sample (amount_checks.yaml, by way of summary.json):
+// "14 of 48", the option periods whose amount disagreed with the District's
+// paperwork, out of those with paperwork stating it.
+export function amountShare(summary) {
+  const o = summary && summary.amount_checks && summary.amount_checks.option;
+  return o ? `${o.differs} of ${o.with_paperwork}` : "some";
+}
+// 95% Wilson interval for k of n, as rounded percentages.
+export function wilson(k, n, z = 1.96) {
+  const p = k / n, d = 1 + z * z / n, c = (p + z * z / (2 * n)) / d;
+  const h = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d;
+  return [`${Math.round(100 * (c - h))}%`, `${Math.round(100 * (c + h))}%`];
+}
+export function fillAmountShare(summary) {
+  for (const e of document.querySelectorAll(".amount-share")) e.textContent = amountShare(summary);
+}
 export function n(x) { return x === null || x === undefined ? "–" : Number(x).toLocaleString("en-US"); }
 export function money(x) {
   if (x === null || x === undefined) return "–";

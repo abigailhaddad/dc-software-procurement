@@ -157,9 +157,9 @@ purchase orders are counted separately and never added together.</p>
     codes DC's search listing shows for each option period. An option period is in if any of its codes is in a ticked group.
     <span id="multi-note"></span> A purchase order has one code. A contract counts once in the totals however many option
     periods it has, and its dollars are its base-period amount only.</p>
-    <p>The contract's own page on DC's site can list more codes than the search listing does. In the 12 October 2026 pull, 22 contracts
-    carried a code from the class groups only on their own page (for example CW93000, Emphasys software, listed under consulting).
-    They are counted only if a listing code puts them in a group.</p>
+    <p>The contract's own page on DC's site can list more codes than the search listing does. Some contracts carry a code from the class
+    groups only on their own page (for example CW93000, Emphasys software, listed under consulting). They are counted only if a listing
+    code puts them in a group.</p>
     <p><strong>The vendor is whoever holds the contract, often a reseller.</strong> The vendor and supplier tables show sellers,
     not software makers: Carahsoft, for example, is the vendor on DC's contracts for Acquia's Drupal licences (CW86957) and
     Salesforce licences (CW92708).</p>
@@ -168,15 +168,9 @@ purchase orders are counted separately and never added together.</p>
 
 <section class="block" id="how-well">
   <h2>How well do the codes catch technology?</h2>
-  <p>Partly. On 12 October 2026 we read the titles of two random samples of contracts, drawn using the whole-class groups alone. Of 20
-  drawn from those classes, 18 were plainly technology purchases, one was copier and print service, and one (“Document Systems OY4”) we
-  could not tell from the title. Then we drew 20 from the 337 contracts <em>outside</em> those classes whose titles use words such as
-  software, licence, system, platform, network or computer. 14 of those were technology purchases, such as Salesforce, IBM and Esri
-  licences and Dell computers. Hence the item-code groups: the cloud-subscription and other-item groups catch 8 of
-  those 14, and the computer-consulting group 3 more. The other 3 (IBM licences coded as a professional licence renewal, a voter
-  registration database, Dell computers coded as publications) no code-based rule would catch. These are samples of 20, read by title only.</p>
+  <p id="how-well-text"></p>
   <details class="fold">
-    <summary>The 40 contracts we read</summary>
+    <summary id="sample-summary">The contracts we read</summary>
     <div class="tablewrap" style="max-height:none" id="sample-table"></div>
   </details>
   <p>Purchase orders from four large technology sellers show the same thing. The share of each one's order dollars in the codes
@@ -415,6 +409,24 @@ async function renderCodeTables() {
 }
 
 function renderSample() {
+  // The paragraph above the table, counted from SAMPLE and GROUPS.
+  const inRows = SAMPLE.filter((r) => r[0] === "In"), outRows = SAMPLE.filter((r) => r[0] === "Out");
+  const inTech = inRows.filter((r) => r[4] === "Technology").length;
+  const outTech = outRows.filter((r) => r[4] === "Technology");
+  const groupOf = (code) => GROUPS.find((g) => (g.items || []).some((i) => i[0] === code) || (g.classes || []).includes(code.slice(0, 3)));
+  const caught = {};
+  for (const r of outTech) { const g = groupOf(r[2]); if (g) caught[g.label] = (caught[g.label] || 0) + 1; }
+  const uncaught = outTech.filter((r) => !groupOf(r[2]));
+  const quote = (r) => `“${esc(r[3])}” (${esc(r[2])})`;
+  document.getElementById("how-well-text").innerHTML = `Partly. On 12 October 2026 we read the titles of two random samples of
+    contracts, drawn using the whole-class groups alone. Of ${inRows.length} drawn from those classes, ${inTech} were plainly technology
+    purchases; the others were ${inRows.filter((r) => r[4] !== "Technology").map((r) => `${quote(r)}, read as ${esc(r[4].toLowerCase())}`).join(", and ")}.
+    Then we drew ${outRows.length} from the contracts <em>outside</em> those classes whose titles use words such as software, licence, system,
+    platform, network or computer. ${outTech.length} of those were technology purchases, such as Salesforce, IBM and Esri licences and Dell
+    computers. Hence the item-code groups. Of those ${outTech.length}, ${Object.entries(caught).map(([label, k]) => `${k} fall in “${esc(label)}”`).join(", ")}.
+    ${uncaught.length ? `No code-based rule would catch the other ${uncaught.length}: ${uncaught.map(quote).join(", ")}.` : ""}
+    These are samples of ${inRows.length} and ${outRows.length}, read by title only.`;
+  document.getElementById("sample-summary").textContent = `The ${SAMPLE.length} contracts we read`;
   document.getElementById("sample-table").innerHTML = `<table class="plain"><thead><tr><th>Sample</th><th>Contract</th><th>Code</th>` +
     `<th>Title on DC's site</th><th>Read as</th></tr></thead><tbody>` +
     SAMPLE.map(([s, num, code, title, read]) => `<tr><td>${s === "In" ? "In the class groups" : "Outside them"}</td>` +
@@ -579,10 +591,7 @@ async function renderSellers(groups) {
       `<td class="num">${pct(r.in_codes ?? 0, r.ordered)}</td><td>${other.filter((o) => o.supplier === r.supplier).sort((a, b) => b.m - a.m)
         .map((o) => `<span title="${esc(describe(o.nigp_code))}"><span class="mono">${esc(o.nigp_code)}</span> ${money(o.m)}</span>`).join(", ")}</td></tr>`)) +
     `<p class="muted">Only orders under exactly these spellings; other spellings of the same company (such as "CDW LLC") are left out.
-    Hover a code for its class. Some of the largest are codes no technology rule would include. In the 12 October 2026 pull, with the
-    groups ticked as the page opens, Microsoft's biggest orders outside them were under 9619640, which DC's contract pages describe as
-    “Labor, miscellaneous”, and Carahsoft's second biggest under 9244140, “Professional development”. (Carahsoft's biggest were under
-    9182930, software implementation consulting, which the computer consulting group counts when ticked.)</p>`;
+    Hover a code for its class.</p>`;
 }
 
 async function renderContracts(groups) {

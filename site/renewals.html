@@ -121,7 +121,7 @@ options left, so for most the <em>Options left</em> column says "Not known".</p>
 //      DC's site still shows the period that was current when it was read;
 //   3. otherwise "Not known". DC's site has no field for it.
 import {boot, q, downloadCsv, manifest} from "./shared/db.js";
-import {n, money, esc} from "./shared/explorer.js";
+import {n, money, esc, amountShare} from "./shared/explorer.js";
 import {PARQUET_DIR} from "./shared/db.js";
 import {TECH_CLASSES, TECH_CODES} from "./shared/technology.js";
 
@@ -239,6 +239,7 @@ const WINDOW_TEXT = {
 };
 
 let CATEGORIES = {};
+let AMOUNT_SHARE = "some";
 let PULLED = "";
 
 function statusCell(r) {
@@ -333,7 +334,7 @@ async function render() {
         "How DC's site labels the current period: the listed period with the latest end date. Labels are as typed (\"Option 4\", \"Option Year 4\", \"Base\"); they are not always right.",
         "When the current period ends, per DC's site.",
         `Months from ${PULLED}, the day the data was pulled, to the end date (days ÷ 30.4). Negative means it has already ended.`,
-        "What the contract's base period authorises: a ceiling, not spending, and not the value of any renewal. Option-period amounts are left out because about three in ten we checked disagreed with the District's own paperwork.",
+        `What the contract's base period authorises: a ceiling, not spending, and not the value of any renewal. Option-period amounts are left out because ${AMOUNT_SHARE} we checked disagreed with the District's own paperwork.`,
         "Whether the contract allows more option periods after this one. Filled in only from paperwork read by hand; \"Not known\" everywhere else, because DC's site doesn't say.",
       ];
       $(thead).find("th").each((i, th) => { th.title = tips[i]; });
@@ -350,7 +351,9 @@ async function main() {
 
   const summary = await fetch(new URL(PARQUET_DIR + "summary.json", location.href).href);
   if (!summary.ok) throw new Error(`could not load summary.json: ${summary.status}`);
-  CATEGORIES = (await summary.json()).of_interest_categories || {};
+  const summaryJson = await summary.json();
+  CATEGORIES = summaryJson.of_interest_categories || {};
+  AMOUNT_SHARE = amountShare(summaryJson);
 
   const handResp = await fetch("renewals-options.json");
   if (!handResp.ok) throw new Error(`could not load renewals-options.json: ${handResp.status}`);

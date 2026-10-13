@@ -121,7 +121,7 @@ agency. Where several agencies buy the same thing separately, one citywide purch
   <p class="intro">DC's site doesn't standardise vendor names. One company can be "CDW GOVERNMENT LLC" on a contract and
   "CDW GOVERNMENT INC" on an order; each spelling is its own row above. A contract's vendor and an order's supplier are joined only
   when spelled exactly alike, capitals included.
-  Supplier names on orders stop at 40 characters ("Mary's Center for Maternal and Child Car"), so a long name on an order won't match its contract spelling.</p>
+  Supplier names on orders stop at <span id="supplier-cap">a fixed length</span> ("Mary's Center for Maternal and Child Car"), so a long name on an order won't match its contract spelling.</p>
   <p class="intro">This repository has a file of vendor-name merges, <code>vendor_aliases.yaml</code>, that isn't used here. Its merges
   come from a mechanical rule (strip punctuation and endings such as INC, LLC and CORP, then group names that come out the same), are
   recorded only for one set of technology payments, and cite no source. (Each agency-name fix in <code>agency_names.yaml</code> cites the
@@ -198,7 +198,9 @@ async function renderCoverage() {
   const [none] = await q(`SELECT count(*) AS k FROM (SELECT contract_number FROM contracts GROUP BY 1 HAVING bool_and(agency IS NULL))`);
   const [nobase] = await q(`SELECT count(*) AS k FROM (SELECT contract_number FROM contracts GROUP BY 1 HAVING count(*) FILTER (WHERE base_amount IS NOT NULL) = 0)`);
   const [twice] = await q(`SELECT count(DISTINCT contract_number) AS k FROM contracts WHERE same_award_as IS NOT NULL`);
-  const [p] = await q(`SELECT count(*) AS orders, min(fiscal_year) AS fy1, max(fiscal_year) AS fy2, count(*) FILTER (WHERE NOT listed) AS dropped FROM purchase_orders`);
+  const [p] = await q(`SELECT count(*) AS orders, min(fiscal_year) AS fy1, max(fiscal_year) AS fy2, count(*) FILTER (WHERE NOT listed) AS dropped,
+    max(length(supplier)) AS supplier_cap FROM purchase_orders`);
+  document.getElementById("supplier-cap").textContent = `${p.supplier_cap} characters`;
   const about = "about.html" + (DATA ? "?data=" + encodeURIComponent(DATA) : "");
   document.getElementById("coverage").innerHTML = `<ul>
     <li>All ${n(c.contracts)} contracts and ${n(p.orders)} purchase orders DC's site lists, including ${n(c.dropped_periods)} contract option periods and ${n(p.dropped)}

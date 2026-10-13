@@ -56,9 +56,10 @@ def _write(path: Path, payload: Any) -> None:
 
 
 def pull_reference(client: DCProcurementClient, out_dir: Path = RAW_DIR) -> None:
-    """Pull the lookup tables: commodity classes and agency clusters."""
+    """Pull the lookup tables: commodity classes, agency clusters and the independent-agency list."""
     _write(out_dir / "commodities.json", client.commodities())
     _write(out_dir / "agencies.json", client.agencies())
+    _write(out_dir / "independent_agencies.json", client.independent_agencies())
 
 
 def pull_by_commodity(

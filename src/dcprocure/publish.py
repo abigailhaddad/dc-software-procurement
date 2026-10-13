@@ -38,6 +38,7 @@ FILES = (
     "payments.json",
     "solicitations.json",
     "agencies.json",
+    "independent_agencies.json",
     "commodities.json",
     "manifest.json",
     # The same rows as Parquet, for the site's explorer: see dcprocure.export.

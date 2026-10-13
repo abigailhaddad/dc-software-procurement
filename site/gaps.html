@@ -126,7 +126,7 @@ paperwork, and more. Each has a count, and many link to the records.</p>
 </div>
 <script type="module">
 import {boot, q, manifest, BASE, PARQUET_DIR, LOCAL} from "./shared/db.js";
-import {n, money, esc} from "./shared/explorer.js";
+import {n, money, esc, wilson} from "./shared/explorer.js";
 
 const data = new URLSearchParams(location.search).get("data");
 const keep = (href) => data ? href + (href.includes("?") ? "&" : "?") + "data=" + encodeURIComponent(data) : href;
@@ -141,17 +141,6 @@ const STATUS = {
   4: "Limited applicability of the PPRA, exempt from the CPO's authority",
 };
 
-// What DC's Independent Agencies page listed when we read it by hand: its
-// entry count, and the entries with no agency code (so not in agencies.json).
-const INDEPENDENT_PAGE = {checked: "12 October 2026", entries: 28, noCode: ["D.C. Courts", "the D.C. Housing Authority",
-  "the Public Defender Service", "the Not-for-profit Hospital Association", "the Office of Public Partnerships"]};
-
-// 95% Wilson interval for k of n, as rounded percentages.
-function wilson(k, n, z = 1.96) {
-  const p = k / n, d = 1 + z * z / n, c = (p + z * z / (2 * n)) / d;
-  const h = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d;
-  return [`${Math.round(100 * (c - h))}%`, `${Math.round(100 * (c + h))}%`];
-}
 
 async function json(url) {
   const response = await fetch(url);
@@ -207,7 +196,8 @@ document.getElementById("summary-table").addEventListener("click", (e) => {
 
 // ---------- agencies ----------
 async function agencies(asof) {
-  const clusters = await json(new URL(BASE + "agencies.json", location.href).href);
+  const [clusters, page] = await Promise.all([json(new URL(BASE + "agencies.json", location.href).href),
+    json(new URL(BASE + "independent_agencies.json", location.href).href)]);
   const independent = [];
   for (const cluster of clusters) {
     for (const a of cluster.agencies) {
@@ -268,14 +258,17 @@ async function agencies(asof) {
       <td class="num">${a.lines ? link("payments.html", a.displayName, n(a.lines)) : "0"}</td>
       <td class="num">${money(a.paid)}</td></tr>`).join("") + "</tbody>";
 
+  const noCode = page.filter((a) => !a.id), coded = page.filter((a) => a.id);
+  const sectionNames = new Set(rows.map((r) => r.agency));
+  const noCodeFound = noCode.map((a) => a.displayName).filter((x) => sectionNames.has(x));
   document.getElementById("agency-note").innerHTML = `The list comes from DC's site's own agency list
     (<a href="${new URL(BASE + "agencies.json", location.href).href}">agencies.json</a>): ${n(table.length)} agencies there carry one of the three
-    statuses its Independent Agencies page filters on. ${table.length + INDEPENDENT_PAGE.noCode.length === INDEPENDENT_PAGE.entries
-      ? `That page, read by hand on ${INDEPENDENT_PAGE.checked}, listed ${INDEPENDENT_PAGE.entries} entries: these ${n(table.length)} plus
-        ${INDEPENDENT_PAGE.noCode.length} with no agency code (${INDEPENDENT_PAGE.noCode.slice(0, -1).join(", ")} and ${INDEPENDENT_PAGE.noCode.at(-1)}),
-        none of which appeared under those names in any section on that date.`
-      : `When read by hand on ${INDEPENDENT_PAGE.checked}, that page listed ${INDEPENDENT_PAGE.entries} entries, ${INDEPENDENT_PAGE.noCode.length}
-        of them with no agency code. The count above no longer adds up to that, so the page has changed since.`}
+    statuses its Independent Agencies page filters on. That page itself
+    (<a href="${new URL(BASE + "independent_agencies.json", location.href).href}">independent_agencies.json</a>) lists ${n(page.length)}
+    entries${noCode.length ? `, ${n(noCode.length)} of them with no agency code: ${noCode.map((a) => esc(a.displayName)).join("; ")}.
+    ${noCodeFound.length ? `Of those, ${noCodeFound.map(esc).join("; ")} ${noCodeFound.length === 1 ? "appears" : "appear"} under that name in some section.`
+      : "None of those appears under that name in any section."}` : "."}
+    ${coded.length !== table.length ? `${n(coded.length)} entries on that page have an agency code, against ${n(table.length)} in the agency list, so the two lists disagree.` : ""}
     ${n(span.blank_agency)} contracts name no agency at all (see <a href="#blanks">blank fields</a>), and a few of
     those could belong to agencies counted here as having none.`;
 
@@ -373,8 +366,7 @@ async function amounts(s, asof) {
      text: `DC's site lists an option period only once it has been exercised, and no field gives the number of options a contract has. So
        the site alone can't tell you whether a contract ending soon can be renewed, or must be re-bid or extended without bidding.
        The renewals page fills this in only where we read the award paperwork by hand.`,
-     covers: `As of ${asof}, ${f.later ? `${n(f.later)} periods on DC's site start` : "no period on DC's site starts"} after the pull date. On 12 October 2026 we asked DC's site for the
-       next period of 20 contracts, and it returned nothing for any of them.`,
+     covers: `As of ${asof}, ${f.later ? `${n(f.later)} periods on DC's site start` : "no period on DC's site starts"} after the pull date.`,
      link: ["See the renewals page", "renewals.html"]},
   ]);
 }
@@ -480,18 +472,24 @@ async function market(s, asof) {
 
 // ---------- names and ids ----------
 async function names(s, asof) {
-  const [p] = await q(`SELECT count(*) AS lines,
-      count(*) FILTER (WHERE length(vendor) = 30) AS at30,
-      count(*) FILTER (WHERE length(vendor) > 30) AS over30,
-      CAST(min(payment_date) FILTER (WHERE length(vendor) > 30) AS VARCHAR) AS first_long,
-      count(*) FILTER (WHERE payment_date < (SELECT min(payment_date) FROM payments WHERE length(vendor) > 30)) AS before_long
-    FROM payments`);
+  // The cap is the longest name in the earliest fiscal year; "first_long" is
+  // the first payment with a name longer than that.
+  const [p] = await q(`WITH c AS (SELECT max(length(vendor)) AS cap FROM payments
+        WHERE fiscal_year = (SELECT min(fiscal_year) FROM payments)),
+      f AS (SELECT min(payment_date) AS first_long FROM payments, c WHERE length(vendor) > cap)
+    SELECT any_value(cap) AS cap, count(*) AS lines,
+      count(*) FILTER (WHERE length(vendor) = cap) AS at_cap,
+      count(*) FILTER (WHERE length(vendor) > cap) AS over_cap,
+      CAST(any_value(first_long) AS VARCHAR) AS first_long,
+      count(*) FILTER (WHERE payment_date < first_long) AS before_long
+    FROM payments, c, f`);
   cards("name-cards", [
-    {gap: "Vendor names cut off at 30 characters", big: n(p.at30), label: "payment lines with a vendor name exactly 30 characters long",
-     text: `Payment vendor names stop at 30 characters, often mid-word ("SCIENCE APPLICATIONS INTERNATI"). None of the ${n(p.before_long)}
-       lines paid before ${esc(p.first_long)} has a longer name; since then ${n(p.over30)} do. A cut-off name can match more than one
+    {gap: `Vendor names cut off at ${p.cap} characters`, big: n(p.at_cap), label: `payment lines with a vendor name exactly ${p.cap} characters long`,
+     text: `Payment vendor names stop at ${p.cap} characters, often mid-word ("SCIENCE APPLICATIONS INTERNATI"). None of the ${n(p.before_long)}
+       lines paid before ${esc(p.first_long)} has a longer name; since then ${n(p.over_cap)} do. A cut-off name can match more than one
        company, and won't match the same company's name on its contract.`,
-     covers: `As of ${asof}, out of ${n(p.lines)} payment lines. Some names are exactly 30 characters and complete.`,
+     covers: `As of ${asof}, out of ${n(p.lines)} payment lines. The limit is the longest name among payments in the earliest fiscal
+       year. Some names are exactly that long and complete.`,
      link: ["All payments (no filter for name length)", "payments.html"]},
     {gap: "Vendor names typed, with no vendor id", big: n(s.contracts.vendors), label: "vendor names on contracts, as typed",
      text: `DC's site has no vendor id on any contract, order or payment, only a typed name, so one company can appear under several

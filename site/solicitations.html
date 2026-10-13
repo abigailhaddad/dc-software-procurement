@@ -61,8 +61,7 @@ year 2013</a>, searchable and filterable. The full documents are on
   <summary>What this covers</summary>
   <p>A solicitation is an RFP (request for proposals), RFQ, IFB (invitation for bids) or RFI (request for
   information, which only asks questions). RFQ can mean a request for quotations or a request for qualifications, which asks only for
-  vendors' qualifications. Here it mostly means quotations: titles that spell it out say quotation or quote about three times as often as
-  qualifications. DC's site lists each one with a title, agency, market type, closing date and the contract
+  vendors' qualifications. Here it mostly means quotations<span id="rfq-counts"></span>. DC's site lists each one with a title, agency, market type, closing date and the contract
   specialist to contact. It publishes no description, posting date, dollar value or commodity code, and doesn't say which
   contract a solicitation led to. Every value here is as the District entered it.</p>
   <div id="coverage"></div>
@@ -153,7 +152,7 @@ await start({
       const t = s.solicitations;
       return `<ul>
       <li>Every solicitation DC's site returned on ${esc(PULLED)}: ${n(t.open)} open, and ${n(t.closed)} closed ones from its archive for
-        fiscal years ${esc(r.first_fy)} to ${esc(r.last_fy)}. Its archive also holds a few dozen older records, not pulled.</li>
+        fiscal years ${esc(r.first_fy)} to ${esc(r.last_fy)}. Its archive also holds older records, not pulled.</li>
       ${r.last_fy < PULL_FY ? `<li><strong>Missing:</strong> solicitations that closed in fiscal year ${PULL_FY}, which began 1 October,
         before the pull. The pull asked DC's archive for fiscal years up to ${esc(r.last_fy)} only.</li>` : ""}
       <li>One row per listing, as DC's site gives it; none removed or merged. ${n(t.repeated_numbers)} number${t.repeated_numbers === 1 ? " appears" : "s appear"}
@@ -230,6 +229,10 @@ const urlParams = new URLSearchParams(location.search);
 const titleSearch = urlParams.get("title_contains") || "";
 const titleWhere = titleSearch ? " AND title ILIKE ?" : "";
 const titleBinds = titleSearch ? [`%${titleSearch}%`] : [];
+const [rfq] = await q(`SELECT count(*) FILTER (WHERE regexp_matches(title, 'request\\s+for\\s+quot', 'i')) AS quot,
+  count(*) FILTER (WHERE regexp_matches(title, 'request\\s+for\\s+qualif', 'i')) AS qual FROM solicitations`);
+document.getElementById("rfq-counts").textContent = `: ${n(rfq.quot)} titles say "request for quotation" or "quote", and
+  ${n(rfq.qual)} say "request for qualifications"`;
 const openRows = await q(`SELECT CAST(closing_date AS VARCHAR) AS closing_date, closing_time, solicitation_number, title, agency,
   market_type, specialist, specialist_email FROM solicitations WHERE is_open${titleWhere}
   ORDER BY closing_date NULLS LAST, try_strptime(closing_time, '%I:%M %p') NULLS LAST, solicitation_number`, titleBinds);

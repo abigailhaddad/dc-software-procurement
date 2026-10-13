@@ -139,9 +139,7 @@ regulations (DCMR) on <a href="https://www.dcregs.dc.gov">dcregs.dc.gov</a>. Eac
     <li>Some bodies are outside the procurement law altogether, including the courts, the Public Defender Service, DC Water, the Washington Convention and Sports Authority,
       and grants and loans <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.05">§ 2-351.05(c)</a>)</span>. The Council
       runs its own buying <span class="cite">(<a href="https://code.dccouncil.gov/us/dc/council/code/sections/2-351.05">§ 2-351.05(b)</a>)</span>.</li>
-    <li>The portal keeps its own list, <a href="https://contracts.ocp.dc.gov/agencies">Independent Agencies</a>: 28 agencies on
-      12 October 2026, 13 "Subject to the PPRA of 2010 and Independent from the CPO's Authority", 13 "Exempt from the PPRA and CPO's
-      Authority", and 2 with "Limited Applicability". It doesn't match the statute's lists exactly (it includes Lottery and Charitable
+    <li>The portal keeps its own list, <a href="https://contracts.ocp.dc.gov/agencies">Independent Agencies</a><span id="independent-counts"></span>. It doesn't match the statute's lists exactly (it includes Lottery and Charitable
       Games, for example, which § 2-352.01(b) does not name), so check both.</li>
   </ul>
   <p>Contracts by agencies outside OCP may be missing from the portal or only partly there. See
@@ -382,7 +380,7 @@ regulations (DCMR) on <a href="https://www.dcregs.dc.gov">dcregs.dc.gov</a>. Eac
         <td>A preliminary agreement; see <a href="#options">above</a>.</td>
         <td>The District's liability under the letter contract is capped at 50% of the price ceiling.</td></tr>
     </tbody></table></div>
-  <p class="muted">The type is whatever the District entered on each contract's portal page; in the 12 October 2026 pull, 109 of 7,362 option periods have none. A contract's
+  <p class="muted">The type is whatever the District entered on each contract's portal page<span id="no-type"></span>. A contract's
   type here is not checked against its paperwork.</p>
 </section>
 
@@ -500,6 +498,24 @@ for (const a of document.querySelectorAll("a[href]")) {
   if (data) url.searchParams.set("data", data);
   a.setAttribute("href", url.pathname.split("/").pop() + url.search + url.hash);
 }
+</script>
+<script type="module">
+// The two counts in the text, from the latest pull.
+import {BASE, PARQUET_DIR, manifest} from "./shared/db.js";
+import {n} from "./shared/explorer.js";
+async function json(url) {
+  const r = await fetch(new URL(url, location.href).href);
+  if (!r.ok) throw new Error(`could not load ${url}: ${r.status}`);
+  return r.json();
+}
+const [list, s, m] = await Promise.all([json(BASE + "independent_agencies.json"), json(PARQUET_DIR + "summary.json"), manifest()]);
+const pulled = m.snapshots.map((x) => (x.pulled_at || "").slice(0, 10)).filter(Boolean).sort().at(-1);
+const by = (k) => list.filter((a) => a.status === k).length;
+document.getElementById("independent-counts").textContent = `: ${n(list.length)} entries in the latest pull, ${n(by(1))} "Subject to the PPRA of
+  2010 and Independent from the CPO's Authority", ${n(by(2))} "Exempt from the PPRA and CPO's Authority", and ${n(by(4))} with "Limited
+  Applicability"${list.length - by(1) - by(2) - by(4) ? `, and ${n(list.length - by(1) - by(2) - by(4))} with some other status` : ""}`;
+document.getElementById("no-type").textContent = `; in the ${pulled} pull, ${n(s.contracts.no_contract_type)} of
+  ${n(s.contracts.periods)} option periods have none`;
 </script>
 </body>
 </html>
