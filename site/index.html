@@ -146,7 +146,7 @@ start({
       expr: "array_to_string(nigp_classes, '; ')", describe: nigpLabel},
     start_fiscal_year: {label: "Fiscal year the period starts", from: "From startDate; fiscal years run 1 October to 30 September.", filter: "multi", ordered: true, expr: "CAST(start_fiscal_year AS VARCHAR)"},
     option_period: {label: "Option period", from: "currentOptionPeriod on DC's site, as typed.", filter: "multi", expr: "option_period"},
-    of_interest: {label: "Of interest", from: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We only read contracts our checks flagged, so a blank means we didn't read it, not that it's ordinary. Recorded in of_interest.yaml.",
+    of_interest: {label: "Of interest", from: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We read the paperwork only for current contracts whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual, so a blank means we didn't read it, not that it's ordinary. Recorded in of_interest.yaml.",
       filter: "multi", expr: "coalesce(of_interest, '(not flagged)')", listExpr: "string_split(coalesce(of_interest, '(not flagged)'), '; ')",
       optionExpr: "unnest(string_split(coalesce(of_interest, '(not flagged)'), '; '))"},
     listed: {label: "In DC's site search now", from: "Whether DC's site returned the row in its search on the latest pull. Rows it no longer returns come from earlier pulls; their pages there may still open.", filter: "multi",
@@ -176,7 +176,7 @@ start({
   columns: [
     {key: "contract_number", label: "Contract", title: "The contract number on DC's site. Click it to open the contract's periods, payments, orders and documents in a new tab; \"DC site\" opens this period's page there.", render: (v, r) => `<a class="mono" href="${contractPage(v)}" target="_blank" rel="noopener" title="Opens in a new tab: its periods, payments, orders and documents">${esc(v)}</a>${portal(r)}${dropped(r)}`},
     {key: "of_interest", label: "Of interest", render: interestBadges,
-      title: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We only read contracts our checks flagged, so a blank means we didn't read it, not that it's ordinary."},
+      title: "Contracts whose paperwork shows they weren't bid out the usual way: for example, one company picked without others bidding, an emergency purchase, or an extension past the years the contract allowed. Hover a badge for what it means. We read the paperwork only for current contracts whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual, so a blank means we didn't read it, not that it's ordinary."},
     {key: "title", label: "Title", cls: "wide", title: "The contract's title on DC's site."},
     {key: "vendor", label: "Vendor", title: "The vendor on DC's site, as spelled there."},
     {key: "agency", label: "Agency", title: "The agency on DC's site; abbreviations are filled in from agency_names.yaml."},

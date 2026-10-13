@@ -447,8 +447,9 @@ async function market(s, asof) {
        .map((r) => `"${esc(r.mts)}" (${n(r.k)})`).join(" and ")}. The field does have sole-source values: ${n(v.k)} other contracts use
        "Sole Source", "SOLE SOURCE", "Single Available Source" or similar. So the field can't be used to find or count awards made
        without competition. A sole-source award to a local small business can be a set-aside too, so "Set Aside" is not necessarily wrong.`,
-     covers: `The ${total} contracts recorded as sole source in of_interest.yaml, read by hand as of ${asof}. That list covers only contracts
-       our checks nominated, so this is not a rate across all contracts.`,
+     covers: `The ${total} contracts recorded as sole source in of_interest.yaml, read by hand as of ${asof}. That list covers only current contracts
+       whose attached file names mention a sole source, emergency, letter contract or extension, or whose record looked unusual,
+       so this is not a rate across all contracts.`,
      link: ["See them", "index.html?of_interest=Sole+source"]},
   ]);
 }
