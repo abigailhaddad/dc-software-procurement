@@ -41,7 +41,7 @@
 carries no contract number of its own. A revised order carries a <code>-V</code> suffix (PO123456-V2); DC's site lists only one version
 of each order at a time. Agency, supplier, commodity code and fiscal year are as published.</p>
 
-<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+<details class="covers"><summary>What this covers</summary><div id="coverage"></div></details>
 
 <div class="toolbar">
   <button id="add-filter">+ Add filter</button>
@@ -55,6 +55,11 @@ of each order at a time. Agency, supplier, commodity code and fiscal year are as
 <div id="status"></div>
 
 <div class="stats" id="stats"></div>
+<section class="block" id="rows-block">
+  <h2>Every purchase order</h2>
+  <p class="error" id="rows-error"></p>
+  <div id="rows"></div>
+</section>
 <details class="charts-box" id="charts-box" open>
   <summary><span class="when-closed">Show charts</span><span class="when-open">Hide charts</span></summary>
   <div id="charts"></div>
@@ -71,11 +76,6 @@ of each order at a time. Agency, supplier, commodity code and fiscal year are as
   <div id="breakdown"></div>
 </section>
 
-<section class="block">
-  <h2>Every purchase order</h2>
-  <p class="error" id="rows-error"></p>
-  <div id="rows"></div>
-</section>
 
 <footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you filter is sent anywhere.</footer>
 </div>

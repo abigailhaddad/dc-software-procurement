@@ -154,3 +154,5 @@ details.covers ul{margin:4px 0; padding-left:20px}
 details.covers li{margin:3px 0}
 /* The last menu opens leftward so it stays on screen on phones. */
 nav.pages details.menu:last-of-type > div{left:auto; right:0}
+/* explorer.js writes its own "What this covers" heading; inside a folded box the summary already says it. */
+details.covers #coverage > h2{display:none}

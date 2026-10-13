@@ -41,7 +41,7 @@
 contract number, or one not on DC's published contract list. The amount summed is each line's <code>voucherAmount</code>. DC's <code>paymentAmount</code>, shown as <em>check total</em>, is the total of the whole check run, repeated on each of its lines,
 and is never summed. Agency, vendor and contract number are as entered.</p>
 
-<aside class="coverage" id="coverage" aria-label="What this covers"></aside>
+<details class="covers"><summary>What this covers</summary><div id="coverage"></div></details>
 
 <div class="toolbar">
   <button id="add-filter">+ Add filter</button>
@@ -55,6 +55,11 @@ and is never summed. Agency, vendor and contract number are as entered.</p>
 <div id="status"></div>
 
 <div class="stats" id="stats"></div>
+<section class="block" id="rows-block">
+  <h2>Every payment line</h2>
+  <p class="error" id="rows-error"></p>
+  <div id="rows"></div>
+</section>
 <details class="charts-box" id="charts-box" open>
   <summary><span class="when-closed">Show charts</span><span class="when-open">Hide charts</span></summary>
   <div id="charts"></div>
@@ -71,11 +76,6 @@ and is never summed. Agency, vendor and contract number are as entered.</p>
   <div id="breakdown"></div>
 </section>
 
-<section class="block">
-  <h2>Every payment line</h2>
-  <p class="error" id="rows-error"></p>
-  <div id="rows"></div>
-</section>
 
 <footer>Data: <a href="https://contracts.ocp.dc.gov">contracts.ocp.dc.gov</a>, archived weekly. Queries run in your browser with DuckDB; nothing you filter is sent anywhere.</footer>
 </div>
