@@ -52,15 +52,16 @@ hand with:
 
     gh workflow run deploy-site.yml
 
-### The launchd job is the fallback
+### The launchd job is off
 
 Before Actions, a launchd job on the owner's laptop ran the script at Mondays
-06:00 local time. Keep it installed until the Actions job has completed a clean
-run end to end (hydrate through prune, publish included), then remove it so the
-two do not both publish in the same week:
+06:00 local time, the same moment as the Actions schedule. The Actions job
+completed a clean run end to end on 2026-10-12, and the launchd job was unloaded
+on 2026-10-14 so the two never publish at once. Its plist is still installed.
+If Actions has to be abandoned:
 
+    scripts/install_schedule.sh            # reinstall and load it
     scripts/install_schedule.sh --remove   # unload and delete it
-    scripts/install_schedule.sh            # reinstall, if Actions has to be abandoned
 
 If the machine is asleep at 06:00, launchd runs the job once when it next wakes
 rather than skipping the week. `RunAtLoad` is false, so installing the job does
