@@ -10,7 +10,7 @@ dependencies = [
     "pandas>=2.2",
     "numpy>=1.26",
     "pypdf>=4.2",
-    "litellm>=1.50",
+    "litellm==1.98.0",
     "pydantic>=2.7",
     "pyyaml>=6.0",
     "pymupdf>=1.28.2",
