@@ -3,7 +3,7 @@
 # run costs nothing.
 
 .PHONY: help install pull classify verify test report export serve rates ocr h1b \
-        h1b-dol calc solicitations dcas pull-payments publish hydrate prune derived competition reseller part-numbers \
+        h1b-dol calc solicitations dcas pull-payments publish publish-dataset publish-dataset-upload hydrate prune derived competition reseller part-numbers \
         modifications trends vehicles buyers cycle-time all
 
 help:
@@ -11,6 +11,7 @@ help:
 	@echo "make pull       fetch the portal snapshot into data/raw (~10 min, ~360MB)"
 	@echo "make pull-payments  refresh only the payments table (~300MB, one request)"
 	@echo "make publish    upload data/raw to the Hugging Face archive (needs HF_TOKEN)"
+	@echo "make publish-dataset  build and check the public dataset (dry run; publish-dataset-upload commits)"
 	@echo "make classify   sort contracts by what they buy, and read delivery structure"
 	@echo "make export     write data/raw as the Parquet tables the site reads"
 	@echo "make serve      serve the site locally, reading the local export"
@@ -50,6 +51,13 @@ pull-payments:
 publish:
 	uv run dcprocure -v publish
 
+# The public dataset. A dry run; add --upload (or run publish-dataset-upload) to commit.
+publish-dataset:
+	uv run dcprocure -v publish-dataset
+
+publish-dataset-upload:
+	uv run dcprocure -v publish-dataset --upload
+
 # data/raw only needs to exist during a run: hydrate brings it back from the
 # archive, prune deletes it once every file is published byte for byte.
 hydrate:
@@ -70,7 +78,7 @@ export:
 
 # The pre-push hook runs this. data/raw has to be on disk: hydrate fetches it.
 verify: hydrate export
-	uv run --with pytest python -m pytest -q tests/test_export.py tests/test_archive.py
+	uv run --with pytest python -m pytest -q tests/test_export.py tests/test_archive.py tests/test_dataset.py
 
 # http://127.0.0.1:8811/site/?data=local reads the local export.
 serve:
@@ -78,7 +86,7 @@ serve:
 
 test:
 	uv run python tests/test_documents.py
-	uv run --with pytest python -m pytest -q tests/test_archive.py
+	uv run --with pytest python -m pytest -q tests/test_archive.py tests/test_dataset.py
 	uv run python tests/eval_labels.py
 	uv run python tests/eval_delivery.py
 

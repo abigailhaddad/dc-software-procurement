@@ -2,7 +2,9 @@
 
 import json
 
-from dcprocure.archive import contract_id, retain_by_group, retain_by_key
+import pytest
+
+from dcprocure.archive import PullShrankError, contract_id, retain_by_group, retain_by_key
 
 
 def test_contract_id_matches_portal():
@@ -112,3 +114,57 @@ def test_solicitation_years_run_through_the_current_fiscal_year():
     assert solicitation_years(date(2026, 9, 30))[-1] == "FY2026"
     assert solicitation_years(date(2026, 10, 1))[-1] == "FY2027"
     assert solicitation_years(date(2026, 10, 1))[0] == "FY2013"
+
+
+def _write_rows(path, n, **extra):
+    path.write_text(json.dumps([{"id": str(i), **extra} for i in range(n)]))
+
+
+def test_a_pull_that_drops_most_of_the_archive_fails_and_writes_nothing(tmp_path):
+    path = tmp_path / "rows.json"
+    _write_rows(path, 1000)
+    before = path.read_text()
+    current = [{"id": str(i)} for i in range(100)]  # 90% missing: a truncated response
+    with pytest.raises(PullShrankError, match="900 of the 1,000"):
+        retain_by_key(path, current, lambda r: r["id"])
+    assert path.read_text() == before
+
+
+def test_an_empty_pull_fails_for_groups_too(tmp_path):
+    path = tmp_path / "payments.json"
+    _write_rows(path, 500)
+    with pytest.raises(PullShrankError):
+        retain_by_group(path, [], lambda r: r["id"])
+
+
+def test_the_october_2026_drop_is_not_a_failure(tmp_path):
+    # 1,297 of 7,165 periods (18%) left when the fiscal year turned.
+    path = tmp_path / "rows.json"
+    _write_rows(path, 7165)
+    current = [{"id": str(i)} for i in range(7165 - 1297)]
+    merged, retained = retain_by_key(path, current, lambda r: r["id"])
+    assert retained == 1297 and len(merged) == 7165
+
+
+def test_rows_already_delisted_do_not_count_toward_the_limit(tmp_path):
+    path = tmp_path / "rows.json"
+    rows = [{"id": str(i), "listed": False} for i in range(900)] + [{"id": f"k{i}"} for i in range(300)]
+    path.write_text(json.dumps(rows))
+    current = [{"id": f"k{i}"} for i in range(200)]  # 100 of the 300 listed rows go: a third
+    merged, retained = retain_by_key(path, current, lambda r: r["id"])
+    assert retained == 1000 and len(merged) == 1200
+
+
+def test_the_limit_can_be_overridden_for_a_pull_that_really_shrank(tmp_path, monkeypatch):
+    path = tmp_path / "rows.json"
+    _write_rows(path, 1000)
+    monkeypatch.setenv("DCPROCURE_ALLOW_SHRINK", "1")
+    merged, retained = retain_by_key(path, [{"id": "0"}], lambda r: r["id"])
+    assert retained == 999
+
+
+def test_a_small_archive_is_not_checked(tmp_path):
+    path = tmp_path / "rows.json"
+    _write_rows(path, 50)
+    merged, retained = retain_by_key(path, [{"id": "0"}], lambda r: r["id"])
+    assert retained == 49

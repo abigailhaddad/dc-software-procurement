@@ -20,6 +20,7 @@ from __future__ import annotations
 import base64
 import json
 import logging
+import os
 from collections.abc import Callable, Iterable
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
@@ -42,6 +43,35 @@ def _load(path: Path) -> list[Record]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+class PullShrankError(RuntimeError):
+    """A pull came back so much smaller than the archive that it is probably broken."""
+
+
+# The portal legitimately drops rows: 1,297 of 7,165 contract periods (18%) left on
+# 1 October 2026, when the fiscal year turned. Losing more than half of what the
+# archive last held listed is a failed or truncated response, not the portal
+# forgetting, so the pull stops instead of marking the whole table delisted.
+MAX_NEWLY_DELISTED = 0.5
+MIN_ROWS_TO_CHECK = 200
+ALLOW_SHRINK_ENV = "DCPROCURE_ALLOW_SHRINK"
+
+
+def _check_shrink(path: Path, previous_listed: int, newly_delisted: int) -> None:
+    """Raise when a pull delists more than :data:`MAX_NEWLY_DELISTED` of the listed rows.
+
+    Set ``DCPROCURE_ALLOW_SHRINK=1`` for a pull that really is that much smaller.
+    """
+    if os.environ.get(ALLOW_SHRINK_ENV) == "1" or previous_listed < MIN_ROWS_TO_CHECK:
+        return
+    if newly_delisted / previous_listed > MAX_NEWLY_DELISTED:
+        raise PullShrankError(
+            f"{path.name}: this pull dropped {newly_delisted:,} of the {previous_listed:,} rows "
+            f"the archive had listed ({newly_delisted / previous_listed:.0%}), over the "
+            f"{MAX_NEWLY_DELISTED:.0%} limit. The response is probably truncated or empty; "
+            f"nothing was written. If the portal really shrank, rerun with {ALLOW_SHRINK_ENV}=1."
+        )
+
+
 def retain_by_key(
     path: Path,
     current: list[Record],
@@ -59,6 +89,7 @@ def retain_by_key(
     """
     today = today or date.today().isoformat()
     previous = {key(r): r for r in _load(path)}
+    previous_listed = sum(1 for r in previous.values() if r.get("listed") is not False)
     merged: list[Record] = []
     seen: set[str] = set()
     for row in current:
@@ -75,6 +106,7 @@ def retain_by_key(
             }
         )
     retained = [{**r, "listed": False} for k, r in previous.items() if k not in seen]
+    _check_shrink(path, previous_listed, sum(1 for k, r in previous.items() if k not in seen and r.get("listed") is not False))
     return merged + retained, len(retained)
 
 
@@ -97,8 +129,14 @@ def retain_by_group(
     """
     today = today or date.today().isoformat()
     now = {key(r) for r in current}
+    previous = _load(path)
     merged = [{**r, "listed": True, "last_listed": today} for r in current]
-    retained = [{**r, "listed": False} for r in _load(path) if key(r) not in now]
+    retained = [{**r, "listed": False} for r in previous if key(r) not in now]
+    _check_shrink(
+        path,
+        sum(1 for r in previous if r.get("listed") is not False),
+        sum(1 for r in previous if key(r) not in now and r.get("listed") is not False),
+    )
     return merged + retained, len(retained)
 
 

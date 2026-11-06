@@ -62,6 +62,14 @@ else
   log "not publishing: the pull or the checks failed"
 fi
 
+# The public dataset (abigailhaddad/dc-procurement by default) is rebuilt from the same
+# tables. Off unless DCPROCURE_PUBLISH_DATASET=1: the workflow sets that only when the
+# repo variable PUBLISH_PUBLIC_DATASET is "true". Runs before prune, which deletes
+# data/raw. See docs/SCHEDULING.md.
+if [ "$failed" -eq 0 ] && [ "${DCPROCURE_PUBLISH_DATASET:-0}" = "1" ]; then
+  step "publish the public dataset" make publish-dataset-upload || failed=1
+fi
+
 # Free the disk only on a clean run, and prune itself deletes nothing unless
 # every file matches what was published.
 if [ "$failed" -eq 0 ]; then

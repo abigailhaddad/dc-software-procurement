@@ -87,6 +87,13 @@ def main(argv: list[str] | None = None) -> int:
         "from exactly, after re-fetching by id",
     )
     sub.add_parser("publish", help="upload the raw snapshot to the Hugging Face dataset")
+    ds = sub.add_parser(
+        "publish-dataset",
+        help="build and check the public Hugging Face dataset; a dry run unless --upload",
+    )
+    ds.add_argument("--source", type=Path, default=RAW_DIR / "parquet", help="folder with the export's tables")
+    ds.add_argument("--out", type=Path, default=DATA_DIR / "public_dataset", help="where to write the files")
+    ds.add_argument("--upload", action="store_true", help="commit the built files to the dataset (needs HF_TOKEN)")
     sub.add_parser("hydrate", help="download any missing data/raw file from the Hugging Face archive")
     sub.add_parser(
         "prune", help="delete data/raw files, only if each matches the Hugging Face archive"
@@ -135,6 +142,19 @@ def main(argv: list[str] | None = None) -> int:
         from .publish import publish
 
         print(publish())
+    elif args.command == "publish-dataset":
+        from . import dataset
+
+        report = dataset.build(args.source, args.out)
+        for line in report["checks"]:
+            print("ok:", line)
+        for table, info in report["tables"].items():
+            print(f"{table}: {info['rows']:,} rows, {info['columns']} columns, {info['bytes'] / 1e6:.1f} MB")
+        print(f"as of {report['as_of']}; written to {args.out}")
+        if args.upload:
+            print(dataset.upload(args.out))
+        else:
+            print("dry run: nothing uploaded (add --upload to commit)")
     elif args.command in ("hydrate", "prune"):
         from . import publish as hf
 
