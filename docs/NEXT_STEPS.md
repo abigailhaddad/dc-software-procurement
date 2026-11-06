@@ -5,8 +5,10 @@ up. Read `README.md` and `docs/SCHEDULING.md` first.
 
 ## The state
 
-- **Site:** https://dc-procurement.pages.dev (Cloudflare Pages project
-  `dc-procurement`). Static pages in `site/`: contracts explorer
+- **Site:** https://dc-procurement.abigailhaddad.com (Cloudflare Pages project `dc-procurement`), now built and
+  deployed from `abigailhaddad/dataset-explorer` (slug `dc-procurement`). The description
+  below is of the earlier hand-built site in `site/`, kept for reference and no longer
+  deployed. Static pages in `site/`: contracts explorer
   (`contracts.html`; `index.html` is the Start here page), `payments.html`, `purchase-orders.html`, one page per contract
   (`contract.html?n=…`), and `about.html`. Each explorer has charts on top and a
   table below, driven by one set of filters on the District's own fields
@@ -33,11 +35,10 @@ up. Read `README.md` and `docs/SCHEDULING.md` first.
    `summary.json` should carry the "DC's site" wording).
 2. **Then retire the launchd fallback** with `scripts/install_schedule.sh
    --remove`, only once Actions has run cleanly and with the owner's OK.
-3. **Auto-deploy of the site** needs a `CLOUDFLARE_API_TOKEN` secret (and
-   account id) in the repo. Until then `deploy-site.yml` skips, and deploys are
-   by hand: `wrangler pages deploy site --project-name dc-procurement`.
-   Publish new data files to HF *before* deploying site code that reads them.
-4. **Optional custom domain** for the Pages project.
+3. **The site deploys from `abigailhaddad/dataset-explorer`**, whose `deploy-sites.yml`
+   needs the Cloudflare secrets. Publish new data files to HF *before* deploying site
+   code that reads them.
+4. **The custom domain** `dc-procurement.abigailhaddad.com` is set on the Pages project.
 5. **Model classifications on the site (owner's call, 2026-10-12).** Showing
    what the model assigned is fine as long as (a) the site never aggregates by
    it: no chart, no totals, no breakdown; and (b) every place it appears says

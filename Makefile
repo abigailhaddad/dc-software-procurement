@@ -80,7 +80,8 @@ export:
 verify: hydrate export
 	uv run --with pytest python -m pytest -q tests/test_export.py tests/test_archive.py tests/test_dataset.py
 
-# http://127.0.0.1:8811/site/?data=local reads the local export.
+# http://127.0.0.1:8811/site/?data=local reads the local export, for the earlier hand-built
+# site in site/ (kept for reference; the live site is built from abigailhaddad/dataset-explorer).
 serve:
 	uv run python -m http.server 8811 --bind 127.0.0.1
 
