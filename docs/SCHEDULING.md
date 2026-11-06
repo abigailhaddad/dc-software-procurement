@@ -41,7 +41,7 @@ Two optional repository variables (the Variables tab, next to Secrets):
 
 | Variable | What it does |
 |---|---|
-| `PUBLISH_PUBLIC_DATASET` | `true` makes the weekly run also publish the public dataset (`make publish-dataset-upload`) after the archive. Anything else, or unset, leaves it off. See `HANDOFF.md`. |
+| `PUBLISH_PUBLIC_DATASET` | `true` makes the weekly run also publish the public dataset (`make publish-dataset-upload`) after the archive. Anything else, or unset, leaves it off. See "Publishing the public dataset by hand" below. |
 
 ### The site deploys from another repo
 
@@ -146,3 +146,13 @@ first, then deploy. The first deploy, on 12 October 2026, went out before its
 two new tables and showed a 404 on every contract page until they were
 published.
 
+## Publishing the public dataset by hand
+
+The weekly run publishes `abigailhaddad/dc-procurement` (six Parquet tables and a card) when `PUBLISH_PUBLIC_DATASET` is `true`. To check what would go up, from a checkout with the archive restored:
+
+    make hydrate
+    make export
+    make publish-dataset            # builds data/public_dataset/ and checks it; uploads nothing
+    make publish-dataset-upload     # one commit; creates the dataset if it is missing (needs HF_TOKEN)
+
+`src/dcprocure/dataset.py` decides which columns are left out (`DROP_COLUMNS`). `scripts/spot_check_dataset.py RAW_DIR BUILT_DIR` compares a random and edge-case sample of rows, field by field, with the raw JSON. Run it before a first upload.

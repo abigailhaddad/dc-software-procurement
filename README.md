@@ -65,7 +65,7 @@ make serve       # serve the site locally, reading the local tables
 
 `abigailhaddad/dc-procurement` on Hugging Face holds the same tables as Parquet
 with a dataset card, for people who want the data without the site. `make publish-dataset` builds and checks it without uploading;
-`HANDOFF.md` says how and when to publish.
+`docs/SCHEDULING.md` says how to publish by hand.
 
 ## Schedule and deploys
 
