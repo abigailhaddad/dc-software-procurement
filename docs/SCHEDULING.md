@@ -41,6 +41,13 @@ Set in the repo's Settings -> Secrets and variables -> Actions:
     gh secret set CLOUDFLARE_API_TOKEN
     gh secret set CLOUDFLARE_ACCOUNT_ID
 
+Two optional repository variables (the Variables tab, next to Secrets):
+
+| Variable | What it does |
+|---|---|
+| `CLOUDFLARE_PROJECT` | The Pages project `deploy-site.yml` deploys to. Defaults to `dc-procurement`. |
+| `PUBLISH_PUBLIC_DATASET` | `true` makes the weekly run also publish the public dataset (`make publish-dataset-upload`) after the archive. Anything else, or unset, leaves it off. See `HANDOFF.md`. |
+
 ### The site deploys separately
 
 The site reads its tables from the Hugging Face dataset when a page loads, so

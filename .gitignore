@@ -43,3 +43,6 @@ data/review_leads/leads.csv
 
 # Agent worktrees.
 .claude/worktrees/
+
+# Built by `make publish-dataset`; rebuilt from the archive each run.
+data/public_dataset/

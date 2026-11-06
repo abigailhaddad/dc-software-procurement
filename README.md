@@ -11,6 +11,8 @@ adds by hand, each entry with a cited source, is listed below. The
 site's About page says what the data covers and what is easy to get wrong in
 it, computed from the data.
 
+For whoever takes this over, `HANDOFF.md` is the operator guide.
+
 ## Run it
 
 ```bash
@@ -57,6 +59,13 @@ make serve       # serve the site locally, reading the local tables
   dataset and queries them in the browser with DuckDB, so it only needs
   redeploying when its own code changes.
 
+## The public dataset
+
+`abigailhaddad/dc-procurement` on Hugging Face (not yet published) holds the
+same tables as Parquet with a dataset card, for people who want the data without
+the site. `make publish-dataset` builds and checks it without uploading;
+`HANDOFF.md` says how and when to publish.
+
 ## Schedule and deploys
 
 `scripts/weekly_refresh.sh` runs hydrate, pull, export, verify, publish and
@@ -68,3 +77,8 @@ including the secrets each needs and what happens when a step fails.
 
 `analysis/` holds exploratory analysis that is not part of the site or the
 weekly run; `docs/NEXT_STEPS.md` describes it.
+
+## License
+
+The code is MIT (`LICENSE`). The records are the District's; see the dataset card
+for what is known about their terms.

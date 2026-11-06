@@ -24,11 +24,12 @@ from pathlib import Path
 from typing import Any
 
 from .classify import _load_dotenv
+from .config import HF_ARCHIVE_REPO
 from .pull import RAW_DIR
 
 log = logging.getLogger(__name__)
 
-REPO_ID = "abigailhaddad/dc-procurement-raw"
+REPO_ID = HF_ARCHIVE_REPO
 
 FILES = (
     "contracts_by_commodity.json",

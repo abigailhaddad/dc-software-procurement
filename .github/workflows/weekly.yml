@@ -47,6 +47,10 @@ jobs:
       - name: Run the weekly refresh
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          # The public dataset is published only when the repo variable
+          # PUBLISH_PUBLIC_DATASET is "true" and HF_TOKEN is set. Merging this
+          # file changes nothing until the variable is set.
+          DCPROCURE_PUBLISH_DATASET: ${{ (vars.PUBLISH_PUBLIC_DATASET == 'true' && secrets.HF_TOKEN != '') && '1' || '0' }}
         run: scripts/weekly_refresh.sh
 
       - name: Upload the run log
