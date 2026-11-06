@@ -22,4 +22,4 @@ HF_ARCHIVE_REPO = os.environ.get("DCPROCURE_HF_ARCHIVE", "abigailhaddad/dc-procu
 HF_DATASET_REPO = os.environ.get("DCPROCURE_HF_DATASET", "abigailhaddad/dc-procurement")
 
 # The explorer site.
-SITE_URL = os.environ.get("DCPROCURE_SITE_URL", "https://dc-procurement.pages.dev")
+SITE_URL = os.environ.get("DCPROCURE_SITE_URL", "https://dc-procurement.abigailhaddad.com")

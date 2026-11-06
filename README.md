@@ -2,7 +2,7 @@
 
 An archive of the records on `contracts.ocp.dc.gov` -- where DC's Office of
 Contracting and Procurement publishes contracts, purchase orders and payments --
-and a site for exploring them: https://dc-procurement.pages.dev
+and a site for exploring them: https://dc-procurement.abigailhaddad.com
 
 The site is a copy of what that website lists, as pulled here, not a complete
 record of District contracting or spending. It shows the District's fields as
@@ -55,23 +55,24 @@ make serve       # serve the site locally, reading the local tables
   technology pages count, by group.
 - **`make verify` checks the tables against the raw files** through a separate
   code path, and the pre-push hook runs it.
-- **The site** (`site/`) is static. It loads the tables from the Hugging Face
-  dataset and queries them in the browser with DuckDB, so it only needs
-  redeploying when its own code changes.
+- **The site** is built and deployed from
+  [`abigailhaddad/dataset-explorer`](https://github.com/abigailhaddad/dataset-explorer)
+  (slug `dc-procurement`). It reads the tables from the Hugging Face dataset in the
+  browser, so it never needs a data refresh. The `site/` folder here is the earlier
+  hand-built site, kept for reference. It is no longer deployed.
 
 ## The public dataset
 
-`abigailhaddad/dc-procurement` on Hugging Face (not yet published) holds the
-same tables as Parquet with a dataset card, for people who want the data without
-the site. `make publish-dataset` builds and checks it without uploading;
+`abigailhaddad/dc-procurement` on Hugging Face holds the same tables as Parquet
+with a dataset card, for people who want the data without the site. `make publish-dataset` builds and checks it without uploading;
 `HANDOFF.md` says how and when to publish.
 
 ## Schedule and deploys
 
 `scripts/weekly_refresh.sh` runs hydrate, pull, export, verify, publish and
-prune; `.github/workflows/weekly.yml` runs it weekly. `.github/workflows/deploy-site.yml`
-deploys `site/` to Cloudflare Pages. `docs/SCHEDULING.md` has the details,
-including the secrets each needs and what happens when a step fails.
+prune; `.github/workflows/weekly.yml` runs it weekly. The site deploys from the
+`dataset-explorer` repo, not from here. `docs/SCHEDULING.md` has the details,
+including the secrets the weekly run needs and what happens when a step fails.
 
 ## Other code
 

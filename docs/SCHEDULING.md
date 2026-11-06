@@ -34,30 +34,23 @@ Set in the repo's Settings -> Secrets and variables -> Actions:
 | Secret | Used by | What it needs |
 |---|---|---|
 | `HF_TOKEN` | `weekly.yml` | Write access to the `abigailhaddad/dc-procurement-raw` dataset. Hydrate, publish and prune all use it; without it publish stops with "HF_TOKEN is not set" and nothing is published. |
-| `CLOUDFLARE_API_TOKEN` | `deploy-site.yml` | A token with Cloudflare Pages edit permission. |
-| `CLOUDFLARE_ACCOUNT_ID` | `deploy-site.yml` | The account that owns the `dc-procurement` Pages project. |
 
     gh secret set HF_TOKEN
-    gh secret set CLOUDFLARE_API_TOKEN
-    gh secret set CLOUDFLARE_ACCOUNT_ID
 
 Two optional repository variables (the Variables tab, next to Secrets):
 
 | Variable | What it does |
 |---|---|
-| `CLOUDFLARE_PROJECT` | The Pages project `deploy-site.yml` deploys to. Defaults to `dc-procurement`. |
 | `PUBLISH_PUBLIC_DATASET` | `true` makes the weekly run also publish the public dataset (`make publish-dataset-upload`) after the archive. Anything else, or unset, leaves it off. See `HANDOFF.md`. |
 
-### The site deploys separately
+### The site deploys from another repo
 
 The site reads its tables from the Hugging Face dataset when a page loads, so
-a weekly refresh shows up on it without a redeploy. It needs redeploying only
-when the code in `site/` changes. `.github/workflows/deploy-site.yml` does that
-on every push to `main` that touches `site/`, uploading `site/` as-is to the
-`dc-procurement` Cloudflare Pages project (there is no build step). Redeploy by
-hand with:
-
-    gh workflow run deploy-site.yml
+a weekly refresh shows up on it without a redeploy. It is built and deployed from
+`abigailhaddad/dataset-explorer` (slug `dc-procurement`, Cloudflare Pages project
+`dc-procurement`) by that repo's `deploy-sites.yml`, which needs the two Cloudflare
+secrets. Nothing in this repo deploys it. The `site/` folder here is the earlier
+hand-built site, kept for reference.
 
 ### The launchd job is off
 

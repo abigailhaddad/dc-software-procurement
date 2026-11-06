@@ -10,8 +10,8 @@ Every Monday a GitHub Action copies what the District of Columbia's
 lists (contracts, purchase orders, payments, solicitations) into an archive on
 Hugging Face. The portal forgets records as they age out, so the archive keeps
 every row it has ever seen and marks the ones the portal no longer returns.
-A static site on Cloudflare Pages lets people explore the tables in their
-browser. A second Hugging Face dataset, with cleaned Parquet tables and a
+A site on Cloudflare Pages lets people explore the tables in their browser. It is
+built and deployed from the `abigailhaddad/dataset-explorer` repo, not from this one. A second Hugging Face dataset, with cleaned Parquet tables and a
 dataset card, is for people who want to use the data. Nobody has to run
 anything by hand while it works.
 
@@ -25,24 +25,22 @@ API key of their own. They are exploratory and are not part of the weekly run.
 |---|---|
 | Code | This GitHub repo |
 | Working archive (portal responses, weekly history) | Hugging Face dataset `abigailhaddad/dc-procurement-raw` |
-| Public dataset (Parquet tables and card) | Hugging Face dataset `abigailhaddad/dc-procurement`. **Not created yet**: see "Publishing the public dataset" |
-| Site | https://dc-procurement.pages.dev (Cloudflare Pages project `dc-procurement`, built from `site/`) |
+| Public dataset (Parquet tables and card) | Hugging Face dataset `abigailhaddad/dc-procurement` |
+| Site | https://dc-procurement.abigailhaddad.com (Cloudflare Pages project `dc-procurement`, deployed from `abigailhaddad/dataset-explorer`, slug `dc-procurement`). The `site/` folder here is the earlier hand-built site, kept for reference only |
 | Weekly run | `.github/workflows/weekly.yml`, Mondays 10:00 UTC. Logs: the `weekly-refresh-log-<run id>` artifact on each run |
-| Site deploy | `.github/workflows/deploy-site.yml`, on a push to `main` that changes `site/` |
+| Site deploy | `.github/workflows/deploy-sites.yml` in `abigailhaddad/dataset-explorer`, on a push to its `main` that changes the engine or a config |
 
 `docs/SCHEDULING.md` has the step-by-step of the weekly run and what bites.
 
 ## Accounts, secrets and variables
 
-You need a GitHub account, a Hugging Face account and a Cloudflare account. Set
-these in the repo's Settings, Secrets and variables, Actions:
+You need a GitHub account and a Hugging Face account. The site's Cloudflare secrets live
+in the `dataset-explorer` repo. Set these in this repo's Settings, Secrets and variables,
+Actions:
 
 | Name | Kind | Used by | What for |
 |---|---|---|---|
 | `HF_TOKEN` | secret | weekly run | Write access to both Hugging Face datasets above. Without it nothing is published. |
-| `CLOUDFLARE_API_TOKEN` | secret | site deploy | A token that can edit Cloudflare Pages. Not set today: the deploy step says so and skips, and the site is deployed by hand. |
-| `CLOUDFLARE_ACCOUNT_ID` | secret | site deploy | The Cloudflare account that owns the Pages project. Not set today. |
-| `CLOUDFLARE_PROJECT` | variable | site deploy | The Pages project name. Optional: defaults to `dc-procurement`. |
 | `PUBLISH_PUBLIC_DATASET` | variable | weekly run | Set to `true` to publish the public dataset each week. Off until you set it. |
 
 ## Moving it to a new owner
@@ -59,20 +57,18 @@ these in the repo's Settings, Secrets and variables, Actions:
    by an environment variable (`DCPROCURE_GITHUB_REPO`, `DCPROCURE_HF_ARCHIVE`,
    `DCPROCURE_HF_DATASET`, `DCPROCURE_SITE_URL`), or change the defaults.
 3. **Change the names that can't read that file.** These are plain text:
-   - `site/shared/db.js`: the Hugging Face archive address (two lines).
-   - `site/about.html`, `site/how-dc-buys.html`, `site/gaps.html`: links to this
-     GitHub repo.
+   - `abigailhaddad/dataset-explorer`: `configs/dc-*.json` and the `dc-procurement` entry in
+     `scripts/build_sites.py` name the dataset and this repo (the old `site/` folder here is
+     for reference only).
    - `src/dcprocure/publish.py`: the archive's dataset card text, which names the
      site and the GitHub repo.
    - `README.md`, `docs/SCHEDULING.md`, `docs/NEXT_STEPS.md`: addresses and the
      repo name.
-   - `.github/workflows/deploy-site.yml`: the Pages project name, unless you set
-     the `CLOUDFLARE_PROJECT` variable.
    - `scripts/com.dcbudget.weekly.plist` and `scripts/install_schedule.sh`: the
      laptop fallback, switched off. Ignore unless you use it.
-4. **Create the Cloudflare Pages project** and add the two Cloudflare secrets so
-   pushes deploy the site. Until then deploy by hand:
-   `npx wrangler pages deploy site --project-name <your project>`.
+4. **Deploy the site from your copy of `dataset-explorer`.** Create a Cloudflare Pages
+   project named `dc-procurement` (or change the slug), add the two Cloudflare secrets to
+   that repo, and run its `deploy-sites.yml` once.
 5. **Run the weekly workflow once by hand** (`gh workflow run weekly.yml`) and
    read the log before you trust the schedule.
 
