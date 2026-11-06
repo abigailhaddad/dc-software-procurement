@@ -2,7 +2,7 @@
 
 Each can be overridden with an environment variable; the defaults are the
 current owner's. The site's own files (``site/``) and a few documents name the
-same things in plain text and cannot read this file: HANDOFF.md lists them.
+same things in plain text and cannot read this file: `grep -rn abigailhaddad .` finds them (see HANDOFF.md).
 """
 
 from __future__ import annotations
