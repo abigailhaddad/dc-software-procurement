@@ -133,6 +133,12 @@ def _card(current: str) -> str:
 def publish(raw_dir: Path = RAW_DIR, repo_id: str = REPO_ID) -> str:
     """Upload the archive files and refresh the dataset card in one commit."""
     from huggingface_hub import CommitOperationAdd, HfApi, hf_hub_download
+    from huggingface_hub.errors import EntryNotFoundError, RepositoryNotFoundError
+
+    try:
+        from huggingface_hub.errors import LocalEntryNotFoundError
+    except ImportError:  # old huggingface_hub
+        from huggingface_hub.utils import LocalEntryNotFoundError
 
     _load_dotenv()
     token = os.environ.get("HF_TOKEN")
@@ -154,7 +160,13 @@ def publish(raw_dir: Path = RAW_DIR, repo_id: str = REPO_ID) -> str:
                 hf_hub_download(repo_id, "archive/manifest.json", repo_type="dataset", token=token)
             ).read_text(encoding="utf-8")
         )
-    except Exception:  # noqa: BLE001 - no archive yet, nothing to protect
+    except (EntryNotFoundError, RepositoryNotFoundError) as e:  # no archive yet, nothing to protect
+        # LocalEntryNotFoundError subclasses EntryNotFoundError; hf_hub_download
+        # raises it when its HEAD call hits a 429/5xx/timeout with no cache.
+        if isinstance(e, LocalEntryNotFoundError):
+            raise
+        # Only "not there" means that. A network, auth or 5xx error must stop the run:
+        # swallowing it would switch the shrink guard off and let a short archive replace the full one.
         published = {"snapshots": []}
     published_rows = {e["name"]: e["rows"] for e in published.get("snapshots", [])}
     shrunk = []
