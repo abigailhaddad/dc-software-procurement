@@ -53,3 +53,27 @@ def test_missing_manifest_means_first_publish(tmp_path, monkeypatch):
     with pytest.raises(ConnectionError):
         pub.publish(_raw_dir(tmp_path), "owner/repo")
     assert requested == ["archive/manifest.json", "README.md"]
+
+
+def test_local_entry_not_found_is_a_failed_read_not_a_first_publish(tmp_path, monkeypatch):
+    # LocalEntryNotFoundError subclasses EntryNotFoundError and is what
+    # hf_hub_download raises when its HEAD call gets a 429/5xx/timeout.
+    try:
+        from huggingface_hub.errors import LocalEntryNotFoundError
+    except ImportError:
+        from huggingface_hub.utils import LocalEntryNotFoundError
+
+    monkeypatch.setenv("HF_TOKEN", "x")
+    requested = []
+
+    def fake_download(repo_id, filename, **kw):
+        requested.append(filename)
+        raise LocalEntryNotFoundError("429")
+
+    import huggingface_hub
+
+    monkeypatch.setattr(huggingface_hub, "hf_hub_download", fake_download)
+    monkeypatch.setattr(pub, "_load_dotenv", lambda: None)
+    with pytest.raises(LocalEntryNotFoundError):
+        pub.publish(_raw_dir(tmp_path), "owner/repo")
+    assert requested == ["archive/manifest.json"]
