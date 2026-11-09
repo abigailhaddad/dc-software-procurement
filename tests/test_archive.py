@@ -168,3 +168,30 @@ def test_a_small_archive_is_not_checked(tmp_path):
     _write_rows(path, 50)
     merged, retained = retain_by_key(path, [{"id": "0"}], lambda r: r["id"])
     assert retained == 49
+
+
+def test_pull_solicitations_refuses_to_empty_a_year_already_on_disk(tmp_path):
+    from dcprocure.client import PortalError
+    from dcprocure.pull import pull_solicitations
+
+    class Client:
+        def __init__(self, rows):
+            self.rows = rows
+
+        def open_solicitations(self):
+            return []
+
+        def archived_solicitations(self, fy):
+            return self.rows.get(fy, [])
+
+    pull_solicitations(Client({"FY2024": [{"id": 1}, {"id": 2}], "FY2025": [{"id": 3}]}),
+                       ["FY2024", "FY2025"], tmp_path)
+    before = (tmp_path / "solicitations.json").read_text()
+
+    with pytest.raises(PortalError, match="FY2024"):
+        pull_solicitations(Client({"FY2025": [{"id": 3}]}), ["FY2024", "FY2025"], tmp_path)
+    assert (tmp_path / "solicitations.json").read_text() == before
+
+    # A year with nothing on disk may be legitimately empty.
+    pull_solicitations(Client({"FY2024": [{"id": 1}], "FY2025": [{"id": 3}]}),
+                       ["FY2024", "FY2025", "FY2026"], tmp_path)

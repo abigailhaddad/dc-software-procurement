@@ -207,7 +207,25 @@ def pull_solicitations(
         for row in rows:
             records.append({**row, "archive_fy": fy, "is_open": False})
 
-    _write(out_dir / "solicitations.json", records)
+    path = out_dir / "solicitations.json"
+    # The file is replaced outright, so an empty answer for a year the file
+    # already holds (`search` turns a null or missing `results` into []) would
+    # silently drop that year's rows, roughly 1,300 of them. A year with no
+    # rows on disk may legitimately be empty (the new fiscal year).
+    if path.exists():
+        held: dict[str, int] = {}
+        for old in json.loads(path.read_text(encoding="utf-8")):
+            if old.get("archive_fy"):
+                held[old["archive_fy"]] = held.get(old["archive_fy"], 0) + 1
+        emptied = {fy: held[fy] for fy, n in per_year.items() if n == 0 and held.get(fy)}
+        if emptied:
+            raise PortalError(
+                f"solicitations: the portal returned no rows for {sorted(emptied)} but "
+                f"solicitations.json holds {emptied}. Probably an empty or failed "
+                "response; nothing was written."
+            )
+
+    _write(path, records)
     return Snapshot(
         name="solicitations",
         pulled_at=_now(),
